@@ -1,0 +1,11 @@
+framework module NamiPairingFramework {
+  umbrella header "NamiPairingFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module NamiPairingFramework.Swift {
+  header "NamiPairingFramework-Swift.h"
+  requires objc
+}

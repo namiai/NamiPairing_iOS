@@ -1,0 +1,286 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name StandardPairingUI
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import BottomSheet
+import Foundation
+import NamiPairingFramework
+@_exported import StandardPairingUI
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+extension NamiPairingFramework.Pairing.Error {
+  public var errorMessageTitle: Swift.String {
+    get
+  }
+  public var localizedDescription: Swift.String {
+    get
+  }
+}
+public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
+  public init()
+  public var bluetoothUsageHint: (NamiPairingFramework.BluetoothUsageHint.ViewModel) -> StandardPairingUI.BluetoothUsageHintView
+  public var powerOnAndScanning: (NamiPairingFramework.PowerOnAndScanning.ViewModel) -> StandardPairingUI.PowerOnAndScanningView
+  public var enableBluetoothInSettings: () -> StandardPairingUI.EnableBluetoothInSettingsView
+  public var bluetoothDeviceFound: (NamiPairingFramework.BluetoothDeviceFound.ViewModel) -> StandardPairingUI.BluetoothDeviceFoundView
+  public var askToConnect: (NamiPairingFramework.AskToConnect.ViewModel) -> StandardPairingUI.AskToConnectView
+  public var qrCodeScanner: (NamiPairingFramework.QRScanner.ViewModel) -> StandardPairingUI.QRScannerView
+  public var listWiFiNetworks: (NamiPairingFramework.ListWiFiNetworks.ViewModel) -> StandardPairingUI.ListWiFiNetworksView
+  public var otherWiFiNetwork: (NamiPairingFramework.OtherWiFiNetwork.ViewModel) -> StandardPairingUI.OtherWiFiNetworkView
+  public var enterWiFiPassword: (NamiPairingFramework.EnterWiFiPassword.ViewModel) -> StandardPairingUI.EnterWiFiPasswordView
+  public var finishingSetup: () -> StandardPairingUI.FinishingSetupView
+  public var pairingError: (NamiPairingFramework.PairingErrorScreen.ViewModel) -> StandardPairingUI.PairingErrorScreenView
+  public var backButton: () -> StandardPairingUI.CircleButton?
+  public typealias BackButtonView = StandardPairingUI.CircleButton
+  public typealias ViewForAskToConnect = StandardPairingUI.AskToConnectView
+  public typealias ViewForBluetoothDeviceFound = StandardPairingUI.BluetoothDeviceFoundView
+  public typealias ViewForBluetoothUsageHint = StandardPairingUI.BluetoothUsageHintView
+  public typealias ViewForEnableBluetoothInSettings = StandardPairingUI.EnableBluetoothInSettingsView
+  public typealias ViewForEnterWiFiPassword = StandardPairingUI.EnterWiFiPasswordView
+  public typealias ViewForFinishingSetup = StandardPairingUI.FinishingSetupView
+  public typealias ViewForListWiFiNetworks = StandardPairingUI.ListWiFiNetworksView
+  public typealias ViewForOtherWiFiNetwork = StandardPairingUI.OtherWiFiNetworkView
+  public typealias ViewForPairingError = StandardPairingUI.PairingErrorScreenView
+  public typealias ViewForPowerOnAndScanning = StandardPairingUI.PowerOnAndScanningView
+  public typealias ViewForQRCodeScanner = StandardPairingUI.QRScannerView
+}
+@_Concurrency.MainActor(unsafe) public struct QRScannerView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.QRScanner.ViewModel)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI13QRScannerViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor(unsafe) public struct PowerOnAndScanningView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.PowerOnAndScanning.ViewModel)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI22PowerOnAndScanningViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor(unsafe) public struct BluetoothDeviceFoundView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.BluetoothDeviceFound.ViewModel)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI24BluetoothDeviceFoundViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor(unsafe) public struct BluetoothUsageHintView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.BluetoothUsageHint.ViewModel)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI22BluetoothUsageHintViewV4bodyQrvp", 0) __
+}
+public struct EnableBluetoothInSettingsView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI29EnableBluetoothInSettingsViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor(unsafe) public struct EnterWiFiPasswordView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.EnterWiFiPassword.ViewModel)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI21EnterWiFiPasswordViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor(unsafe) public struct OtherWiFiNetworkView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.OtherWiFiNetwork.ViewModel)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI20OtherWiFiNetworkViewV4bodyQrvp", 0) __
+}
+public struct FinishingSetupView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI18FinishingSetupViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor(unsafe) public struct AskToConnectView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.AskToConnect.ViewModel)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI16AskToConnectViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor(unsafe) public struct PairingErrorScreenView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.PairingErrorScreen.ViewModel)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI0B15ErrorScreenViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor(unsafe) public struct ListWiFiNetworksView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.ListWiFiNetworks.ViewModel)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI20ListWiFiNetworksViewV4bodyQrvp", 0) __
+}
+public struct PongView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI8PongViewV4bodyQrvp", 0) __
+}
+public struct DeviceSetupScreen<Subview> : SwiftUI.View where Subview : SwiftUI.View {
+  public init(@SwiftUI.ViewBuilder subview: @escaping () -> Subview)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17DeviceSetupScreenV4bodyQrvp", 0) __<Subview>
+}
+public struct CircleButton : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI12CircleButtonV4bodyQrvp", 0) __
+}
+public enum DeviceImages {
+  public static func image(for codeName: Swift.String) -> SwiftUI.Image
+  public static func image(for model: NamiPairingFramework.NamiDeviceModel) -> SwiftUI.Image
+}
+public class Colors {
+  public init()
+  public enum ColorSaturation : Swift.String {
+    case lite
+    case normal
+    case saturated
+    case striking
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum ColorSaturationNumber : Swift.Int {
+    case saturation30
+    case saturation40
+    case saturation50
+    case saturation60
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public struct Neutral {
+    public let primaryBlack: SwiftUI.Color
+    public let primaryBlackDisabled: SwiftUI.Color
+    public let secondaryBlack: SwiftUI.Color
+    public let tertiaryBlack: SwiftUI.Color
+    public let white: SwiftUI.Color
+    public let whiteDisabled: SwiftUI.Color
+    public let background: SwiftUI.Color
+    public let line: SwiftUI.Color
+  }
+  public struct Graph {
+    public let movement: SwiftUI.Color
+    public let noMovement: SwiftUI.Color
+    public let occupied: SwiftUI.Color
+    public let notOccupied: SwiftUI.Color
+  }
+  public struct DataRepresentations {
+    public static func maroon(_ intensity: StandardPairingUI.Colors.ColorSaturationNumber) -> SwiftUI.Color
+    public static func maroon(_ intensity: StandardPairingUI.Colors.ColorSaturation) -> SwiftUI.Color
+  }
+  public static let allThemes: [NamiPairingFramework.ThemeID]
+  final public let accent: SwiftUI.Color
+  final public let headline: SwiftUI.Color
+  final public let linkText: SwiftUI.Color
+  final public let negative: SwiftUI.Color
+  final public let warning: SwiftUI.Color
+  final public let positive: SwiftUI.Color
+  final public let allGood: SwiftUI.Color
+  final public let placeholder: SwiftUI.Color
+  final public let authButtonStroke: SwiftUI.Color
+  final public let buttonedFieldBackground: SwiftUI.Color
+  final public let buttonedFieldStroke: SwiftUI.Color
+  final public let progressSelected: SwiftUI.Color
+  final public let lowAttentionAlert: SwiftUI.Color
+  final public let lowAttentionAlertLight: SwiftUI.Color
+  final public let alert1: SwiftUI.Color
+  final public let alert2: SwiftUI.Color
+  final public let redAlert3: SwiftUI.Color
+  final public let redAlert4: SwiftUI.Color
+  final public let success3: SwiftUI.Color
+  final public let success4: SwiftUI.Color
+  final public let neutral: StandardPairingUI.Colors.Neutral
+  final public let graph: StandardPairingUI.Colors.Graph
+  public var globalBlue: SwiftUI.Color {
+    get
+  }
+  public var alert0: SwiftUI.Color {
+    get
+  }
+  public var alert3: SwiftUI.Color {
+    get
+  }
+  public var bodyText: SwiftUI.Color {
+    get
+  }
+  public var darkText: SwiftUI.Color {
+    get
+  }
+  public var primary: SwiftUI.Color {
+    get
+  }
+  public var lowerBackground: SwiftUI.Color {
+    get
+  }
+  public var borderStroke: SwiftUI.Color {
+    get
+  }
+  public var graphLines: SwiftUI.Color {
+    get
+  }
+  public var profileTileBackground: SwiftUI.Color {
+    get
+  }
+  public func forTheme(_ base: NamiPairingFramework.ThemeID, saturation: StandardPairingUI.Colors.ColorSaturation = .normal) -> SwiftUI.Color
+  public func forAlertMode(_ mode: NamiPairingFramework.NamiAlertMode) -> SwiftUI.Color
+  @objc deinit
+}
+public struct NamiPortableTextStyle : Swift.Identifiable {
+  public enum Leading {
+    case loose
+    case tight
+    case standard
+    public init?(rawValue: SwiftUI.Font.Leading)
+    public static func == (a: StandardPairingUI.NamiPortableTextStyle.Leading, b: StandardPairingUI.NamiPortableTextStyle.Leading) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static let headline: StandardPairingUI.NamiPortableTextStyle
+  public static let headline2: StandardPairingUI.NamiPortableTextStyle
+  public static let headline3: StandardPairingUI.NamiPortableTextStyle
+  public static let headline4: StandardPairingUI.NamiPortableTextStyle
+  public static let headline5: StandardPairingUI.NamiPortableTextStyle
+  public static let headline6: StandardPairingUI.NamiPortableTextStyle
+  public static let paragraph1: StandardPairingUI.NamiPortableTextStyle
+  public static let paragraph2: StandardPairingUI.NamiPortableTextStyle
+  public static let small: StandardPairingUI.NamiPortableTextStyle
+  public static let small2: StandardPairingUI.NamiPortableTextStyle
+  public let id: Swift.String
+  public var font: SwiftUI.Font {
+    get
+  }
+  public var uiFont: UIKit.UIFont {
+    get
+  }
+  public typealias ID = Swift.String
+}
+extension StandardPairingUI.Colors.ColorSaturation : Swift.Equatable {}
+extension StandardPairingUI.Colors.ColorSaturation : Swift.Hashable {}
+extension StandardPairingUI.Colors.ColorSaturation : Swift.RawRepresentable {}
+extension StandardPairingUI.Colors.ColorSaturationNumber : Swift.Equatable {}
+extension StandardPairingUI.Colors.ColorSaturationNumber : Swift.Hashable {}
+extension StandardPairingUI.Colors.ColorSaturationNumber : Swift.RawRepresentable {}
+extension StandardPairingUI.NamiPortableTextStyle.Leading : Swift.Equatable {}
+extension StandardPairingUI.NamiPortableTextStyle.Leading : Swift.Hashable {}
