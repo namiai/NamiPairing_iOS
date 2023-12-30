@@ -1025,6 +1025,13 @@ public enum I18n {
   public enum IntrusionEventReport {
     public static let intrusionHistory: Swift.String
   }
+  public enum IntrusionHistory {
+    public static let errorDataNotFound: Swift.String
+    public static let humanMotion: Swift.String
+    public static let noMotion: Swift.String
+    public static func timestamp(_ p1: Any) -> Swift.String
+    public static let title: Swift.String
+  }
   public enum IntrusionLiveView {
     public static let noActivitySinceIntrusionBega: Swift.String
   }
@@ -1082,6 +1089,7 @@ public enum I18n {
     public static let activeZones: Swift.String
     public static let duration: Swift.String
     public static func formatHour(_ p1: Swift.Int) -> Swift.String
+    public static func formatHours(_ p1: Swift.Int) -> Swift.String
     public static func formatMinute(_ p1: Swift.Int) -> Swift.String
     public static func formatSecond(_ p1: Swift.Int) -> Swift.String
     public static let intensity: Swift.String
@@ -1274,7 +1282,7 @@ public enum I18n {
       public static func header2Android(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
       public static func header2BssidPinnedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
       public static let lookingForNetworks: Swift.String
-      public static func noNetworksFound(_ p1: Any) -> Swift.String
+      public static let noNetworksFound: Swift.String
       public static let proceed: Swift.String
       public static let retryingForNetworks: Swift.String
       public static let selectNetwork: Swift.String
@@ -1460,6 +1468,13 @@ public enum I18n {
       public static let pairOneMore: Swift.String
       public static let pairTwoDevices: Swift.String
       public static let thirtySecsAgo: Swift.String
+    }
+    public enum IntrusionDetection {
+      public static func endTime(_ p1: Any) -> Swift.String
+      public static func endTimeFormatHour(_ p1: Swift.Int) -> Swift.String
+      public static func endTimeFormatMinute(_ p1: Swift.Int) -> Swift.String
+      public static func startTime(_ p1: Any) -> Swift.String
+      public static let title: Swift.String
     }
     public enum PairingRequest {
       public static let addDeviceButton: Swift.String
@@ -1878,6 +1893,7 @@ public enum I18n {
     public enum SelectZoneToUpdate {
       public static let confirmButton: Swift.String
       public static let description: Swift.String
+      public static let nonThreadZoneSupport: Swift.String
       public static func numberOfDevices(_ p1: Any) -> Swift.String
       public static let selectZone: Swift.String
       public static let title: Swift.String
@@ -1941,6 +1957,52 @@ public enum I18n {
     public static let removeUserAlertTitle: Swift.String
     public static let removeUserButton: Swift.String
     public static let saveChangesButton: Swift.String
+  }
+  public enum Widar {
+    public static let headerTitle: Swift.String
+    public enum CancelPopup {
+      public static let backToPositioningButton: Swift.String
+      public static let cancelButton: Swift.String
+      public static let message: Swift.String
+      public static let title: Swift.String
+    }
+    public enum Error {
+      public static let deviceNotFoundMessage: Swift.String
+      public static let exitButton: Swift.String
+      public static let retryButton: Swift.String
+      public static let title: Swift.String
+    }
+    public enum Info {
+      public static let buttonText: Swift.String
+      public static let infoAvoidMovingWhenOptimized: Swift.String
+      public static let infoMustOptimisePosition: Swift.String
+      public static let title: Swift.String
+    }
+    public enum Position {
+      public static let cancelButton: Swift.String
+      public static let finishButton: Swift.String
+      public static let guideImperial: Swift.String
+      public static let guideMetric: Swift.String
+      public static let statusChecking: Swift.String
+      public static let statusGettingBetter: Swift.String
+      public static let statusLabel: Swift.String
+      public static let statusMispositioned: Swift.String
+      public static let statusOptimized: Swift.String
+      public static let tip: Swift.String
+      public static let title: Swift.String
+    }
+    public enum Recommendations {
+      public static let buttonText: Swift.String
+      public static let infoAttachBase: Swift.String
+      public static let infoKeepAreaClear: Swift.String
+      public static let infoWireOnBack: Swift.String
+      public static let title: Swift.String
+    }
+    public enum Success {
+      public static func contentMessage(_ p1: Any) -> Swift.String
+      public static let doneButton: Swift.String
+      public static let title: Swift.String
+    }
   }
   public enum Zone {
     public static let defaultName: Swift.String
@@ -2190,11 +2252,6 @@ extension NamiPairingFramework.BluetoothCentralState : Swift.CustomDebugStringCo
 final public class Tomonari<Container> where Container : NamiPairingFramework.PairingStepsContainer {
   public init(api: NamiPairingFramework.PairingWebAPIProtocol, wifiStorage: NamiPairingFramework.PairingWiFiStorageProtocol, threadDatasetProvider: NamiPairingFramework.PairingThreadOperationalDatasetProviderProtocol)
   public typealias DevicePairingStatePublisher = Combine.PassthroughSubject<NamiPairingFramework.Tomonari<Container>.DevicePairingState, Swift.Error>
-  public struct APISettings {
-    public let apiKey: Swift.String
-    public let baseUrl: Foundation.URL
-    public let signUpUrl: Foundation.URL
-  }
   public struct PairingParameters : Swift.Equatable {
     public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID? = nil, bssid: Foundation.Data? = nil)
     public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID? = nil, bssid: [Swift.UInt8])
@@ -2217,9 +2274,6 @@ final public class Tomonari<Container> where Container : NamiPairingFramework.Pa
   final public func startPairing(placeId: NamiPairingFramework.PlaceID, zoneId: NamiPairingFramework.PlaceZoneID, roomId: NamiPairingFramework.RoomID, pairingParameters: NamiPairingFramework.Tomonari<Container>.PairingParameters = .none, pairingSteps: Container) -> some SwiftUI.View
   
   @objc deinit
-}
-extension NamiPairingFramework.Tomonari.APISettings {
-  public static func defaultWithAPIKey(_ key: Swift.String) -> NamiPairingFramework.Tomonari<Container>.APISettings
 }
 extension Combine.Publisher {
   public func first<T>(_ keyPath: Swift.KeyPath<Self.Output, T>, toEqual value: T) -> Combine.Publishers.FirstWhere<Combine.Publishers.MapKeyPath<Self, T>> where T : Swift.Equatable
@@ -2412,10 +2466,12 @@ public enum AskToConnect {
     public var deviceName: Swift.String
     public var deviceModel: NamiPairingFramework.NamiDeviceModel
     public var isConnectingToThread: Swift.Bool
-    public var doneLoading: Swift.Bool
     public var updatingWifi: Swift.Bool
     public var devicesCount: Swift.Int
     public var nextTapped: Swift.Bool
+    public var doneLoading: Swift.Bool {
+      get
+    }
     public var zoneName: Swift.String? {
       get
     }
