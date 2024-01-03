@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Nc3W1bU1mzx23Zr85JncAKPaIlI=
+		1IY7X41pbXDagS71An0Hb7lsAFs=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -63,6 +63,66 @@
 		<key>Modules/module.modulemap</key>
 		<data>
 		/FztuaIYb7VAm14i+BwwpYcCXg8=
+		</data>
+		<key>external_active_beacon.webp</key>
+		<data>
+		zHqJJpu0AkVVSQPlH8TePSLZg08=
+		</data>
+		<key>pebble.webp</key>
+		<data>
+		v2lF7A3uVgKU+++caSSY5v9CcTE=
+		</data>
+		<key>preview_thread_sentinel_plug_de.webp</key>
+		<data>
+		e3rWaMy88R6FzVJDM1zIW3/k75E=
+		</data>
+		<key>preview_thread_sentinel_plug_us.webp</key>
+		<data>
+		Y3WmQY9LpffY18VnV6rhAcMMbdU=
+		</data>
+		<key>sentinel_plug_de.webp</key>
+		<data>
+		4P7gGQ7N3NX3rryleOs2qLtJwKg=
+		</data>
+		<key>sentinel_plug_de_v2.webp</key>
+		<data>
+		nd560SBSqECdKSSY3h8MpfTZE74=
+		</data>
+		<key>sentinel_plug_fr_v2.webp</key>
+		<data>
+		QTtlQMhSZqFiO7MoyvfdoIEwHpQ=
+		</data>
+		<key>sentinel_plug_jp_v2.webp</key>
+		<data>
+		LopcI4uKnCXFotkiamEfeDfhsVg=
+		</data>
+		<key>sentinel_plug_uk.webp</key>
+		<data>
+		sExXWHQAWCTGFZsMQxKAT0/iABY=
+		</data>
+		<key>sentinel_plug_uk_v2.webp</key>
+		<data>
+		Ev5VcNi35egkDPMm/iZx8NQwdq8=
+		</data>
+		<key>sentinel_plug_us.webp</key>
+		<data>
+		ii/zkrP+7iWYTG+sYJncbYcrIW8=
+		</data>
+		<key>sentinel_plug_us_v2.webp</key>
+		<data>
+		8W6/4dCTUp9N3JQsYHceWDwpMPo=
+		</data>
+		<key>sentinel_pod.webp</key>
+		<data>
+		mFwIo/+85QbeWRNBawTM5v50aio=
+		</data>
+		<key>sentinel_pod_v2.webp</key>
+		<data>
+		mFwIo/+85QbeWRNBawTM5v50aio=
+		</data>
+		<key>unknownmodel.webp</key>
+		<data>
+		Dpgx6RzrwaoB0s2n9C3OY8AXRVA=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -163,6 +223,111 @@
 			<key>hash2</key>
 			<data>
 			BJXrX9KDlnzfr4pbQOfDIZZou2o4J+uLt4yeUaQAKVA=
+			</data>
+		</dict>
+		<key>external_active_beacon.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HjYF54+hOvhlkjOA9ym+qKW5nX642cQsv5D0/EWZ0nY=
+			</data>
+		</dict>
+		<key>pebble.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NXKkawj9pHckZhB0d77zyaXMy4wUXqrqv7vAySGtAEU=
+			</data>
+		</dict>
+		<key>preview_thread_sentinel_plug_de.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			r3hz4H9QoVvjPRiGQq9CW7NwTpZehILykgDipLDFTRU=
+			</data>
+		</dict>
+		<key>preview_thread_sentinel_plug_us.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			93ux0ylRivzNX6kLPI/Jo8ZFW7QZwUQmiIvEH/ZxlIc=
+			</data>
+		</dict>
+		<key>sentinel_plug_de.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			52KHiwInoKiltnyyPfgs1JCXcI8dh00o8PpYAJX9snU=
+			</data>
+		</dict>
+		<key>sentinel_plug_de_v2.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3ujUAf3Lszn85ZjNbDHTVJaDzZ/uNnYMS0Pt7pqk/1w=
+			</data>
+		</dict>
+		<key>sentinel_plug_fr_v2.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WR5aCx/eA+QORmLGjfB0htJcQF2ewR0T2CyTXLehOj8=
+			</data>
+		</dict>
+		<key>sentinel_plug_jp_v2.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wZpbq0ZQVkdP0bgcpXJ5ATcG2wfeu8/+m/vX46M6RcY=
+			</data>
+		</dict>
+		<key>sentinel_plug_uk.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			eaIgE0stUgVTmoBfjqpDHjpTroArBfiHuvQ7xaieReU=
+			</data>
+		</dict>
+		<key>sentinel_plug_uk_v2.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BXcAFQ9ETxY39jZXgD+HSBzaNLcIGjLOd94+0qzRtHY=
+			</data>
+		</dict>
+		<key>sentinel_plug_us.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yvccGj/hUsjQJMG09lha6djw5+3hTvRuwcqN5thKtPU=
+			</data>
+		</dict>
+		<key>sentinel_plug_us_v2.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Ryo2OHXiXDz2Ukx/ShhrujiUY/kH14/XSnSEvrFv9nI=
+			</data>
+		</dict>
+		<key>sentinel_pod.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			X73/VZLlV12TgUg/iI4Q2a/OnF5WrwQ+CjgwenL8tIM=
+			</data>
+		</dict>
+		<key>sentinel_pod_v2.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			X73/VZLlV12TgUg/iI4Q2a/OnF5WrwQ+CjgwenL8tIM=
+			</data>
+		</dict>
+		<key>unknownmodel.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ijhYyr/LtvLGDIq8P80S4ATbVuvxc5w0iMVa3e+nRZg=
 			</data>
 		</dict>
 	</dict>

@@ -167,6 +167,12 @@ public struct Place : Swift.Decodable, Swift.Equatable, Swift.Identifiable {
   public typealias ID = NamiPairingFramework.PlaceID
   public init(from decoder: Swift.Decoder) throws
 }
+public struct PlacesResponse : Swift.Decodable {
+  public init(places: [NamiPairingFramework.Place], permissions: [NamiPairingFramework.URN : NamiPairingFramework.UserPermissionsSet])
+  public var places: [NamiPairingFramework.Place]
+  public var permissions: [NamiPairingFramework.URN : NamiPairingFramework.UserPermissionsSet]
+  public init(from decoder: Swift.Decoder) throws
+}
 public struct PlaceZone : NamiPairingFramework.PlaceZoneProtocol, Swift.Decodable, Swift.Equatable, Swift.Identifiable {
   public var id: NamiPairingFramework.PlaceZoneID
   public var externalId: Swift.String
