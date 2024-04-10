@@ -242,23 +242,61 @@ final public class InMemoryWiFiStorage : NamiPairingFramework.PairingWiFiStorage
   @objc deinit
 }
 public enum NamiDeviceCapability : Swift.Equatable {
-  case motionCSI
-  case deviceInfo
-  case devKitOnOff
-  case relayMono
-  case ledSentinelPlug
-  case mainSwitch
-  case soundAlarm
-  public static let `default`: [NamiPairingFramework.NamiDeviceCapability]
-  public static let plug: [NamiPairingFramework.NamiDeviceCapability]
-  public static let sentinel_pod: [NamiPairingFramework.NamiDeviceCapability]
-  public static let devkit: [NamiPairingFramework.NamiDeviceCapability]
-  public static let pebble: [NamiPairingFramework.NamiDeviceCapability]
+  case deviceInformation
+  case diagnostics
+  case relay
+  case sentinelAlarm
+  case devkitLed
+  case devkitAlarm
+  case widar
+  public var endpoint: NamiPairingFramework.NamiDeviceEndpoint {
+    get
+  }
+  public static var `default`: [NamiPairingFramework.NamiDeviceCapability]
+  public static var plug: [NamiPairingFramework.NamiDeviceCapability]
+  public static var devkit: [NamiPairingFramework.NamiDeviceCapability]
+  public static var pod: [NamiPairingFramework.NamiDeviceCapability]
+  public static var widarSensor: [NamiPairingFramework.NamiDeviceCapability]
   public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: NamiPairingFramework.NamiDeviceCapability, b: NamiPairingFramework.NamiDeviceCapability) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
+}
+public struct NamiDeviceEndpoint : Swift.Equatable {
+  public enum EndpointType : Swift.Equatable {
+    public enum ReadableCluster {
+      case stateOnOff
+      case stateColorControl
+      case stateLevelControlForLighting
+      case stateDeviceInfo
+      case stateWarning
+      case stateWifiInfo
+      case stateThreadNetworkInfo
+      case stateWiDar
+      public static func == (a: NamiPairingFramework.NamiDeviceEndpoint.EndpointType.ReadableCluster, b: NamiPairingFramework.NamiDeviceEndpoint.EndpointType.ReadableCluster) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+    public enum WritableCluster {
+      case changeOnOff
+      case changeColorControl
+      case changeLevelControlForLighting
+      case changeWiDar
+      public static func == (a: NamiPairingFramework.NamiDeviceEndpoint.EndpointType.WritableCluster, b: NamiPairingFramework.NamiDeviceEndpoint.EndpointType.WritableCluster) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+    public static func == (a: NamiPairingFramework.NamiDeviceEndpoint.EndpointType, b: NamiPairingFramework.NamiDeviceEndpoint.EndpointType) -> Swift.Bool
+  }
+  public var endpoint: Swift.Int32
+  public var readable: [NamiPairingFramework.NamiDeviceEndpoint.EndpointType.ReadableCluster]
+  public var writable: [NamiPairingFramework.NamiDeviceEndpoint.EndpointType.WritableCluster]
+  public static func == (a: NamiPairingFramework.NamiDeviceEndpoint, b: NamiPairingFramework.NamiDeviceEndpoint) -> Swift.Bool
 }
 public enum MeasurementSystem {
   case metric
@@ -534,6 +572,11 @@ public enum I18n {
       public static let zonesAffected: Swift.String
     }
   }
+  public enum AlertMessage {
+    public static func nolongerAccess(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+    public static let pluralPlacesWereDeleted: Swift.String
+    public static let singularPlaceWasDeleted: Swift.String
+  }
   public enum ChangeUsername {
     public static let emptyErrorMessage: Swift.String
     public static let placeholder: Swift.String
@@ -663,9 +706,14 @@ public enum I18n {
     public static let addNewPlace: Swift.String
     public static let addNewUser: Swift.String
     public static let fineMessage: Swift.String
+    public static func formatDisconnectedDeviceInMultipleZoneAndroid(_ p1: Swift.Int) -> Swift.String
+    public static func formatIssueInAPlace(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+    public static func formatIssueInMultiplePlace(_ p1: Swift.Int) -> Swift.String
     public static let lastSeen: Swift.String
     public static let people: Swift.String
     public static let places: Swift.String
+    public static let sensingLinkBrokenInMultipleZone: Swift.String
+    public static let sensingLinkBrokenInOneZone: Swift.String
     public enum PlaceTile {
       public static let addOneMoreDevice: Swift.String
       public static let addTwoDevices: Swift.String
@@ -917,6 +965,9 @@ public enum I18n {
     public static let securityEngineDescription: Swift.String
     public static let title: Swift.String
   }
+  public enum Error {
+    public static let noInternetConnection: Swift.String
+  }
   public enum Errors {
     public enum Authentication {
       public static let loginRequired: Swift.String
@@ -1001,6 +1052,8 @@ public enum I18n {
     public static let title: Swift.String
   }
   public enum General {
+    public static let and: Swift.String
+    public static let at: Swift.String
     public static let camera: Swift.String
     public static let cancel: Swift.String
     public static let delete: Swift.String
@@ -1021,6 +1074,14 @@ public enum I18n {
     public static let success: Swift.String
     public static let unavailable: Swift.String
     public static let yes: Swift.String
+    public static func zones(_ p1: Swift.Int) -> Swift.String
+  }
+  public enum Hint {
+    public enum Issue {
+      public static func alarmIssues(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+      public static func pluralSystemIssues(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+      public static func singularSystemIssue(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+    }
   }
   public enum Homepage {
     public enum EmptyPlace {
@@ -1093,13 +1154,19 @@ public enum I18n {
   public enum MotionHistory {
     public static let activeTime: Swift.String
     public static let activeZones: Swift.String
+    public static let deviceIssue: Swift.String
     public static let duration: Swift.String
     public static func formatHour(_ p1: Swift.Int) -> Swift.String
     public static func formatHours(_ p1: Swift.Int) -> Swift.String
     public static func formatMinute(_ p1: Swift.Int) -> Swift.String
     public static func formatSecond(_ p1: Swift.Int) -> Swift.String
     public static let intensity: Swift.String
+    public static let monitorWasDegradedDueToDeviceIssue: Swift.String
+    public static let monitorWasDegradedInZonesWithDeviceIssue: Swift.String
+    public static let monitorWasDisabledDueToDeviceIssue: Swift.String
+    public static let monitorWasDisabledInZonesWithDeviceIssue: Swift.String
     public static let motion: Swift.String
+    public static let noData: Swift.String
     public static let noMotion: Swift.String
     public static let notAvailable: Swift.String
     public static let sensingDataNotAvailable: Swift.String
@@ -1409,11 +1476,25 @@ public enum I18n {
     }
   }
   public enum PlaceDetails {
+    public static let changePlaceModeToArmedContainDegradedDescription: Swift.String
+    public static let changePlaceModeToArmedContainUnhealthyDescription: Swift.String
+    public static let changePlaceModeToAwareContainDegradedDescription: Swift.String
+    public static let changePlaceModeToAwareContainUnhealthyDescription: Swift.String
     public static let customize: Swift.String
+    public static func formatDisconnectedDeviceInMultipleZoneAndroid(_ p1: Swift.Int) -> Swift.String
+    public static let getHelp: Swift.String
+    public static let noDevicesPaired: Swift.String
+    public static let offline: Swift.String
     public static func offlineDeviceNotification(_ p1: Swift.Int) -> Swift.String
     public static let placeMode: Swift.String
+    public static func proceedWithDegradedZones(_ p1: Swift.Int) -> Swift.String
+    public static func proceedWithDisabledZones(_ p1: Swift.Int) -> Swift.String
     public static let securityMode: Swift.String
     public static let securityModeDescription: Swift.String
+    public static let sensingLinkBrokenInMultipleZone: Swift.String
+    public static let sensingLinkBrokenInOneZone: Swift.String
+    public static let sensorsAreNotResponding: Swift.String
+    public static let yesProceed: Swift.String
     public static func zoneInMode(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   }
   public enum PlaceEvents {
@@ -1459,7 +1540,7 @@ public enum I18n {
     public static let wantDisable: Swift.String
   }
   public enum PlaceOverview {
-    public static func disconnectedDevices(_ p1: Swift.Int) -> Swift.String
+    public static func disconnectedDevices(_ p1: Swift.Int, _ p2: Swift.Int) -> Swift.String
     public static let motion: Swift.String
     public static let pairKitUnlockMotionSensing: Swift.String
     public static let resumeSetupKitButton: Swift.String
@@ -1670,7 +1751,9 @@ public enum I18n {
   }
   public enum SecurityMode {
     public static let addMoreZoneToShowZoneSettings: Swift.String
+    public static let degradedZone: Swift.String
     public static let disabled: Swift.String
+    public static let disabledZone: Swift.String
     public static let discard: Swift.String
     public static let discardChanges: Swift.String
     public static let discardChangesDescription: Swift.String
@@ -1806,14 +1889,18 @@ public enum I18n {
     public enum WhereToSetup {
       public static let addGuide: Swift.String
       public static let firstFloor: Swift.String
+      public static let oneFloorTitle: Swift.String
       public static func placeSizeLargeCoverage1Floor(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
       public static func placeSizeLargeCoverageMoreFloors(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
       public static let placeSizeSmallCoverage1Floor: Swift.String
-      public static let placeSizeSmallCoverageMoreFloors: Swift.String
+      public static func placeSizeSmallCoverageMoreFloors(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
       public static let subTittleFloorBigSize: Swift.String
       public static let subTittleFloorSmallSize: Swift.String
       public static let subTittleMoreFloorMonitoring: Swift.String
       public static let subTittleMoreFloorSecurity: Swift.String
+      public static let subtitleMonitorOneFloorBigSize: Swift.String
+      public static let subtitleOneFloorSmallSize: Swift.String
+      public static let subtitleSecurityOneFloorBigSize: Swift.String
       public static let tittle: Swift.String
     }
   }
@@ -2135,7 +2222,7 @@ public struct GhostMessage {
 }
 public struct CodeScannerView : SwiftUI.UIViewRepresentable {
   public typealias UIViewType = NamiPairingFramework.CodeScannerUIView
-  @objc @_hasMissingDesignatedInitializers final public class Coordinator : ObjectiveC.NSObject, AVFoundation.AVCaptureMetadataOutputObjectsDelegate {
+  @objc @_hasMissingDesignatedInitializers final public class Coordinator : ObjectiveC.NSObject {
     @objc final public func metadataOutput(_: AVFoundation.AVCaptureMetadataOutput, didOutput metadataObjects: [AVFoundation.AVMetadataObject], from _: AVFoundation.AVCaptureConnection)
     @objc deinit
   }
@@ -2167,6 +2254,7 @@ public enum QRScanner {
     case gotData(Swift.String?)
     case dismissScanError
     case pauseScanning
+    case scanningUnauthorized
     public static func == (a: NamiPairingFramework.QRScanner.Event, b: NamiPairingFramework.QRScanner.Event) -> Swift.Bool
   }
   @_hasMissingDesignatedInitializers final public class ViewModel : NamiPairingFramework.QRScannerViewModelProtocol {
@@ -2666,6 +2754,7 @@ public enum Pairing {
     case qrCodeScanner
     case bluetoothUsageHint
     case bluetoothEnableInSettings
+    case cameraEnableInSettings
     case powerOnAndScanning
     case deviceFound(NamiPairingFramework.NamiDeviceModel)
     case askToConnect(NamiPairingFramework.Pairing.DeviceSetupParameters)
@@ -2766,6 +2855,7 @@ public protocol PairingStepsContainer {
   associatedtype ViewForBluetoothUsageHint : SwiftUI.View
   associatedtype ViewForPowerOnAndScanning : SwiftUI.View
   associatedtype ViewForEnableBluetoothInSettings : SwiftUI.View
+  associatedtype ViewForEnableCameraInSettings : SwiftUI.View
   associatedtype ViewForBluetoothDeviceFound : SwiftUI.View
   associatedtype ViewForAskToConnect : SwiftUI.View
   associatedtype ViewForQRCodeScanner : SwiftUI.View
@@ -2778,6 +2868,7 @@ public protocol PairingStepsContainer {
   var bluetoothUsageHint: (NamiPairingFramework.BluetoothUsageHint.ViewModel) -> Self.ViewForBluetoothUsageHint { get }
   var powerOnAndScanning: (NamiPairingFramework.PowerOnAndScanning.ViewModel) -> Self.ViewForPowerOnAndScanning { get }
   var enableBluetoothInSettings: () -> Self.ViewForEnableBluetoothInSettings { get }
+  var enableCameraInSettings: () -> Self.ViewForEnableCameraInSettings { get }
   var bluetoothDeviceFound: (NamiPairingFramework.BluetoothDeviceFound.ViewModel) -> Self.ViewForBluetoothDeviceFound { get }
   var askToConnect: (NamiPairingFramework.AskToConnect.ViewModel) -> Self.ViewForAskToConnect { get }
   var qrCodeScanner: (NamiPairingFramework.QRScanner.ViewModel) -> Self.ViewForQRCodeScanner { get }
@@ -2952,6 +3043,10 @@ extension NamiPairingFramework.InMemoryThreadDatasetStorage.StorageError : Swift
 extension NamiPairingFramework.AuthenticationError : Swift.Equatable {}
 extension NamiPairingFramework.AuthenticationError : Swift.Hashable {}
 extension NamiPairingFramework.NamiDeviceCapability : Swift.Hashable {}
+extension NamiPairingFramework.NamiDeviceEndpoint.EndpointType.ReadableCluster : Swift.Equatable {}
+extension NamiPairingFramework.NamiDeviceEndpoint.EndpointType.ReadableCluster : Swift.Hashable {}
+extension NamiPairingFramework.NamiDeviceEndpoint.EndpointType.WritableCluster : Swift.Equatable {}
+extension NamiPairingFramework.NamiDeviceEndpoint.EndpointType.WritableCluster : Swift.Hashable {}
 extension NamiPairingFramework.MeasurementSystem : Swift.Equatable {}
 extension NamiPairingFramework.MeasurementSystem : Swift.Hashable {}
 extension NamiPairingFramework.NamiDeviceConnectivity : Swift.Equatable {}
@@ -2965,6 +3060,7 @@ extension NamiPairingFramework.Seance.Role : Swift.Equatable {}
 extension NamiPairingFramework.Seance.Role : Swift.Hashable {}
 extension NamiPairingFramework.Seance.State : Swift.Equatable {}
 extension NamiPairingFramework.Seance.State : Swift.Hashable {}
+extension NamiPairingFramework.CodeScannerView.Coordinator : AVFoundation.AVCaptureMetadataOutputObjectsDelegate {}
 extension NamiPairingFramework.QRScanner.ScanError : Swift.Equatable {}
 extension NamiPairingFramework.QRScanner.ScanError : Swift.Hashable {}
 extension NamiPairingFramework.QRScanner.ScanError : Swift.RawRepresentable {}

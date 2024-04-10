@@ -2,6 +2,7 @@
 // swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
 // swift-module-flags: -target arm64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name StandardPairingUI
 // swift-module-flags-ignorable: -enable-bare-slash-regex
+import Combine
 import CoreGraphics
 import Foundation
 import NamiPairingFramework
@@ -9,8 +10,20 @@ import NamiPairingFramework
 import Swift
 import SwiftUI
 import UIKit
+import WebKit
 import _Concurrency
 import _StringProcessing
+public enum LottieLoopModeWrapper {
+  case playOnce
+  case loop
+  case autoReverse
+  case `repeat`(Swift.Float)
+  case repeatBackwards(Swift.Float)
+}
+public struct LottieAnimationWrapper {
+  public func animationView(looping: StandardPairingUI.LottieLoopModeWrapper = .loop) -> some SwiftUI.View
+  
+}
 extension NamiPairingFramework.Pairing.Error {
   public var errorMessageTitle: Swift.String {
     get
@@ -24,6 +37,7 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public var bluetoothUsageHint: (NamiPairingFramework.BluetoothUsageHint.ViewModel) -> StandardPairingUI.BluetoothUsageHintView
   public var powerOnAndScanning: (NamiPairingFramework.PowerOnAndScanning.ViewModel) -> StandardPairingUI.PowerOnAndScanningView
   public var enableBluetoothInSettings: () -> StandardPairingUI.EnableBluetoothInSettingsView
+  public var enableCameraInSettings: () -> StandardPairingUI.EnableCameraInSettingsView
   public var bluetoothDeviceFound: (NamiPairingFramework.BluetoothDeviceFound.ViewModel) -> StandardPairingUI.BluetoothDeviceFoundView
   public var askToConnect: (NamiPairingFramework.AskToConnect.ViewModel) -> StandardPairingUI.AskToConnectView
   public var qrCodeScanner: (NamiPairingFramework.QRScanner.ViewModel) -> StandardPairingUI.QRScannerView
@@ -38,6 +52,7 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public typealias ViewForBluetoothDeviceFound = StandardPairingUI.BluetoothDeviceFoundView
   public typealias ViewForBluetoothUsageHint = StandardPairingUI.BluetoothUsageHintView
   public typealias ViewForEnableBluetoothInSettings = StandardPairingUI.EnableBluetoothInSettingsView
+  public typealias ViewForEnableCameraInSettings = StandardPairingUI.EnableCameraInSettingsView
   public typealias ViewForEnterWiFiPassword = StandardPairingUI.EnterWiFiPasswordView
   public typealias ViewForFinishingSetup = StandardPairingUI.FinishingSetupView
   public typealias ViewForListWiFiNetworks = StandardPairingUI.ListWiFiNetworksView
@@ -114,6 +129,12 @@ public struct FinishingSetupView : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI0B15ErrorScreenViewV4bodyQrvp", 0) __
 }
+public struct EnableCameraInSettingsView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI26EnableCameraInSettingsViewV4bodyQrvp", 0) __
+}
 @_Concurrency.MainActor(unsafe) public struct ListWiFiNetworksView : SwiftUI.View {
   @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.ListWiFiNetworks.ViewModel)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
@@ -133,12 +154,6 @@ public struct DeviceSetupScreen<Subview> : SwiftUI.View where Subview : SwiftUI.
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17DeviceSetupScreenV4bodyQrvp", 0) __<Subview>
-}
-public struct CircleButton : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI12CircleButtonV4bodyQrvp", 0) __
 }
 public enum DeviceImages {
   public static func image(for codeName: Swift.String) -> SwiftUI.Image
@@ -179,10 +194,13 @@ public class Colors {
     public let line: SwiftUI.Color
   }
   public struct Graph {
+    public let noData: SwiftUI.Color
     public let movement: SwiftUI.Color
     public let noMovement: SwiftUI.Color
     public let occupied: SwiftUI.Color
     public let notOccupied: SwiftUI.Color
+    public let notHealthy: SwiftUI.Color
+    public let healthy: SwiftUI.Color
   }
   public struct DataRepresentations {
     public static func maroon(_ intensity: StandardPairingUI.Colors.ColorSaturationNumber) -> SwiftUI.Color
@@ -194,6 +212,7 @@ public class Colors {
   final public let linkText: SwiftUI.Color
   final public let negative: SwiftUI.Color
   final public let warning: SwiftUI.Color
+  final public let warningLight: SwiftUI.Color
   final public let positive: SwiftUI.Color
   final public let allGood: SwiftUI.Color
   final public let placeholder: SwiftUI.Color
@@ -244,28 +263,210 @@ public class Colors {
   public func forTheme(_ base: NamiPairingFramework.ThemeID, saturation: StandardPairingUI.Colors.ColorSaturation = .normal) -> SwiftUI.Color
   @objc deinit
 }
-public struct NamiPortableTextStyle : Swift.Identifiable {
-  public enum Leading {
-    case loose
-    case tight
-    case standard
-    public init?(rawValue: SwiftUI.Font.Leading)
-    public static func == (a: StandardPairingUI.NamiPortableTextStyle.Leading, b: StandardPairingUI.NamiPortableTextStyle.Leading) -> Swift.Bool
+extension SwiftUI.Text {
+  public init(_ content: Swift.StringProtocol, font: StandardPairingUI.NamiTextStyle)
+  public func fillWidth(_ width: CoreFoundation.CGFloat = .infinity, alignment: SwiftUI.Alignment = .leading) -> some SwiftUI.View
+  
+}
+public var statusbarAndNavbarShift: CoreFoundation.CGFloat {
+  get
+}
+public var statusbarShift: CoreFoundation.CGFloat {
+  get
+}
+public var navbarBackgroundViewHeight: CoreFoundation.CGFloat {
+  get
+}
+public var navbarContentViewHeight: CoreFoundation.CGFloat {
+  get
+}
+public var screenWidth: CoreFoundation.CGFloat {
+  get
+}
+public var firstKeyWindow: UIKit.UIWindow?
+public var defaultNavbarHeight: CoreFoundation.CGFloat
+extension SwiftUI.View {
+  public func onHeightUpdate(_ action: @escaping (CoreFoundation.CGFloat) -> Swift.Void) -> some SwiftUI.View
+  
+}
+extension SwiftUI.Color {
+  public init(hex: Swift.UInt, alpha: Swift.Double = 1.0)
+  public static var namiColors: StandardPairingUI.Colors
+  public static var systemBackground: SwiftUI.Color {
+    get
+  }
+  public static var textLabel: SwiftUI.Color {
+    get
+  }
+  public static var invertedTextLabel: SwiftUI.Color {
+    get
+  }
+  public static var tint: SwiftUI.Color {
+    get
+  }
+}
+public struct ColorsKey : SwiftUI.EnvironmentKey {
+  public static let defaultValue: StandardPairingUI.Colors
+  public typealias Value = StandardPairingUI.Colors
+}
+extension SwiftUI.EnvironmentValues {
+  public var colors: StandardPairingUI.Colors {
+    get
+    set
+  }
+}
+public struct RoundedRectContainerView<Subviews> : SwiftUI.View where Subviews : SwiftUI.View {
+  public init(spacing: CoreFoundation.CGFloat? = nil, cornerRadius: CoreFoundation.CGFloat = 16.0, excludingCorners: UIKit.UIRectCorner = [], shadowRadius: CoreFoundation.CGFloat? = nil, strokeWidth: CoreFoundation.CGFloat? = nil, strokeColor: SwiftUI.Color = Color.primary, backgroundColor: SwiftUI.Color = Color(UIColor.systemBackground), alignment: SwiftUI.Alignment? = .center, @SwiftUI.ViewBuilder subviews: () -> Subviews)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI24RoundedRectContainerViewV4bodyQrvp", 0) __<Subviews>
+}
+public struct NamiXMarkButton : SwiftUI.View {
+  public init(appearance: StandardPairingUI.NamiXMarkButton.Appearance = .regular, diameter: CoreFoundation.CGFloat = 60, onTap: @escaping () -> Swift.Void)
+  public enum Appearance {
+    case regular
+    case inverted
+    public static func == (a: StandardPairingUI.NamiXMarkButton.Appearance, b: StandardPairingUI.NamiXMarkButton.Appearance) -> Swift.Bool
     public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
   }
-  public static let headline: StandardPairingUI.NamiPortableTextStyle
-  public static let headline2: StandardPairingUI.NamiPortableTextStyle
-  public static let headline3: StandardPairingUI.NamiPortableTextStyle
-  public static let headline4: StandardPairingUI.NamiPortableTextStyle
-  public static let headline5: StandardPairingUI.NamiPortableTextStyle
-  public static let headline6: StandardPairingUI.NamiPortableTextStyle
-  public static let paragraph1: StandardPairingUI.NamiPortableTextStyle
-  public static let paragraph2: StandardPairingUI.NamiPortableTextStyle
-  public static let small: StandardPairingUI.NamiPortableTextStyle
-  public static let small2: StandardPairingUI.NamiPortableTextStyle
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI15NamiXMarkButtonV4bodyQrvp", 0) __
+}
+public struct NamiNavBackButton : SwiftUI.View {
+  public var action: () -> Swift.Void
+  public init()
+  public init(action: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17NamiNavBackButtonV4bodyQrvp", 0) __
+}
+public struct NamiCircularXMarkButton : SwiftUI.View {
+  public init(appearance: StandardPairingUI.NamiCircularXMarkButton.Appearance = .regular, diameter: CoreFoundation.CGFloat = 60, onTap: @escaping () -> Swift.Void)
+  public enum Appearance {
+    case regular
+    case inverted
+    public static func == (a: StandardPairingUI.NamiCircularXMarkButton.Appearance, b: StandardPairingUI.NamiCircularXMarkButton.Appearance) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NamiCircularXMarkButtonV4bodyQrvp", 0) __
+}
+public struct NamiPageIndexIndicatorView : SwiftUI.View {
+  public init(numberOfPages: Swift.Int, currentIndex: Swift.Int, activeColor: SwiftUI.Color = Color.gray, inactiveColor: SwiftUI.Color = Color.gray.opacity(0.5), heightOfIndicator: CoreFoundation.CGFloat = 16, spacingOfIndicator: CoreFoundation.CGFloat = 12)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI26NamiPageIndexIndicatorViewV4bodyQrvp", 0) __
+}
+public struct TextFieldView : SwiftUI.UIViewRepresentable {
+  public init(placeholder: Swift.String, text: SwiftUI.Binding<Swift.String>, isEditing: SwiftUI.Binding<Swift.Bool>, returnKeyType: UIKit.UIReturnKeyType = .default)
+  @objc final public class Coordinator : ObjectiveC.NSObject {
+    public init(text: SwiftUI.Binding<Swift.String>, isEditing: SwiftUI.Binding<Swift.Bool>, showsPassword: SwiftUI.Binding<Swift.Bool>, showImageName: Swift.String, hideImageName: Swift.String)
+    @objc deinit
+  }
+  @_Concurrency.MainActor(unsafe) public static func dismantleUIView(_ uiView: UIKit.UITextField, coordinator: StandardPairingUI.TextFieldView.Coordinator)
+  @_Concurrency.MainActor(unsafe) public func makeCoordinator() -> StandardPairingUI.TextFieldView.Coordinator
+  @_Concurrency.MainActor(unsafe) public func makeUIView(context: StandardPairingUI.TextFieldView.Context) -> UIKit.UITextField
+  @_Concurrency.MainActor(unsafe) public func updateUIView(_ textField: UIKit.UITextField, context: StandardPairingUI.TextFieldView.Context)
+  public typealias Body = Swift.Never
+  public typealias UIViewType = UIKit.UITextField
+}
+extension StandardPairingUI.TextFieldView.Coordinator : UIKit.UITextFieldDelegate {
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidBeginEditing(_: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidEndEditing(_: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+}
+public enum NamiTextFieldStyle {
+  case neutral
+  case positive
+  case negative
+  public static func == (a: StandardPairingUI.NamiTextFieldStyle, b: StandardPairingUI.NamiTextFieldStyle) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct NamiTextField : SwiftUI.View {
+  public init(placeholder: Swift.String, text: SwiftUI.Binding<Swift.String>, isEditing: SwiftUI.Binding<Swift.Bool>? = nil, returnKeyType: UIKit.UIReturnKeyType = .default)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI13NamiTextFieldV4bodyQrvp", 0) __
+}
+extension StandardPairingUI.NamiTextField {
+  public func style(_ style: StandardPairingUI.NamiTextFieldStyle) -> StandardPairingUI.NamiTextField
+  public func subText(_ subText: Swift.String?) -> StandardPairingUI.NamiTextField
+  public func secureTextEntry(_ secure: Swift.Bool) -> StandardPairingUI.NamiTextField
+}
+public struct NamiErrorChatBubble : SwiftUI.View {
+  public init(_ text: Swift.String)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI19NamiErrorChatBubbleV4bodyQrvp", 0) __
+}
+public struct NamiChatBubble : SwiftUI.View {
+  public init(_ text: Swift.String)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI14NamiChatBubbleV4bodyQrvp", 0) __
+}
+public struct NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent> : SwiftUI.View where LeadingGroup : SwiftUI.View, TrailingGroup : SwiftUI.View, BottomGroup : SwiftUI.View, NotificationArea : SwiftUI.View, Subviews : SwiftUI.View, MainContent : SwiftUI.View {
+  public init(title: Swift.String? = nil, largeTitle: Swift.String? = nil, themeId: NamiPairingFramework.ThemeID = 0, colorOverride: SwiftUI.Color? = nil, statusbarColorOverride: SwiftUI.Color = .clear, navbarBackgroundBleed: CoreFoundation.CGFloat = 0, contentBehavior: StandardPairingUI.NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent>.ContentBehavior = .scrollable, @SwiftUI.ViewBuilder mainContent: @escaping () -> MainContent = { EmptyView() }, @SwiftUI.ViewBuilder leadingButtonsGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUI.ViewBuilder trailingButtonsGroup: @escaping () -> TrailingGroup = { EmptyView() }, @SwiftUI.ViewBuilder notificationAreaView: @escaping () -> NotificationArea = { EmptyView() }, @SwiftUI.ViewBuilder additionalViews: @escaping () -> Subviews = { EmptyView() }, @SwiftUI.ViewBuilder bottomButtonsGroup: @escaping () -> BottomGroup = { EmptyView() })
+  public enum ContentBehavior {
+    case scrollabe(onScroll: (CoreFoundation.CGFloat) -> Swift.Void)
+    case fixed
+    public static var scrollable: StandardPairingUI.NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent>.ContentBehavior {
+      get
+    }
+  }
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NamiTopNavigationScreenV4bodyQrvp", 0) __<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent>
+}
+public struct CircleButton : SwiftUI.View {
+  public init()
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI12CircleButtonV4bodyQrvp", 0) __
+}
+public struct NamiTextStyle : Swift.Identifiable {
+  public enum Leading {
+    case loose
+    case tight
+    case standard
+    public init?(rawValue: SwiftUI.Font.Leading)
+    public static func == (a: StandardPairingUI.NamiTextStyle.Leading, b: StandardPairingUI.NamiTextStyle.Leading) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static let headline: StandardPairingUI.NamiTextStyle
+  public static let headline2: StandardPairingUI.NamiTextStyle
+  public static let headline3: StandardPairingUI.NamiTextStyle
+  public static let headline4: StandardPairingUI.NamiTextStyle
+  public static let headline5: StandardPairingUI.NamiTextStyle
+  public static let headline6: StandardPairingUI.NamiTextStyle
+  public static let paragraph1: StandardPairingUI.NamiTextStyle
+  public static let paragraph2: StandardPairingUI.NamiTextStyle
+  public static let small: StandardPairingUI.NamiTextStyle
+  public static let small2: StandardPairingUI.NamiTextStyle
   public let id: Swift.String
   public var font: SwiftUI.Font {
     get
@@ -275,11 +476,92 @@ public struct NamiPortableTextStyle : Swift.Identifiable {
   }
   public typealias ID = Swift.String
 }
+public struct NotificationButtonStyle : SwiftUI.ButtonStyle {
+  public init(color: SwiftUI.Color = Color(hex: 0xEAEAEA))
+  public struct NotificationButton : SwiftUI.View {
+    public init(configuration: StandardPairingUI.NotificationButtonStyle.Configuration, color: SwiftUI.Color)
+    @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+      get
+    }
+    public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NotificationButtonStyleV0dE0V4bodyQrvp", 0) __
+  }
+  public func makeBody(configuration: StandardPairingUI.NotificationButtonStyle.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NotificationButtonStyleV8makeBody13configurationQr05SwiftC00eF13ConfigurationV_tF", 0) __
+}
+public struct NamiAuthButtonStyle : SwiftUI.ButtonStyle {
+  public init(mode: StandardPairingUI.NamiAuthButtonStyle.AppearanceColorMode = .light)
+  public struct NamiAuthButton : SwiftUI.View {
+    @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+      get
+    }
+    public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI19NamiAuthButtonStyleV0deF0V4bodyQrvp", 0) __
+  }
+  public enum AppearanceColorMode {
+    case light
+    case dark
+    public static func == (a: StandardPairingUI.NamiAuthButtonStyle.AppearanceColorMode, b: StandardPairingUI.NamiAuthButtonStyle.AppearanceColorMode) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public func makeBody(configuration: StandardPairingUI.NamiAuthButtonStyle.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI19NamiAuthButtonStyleV8makeBody13configurationQr05SwiftC00fG13ConfigurationV_tF", 0) __
+}
+public struct NamiActionButtonStyle : SwiftUI.ButtonStyle {
+  public init(rank: StandardPairingUI.NamiActionButtonStyle.AppearanceHierarchyRank = .primary, sharpCorner: UIKit.UIRectCorner = .topRight)
+  public struct NamiActionButton : SwiftUI.View {
+    @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+      get
+    }
+    public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI21NamiActionButtonStyleV0deF0V4bodyQrvp", 0) __
+  }
+  public enum AppearanceHierarchyRank {
+    case primary
+    case secondary
+    case tertiary
+    case destructive
+    public static func == (a: StandardPairingUI.NamiActionButtonStyle.AppearanceHierarchyRank, b: StandardPairingUI.NamiActionButtonStyle.AppearanceHierarchyRank) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public func makeBody(configuration: StandardPairingUI.NamiActionButtonStyle.Configuration) -> some SwiftUI.View
+  
+  public struct ConstraintLayout {
+    public static let LeadingToSuperView: CoreFoundation.CGFloat
+    public static let TrailingToSuperView: CoreFoundation.CGFloat
+    public static let BottomToSuperView: CoreFoundation.CGFloat
+    public static let BottomToNextButton: CoreFoundation.CGFloat
+    public static let BottomTokeyboard: CoreFoundation.CGFloat
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI21NamiActionButtonStyleV8makeBody13configurationQr05SwiftC00fG13ConfigurationV_tF", 0) __
+}
+public struct ScrollViewWithOnScrollAction<Subviews> : SwiftUI.View where Subviews : SwiftUI.View {
+  public init(onScroll action: @escaping ((CoreFoundation.CGFloat) -> Swift.Void) = { _ in }, @SwiftUI.ViewBuilder subviews: () -> Subviews)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI016ScrollViewWithOnD6ActionV4bodyQrvp", 0) __<Subviews>
+}
 extension StandardPairingUI.Colors.ColorSaturation : Swift.Equatable {}
 extension StandardPairingUI.Colors.ColorSaturation : Swift.Hashable {}
 extension StandardPairingUI.Colors.ColorSaturation : Swift.RawRepresentable {}
 extension StandardPairingUI.Colors.ColorSaturationNumber : Swift.Equatable {}
 extension StandardPairingUI.Colors.ColorSaturationNumber : Swift.Hashable {}
 extension StandardPairingUI.Colors.ColorSaturationNumber : Swift.RawRepresentable {}
-extension StandardPairingUI.NamiPortableTextStyle.Leading : Swift.Equatable {}
-extension StandardPairingUI.NamiPortableTextStyle.Leading : Swift.Hashable {}
+extension StandardPairingUI.NamiXMarkButton.Appearance : Swift.Equatable {}
+extension StandardPairingUI.NamiXMarkButton.Appearance : Swift.Hashable {}
+extension StandardPairingUI.NamiCircularXMarkButton.Appearance : Swift.Equatable {}
+extension StandardPairingUI.NamiCircularXMarkButton.Appearance : Swift.Hashable {}
+extension StandardPairingUI.NamiTextFieldStyle : Swift.Equatable {}
+extension StandardPairingUI.NamiTextFieldStyle : Swift.Hashable {}
+extension StandardPairingUI.NamiTextStyle.Leading : Swift.Equatable {}
+extension StandardPairingUI.NamiTextStyle.Leading : Swift.Hashable {}
+extension StandardPairingUI.NamiAuthButtonStyle.AppearanceColorMode : Swift.Equatable {}
+extension StandardPairingUI.NamiAuthButtonStyle.AppearanceColorMode : Swift.Hashable {}
+extension StandardPairingUI.NamiActionButtonStyle.AppearanceHierarchyRank : Swift.Equatable {}
+extension StandardPairingUI.NamiActionButtonStyle.AppearanceHierarchyRank : Swift.Hashable {}

@@ -230,6 +230,8 @@ using UInt = size_t;
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import ObjectiveC;
+@import UIKit;
 #endif
 
 #endif
@@ -250,6 +252,21 @@ using UInt = size_t;
 #endif
 
 #if defined(__OBJC__)
+
+SWIFT_CLASS("_TtCV17StandardPairingUI13TextFieldView11Coordinator")
+@interface Coordinator : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UITextField;
+
+@interface Coordinator (SWIFT_EXTENSION(StandardPairingUI)) <UITextFieldDelegate>
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)_;
+- (void)textFieldDidEndEditing:(UITextField * _Nonnull)_;
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+@end
+
 
 #endif
 #if defined(__cplusplus)
@@ -491,6 +508,8 @@ using UInt = size_t;
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import ObjectiveC;
+@import UIKit;
 #endif
 
 #endif
@@ -511,6 +530,21 @@ using UInt = size_t;
 #endif
 
 #if defined(__OBJC__)
+
+SWIFT_CLASS("_TtCV17StandardPairingUI13TextFieldView11Coordinator")
+@interface Coordinator : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UITextField;
+
+@interface Coordinator (SWIFT_EXTENSION(StandardPairingUI)) <UITextFieldDelegate>
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)_;
+- (void)textFieldDidEndEditing:(UITextField * _Nonnull)_;
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+@end
+
 
 #endif
 #if defined(__cplusplus)
