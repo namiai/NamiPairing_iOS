@@ -12,13 +12,14 @@ let package = Package(
     products: [
         .library(
             name: "NamiPairing",
-            targets: ["NamiPairingFramework", "StandardPairingUI"]),
+            targets: ["NamiPairingFramework", "StandardPairingUI", "DeviceConnections"]),
         .library(
             name: "NamiPairing-NoUI", 
-            targets: ["NamiPairingFramework"])
+            targets: ["NamiPairingFramework", "DeviceConnections"])
     ],
     targets: [
         .binaryTarget(name: "NamiPairingFramework", path: "Sources/NamiPairing/NamiPairingFramework.xcframework"),
         .binaryTarget(name: "StandardPairingUI", path: "Sources/NamiPairing/StandardPairingUI.xcframework"),
+        .binaryTarget(name: "DeviceConnections", path: "Sources/NamiPairing/DeviceConnections.xcframework")
     ]
 )
