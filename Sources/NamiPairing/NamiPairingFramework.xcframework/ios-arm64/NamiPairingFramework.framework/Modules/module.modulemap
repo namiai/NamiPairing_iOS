@@ -1,7 +1,7 @@
 framework module NamiPairingFramework {
   umbrella header "NamiPairingFramework.h"
-
   export *
+
   module * { export * }
 }
 

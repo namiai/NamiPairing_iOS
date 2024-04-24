@@ -1,12 +1,13 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
-// swift-module-flags: -target arm64-apple-ios13.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name NamiPairingFramework
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target arm64-apple-ios14.5-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name NamiPairingFramework
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import Combine
 import CommonCrypto
 import CoreBluetooth
 import CryptoKit
+import DeviceConnections
 import Foundation
 @_exported import NamiPairingFramework
 import Swift
@@ -14,22 +15,10 @@ import SwiftUI
 import UIKit
 import _Concurrency
 import _StringProcessing
-extension Combine.Publishers {
-  public struct RetryIf<Upstream> : Combine.Publisher where Upstream : Combine.Publisher {
-    public typealias Output = Upstream.Output
-    public typealias Failure = Upstream.Failure
-    public let publisher: Upstream
-    public let retries: Swift.Int
-    public let condition: (Upstream.Failure) -> Swift.Bool
-    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
-  }
-}
+import _SwiftConcurrencyShims
 extension Foundation.URLRequest {
   public init(method: Swift.String = "GET", base: Foundation.URL, path: Swift.String, query: [Swift.String : Swift.String], headers: [Swift.String : Swift.String] = [:], body: Foundation.Data? = nil)
   public init(method: Swift.String = "GET", base: Foundation.URL, path: Swift.String, query: [Foundation.URLQueryItem] = [], headers: [Swift.String : Swift.String] = [:], body: Foundation.Data? = nil)
-}
-extension Combine.Publisher {
-  public func retry(_ retries: Swift.Int, if condition: @escaping (Self.Failure) -> Swift.Bool) -> Combine.Publishers.RetryIf<Self>
 }
 @_hasMissingDesignatedInitializers final public class InMemoryThreadDatasetStorage : NamiPairingFramework.ThreadSecureStorageProtocol {
   public static func storeOrUpdate(with data: Foundation.Data, at key: Swift.String, server: Swift.String)
@@ -139,60 +128,60 @@ extension NamiPairingFramework.ThreadOperationalDatasetProvider : NamiPairingFra
 extension NamiPairingFramework.NamiThreadOperationalDataset : NamiPairingFramework.PairingNamiThreadOperationalDatasetProtocol {
 }
 public struct Device : NamiPairingFramework.DeviceProtocol, Swift.Decodable, Swift.Equatable {
-  public var id: NamiPairingFramework.DeviceID
-  public var uid: NamiPairingFramework.DeviceUniversalID
+  public var id: DeviceConnections.DeviceID
+  public var uid: DeviceConnections.DeviceUniversalID
   public var urn: Swift.String
   public var model: NamiPairingFramework.DeviceModel
   public var deviceState: NamiPairingFramework.DeviceCloudState?
   public static func == (a: NamiPairingFramework.Device, b: NamiPairingFramework.Device) -> Swift.Bool
   public typealias DeviceCloudState = NamiPairingFramework.DeviceCloudState
   public typealias DeviceModel = NamiPairingFramework.DeviceModel
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct DeviceCloudState : NamiPairingFramework.DeviceCloudStateProtocol, Swift.Decodable, Swift.Equatable {
   public var payload: Foundation.Data
   public static func == (a: NamiPairingFramework.DeviceCloudState, b: NamiPairingFramework.DeviceCloudState) -> Swift.Bool
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct DeviceModel : NamiPairingFramework.DeviceModelProtocol, Swift.Decodable, Swift.Equatable {
   public var codeName: Swift.String
   public var productLabel: Swift.String
-  public var productId: NamiPairingFramework.DeviceProductID
+  public var productId: DeviceConnections.DeviceProductID
   public static func == (a: NamiPairingFramework.DeviceModel, b: NamiPairingFramework.DeviceModel) -> Swift.Bool
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct Place : Swift.Decodable, Swift.Equatable, Swift.Identifiable {
-  public var id: NamiPairingFramework.PlaceID
+  public var id: DeviceConnections.PlaceID
   public static func == (a: NamiPairingFramework.Place, b: NamiPairingFramework.Place) -> Swift.Bool
-  public typealias ID = NamiPairingFramework.PlaceID
-  public init(from decoder: Swift.Decoder) throws
+  public typealias ID = DeviceConnections.PlaceID
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct PlacesResponse : Swift.Decodable {
-  public init(places: [NamiPairingFramework.Place], permissions: [NamiPairingFramework.URN : NamiPairingFramework.UserPermissionsSet])
+  public init(places: [NamiPairingFramework.Place], permissions: [DeviceConnections.URN : DeviceConnections.UserPermissionsSet])
   public var places: [NamiPairingFramework.Place]
-  public var permissions: [NamiPairingFramework.URN : NamiPairingFramework.UserPermissionsSet]
-  public init(from decoder: Swift.Decoder) throws
+  public var permissions: [DeviceConnections.URN : DeviceConnections.UserPermissionsSet]
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct PlaceZone : NamiPairingFramework.PlaceZoneProtocol, Swift.Decodable, Swift.Equatable, Swift.Identifiable {
-  public var id: NamiPairingFramework.PlaceZoneID
+  public var id: DeviceConnections.PlaceZoneID
   public var externalId: Swift.String
   public var urn: Swift.String
   public var name: Swift.String
   public static func == (a: NamiPairingFramework.PlaceZone, b: NamiPairingFramework.PlaceZone) -> Swift.Bool
-  public typealias ID = NamiPairingFramework.PlaceZoneID
-  public init(from decoder: Swift.Decoder) throws
+  public typealias ID = DeviceConnections.PlaceZoneID
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct Room : Swift.Codable, Swift.Equatable, Swift.Identifiable {
-  public var id: NamiPairingFramework.RoomID
+  public var id: DeviceConnections.RoomID
   public static func == (a: NamiPairingFramework.Room, b: NamiPairingFramework.Room) -> Swift.Bool
-  public typealias ID = NamiPairingFramework.RoomID
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public typealias ID = DeviceConnections.RoomID
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct PairingChallengeRequest : Swift.Encodable {
   public init(certificate: Swift.String)
   public var certificate: Swift.String
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public struct PairDeviceRequest : Swift.Encodable {
   public init(deviceName: Swift.String, cloudChallenge: Swift.String, deviceResponse: Swift.String, deviceCertificate: Swift.String, intent: Swift.String?)
@@ -201,20 +190,20 @@ public struct PairDeviceRequest : Swift.Encodable {
   public var deviceResponse: Swift.String
   public var deviceCertificate: Swift.String
   public var intent: Swift.String?
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public struct UpdatedDevice : NamiPairingFramework.UpdatedDeviceProtocol, Swift.Decodable {
-  public var uid: NamiPairingFramework.DeviceUniversalID
+  public var uid: DeviceConnections.DeviceUniversalID
   public static func == (a: NamiPairingFramework.UpdatedDevice, b: NamiPairingFramework.UpdatedDevice) -> Swift.Bool
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct WiFiCredentialsUpdateSession : NamiPairingFramework.WiFiCredentialsUpdateSessionProtocol, Swift.Decodable {
-  public var id: NamiPairingFramework.WiFiCredentialsUpdateSessionID
-  public var zoneId: NamiPairingFramework.PlaceZoneID
+  public var id: DeviceConnections.WiFiCredentialsUpdateSessionID
+  public var zoneId: DeviceConnections.PlaceZoneID
   public var updatedDevices: [NamiPairingFramework.UpdatedDevice]?
   public static func == (a: NamiPairingFramework.WiFiCredentialsUpdateSession, b: NamiPairingFramework.WiFiCredentialsUpdateSession) -> Swift.Bool
   public typealias UpdatedDevice = NamiPairingFramework.UpdatedDevice
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public class NamiPairing<Container> where Container : NamiPairingFramework.PairingStepsContainer {
   public typealias PairingParameters = NamiPairingFramework.Tomonari<Container>.PairingParameters
@@ -222,15 +211,18 @@ public class NamiPairing<Container> where Container : NamiPairingFramework.Pairi
     case sessionActivateNoData
     case sessionActivateMalformedResponse(Foundation.Data)
     case roomUuidNotInTopology
+    case incorrectDeviceUID
   }
-  public var api: NamiPairingFramework.PairingWebAPIProtocol
-  public var wifiStorage: NamiPairingFramework.PairingWiFiStorageProtocol
-  public var threadDatasetProvider: NamiPairingFramework.PairingThreadOperationalDatasetProviderProtocol
-  public var devicePairingState: Combine.PassthroughSubject<NamiPairingFramework.Tomonari<Container>.DevicePairingState, Swift.Error> {
+  public var api: any NamiPairingFramework.PairingWebAPIProtocol
+  public var wifiStorage: any NamiPairingFramework.PairingWiFiStorageProtocol
+  public var threadDatasetProvider: any NamiPairingFramework.PairingThreadOperationalDatasetProviderProtocol
+  public var devicePairingState: Combine.PassthroughSubject<NamiPairingFramework.Tomonari<Container>.DevicePairingState, any Swift.Error> {
     get
   }
   public init<WiFiStorage, SecureStorage>(sessionCode: Swift.String, wifiStorage: WiFiStorage = InMemoryWiFiStorage(), threadDatasetStore: SecureStorage.Type = InMemoryThreadDatasetStorage.self) throws where WiFiStorage : NamiPairingFramework.PairingWiFiStorageProtocol, SecureStorage : NamiPairingFramework.ThreadSecureStorageProtocol
   public func startPairing(roomId: Swift.String, pairingSteps: Container, pairingParameters: NamiPairingFramework.NamiPairing<Container>.PairingParameters = .none) throws -> some SwiftUI.View
+  
+  public func startPositioning(deviceName: Swift.String, deviceUid: Swift.String, pairingSteps: Container, onPositioningEnded: @escaping (NamiPairingFramework.PositioningResult) -> Swift.Void) throws -> some SwiftUI.View
   
   @objc deinit
 }
@@ -240,1908 +232,6 @@ final public class InMemoryWiFiStorage : NamiPairingFramework.PairingWiFiStorage
   final public func password(for networkSSID: Swift.String) -> Swift.String?
   final public func removeAll()
   @objc deinit
-}
-public enum NamiDeviceCapability : Swift.Equatable {
-  case deviceInformation
-  case diagnostics
-  case relay
-  case sentinelAlarm
-  case devkitLed
-  case devkitAlarm
-  case widar
-  public var endpoint: NamiPairingFramework.NamiDeviceEndpoint {
-    get
-  }
-  public static var `default`: [NamiPairingFramework.NamiDeviceCapability]
-  public static var plug: [NamiPairingFramework.NamiDeviceCapability]
-  public static var devkit: [NamiPairingFramework.NamiDeviceCapability]
-  public static var pod: [NamiPairingFramework.NamiDeviceCapability]
-  public static var widarSensor: [NamiPairingFramework.NamiDeviceCapability]
-  public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: NamiPairingFramework.NamiDeviceCapability, b: NamiPairingFramework.NamiDeviceCapability) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public struct NamiDeviceEndpoint : Swift.Equatable {
-  public enum EndpointType : Swift.Equatable {
-    public enum ReadableCluster {
-      case stateOnOff
-      case stateColorControl
-      case stateLevelControlForLighting
-      case stateDeviceInfo
-      case stateWarning
-      case stateWifiInfo
-      case stateThreadNetworkInfo
-      case stateWiDar
-      public static func == (a: NamiPairingFramework.NamiDeviceEndpoint.EndpointType.ReadableCluster, b: NamiPairingFramework.NamiDeviceEndpoint.EndpointType.ReadableCluster) -> Swift.Bool
-      public func hash(into hasher: inout Swift.Hasher)
-      public var hashValue: Swift.Int {
-        get
-      }
-    }
-    public enum WritableCluster {
-      case changeOnOff
-      case changeColorControl
-      case changeLevelControlForLighting
-      case changeWiDar
-      public static func == (a: NamiPairingFramework.NamiDeviceEndpoint.EndpointType.WritableCluster, b: NamiPairingFramework.NamiDeviceEndpoint.EndpointType.WritableCluster) -> Swift.Bool
-      public func hash(into hasher: inout Swift.Hasher)
-      public var hashValue: Swift.Int {
-        get
-      }
-    }
-    public static func == (a: NamiPairingFramework.NamiDeviceEndpoint.EndpointType, b: NamiPairingFramework.NamiDeviceEndpoint.EndpointType) -> Swift.Bool
-  }
-  public var endpoint: Swift.Int32
-  public var readable: [NamiPairingFramework.NamiDeviceEndpoint.EndpointType.ReadableCluster]
-  public var writable: [NamiPairingFramework.NamiDeviceEndpoint.EndpointType.WritableCluster]
-  public static func == (a: NamiPairingFramework.NamiDeviceEndpoint, b: NamiPairingFramework.NamiDeviceEndpoint) -> Swift.Bool
-}
-public enum MeasurementSystem {
-  case metric
-  case uk
-  case us
-  public static func == (a: NamiPairingFramework.MeasurementSystem, b: NamiPairingFramework.MeasurementSystem) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-extension SwiftUI.EnvironmentValues {
-  public var measurementSystem: NamiPairingFramework.MeasurementSystem {
-    get
-  }
-}
-extension Foundation.Locale {
-  public var systemOfMeasurements: Swift.String? {
-    get
-  }
-  public static let metricMeasurementSystem: Swift.String
-  public static let usMeasurementSystem: Swift.String
-  public static let ukMeasurementSystem: Swift.String
-}
-public struct CodeLinkingInfo : Swift.Decodable, Swift.Equatable {
-  public init(code: NamiPairingFramework.SignInCode, requestedAt: Foundation.Date, expiresAt: Foundation.Date, ip: Swift.String? = nil, browser: Swift.String? = nil, os: Swift.String? = nil, city: Swift.String? = nil, country: Swift.String? = nil)
-  public init(from decoder: Swift.Decoder) throws
-  public var code: NamiPairingFramework.SignInCode
-  public var requestedAt: Foundation.Date
-  public var expiresAt: Foundation.Date
-  public var ip: Swift.String?
-  public var browser: Swift.String?
-  public var os: Swift.String?
-  public var city: Swift.String?
-  public var country: Swift.String?
-  public static func == (a: NamiPairingFramework.CodeLinkingInfo, b: NamiPairingFramework.CodeLinkingInfo) -> Swift.Bool
-}
-extension NamiPairingFramework.NamiDeviceModel {
-  public static let preset: [NamiPairingFramework.NamiDeviceModel]
-}
-public enum NamiDeviceConnectivity {
-  case hasWiFi
-  case hasThread
-  public static func == (a: NamiPairingFramework.NamiDeviceConnectivity, b: NamiPairingFramework.NamiDeviceConnectivity) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-extension Foundation.CharacterSet {
-  public static var hexDigits: Foundation.CharacterSet
-}
-extension Swift.String {
-  public func replacingCharacters(from characterSet: Foundation.CharacterSet, with replacement: Swift.String) -> Swift.String
-}
-public typealias TokenString = Swift.String
-public typealias UserID = Swift.Int64
-public typealias UserIconID = Swift.Int64
-public typealias URN = Swift.String
-public typealias PlaceID = Swift.Int64
-public typealias UserPermissionsSet = [Swift.String]
-public typealias PlaceZoneID = Swift.Int64
-public typealias ThemeID = Swift.Int64
-public typealias IconID = Swift.Int64
-public typealias PlaceUserID = Swift.Int64
-public typealias RoomID = Swift.Int64
-public typealias DeviceProductID = Swift.Int64
-public typealias DeviceID = Swift.Int64
-public typealias NamiAlertID = Swift.Int64
-public typealias EventID = Swift.Int64
-public typealias InviteCode = Swift.String
-public typealias SessionCode = Swift.String
-public typealias SignInCode = Swift.String
-public typealias SessionPermission = Swift.String
-public typealias WiFiCredentialsUpdateSessionID = Swift.Int64
-public typealias PropertyTypeID = Swift.Int64
-public typealias PropertyElevationID = Swift.Int64
-public typealias PropertyAvgFloorAreaID = Swift.Int64
-public struct DeviceUniversalID : Swift.Equatable, Swift.Decodable, Swift.Hashable {
-  public init?(_ string: Swift.String)
-  public init(_ number: Swift.UInt64)
-  public init(from decoder: Swift.Decoder) throws
-  public var macFormatted: Swift.String {
-    get
-  }
-  public static func == (a: NamiPairingFramework.DeviceUniversalID, b: NamiPairingFramework.DeviceUniversalID) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-extension NamiPairingFramework.DeviceUniversalID : Swift.Comparable {
-  public static func < (lhs: NamiPairingFramework.DeviceUniversalID, rhs: NamiPairingFramework.DeviceUniversalID) -> Swift.Bool
-}
-extension NamiPairingFramework.DeviceUniversalID : Swift.CustomStringConvertible {
-  public var description: Swift.String {
-    get
-  }
-}
-extension NamiPairingFramework.DeviceUniversalID {
-  public static func randomValue() -> NamiPairingFramework.DeviceUniversalID
-}
-extension NamiPairingFramework.DeviceUniversalID : Swift.Encodable {
-  public func encode(to encoder: Swift.Encoder) throws
-}
-extension Swift.UInt64 {
-  public init?(_ uid: NamiPairingFramework.DeviceUniversalID)
-}
-public struct NamiDeviceModel : Swift.Equatable {
-  public init(codeName: Swift.String, hardwareModel: Swift.String, productLabel: Swift.String, productId: NamiPairingFramework.DeviceProductID, capabilities: [NamiPairingFramework.NamiDeviceCapability], connectivity: [NamiPairingFramework.NamiDeviceConnectivity])
-  public var codeName: Swift.String
-  public var hardwareModel: Swift.String
-  public var productLabel: Swift.String
-  public var productId: NamiPairingFramework.DeviceProductID
-  public var capabilities: [NamiPairingFramework.NamiDeviceCapability]
-  public var connectivity: [NamiPairingFramework.NamiDeviceConnectivity]
-  public static func == (a: NamiPairingFramework.NamiDeviceModel, b: NamiPairingFramework.NamiDeviceModel) -> Swift.Bool
-}
-extension NamiPairingFramework.NamiDeviceModel {
-  public static let unknown: NamiPairingFramework.NamiDeviceModel
-}
-public enum NamiAlertMode : Swift.Int, Swift.Comparable, Swift.Codable {
-  case armed
-  case aware
-  case relaxed
-  public static func < (lhs: NamiPairingFramework.NamiAlertMode, rhs: NamiPairingFramework.NamiAlertMode) -> Swift.Bool
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-public typealias NamiI18n = NamiPairingFramework.I18n
-extension NamiPairingFramework.I18n.SignUp {
-  public static func localizedButtonTitle(for providerName: Swift.String) -> Swift.String
-}
-public enum I18n {
-  public static let accountLinkingDidYouMakeThisRequest: Swift.String
-  public static let accountLinkingSignInConfirmedBodyMessage: Swift.String
-  public static let accountLinkingSignInError: Swift.String
-  public static let appName: Swift.String
-  public static let appNameDebug: Swift.String
-  public static let areYouWantToCancelPairingProcess: Swift.String
-  public static let confirmCancelPairing: Swift.String
-  public static let defaultNotificationChannelId: Swift.String
-  public static let defaultNotificationChannelName: Swift.String
-  public static let deviceDetailsTooltipConnect: Swift.String
-  public static let deviceDetailsTooltipNotConnect: Swift.String
-  public static let deviceIsDisconnectedToInternet: Swift.String
-  public static let externalSigninContinueOauth: Swift.String
-  public static let fcmMessageTitle: Swift.String
-  public static let internetConnection: Swift.String
-  public static let invitationDetailsRevoke: Swift.String
-  public static let invitationDetailsRevokeRevokeAlertMessage: Swift.String
-  public static let localConnectionWithMobile: Swift.String
-  public static func memberDetailsLeaveMessage(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let memberDetailsLeavePlace: Swift.String
-  public static let memberDetailsRemoveMember: Swift.String
-  public static func memberDetailsRemovePeopleMessage(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let placeCreation: Swift.String
-  public static func placeDetailNumberOfZone(_ p1: Swift.Int) -> Swift.String
-  public static func placeDetailsEventUserRemoveMessage(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>, _ p3: Swift.UnsafePointer<Swift.CChar>, _ p4: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let placeDetailsEvents: Swift.String
-  public static let placeDetailsGraph: Swift.String
-  public static let placeDetailsGraphLive: Swift.String
-  public static func placeDetailsMemberPendingExpiryTime(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeDetailsMemberPendingExpiryTimeDays(_ p1: Swift.Int) -> Swift.String
-  public static func placeDetailsMemberPendingExpiryTimeDaysWithHours(_ p1: Swift.Int, _ p2: Swift.Int) -> Swift.String
-  public static func placeDetailsMemberPendingExpiryTimeHours(_ p1: Swift.Int) -> Swift.String
-  public static func placeDetailsMemberPendingExpiryTimeMinutes(_ p1: Swift.Int) -> Swift.String
-  public static let placeDetailsMembersActive: Swift.String
-  public static func placeDetailsMembersDays(_ p1: Swift.Int) -> Swift.String
-  public static func placeDetailsMembersHours(_ p1: Swift.Int) -> Swift.String
-  public static func placeDetailsMembersMinutes(_ p1: Swift.Int) -> Swift.String
-  public static func placeDetailsMembersMonths(_ p1: Swift.Int) -> Swift.String
-  public static let placeDetailsPeople: Swift.String
-  public static let placeResumeSetUpAKit: Swift.String
-  public static func placeSettingsDevicesDescription(_ p1: Swift.Int) -> Swift.String
-  public static func placeSettingsDevicesDescriptionAndroid(_ p1: Swift.Int) -> Swift.String
-  public static let placeSettingsZeroDeviceDescription: Swift.String
-  public static func placeSettingsZonesDescription(_ p1: Swift.Int) -> Swift.String
-  public static func placeSettingsZonesDescriptionAndroid(_ p1: Swift.Int) -> Swift.String
-  public static let profileAccount: Swift.String
-  public static let profileAppVersion: Swift.String
-  public static let profileCustomer: Swift.String
-  public static let profileHelpNFeedback: Swift.String
-  public static let profileInstaller: Swift.String
-  public static let profileLinkedThirdPartyAccounts: Swift.String
-  public static let profileLinkedThirdPartyAccountsNotLinkYet: Swift.String
-  public static let profileLinkedThirdPartyAccountsUnlink: Swift.String
-  public static let profileSettings: Swift.String
-  public static let profileSupportArticle: Swift.String
-  public static let profileUser: Swift.String
-  public static let setupAKitHowToPlaceDeviceNonFirstPairedDeviceGuideContent1: Swift.String
-  public static let setupAKitHowToPlaceDeviceNonFirstPairedDeviceGuideContent2Imperial: Swift.String
-  public static let setupAKitHowToPlaceDeviceNonFirstPairedDeviceGuideContent2Metric: Swift.String
-  public static let welcomePagePolicy: Swift.String
-  public enum AccountLinking {
-    public static let authorizeSignInRequest: Swift.String
-    public static let pleaseSignin: Swift.String
-    public static func signInRequestIpTimeBrowser(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>, _ p3: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static func signInRequestPlaceIpTimeBrowserAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>, _ p3: Swift.UnsafePointer<Swift.CChar>, _ p4: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  }
-  public enum Activity {
-    public static let motion: Swift.String
-    public static let motionDetectedIn: Swift.String
-    public static let noMotion: Swift.String
-    public static let noPresence: Swift.String
-    public static let presence: Swift.String
-    public static let presenceDetectedIn: Swift.String
-    public static let title: Swift.String
-    public static let totalMotionTime: Swift.String
-    public enum Event {
-      public static let ongoing: Swift.String
-    }
-  }
-  public enum Alarm {
-    public static func detectedAt(_ p1: Any, _ p2: Any) -> Swift.String
-    public static func detectedAtAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let disarm: Swift.String
-    public static func intrusionDescription(_ p1: Any, _ p2: Any) -> Swift.String
-    public static func intrusionDescriptionAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let intrusionTitle: Swift.String
-    public static let reportFalse: Swift.String
-    public enum FalseAlarm {
-      public static func causeListTitle(_ p1: Any) -> Swift.String
-      public static let reportButtonTitle: Swift.String
-      public static func reportHint(_ p1: Any) -> Swift.String
-      public static let selectCauseTitle: Swift.String
-      public static let title: Swift.String
-      public enum Cause {
-        public static let myself: Swift.String
-        public static let other: Swift.String
-        public static let smallMovingObjects: Swift.String
-      }
-      public enum SensitivityExplanatio {
-        public static let adjustSensitivityButton: Swift.String
-        public static let armSelectedZones: Swift.String
-        public static let possibleReasons: Swift.String
-        public static let sensitivityLevelHint: Swift.String
-      }
-      public enum SensitivityExplanation {
-        public static let reduceFalseAlarmsTitle: Swift.String
-      }
-    }
-    public enum LiveAlarm {
-      public static func activitiesStopped(_ p1: Any) -> Swift.String
-      public static func noActivity(_ p1: Any) -> Swift.String
-      public static func ongoingActivity(_ p1: Any) -> Swift.String
-      public static let securityMonitoring: Swift.String
-      public static func startedAtInZone(_ p1: Any, _ p2: Any) -> Swift.String
-      public static func stoppedActivity(_ p1: Any) -> Swift.String
-    }
-    public enum Pill {
-      public static func alarmTriggered(_ p1: Any) -> Swift.String
-    }
-    public enum Reason {
-      public static let co2: Swift.String
-      public static let fire: Swift.String
-      public static let flood: Swift.String
-      public static let intrusion: Swift.String
-    }
-    public enum Report {
-      public static let alarmDisarmed: Swift.String
-      public static let alarmTriggered: Swift.String
-      public static let duration: Swift.String
-      public static func eventStartEndTime(_ p1: Any, _ p2: Any) -> Swift.String
-      public static let securityLog: Swift.String
-      public static func startedAt(_ p1: Any) -> Swift.String
-      public static func subjectHistory(_ p1: Any) -> Swift.String
-      public static let title: Swift.String
-      public static func totalActiveTime(_ p1: Any) -> Swift.String
-      public static let zonesAffected: Swift.String
-    }
-  }
-  public enum AlertMessage {
-    public static func nolongerAccess(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let pluralPlacesWereDeleted: Swift.String
-    public static let singularPlaceWasDeleted: Swift.String
-  }
-  public enum ChangeUsername {
-    public static let emptyErrorMessage: Swift.String
-    public static let placeholder: Swift.String
-    public static let promptMessage: Swift.String
-  }
-  public enum ChooseRoom {
-    public static let confirm: Swift.String
-    public static let createRoom: Swift.String
-    public static let header: Swift.String
-    public static let loadDataFailed: Swift.String
-    public static let selectOrCreateHeader: Swift.String
-  }
-  public enum ChooseZone {
-    public static let confirm: Swift.String
-    public static let createZone: Swift.String
-    public static let header: Swift.String
-    public static let loadDataFailed: Swift.String
-    public static let noDevices: Swift.String
-    public static func threadDevicesCount(_ p1: Any) -> Swift.String
-    public static func wifiDevicesCount(_ p1: Any) -> Swift.String
-  }
-  public enum CommissioningMode {
-    public enum CheckupZone {
-      public static let contactIsntaller: Swift.String
-    }
-    public enum CompanionLanding {
-      public static let cancel: Swift.String
-      public static let contactSupport: Swift.String
-      public static let goToPlaceButton: Swift.String
-      public static let loadingInfo: Swift.String
-      public static let placeFound: Swift.String
-    }
-    public enum ConfirmPlace {
-      public static let confirmButton: Swift.String
-      public static let namePlaceHint: Swift.String
-      public static let namePlacePlaceholder: Swift.String
-    }
-    public enum LoadingScreen {
-      public static let loadingContent: Swift.String
-    }
-    public enum PlaceDetails {
-      public static let addDevice: Swift.String
-      public static let addDevicesHint: Swift.String
-      public static let addZone: Swift.String
-      public static let contactIsntaller: Swift.String
-      public static let createdAt: Swift.String
-      public static let createdAtAndroid: Swift.String
-      public static let exitButton: Swift.String
-      public static let finishSetupButton: Swift.String
-      public static let renamePlaceButton: Swift.String
-      public static let updatedAt: Swift.String
-      public static let updatedAtAndroid: Swift.String
-      public static let zonesSectionTitle: Swift.String
-    }
-    public enum SetupModeSettings {
-      public static let exitSetup: Swift.String
-      public static let installer: Swift.String
-      public static let placeSettings: Swift.String
-      public static let settings: Swift.String
-      public static let user: Swift.String
-    }
-  }
-  public enum Companion {
-    public static let addZone: Swift.String
-    public static let editPlaceNameHint: Swift.String
-    public static let exitSetup: Swift.String
-    public static let exitSetupAndroid: Swift.String
-    public static let zoneHealth: Swift.String
-    public static let zoneMotionSensing: Swift.String
-    public static let zones: Swift.String
-    public enum Home {
-      public static let contactYourInstallerToSetUpYourPlace: Swift.String
-    }
-    public enum ZoneHealth {
-      public static let checkAllDevices: Swift.String
-      public static let degraded: Swift.String
-      public static let healthy: Swift.String
-      public static let unhealthy: Swift.String
-      public static let worksWell: Swift.String
-    }
-    public enum ZoneMotionSensing {
-      public static let connectLocalWifi: Swift.String
-      public static let dataNotAvailable: Swift.String
-      public static let movementDetected: Swift.String
-      public static let noMovementDetected: Swift.String
-    }
-  }
-  public enum ConfirmPlaceName {
-    public static let buttonConfirm: Swift.String
-    public static let header: Swift.String
-    public static let subhead: Swift.String
-  }
-  public enum ConfirmRoomName {
-    public static let buttonConfirm: Swift.String
-    public static let header: Swift.String
-    public static let subhead: Swift.String
-  }
-  public enum ConnectivityIndicator {
-    public static let deviceConnected: Swift.String
-    public static let deviceDisconnected: Swift.String
-    public static func deviceRssi(_ p1: Swift.Int) -> Swift.String
-  }
-  public enum CreateFirstPlace {
-    public static let cancel: Swift.String
-    public static let createPlace: Swift.String
-    public static let createPlaceSlideText: Swift.String
-    public static let joinPlace: Swift.String
-    public static let joinPlaceSlideText: Swift.String
-    public static let letsStart: Swift.String
-    public static let welcomeText: Swift.String
-  }
-  public enum CreatePlace {
-    public static let sectionTitle: Swift.String
-  }
-  public enum CreateZone {
-    public static let buttonConfirm: Swift.String
-    public static let description: Swift.String
-    public static let enterName: Swift.String
-    public static let enterNameHint: Swift.String
-    public static let header: Swift.String
-    public static let nameTheZoneDescription: Swift.String
-    public static let placeholder: Swift.String
-    public static let secondFloorPlaceholder: Swift.String
-    public static let title: Swift.String
-  }
-  public enum Dashboard {
-    public static let addNewPlace: Swift.String
-    public static let addNewUser: Swift.String
-    public static let fineMessage: Swift.String
-    public static func formatDisconnectedDeviceInMultipleZoneAndroid(_ p1: Swift.Int) -> Swift.String
-    public static func formatIssueInAPlace(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static func formatIssueInMultiplePlace(_ p1: Swift.Int) -> Swift.String
-    public static let lastSeen: Swift.String
-    public static let people: Swift.String
-    public static let places: Swift.String
-    public static let sensingLinkBrokenInMultipleZone: Swift.String
-    public static let sensingLinkBrokenInOneZone: Swift.String
-    public enum PlaceTile {
-      public static let addOneMoreDevice: Swift.String
-      public static let addTwoDevices: Swift.String
-      public static let checkYourDeviceSetup: Swift.String
-      public static let currentStatus: Swift.String
-      public static let intrusionDetected: Swift.String
-      public static let movementDetected: Swift.String
-      public static let noMovementDetected: Swift.String
-      public static let noSensingData: Swift.String
-      public static let notAvailable: Swift.String
-      public static let pairKit: Swift.String
-      public static let pairMore: Swift.String
-      public static let pairOneMore: Swift.String
-      public static let pairTwo: Swift.String
-      public static func sinceStartedDate(_ p1: Any) -> Swift.String
-      public static func sinceStartedDateAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    }
-  }
-  public enum DeletePlace {
-    public static let confirmDeletePlace: Swift.String
-    public static let confirmLeavePlace: Swift.String
-    public static let deleteAllRelatedData: Swift.String
-    public static let deleteAllRelatedDataDescription: Swift.String
-    public static let deletePlaceAndData: Swift.String
-    public static let deletePlaceTitle: Swift.String
-    public static let inviteAgain: Swift.String
-    public static let leavePlaceTitle: Swift.String
-    public static let loseAccessToAllData: Swift.String
-    public static let loseAccessToAllDataDescription: Swift.String
-    public static let loseAccessToAllDevices: Swift.String
-    public static let loseAccessToAllDevicesDescription: Swift.String
-    public static let removeAllUsers: Swift.String
-    public static let removeAllUsersDescription: Swift.String
-    public static let resetAllDevices: Swift.String
-    public static let resetAllDevicesDescription: Swift.String
-    public static let thisActionIsIrreversible: Swift.String
-    public static let thisWillAlso: Swift.String
-  }
-  public enum DeviceDetails {
-    public static let connected: Swift.String
-    public static func deleteDeviceFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static func loadDataFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let relay: Swift.String
-    public static func toggleDeviceFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  }
-  public enum DeviceEdit {
-    public static let customizeDeviceDescription: Swift.String
-    public static let customizeDeviceTitle: Swift.String
-    public static let deviceInfoDescription: Swift.String
-    public static let deviceInfoTitle: Swift.String
-    public static let deviceNamePlaceholder: Swift.String
-    public static let title: Swift.String
-  }
-  public enum DeviceEngines {
-    public static let motion: Swift.String
-    public static let security: Swift.String
-    public static let unknown: Swift.String
-  }
-  public enum DeviceInfo {
-    public static let bbsid: Swift.String
-    public static let borderRouter: Swift.String
-    public static let bssid: Swift.String
-    public static let cloudConnection: Swift.String
-    public static let deviceConnected: Swift.String
-    public static let deviceDisconnected: Swift.String
-    public static let deviceModel: Swift.String
-    public static let deviceModelId: Swift.String
-    public static let deviceName: Swift.String
-    public static let firmvareVesrion: Swift.String
-    public static let firmwareAutomaticUpdateHint: Swift.String
-    public static let localConnection: Swift.String
-    public static let macAddress: Swift.String
-    public static let nonBorderRouter: Swift.String
-    public static let pairedAt: Swift.String
-    public static let panid: Swift.String
-    public static let role: Swift.String
-    public static let room: Swift.String
-    public static let rssi: Swift.String
-    public static let technicalInformation: Swift.String
-    public static let threadNetwork: Swift.String
-    public static let title: Swift.String
-    public static let wifiNetwork: Swift.String
-    public static let zone: Swift.String
-  }
-  public enum DeviceInstructions {
-    public static let bulletPoint1: Swift.String
-    public static let bulletPoint2: Swift.String
-    public static let bulletPoint3: Swift.String
-    public static let bulletPoint4: Swift.String
-    public static let confirmButton: Swift.String
-    public static let description: Swift.String
-    public static let title: Swift.String
-  }
-  public enum DeviceOverview {
-    public static let connection: Swift.String
-    public static let schedule: Swift.String
-    public static let siren: Swift.String
-    public static let status: Swift.String
-    public static func waitingForConnection(_ p1: Any) -> Swift.String
-    public static func waitingForConnectionAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let zone: Swift.String
-    public enum Connection {
-      public static let cloud: Swift.String
-      public static let direct: Swift.String
-      public static let lost: Swift.String
-    }
-    public enum Deletion {
-      public static func deleteAlertMessage(_ p1: Any, _ p2: Any) -> Swift.String
-      public static let deleteAlertMessageAndroid: Swift.String
-      public static let deleteAlertTitle: Swift.String
-      public static let deleteButton: Swift.String
-      public static let deleteConfirm: Swift.String
-    }
-    public enum Relay {
-      public static let explanation: Swift.String
-      public static let isOff: Swift.String
-      public static let isOn: Swift.String
-    }
-    public enum Wifi {
-      public static let disconnected: Swift.String
-      public static let good: Swift.String
-      public static let poor: Swift.String
-    }
-  }
-  public enum DevicePlacement {
-    public static let confirmButton: Swift.String
-    public static let firstDeviceSetup: Swift.String
-    public static let firstDeviceSetupStep1: Swift.String
-    public static let firstDeviceSetupStep2: Swift.String
-    public static let firstDeviceSetupStep2Imperial: Swift.String
-    public static let firstDeviceSetupStep2Metric: Swift.String
-    public static let remainingDevicesSetup: Swift.String
-    public static let remainingDevicesSetupStep1Imprerial: Swift.String
-    public static let remainingDevicesSetupStep1Metric: Swift.String
-    public static let remainingDevicesSetupStep2: Swift.String
-    public static let remainingDevicesSetupStep2Imperial: Swift.String
-    public static let remainingDevicesSetupStep2Metric: Swift.String
-    public static let remainingDevicesSetupStep3: Swift.String
-    public static let remainingDevicesSetupStep4: Swift.String
-  }
-  public enum DevicePlacementNotice {
-    public static let notice: Swift.String
-    public static func noticeKnownZone(_ p1: Any) -> Swift.String
-    public static func noticeKnownZoneAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  }
-  public enum DeviceSettings {
-    public static let customizeDeviceDescription: Swift.String
-    public static let customizeDeviceTitle: Swift.String
-    public static let deviceInfoDescription: Swift.String
-    public static let deviceInfoTitle: Swift.String
-    public static let errorDeviceNotFound: Swift.String
-    public static let removeDevice: Swift.String
-    public static func removeDeviceName(_ p1: Any) -> Swift.String
-    public static let technicalInformationSubtitleThread: Swift.String
-    public static let technicalInformationSubtitleWifi: Swift.String
-    public static let title: Swift.String
-  }
-  public enum Devices {
-    public static let addNewDevice: Swift.String
-    public static let addNewRoom: Swift.String
-    public static let addNewZone: Swift.String
-    public static let informationAutoUpdate: Swift.String
-  }
-  public enum EditDevice {
-    public static let editDeviceNameHint: Swift.String
-    public static let editDeviceTitle: Swift.String
-  }
-  public enum EditIcon {
-    public static let header: Swift.String
-  }
-  public enum EditPlace {
-    public static let category: Swift.String
-    public static let color: Swift.String
-    public static let deleteButton: Swift.String
-    public static let deviceEngine: Swift.String
-    public static let devices: Swift.String
-    public static let devicesAndroid: Swift.String
-    public static func devicesInZone(_ p1: Any, _ p2: Any) -> Swift.String
-    public static func devicesInZoneAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let editPlace: Swift.String
-    public static let editPlaceAndroid: Swift.String
-    public static let editPlaceDescription: Swift.String
-    public static let enterName: Swift.String
-    public static let icon: Swift.String
-    public static let location: Swift.String
-    public static let pluralDevicesAndroid: Swift.String
-    public static let sensitivity: Swift.String
-    public static let zeroDeviceAndroid: Swift.String
-    public enum DeletePlace {
-      public static let guideDescription2Android: Swift.String
-      public static let guideDescription4Android: Swift.String
-      public static let guideDescription6Android: Swift.String
-      public static let guideDescriptionAndroid: Swift.String
-    }
-    public enum Deletion {
-      public static func deleteAlertMessage(_ p1: Any) -> Swift.String
-      public static let deleteAlertMessageAndroid: Swift.String
-      public static let deleteAlertTitle: Swift.String
-      public static let deleteButton: Swift.String
-      public static let deleteConfirm: Swift.String
-    }
-    public enum LeavePlace {
-      public static let guideDescription4Android: Swift.String
-      public static let guideTitle: Swift.String
-    }
-  }
-  public enum EditProfile {
-    public static func loadFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static func saveFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  }
-  public enum EditRoom {
-    public static let category: Swift.String
-    public static let deleteButton: Swift.String
-    public static let deleteDisabledHint: Swift.String
-    public static func deleteFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static func deleteZoneFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let editRoom: Swift.String
-    public static let enterName: Swift.String
-    public static let icon: Swift.String
-    public static func loadFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static func saveFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public enum Deletion {
-      public static let deleteRoomAlertMessage: Swift.String
-      public static let deleteZoneAlertMessage: Swift.String
-    }
-  }
-  public enum EditUserProfile {
-    public static let chooseImageColor: Swift.String
-    public static let chooseProfileImage: Swift.String
-    public static let emptyErrorMessage: Swift.String
-    public static let placeholder: Swift.String
-    public static let profileName: Swift.String
-    public static let title: Swift.String
-  }
-  public enum EditZone {
-    public static let deleteAlertDescription: Swift.String
-    public static let deleteAlertTitle: Swift.String
-    public static let deleteButton: Swift.String
-    public static let deleteDisabledHint: Swift.String
-    public static let editZone: Swift.String
-    public static let enterName: Swift.String
-  }
-  public enum EngineSettings {
-    public static let engineSettingsDescription: Swift.String
-    public static let motionEngine: Swift.String
-    public static let motionEngineDescription: Swift.String
-    public static let saveButton: Swift.String
-    public static let securityEngine: Swift.String
-    public static let securityEngineDescription: Swift.String
-    public static let title: Swift.String
-  }
-  public enum Error {
-    public static let noInternetConnection: Swift.String
-  }
-  public enum Errors {
-    public enum Authentication {
-      public static let loginRequired: Swift.String
-      public static let title: Swift.String
-    }
-    public enum LinkingError {
-      public static let responseParseError: Swift.String
-      public static let title: Swift.String
-    }
-    public enum MoveDeviceError {
-      public static let noDeviceSelected: Swift.String
-      public static let title: Swift.String
-    }
-    public enum NetworkError {
-      public static func conflict(_ p1: Any) -> Swift.String
-      public static func connectionError(_ p1: Any) -> Swift.String
-      public static func invalidParameters(_ p1: Any) -> Swift.String
-      public static func notFound(_ p1: Any) -> Swift.String
-      public static func serverError(_ p1: Any) -> Swift.String
-      public static let title: Swift.String
-      public static func unauthorized(_ p1: Any) -> Swift.String
-      public static func unknown(_ p1: Any) -> Swift.String
-    }
-    public enum Pairing {
-      public static let timedOutConnectWifi: Swift.String
-      public enum DeviceNotFound {
-        public static let description: Swift.String
-        public static let title: Swift.String
-      }
-      public enum IncorrectWifiPassword {
-        public static let description: Swift.String
-        public static let title: Swift.String
-      }
-    }
-    public enum PairingErrorDevice {
-      public static let cloudChallengeError: Swift.String
-      public static let secureSessionError: Swift.String
-      public static let threadJoinError: Swift.String
-      public static let threadScanError: Swift.String
-      public static let title: Swift.String
-      public static let unknownUnrecognized: Swift.String
-      public static let wifiJoinError: Swift.String
-      public static let wifiJoinIpError: Swift.String
-      public static let wifiJoinPasswordError: Swift.String
-      public static let wifiScanError: Swift.String
-    }
-    public enum PairingMachine {
-      public static let deserializationError: Swift.String
-      public static let encryptionError: Swift.String
-      public static let seanceError: Swift.String
-      public static let serializationError: Swift.String
-      public static let title: Swift.String
-      public static let unexpectedMessage: Swift.String
-      public static let unexpectedState: Swift.String
-    }
-    public enum PairingThreadSetupError {
-      public static let mixedEnvironment: Swift.String
-      public static let threadNetworkNotFound: Swift.String
-      public static let threadOperationalDatasetMissing: Swift.String
-    }
-  }
-  public enum ExternalSignin {
-    public static let checkIfUsersRequest: Swift.String
-    public static let confirmRequest: Swift.String
-    public static let confirmedTitle: Swift.String
-    public static func fromLocation(_ p1: Any) -> Swift.String
-    public static func onOs(_ p1: Any) -> Swift.String
-    public static let rejectRequest: Swift.String
-    public static let requestedTitle: Swift.String
-    public static func signinRequestPeekDescription(_ p1: Any, _ p2: Any, _ p3: Any, _ p4: Any) -> Swift.String
-    public static let succe: Swift.String
-    public static let successMessage: Swift.String
-    public static func withBrowser(_ p1: Any) -> Swift.String
-    public enum RequestCode {
-      public static let codeScreenTitle: Swift.String
-      public static let grantAccess: Swift.String
-      public static let instructions: Swift.String
-      public static let pasteboardAccessExplained: Swift.String
-    }
-  }
-  public enum Faq {
-    public static let title: Swift.String
-  }
-  public enum General {
-    public static let and: Swift.String
-    public static let at: Swift.String
-    public static let camera: Swift.String
-    public static let cancel: Swift.String
-    public static let delete: Swift.String
-    public static let deleting: Swift.String
-    public static let done: Swift.String
-    public static let error: Swift.String
-    public static let errorDescription: Swift.String
-    public static let intrusionTriggered: Swift.String
-    public static let loading: Swift.String
-    public static let more: Swift.String
-    public static let move: Swift.String
-    public static let next: Swift.String
-    public static let no: Swift.String
-    public static let notification: Swift.String
-    public static let ok: Swift.String
-    public static let save: Swift.String
-    public static let saving: Swift.String
-    public static let success: Swift.String
-    public static let unavailable: Swift.String
-    public static let yes: Swift.String
-    public static func zones(_ p1: Swift.Int) -> Swift.String
-  }
-  public enum Hint {
-    public enum Issue {
-      public static func alarmIssues(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static func pluralSystemIssues(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static func singularSystemIssue(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    }
-  }
-  public enum Homepage {
-    public enum EmptyPlace {
-      public static let createPlace: Swift.String
-      public static func welcome(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    }
-  }
-  public enum IntrusionEventReport {
-    public static let intrusionHistory: Swift.String
-  }
-  public enum IntrusionHistory {
-    public static let errorDataNotFound: Swift.String
-    public static let humanMotion: Swift.String
-    public static let noMotion: Swift.String
-    public static func timestamp(_ p1: Any) -> Swift.String
-    public static let title: Swift.String
-  }
-  public enum IntrusionLiveView {
-    public static let noActivitySinceIntrusionBega: Swift.String
-  }
-  public enum InvitationDetail {
-    public static let acceptButton: Swift.String
-    public static let agreementDetails: Swift.String
-    public static let cancelButton: Swift.String
-    public static let declineButton: Swift.String
-    public static func hello(_ p1: Any) -> Swift.String
-    public static func helloAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let inviteFound: Swift.String
-    public static let inviteNotFound: Swift.String
-    public static func question(_ p1: Any) -> Swift.String
-    public static func questionAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let retrievingInviteDetails: Swift.String
-    public static let role: Swift.String
-  }
-  public enum InviteDetails {
-    public static let askRevokeButton: Swift.String
-    public static let askShareButton: Swift.String
-    public static let confirmRevokeButton: Swift.String
-    public static func inviteExpirationText(_ p1: Any) -> Swift.String
-    public static func inviteExpirationTextAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let inviteExpired: Swift.String
-    public static func inviteExpiresInText(_ p1: Any) -> Swift.String
-    public static func inviteExpiresInTextAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static func inviteTitle(_ p1: Any) -> Swift.String
-    public static func inviteTitleAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static func revokeAlertMessage(_ p1: Any) -> Swift.String
-    public static func revokeAlertMessageAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let revokeAlertTitle: Swift.String
-  }
-  public enum JoinPlace {
-    public static let cameraPermissionGuide: Swift.String
-    public static let invalidInvite: Swift.String
-    public static let invalidQrCode: Swift.String
-    public static let inviteFound: Swift.String
-    public static let retrievingInvite: Swift.String
-    public static func roleGuide(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let roleGuideAdmin: Swift.String
-    public static let scanAgain: Swift.String
-    public static let scanInviteQr: Swift.String
-  }
-  public enum LetsAddDevice {
-    public static let chooseRoom: Swift.String
-    public static let createRoom: Swift.String
-    public static let dismissScreen: Swift.String
-    public static let header: Swift.String
-  }
-  public enum ManageDevices {
-    public static let emptyPlace: Swift.String
-  }
-  public enum MotionHistory {
-    public static let activeTime: Swift.String
-    public static let activeZones: Swift.String
-    public static let deviceIssue: Swift.String
-    public static let duration: Swift.String
-    public static func formatHour(_ p1: Swift.Int) -> Swift.String
-    public static func formatHours(_ p1: Swift.Int) -> Swift.String
-    public static func formatMinute(_ p1: Swift.Int) -> Swift.String
-    public static func formatSecond(_ p1: Swift.Int) -> Swift.String
-    public static let intensity: Swift.String
-    public static let monitorWasDegradedDueToDeviceIssue: Swift.String
-    public static let monitorWasDegradedInZonesWithDeviceIssue: Swift.String
-    public static let monitorWasDisabledDueToDeviceIssue: Swift.String
-    public static let monitorWasDisabledInZonesWithDeviceIssue: Swift.String
-    public static let motion: Swift.String
-    public static let noData: Swift.String
-    public static let noMotion: Swift.String
-    public static let notAvailable: Swift.String
-    public static let sensingDataNotAvailable: Swift.String
-    public static let title: Swift.String
-    public static let today: Swift.String
-    public enum Tile {
-      public static let history: Swift.String
-      public static let today: Swift.String
-      public static let totalActiveTime: Swift.String
-    }
-  }
-  public enum MotionNow {
-    public static let connectToWifi: Swift.String
-    public static let connectToWifiAsZone: Swift.String
-    public static let connectToWifiYourDeviceUsing: Swift.String
-    public static func formatActiveZones(_ p1: Swift.Int) -> Swift.String
-    public static func formatActiveZonesAndroid(_ p1: Swift.Int) -> Swift.String
-    public static let goToWifiSettings: Swift.String
-    public static let howPlaceGraphWorks: Swift.String
-    public static let howPlaceGraphWorksDescription: Swift.String
-    public static let intensity: Swift.String
-    public static let max: Swift.String
-    public static let min: Swift.String
-    public static let motionDetectedIn: Swift.String
-    public static let noSensingData: Swift.String
-    public static let now: Swift.String
-    public static let thirtySecsAgo: Swift.String
-    public static let title: Swift.String
-    public enum Tile {
-      public static let connectToWifi: Swift.String
-      public static let more: Swift.String
-      public static let movementDetected: Swift.String
-      public static let noMovementDetected: Swift.String
-      public static let noSensingData: Swift.String
-      public static func numberOfActiveZones(_ p1: Any) -> Swift.String
-      public static func numberOfActiveZonesAndroid(_ p1: Swift.Int) -> Swift.String
-      public static let toViewMotionNow: Swift.String
-    }
-  }
-  public enum NewInvite {
-    public static let generateInviteButton: Swift.String
-    public static let inviteDescription: Swift.String
-    public static let inviteTitle: Swift.String
-    public static let inviteeNamePlaceholder: Swift.String
-    public static let inviteeNameTitle: Swift.String
-  }
-  public enum Notification {
-    public static let goToSettings: Swift.String
-    public static func missingPermission(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static func missingPermissionDesc(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let permissionGuide: Swift.String
-  }
-  public enum PairDevice {
-    public static let goToSettings: Swift.String
-    public static func missingPermission(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static func missingPermissionDesc(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let permissionBluetooth: Swift.String
-    public static let permissionLocationAndBluetooth: Swift.String
-    public static let permissionLocationAndBluetoothUsages: Swift.String
-  }
-  public enum Pairing {
-    public static let cameraPermissionGuide: Swift.String
-    public static let cancel: Swift.String
-    public static let done: Swift.String
-    public static let exit: Swift.String
-    public static let exitSetup: Swift.String
-    public static let no: Swift.String
-    public static let other: Swift.String
-    public static let scanBluetoothError: Swift.String
-    public static let success: Swift.String
-    public enum AddAnotherNetwork {
-      public static let title: Swift.String
-    }
-    public enum AskToConnect {
-      public static let connectToWifi: Swift.String
-      public static let connectToWifiFirstDescription: Swift.String
-      public static func connectToWifiRemainingDescription(_ p1: Any) -> Swift.String
-      public static let remainingThreadDevice: Swift.String
-      public static let remainingThreadDeviceDescription: Swift.String
-      public static let threadBorderRouter: Swift.String
-      public static let threadBorderRouterDescription: Swift.String
-      public enum FirstThreadDevice {
-        public static let description1: Swift.String
-        public static let description2: Swift.String
-        public static let description3: Swift.String
-      }
-      public enum FirstWifiDevice {
-        public static func description1(_ p1: Any) -> Swift.String
-        public static let description2: Swift.String
-      }
-      public enum NonFirstThreadDevice {
-        public static let description1: Swift.String
-        public static let description2: Swift.String
-        public static func description3(_ p1: Any) -> Swift.String
-      }
-      public enum NonFirstWifiDevice {
-        public static func description1(_ p1: Any) -> Swift.String
-      }
-      public enum WifiDeviceImperialDistance {
-        public static let description: Swift.String
-      }
-      public enum WifiDeviceMetricDistance {
-        public static let description: Swift.String
-      }
-    }
-    public enum AskToConnectToWifi {
-      public static let header: Swift.String
-      public static let useSameWifi: Swift.String
-      public static func useSameWifiAsZone(_ p1: Any) -> Swift.String
-    }
-    public enum BluetoothDeviceFound {
-      public static let explainedReadyToPair: Swift.String
-      public static let header1: Swift.String
-      public static func header1Known(_ p1: Any) -> Swift.String
-      public static func header1KnownAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static let header2: Swift.String
-      public static let headerConnectToPower: Swift.String
-      public static let nameDeviceExplained: Swift.String
-      public static func nameDeviceHeader(_ p1: Any) -> Swift.String
-      public static let nextButton: Swift.String
-    }
-    public enum BluetoothUsageHint {
-      public static let confirm: Swift.String
-      public static let header: Swift.String
-    }
-    public enum ConfirmCancelPairing {
-      public static let description: Swift.String
-      public static let title: Swift.String
-    }
-    public enum ConnectSuccess {
-      public static func deviceHasBeenSetupInZone(_ p1: Any, _ p2: Any) -> Swift.String
-      public static let setupAnotherDevice: Swift.String
-    }
-    public enum ConnectWifi {
-      public static func inputPassword(_ p1: Any) -> Swift.String
-      public static let noWiFiNetworksFound: Swift.String
-      public static let setUpAsBorderRouter: Swift.String
-      public static let settingUpThisDevice: Swift.String
-      public static let settingUpYourDevice: Swift.String
-      public static let title: Swift.String
-    }
-    public enum DeviceSetup {
-      public static let navigagtionTitle: Swift.String
-    }
-    public enum EnableBluetoothInSettings {
-      public static let bluetoothDisabled: Swift.String
-      public static let buttonSettings: Swift.String
-      public static let header: Swift.String
-    }
-    public enum EnterWifiPassword {
-      public static let buttonGoBack: Swift.String
-      public static let buttonReadyToConnect: Swift.String
-      public static let enterPassword: Swift.String
-      public static func header(_ p1: Any) -> Swift.String
-      public static func headerAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static let passwordEntryFieldHint: Swift.String
-      public static let passwordPlaceholder: Swift.String
-    }
-    public enum Errors {
-      public static let actionIgnore: Swift.String
-      public static let actionRestart: Swift.String
-      public static let actionTryAgain: Swift.String
-      public static func errorOccurredDescription(_ p1: Any) -> Swift.String
-      public static func errorOccurredDescriptionAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static let errorOccurredTitle: Swift.String
-    }
-    public enum ExitDeviceSetup {
-      public static let description: Swift.String
-      public static let title: Swift.String
-    }
-    public enum FinishingSetup {
-      public static let gameOfPong: Swift.String
-      public static let header: Swift.String
-    }
-    public enum ListWifiNetworks {
-      public static let apOutOfReach: Swift.String
-      public static let availableNetworks: Swift.String
-      public static let buttonCancelPairing: Swift.String
-      public static let buttonContinue: Swift.String
-      public static let buttonOtherNetwork: Swift.String
-      public static let buttonRefresh: Swift.String
-      public static let connectWifiTitle: Swift.String
-      public static let forget: Swift.String
-      public static let foundSavedPassword: Swift.String
-      public static let header: Swift.String
-      public static func header2Android(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static func header2BssidPinnedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static let lookingForNetworks: Swift.String
-      public static let noNetworksFound: Swift.String
-      public static let proceed: Swift.String
-      public static let retryingForNetworks: Swift.String
-      public static let selectNetwork: Swift.String
-      public static func useSavedPassword(_ p1: Any) -> Swift.String
-      public static func useSavedPasswordAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static let warning: Swift.String
-    }
-    public enum LoadingDevice {
-      public static func connecting(_ p1: Any) -> Swift.String
-    }
-    public enum MultizonesGuide {
-      public static let alertModesExplanation: Swift.String
-      public static let cancelPairingButton: Swift.String
-      public static let continueButton: Swift.String
-      public static let enterFirstZoneName: Swift.String
-      public static let invitation: Swift.String
-      public static let keepSingleZoneButton: Swift.String
-      public static let keepSingleZoneDescription: Swift.String
-      public static let nameSecondZoneDescription: Swift.String
-      public static let renameDefaultZoneDescription: Swift.String
-      public static let severalZonesExplanation: Swift.String
-      public static let shortDescription: Swift.String
-      public static let skipExplanationButton: Swift.String
-      public static let updateToMultizones: Swift.String
-      public static let upgradeToMultizonesButton: Swift.String
-    }
-    public enum OtherWifiNetwork {
-      public static let buttonBack: Swift.String
-      public static let deviceConnectivityHint: Swift.String
-      public static let header: Swift.String
-      public static let networkNamePlaceholder: Swift.String
-    }
-    public enum PairedSuccessfully {
-      public static let buttonDone: Swift.String
-      public static let buttonPairAnother: Swift.String
-      public static let buttonReturn: Swift.String
-      public static let buttonUpdateAnother: Swift.String
-      public static let header1: Swift.String
-      public static func header1Known(_ p1: Any) -> Swift.String
-      public static func header1KnownAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static let header2: Swift.String
-      public static func header2Known(_ p1: Any) -> Swift.String
-      public static func header2KnownAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static let header3: Swift.String
-    }
-    public enum PowerOnAndScanning {
-      public static let askUserToWait: Swift.String
-      public static let header1: Swift.String
-      public static let header2: Swift.String
-      public static let scanning: Swift.String
-    }
-    public enum ScanDevice {
-      public static let connectingToThisDevice: Swift.String
-      public static let pleaseHold: Swift.String
-      public static let searchingForDevice: Swift.String
-      public enum MissingBluetoothLocationPermissions {
-        public static let description: Swift.String
-        public static let title: Swift.String
-      }
-      public enum MissingBluetoothPermission {
-        public static let description: Swift.String
-        public static let title: Swift.String
-      }
-    }
-    public enum ScanQr {
-      public static let subtitle: Swift.String
-      public static let title: Swift.String
-      public enum CodeError {
-        public static let description: Swift.String
-        public static let title: Swift.String
-      }
-    }
-    public enum ScanQrcode {
-      public enum MissingCameraPermission {
-        public static let description: Swift.String
-        public static let title: Swift.String
-      }
-    }
-  }
-  public enum Paring {
-    public static let bluetoothIsOff: Swift.String
-    public static let explanationTurnOnBluetooth: Swift.String
-    public enum ScanDevice {
-      public enum BluetoothIsOff {
-        public static let description: Swift.String
-        public static let title: Swift.String
-      }
-    }
-  }
-  public enum Place {
-    public static let pairOneMoreDeviceToUnlockTheMotionSensing: Swift.String
-  }
-  public enum PlaceCreation {
-    public static let errorNoCategory: Swift.String
-    public static let header: Swift.String
-    public enum Customize {
-      public static let colorSelection: Swift.String
-      public static let header: Swift.String
-    }
-    public enum Floor {
-      public static let description: Swift.String
-      public static func floorNumberAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static let header: Swift.String
-    }
-    public enum Name {
-      public static let description: Swift.String
-      public static let editHint: Swift.String
-      public static let error: Swift.String
-      public static let header: Swift.String
-    }
-    public enum Size {
-      public static let description: Swift.String
-      public static let header: Swift.String
-    }
-    public enum Zone {
-      public static func defaultNameMultipleFloor(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static let defaultNameSingleFloor: Swift.String
-    }
-  }
-  public enum PlaceDetails {
-    public static let changePlaceModeToArmedContainDegradedDescription: Swift.String
-    public static let changePlaceModeToArmedContainUnhealthyDescription: Swift.String
-    public static let changePlaceModeToAwareContainDegradedDescription: Swift.String
-    public static let changePlaceModeToAwareContainUnhealthyDescription: Swift.String
-    public static let customize: Swift.String
-    public static func formatDisconnectedDeviceInMultipleZoneAndroid(_ p1: Swift.Int) -> Swift.String
-    public static let getHelp: Swift.String
-    public static let noDevicesPaired: Swift.String
-    public static let offline: Swift.String
-    public static func offlineDeviceNotification(_ p1: Swift.Int) -> Swift.String
-    public static let placeMode: Swift.String
-    public static func proceedWithDegradedZones(_ p1: Swift.Int) -> Swift.String
-    public static func proceedWithDisabledZones(_ p1: Swift.Int) -> Swift.String
-    public static let securityMode: Swift.String
-    public static let securityModeDescription: Swift.String
-    public static let sensingLinkBrokenInMultipleZone: Swift.String
-    public static let sensingLinkBrokenInOneZone: Swift.String
-    public static let sensorsAreNotResponding: Swift.String
-    public static let yesProceed: Swift.String
-    public static func zoneInMode(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  }
-  public enum PlaceEvents {
-    public static func disarmedBy(_ p1: Any) -> Swift.String
-    public static func disarmedByAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let downloadingHistory: Swift.String
-    public static func emptyHistoryPlaceholder(_ p1: Any) -> Swift.String
-    public static func emptyHistoryPlaceholderAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let eventsHistory: Swift.String
-    public enum Message {
-      public static func intrusion(_ p1: Any, _ p2: Any, _ p3: Any, _ p4: Any) -> Swift.String
-      public static func userJoined(_ p1: Any, _ p2: Any) -> Swift.String
-      public static func userJoinedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>, _ p3: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static func userLeft(_ p1: Any, _ p2: Any) -> Swift.String
-      public static func userLeftAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>, _ p3: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static func userRemoved(_ p1: Any, _ p2: Any, _ p3: Any) -> Swift.String
-      public static func userRemovedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>, _ p3: Swift.UnsafePointer<Swift.CChar>, _ p4: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    }
-    public enum Title {
-      public static let intrusion: Swift.String
-      public static func userJoined(_ p1: Any) -> Swift.String
-      public static func userJoinedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static func userLeft(_ p1: Any) -> Swift.String
-      public static func userLeftAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static func userRemoved(_ p1: Any) -> Swift.String
-      public static func userRemovedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    }
-  }
-  public enum PlaceInformation {
-    public static let avgFloorArea: Swift.String
-    public static let floors: Swift.String
-    public static let name: Swift.String
-    public static let title: Swift.String
-    public static let type: Swift.String
-  }
-  public enum PlaceIntegrations {
-    public static func descriptionPlaceholder(_ p1: Any) -> Swift.String
-    public static let enablingPlaceholder: Swift.String
-    public static func integrationIs(_ p1: Any) -> Swift.String
-    public static let integrations: Swift.String
-    public static let isDisabled: Swift.String
-    public static let isEnabled: Swift.String
-    public static let wantDisable: Swift.String
-  }
-  public enum PlaceOverview {
-    public static func disconnectedDevices(_ p1: Swift.Int, _ p2: Swift.Int) -> Swift.String
-    public static let motion: Swift.String
-    public static let pairKitUnlockMotionSensing: Swift.String
-    public static let resumeSetupKitButton: Swift.String
-    public static let setupKitButton: Swift.String
-    public static let zones: Swift.String
-    public enum Graph {
-      public static let legendBarFourHour: Swift.String
-      public static let legendBarThiryMin: Swift.String
-      public static let legendBarThirySec: Swift.String
-      public static let legendBarTwelveHour: Swift.String
-      public static let now: Swift.String
-      public static let pairOneMore: Swift.String
-      public static let pairTwoDevices: Swift.String
-      public static let thirtySecsAgo: Swift.String
-    }
-    public enum IntrusionDetection {
-      public static func endTime(_ p1: Any) -> Swift.String
-      public static func endTimeFormatHour(_ p1: Swift.Int) -> Swift.String
-      public static func endTimeFormatMinute(_ p1: Swift.Int) -> Swift.String
-      public static func startTime(_ p1: Any) -> Swift.String
-      public static let title: Swift.String
-    }
-    public enum PairingRequest {
-      public static let addDeviceButton: Swift.String
-      public static let addMoreHint: Swift.String
-      public static let continuePairingButton: Swift.String
-      public static let setupAKit: Swift.String
-      public static let setupAKitGuide: Swift.String
-    }
-    public enum Picker {
-      public static let fourHr: Swift.String
-      public static let thirtyMin: Swift.String
-      public static let thirtySec: Swift.String
-      public static let twelveHr: Swift.String
-    }
-  }
-  public enum PlaceProperties {
-    public static let apartment: Swift.String
-    public static let house: Swift.String
-  }
-  public enum PlaceSetting {
-    public static let placeInformation: Swift.String
-    public enum EditPlace {
-      public static let toolbar: Swift.String
-    }
-    public enum Header {
-      public static let general: Swift.String
-      public static let setup: Swift.String
-      public static let setupADeviceDescription: Swift.String
-      public static let setupADeviceTitle: Swift.String
-      public static let setupAKitDescriptionDisableNonFirstKit: Swift.String
-      public static let setupAKitDescriptionDisableOldPlace: Swift.String
-      public static let setupAKitDescriptionEnable: Swift.String
-      public static let setupAKitTitle: Swift.String
-    }
-    public enum PlaceInformation {
-      public static let description: Swift.String
-      public static let editName: Swift.String
-      public static let floor: Swift.String
-      public static let name: Swift.String
-      public static let size: Swift.String
-      public static let type: Swift.String
-    }
-  }
-  public enum PlaceSettings {
-    public static let customizePlaceDescription: Swift.String
-    public static let deletePlaceButton: Swift.String
-    public static func devicesInZones(_ p1: Swift.Int, _ p2: Swift.Int) -> Swift.String
-    public static let editPlace: Swift.String
-    public static let editPlaceAndroid: Swift.String
-    public static let editPlaceDescription: Swift.String
-    public static let engine: Swift.String
-    public static let engineDoesNotSupportSensitivity: Swift.String
-    public static let featureUnlockWarning: Swift.String
-    public static let leavePlaceButton: Swift.String
-    public static func manageDevices(_ p1: Swift.Int) -> Swift.String
-    public static let motion: Swift.String
-    public static func numberOfDevices(_ p1: Swift.Int) -> Swift.String
-    public static let onlyAvailableForFirstKit: Swift.String
-    public static let placeSettings: Swift.String
-    public static let sectionGeneral: Swift.String
-    public static let sectionSetup: Swift.String
-    public static let security: Swift.String
-    public static let sensitivity: Swift.String
-    public static func sensitivityLevel(_ p1: Any) -> Swift.String
-    public static let setupKit: Swift.String
-    public static let setupKitDescription: Swift.String
-    public static let setupSingleDevice: Swift.String
-    public static let setupSingleDeviceDescription: Swift.String
-    public static let title: Swift.String
-    public static let updateWifiNetwork: Swift.String
-    public static let updateWifiNetworkDescription: Swift.String
-  }
-  public enum PlaceTileView {
-    public static func disconnectedDevices(_ p1: Swift.Int, _ p2: Swift.Int) -> Swift.String
-  }
-  public enum PlaceUsers {
-    public enum Invitation {
-      public static let invitePeople: Swift.String
-      public static func usersLimitReached(_ p1: Any) -> Swift.String
-      public static func usersLimitReachedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    }
-    public enum Role {
-      public static let role: Swift.String
-    }
-  }
-  public enum Places {
-    public static let title: Swift.String
-    public enum Category {
-      public static let apartment: Swift.String
-      public static let eating: Swift.String
-      public static let house: Swift.String
-      public static let shopping: Swift.String
-      public static let unknown: Swift.String
-      public static let work: Swift.String
-    }
-  }
-  public enum Profile {
-    public static let about: Swift.String
-    public static let authentication: Swift.String
-    public static let copied: Swift.String
-    public static let copyRecoveryKey: Swift.String
-    public static let goConfirmSigninRequest: Swift.String
-    public static let helpAndFeedback: Swift.String
-    public static let joined: Swift.String
-    public static let legal: Swift.String
-    public static let linkAccountGuideText: Swift.String
-    public static let linked3rdPartyAccount: Swift.String
-    public static let noLinkedAccountsMessage: Swift.String
-    public static let privacyPolicy: Swift.String
-    public static let recoveryInfoTitle: Swift.String
-    public static let recoveryKey: Swift.String
-    public static let recoveryKeyHint: Swift.String
-    public static let sectionTitleAccount: Swift.String
-    public static let sectionTitleHelp: Swift.String
-    public static let sendTestPush: Swift.String
-    public static let signOut: Swift.String
-    public static let supportArticles: Swift.String
-    public static let termsOfServices: Swift.String
-    public static let title: Swift.String
-    public static let username: Swift.String
-    public static let usernameMissing: Swift.String
-    public static let usernameYou: Swift.String
-    public enum AccountManagement {
-      public static let accountDeletionDescription: Swift.String
-      public static let confirmAccountDeletion: Swift.String
-      public static let deleteAccountAlertDescription: Swift.String
-      public static let deleteAccountAlertTitle: Swift.String
-      public static let deleteAccountButton: Swift.String
-      public static let title: Swift.String
-    }
-    public enum Unlink {
-      public static let alertConfirm: Swift.String
-      public static let alertMessage: Swift.String
-      public static let alertMessageAndroid: Swift.String
-      public static let alertTitle: Swift.String
-    }
-  }
-  public enum Push {
-    public static let registerPushTokenFailed: Swift.String
-  }
-  public enum Qrscanner {
-    public static let help: Swift.String
-    public static let title: Swift.String
-    public static let whereQr: Swift.String
-  }
-  public enum RecoverKey {
-    public static let goBack: Swift.String
-  }
-  public enum Recovery {
-    public static let buttonRecover: Swift.String
-    public static let error: Swift.String
-    public static let recoveryKeyPlaceholder: Swift.String
-    public static let textGuide: Swift.String
-  }
-  public enum RemoveDevice {
-    public static let changeThreadNetwork: Swift.String
-    public static func changeThreadNetworkDescription(_ p1: Any) -> Swift.String
-    public static let dataRemovedWarningThread: Swift.String
-    public static let dataRemovedWarningWifi: Swift.String
-    public static let disableSensingFunction: Swift.String
-    public static func disableSensingFunctionDescription(_ p1: Any) -> Swift.String
-    public static func removeDeviceName(_ p1: Any) -> Swift.String
-    public static let removeThisDevice: Swift.String
-    public static let removeThreadNetwork: Swift.String
-    public static func removeThreadNetworkDescription(_ p1: Any) -> Swift.String
-    public static func restoreSensingInZone(_ p1: Any) -> Swift.String
-    public static let restoreSensingInZoneDescription: Swift.String
-  }
-  public enum ReportFalseAlarm {
-    public static let reportingAsFalseAlarmWillAlsoDisarmTheIntrusion: Swift.String
-    public static let theIntrusionWasTriggeredBy: Swift.String
-  }
-  public enum RoomSelection {
-    public static let confirmButton: Swift.String
-    public static let description: Swift.String
-    public static let title: Swift.String
-  }
-  public enum Rooms {
-    public enum Category {
-      public static let bathroom: Swift.String
-      public static let bedroom: Swift.String
-      public static let kitchen: Swift.String
-      public static let livingRoom: Swift.String
-      public static let other: Swift.String
-      public static let unknown: Swift.String
-    }
-  }
-  public enum SecurityMode {
-    public static let addMoreZoneToShowZoneSettings: Swift.String
-    public static let degradedZone: Swift.String
-    public static let disabled: Swift.String
-    public static let disabledZone: Swift.String
-    public static let discard: Swift.String
-    public static let discardChanges: Swift.String
-    public static let discardChangesDescription: Swift.String
-    public static func placeDeviceOffline(_ p1: Swift.Int) -> Swift.String
-    public static let statusArmedDescription: Swift.String
-    public static let statusAwareDescription: Swift.String
-    public static let statusRelaxedDescription: Swift.String
-    public static let zoneMode: Swift.String
-    public static let zoneModeDescription: Swift.String
-  }
-  public enum SelectFloorArea {
-    public static let description: Swift.String
-    public static let header: Swift.String
-    public static let option1Imperial: Swift.String
-    public static let option1Metric: Swift.String
-    public static let option2Imperial: Swift.String
-    public static let option2Metric: Swift.String
-    public static let option3Imperial: Swift.String
-    public static let option3Metric: Swift.String
-    public static let option4Imperial: Swift.String
-    public static let option4Metric: Swift.String
-  }
-  public enum SelectFloorNumber {
-    public static let description: Swift.String
-    public static let header: Swift.String
-  }
-  public enum SelectKit {
-    public static let description: Swift.String
-    public static let monitoringKit: Swift.String
-    public static let monitoringKitDescription: Swift.String
-    public static let securityKit: Swift.String
-    public static let securityKitDescription: Swift.String
-    public static let title: Swift.String
-  }
-  public enum SelectPlaceIcon {
-    public static let header: Swift.String
-  }
-  public enum SelectPlaceTheme {
-    public static let header: Swift.String
-  }
-  public enum SelectPlaceType {
-    public static let description: Swift.String
-    public static let header: Swift.String
-  }
-  public enum SelectRoomCategory {
-    public static let header: Swift.String
-  }
-  public enum SelectRoomIcon {
-    public static let header: Swift.String
-  }
-  public enum SelectUserIcon {
-    public static let chooseImageColor: Swift.String
-    public static let chooseProfileImage: Swift.String
-    public static let promptMessage: Swift.String
-  }
-  public enum SelectZone {
-    public static let description: Swift.String
-    public static func formatThreadDevices(_ p1: Any) -> Swift.String
-    public static func formatWifiDevices(_ p1: Any) -> Swift.String
-    public static let title: Swift.String
-  }
-  public enum SensitivitySettings {
-    public static let descriptionUnavailable: Swift.String
-    public static let fourToSix: Swift.String
-    public static let fourToSixDescription: Swift.String
-    public static func levelAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let maxTitle: Swift.String
-    public static let maxTitleAndroid: Swift.String
-    public static let minTitle: Swift.String
-    public static let minTitleAndroid: Swift.String
-    public static let oneToThree: Swift.String
-    public static let oneToThreeDescription: Swift.String
-    public static let saveSensitivtyButtonTitle: Swift.String
-    public static let sensitivityLevelDescription: Swift.String
-    public static let sevenToNine: Swift.String
-    public static let sevenToNineDescription: Swift.String
-    public static let success: Swift.String
-    public static let tenToTwelve: Swift.String
-    public static let tenToTwelveDescription: Swift.String
-    public static let testSensitivityButtonTitle: Swift.String
-    public static let title: Swift.String
-    public enum Engine {
-      public static let unavailable: Swift.String
-    }
-  }
-  public enum SetupADevice {
-    public static let toolbarTittle: Swift.String
-    public enum RoomSelection {
-      public static let subTittle: Swift.String
-      public static let tittle: Swift.String
-    }
-  }
-  public enum SetupAKit {
-    public static let featureNotAvailableDescription: Swift.String
-    public static let featureNotAvailableHeader: Swift.String
-    public static let howDeviceWorksGuideContent1: Swift.String
-    public static let howDeviceWorksGuideContent2: Swift.String
-    public static let howDeviceWorksGuideContent3: Swift.String
-    public static let howDeviceWorksGuideContent4: Swift.String
-    public static let howDeviceWorksGuideContent5: Swift.String
-    public static let howDeviceWorksStart: Swift.String
-    public static let toolbarTittle: Swift.String
-    public enum HowDeviceWork {
-      public static let description: Swift.String
-      public static let subTittle: Swift.String
-      public static let tittle: Swift.String
-    }
-    public enum HowToPlaceDevice {
-      public static let guideContent1FirstPairedDevice: Swift.String
-      public static let guideContent1NonFirstPairedDeviceImperial: Swift.String
-      public static let guideContent1NonFirstPairedDeviceMetric: Swift.String
-      public static let guideContent2FirstPairedDeviceImperial: Swift.String
-      public static let guideContent2FirstPairedDeviceMetric: Swift.String
-      public static let guideContent2FirstPairedDeviceSecurityKit: Swift.String
-      public static let guideContent2NonFirstPairedDeviceImperial: Swift.String
-      public static let guideContent2NonFirstPairedDeviceMetric: Swift.String
-      public static let guideContent3NonFirstPairedDevice: Swift.String
-      public static let guideContent4NonFirstPairedDevice: Swift.String
-      public static let guideFirstDevice: Swift.String
-      public static let guideFirstDeviceInZone: Swift.String
-      public static let guideNonFirstDevice: Swift.String
-      public static let nonFirstPairedDeviceGuideContent1: Swift.String
-      public static let nonFirstPairedDeviceGuideContent2Imperial: Swift.String
-      public static let nonFirstPairedDeviceGuideContent2Metric: Swift.String
-      public static let sensingZone: Swift.String
-      public static let subTittle: Swift.String
-      public static let tittle: Swift.String
-    }
-    public enum KitSelection {
-      public static let subTittle: Swift.String
-      public static let tittle: Swift.String
-    }
-    public enum WhereToSetup {
-      public static let addGuide: Swift.String
-      public static let firstFloor: Swift.String
-      public static let oneFloorTitle: Swift.String
-      public static func placeSizeLargeCoverage1Floor(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static func placeSizeLargeCoverageMoreFloors(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static let placeSizeSmallCoverage1Floor: Swift.String
-      public static func placeSizeSmallCoverageMoreFloors(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static let subTittleFloorBigSize: Swift.String
-      public static let subTittleFloorSmallSize: Swift.String
-      public static let subTittleMoreFloorMonitoring: Swift.String
-      public static let subTittleMoreFloorSecurity: Swift.String
-      public static let subtitleMonitorOneFloorBigSize: Swift.String
-      public static let subtitleOneFloorSmallSize: Swift.String
-      public static let subtitleSecurityOneFloorBigSize: Swift.String
-      public static let tittle: Swift.String
-    }
-  }
-  public enum SetupKit {
-    public static let title: Swift.String
-  }
-  public enum SignUp {
-    public static let anonymousAccountText: Swift.String
-    public static let anonymousAccountText1: Swift.String
-    public static let anonymousAccountText2: Swift.String
-    public static let anonymousAccountText3: Swift.String
-    public static let buttonRecoveryKey: Swift.String
-    public static let buttonSignUp: Swift.String
-    public static let buttonSignUpAnonymous: Swift.String
-    public static let continueWithApple: Swift.String
-    public static let continueWithGoogle: Swift.String
-    public static let otherSignUpOptions: Swift.String
-    public static let privacyPolicy: Swift.String
-    public static let termsOfService: Swift.String
-    public static let tosAndPrivacy: Swift.String
-    public static let tosAndPrivacyPart1: Swift.String
-    public static let tosAndPrivacyPart2: Swift.String
-    public static let tosAndPrivacyPart2Android: Swift.String
-    public static let tosAndPrivacyPart3: Swift.String
-    public static let tosAndPrivacyPart4: Swift.String
-    public static let tosAndPrivacyPart4Android: Swift.String
-    public static let unknownProvider: Swift.String
-    public static let welcomeText: Swift.String
-  }
-  public enum Status {
-    public static let alert: Swift.String
-    public static let armedHint: Swift.String
-    public static let armedHintDisabled: Swift.String
-    public static let aware: Swift.String
-    public static let awareHint: Swift.String
-    public static func inSwitchingMode(_ p1: Any, _ p2: Any) -> Swift.String
-    public static let relaxed: Swift.String
-    public static let relaxedHint: Swift.String
-  }
-  public enum UpdateWifi {
-    public static func deviceAlreadyUpdated(_ p1: Any) -> Swift.String
-    public static func deviceNotInZone(_ p1: Any) -> Swift.String
-    public static let locateDeviceButton: Swift.String
-    public static func notNamiQrCode(_ p1: Any) -> Swift.String
-    public static let notNamiQrCodeNoZone: Swift.String
-    public static let plug: Swift.String
-    public static let pod: Swift.String
-    public static let qrCodeError: Swift.String
-    public static let qrDoesNotMatch: Swift.String
-    public static let repeatQrScan: Swift.String
-    public static let resumeUpdate: Swift.String
-    public static func resumeUpdateInstruction(_ p1: Any) -> Swift.String
-    public static let title: Swift.String
-    public enum HowItWorks {
-      public static let confirmButton: Swift.String
-      public static let description: Swift.String
-      public static let help: Swift.String
-      public static let instructionBulletPoint1: Swift.String
-      public static let instructionBulletPoint2: Swift.String
-      public static let instructionBulletPoint3: Swift.String
-      public static let instructionBulletPoint4: Swift.String
-      public static let instructionPart1: Swift.String
-      public static let instructionPart2: Swift.String
-      public static let instructionTitle: Swift.String
-      public static let title: Swift.String
-    }
-    public enum ResetDevice {
-      public static let confirmButton: Swift.String
-      public static let description: Swift.String
-      public static func howToReset(_ p1: Any) -> Swift.String
-      public static let plugResetInstructions: Swift.String
-      public static let plugResetInstructions1: Swift.String
-      public static let plugResetInstructions2: Swift.String
-      public static let plugResetInstructions3: Swift.String
-      public static let plugResetInstructions4: Swift.String
-      public static let podResetInstructions: Swift.String
-      public static let podResetInstructions1: Swift.String
-      public static let podResetInstructions2: Swift.String
-      public static let podResetInstructions3: Swift.String
-      public static let podResetInstructions4: Swift.String
-      public static let title: Swift.String
-    }
-    public enum SelectZoneToUpdate {
-      public static let confirmButton: Swift.String
-      public static let description: Swift.String
-      public static let nonThreadZoneSupport: Swift.String
-      public static func numberOfDevices(_ p1: Any) -> Swift.String
-      public static let selectZone: Swift.String
-      public static let title: Swift.String
-    }
-    public enum ZoneDeviceCheck {
-      public static let scanQr: Swift.String
-    }
-    public enum ZoneWifiUpdate {
-      public static let confirmButton: Swift.String
-      public static let congratulations: Swift.String
-      public static let description: Swift.String
-      public static let devicesUpdated: Swift.String
-      public static let finishButton: Swift.String
-      public static let lastDeviceDescription: Swift.String
-      public static let locateDevice: Swift.String
-      public static let locateLastDevice: Swift.String
-      public static let sessionCompleted: Swift.String
-      public static let title: Swift.String
-      public static let updateAnotherZoneButton: Swift.String
-      public static let updateSuccess: Swift.String
-    }
-  }
-  public enum UpdateWifiNetwork {
-    public static let howItWorksGuideSubtitle: Swift.String
-    public static let resetDeviceGuidePlugType: Swift.String
-    public static let resetDeviceGuidePod2: Swift.String
-    public static let resetDeviceGuidePodType: Swift.String
-    public static let zoneStatusGuideCompletedUpdate: Swift.String
-    public static let zonesSelectionGuide: Swift.String
-    public enum CommissioningMode {
-      public static let customizePlace: Swift.String
-    }
-    public enum DeviceQrCode {
-      public static func deviceAlreadyRepairedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static func deviceNotInZoneAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-      public static let invalid: Swift.String
-    }
-    public enum UpdateSuccessfully {
-      public static let header1: Swift.String
-      public static func header1KnownAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    }
-  }
-  public enum UpgradeMultiZones {
-    public static func createFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static func loadDataFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static func loadZoneFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static func updateFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  }
-  public enum UserDetails {
-    public static let askLeavePlaceButton: Swift.String
-    public static func askRemoveUserAlertMessage(_ p1: Any, _ p2: Any) -> Swift.String
-    public static let askRemoveUserButton: Swift.String
-    public static let confirmLeavePlaceButton: Swift.String
-    public static let confirmRemoveUserButton: Swift.String
-    public static func lastActive(_ p1: Any) -> Swift.String
-    public static func lastActiveAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static func leavePlaceAlertMessage(_ p1: Any) -> Swift.String
-    public static let leavePlaceAlertTitle: Swift.String
-    public static func removeUserAlertMessage(_ p1: Any, _ p2: Any) -> Swift.String
-    public static func removeUserAlertMessageAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-    public static let removeUserAlertTitle: Swift.String
-    public static let removeUserButton: Swift.String
-    public static let saveChangesButton: Swift.String
-  }
-  public enum Widar {
-    public static let headerTitle: Swift.String
-    public enum CancelPopup {
-      public static let backToPositioningButton: Swift.String
-      public static let cancelButton: Swift.String
-      public static let message: Swift.String
-      public static let title: Swift.String
-    }
-    public enum Error {
-      public static let deviceNotFoundMessage: Swift.String
-      public static let exitButton: Swift.String
-      public static let retryButton: Swift.String
-      public static let title: Swift.String
-    }
-    public enum Info {
-      public static let buttonText: Swift.String
-      public static let infoAvoidMovingWhenOptimized: Swift.String
-      public static let infoMustOptimisePosition: Swift.String
-      public static let title: Swift.String
-    }
-    public enum Position {
-      public static let cancelButton: Swift.String
-      public static let finishButton: Swift.String
-      public static let guideImperial: Swift.String
-      public static let guideMetric: Swift.String
-      public static let statusChecking: Swift.String
-      public static let statusGettingBetter: Swift.String
-      public static let statusLabel: Swift.String
-      public static let statusMispositioned: Swift.String
-      public static let statusOptimized: Swift.String
-      public static let tip: Swift.String
-      public static let title: Swift.String
-    }
-    public enum Recommendations {
-      public static let buttonText: Swift.String
-      public static let infoAttachBase: Swift.String
-      public static let infoKeepAreaClear: Swift.String
-      public static let infoWireOnBack: Swift.String
-      public static let title: Swift.String
-    }
-    public enum Success {
-      public static func contentMessage(_ p1: Any) -> Swift.String
-      public static let doneButton: Swift.String
-      public static let title: Swift.String
-    }
-  }
-  public enum Zone {
-    public static let defaultName: Swift.String
-  }
-  public enum ZoneChecks {
-    public enum MotionSensing {
-      public static let checkName: Swift.String
-      public static let statusDisconnected: Swift.String
-      public static let statusNotWorking: Swift.String
-      public static let statusWorkingMotionDetected: Swift.String
-      public static let statusWorkingMotionNotDetected: Swift.String
-    }
-    public enum ZoneHealth {
-      public static let checkName: Swift.String
-      public static let hintAssessingZoneHealth: Swift.String
-      public static let hintCheckNeeded: Swift.String
-      public static let hintWorksWell: Swift.String
-      public static let statusDegraded: Swift.String
-      public static let statusHealthy: Swift.String
-      public static let statusUnhealthy: Swift.String
-      public static let statusUnknown: Swift.String
-    }
-  }
-  public enum ZoneSelection {
-    public static let addYourKitTo: Swift.String
-    public static let description: Swift.String
-    public static let monitoringKitDescription: Swift.String
-    public static let securityKitDescription: Swift.String
-    public static let title: Swift.String
-  }
-}
-public enum ISO8601MsecDecoder {
-  public static let defaultFormatter: Foundation.ISO8601DateFormatter
-  public static func decodedDate(_ decoder: Swift.Decoder) throws -> Foundation.Date
-  public static func encodeDate(date: Foundation.Date, encoder: Swift.Encoder) throws
-}
-extension Foundation.JSONDecoder {
-  public static func ISO8601Msec() -> Foundation.JSONDecoder
-}
-extension Foundation.JSONEncoder {
-  public static func ISO8601Msec() -> Foundation.JSONEncoder
-}
-public enum Log {
-  public static func info(_ items: Any...)
-  public static func warning(_ items: Any...)
-  public static func `if`(_ condition: Swift.Bool = true, run: () -> Swift.Void)
 }
 public enum PacketBoatError : Swift.String, Swift.Error {
   case wrongDataFormat
@@ -2214,6 +304,334 @@ public struct GhostMessage {
   final public func decrypt(nonce: Foundation.Data, ciphertext: Foundation.Data, tag: Foundation.Data) -> Foundation.Data?
   @objc deinit
 }
+public struct NamiWiFiNetwork : Swift.Equatable, Swift.Hashable {
+  public let ssid: Swift.String
+  public let rssi: Swift.Int
+  public let bssid: NamiPairingFramework.BSSID
+  public let open: Swift.Bool
+  public static func == (a: NamiPairingFramework.NamiWiFiNetwork, b: NamiPairingFramework.NamiWiFiNetwork) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public typealias BSSID = Foundation.Data
+public struct ScanWiFiNetworksParameters : Swift.Equatable {
+  public init(sessionId: DeviceConnections.WiFiCredentialsUpdateSessionID?, currentDeviceUid: DeviceConnections.DeviceUniversalID?, scanFinishedSessionId: Swift.Int? = nil, passwordReEntryRequested: Swift.Bool = false)
+  public var sessionId: DeviceConnections.WiFiCredentialsUpdateSessionID?
+  public var scanFinishedSessionId: Swift.Int?
+  public var currentDeviceUid: DeviceConnections.DeviceUniversalID?
+  public var passwordReEntryRequested: Swift.Bool
+  public static func == (a: NamiPairingFramework.ScanWiFiNetworksParameters, b: NamiPairingFramework.ScanWiFiNetworksParameters) -> Swift.Bool
+}
+public struct ScannedWiFiNetworks : Swift.Equatable {
+  public init(networks: [NamiPairingFramework.PublicWiFiNetwork], canRetry: Swift.Bool)
+  public var networks: [NamiPairingFramework.PublicWiFiNetwork]
+  public var canRetry: Swift.Bool
+  public static func == (a: NamiPairingFramework.ScannedWiFiNetworks, b: NamiPairingFramework.ScannedWiFiNetworks) -> Swift.Bool
+}
+public enum ErrorScreen {
+  public struct State : Swift.Equatable {
+    public var positioningError: NamiPairingFramework.PositioningError
+    public var positioningCancelled: Swift.Bool
+    public var wantToRetryPositioning: Swift.Bool
+    public var buttonsDisabled: Swift.Bool {
+      get
+    }
+    public static func == (a: NamiPairingFramework.ErrorScreen.State, b: NamiPairingFramework.ErrorScreen.State) -> Swift.Bool
+  }
+  public enum Event : Swift.Equatable {
+    case cancelPositioning
+    case retryPositioning
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: NamiPairingFramework.ErrorScreen.Event, b: NamiPairingFramework.ErrorScreen.Event) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_hasMissingDesignatedInitializers final public class ViewModel : NamiPairingFramework.WiDarPositioningEventSendableViewModelProtocol {
+    public typealias State = NamiPairingFramework.ErrorScreen.State
+    public typealias Event = NamiPairingFramework.ErrorScreen.Event
+    @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.ErrorScreen.ViewModel.State {
+      get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      _modify
+    }
+    final public var $state: Combine.Published<NamiPairingFramework.ErrorScreen.ViewModel.State>.Publisher {
+      get
+      @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+      set
+    }
+    final public func send(_ event: NamiPairingFramework.ErrorScreen.Event)
+    public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+    @objc deinit
+  }
+}
+public enum HowToPosition {
+  public enum Route : Swift.Equatable {
+    case performingPositioning(Swift.String, DeviceConnections.DeviceUniversalID, DeviceConnections.PlaceID)
+    public static func == (a: NamiPairingFramework.HowToPosition.Route, b: NamiPairingFramework.HowToPosition.Route) -> Swift.Bool
+  }
+  public struct State : Swift.Equatable {
+    public static func == (a: NamiPairingFramework.HowToPosition.State, b: NamiPairingFramework.HowToPosition.State) -> Swift.Bool
+  }
+  public enum Event {
+    case never
+    case wantToDismiss
+    case dismissPresented
+    case startPositioningTapped
+    public static func == (a: NamiPairingFramework.HowToPosition.Event, b: NamiPairingFramework.HowToPosition.Event) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_hasMissingDesignatedInitializers final public class ViewModel : NamiPairingFramework.WiDarPositioningEventSendableViewModelProtocol {
+    public typealias State = NamiPairingFramework.HowToPosition.State
+    public typealias Event = NamiPairingFramework.HowToPosition.Event
+    @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.HowToPosition.ViewModel.State {
+      get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      _modify
+    }
+    final public var $state: Combine.Published<NamiPairingFramework.HowToPosition.ViewModel.State>.Publisher {
+      get
+      @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+      set
+    }
+    final public func send(_ event: NamiPairingFramework.HowToPosition.ViewModel.Event)
+    public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+    @objc deinit
+  }
+}
+public enum PositioningGuidance {
+  public enum PositioningQuality : Swift.Equatable {
+    case unknown
+    case poor
+    case degraded
+    case good
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: NamiPairingFramework.PositioningGuidance.PositioningQuality, b: NamiPairingFramework.PositioningGuidance.PositioningQuality) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum PositioningState : Swift.Equatable {
+    case unknown
+    case started
+    case stopped
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: NamiPairingFramework.PositioningGuidance.PositioningState, b: NamiPairingFramework.PositioningGuidance.PositioningState) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct State : Swift.Equatable {
+    public var deviceName: Swift.String
+    public var deviceUid: DeviceConnections.DeviceUniversalID
+    public var placeId: DeviceConnections.PlaceID
+    public var positioningQuality: NamiPairingFramework.PositioningGuidance.PositioningQuality
+    public var positioningState: NamiPairingFramework.PositioningGuidance.PositioningState
+    public var error: NamiPairingFramework.PositioningError?
+    public var wantToDismiss: Swift.Bool
+    public var wantCancel: Swift.Bool
+    public var wantFinish: Swift.Bool
+    public var cancelConfirmed: Swift.Bool
+    public var canNotFinish: Swift.Bool {
+      get
+    }
+    public var canNotCancel: Swift.Bool {
+      get
+    }
+    public var shouldRetryPositioning: Swift.Bool
+    public static func == (a: NamiPairingFramework.PositioningGuidance.State, b: NamiPairingFramework.PositioningGuidance.State) -> Swift.Bool
+  }
+  public enum Event : Swift.Equatable {
+    case never
+    case retryPositioning
+    case gotPositioningQuality(NamiPairingFramework.PositioningGuidance.PositioningQuality)
+    case gotError(NamiPairingFramework.PositioningError)
+    case gotStateError(NamiPairingFramework.PositioningError)
+    case wantToDismiss
+    case wantFinishTapped
+    case wantCancelTapped
+    case cancelViewDismissed
+    case confirmPositioningCancel
+    case positionState(NamiPairingFramework.PositioningGuidance.PositioningState)
+    public static func == (a: NamiPairingFramework.PositioningGuidance.Event, b: NamiPairingFramework.PositioningGuidance.Event) -> Swift.Bool
+  }
+  @_hasMissingDesignatedInitializers final public class ViewModel : NamiPairingFramework.WiDarPositioningEventSendableViewModelProtocol {
+    public typealias State = NamiPairingFramework.PositioningGuidance.State
+    public typealias Event = NamiPairingFramework.PositioningGuidance.Event
+    @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.PositioningGuidance.ViewModel.State {
+      get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      _modify
+    }
+    final public var $state: Combine.Published<NamiPairingFramework.PositioningGuidance.ViewModel.State>.Publisher {
+      get
+      @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+      set
+    }
+    final public func send(_ event: NamiPairingFramework.PositioningGuidance.Event)
+    public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+    @objc deinit
+  }
+}
+public enum InitialScreen {
+  public struct State : Swift.Equatable {
+    public static func == (a: NamiPairingFramework.InitialScreen.State, b: NamiPairingFramework.InitialScreen.State) -> Swift.Bool
+  }
+  public enum Event : Swift.Equatable {
+    case never
+    case howToPositionTapped
+    case dismissPresented
+    case dismissSelf
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: NamiPairingFramework.InitialScreen.Event, b: NamiPairingFramework.InitialScreen.Event) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_hasMissingDesignatedInitializers final public class ViewModel : NamiPairingFramework.WiDarPositioningEventSendableViewModelProtocol {
+    public typealias State = NamiPairingFramework.InitialScreen.State
+    public typealias Event = NamiPairingFramework.InitialScreen.Event
+    @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.InitialScreen.ViewModel.State {
+      get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      _modify
+    }
+    final public var $state: Combine.Published<NamiPairingFramework.InitialScreen.ViewModel.State>.Publisher {
+      get
+      @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+      set
+    }
+    final public func send(_ event: NamiPairingFramework.InitialScreen.Event)
+    public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+    @objc deinit
+  }
+}
+public enum PositioningComplete {
+  public struct State : Swift.Equatable {
+    public var deviceName: Swift.String
+    public var wantConfirmPositioningComplete: Swift.Bool
+    public static func == (a: NamiPairingFramework.PositioningComplete.State, b: NamiPairingFramework.PositioningComplete.State) -> Swift.Bool
+  }
+  public enum Event {
+    case confirmPositioningComplete
+    public static func == (a: NamiPairingFramework.PositioningComplete.Event, b: NamiPairingFramework.PositioningComplete.Event) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_hasMissingDesignatedInitializers final public class ViewModel : NamiPairingFramework.WiDarPositioningEventSendableViewModelProtocol {
+    public typealias State = NamiPairingFramework.PositioningComplete.State
+    public typealias Event = NamiPairingFramework.PositioningComplete.Event
+    @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.PositioningComplete.ViewModel.State {
+      get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      _modify
+    }
+    final public var $state: Combine.Published<NamiPairingFramework.PositioningComplete.ViewModel.State>.Publisher {
+      get
+      @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+      set
+    }
+    final public func send(_ event: NamiPairingFramework.PositioningComplete.Event)
+    public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+    @objc deinit
+  }
+}
+public enum PositioningStep {
+  case finishPositioningButtonTapped
+  case cancelPositioningButtonTapped
+  case successIsConfirmed
+  case cancelIsConfirmed
+  case positioningError(NamiPairingFramework.PositioningError)
+}
+public enum PositioningResult {
+  case finished
+  case cancelled
+  public static func == (a: NamiPairingFramework.PositioningResult, b: NamiPairingFramework.PositioningResult) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum PositioningError : Swift.Error, Swift.Equatable {
+  case wrapped(any Swift.Error)
+  public static func == (lhs: NamiPairingFramework.PositioningError, rhs: NamiPairingFramework.PositioningError) -> Swift.Bool
+}
+public enum PositioningRoot {
+  public enum Route : Swift.Equatable {
+    case startScreen(Swift.String, DeviceConnections.DeviceUniversalID, DeviceConnections.PlaceID)
+    case howToPosition(Swift.String, DeviceConnections.DeviceUniversalID, DeviceConnections.PlaceID)
+    case positionGuidance(Swift.String, DeviceConnections.DeviceUniversalID, DeviceConnections.PlaceID)
+    case successScreen(Swift.String)
+    case errorScreen(NamiPairingFramework.PositioningError)
+    public static func == (a: NamiPairingFramework.PositioningRoot.Route, b: NamiPairingFramework.PositioningRoot.Route) -> Swift.Bool
+  }
+  public struct State : NamiPairingFramework.StateWithRoute {
+    public var route: NamiPairingFramework.PositioningRoot.Route?
+    public static func == (a: NamiPairingFramework.PositioningRoot.State, b: NamiPairingFramework.PositioningRoot.State) -> Swift.Bool
+    public typealias Route = NamiPairingFramework.PositioningRoot.Route
+  }
+  public enum Event : Swift.Equatable {
+    case empty
+    case positioningSucceed
+    case positioningEnded
+    case positioningCancelled
+    case showHowToPosition
+    case showPositionGuidance
+    case gotError(NamiPairingFramework.PositioningError)
+    case restart
+    public static func == (a: NamiPairingFramework.PositioningRoot.Event, b: NamiPairingFramework.PositioningRoot.Event) -> Swift.Bool
+  }
+  @_hasMissingDesignatedInitializers final public class ViewModel<Container> : NamiPairingFramework.WiDarPositioningEventSendableViewModelProtocol where Container : NamiPairingFramework.PairingStepsContainer {
+    public typealias State = NamiPairingFramework.PositioningRoot.State
+    public typealias Event = NamiPairingFramework.PositioningRoot.Event
+    final public func send(_ event: NamiPairingFramework.PositioningRoot.Event)
+    public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+    @objc deinit
+  }
+}
+public struct PairingDevice : NamiPairingFramework.DeviceProtocol {
+  public var id: DeviceConnections.DeviceID
+  public var uid: DeviceConnections.DeviceUniversalID
+  public var urn: Swift.String
+  public var model: NamiPairingFramework.PairingDeviceModel
+  public var deviceState: NamiPairingFramework.PairingDeviceCloudState?
+  public static func == (a: NamiPairingFramework.PairingDevice, b: NamiPairingFramework.PairingDevice) -> Swift.Bool
+  public typealias DeviceCloudState = NamiPairingFramework.PairingDeviceCloudState
+  public typealias DeviceModel = NamiPairingFramework.PairingDeviceModel
+}
+public struct PairingDeviceCloudState : NamiPairingFramework.DeviceCloudStateProtocol {
+  public var payload: Foundation.Data
+  public static func == (a: NamiPairingFramework.PairingDeviceCloudState, b: NamiPairingFramework.PairingDeviceCloudState) -> Swift.Bool
+}
+public struct PairingDeviceModel : NamiPairingFramework.DeviceModelProtocol {
+  public var codeName: Swift.String
+  public var productLabel: Swift.String
+  public var productId: DeviceConnections.DeviceProductID
+  public static func == (a: NamiPairingFramework.PairingDeviceModel, b: NamiPairingFramework.PairingDeviceModel) -> Swift.Bool
+}
+public struct PairingPlaceZone : NamiPairingFramework.PlaceZoneProtocol {
+  public var id: DeviceConnections.PlaceZoneID
+  public var externalId: Swift.String
+  public var name: Swift.String
+  public static func == (a: NamiPairingFramework.PairingPlaceZone, b: NamiPairingFramework.PairingPlaceZone) -> Swift.Bool
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CodeScannerUIView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
@@ -2262,7 +680,9 @@ public enum QRScanner {
     public typealias Event = NamiPairingFramework.QRScanner.Event
     @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.QRScanner.ViewModel.State {
       get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       _modify
     }
     final public var $state: Combine.Published<NamiPairingFramework.QRScanner.ViewModel.State>.Publisher {
@@ -2283,58 +703,6 @@ public struct NamiQRCode : Swift.Equatable {
   public var discriminator: Swift.Int32
   public static func == (a: NamiPairingFramework.NamiQRCode, b: NamiPairingFramework.NamiQRCode) -> Swift.Bool
 }
-public struct NamiWiFiNetwork : Swift.Equatable, Swift.Hashable {
-  public let ssid: Swift.String
-  public let rssi: Swift.Int
-  public let bssid: NamiPairingFramework.BSSID
-  public let open: Swift.Bool
-  public static func == (a: NamiPairingFramework.NamiWiFiNetwork, b: NamiPairingFramework.NamiWiFiNetwork) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public typealias BSSID = Foundation.Data
-public struct ScanWiFiNetworksParameters : Swift.Equatable {
-  public init(sessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID?, currentDeviceUid: NamiPairingFramework.DeviceUniversalID?, scanFinishedSessionId: Swift.Int? = nil, passwordReEntryRequested: Swift.Bool = false)
-  public var sessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID?
-  public var scanFinishedSessionId: Swift.Int?
-  public var currentDeviceUid: NamiPairingFramework.DeviceUniversalID?
-  public var passwordReEntryRequested: Swift.Bool
-  public static func == (a: NamiPairingFramework.ScanWiFiNetworksParameters, b: NamiPairingFramework.ScanWiFiNetworksParameters) -> Swift.Bool
-}
-public struct ScannedWiFiNetworks : Swift.Equatable {
-  public init(networks: [NamiPairingFramework.PublicWiFiNetwork], canRetry: Swift.Bool)
-  public var networks: [NamiPairingFramework.PublicWiFiNetwork]
-  public var canRetry: Swift.Bool
-  public static func == (a: NamiPairingFramework.ScannedWiFiNetworks, b: NamiPairingFramework.ScannedWiFiNetworks) -> Swift.Bool
-}
-public struct PairingDevice : NamiPairingFramework.DeviceProtocol {
-  public var id: NamiPairingFramework.DeviceID
-  public var uid: NamiPairingFramework.DeviceUniversalID
-  public var urn: Swift.String
-  public var model: NamiPairingFramework.PairingDeviceModel
-  public var deviceState: NamiPairingFramework.PairingDeviceCloudState?
-  public static func == (a: NamiPairingFramework.PairingDevice, b: NamiPairingFramework.PairingDevice) -> Swift.Bool
-  public typealias DeviceCloudState = NamiPairingFramework.PairingDeviceCloudState
-  public typealias DeviceModel = NamiPairingFramework.PairingDeviceModel
-}
-public struct PairingDeviceCloudState : NamiPairingFramework.DeviceCloudStateProtocol {
-  public var payload: Foundation.Data
-  public static func == (a: NamiPairingFramework.PairingDeviceCloudState, b: NamiPairingFramework.PairingDeviceCloudState) -> Swift.Bool
-}
-public struct PairingDeviceModel : NamiPairingFramework.DeviceModelProtocol {
-  public var codeName: Swift.String
-  public var productLabel: Swift.String
-  public var productId: NamiPairingFramework.DeviceProductID
-  public static func == (a: NamiPairingFramework.PairingDeviceModel, b: NamiPairingFramework.PairingDeviceModel) -> Swift.Bool
-}
-public struct PairingPlaceZone : NamiPairingFramework.PlaceZoneProtocol {
-  public var id: NamiPairingFramework.PlaceZoneID
-  public var externalId: Swift.String
-  public var name: Swift.String
-  public static func == (a: NamiPairingFramework.PairingPlaceZone, b: NamiPairingFramework.PairingPlaceZone) -> Swift.Bool
-}
 public struct BluetoothCentralState : Swift.Equatable {
   public static func == (a: NamiPairingFramework.BluetoothCentralState, b: NamiPairingFramework.BluetoothCentralState) -> Swift.Bool
 }
@@ -2344,28 +712,32 @@ extension NamiPairingFramework.BluetoothCentralState : Swift.CustomDebugStringCo
   }
 }
 final public class Tomonari<Container> where Container : NamiPairingFramework.PairingStepsContainer {
-  public init(api: NamiPairingFramework.PairingWebAPIProtocol, wifiStorage: NamiPairingFramework.PairingWiFiStorageProtocol, threadDatasetProvider: NamiPairingFramework.PairingThreadOperationalDatasetProviderProtocol)
-  public typealias DevicePairingStatePublisher = Combine.PassthroughSubject<NamiPairingFramework.Tomonari<Container>.DevicePairingState, Swift.Error>
+  public init(api: any NamiPairingFramework.PairingWebAPIProtocol, wifiStorage: any NamiPairingFramework.PairingWiFiStorageProtocol, threadDatasetProvider: any NamiPairingFramework.PairingThreadOperationalDatasetProviderProtocol, deviceConnectionManager: any DeviceConnections.DeviceConnectionsManagerProtocol)
+  public typealias DevicePairingStatePublisher = Combine.PassthroughSubject<NamiPairingFramework.Tomonari<Container>.DevicePairingState, any Swift.Error>
+  public typealias DevicePositioningStatePublisher = Combine.PassthroughSubject<NamiPairingFramework.PositioningStep, any Swift.Error>
   public struct PairingParameters : Swift.Equatable {
-    public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID? = nil, bssid: Foundation.Data? = nil)
-    public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID? = nil, bssid: [Swift.UInt8])
-    public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID? = nil, bssid: Swift.String)
+    public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: DeviceConnections.WiFiCredentialsUpdateSessionID? = nil, bssid: Foundation.Data? = nil)
+    public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: DeviceConnections.WiFiCredentialsUpdateSessionID? = nil, bssid: [Swift.UInt8])
+    public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: DeviceConnections.WiFiCredentialsUpdateSessionID? = nil, bssid: Swift.String)
     public static var none: NamiPairingFramework.Tomonari<Container>.PairingParameters {
       get
     }
     public let qrCode: NamiPairingFramework.NamiQRCode?
-    public let updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID?
+    public let updateWiFiCredentialsSessionId: DeviceConnections.WiFiCredentialsUpdateSessionID?
     public let bssid: Foundation.Data?
     public static func == (a: NamiPairingFramework.Tomonari<Container>.PairingParameters, b: NamiPairingFramework.Tomonari<Container>.PairingParameters) -> Swift.Bool
   }
   public enum DevicePairingState {
-    case deviceCommisionedAtCloud(NamiPairingFramework.DeviceProtocol, in: NamiPairingFramework.PlaceID)
-    case deviceOperable(NamiPairingFramework.DeviceID, ssid: Swift.String?, bssid: [Swift.UInt8]?)
-    case deviceDecommissioned(NamiPairingFramework.DeviceID)
+    case deviceCommisionedAtCloud(any NamiPairingFramework.DeviceProtocol, in: DeviceConnections.PlaceID)
+    case deviceOperable(DeviceConnections.DeviceID, ssid: Swift.String?, bssid: [Swift.UInt8]?, positionAdjustmentNeeded: Swift.Bool?)
+    case deviceDecommissioned(DeviceConnections.DeviceID)
     case pairingCancelled
   }
   final public let devicePairingState: NamiPairingFramework.Tomonari<Container>.DevicePairingStatePublisher
-  final public func startPairing(placeId: NamiPairingFramework.PlaceID, zoneId: NamiPairingFramework.PlaceZoneID, roomId: NamiPairingFramework.RoomID, pairingParameters: NamiPairingFramework.Tomonari<Container>.PairingParameters = .none, pairingSteps: Container) -> some SwiftUI.View
+  final public let devicePositioningState: NamiPairingFramework.Tomonari<Container>.DevicePositioningStatePublisher
+  final public func startPairing(placeId: DeviceConnections.PlaceID, zoneId: DeviceConnections.PlaceZoneID, roomId: DeviceConnections.RoomID, pairingParameters: NamiPairingFramework.Tomonari<Container>.PairingParameters = .none, pairingSteps: Container) -> some SwiftUI.View
+  
+  final public func startPositioning(deviceName: Swift.String, deviceUid: DeviceConnections.DeviceUniversalID, placeId: DeviceConnections.PlaceID, pairingSteps: Container, onPositioningEnded: @escaping (NamiPairingFramework.PositioningResult) -> Swift.Void) -> some SwiftUI.View
   
   @objc deinit
 }
@@ -2405,10 +777,10 @@ public enum PairingMachineState : Swift.Equatable, Swift.CustomDebugStringConver
 public enum PairingMachineError : Swift.Error, Swift.Equatable {
   case unexpectedState
   case unexpectedMessage
-  case seanceError(Swift.Error)
+  case seanceError(any Swift.Error)
   case pairingError(NamiPairingFramework.PublicPairingError)
-  case serializationError(Swift.Error)
-  case deserializationError(Swift.Error)
+  case serializationError(any Swift.Error)
+  case deserializationError(any Swift.Error)
   case encryptionError
   public static func == (lhs: NamiPairingFramework.PairingMachineError, rhs: NamiPairingFramework.PairingMachineError) -> Swift.Bool
 }
@@ -2427,7 +799,9 @@ public enum PairingErrorScreen {
     public typealias State = NamiPairingFramework.PairingErrorScreen.State
     @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.PairingErrorScreen.ViewModel.State {
       get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       _modify
     }
     final public var $state: Combine.Published<NamiPairingFramework.PairingErrorScreen.ViewModel.State>.Publisher {
@@ -2442,7 +816,7 @@ public enum PairingErrorScreen {
 }
 public enum BluetoothDeviceFound {
   public struct State : Swift.Equatable {
-    public var deviceModel: NamiPairingFramework.NamiDeviceModel?
+    public var deviceModel: DeviceConnections.NamiDeviceModel?
     public var deviceName: Swift.String
     public var deviceNameConfirmed: Swift.Bool
     public static func == (a: NamiPairingFramework.BluetoothDeviceFound.State, b: NamiPairingFramework.BluetoothDeviceFound.State) -> Swift.Bool
@@ -2456,7 +830,9 @@ public enum BluetoothDeviceFound {
     public typealias Event = NamiPairingFramework.BluetoothDeviceFound.Event
     @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.BluetoothDeviceFound.ViewModel.State {
       get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       _modify
     }
     final public var $state: Combine.Published<NamiPairingFramework.BluetoothDeviceFound.ViewModel.State>.Publisher {
@@ -2510,7 +886,9 @@ public enum ListWiFiNetworks {
     public typealias Event = NamiPairingFramework.ListWiFiNetworks.Event
     @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.ListWiFiNetworks.ViewModel.State {
       get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       _modify
     }
     final public var $state: Combine.Published<NamiPairingFramework.ListWiFiNetworks.ViewModel.State>.Publisher {
@@ -2542,7 +920,9 @@ public enum PowerOnAndScanning {
     public typealias State = NamiPairingFramework.PowerOnAndScanning.State
     @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.PowerOnAndScanning.ViewModel.State {
       get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       _modify
     }
     final public var $state: Combine.Published<NamiPairingFramework.PowerOnAndScanning.ViewModel.State>.Publisher {
@@ -2558,7 +938,7 @@ public enum PowerOnAndScanning {
 public enum AskToConnect {
   public struct State : Swift.Equatable {
     public var deviceName: Swift.String
-    public var deviceModel: NamiPairingFramework.NamiDeviceModel
+    public var deviceModel: DeviceConnections.NamiDeviceModel
     public var isConnectingToThread: Swift.Bool
     public var updatingWifi: Swift.Bool
     public var devicesCount: Swift.Int
@@ -2588,7 +968,9 @@ public enum AskToConnect {
     public typealias Event = NamiPairingFramework.AskToConnect.Event
     @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.AskToConnect.ViewModel.State {
       get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       _modify
     }
     final public var $state: Combine.Published<NamiPairingFramework.AskToConnect.ViewModel.State>.Publisher {
@@ -2623,7 +1005,9 @@ public enum OtherWiFiNetwork {
     public typealias Event = NamiPairingFramework.OtherWiFiNetwork.Event
     @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.OtherWiFiNetwork.ViewModel.State {
       get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       _modify
     }
     final public var $state: Combine.Published<NamiPairingFramework.OtherWiFiNetwork.ViewModel.State>.Publisher {
@@ -2655,7 +1039,9 @@ public enum BluetoothUsageHint {
     public typealias State = NamiPairingFramework.BluetoothUsageHint.State
     @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.BluetoothUsageHint.ViewModel.State {
       get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       _modify
     }
     final public var $state: Combine.Published<NamiPairingFramework.BluetoothUsageHint.ViewModel.State>.Publisher {
@@ -2689,7 +1075,9 @@ public enum EnterWiFiPassword {
     public typealias State = NamiPairingFramework.EnterWiFiPassword.State
     @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.EnterWiFiPassword.ViewModel.State {
       get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       _modify
     }
     final public var $state: Combine.Published<NamiPairingFramework.EnterWiFiPassword.ViewModel.State>.Publisher {
@@ -2716,14 +1104,14 @@ public enum Pairing {
   public enum ConnectTo : Swift.Equatable {
     case thread
     case wifi
-    public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: NamiPairingFramework.Pairing.ConnectTo, b: NamiPairingFramework.Pairing.ConnectTo) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
   }
   public enum Error : Swift.Error, Swift.Identifiable, Swift.Equatable {
-    case underlying(Swift.Error)
+    case underlying(any Swift.Error)
     public var id: Swift.String {
       get
     }
@@ -2756,17 +1144,17 @@ public enum Pairing {
     case bluetoothEnableInSettings
     case cameraEnableInSettings
     case powerOnAndScanning
-    case deviceFound(NamiPairingFramework.NamiDeviceModel)
+    case deviceFound(DeviceConnections.NamiDeviceModel)
     case askToConnect(NamiPairingFramework.Pairing.DeviceSetupParameters)
-    case listWiFiNetworks(zoneId: NamiPairingFramework.PlaceZoneID, wifiNetworks: [NamiPairingFramework.NamiWiFiNetwork]?, bssidLookupComplete: Swift.Bool)
+    case listWiFiNetworks(zoneId: DeviceConnections.PlaceZoneID, wifiNetworks: [NamiPairingFramework.NamiWiFiNetwork]?, bssidLookupComplete: Swift.Bool)
     case finishingSetup
     public static func == (a: NamiPairingFramework.Pairing.Routes, b: NamiPairingFramework.Pairing.Routes) -> Swift.Bool
   }
   public struct State : Swift.Equatable {
-    public var placeId: NamiPairingFramework.PlaceID
-    public var zoneId: NamiPairingFramework.PlaceZoneID
-    public var roomId: NamiPairingFramework.RoomID
-    public var updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID?
+    public var placeId: DeviceConnections.PlaceID
+    public var zoneId: DeviceConnections.PlaceZoneID
+    public var roomId: DeviceConnections.RoomID
+    public var updateWiFiCredentialsSessionId: DeviceConnections.WiFiCredentialsUpdateSessionID?
     public var deviceName: Swift.String
     public static func == (a: NamiPairingFramework.Pairing.State, b: NamiPairingFramework.Pairing.State) -> Swift.Bool
   }
@@ -2781,18 +1169,18 @@ public enum Pairing {
     case gotQRCode(NamiPairingFramework.NamiQRCode)
     case bluetoothHintAcknowledged
     case didInitBluetooth
-    case gotDeviceProductId(NamiPairingFramework.DeviceProductID)
-    case identifiedModelByProductId(NamiPairingFramework.NamiDeviceModel)
+    case gotDeviceProductId(DeviceConnections.DeviceProductID)
+    case identifiedModelByProductId(DeviceConnections.NamiDeviceModel)
     case setRoute(NamiPairingFramework.Pairing.Routes)
     case shouldContinuePairing
     case didContinuePairing
     case setDeviceName(Swift.String)
     case gotDeviceCertificate(Swift.String)
-    case gotPairingChallenge(challenge: Swift.String, model: NamiPairingFramework.NamiDeviceModel)
+    case gotPairingChallenge(challenge: Swift.String, model: DeviceConnections.NamiDeviceModel)
     case gotDeviceChallengeResponse(Foundation.Data)
     case gotPairDeviceResponseFromCloud(NamiPairingFramework.Pairing.CloudPayload, NamiPairingFramework.PairingDevice)
     case shouldStartScanningWiFi
-    case doneSearchingForWiFiUpdateSessionDevices([NamiPairingFramework.DeviceUniversalID])
+    case doneSearchingForWiFiUpdateSessionDevices([DeviceConnections.DeviceUniversalID])
     case retryScanningWiFi
     case didStartScanningWiFi
     case gotWiFiCredentials(NamiPairingFramework.NamiWiFiNetwork, Swift.String?)
@@ -2806,8 +1194,8 @@ public enum Pairing {
     case shouldSendThreadOperationalDataset(Foundation.Data)
     case didSentThreadOperationalDataset
     case shouldDismissItself
-    case dismissalApproved(NamiPairingFramework.DeviceID?)
-    case dismissalWithDeleteApproved(NamiPairingFramework.DeviceID)
+    case dismissalApproved(DeviceConnections.DeviceID?)
+    case dismissalWithDeleteApproved(DeviceConnections.DeviceID)
     case dismissStackablePresented
     case dismissFullscreenPresented
     case shouldPairAnother
@@ -2824,7 +1212,9 @@ public enum Pairing {
     public typealias Event = NamiPairingFramework.Pairing.Event
     @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.Pairing.ViewModel<Container>.State {
       get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
       _modify
     }
     final public var $state: Combine.Published<NamiPairingFramework.Pairing.ViewModel<Container>.State>.Publisher {
@@ -2865,6 +1255,11 @@ public protocol PairingStepsContainer {
   associatedtype ViewForFinishingSetup : SwiftUI.View
   associatedtype ViewForPairingError : SwiftUI.View
   associatedtype BackButtonView : SwiftUI.View
+  associatedtype ViewForPositioningErrorScreen : SwiftUI.View
+  associatedtype ViewForHowToPosition : SwiftUI.View
+  associatedtype ViewForInitialPositioningScreen : SwiftUI.View
+  associatedtype ViewForPositioningGuidance : SwiftUI.View
+  associatedtype ViewForPositioningComplete : SwiftUI.View
   var bluetoothUsageHint: (NamiPairingFramework.BluetoothUsageHint.ViewModel) -> Self.ViewForBluetoothUsageHint { get }
   var powerOnAndScanning: (NamiPairingFramework.PowerOnAndScanning.ViewModel) -> Self.ViewForPowerOnAndScanning { get }
   var enableBluetoothInSettings: () -> Self.ViewForEnableBluetoothInSettings { get }
@@ -2876,7 +1271,12 @@ public protocol PairingStepsContainer {
   var otherWiFiNetwork: (NamiPairingFramework.OtherWiFiNetwork.ViewModel) -> Self.ViewForOtherWiFiNetwork { get }
   var enterWiFiPassword: (NamiPairingFramework.EnterWiFiPassword.ViewModel) -> Self.ViewForEnterWiFiPassword { get }
   var finishingSetup: () -> Self.ViewForFinishingSetup { get }
+  var howToPosition: (NamiPairingFramework.HowToPosition.ViewModel) -> Self.ViewForHowToPosition { get }
+  var initialPositioningScreen: (NamiPairingFramework.InitialScreen.ViewModel) -> Self.ViewForInitialPositioningScreen { get }
+  var positioningGuidance: (NamiPairingFramework.PositioningGuidance.ViewModel) -> Self.ViewForPositioningGuidance { get }
+  var positioningComplete: (NamiPairingFramework.PositioningComplete.ViewModel) -> Self.ViewForPositioningComplete { get }
   var pairingError: (NamiPairingFramework.PairingErrorScreen.ViewModel) -> Self.ViewForPairingError { get }
+  var positionError: (NamiPairingFramework.ErrorScreen.ViewModel) -> Self.ViewForPositioningErrorScreen { get }
   var backButton: () -> Self.BackButtonView? { get }
 }
 extension NamiPairingFramework.PairingStepsContainer {
@@ -2893,13 +1293,30 @@ public struct NoView : SwiftUI.View {
 public protocol PairingThreadOperationalDatasetProviderProtocol {
   associatedtype Pairing_NamiThreadOperationalDataset : NamiPairingFramework.PairingNamiThreadOperationalDatasetProtocol
   func newRandomDataset(networkName: Swift.String?) -> Self.Pairing_NamiThreadOperationalDataset
-  func retrieve(placeId: NamiPairingFramework.PlaceID) -> Self.Pairing_NamiThreadOperationalDataset?
-  func removeDataset(for placeId: NamiPairingFramework.PlaceID)
-  func storeDataset(_ dataset: Self.Pairing_NamiThreadOperationalDataset, for placeId: NamiPairingFramework.PlaceID)
+  func retrieve(placeId: DeviceConnections.PlaceID) -> Self.Pairing_NamiThreadOperationalDataset?
+  func removeDataset(for placeId: DeviceConnections.PlaceID)
+  func storeDataset(_ dataset: Self.Pairing_NamiThreadOperationalDataset, for placeId: DeviceConnections.PlaceID)
 }
 public protocol PairingNamiThreadOperationalDatasetProtocol : Swift.Decodable, Swift.Encodable {
   var data: Foundation.Data { get }
   func equalsNumericalPanID<ID>(_ panId: ID) -> Swift.Bool where ID : Swift.FixedWidthInteger
+}
+public protocol StateWithRoute : Swift.Equatable {
+  associatedtype Route : Swift.Equatable
+  var route: Self.Route? { get set }
+}
+public protocol WiDarPositioningViewModelProtocol : Combine.ObservableObject {
+  associatedtype State : Swift.Equatable
+}
+public protocol WiDarPositioningEventSendableViewModelProtocol : NamiPairingFramework.WiDarPositioningViewModelProtocol {
+  associatedtype Event : Swift.Equatable
+  func send(_ event: Self.Event)
+}
+public protocol WiDarPositioningRoutBindableViewModelProtocol : NamiPairingFramework.WiDarPositioningEventSendableViewModelProtocol where Self.State : NamiPairingFramework.StateWithRoute {
+  func onRouteChange(_ event: Self.Event) -> SwiftUI.Binding<Self.State.Route?>
+}
+extension NamiPairingFramework.WiDarPositioningRoutBindableViewModelProtocol {
+  public func binding(route: Self.State.Route?, event: Self.Event) -> SwiftUI.Binding<Self.State.Route?>
 }
 public protocol PairingWiFiStorageProtocol {
   func save(password: Swift.String?, for networkSSID: Swift.String)
@@ -2912,19 +1329,19 @@ public protocol PairingWebAPIProtocol {
   associatedtype Pairing_PlaceZone : NamiPairingFramework.PlaceZoneProtocol
   associatedtype Pairing_PairingChallengeResponse : NamiPairingFramework.PairingChallengeResponseProtocol
   associatedtype Pairing_WiFiCredentialsUpdateSession : NamiPairingFramework.WiFiCredentialsUpdateSessionProtocol
-  func listDevices(query: NamiPairingFramework.DevicesQueryProtocol) -> Combine.AnyPublisher<Self.Pairing_DevicesResponse, Swift.Error>
-  func listPlaceZones(for placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[Self.Pairing_PlaceZone], Swift.Error>
-  func requestPairingChallenge(roomId: NamiPairingFramework.RoomID, deviceCertificate: Swift.String) -> Combine.AnyPublisher<Self.Pairing_PairingChallengeResponse, Swift.Error>
-  func pairDevice(roomId: NamiPairingFramework.RoomID, deviceName: Swift.String, cloudChallenge: Swift.String, deviceResponse: Swift.String, deviceCertificate: Swift.String, intent: Swift.String?) -> Combine.AnyPublisher<Self.Pairing_PairDeviceResponse, Swift.Error>
-  func deleteDevice(id: NamiPairingFramework.DeviceID) -> Combine.AnyPublisher<Swift.Void, Swift.Error>
-  func getWiFiCredentialsUpdateSession(id: NamiPairingFramework.WiFiCredentialsUpdateSessionID) -> Combine.AnyPublisher<Self.Pairing_WiFiCredentialsUpdateSession, Swift.Error>
-  func deleteDeviceFromSession(uid: NamiPairingFramework.DeviceUniversalID, sessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID) -> Combine.AnyPublisher<Self.Pairing_WiFiCredentialsUpdateSession, Swift.Error>
+  func listDevices(query: any NamiPairingFramework.DevicesQueryProtocol) -> Combine.AnyPublisher<Self.Pairing_DevicesResponse, any Swift.Error>
+  func listPlaceZones(for placeId: DeviceConnections.PlaceID) -> Combine.AnyPublisher<[Self.Pairing_PlaceZone], any Swift.Error>
+  func requestPairingChallenge(roomId: DeviceConnections.RoomID, deviceCertificate: Swift.String) -> Combine.AnyPublisher<Self.Pairing_PairingChallengeResponse, any Swift.Error>
+  func pairDevice(roomId: DeviceConnections.RoomID, deviceName: Swift.String, cloudChallenge: Swift.String, deviceResponse: Swift.String, deviceCertificate: Swift.String, intent: Swift.String?) -> Combine.AnyPublisher<Self.Pairing_PairDeviceResponse, any Swift.Error>
+  func deleteDevice(id: DeviceConnections.DeviceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  func getWiFiCredentialsUpdateSession(id: DeviceConnections.WiFiCredentialsUpdateSessionID) -> Combine.AnyPublisher<Self.Pairing_WiFiCredentialsUpdateSession, any Swift.Error>
+  func deleteDeviceFromSession(uid: DeviceConnections.DeviceUniversalID, sessionId: DeviceConnections.WiFiCredentialsUpdateSessionID) -> Combine.AnyPublisher<Self.Pairing_WiFiCredentialsUpdateSession, any Swift.Error>
 }
 public protocol DevicesQueryProtocol {
-  var placeIds: [NamiPairingFramework.PlaceID] { get set }
-  var zoneIds: [NamiPairingFramework.PlaceZoneID] { get set }
-  var roomIds: [NamiPairingFramework.RoomID] { get set }
-  var uids: [NamiPairingFramework.DeviceUniversalID] { get set }
+  var placeIds: [DeviceConnections.PlaceID] { get set }
+  var zoneIds: [DeviceConnections.PlaceZoneID] { get set }
+  var roomIds: [DeviceConnections.RoomID] { get set }
+  var uids: [DeviceConnections.DeviceUniversalID] { get set }
   var cursor: Swift.String? { get set }
 }
 public protocol DevicesResponseProtocol {
@@ -2935,8 +1352,8 @@ public protocol DevicesResponseProtocol {
 public protocol DeviceProtocol : Swift.Equatable {
   associatedtype DeviceCloudState : NamiPairingFramework.DeviceCloudStateProtocol
   associatedtype DeviceModel : NamiPairingFramework.DeviceModelProtocol
-  var id: NamiPairingFramework.DeviceID { get }
-  var uid: NamiPairingFramework.DeviceUniversalID { get }
+  var id: DeviceConnections.DeviceID { get }
+  var uid: DeviceConnections.DeviceUniversalID { get }
   var urn: Swift.String { get }
   var model: Self.DeviceModel { get }
   var deviceState: Self.DeviceCloudState? { get }
@@ -2945,7 +1362,7 @@ public protocol DeviceCloudStateProtocol : Swift.Equatable {
   var payload: Foundation.Data { get }
 }
 public protocol PlaceZoneProtocol : Swift.Equatable {
-  var id: NamiPairingFramework.PlaceZoneID { get }
+  var id: DeviceConnections.PlaceZoneID { get }
   var externalId: Swift.String { get }
   var name: Swift.String { get }
 }
@@ -2957,7 +1374,7 @@ public protocol PairingChallengeResponseProtocol {
 public protocol DeviceModelProtocol : Swift.Equatable {
   var codeName: Swift.String { get }
   var productLabel: Swift.String { get }
-  var productId: NamiPairingFramework.DeviceProductID { get }
+  var productId: DeviceConnections.DeviceProductID { get }
 }
 public protocol PairDeviceResponseProtocol {
   associatedtype WiredPlaceKeys : NamiPairingFramework.WiredPlaceKeysProtocol
@@ -2972,12 +1389,12 @@ public protocol WiredPlaceKeysProtocol : Swift.Equatable {
   var serverKey: Swift.String { get }
 }
 public protocol UpdatedDeviceProtocol : Swift.Equatable {
-  var uid: NamiPairingFramework.DeviceUniversalID { get }
+  var uid: DeviceConnections.DeviceUniversalID { get }
 }
 public protocol WiFiCredentialsUpdateSessionProtocol : Swift.Equatable {
   associatedtype UpdatedDevice : NamiPairingFramework.UpdatedDeviceProtocol
-  var id: NamiPairingFramework.WiFiCredentialsUpdateSessionID { get }
-  var zoneId: NamiPairingFramework.PlaceZoneID { get }
+  var id: DeviceConnections.WiFiCredentialsUpdateSessionID { get }
+  var zoneId: DeviceConnections.PlaceZoneID { get }
   var updatedDevices: [Self.UpdatedDevice]? { get }
 }
 public protocol PairingNetworkError : Swift.Error {
@@ -3012,15 +1429,15 @@ public enum MeshCoPType : Swift.Equatable, Swift.Codable {
   case delayTimer(Swift.UInt32)
   case channelMask([[Swift.UInt8]])
   public static func == (a: NamiPairingFramework.MeshCoPType, b: NamiPairingFramework.MeshCoPType) -> Swift.Bool
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 final public class ThreadOperationalDatasetProvider<SecureStorage> where SecureStorage : NamiPairingFramework.ThreadSecureStorageProtocol {
   public init(secureStoreServer: Swift.String, storage: SecureStorage.Type)
   final public func newRandomDataset(networkName: Swift.String?) -> NamiPairingFramework.NamiThreadOperationalDataset
-  final public func retrieve(placeId: NamiPairingFramework.PlaceID) -> NamiPairingFramework.NamiThreadOperationalDataset?
-  final public func removeDataset(for placeId: NamiPairingFramework.PlaceID)
-  final public func storeDataset(_ dataset: NamiPairingFramework.NamiThreadOperationalDataset, for placeId: NamiPairingFramework.PlaceID)
+  final public func retrieve(placeId: DeviceConnections.PlaceID) -> NamiPairingFramework.NamiThreadOperationalDataset?
+  final public func removeDataset(for placeId: DeviceConnections.PlaceID)
+  final public func storeDataset(_ dataset: NamiPairingFramework.NamiThreadOperationalDataset, for placeId: DeviceConnections.PlaceID)
   @objc deinit
 }
 public typealias PanID = Foundation.Data
@@ -3035,24 +1452,13 @@ public struct NamiThreadOperationalDataset : Swift.Equatable, Swift.Codable {
   }
   public func equalsNumericalPanID<ID>(_ panId: ID) -> Swift.Bool where ID : Swift.FixedWidthInteger
   public static func == (a: NamiPairingFramework.NamiThreadOperationalDataset, b: NamiPairingFramework.NamiThreadOperationalDataset) -> Swift.Bool
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 extension NamiPairingFramework.InMemoryThreadDatasetStorage.StorageError : Swift.Equatable {}
 extension NamiPairingFramework.InMemoryThreadDatasetStorage.StorageError : Swift.Hashable {}
 extension NamiPairingFramework.AuthenticationError : Swift.Equatable {}
 extension NamiPairingFramework.AuthenticationError : Swift.Hashable {}
-extension NamiPairingFramework.NamiDeviceCapability : Swift.Hashable {}
-extension NamiPairingFramework.NamiDeviceEndpoint.EndpointType.ReadableCluster : Swift.Equatable {}
-extension NamiPairingFramework.NamiDeviceEndpoint.EndpointType.ReadableCluster : Swift.Hashable {}
-extension NamiPairingFramework.NamiDeviceEndpoint.EndpointType.WritableCluster : Swift.Equatable {}
-extension NamiPairingFramework.NamiDeviceEndpoint.EndpointType.WritableCluster : Swift.Hashable {}
-extension NamiPairingFramework.MeasurementSystem : Swift.Equatable {}
-extension NamiPairingFramework.MeasurementSystem : Swift.Hashable {}
-extension NamiPairingFramework.NamiDeviceConnectivity : Swift.Equatable {}
-extension NamiPairingFramework.NamiDeviceConnectivity : Swift.Hashable {}
-extension NamiPairingFramework.NamiAlertMode : Swift.Hashable {}
-extension NamiPairingFramework.NamiAlertMode : Swift.RawRepresentable {}
 extension NamiPairingFramework.PacketBoatError : Swift.Equatable {}
 extension NamiPairingFramework.PacketBoatError : Swift.Hashable {}
 extension NamiPairingFramework.PacketBoatError : Swift.RawRepresentable {}
@@ -3060,6 +1466,16 @@ extension NamiPairingFramework.Seance.Role : Swift.Equatable {}
 extension NamiPairingFramework.Seance.Role : Swift.Hashable {}
 extension NamiPairingFramework.Seance.State : Swift.Equatable {}
 extension NamiPairingFramework.Seance.State : Swift.Hashable {}
+extension NamiPairingFramework.ErrorScreen.Event : Swift.Hashable {}
+extension NamiPairingFramework.HowToPosition.Event : Swift.Equatable {}
+extension NamiPairingFramework.HowToPosition.Event : Swift.Hashable {}
+extension NamiPairingFramework.PositioningGuidance.PositioningQuality : Swift.Hashable {}
+extension NamiPairingFramework.PositioningGuidance.PositioningState : Swift.Hashable {}
+extension NamiPairingFramework.InitialScreen.Event : Swift.Hashable {}
+extension NamiPairingFramework.PositioningComplete.Event : Swift.Equatable {}
+extension NamiPairingFramework.PositioningComplete.Event : Swift.Hashable {}
+extension NamiPairingFramework.PositioningResult : Swift.Equatable {}
+extension NamiPairingFramework.PositioningResult : Swift.Hashable {}
 extension NamiPairingFramework.CodeScannerView.Coordinator : AVFoundation.AVCaptureMetadataOutputObjectsDelegate {}
 extension NamiPairingFramework.QRScanner.ScanError : Swift.Equatable {}
 extension NamiPairingFramework.QRScanner.ScanError : Swift.Hashable {}

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/NamiPairingFramework-Swift.h</key>
 		<data>
-		NH+Q9ZUFvQJJz70qmez/i//gVdM=
+		Eg0KBLUUkZTWd5b+UTjFm9aUIX0=
 		</data>
 		<key>Headers/NamiPairingFramework.h</key>
 		<data>
@@ -14,88 +14,52 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		7x/ot0LGO1gCjtYKC2CfsfILvaQ=
+		3jFIFnYxhMZAFlb6DB/xK7kLOX4=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		dn1VS9L37cmvnYRQuiLww2VtTVI=
+		2qVGhXSFM+ViROM/INIjTKzRZio=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		l3EIYVy+rG0f9AtyJTXLnvcC8bo=
+		6iOZwg2JSTxk++KTtbgXA3M06gQ=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		a3Qdy5g1x3zSzEiGdNTw+iZ6ytc=
+		cijOQzFqpEcUFsdqyxfrIc7MTSs=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		l3EIYVy+rG0f9AtyJTXLnvcC8bo=
+		6iOZwg2JSTxk++KTtbgXA3M06gQ=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		U5w0JoZI3Ap46ABbpkmcpkFQENo=
+		j9dIFnJQU+XWiKHhtjBYXqLZMss=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		dn1VS9L37cmvnYRQuiLww2VtTVI=
+		2qVGhXSFM+ViROM/INIjTKzRZio=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		pvzvbUUsWvX4NGMs2qF+h92PrnA=
+		FG2B73Io9tlHTmFJiAetBaRV4b8=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		w76Z2pf7o9Hp0FoWU1NZDeHF6g4=
+		9HQjtQd3yevdS1gM5N1w0+vIrxo=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		pvzvbUUsWvX4NGMs2qF+h92PrnA=
+		FG2B73Io9tlHTmFJiAetBaRV4b8=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Lyx78vvBzgzrDA4gXuVGZmh5/1A=
+		6mhxYtqYxtyfi/OnDGsHr2Zag+Q=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		Kw3STZf2jarP/iaPnqFjBsk/Ziw=
+		QbZwyFWujujrlObdKWtLKqcc6jY=
 		</data>
-		<key>en-US.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			p3FbXuC+sUb9RD47e8bahjr8p7M=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en-US.lproj/Localizable.stringsdict</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			8p8z6Amy3d6YuLn41aBu2wsCSF4=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>nl.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			rfA7kdyOT9cUlEU4S0Zh/8bkJN0=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>nl.lproj/Localizable.stringsdict</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			FAXvINdZrNQetItkhdv/eTK6euI=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -103,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1iQejVO51oxr/XSEnngvNZ1X4FPIgLBRHwcqO4n8Q8Q=
+			MuszhToQhN/xsfGZfqfE2yOzBttXhmgq2x5vHp2rd8Q=
 			</data>
 		</dict>
 		<key>Headers/NamiPairingFramework.h</key>
@@ -117,114 +81,78 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZGwIbLQwasAyPA6g+Te2cDucOcqpQ4cyQbqOiZCR2W0=
+			eWyNMhhEUew1sQSU4QUzH4W8JU+4vOf0clExdX0T308=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4x3sNyKdDxXxl0LEDwcMPySw7SHp2HJnDkuyuUAIGw4=
+			B7NT57intW+sdN0ZEGsak0wq+NSZcu05tyqwRv+AD2A=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			T8Hnb4yXVK40+mjlqmyzWFsFWOyrzAVUgnGFBKTG9hg=
+			HE0BteMxud3uLSRscu3a4jVvDTRWgG8AVdqk5Al7Ruk=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4x3sNyKdDxXxl0LEDwcMPySw7SHp2HJnDkuyuUAIGw4=
+			B7NT57intW+sdN0ZEGsak0wq+NSZcu05tyqwRv+AD2A=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z+ko9iP1bjckY1oCSO4uFnjtz8uYPH3uWNGleA9dPVU=
+			JOv13G0AostXFnTs9Z3Y6Bps6j6nGiijwhxKbav3JEw=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZGwIbLQwasAyPA6g+Te2cDucOcqpQ4cyQbqOiZCR2W0=
+			eWyNMhhEUew1sQSU4QUzH4W8JU+4vOf0clExdX0T308=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fTBlFsf3/+EKB6lFGO6CDUdTqir6djuvUlWi+i8y+JM=
+			foyxgY2gLi2k/oVi2rMeBn7080R8aDq+BgHkyFXBIG4=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DGslquPaErnphRH0c7gP8DMHl5OkejYR278rd62HivQ=
+			klW8MfAwHzlFomJXklpjGxjbq28kP/ADhDPNgd2o2/s=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fTBlFsf3/+EKB6lFGO6CDUdTqir6djuvUlWi+i8y+JM=
+			foyxgY2gLi2k/oVi2rMeBn7080R8aDq+BgHkyFXBIG4=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hVOmIVv7niUt3ftl31gArLrPiRy1bHDwS4/ytJ/rePA=
+			Qv9hTEX+v5E0s8d49BHDxKlasAXMPjuBkqJ1a/6cjjo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1IZgoKU44H7ZuXbCNsDWyu/kKTStmvRNT2wOt7pEgyw=
+			8CR9uOhIbYWxr1QsJOyWunBuO5Es3tXYcJWPDA77CCE=
 			</data>
-		</dict>
-		<key>en-US.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			gjmqbUildBIEV/unUHY9/y90lY9LnKdetl6WfryMfBg=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en-US.lproj/Localizable.stringsdict</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			QUrHXP+aV2O6VB46xPwpq5yz467eBA8f/mlcrwWu+kU=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>nl.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			SRV5jQxLTQh+ZZwqFSgX/K3IC/jov1HORAMPAtZFLaQ=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>nl.lproj/Localizable.stringsdict</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			J3S2KvBFTGKULbALelpqeEzIwxejUOuc4bfxN3KR0Uo=
-			</data>
-			<key>optional</key>
-			<true/>
 		</dict>
 	</dict>
 	<key>rules</key>

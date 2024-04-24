@@ -1,7 +1,7 @@
 framework module StandardPairingUI {
   umbrella header "StandardPairingUI.h"
-
   export *
+
   module * { export * }
 }
 

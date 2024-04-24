@@ -1,9 +1,11 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
-// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name StandardPairingUI
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target arm64-apple-ios14.5 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name StandardPairingUI
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import Combine
 import CoreGraphics
+import DeveloperToolsSupport
+import DeviceConnections
 import Foundation
 import NamiPairingFramework
 @_exported import StandardPairingUI
@@ -13,6 +15,7 @@ import UIKit
 import WebKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 public enum LottieLoopModeWrapper {
   case playOnce
   case loop
@@ -45,6 +48,11 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public var otherWiFiNetwork: (NamiPairingFramework.OtherWiFiNetwork.ViewModel) -> StandardPairingUI.OtherWiFiNetworkView
   public var enterWiFiPassword: (NamiPairingFramework.EnterWiFiPassword.ViewModel) -> StandardPairingUI.EnterWiFiPasswordView
   public var finishingSetup: () -> StandardPairingUI.FinishingSetupView
+  public var howToPosition: (NamiPairingFramework.HowToPosition.ViewModel) -> StandardPairingUI.HowToPositionView
+  public var initialPositioningScreen: (NamiPairingFramework.InitialScreen.ViewModel) -> StandardPairingUI.InitialScreenView
+  public var positioningGuidance: (NamiPairingFramework.PositioningGuidance.ViewModel) -> StandardPairingUI.PositioningGuidanceView
+  public var positioningComplete: (NamiPairingFramework.PositioningComplete.ViewModel) -> StandardPairingUI.PositioningCompleteView
+  public var positionError: (NamiPairingFramework.ErrorScreen.ViewModel) -> StandardPairingUI.ErrorScreenView
   public var pairingError: (NamiPairingFramework.PairingErrorScreen.ViewModel) -> StandardPairingUI.PairingErrorScreenView
   public var backButton: () -> StandardPairingUI.CircleButton?
   public typealias BackButtonView = StandardPairingUI.CircleButton
@@ -55,9 +63,14 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public typealias ViewForEnableCameraInSettings = StandardPairingUI.EnableCameraInSettingsView
   public typealias ViewForEnterWiFiPassword = StandardPairingUI.EnterWiFiPasswordView
   public typealias ViewForFinishingSetup = StandardPairingUI.FinishingSetupView
+  public typealias ViewForHowToPosition = StandardPairingUI.HowToPositionView
+  public typealias ViewForInitialPositioningScreen = StandardPairingUI.InitialScreenView
   public typealias ViewForListWiFiNetworks = StandardPairingUI.ListWiFiNetworksView
   public typealias ViewForOtherWiFiNetwork = StandardPairingUI.OtherWiFiNetworkView
   public typealias ViewForPairingError = StandardPairingUI.PairingErrorScreenView
+  public typealias ViewForPositioningComplete = StandardPairingUI.PositioningCompleteView
+  public typealias ViewForPositioningErrorScreen = StandardPairingUI.ErrorScreenView
+  public typealias ViewForPositioningGuidance = StandardPairingUI.PositioningGuidanceView
   public typealias ViewForPowerOnAndScanning = StandardPairingUI.PowerOnAndScanningView
   public typealias ViewForQRCodeScanner = StandardPairingUI.QRScannerView
 }
@@ -94,6 +107,47 @@ public struct EnableBluetoothInSettingsView : SwiftUI.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI29EnableBluetoothInSettingsViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor(unsafe) public struct ErrorScreenView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.ErrorScreen.ViewModel)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI15ErrorScreenViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor(unsafe) public struct PositioningCompleteView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.PositioningComplete.ViewModel)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23PositioningCompleteViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor(unsafe) public struct InitialScreenView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.InitialScreen.ViewModel)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17InitialScreenViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor(unsafe) public struct HowToPositionView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.HowToPosition.ViewModel)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17HowToPositionViewV4bodyQrvp", 0) __
+}
+public struct AnimationView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI13AnimationViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor(unsafe) public struct PositioningGuidanceView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.PositioningGuidance.ViewModel)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23PositioningGuidanceViewV4bodyQrvp", 0) __
 }
 @_Concurrency.MainActor(unsafe) public struct EnterWiFiPasswordView : SwiftUI.View {
   @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.EnterWiFiPassword.ViewModel)
@@ -157,7 +211,7 @@ public struct DeviceSetupScreen<Subview> : SwiftUI.View where Subview : SwiftUI.
 }
 public enum DeviceImages {
   public static func image(for codeName: Swift.String) -> SwiftUI.Image
-  public static func image(for model: NamiPairingFramework.NamiDeviceModel) -> SwiftUI.Image
+  public static func image(for model: DeviceConnections.NamiDeviceModel) -> SwiftUI.Image
 }
 public class Colors {
   public init()
@@ -206,7 +260,7 @@ public class Colors {
     public static func maroon(_ intensity: StandardPairingUI.Colors.ColorSaturationNumber) -> SwiftUI.Color
     public static func maroon(_ intensity: StandardPairingUI.Colors.ColorSaturation) -> SwiftUI.Color
   }
-  public static let allThemes: [NamiPairingFramework.ThemeID]
+  public static let allThemes: [DeviceConnections.ThemeID]
   final public let accent: SwiftUI.Color
   final public let headline: SwiftUI.Color
   final public let linkText: SwiftUI.Color
@@ -260,11 +314,11 @@ public class Colors {
   public var profileTileBackground: SwiftUI.Color {
     get
   }
-  public func forTheme(_ base: NamiPairingFramework.ThemeID, saturation: StandardPairingUI.Colors.ColorSaturation = .normal) -> SwiftUI.Color
+  public func forTheme(_ base: DeviceConnections.ThemeID, saturation: StandardPairingUI.Colors.ColorSaturation = .normal) -> SwiftUI.Color
   @objc deinit
 }
 extension SwiftUI.Text {
-  public init(_ content: Swift.StringProtocol, font: StandardPairingUI.NamiTextStyle)
+  public init(_ content: any Swift.StringProtocol, font: StandardPairingUI.NamiTextStyle)
   public func fillWidth(_ width: CoreFoundation.CGFloat = .infinity, alignment: SwiftUI.Alignment = .leading) -> some SwiftUI.View
   
 }
@@ -425,7 +479,7 @@ public struct NamiChatBubble : SwiftUI.View {
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI14NamiChatBubbleV4bodyQrvp", 0) __
 }
 public struct NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent> : SwiftUI.View where LeadingGroup : SwiftUI.View, TrailingGroup : SwiftUI.View, BottomGroup : SwiftUI.View, NotificationArea : SwiftUI.View, Subviews : SwiftUI.View, MainContent : SwiftUI.View {
-  public init(title: Swift.String? = nil, largeTitle: Swift.String? = nil, themeId: NamiPairingFramework.ThemeID = 0, colorOverride: SwiftUI.Color? = nil, statusbarColorOverride: SwiftUI.Color = .clear, navbarBackgroundBleed: CoreFoundation.CGFloat = 0, contentBehavior: StandardPairingUI.NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent>.ContentBehavior = .scrollable, @SwiftUI.ViewBuilder mainContent: @escaping () -> MainContent = { EmptyView() }, @SwiftUI.ViewBuilder leadingButtonsGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUI.ViewBuilder trailingButtonsGroup: @escaping () -> TrailingGroup = { EmptyView() }, @SwiftUI.ViewBuilder notificationAreaView: @escaping () -> NotificationArea = { EmptyView() }, @SwiftUI.ViewBuilder additionalViews: @escaping () -> Subviews = { EmptyView() }, @SwiftUI.ViewBuilder bottomButtonsGroup: @escaping () -> BottomGroup = { EmptyView() })
+  public init(title: Swift.String? = nil, largeTitle: Swift.String? = nil, themeId: DeviceConnections.ThemeID = 0, colorOverride: SwiftUI.Color? = nil, statusbarColorOverride: SwiftUI.Color = .clear, navbarBackgroundBleed: CoreFoundation.CGFloat = 0, contentBehavior: StandardPairingUI.NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent>.ContentBehavior = .scrollable, @SwiftUI.ViewBuilder mainContent: @escaping () -> MainContent = { EmptyView() }, @SwiftUI.ViewBuilder leadingButtonsGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUI.ViewBuilder trailingButtonsGroup: @escaping () -> TrailingGroup = { EmptyView() }, @SwiftUI.ViewBuilder notificationAreaView: @escaping () -> NotificationArea = { EmptyView() }, @SwiftUI.ViewBuilder additionalViews: @escaping () -> Subviews = { EmptyView() }, @SwiftUI.ViewBuilder bottomButtonsGroup: @escaping () -> BottomGroup = { EmptyView() })
   public enum ContentBehavior {
     case scrollabe(onScroll: (CoreFoundation.CGFloat) -> Swift.Void)
     case fixed
