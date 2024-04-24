@@ -1,0 +1,11 @@
+framework module DeviceConnections {
+  umbrella header "DeviceConnections.h"
+  export *
+
+  module * { export * }
+}
+
+module DeviceConnections.Swift {
+  header "DeviceConnections-Swift.h"
+  requires objc
+}
