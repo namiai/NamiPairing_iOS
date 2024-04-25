@@ -44,6 +44,11 @@ public enum AuthenticationError : Swift.Error {
     get
   }
 }
+public typealias PlaceID = DeviceConnections.PlaceID
+public typealias PlaceZoneID = DeviceConnections.PlaceZoneID
+public typealias RoomID = DeviceConnections.RoomID
+public typealias DeviceUniversalID = DeviceConnections.DeviceUniversalID
+public typealias Log = DeviceConnections.Log
 public struct PublicWiFiNetwork : Swift.Equatable {
   public var ssid: Swift.String
   public var rssi: Swift.Int32
@@ -129,7 +134,7 @@ extension NamiPairingFramework.NamiThreadOperationalDataset : NamiPairingFramewo
 }
 public struct Device : NamiPairingFramework.DeviceProtocol, Swift.Decodable, Swift.Equatable {
   public var id: DeviceConnections.DeviceID
-  public var uid: DeviceConnections.DeviceUniversalID
+  public var uid: NamiPairingFramework.DeviceUniversalID
   public var urn: Swift.String
   public var model: NamiPairingFramework.DeviceModel
   public var deviceState: NamiPairingFramework.DeviceCloudState?
@@ -151,9 +156,9 @@ public struct DeviceModel : NamiPairingFramework.DeviceModelProtocol, Swift.Deco
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct Place : Swift.Decodable, Swift.Equatable, Swift.Identifiable {
-  public var id: DeviceConnections.PlaceID
+  public var id: NamiPairingFramework.PlaceID
   public static func == (a: NamiPairingFramework.Place, b: NamiPairingFramework.Place) -> Swift.Bool
-  public typealias ID = DeviceConnections.PlaceID
+  public typealias ID = NamiPairingFramework.PlaceID
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct PlacesResponse : Swift.Decodable {
@@ -163,18 +168,18 @@ public struct PlacesResponse : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct PlaceZone : NamiPairingFramework.PlaceZoneProtocol, Swift.Decodable, Swift.Equatable, Swift.Identifiable {
-  public var id: DeviceConnections.PlaceZoneID
+  public var id: NamiPairingFramework.PlaceZoneID
   public var externalId: Swift.String
   public var urn: Swift.String
   public var name: Swift.String
   public static func == (a: NamiPairingFramework.PlaceZone, b: NamiPairingFramework.PlaceZone) -> Swift.Bool
-  public typealias ID = DeviceConnections.PlaceZoneID
+  public typealias ID = NamiPairingFramework.PlaceZoneID
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct Room : Swift.Codable, Swift.Equatable, Swift.Identifiable {
-  public var id: DeviceConnections.RoomID
+  public var id: NamiPairingFramework.RoomID
   public static func == (a: NamiPairingFramework.Room, b: NamiPairingFramework.Room) -> Swift.Bool
-  public typealias ID = DeviceConnections.RoomID
+  public typealias ID = NamiPairingFramework.RoomID
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -193,13 +198,13 @@ public struct PairDeviceRequest : Swift.Encodable {
   public func encode(to encoder: any Swift.Encoder) throws
 }
 public struct UpdatedDevice : NamiPairingFramework.UpdatedDeviceProtocol, Swift.Decodable {
-  public var uid: DeviceConnections.DeviceUniversalID
+  public var uid: NamiPairingFramework.DeviceUniversalID
   public static func == (a: NamiPairingFramework.UpdatedDevice, b: NamiPairingFramework.UpdatedDevice) -> Swift.Bool
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct WiFiCredentialsUpdateSession : NamiPairingFramework.WiFiCredentialsUpdateSessionProtocol, Swift.Decodable {
   public var id: DeviceConnections.WiFiCredentialsUpdateSessionID
-  public var zoneId: DeviceConnections.PlaceZoneID
+  public var zoneId: NamiPairingFramework.PlaceZoneID
   public var updatedDevices: [NamiPairingFramework.UpdatedDevice]?
   public static func == (a: NamiPairingFramework.WiFiCredentialsUpdateSession, b: NamiPairingFramework.WiFiCredentialsUpdateSession) -> Swift.Bool
   public typealias UpdatedDevice = NamiPairingFramework.UpdatedDevice
@@ -317,10 +322,10 @@ public struct NamiWiFiNetwork : Swift.Equatable, Swift.Hashable {
 }
 public typealias BSSID = Foundation.Data
 public struct ScanWiFiNetworksParameters : Swift.Equatable {
-  public init(sessionId: DeviceConnections.WiFiCredentialsUpdateSessionID?, currentDeviceUid: DeviceConnections.DeviceUniversalID?, scanFinishedSessionId: Swift.Int? = nil, passwordReEntryRequested: Swift.Bool = false)
+  public init(sessionId: DeviceConnections.WiFiCredentialsUpdateSessionID?, currentDeviceUid: NamiPairingFramework.DeviceUniversalID?, scanFinishedSessionId: Swift.Int? = nil, passwordReEntryRequested: Swift.Bool = false)
   public var sessionId: DeviceConnections.WiFiCredentialsUpdateSessionID?
   public var scanFinishedSessionId: Swift.Int?
-  public var currentDeviceUid: DeviceConnections.DeviceUniversalID?
+  public var currentDeviceUid: NamiPairingFramework.DeviceUniversalID?
   public var passwordReEntryRequested: Swift.Bool
   public static func == (a: NamiPairingFramework.ScanWiFiNetworksParameters, b: NamiPairingFramework.ScanWiFiNetworksParameters) -> Swift.Bool
 }
@@ -371,7 +376,7 @@ public enum ErrorScreen {
 }
 public enum HowToPosition {
   public enum Route : Swift.Equatable {
-    case performingPositioning(Swift.String, DeviceConnections.DeviceUniversalID, DeviceConnections.PlaceID)
+    case performingPositioning(Swift.String, NamiPairingFramework.DeviceUniversalID, NamiPairingFramework.PlaceID)
     public static func == (a: NamiPairingFramework.HowToPosition.Route, b: NamiPairingFramework.HowToPosition.Route) -> Swift.Bool
   }
   public struct State : Swift.Equatable {
@@ -432,8 +437,8 @@ public enum PositioningGuidance {
   }
   public struct State : Swift.Equatable {
     public var deviceName: Swift.String
-    public var deviceUid: DeviceConnections.DeviceUniversalID
-    public var placeId: DeviceConnections.PlaceID
+    public var deviceUid: NamiPairingFramework.DeviceUniversalID
+    public var placeId: NamiPairingFramework.PlaceID
     public var positioningQuality: NamiPairingFramework.PositioningGuidance.PositioningQuality
     public var positioningState: NamiPairingFramework.PositioningGuidance.PositioningState
     public var error: NamiPairingFramework.PositioningError?
@@ -575,9 +580,9 @@ public enum PositioningError : Swift.Error, Swift.Equatable {
 }
 public enum PositioningRoot {
   public enum Route : Swift.Equatable {
-    case startScreen(Swift.String, DeviceConnections.DeviceUniversalID, DeviceConnections.PlaceID)
-    case howToPosition(Swift.String, DeviceConnections.DeviceUniversalID, DeviceConnections.PlaceID)
-    case positionGuidance(Swift.String, DeviceConnections.DeviceUniversalID, DeviceConnections.PlaceID)
+    case startScreen(Swift.String, NamiPairingFramework.DeviceUniversalID, NamiPairingFramework.PlaceID)
+    case howToPosition(Swift.String, NamiPairingFramework.DeviceUniversalID, NamiPairingFramework.PlaceID)
+    case positionGuidance(Swift.String, NamiPairingFramework.DeviceUniversalID, NamiPairingFramework.PlaceID)
     case successScreen(Swift.String)
     case errorScreen(NamiPairingFramework.PositioningError)
     public static func == (a: NamiPairingFramework.PositioningRoot.Route, b: NamiPairingFramework.PositioningRoot.Route) -> Swift.Bool
@@ -608,7 +613,7 @@ public enum PositioningRoot {
 }
 public struct PairingDevice : NamiPairingFramework.DeviceProtocol {
   public var id: DeviceConnections.DeviceID
-  public var uid: DeviceConnections.DeviceUniversalID
+  public var uid: NamiPairingFramework.DeviceUniversalID
   public var urn: Swift.String
   public var model: NamiPairingFramework.PairingDeviceModel
   public var deviceState: NamiPairingFramework.PairingDeviceCloudState?
@@ -627,7 +632,7 @@ public struct PairingDeviceModel : NamiPairingFramework.DeviceModelProtocol {
   public static func == (a: NamiPairingFramework.PairingDeviceModel, b: NamiPairingFramework.PairingDeviceModel) -> Swift.Bool
 }
 public struct PairingPlaceZone : NamiPairingFramework.PlaceZoneProtocol {
-  public var id: DeviceConnections.PlaceZoneID
+  public var id: NamiPairingFramework.PlaceZoneID
   public var externalId: Swift.String
   public var name: Swift.String
   public static func == (a: NamiPairingFramework.PairingPlaceZone, b: NamiPairingFramework.PairingPlaceZone) -> Swift.Bool
@@ -728,16 +733,16 @@ final public class Tomonari<Container> where Container : NamiPairingFramework.Pa
     public static func == (a: NamiPairingFramework.Tomonari<Container>.PairingParameters, b: NamiPairingFramework.Tomonari<Container>.PairingParameters) -> Swift.Bool
   }
   public enum DevicePairingState {
-    case deviceCommisionedAtCloud(any NamiPairingFramework.DeviceProtocol, in: DeviceConnections.PlaceID)
+    case deviceCommisionedAtCloud(any NamiPairingFramework.DeviceProtocol, in: NamiPairingFramework.PlaceID)
     case deviceOperable(DeviceConnections.DeviceID, ssid: Swift.String?, bssid: [Swift.UInt8]?, positionAdjustmentNeeded: Swift.Bool?)
     case deviceDecommissioned(DeviceConnections.DeviceID)
     case pairingCancelled
   }
   final public let devicePairingState: NamiPairingFramework.Tomonari<Container>.DevicePairingStatePublisher
   final public let devicePositioningState: NamiPairingFramework.Tomonari<Container>.DevicePositioningStatePublisher
-  final public func startPairing(placeId: DeviceConnections.PlaceID, zoneId: DeviceConnections.PlaceZoneID, roomId: DeviceConnections.RoomID, pairingParameters: NamiPairingFramework.Tomonari<Container>.PairingParameters = .none, pairingSteps: Container) -> some SwiftUI.View
+  final public func startPairing(placeId: NamiPairingFramework.PlaceID, zoneId: NamiPairingFramework.PlaceZoneID, roomId: NamiPairingFramework.RoomID, pairingParameters: NamiPairingFramework.Tomonari<Container>.PairingParameters = .none, pairingSteps: Container) -> some SwiftUI.View
   
-  final public func startPositioning(deviceName: Swift.String, deviceUid: DeviceConnections.DeviceUniversalID, placeId: DeviceConnections.PlaceID, pairingSteps: Container, onPositioningEnded: @escaping (NamiPairingFramework.PositioningResult) -> Swift.Void) -> some SwiftUI.View
+  final public func startPositioning(deviceName: Swift.String, deviceUid: NamiPairingFramework.DeviceUniversalID, placeId: NamiPairingFramework.PlaceID, pairingSteps: Container, onPositioningEnded: @escaping (NamiPairingFramework.PositioningResult) -> Swift.Void) -> some SwiftUI.View
   
   @objc deinit
 }
@@ -1146,14 +1151,14 @@ public enum Pairing {
     case powerOnAndScanning
     case deviceFound(DeviceConnections.NamiDeviceModel)
     case askToConnect(NamiPairingFramework.Pairing.DeviceSetupParameters)
-    case listWiFiNetworks(zoneId: DeviceConnections.PlaceZoneID, wifiNetworks: [NamiPairingFramework.NamiWiFiNetwork]?, bssidLookupComplete: Swift.Bool)
+    case listWiFiNetworks(zoneId: NamiPairingFramework.PlaceZoneID, wifiNetworks: [NamiPairingFramework.NamiWiFiNetwork]?, bssidLookupComplete: Swift.Bool)
     case finishingSetup
     public static func == (a: NamiPairingFramework.Pairing.Routes, b: NamiPairingFramework.Pairing.Routes) -> Swift.Bool
   }
   public struct State : Swift.Equatable {
-    public var placeId: DeviceConnections.PlaceID
-    public var zoneId: DeviceConnections.PlaceZoneID
-    public var roomId: DeviceConnections.RoomID
+    public var placeId: NamiPairingFramework.PlaceID
+    public var zoneId: NamiPairingFramework.PlaceZoneID
+    public var roomId: NamiPairingFramework.RoomID
     public var updateWiFiCredentialsSessionId: DeviceConnections.WiFiCredentialsUpdateSessionID?
     public var deviceName: Swift.String
     public static func == (a: NamiPairingFramework.Pairing.State, b: NamiPairingFramework.Pairing.State) -> Swift.Bool
@@ -1180,7 +1185,7 @@ public enum Pairing {
     case gotDeviceChallengeResponse(Foundation.Data)
     case gotPairDeviceResponseFromCloud(NamiPairingFramework.Pairing.CloudPayload, NamiPairingFramework.PairingDevice)
     case shouldStartScanningWiFi
-    case doneSearchingForWiFiUpdateSessionDevices([DeviceConnections.DeviceUniversalID])
+    case doneSearchingForWiFiUpdateSessionDevices([NamiPairingFramework.DeviceUniversalID])
     case retryScanningWiFi
     case didStartScanningWiFi
     case gotWiFiCredentials(NamiPairingFramework.NamiWiFiNetwork, Swift.String?)
@@ -1293,9 +1298,9 @@ public struct NoView : SwiftUI.View {
 public protocol PairingThreadOperationalDatasetProviderProtocol {
   associatedtype Pairing_NamiThreadOperationalDataset : NamiPairingFramework.PairingNamiThreadOperationalDatasetProtocol
   func newRandomDataset(networkName: Swift.String?) -> Self.Pairing_NamiThreadOperationalDataset
-  func retrieve(placeId: DeviceConnections.PlaceID) -> Self.Pairing_NamiThreadOperationalDataset?
-  func removeDataset(for placeId: DeviceConnections.PlaceID)
-  func storeDataset(_ dataset: Self.Pairing_NamiThreadOperationalDataset, for placeId: DeviceConnections.PlaceID)
+  func retrieve(placeId: NamiPairingFramework.PlaceID) -> Self.Pairing_NamiThreadOperationalDataset?
+  func removeDataset(for placeId: NamiPairingFramework.PlaceID)
+  func storeDataset(_ dataset: Self.Pairing_NamiThreadOperationalDataset, for placeId: NamiPairingFramework.PlaceID)
 }
 public protocol PairingNamiThreadOperationalDatasetProtocol : Swift.Decodable, Swift.Encodable {
   var data: Foundation.Data { get }
@@ -1330,18 +1335,18 @@ public protocol PairingWebAPIProtocol {
   associatedtype Pairing_PairingChallengeResponse : NamiPairingFramework.PairingChallengeResponseProtocol
   associatedtype Pairing_WiFiCredentialsUpdateSession : NamiPairingFramework.WiFiCredentialsUpdateSessionProtocol
   func listDevices(query: any NamiPairingFramework.DevicesQueryProtocol) -> Combine.AnyPublisher<Self.Pairing_DevicesResponse, any Swift.Error>
-  func listPlaceZones(for placeId: DeviceConnections.PlaceID) -> Combine.AnyPublisher<[Self.Pairing_PlaceZone], any Swift.Error>
-  func requestPairingChallenge(roomId: DeviceConnections.RoomID, deviceCertificate: Swift.String) -> Combine.AnyPublisher<Self.Pairing_PairingChallengeResponse, any Swift.Error>
-  func pairDevice(roomId: DeviceConnections.RoomID, deviceName: Swift.String, cloudChallenge: Swift.String, deviceResponse: Swift.String, deviceCertificate: Swift.String, intent: Swift.String?) -> Combine.AnyPublisher<Self.Pairing_PairDeviceResponse, any Swift.Error>
+  func listPlaceZones(for placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[Self.Pairing_PlaceZone], any Swift.Error>
+  func requestPairingChallenge(roomId: NamiPairingFramework.RoomID, deviceCertificate: Swift.String) -> Combine.AnyPublisher<Self.Pairing_PairingChallengeResponse, any Swift.Error>
+  func pairDevice(roomId: NamiPairingFramework.RoomID, deviceName: Swift.String, cloudChallenge: Swift.String, deviceResponse: Swift.String, deviceCertificate: Swift.String, intent: Swift.String?) -> Combine.AnyPublisher<Self.Pairing_PairDeviceResponse, any Swift.Error>
   func deleteDevice(id: DeviceConnections.DeviceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   func getWiFiCredentialsUpdateSession(id: DeviceConnections.WiFiCredentialsUpdateSessionID) -> Combine.AnyPublisher<Self.Pairing_WiFiCredentialsUpdateSession, any Swift.Error>
-  func deleteDeviceFromSession(uid: DeviceConnections.DeviceUniversalID, sessionId: DeviceConnections.WiFiCredentialsUpdateSessionID) -> Combine.AnyPublisher<Self.Pairing_WiFiCredentialsUpdateSession, any Swift.Error>
+  func deleteDeviceFromSession(uid: NamiPairingFramework.DeviceUniversalID, sessionId: DeviceConnections.WiFiCredentialsUpdateSessionID) -> Combine.AnyPublisher<Self.Pairing_WiFiCredentialsUpdateSession, any Swift.Error>
 }
 public protocol DevicesQueryProtocol {
-  var placeIds: [DeviceConnections.PlaceID] { get set }
-  var zoneIds: [DeviceConnections.PlaceZoneID] { get set }
-  var roomIds: [DeviceConnections.RoomID] { get set }
-  var uids: [DeviceConnections.DeviceUniversalID] { get set }
+  var placeIds: [NamiPairingFramework.PlaceID] { get set }
+  var zoneIds: [NamiPairingFramework.PlaceZoneID] { get set }
+  var roomIds: [NamiPairingFramework.RoomID] { get set }
+  var uids: [NamiPairingFramework.DeviceUniversalID] { get set }
   var cursor: Swift.String? { get set }
 }
 public protocol DevicesResponseProtocol {
@@ -1353,7 +1358,7 @@ public protocol DeviceProtocol : Swift.Equatable {
   associatedtype DeviceCloudState : NamiPairingFramework.DeviceCloudStateProtocol
   associatedtype DeviceModel : NamiPairingFramework.DeviceModelProtocol
   var id: DeviceConnections.DeviceID { get }
-  var uid: DeviceConnections.DeviceUniversalID { get }
+  var uid: NamiPairingFramework.DeviceUniversalID { get }
   var urn: Swift.String { get }
   var model: Self.DeviceModel { get }
   var deviceState: Self.DeviceCloudState? { get }
@@ -1362,7 +1367,7 @@ public protocol DeviceCloudStateProtocol : Swift.Equatable {
   var payload: Foundation.Data { get }
 }
 public protocol PlaceZoneProtocol : Swift.Equatable {
-  var id: DeviceConnections.PlaceZoneID { get }
+  var id: NamiPairingFramework.PlaceZoneID { get }
   var externalId: Swift.String { get }
   var name: Swift.String { get }
 }
@@ -1389,12 +1394,12 @@ public protocol WiredPlaceKeysProtocol : Swift.Equatable {
   var serverKey: Swift.String { get }
 }
 public protocol UpdatedDeviceProtocol : Swift.Equatable {
-  var uid: DeviceConnections.DeviceUniversalID { get }
+  var uid: NamiPairingFramework.DeviceUniversalID { get }
 }
 public protocol WiFiCredentialsUpdateSessionProtocol : Swift.Equatable {
   associatedtype UpdatedDevice : NamiPairingFramework.UpdatedDeviceProtocol
   var id: DeviceConnections.WiFiCredentialsUpdateSessionID { get }
-  var zoneId: DeviceConnections.PlaceZoneID { get }
+  var zoneId: NamiPairingFramework.PlaceZoneID { get }
   var updatedDevices: [Self.UpdatedDevice]? { get }
 }
 public protocol PairingNetworkError : Swift.Error {
@@ -1435,9 +1440,9 @@ public enum MeshCoPType : Swift.Equatable, Swift.Codable {
 final public class ThreadOperationalDatasetProvider<SecureStorage> where SecureStorage : NamiPairingFramework.ThreadSecureStorageProtocol {
   public init(secureStoreServer: Swift.String, storage: SecureStorage.Type)
   final public func newRandomDataset(networkName: Swift.String?) -> NamiPairingFramework.NamiThreadOperationalDataset
-  final public func retrieve(placeId: DeviceConnections.PlaceID) -> NamiPairingFramework.NamiThreadOperationalDataset?
-  final public func removeDataset(for placeId: DeviceConnections.PlaceID)
-  final public func storeDataset(_ dataset: NamiPairingFramework.NamiThreadOperationalDataset, for placeId: DeviceConnections.PlaceID)
+  final public func retrieve(placeId: NamiPairingFramework.PlaceID) -> NamiPairingFramework.NamiThreadOperationalDataset?
+  final public func removeDataset(for placeId: NamiPairingFramework.PlaceID)
+  final public func storeDataset(_ dataset: NamiPairingFramework.NamiThreadOperationalDataset, for placeId: NamiPairingFramework.PlaceID)
   @objc deinit
 }
 public typealias PanID = Foundation.Data
