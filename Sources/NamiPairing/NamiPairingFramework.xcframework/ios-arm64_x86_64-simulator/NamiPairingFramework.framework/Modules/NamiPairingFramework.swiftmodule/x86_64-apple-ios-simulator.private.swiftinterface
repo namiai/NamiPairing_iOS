@@ -47,6 +47,7 @@ public enum AuthenticationError : Swift.Error {
 public typealias PlaceID = DeviceConnections.PlaceID
 public typealias PlaceZoneID = DeviceConnections.PlaceZoneID
 public typealias RoomID = DeviceConnections.RoomID
+public typealias DeviceID = DeviceConnections.DeviceID
 public typealias DeviceUniversalID = DeviceConnections.DeviceUniversalID
 public typealias Log = DeviceConnections.Log
 public struct PublicWiFiNetwork : Swift.Equatable {
@@ -133,9 +134,10 @@ extension NamiPairingFramework.ThreadOperationalDatasetProvider : NamiPairingFra
 extension NamiPairingFramework.NamiThreadOperationalDataset : NamiPairingFramework.PairingNamiThreadOperationalDatasetProtocol {
 }
 public struct Device : NamiPairingFramework.DeviceProtocol, Swift.Decodable, Swift.Equatable {
-  public var id: DeviceConnections.DeviceID
+  public var id: NamiPairingFramework.DeviceID
   public var uid: NamiPairingFramework.DeviceUniversalID
   public var urn: Swift.String
+  public var name: Swift.String
   public var model: NamiPairingFramework.DeviceModel
   public var deviceState: NamiPairingFramework.DeviceCloudState?
   public static func == (a: NamiPairingFramework.Device, b: NamiPairingFramework.Device) -> Swift.Bool
@@ -612,9 +614,10 @@ public enum PositioningRoot {
   }
 }
 public struct PairingDevice : NamiPairingFramework.DeviceProtocol {
-  public var id: DeviceConnections.DeviceID
+  public var id: NamiPairingFramework.DeviceID
   public var uid: NamiPairingFramework.DeviceUniversalID
   public var urn: Swift.String
+  public var name: Swift.String
   public var model: NamiPairingFramework.PairingDeviceModel
   public var deviceState: NamiPairingFramework.PairingDeviceCloudState?
   public static func == (a: NamiPairingFramework.PairingDevice, b: NamiPairingFramework.PairingDevice) -> Swift.Bool
@@ -734,8 +737,8 @@ final public class Tomonari<Container> where Container : NamiPairingFramework.Pa
   }
   public enum DevicePairingState {
     case deviceCommisionedAtCloud(any NamiPairingFramework.DeviceProtocol, in: NamiPairingFramework.PlaceID)
-    case deviceOperable(DeviceConnections.DeviceID, ssid: Swift.String?, bssid: [Swift.UInt8]?, positionAdjustmentNeeded: Swift.Bool?)
-    case deviceDecommissioned(DeviceConnections.DeviceID)
+    case deviceOperable(NamiPairingFramework.DeviceID, ssid: Swift.String?, bssid: [Swift.UInt8]?, positionAdjustmentNeeded: Swift.Bool?)
+    case deviceDecommissioned(NamiPairingFramework.DeviceID)
     case pairingCancelled
   }
   final public let devicePairingState: NamiPairingFramework.Tomonari<Container>.DevicePairingStatePublisher
@@ -1199,8 +1202,8 @@ public enum Pairing {
     case shouldSendThreadOperationalDataset(Foundation.Data)
     case didSentThreadOperationalDataset
     case shouldDismissItself
-    case dismissalApproved(DeviceConnections.DeviceID?)
-    case dismissalWithDeleteApproved(DeviceConnections.DeviceID)
+    case dismissalApproved(NamiPairingFramework.DeviceID?)
+    case dismissalWithDeleteApproved(NamiPairingFramework.DeviceID)
     case dismissStackablePresented
     case dismissFullscreenPresented
     case shouldPairAnother
@@ -1338,7 +1341,7 @@ public protocol PairingWebAPIProtocol {
   func listPlaceZones(for placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[Self.Pairing_PlaceZone], any Swift.Error>
   func requestPairingChallenge(roomId: NamiPairingFramework.RoomID, deviceCertificate: Swift.String) -> Combine.AnyPublisher<Self.Pairing_PairingChallengeResponse, any Swift.Error>
   func pairDevice(roomId: NamiPairingFramework.RoomID, deviceName: Swift.String, cloudChallenge: Swift.String, deviceResponse: Swift.String, deviceCertificate: Swift.String, intent: Swift.String?) -> Combine.AnyPublisher<Self.Pairing_PairDeviceResponse, any Swift.Error>
-  func deleteDevice(id: DeviceConnections.DeviceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  func deleteDevice(id: NamiPairingFramework.DeviceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   func getWiFiCredentialsUpdateSession(id: DeviceConnections.WiFiCredentialsUpdateSessionID) -> Combine.AnyPublisher<Self.Pairing_WiFiCredentialsUpdateSession, any Swift.Error>
   func deleteDeviceFromSession(uid: NamiPairingFramework.DeviceUniversalID, sessionId: DeviceConnections.WiFiCredentialsUpdateSessionID) -> Combine.AnyPublisher<Self.Pairing_WiFiCredentialsUpdateSession, any Swift.Error>
 }
@@ -1357,9 +1360,10 @@ public protocol DevicesResponseProtocol {
 public protocol DeviceProtocol : Swift.Equatable {
   associatedtype DeviceCloudState : NamiPairingFramework.DeviceCloudStateProtocol
   associatedtype DeviceModel : NamiPairingFramework.DeviceModelProtocol
-  var id: DeviceConnections.DeviceID { get }
+  var id: NamiPairingFramework.DeviceID { get }
   var uid: NamiPairingFramework.DeviceUniversalID { get }
   var urn: Swift.String { get }
+  var name: Swift.String { get }
   var model: Self.DeviceModel { get }
   var deviceState: Self.DeviceCloudState? { get }
 }
