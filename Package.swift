@@ -17,9 +17,6 @@ let package = Package(
             name: "NamiPairing-NoUI", 
             targets: ["NamiPairingFramework", "DeviceConnections"])
     ],
-    dependencies: [
-        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.26.0")
-    ],
     targets: [
         .binaryTarget(name: "NamiPairingFramework", path: "Sources/NamiPairing/NamiPairingFramework.xcframework"),
         .binaryTarget(name: "StandardPairingUI", path: "Sources/NamiPairing/StandardPairingUI.xcframework"),
