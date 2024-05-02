@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
-// swift-module-flags: -target arm64-apple-ios14.5 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name NamiPairingFramework
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios14.5 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name NamiPairingFramework
 import AVFoundation
 import Combine
 import CommonCrypto
@@ -1112,8 +1111,8 @@ public enum Pairing {
   public enum ConnectTo : Swift.Equatable {
     case thread
     case wifi
-    public static func == (a: NamiPairingFramework.Pairing.ConnectTo, b: NamiPairingFramework.Pairing.ConnectTo) -> Swift.Bool
     public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: NamiPairingFramework.Pairing.ConnectTo, b: NamiPairingFramework.Pairing.ConnectTo) -> Swift.Bool
     public var hashValue: Swift.Int {
       get
     }
