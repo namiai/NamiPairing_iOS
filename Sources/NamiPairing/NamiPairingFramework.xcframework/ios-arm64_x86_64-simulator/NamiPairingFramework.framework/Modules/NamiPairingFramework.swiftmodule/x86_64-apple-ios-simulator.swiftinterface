@@ -376,10 +376,6 @@ public enum ErrorScreen {
   }
 }
 public enum HowToPosition {
-  public enum Route : Swift.Equatable {
-    case performingPositioning(Swift.String, NamiPairingFramework.DeviceUniversalID, NamiPairingFramework.PlaceID)
-    public static func == (a: NamiPairingFramework.HowToPosition.Route, b: NamiPairingFramework.HowToPosition.Route) -> Swift.Bool
-  }
   public struct State : Swift.Equatable {
     public static func == (a: NamiPairingFramework.HowToPosition.State, b: NamiPairingFramework.HowToPosition.State) -> Swift.Bool
   }
@@ -1096,6 +1092,10 @@ public enum EnterWiFiPassword {
     public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
     @objc deinit
   }
+}
+extension UIKit.UINavigationController : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func gestureRecognizerShouldBegin(_: UIKit.UIGestureRecognizer) -> Swift.Bool
 }
 public enum Pairing {
   public struct CloudPayload : NamiPairingFramework.WiredPlaceKeysProtocol {

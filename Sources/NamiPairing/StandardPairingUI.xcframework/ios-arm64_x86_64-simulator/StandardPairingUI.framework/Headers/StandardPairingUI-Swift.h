@@ -317,6 +317,7 @@ SWIFT_CLASS("_TtCV17StandardPairingUI13TextFieldView11Coordinator")
 
 
 
+
 #endif
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -640,6 +641,7 @@ SWIFT_CLASS("_TtCV17StandardPairingUI13TextFieldView11Coordinator")
 - (void)textFieldDidEndEditing:(UITextField * _Nonnull)_;
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 

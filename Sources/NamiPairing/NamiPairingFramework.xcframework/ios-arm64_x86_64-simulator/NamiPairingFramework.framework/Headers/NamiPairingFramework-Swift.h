@@ -308,6 +308,13 @@ SWIFT_CLASS("_TtC20NamiPairingFramework17CodeScannerUIView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIGestureRecognizer;
+
+@interface UINavigationController (SWIFT_EXTENSION(NamiPairingFramework)) <UIGestureRecognizerDelegate>
+- (void)viewDidLoad;
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+@end
+
 
 #endif
 #if __has_attribute(external_source_symbol)
@@ -625,6 +632,13 @@ SWIFT_CLASS("_TtC20NamiPairingFramework17CodeScannerUIView")
 - (void)layoutSubviews;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIGestureRecognizer;
+
+@interface UINavigationController (SWIFT_EXTENSION(NamiPairingFramework)) <UIGestureRecognizerDelegate>
+- (void)viewDidLoad;
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
 @end
 
 

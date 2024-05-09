@@ -34,6 +34,74 @@ extension NamiPairingFramework.Pairing.Error {
     get
   }
 }
+public class ThemeManager : Foundation.ObservableObject {
+  public init(selectedTheme: any StandardPairingUI.ThemeProtocol)
+  public func setTheme(_ theme: any StandardPairingUI.ThemeProtocol)
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public protocol ThemeProtocol {
+  var headline1: SwiftUI.Font { get }
+  var headline2: SwiftUI.Font { get }
+  var headline3: SwiftUI.Font { get }
+  var headline4: SwiftUI.Font { get }
+  var headline5: SwiftUI.Font { get }
+  var headline6: SwiftUI.Font { get }
+  var paragraph1: SwiftUI.Font { get }
+  var paragraph2: SwiftUI.Font { get }
+  var small1: SwiftUI.Font { get }
+  var small2: SwiftUI.Font { get }
+  var primaryBlack: SwiftUI.Color { get }
+  var secondaryBlack: SwiftUI.Color { get }
+  var tertiaryBlack: SwiftUI.Color { get }
+  var white: SwiftUI.Color { get }
+  var background: SwiftUI.Color { get }
+  var line: SwiftUI.Color { get }
+  var accent: SwiftUI.Color { get }
+  var negative: SwiftUI.Color { get }
+  var warning: SwiftUI.Color { get }
+  var positive: SwiftUI.Color { get }
+  var lowAttentionAlert: SwiftUI.Color { get }
+  var redAlert3: SwiftUI.Color { get }
+  var redAlert4: SwiftUI.Color { get }
+  var success3: SwiftUI.Color { get }
+  var success4: SwiftUI.Color { get }
+  var primaryActionButtonStyle: any SwiftUI.ButtonStyle { get }
+  var secondaryActionButtonStyle: any SwiftUI.ButtonStyle { get }
+  var tertiaryActionButtonStyle: any SwiftUI.ButtonStyle { get }
+  var destructiveActionButtonStyle: any SwiftUI.ButtonStyle { get }
+}
+public struct NamiTheme : StandardPairingUI.ThemeProtocol {
+  public var headline1: SwiftUI.Font
+  public var headline2: SwiftUI.Font
+  public var headline3: SwiftUI.Font
+  public var headline4: SwiftUI.Font
+  public var headline5: SwiftUI.Font
+  public var headline6: SwiftUI.Font
+  public var paragraph1: SwiftUI.Font
+  public var paragraph2: SwiftUI.Font
+  public var small1: SwiftUI.Font
+  public var small2: SwiftUI.Font
+  public var primaryBlack: SwiftUI.Color
+  public var secondaryBlack: SwiftUI.Color
+  public var tertiaryBlack: SwiftUI.Color
+  public var white: SwiftUI.Color
+  public var background: SwiftUI.Color
+  public var line: SwiftUI.Color
+  public var accent: SwiftUI.Color
+  public var negative: SwiftUI.Color
+  public var warning: SwiftUI.Color
+  public var positive: SwiftUI.Color
+  public var lowAttentionAlert: SwiftUI.Color
+  public var redAlert3: SwiftUI.Color
+  public var redAlert4: SwiftUI.Color
+  public var success3: SwiftUI.Color
+  public var success4: SwiftUI.Color
+  public var primaryActionButtonStyle: any SwiftUI.ButtonStyle
+  public var secondaryActionButtonStyle: any SwiftUI.ButtonStyle
+  public var tertiaryActionButtonStyle: any SwiftUI.ButtonStyle
+  public var destructiveActionButtonStyle: any SwiftUI.ButtonStyle
+}
 public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public init()
   public var bluetoothUsageHint: (NamiPairingFramework.BluetoothUsageHint.ViewModel) -> StandardPairingUI.BluetoothUsageHintView
@@ -101,7 +169,7 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI22BluetoothUsageHintViewV4bodyQrvp", 0) __
 }
-public struct EnableBluetoothInSettingsView : SwiftUI.View {
+@_Concurrency.MainActor(unsafe) public struct EnableBluetoothInSettingsView : SwiftUI.View {
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -162,7 +230,7 @@ public struct AnimationView : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI20OtherWiFiNetworkViewV4bodyQrvp", 0) __
 }
-public struct FinishingSetupView : SwiftUI.View {
+@_Concurrency.MainActor(unsafe) public struct FinishingSetupView : SwiftUI.View {
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -182,7 +250,7 @@ public struct FinishingSetupView : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI0B15ErrorScreenViewV4bodyQrvp", 0) __
 }
-public struct EnableCameraInSettingsView : SwiftUI.View {
+@_Concurrency.MainActor(unsafe) public struct EnableCameraInSettingsView : SwiftUI.View {
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -201,16 +269,42 @@ public struct PongView : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI8PongViewV4bodyQrvp", 0) __
 }
-public struct DeviceSetupScreen<Subview> : SwiftUI.View where Subview : SwiftUI.View {
-  public init(@SwiftUI.ViewBuilder subview: @escaping () -> Subview)
+@_Concurrency.MainActor(unsafe) public struct DeviceSetupScreen<Subview> : SwiftUI.View where Subview : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(@SwiftUI.ViewBuilder subview: @escaping () -> Subview)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17DeviceSetupScreenV4bodyQrvp", 0) __<Subview>
 }
+extension UIKit.UIImage {
+  public enum AnimatableImageFormat : Swift.String {
+    case gif
+    case webP
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
 public enum DeviceImages {
-  public static func image(for codeName: Swift.String) -> SwiftUI.Image
-  public static func image(for model: DeviceConnections.NamiDeviceModel) -> SwiftUI.Image
+  public static func image(for codeName: Swift.String) -> StandardPairingUI.AnimatableImageView
+  public static func image(for model: DeviceConnections.NamiDeviceModel) -> StandardPairingUI.AnimatableImageView
+}
+extension SwiftUI.Image {
+  public static func webp(_ name: Swift.String) -> SwiftUI.Image
+  public static func webp(_ name: Swift.String, in bundle: Foundation.Bundle) -> SwiftUI.Image
+}
+public struct AnimatableImageView : SwiftUI.UIViewRepresentable {
+  public init?(webP: Swift.String, in bundle: Foundation.Bundle)
+  public init(uiImage: UIKit.UIImage)
+  @_Concurrency.MainActor(unsafe) public func makeUIView(context: StandardPairingUI.AnimatableImageView.Context) -> UIKit.UIImageView
+  @_Concurrency.MainActor(unsafe) public func updateUIView(_ uiView: UIKit.UIImageView, context: StandardPairingUI.AnimatableImageView.Context)
+  public func resizable() -> some SwiftUI.View
+  
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+  public typealias UIViewType = UIKit.UIImageView
 }
 public class Colors {
   public init()
@@ -254,10 +348,14 @@ public class Colors {
     public let notOccupied: SwiftUI.Color
     public let notHealthy: SwiftUI.Color
     public let healthy: SwiftUI.Color
+    public let rest: SwiftUI.Color
+    public let notRest: SwiftUI.Color
   }
   public struct DataRepresentations {
     public static func maroon(_ intensity: StandardPairingUI.Colors.ColorSaturationNumber) -> SwiftUI.Color
     public static func maroon(_ intensity: StandardPairingUI.Colors.ColorSaturation) -> SwiftUI.Color
+    public static func arctic(_ intensity: StandardPairingUI.Colors.ColorSaturationNumber) -> SwiftUI.Color
+    public static func arctic(_ intensity: StandardPairingUI.Colors.ColorSaturation) -> SwiftUI.Color
   }
   public static let allThemes: [DeviceConnections.ThemeID]
   final public let accent: SwiftUI.Color
@@ -286,6 +384,7 @@ public class Colors {
   public var globalBlue: SwiftUI.Color {
     get
   }
+  final public let warningAlert: SwiftUI.Color
   public var alert0: SwiftUI.Color {
     get
   }
@@ -318,6 +417,7 @@ public class Colors {
 }
 extension SwiftUI.Text {
   public init(_ content: any Swift.StringProtocol, font: StandardPairingUI.NamiTextStyle)
+  public init(_ content: any Swift.StringProtocol, font: SwiftUI.Font)
   public func fillWidth(_ width: CoreFoundation.CGFloat = .infinity, alignment: SwiftUI.Alignment = .leading) -> some SwiftUI.View
   
 }
@@ -600,6 +700,9 @@ public struct ScrollViewWithOnScrollAction<Subviews> : SwiftUI.View where Subvie
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI016ScrollViewWithOnD6ActionV4bodyQrvp", 0) __<Subviews>
 }
+extension UIKit.UIImage.AnimatableImageFormat : Swift.Equatable {}
+extension UIKit.UIImage.AnimatableImageFormat : Swift.Hashable {}
+extension UIKit.UIImage.AnimatableImageFormat : Swift.RawRepresentable {}
 extension StandardPairingUI.Colors.ColorSaturation : Swift.Equatable {}
 extension StandardPairingUI.Colors.ColorSaturation : Swift.Hashable {}
 extension StandardPairingUI.Colors.ColorSaturation : Swift.RawRepresentable {}
