@@ -2333,6 +2333,7 @@ public enum I18n {
     }
     public enum ConnectSuccess {
       public static func deviceHasBeenSetupInZone(_ p1: Any, _ p2: Any) -> Swift.String
+      public static func deviceHasBeenSetupInZoneOptimizePosition(_ p1: Any, _ p2: Any) -> Swift.String
       public static let setupAnotherDevice: Swift.String
     }
     public enum ConnectWifi {
@@ -3195,6 +3196,7 @@ public struct NamiDeviceEndpoint : Swift.Equatable {
       case stateWifiInfo
       case stateThreadNetworkInfo
       case stateWiDar
+      case stateSensingConfig
       public static func == (a: DeviceConnections.NamiDeviceEndpoint.EndpointType.ReadableCluster, b: DeviceConnections.NamiDeviceEndpoint.EndpointType.ReadableCluster) -> Swift.Bool
       public func hash(into hasher: inout Swift.Hasher)
       public var hashValue: Swift.Int {
@@ -3296,6 +3298,7 @@ public typealias WiFiCredentialsUpdateSessionID = Swift.Int64
 public typealias PropertyTypeID = Swift.Int64
 public typealias PropertyElevationID = Swift.Int64
 public typealias PropertyAvgFloorAreaID = Swift.Int64
+public typealias AutomationID = Swift.Int64
 public struct DeviceUniversalID : Swift.Equatable, Swift.Decodable, Swift.Hashable {
   public init?(_ string: Swift.String)
   public init(_ number: Swift.UInt64)

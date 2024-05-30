@@ -1128,7 +1128,6 @@ public enum Pairing {
   public enum ThreadError : Swift.Error, Swift.Equatable {
     case threadOperationalDatasetMissing
     case threadNetworkNotFound
-    case mixedEnvironment
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: NamiPairingFramework.Pairing.ThreadError, b: NamiPairingFramework.Pairing.ThreadError) -> Swift.Bool
     public var hashValue: Swift.Int {
@@ -1151,7 +1150,7 @@ public enum Pairing {
     case bluetoothEnableInSettings
     case cameraEnableInSettings
     case powerOnAndScanning
-    case deviceFound(DeviceConnections.NamiDeviceModel)
+    case deviceFound(DeviceConnections.NamiDeviceModel, DeviceConnections.WiFiCredentialsUpdateSessionID?)
     case askToConnect(NamiPairingFramework.Pairing.DeviceSetupParameters)
     case listWiFiNetworks(zoneId: NamiPairingFramework.PlaceZoneID, wifiNetworks: [NamiPairingFramework.NamiWiFiNetwork]?, bssidLookupComplete: Swift.Bool)
     case finishingSetup
@@ -1211,7 +1210,6 @@ public enum Pairing {
     case gotErrorAction(NamiPairingFramework.Pairing.ActionOnError)
     case threadOperationalDatsetMissing
     case askTryRescanThreadNetworks
-    case mixedEnvironment
     public static func == (a: NamiPairingFramework.Pairing.Event, b: NamiPairingFramework.Pairing.Event) -> Swift.Bool
   }
   @_hasMissingDesignatedInitializers final public class ViewModel<Container> where Container : NamiPairingFramework.PairingStepsContainer {
