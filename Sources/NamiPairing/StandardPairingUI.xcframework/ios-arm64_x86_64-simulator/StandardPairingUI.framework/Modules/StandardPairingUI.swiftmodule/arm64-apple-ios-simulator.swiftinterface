@@ -26,6 +26,127 @@ public struct LottieAnimationWrapper {
   public func animationView(looping: StandardPairingUI.LottieLoopModeWrapper = .loop) -> some SwiftUI.View
   
 }
+public class WordingManager : Foundation.ObservableObject {
+  @Combine.Published @_projectedValueProperty($wordings) public var wordings: any StandardPairingUI.WordingProtocol {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $wordings: Combine.Published<any StandardPairingUI.WordingProtocol>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public init()
+  public init(wordings: any StandardPairingUI.WordingProtocol)
+  public func setWordings(_ wordings: any StandardPairingUI.WordingProtocol)
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public class EmptyWordings : StandardPairingUI.WordingProtocol {
+  public init()
+  @objc deinit
+}
+@objc public protocol WordingProtocol {
+  @objc optional var ok: Swift.String { get }
+  @objc optional var next: Swift.String { get }
+  @objc optional var cancel: Swift.String { get }
+  @objc optional var pairingNavigationBarTitle: Swift.String { get }
+  @objc optional var connectingToDevice: Swift.String { get }
+  @objc optional var headerConnectToPower: Swift.String { get }
+  @objc optional var explainedReadyToPair: Swift.String { get }
+  @objc optional var scanning: Swift.String { get }
+  @objc optional var askUserToWait: Swift.String { get }
+  @objc optional var bluetoothDisabled: Swift.String { get }
+  @objc optional var enableBlueToothInSettingsHeader: Swift.String { get }
+  @objc optional var buttonSettings: Swift.String { get }
+  @objc optional var scanDeviceTitle: Swift.String { get }
+  @objc optional var scanDeviceSubtitle: Swift.String { get }
+  @objc optional var missingCameraPermissionTitle: Swift.String { get }
+  @objc optional var missingCameraPermissionDescription: Swift.String { get }
+  @objc optional var openSettings: Swift.String { get }
+  @objc optional var deviceFoundHeader1: Swift.String { get }
+  @objc optional var deviceFoundHeader2: Swift.String { get }
+  @objc optional var askToNameHeader: Swift.String { get }
+  @objc optional var nameDeviceExplained: Swift.String { get }
+  @objc optional var setUpAsBorderRouter: Swift.String { get }
+  @objc optional var settingUpThisDevice: Swift.String { get }
+  @objc optional var nonFirstThreadDeviceDescription1: Swift.String { get }
+  @objc optional var nonFirstThreadDeviceDescription2: Swift.String { get }
+  @objc optional var nonFirstThreadDeviceDescription3: Swift.String { get }
+  @objc optional var nonFirstWifiDeviceDescription1: Swift.String { get }
+  @objc optional var wifiDeviceMetricDistanceDescription: Swift.String { get }
+  @objc optional var wifiDeviceImperialDistanceDescription: Swift.String { get }
+  @objc optional var firstThreadDeviceDescription1: Swift.String { get }
+  @objc optional var firstThreadDeviceDescription2: Swift.String { get }
+  @objc optional var firstThreadDeviceDescription3: Swift.String { get }
+  @objc optional var firstWifiDeviceDescription1: Swift.String { get }
+  @objc optional var firstWifiDeviceDescription2: Swift.String { get }
+  @objc optional var scanQRtitle: Swift.String { get }
+  @objc optional var scanQRsubtitle: Swift.String { get }
+  @objc optional var qrCodeError: Swift.String { get }
+  @objc optional var qrCodeMismatchError: Swift.String { get }
+  @objc optional var tryAgainButton: Swift.String { get }
+  @objc optional var connectWifiTitle: Swift.String { get }
+  @objc optional var selectNetwork: Swift.String { get }
+  @objc optional var networkNotFound: Swift.String { get }
+  @objc optional var availableNetworks: Swift.String { get }
+  @objc optional var otherNetworkButton: Swift.String { get }
+  @objc optional var enterPassword: Swift.String { get }
+  @objc optional var enterPasswordHeaderTitle: Swift.String { get }
+  @objc optional var passwordEntryFieldPlaceholder: Swift.String { get }
+  @objc optional var passwordEntryFieldHint: Swift.String { get }
+  @objc optional var buttonReadyToConnect: Swift.String { get }
+  @objc optional var foundSavedPassword: Swift.String { get }
+  @objc optional var useSavedPassword: Swift.String { get }
+  @objc optional var forget: Swift.String { get }
+  @objc optional var otherWifiNetworkTitle: Swift.String { get }
+  @objc optional var deviceConnectivityHint: Swift.String { get }
+  @objc optional var networkNamePlaceholder: Swift.String { get }
+  @objc optional var passwordPlaceholder: Swift.String { get }
+  @objc optional var readyToConnectButton: Swift.String { get }
+  @objc optional var finishingSetupHeader: Swift.String { get }
+  @objc optional var gameOfPongText: Swift.String { get }
+  @objc optional var positioningNavigationTitle: Swift.String { get }
+  @objc optional var widarInfoTitle: Swift.String { get }
+  @objc optional var widarInfoMustOptimisePosition: Swift.String { get }
+  @objc optional var widarInfoAvoidMovingWhenOptimized: Swift.String { get }
+  @objc optional var nextButton: Swift.String { get }
+  @objc optional var startPositioningButton: Swift.String { get }
+  @objc optional var recommendationsTitle: Swift.String { get }
+  @objc optional var recommendationsInfoAttachBase: Swift.String { get }
+  @objc optional var recommendationsInfoWireOnBack: Swift.String { get }
+  @objc optional var recommendationsInfoKeepAreaClear: Swift.String { get }
+  @objc optional var finishButton: Swift.String { get }
+  @objc optional var cancelButton: Swift.String { get }
+  @objc optional var positioningGuidanceTitle: Swift.String { get }
+  @objc optional var guideMetric: Swift.String { get }
+  @objc optional var guideImperial: Swift.String { get }
+  @objc optional var statusLabel: Swift.String { get }
+  @objc optional var statusChecking: Swift.String { get }
+  @objc optional var statusMispositioned: Swift.String { get }
+  @objc optional var statusGettingBetter: Swift.String { get }
+  @objc optional var statusOptimized: Swift.String { get }
+  @objc optional var statusEstablishingConnection: Swift.String { get }
+  @objc optional var positioningTip: Swift.String { get }
+  @objc optional var cancelPopupTitle: Swift.String { get }
+  @objc optional var cancelPopupMessage: Swift.String { get }
+  @objc optional var cancelPopupBackToPositioningButton: Swift.String { get }
+  @objc optional var cancelPopupCancelButton: Swift.String { get }
+  @objc optional var successTitle: Swift.String { get }
+  @objc optional var sucessContentMessage: Swift.String { get }
+  @objc optional var doneButton: Swift.String { get }
+  @objc optional var errorOccurredTitle: Swift.String { get }
+  @objc optional var tryAgainActionTitle: Swift.String { get }
+  @objc optional var restartActionTitle: Swift.String { get }
+  @objc optional var ignoreActionTitle: Swift.String { get }
+  @objc optional var positioningErrorTitle: Swift.String { get }
+  @objc optional var deviceNotFoundMessage: Swift.String { get }
+  @objc optional var retryPositioningButton: Swift.String { get }
+  @objc optional var exitPositioningButton: Swift.String { get }
+}
 extension NamiPairingFramework.Pairing.Error {
   public var errorMessageTitle: Swift.String {
     get
