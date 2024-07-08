@@ -8,9 +8,13 @@
 		<data>
 		bxMvc5E+sC9VRWvih+Y1MwTbyUQ=
 		</data>
+		<key>Contact Sensor_Pulse Dark Blue.json</key>
+		<data>
+		TZNBMCNb27shKp5snIkILalUBaY=
+		</data>
 		<key>Headers/StandardPairingUI-Swift.h</key>
 		<data>
-		lJ4oXyrVrnKo3w96UqFAZeJoiuw=
+		87poBi5Qh0TVt16q0XMPV1lRzBE=
 		</data>
 		<key>Headers/StandardPairingUI.h</key>
 		<data>
@@ -18,47 +22,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		GA/Fkj6WN7rYquf96I+61qiBFdE=
+		KrGPDiZ1eV+YaPxvv6Hph4TrUNc=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		B7bg+TXIJWBTB4KdBbE6uD7VUgU=
+		NXfrC2+DnwVjXHEgtgEV9cWcUDc=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		c5BF52zOcnV6tFw31U+gQP1O2kY=
+		5DHOH3aRdLRqRhK45HkUr+q8Zdw=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		LtZhGZ/TuRwJJdEno3wOSA3cXDU=
+		dUBCJjjEPB6RCZSOHZgTndvyQLg=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		c5BF52zOcnV6tFw31U+gQP1O2kY=
+		5DHOH3aRdLRqRhK45HkUr+q8Zdw=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Ts2IyZOfgONGAFIAabn4gFVNXns=
+		M2hvZY/C626gUpRX9eq7eaZlw00=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		B7bg+TXIJWBTB4KdBbE6uD7VUgU=
+		NXfrC2+DnwVjXHEgtgEV9cWcUDc=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		q1K48zplQNzHkiXmEqJxTEWCjlY=
+		RSJgt0Qr5TfL+YUwQcNmtV7t/7o=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		roHWvEOQdttxgJAbsiPH9nCK4F4=
+		bNr/YTePTTbjAqsTa2C61fcdvYA=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		q1K48zplQNzHkiXmEqJxTEWCjlY=
+		RSJgt0Qr5TfL+YUwQcNmtV7t/7o=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4PYOsNhRKefrQ4kxiwozSwPZYYo=
+		bjl06gQKnXaGph/VgelJ0kz3r4s=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -79,6 +83,10 @@
 		<key>WiDAR_4_Positioning Done.json</key>
 		<data>
 		NGqd25DcVh6G4joPtryUWYq9WXM=
+		</data>
+		<key>contact_sensor_devkit_1.webp</key>
+		<data>
+		VX9IhzDHzfoO2mrwl1YEv2sSlR8=
 		</data>
 		<key>esp32_s3_tmcu_c3_h2_devkitc_1_v2.webp</key>
 		<data>
@@ -166,7 +174,7 @@
 		</data>
 		<key>thread_widar_sensor.webp</key>
 		<data>
-		bYLLNo9UZMMknEbEA5nFLUX8Ue4=
+		btdnJbzJ24eEtTLwdmS0Qf8YGQY=
 		</data>
 		<key>unknownmodel.webp</key>
 		<data>
@@ -182,11 +190,18 @@
 			eixx67yKAyR3Lbo3ssoJJEw7NvDimzQ3vf4jlLyk/nM=
 			</data>
 		</dict>
+		<key>Contact Sensor_Pulse Dark Blue.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FHhoRfxxcD1vsp6ksAMQEDHylxy5JuHk2KRtrmbcuz0=
+			</data>
+		</dict>
 		<key>Headers/StandardPairingUI-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			q5hJ4MuLRftooJuPKdjnFi6ygbK4dGAPZldkMYfwmPA=
+			xVxyJFdcyoMtOkqhTYAFuga5rBsovA5sX07igoYSUP8=
 			</data>
 		</dict>
 		<key>Headers/StandardPairingUI.h</key>
@@ -200,70 +215,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			41hEDaPf33/8O49kbmg2yv8u9WrT26oVArBay/xyBOU=
+			8gnd95kuHLrUFsZPHUgjtjVfilvFLeGINJ6GSGR+/NU=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xWywVoa8IKmzDOMApm1rG1C4iuIg/kS55ACV2O3S3QA=
+			piCuf/2tjCpk/7sPBNANjGhZNgJeYw4IAi/RMHNQ/P8=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0RZ+UCCB+uiVIUidLjVK5BUJ15z90GeKGsNbKunN+I8=
+			Gh84H9rBDR14lER6xAgwIHhbkdWeNVONTFA9UKaQprg=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xWywVoa8IKmzDOMApm1rG1C4iuIg/kS55ACV2O3S3QA=
+			piCuf/2tjCpk/7sPBNANjGhZNgJeYw4IAi/RMHNQ/P8=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yDtA5oIeqbBqSeUhWv3H/b/qWUElMtr4Mtt84xtVCZw=
+			BjzX/p6y3JN3DlzgrGiJSrtxDZ+bb+jNKui0HrTJoB0=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			41hEDaPf33/8O49kbmg2yv8u9WrT26oVArBay/xyBOU=
+			8gnd95kuHLrUFsZPHUgjtjVfilvFLeGINJ6GSGR+/NU=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BjbDMgp0aOuWUNIXKXccAbmoCNa/XxNkZgYpoRI0zdk=
+			LYdyf8rUaGt3b22hgkdz3ZAaee7J4oJrTqCLfb+O1b8=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TdgkERm+XJtkdHd218jJgq2XpirIjLkArjp11G1gNRY=
+			YPcQok2gez99bZYXlLGmXoGK4k6kFGYeLU97skmJTgs=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BjbDMgp0aOuWUNIXKXccAbmoCNa/XxNkZgYpoRI0zdk=
+			LYdyf8rUaGt3b22hgkdz3ZAaee7J4oJrTqCLfb+O1b8=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GiNWLZaZUSFvqnKcxeR85CYh17J7vQa4kSGTFT1+F8s=
+			0g3lEU4I9bov7aqSqdpa/MpKtUZnLzVmxoW/xSptQ6s=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -299,6 +314,13 @@
 			<key>hash2</key>
 			<data>
 			qKrXKQld3GyG5cGRIbAKspN+nSs3HQ1tpOQ2lAZQI4k=
+			</data>
+		</dict>
+		<key>contact_sensor_devkit_1.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GkixXuMrjZn0Or+o2Be6rtOfaMMFsUgX6IqztyGSQDc=
 			</data>
 		</dict>
 		<key>esp32_s3_tmcu_c3_h2_devkitc_1_v2.webp</key>
@@ -452,7 +474,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nZLCur9S4cBmGN90yS/21Y1AKZeUEhP7ySo+Hg9vVpE=
+			O3O7p1KKYusEtcWP+7s/KiqUqmDsZwvcNq5+a32wFos=
 			</data>
 		</dict>
 		<key>unknownmodel.webp</key>
