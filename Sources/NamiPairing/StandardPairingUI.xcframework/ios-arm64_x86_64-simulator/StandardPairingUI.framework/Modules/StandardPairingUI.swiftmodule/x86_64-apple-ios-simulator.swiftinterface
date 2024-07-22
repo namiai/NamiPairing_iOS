@@ -6,7 +6,9 @@ import CoreGraphics
 import DeveloperToolsSupport
 import DeviceConnections
 import Foundation
+import Lottie
 import NamiPairingFramework
+import SafariServices
 @_exported import StandardPairingUI
 import Swift
 import SwiftUI
@@ -45,115 +47,513 @@ public class WordingManager : Foundation.ObservableObject {
   public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @objc deinit
 }
-public class EmptyWordings : StandardPairingUI.WordingProtocol {
-  public init()
-  @objc deinit
+public protocol WordingProtocol {
+  var ok: Swift.String { get }
+  var next: Swift.String { get }
+  var cancel: Swift.String { get }
+  var pairingNavigationBarTitle: Swift.String { get }
+  func connectingToDevice(deviceName: Swift.String) -> Swift.String
+  var headerConnectToPower: Swift.String { get }
+  var explainedReadyToPair: Swift.String { get }
+  var headerContactSensor: Swift.String { get }
+  var scanning: Swift.String { get }
+  var askUserToWait: Swift.String { get }
+  var bluetoothDisabled: Swift.String { get }
+  var enableBlueToothInSettingsHeader: Swift.String { get }
+  var buttonSettings: Swift.String { get }
+  var scanDeviceTitle: Swift.String { get }
+  var scanDeviceSubtitle: Swift.String { get }
+  var missingCameraPermissionTitle: Swift.String { get }
+  var missingCameraPermissionDescription: Swift.String { get }
+  var openSettings: Swift.String { get }
+  var deviceFoundHeader1: Swift.String { get }
+  var deviceFoundHeader2: Swift.String { get }
+  func askToNameHeader(productLabel: Swift.String) -> Swift.String
+  var nameDeviceExplained: Swift.String { get }
+  var setUpAsBorderRouter: Swift.String { get }
+  var settingUpThisDevice: Swift.String { get }
+  var nonFirstThreadDeviceDescription1: Swift.String { get }
+  var nonFirstThreadDeviceDescription2: Swift.String { get }
+  func nonFirstThreadDeviceDescription3(zoneName: Swift.String) -> Swift.String
+  func nonFirstWifiDeviceDescription1(zoneName: Swift.String) -> Swift.String
+  var wifiDeviceMetricDistanceDescription: Swift.String { get }
+  var wifiDeviceImperialDistanceDescription: Swift.String { get }
+  var firstThreadDeviceDescription1: Swift.String { get }
+  var firstThreadDeviceDescription2: Swift.String { get }
+  var firstThreadDeviceDescription3: Swift.String { get }
+  func firstWifiDeviceDescription1(zoneName: Swift.String) -> Swift.String
+  var firstWifiDeviceDescription2: Swift.String { get }
+  var scanQRtitle: Swift.String { get }
+  var scanQRsubtitle: Swift.String { get }
+  var qrCodeError: Swift.String { get }
+  var qrCodeMismatchError: Swift.String { get }
+  var tryAgainButton: Swift.String { get }
+  var connectWifiTitle: Swift.String { get }
+  var selectNetwork: Swift.String { get }
+  var networkNotFound: Swift.String { get }
+  var availableNetworks: Swift.String { get }
+  var otherNetworkButton: Swift.String { get }
+  var enterPassword: Swift.String { get }
+  func enterPasswordHeaderTitle(networkName: Swift.String) -> Swift.String
+  var passwordEntryFieldPlaceholder: Swift.String { get }
+  var passwordEntryFieldHint: Swift.String { get }
+  var buttonReadyToConnect: Swift.String { get }
+  var foundSavedPassword: Swift.String { get }
+  func useSavedPassword(networkName: Swift.String) -> Swift.String
+  var forget: Swift.String { get }
+  var otherWifiNetworkTitle: Swift.String { get }
+  var deviceConnectivityHint: Swift.String { get }
+  var networkNamePlaceholder: Swift.String { get }
+  var passwordPlaceholder: Swift.String { get }
+  var readyToConnectButton: Swift.String { get }
+  var finishingSetupHeader: Swift.String { get }
+  var gameOfPongText: Swift.String { get }
+  var positioningNavigationTitle: Swift.String { get }
+  var widarInfoTitle: Swift.String { get }
+  var widarInfoMustOptimisePosition: Swift.String { get }
+  var widarInfoAvoidMovingWhenOptimized: Swift.String { get }
+  var nextButton: Swift.String { get }
+  var startPositioningButton: Swift.String { get }
+  var recommendationsTitle: Swift.String { get }
+  var recommendationsInfoAttachBase: Swift.String { get }
+  var recommendationsInfoWireOnBack: Swift.String { get }
+  var recommendationsInfoKeepAreaClear: Swift.String { get }
+  var finishButton: Swift.String { get }
+  var cancelButton: Swift.String { get }
+  var positioningGuidanceTitle: Swift.String { get }
+  var guideMetric: Swift.String { get }
+  var guideImperial: Swift.String { get }
+  var statusLabel: Swift.String { get }
+  var statusChecking: Swift.String { get }
+  var statusMispositioned: Swift.String { get }
+  var statusGettingBetter: Swift.String { get }
+  var statusOptimized: Swift.String { get }
+  var statusEstablishingConnection: Swift.String { get }
+  var positioningTip: Swift.String { get }
+  var cancelPopupTitle: Swift.String { get }
+  var cancelPopupMessage: Swift.String { get }
+  var cancelPopupBackToPositioningButton: Swift.String { get }
+  var cancelPopupCancelButton: Swift.String { get }
+  var successTitle: Swift.String { get }
+  func sucessContentMessage(deviceName: Swift.String) -> Swift.String
+  var doneButton: Swift.String { get }
+  var errorOccurredTitle: Swift.String { get }
+  var tryAgainActionTitle: Swift.String { get }
+  var restartActionTitle: Swift.String { get }
+  var ignoreActionTitle: Swift.String { get }
+  var restartSetupActionTitle: Swift.String { get }
+  var exitSetupActionTitle: Swift.String { get }
+  var pairingErrorNeedHelp: Swift.String { get }
+  var pairingErrorOccurredTitle: Swift.String { get }
+  var pairingErrorDeviceWifiScanTitle: Swift.String { get }
+  var pairingErrorDeviceWifiJoinIpTitle: Swift.String { get }
+  var pairingErrorDeviceWifiJoinPasswordTitle: Swift.String { get }
+  var pairingErrorDeviceMismatchTitle: Swift.String { get }
+  var pairingErrorUnexpectedStateDescription: Swift.String { get }
+  var pairingErrorUnexpectedMessageDescription: Swift.String { get }
+  var pairingErrorSeanceDescription: Swift.String { get }
+  var pairingErrorSerializationDescription: Swift.String { get }
+  var pairingErrorDeserializationDescription: Swift.String { get }
+  var pairingErrorEncryptionErrorDescription: Swift.String { get }
+  var pairingErrorDeviceMismatchDescription: Swift.String { get }
+  var pairingErrorDeviceSecureSessionDescription: Swift.String { get }
+  var pairingErrorDeviceCloudChallengeDescription: Swift.String { get }
+  var pairingErrorDeviceWifiScanDescription: Swift.String { get }
+  var pairingErrorDeviceWifiJoinDescription: Swift.String { get }
+  var pairingErrorDeviceWifiJoinPasswordDescription: Swift.String { get }
+  var pairingErrorDeviceWifiJoinIpDescription: Swift.String { get }
+  var pairingErrorsUnableJoinThreadNetworksDescription1: Swift.String { get }
+  func pairingErrorsUnableJoinThreadNetworksDescription2(zoneName: Swift.String) -> Swift.String
+  var pairingErrorDeviceUnknownUnrecognizedDescription: Swift.String { get }
+  var pairingThreadErrorDatasetMissingTitle: Swift.String { get }
+  var pairingThreadErrorThreadNetworkNotFoundTitle: Swift.String { get }
+  var pairingThreadErrorDatasetMissingDescription: Swift.String { get }
+  func pairingThreadErrorContactSensorNoThreadNetworksFoundDescription1(zoneName: Swift.String) -> Swift.String
+  func pairingThreadErrorNoThreadNetworksFoundDescription(zoneName: Swift.String) -> Swift.String
+  var positioningErrorTitle: Swift.String { get }
+  var deviceNotFoundMessage: Swift.String { get }
+  var retryPositioningButton: Swift.String { get }
+  var exitPositioningButton: Swift.String { get }
+  var urlNotPulsingBlue: Swift.String { get }
+  var urlNamiThreadTopology: Swift.String { get }
+  var urlNotConnectToThread: Swift.String { get }
+  var pairingScanningBleFaq: Swift.String { get }
 }
-@objc public protocol WordingProtocol {
-  @objc optional var ok: Swift.String { get }
-  @objc optional var next: Swift.String { get }
-  @objc optional var cancel: Swift.String { get }
-  @objc optional var pairingNavigationBarTitle: Swift.String { get }
-  @objc optional var connectingToDevice: Swift.String { get }
-  @objc optional var headerConnectToPower: Swift.String { get }
-  @objc optional var explainedReadyToPair: Swift.String { get }
-  @objc optional var scanning: Swift.String { get }
-  @objc optional var askUserToWait: Swift.String { get }
-  @objc optional var bluetoothDisabled: Swift.String { get }
-  @objc optional var enableBlueToothInSettingsHeader: Swift.String { get }
-  @objc optional var buttonSettings: Swift.String { get }
-  @objc optional var scanDeviceTitle: Swift.String { get }
-  @objc optional var scanDeviceSubtitle: Swift.String { get }
-  @objc optional var missingCameraPermissionTitle: Swift.String { get }
-  @objc optional var missingCameraPermissionDescription: Swift.String { get }
-  @objc optional var openSettings: Swift.String { get }
-  @objc optional var deviceFoundHeader1: Swift.String { get }
-  @objc optional var deviceFoundHeader2: Swift.String { get }
-  @objc optional var askToNameHeader: Swift.String { get }
-  @objc optional var nameDeviceExplained: Swift.String { get }
-  @objc optional var setUpAsBorderRouter: Swift.String { get }
-  @objc optional var settingUpThisDevice: Swift.String { get }
-  @objc optional var nonFirstThreadDeviceDescription1: Swift.String { get }
-  @objc optional var nonFirstThreadDeviceDescription2: Swift.String { get }
-  @objc optional var nonFirstThreadDeviceDescription3: Swift.String { get }
-  @objc optional var nonFirstWifiDeviceDescription1: Swift.String { get }
-  @objc optional var wifiDeviceMetricDistanceDescription: Swift.String { get }
-  @objc optional var wifiDeviceImperialDistanceDescription: Swift.String { get }
-  @objc optional var firstThreadDeviceDescription1: Swift.String { get }
-  @objc optional var firstThreadDeviceDescription2: Swift.String { get }
-  @objc optional var firstThreadDeviceDescription3: Swift.String { get }
-  @objc optional var firstWifiDeviceDescription1: Swift.String { get }
-  @objc optional var firstWifiDeviceDescription2: Swift.String { get }
-  @objc optional var scanQRtitle: Swift.String { get }
-  @objc optional var scanQRsubtitle: Swift.String { get }
-  @objc optional var qrCodeError: Swift.String { get }
-  @objc optional var qrCodeMismatchError: Swift.String { get }
-  @objc optional var tryAgainButton: Swift.String { get }
-  @objc optional var connectWifiTitle: Swift.String { get }
-  @objc optional var selectNetwork: Swift.String { get }
-  @objc optional var networkNotFound: Swift.String { get }
-  @objc optional var availableNetworks: Swift.String { get }
-  @objc optional var otherNetworkButton: Swift.String { get }
-  @objc optional var enterPassword: Swift.String { get }
-  @objc optional var enterPasswordHeaderTitle: Swift.String { get }
-  @objc optional var passwordEntryFieldPlaceholder: Swift.String { get }
-  @objc optional var passwordEntryFieldHint: Swift.String { get }
-  @objc optional var buttonReadyToConnect: Swift.String { get }
-  @objc optional var foundSavedPassword: Swift.String { get }
-  @objc optional var useSavedPassword: Swift.String { get }
-  @objc optional var forget: Swift.String { get }
-  @objc optional var otherWifiNetworkTitle: Swift.String { get }
-  @objc optional var deviceConnectivityHint: Swift.String { get }
-  @objc optional var networkNamePlaceholder: Swift.String { get }
-  @objc optional var passwordPlaceholder: Swift.String { get }
-  @objc optional var readyToConnectButton: Swift.String { get }
-  @objc optional var finishingSetupHeader: Swift.String { get }
-  @objc optional var gameOfPongText: Swift.String { get }
-  @objc optional var positioningNavigationTitle: Swift.String { get }
-  @objc optional var widarInfoTitle: Swift.String { get }
-  @objc optional var widarInfoMustOptimisePosition: Swift.String { get }
-  @objc optional var widarInfoAvoidMovingWhenOptimized: Swift.String { get }
-  @objc optional var nextButton: Swift.String { get }
-  @objc optional var startPositioningButton: Swift.String { get }
-  @objc optional var recommendationsTitle: Swift.String { get }
-  @objc optional var recommendationsInfoAttachBase: Swift.String { get }
-  @objc optional var recommendationsInfoWireOnBack: Swift.String { get }
-  @objc optional var recommendationsInfoKeepAreaClear: Swift.String { get }
-  @objc optional var finishButton: Swift.String { get }
-  @objc optional var cancelButton: Swift.String { get }
-  @objc optional var positioningGuidanceTitle: Swift.String { get }
-  @objc optional var guideMetric: Swift.String { get }
-  @objc optional var guideImperial: Swift.String { get }
-  @objc optional var statusLabel: Swift.String { get }
-  @objc optional var statusChecking: Swift.String { get }
-  @objc optional var statusMispositioned: Swift.String { get }
-  @objc optional var statusGettingBetter: Swift.String { get }
-  @objc optional var statusOptimized: Swift.String { get }
-  @objc optional var statusEstablishingConnection: Swift.String { get }
-  @objc optional var positioningTip: Swift.String { get }
-  @objc optional var cancelPopupTitle: Swift.String { get }
-  @objc optional var cancelPopupMessage: Swift.String { get }
-  @objc optional var cancelPopupBackToPositioningButton: Swift.String { get }
-  @objc optional var cancelPopupCancelButton: Swift.String { get }
-  @objc optional var successTitle: Swift.String { get }
-  @objc optional var sucessContentMessage: Swift.String { get }
-  @objc optional var doneButton: Swift.String { get }
-  @objc optional var errorOccurredTitle: Swift.String { get }
-  @objc optional var tryAgainActionTitle: Swift.String { get }
-  @objc optional var restartActionTitle: Swift.String { get }
-  @objc optional var ignoreActionTitle: Swift.String { get }
-  @objc optional var positioningErrorTitle: Swift.String { get }
-  @objc optional var deviceNotFoundMessage: Swift.String { get }
-  @objc optional var retryPositioningButton: Swift.String { get }
-  @objc optional var exitPositioningButton: Swift.String { get }
-}
-extension NamiPairingFramework.Pairing.Error {
-  public var errorMessageTitle: Swift.String {
+extension StandardPairingUI.WordingProtocol {
+  public var ok: Swift.String {
     get
   }
+  public var next: Swift.String {
+    get
+  }
+  public var cancel: Swift.String {
+    get
+  }
+  public var pairingNavigationBarTitle: Swift.String {
+    get
+  }
+  public func connectingToDevice(deviceName: Swift.String) -> Swift.String
+  public var headerConnectToPower: Swift.String {
+    get
+  }
+  public var explainedReadyToPair: Swift.String {
+    get
+  }
+  public var headerContactSensor: Swift.String {
+    get
+  }
+  public var scanning: Swift.String {
+    get
+  }
+  public var askUserToWait: Swift.String {
+    get
+  }
+  public var bluetoothDisabled: Swift.String {
+    get
+  }
+  public var enableBlueToothInSettingsHeader: Swift.String {
+    get
+  }
+  public var buttonSettings: Swift.String {
+    get
+  }
+  public var scanDeviceTitle: Swift.String {
+    get
+  }
+  public var scanDeviceSubtitle: Swift.String {
+    get
+  }
+  public var missingCameraPermissionTitle: Swift.String {
+    get
+  }
+  public var missingCameraPermissionDescription: Swift.String {
+    get
+  }
+  public var openSettings: Swift.String {
+    get
+  }
+  public var deviceFoundHeader1: Swift.String {
+    get
+  }
+  public var deviceFoundHeader2: Swift.String {
+    get
+  }
+  public func askToNameHeader(productLabel: Swift.String) -> Swift.String
+  public var nameDeviceExplained: Swift.String {
+    get
+  }
+  public var setUpAsBorderRouter: Swift.String {
+    get
+  }
+  public var settingUpThisDevice: Swift.String {
+    get
+  }
+  public var nonFirstThreadDeviceDescription1: Swift.String {
+    get
+  }
+  public var nonFirstThreadDeviceDescription2: Swift.String {
+    get
+  }
+  public func nonFirstThreadDeviceDescription3(zoneName: Swift.String) -> Swift.String
+  public func nonFirstWifiDeviceDescription1(zoneName: Swift.String) -> Swift.String
+  public var wifiDeviceMetricDistanceDescription: Swift.String {
+    get
+  }
+  public var wifiDeviceImperialDistanceDescription: Swift.String {
+    get
+  }
+  public var firstThreadDeviceDescription1: Swift.String {
+    get
+  }
+  public var firstThreadDeviceDescription2: Swift.String {
+    get
+  }
+  public var firstThreadDeviceDescription3: Swift.String {
+    get
+  }
+  public func firstWifiDeviceDescription1(zoneName: Swift.String) -> Swift.String
+  public var firstWifiDeviceDescription2: Swift.String {
+    get
+  }
+  public var scanQRtitle: Swift.String {
+    get
+  }
+  public var scanQRsubtitle: Swift.String {
+    get
+  }
+  public var qrCodeError: Swift.String {
+    get
+  }
+  public var qrCodeMismatchError: Swift.String {
+    get
+  }
+  public var tryAgainButton: Swift.String {
+    get
+  }
+  public var connectWifiTitle: Swift.String {
+    get
+  }
+  public var selectNetwork: Swift.String {
+    get
+  }
+  public var networkNotFound: Swift.String {
+    get
+  }
+  public var availableNetworks: Swift.String {
+    get
+  }
+  public var otherNetworkButton: Swift.String {
+    get
+  }
+  public var enterPassword: Swift.String {
+    get
+  }
+  public func enterPasswordHeaderTitle(networkName: Swift.String) -> Swift.String
+  public var passwordEntryFieldPlaceholder: Swift.String {
+    get
+  }
+  public var passwordEntryFieldHint: Swift.String {
+    get
+  }
+  public var buttonReadyToConnect: Swift.String {
+    get
+  }
+  public var foundSavedPassword: Swift.String {
+    get
+  }
+  public func useSavedPassword(networkName: Swift.String) -> Swift.String
+  public var forget: Swift.String {
+    get
+  }
+  public var otherWifiNetworkTitle: Swift.String {
+    get
+  }
+  public var deviceConnectivityHint: Swift.String {
+    get
+  }
+  public var networkNamePlaceholder: Swift.String {
+    get
+  }
+  public var passwordPlaceholder: Swift.String {
+    get
+  }
+  public var readyToConnectButton: Swift.String {
+    get
+  }
+  public var finishingSetupHeader: Swift.String {
+    get
+  }
+  public var gameOfPongText: Swift.String {
+    get
+  }
+  public var positioningNavigationTitle: Swift.String {
+    get
+  }
+  public var widarInfoTitle: Swift.String {
+    get
+  }
+  public var widarInfoMustOptimisePosition: Swift.String {
+    get
+  }
+  public var widarInfoAvoidMovingWhenOptimized: Swift.String {
+    get
+  }
+  public var nextButton: Swift.String {
+    get
+  }
+  public var startPositioningButton: Swift.String {
+    get
+  }
+  public var recommendationsTitle: Swift.String {
+    get
+  }
+  public var recommendationsInfoAttachBase: Swift.String {
+    get
+  }
+  public var recommendationsInfoWireOnBack: Swift.String {
+    get
+  }
+  public var recommendationsInfoKeepAreaClear: Swift.String {
+    get
+  }
+  public var finishButton: Swift.String {
+    get
+  }
+  public var cancelButton: Swift.String {
+    get
+  }
+  public var positioningGuidanceTitle: Swift.String {
+    get
+  }
+  public var guideMetric: Swift.String {
+    get
+  }
+  public var guideImperial: Swift.String {
+    get
+  }
+  public var statusLabel: Swift.String {
+    get
+  }
+  public var statusChecking: Swift.String {
+    get
+  }
+  public var statusMispositioned: Swift.String {
+    get
+  }
+  public var statusGettingBetter: Swift.String {
+    get
+  }
+  public var statusOptimized: Swift.String {
+    get
+  }
+  public var statusEstablishingConnection: Swift.String {
+    get
+  }
+  public var positioningTip: Swift.String {
+    get
+  }
+  public var cancelPopupTitle: Swift.String {
+    get
+  }
+  public var cancelPopupMessage: Swift.String {
+    get
+  }
+  public var cancelPopupBackToPositioningButton: Swift.String {
+    get
+  }
+  public var cancelPopupCancelButton: Swift.String {
+    get
+  }
+  public var successTitle: Swift.String {
+    get
+  }
+  public func sucessContentMessage(deviceName: Swift.String) -> Swift.String
+  public var doneButton: Swift.String {
+    get
+  }
+  public var errorOccurredTitle: Swift.String {
+    get
+  }
+  public var tryAgainActionTitle: Swift.String {
+    get
+  }
+  public var restartActionTitle: Swift.String {
+    get
+  }
+  public var ignoreActionTitle: Swift.String {
+    get
+  }
+  public var restartSetupActionTitle: Swift.String {
+    get
+  }
+  public var exitSetupActionTitle: Swift.String {
+    get
+  }
+  public var pairingErrorNeedHelp: Swift.String {
+    get
+  }
+  public var pairingErrorOccurredTitle: Swift.String {
+    get
+  }
+  public var pairingErrorDeviceWifiScanTitle: Swift.String {
+    get
+  }
+  public var pairingErrorDeviceWifiJoinIpTitle: Swift.String {
+    get
+  }
+  public var pairingErrorDeviceWifiJoinPasswordTitle: Swift.String {
+    get
+  }
+  public var pairingErrorDeviceMismatchTitle: Swift.String {
+    get
+  }
+  public var pairingErrorUnexpectedStateDescription: Swift.String {
+    get
+  }
+  public var pairingErrorUnexpectedMessageDescription: Swift.String {
+    get
+  }
+  public var pairingErrorSeanceDescription: Swift.String {
+    get
+  }
+  public var pairingErrorSerializationDescription: Swift.String {
+    get
+  }
+  public var pairingErrorDeserializationDescription: Swift.String {
+    get
+  }
+  public var pairingErrorEncryptionErrorDescription: Swift.String {
+    get
+  }
+  public var pairingErrorDeviceMismatchDescription: Swift.String {
+    get
+  }
+  public var pairingErrorDeviceSecureSessionDescription: Swift.String {
+    get
+  }
+  public var pairingErrorDeviceCloudChallengeDescription: Swift.String {
+    get
+  }
+  public var pairingErrorDeviceWifiScanDescription: Swift.String {
+    get
+  }
+  public var pairingErrorDeviceWifiJoinDescription: Swift.String {
+    get
+  }
+  public var pairingErrorDeviceWifiJoinPasswordDescription: Swift.String {
+    get
+  }
+  public var pairingErrorDeviceWifiJoinIpDescription: Swift.String {
+    get
+  }
+  public var pairingErrorsUnableJoinThreadNetworksDescription1: Swift.String {
+    get
+  }
+  public func pairingErrorsUnableJoinThreadNetworksDescription2(zoneName: Swift.String) -> Swift.String
+  public var pairingErrorDeviceUnknownUnrecognizedDescription: Swift.String {
+    get
+  }
+  public var pairingThreadErrorDatasetMissingTitle: Swift.String {
+    get
+  }
+  public var pairingThreadErrorThreadNetworkNotFoundTitle: Swift.String {
+    get
+  }
+  public var pairingThreadErrorDatasetMissingDescription: Swift.String {
+    get
+  }
+  public func pairingThreadErrorContactSensorNoThreadNetworksFoundDescription1(zoneName: Swift.String) -> Swift.String
+  public func pairingThreadErrorNoThreadNetworksFoundDescription(zoneName: Swift.String) -> Swift.String
+  public var positioningErrorTitle: Swift.String {
+    get
+  }
+  public var deviceNotFoundMessage: Swift.String {
+    get
+  }
+  public var retryPositioningButton: Swift.String {
+    get
+  }
+  public var exitPositioningButton: Swift.String {
+    get
+  }
+  public var urlNotPulsingBlue: Swift.String {
+    get
+  }
+  public var urlNamiThreadTopology: Swift.String {
+    get
+  }
+  public var urlNotConnectToThread: Swift.String {
+    get
+  }
+  public var pairingScanningBleFaq: Swift.String {
+    get
+  }
+}
+extension NamiPairingFramework.Pairing.Error {
   public var localizedDescription: Swift.String {
     get
   }
+  public func getFAQLink(wordings: any StandardPairingUI.WordingProtocol) -> Swift.String?
 }
 public class ThemeManager : Foundation.ObservableObject {
   @Combine.Published @_projectedValueProperty($selectedTheme) public var selectedTheme: any StandardPairingUI.ThemeProtocol {
@@ -239,6 +639,10 @@ public struct NamiTheme : StandardPairingUI.ThemeProtocol {
   public var secondaryActionButtonStyle: any SwiftUI.ButtonStyle
   public var tertiaryActionButtonStyle: any SwiftUI.ButtonStyle
   public var destructiveActionButtonStyle: any SwiftUI.ButtonStyle
+}
+extension NamiPairingFramework.Pairing.Error {
+  public func getErrorMessageTitle(wordings: any StandardPairingUI.WordingProtocol) -> Swift.String
+  public func getErrorMessageDescription(wordings: any StandardPairingUI.WordingProtocol) -> Swift.String
 }
 public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public init()
@@ -427,6 +831,10 @@ public struct PongView : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI24SetupScreenTitleTextViewV4bodyQrvp", 0) __
 }
+public class Animations {
+  public init()
+  @objc deinit
+}
 extension UIKit.UIImage {
   public enum AnimatableImageFormat : Swift.String {
     case gif
@@ -565,6 +973,23 @@ public class Colors {
   }
   public func forTheme(_ base: DeviceConnections.ThemeID, saturation: StandardPairingUI.Colors.ColorSaturation = .normal) -> SwiftUI.Color
   @objc deinit
+}
+public struct URLLinks {
+  public static let FAQNotPulsingBlue: Swift.String
+  public static let FAQNamiThreadTopology: Swift.String
+  public static let FAQNotConnectToThread: Swift.String
+}
+extension Lottie.LottieAnimation {
+  final public func animationView(looping: Lottie.LottieLoopMode = .loop) -> some SwiftUI.View
+  
+}
+extension UIKit.UINavigationController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) public func gestureRecognizerShouldBegin(_: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
+extension SwiftUI.View {
+  public func allowSwipeBackNavigation(_ isAllowed: Swift.Bool) -> some SwiftUI.View
+  
 }
 extension SwiftUI.Text {
   public init(_ content: any Swift.StringProtocol, font: StandardPairingUI.NamiTextStyle)
@@ -747,6 +1172,18 @@ public struct NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, 
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NamiTopNavigationScreenV4bodyQrvp", 0) __<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent>
 }
+public struct LottieAnimationView : SwiftUI.View {
+  public init(animation: Swift.KeyPath<StandardPairingUI.LottieAnimations, Lottie.LottieAnimation>)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI19LottieAnimationViewV4bodyQrvp", 0) __
+}
+public typealias LottieAnimations = StandardPairingUI.Animations
+public struct LottieAnimationsKey : SwiftUI.EnvironmentKey {
+  public static let defaultValue: StandardPairingUI.LottieAnimations
+  public typealias Value = StandardPairingUI.LottieAnimations
+}
 public struct CircleButton : SwiftUI.View {
   public init()
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
@@ -784,6 +1221,24 @@ public struct NamiTextStyle : Swift.Identifiable {
     get
   }
   public typealias ID = Swift.String
+}
+@available(iOS 15, *)
+public struct NamiTextHyperLink : SwiftUI.View {
+  public init(content: Foundation.AttributedString)
+  public init(text: Swift.String, link: Swift.String, linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
+  public init(markdownString: Swift.String, linkTexts: Swift.String..., linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
+  public init(markdownString: Swift.String, linkTexts: [Swift.String], linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17NamiTextHyperLinkV4bodyQrvp", 0) __
+}
+public struct NamiTextHyperLinkLegacy : SwiftUI.View {
+  public init(text: Swift.String, link: Swift.String, linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NamiTextHyperLinkLegacyV4bodyQrvp", 0) __
 }
 public struct NotificationButtonStyle : SwiftUI.ButtonStyle {
   public init(color: SwiftUI.Color = Color(hex: 0xEAEAEA))
