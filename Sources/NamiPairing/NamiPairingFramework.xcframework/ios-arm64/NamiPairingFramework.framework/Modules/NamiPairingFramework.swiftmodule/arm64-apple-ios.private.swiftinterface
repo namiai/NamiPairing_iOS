@@ -732,13 +732,13 @@ final public class Tomonari<Container> where Container : NamiPairingFramework.Pa
   }
   public enum DevicePairingState {
     case deviceCommisionedAtCloud(any NamiPairingFramework.DeviceProtocol, in: NamiPairingFramework.PlaceID)
-    case deviceOperable(NamiPairingFramework.DeviceID, DeviceConnections.NamiDeviceType?, ssid: Swift.String?, bssid: [Swift.UInt8]?, positionAdjustmentNeeded: Swift.Bool?)
+    case deviceOperable(NamiPairingFramework.DeviceID, ssid: Swift.String?, bssid: [Swift.UInt8]?, positionAdjustmentNeeded: Swift.Bool?)
     case deviceDecommissioned(NamiPairingFramework.DeviceID)
-    case pairingCancelled(NamiPairingFramework.Pairing.PairingCancellationdReason)
+    case pairingCancelled
   }
   final public let devicePairingState: NamiPairingFramework.Tomonari<Container>.DevicePairingStatePublisher
   final public let devicePositioningState: NamiPairingFramework.Tomonari<Container>.DevicePositioningStatePublisher
-  final public func startPairing(placeId: NamiPairingFramework.PlaceID, zoneId: NamiPairingFramework.PlaceZoneID, roomId: NamiPairingFramework.RoomID, deviceType: DeviceConnections.NamiDeviceType = .unknown, pairingParameters: NamiPairingFramework.Tomonari<Container>.PairingParameters = .none, pairingSteps: Container) -> some SwiftUI.View
+  final public func startPairing(placeId: NamiPairingFramework.PlaceID, zoneId: NamiPairingFramework.PlaceZoneID, roomId: NamiPairingFramework.RoomID, pairingParameters: NamiPairingFramework.Tomonari<Container>.PairingParameters = .none, pairingSteps: Container) -> some SwiftUI.View
   
   final public func startPositioning(deviceName: Swift.String, deviceUid: NamiPairingFramework.DeviceUniversalID, placeId: NamiPairingFramework.PlaceID, pairingSteps: Container, onPositioningEnded: @escaping (NamiPairingFramework.PositioningResult) -> Swift.Void) -> some SwiftUI.View
   
@@ -785,7 +785,6 @@ public enum PairingMachineError : Swift.Error, Swift.Equatable {
   case serializationError(any Swift.Error)
   case deserializationError(any Swift.Error)
   case encryptionError
-  case notSupportDeviceType(DeviceConnections.NamiDeviceType)
   public static func == (lhs: NamiPairingFramework.PairingMachineError, rhs: NamiPairingFramework.PairingMachineError) -> Swift.Bool
 }
 public enum PairingErrorScreen {
@@ -910,7 +909,6 @@ public enum ListWiFiNetworks {
 public enum PowerOnAndScanning {
   public struct State : Swift.Equatable {
     public var showsProgressIndicator: Swift.Bool
-    public let deviceType: DeviceConnections.NamiDeviceType
     public static func == (a: NamiPairingFramework.PowerOnAndScanning.State, b: NamiPairingFramework.PowerOnAndScanning.State) -> Swift.Bool
   }
   public enum Event {
@@ -1130,26 +1128,19 @@ public enum Pairing {
   }
   public enum ThreadError : Swift.Error, Swift.Equatable {
     case threadOperationalDatasetMissing
-    case threadNetworkNotFound(zoneName: Swift.String, deviceType: DeviceConnections.NamiDeviceType)
+    case threadNetworkNotFound
+    public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: NamiPairingFramework.Pairing.ThreadError, b: NamiPairingFramework.Pairing.ThreadError) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
   }
   public enum ActionOnError : Swift.Equatable {
     case restart
     case tryAgain
     case ignore
-    case exit
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: NamiPairingFramework.Pairing.ActionOnError, b: NamiPairingFramework.Pairing.ActionOnError) -> Swift.Bool
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  public enum PairingCancellationdReason {
-    case exitPairing
-    case restartPairing
-    case unknown
-    public static func == (a: NamiPairingFramework.Pairing.PairingCancellationdReason, b: NamiPairingFramework.Pairing.PairingCancellationdReason) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
@@ -1159,7 +1150,7 @@ public enum Pairing {
     case bluetoothUsageHint
     case bluetoothEnableInSettings
     case cameraEnableInSettings
-    case powerOnAndScanning(DeviceConnections.NamiDeviceType)
+    case powerOnAndScanning
     case deviceFound(DeviceConnections.NamiDeviceModel, DeviceConnections.WiFiCredentialsUpdateSessionID?)
     case askToConnect(NamiPairingFramework.Pairing.DeviceSetupParameters)
     case listWiFiNetworks(zoneId: NamiPairingFramework.PlaceZoneID, wifiNetworks: [NamiPairingFramework.NamiWiFiNetwork]?, bssidLookupComplete: Swift.Bool)
@@ -1172,10 +1163,6 @@ public enum Pairing {
     public var roomId: NamiPairingFramework.RoomID
     public var updateWiFiCredentialsSessionId: DeviceConnections.WiFiCredentialsUpdateSessionID?
     public var deviceName: Swift.String
-    public var deviceType: DeviceConnections.NamiDeviceType
-    public var zoneName: Swift.String? {
-      get
-    }
     public static func == (a: NamiPairingFramework.Pairing.State, b: NamiPairingFramework.Pairing.State) -> Swift.Bool
   }
   public enum Event : Swift.Equatable {
@@ -1221,13 +1208,9 @@ public enum Pairing {
     case shouldPairAnother
     case gotAPIError(NamiPairingFramework.Pairing.Error)
     case gotPairingMachineError(NamiPairingFramework.PairingMachineError)
-    case gotErrorAction(NamiPairingFramework.Pairing.Error, NamiPairingFramework.Pairing.ActionOnError)
-    case threadOperationalDatasetMissing
+    case gotErrorAction(NamiPairingFramework.Pairing.ActionOnError)
+    case threadOperationalDatsetMissing
     case askTryRescanThreadNetworks
-    case notSupportedDeviceTypeError(DeviceConnections.NamiDeviceType)
-    case pairingCancelled(NamiPairingFramework.Pairing.PairingCancellationdReason)
-    case gotZones([NamiPairingFramework.PairingPlaceZone])
-    case refreshPairingChallange
     public static func == (a: NamiPairingFramework.Pairing.Event, b: NamiPairingFramework.Pairing.Event) -> Swift.Bool
   }
   @_hasMissingDesignatedInitializers final public class ViewModel<Container> where Container : NamiPairingFramework.PairingStepsContainer {
@@ -1515,7 +1498,6 @@ extension NamiPairingFramework.BluetoothUsageHint.Event : Swift.Hashable {}
 extension NamiPairingFramework.EnterWiFiPassword.Event : Swift.Equatable {}
 extension NamiPairingFramework.EnterWiFiPassword.Event : Swift.Hashable {}
 extension NamiPairingFramework.Pairing.ConnectTo : Swift.Hashable {}
+extension NamiPairingFramework.Pairing.ThreadError : Swift.Hashable {}
 extension NamiPairingFramework.Pairing.ActionOnError : Swift.Hashable {}
-extension NamiPairingFramework.Pairing.PairingCancellationdReason : Swift.Equatable {}
-extension NamiPairingFramework.Pairing.PairingCancellationdReason : Swift.Hashable {}
 extension NamiPairingFramework.Pairing.ViewModel : NamiPairingFramework.PairingStepEventSendableViewModelProtocol {}
