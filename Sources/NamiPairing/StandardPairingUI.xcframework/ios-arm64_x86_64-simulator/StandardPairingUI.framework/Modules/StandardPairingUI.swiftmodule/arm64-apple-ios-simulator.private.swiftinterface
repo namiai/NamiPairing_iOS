@@ -8,7 +8,6 @@ import DeviceConnections
 import Foundation
 import Lottie
 import NamiPairingFramework
-import SafariServices
 @_exported import StandardPairingUI
 import Swift
 import SwiftUI
@@ -59,7 +58,6 @@ public class EmptyWordings : StandardPairingUI.WordingProtocol {
   @objc optional var connectingToDevice: Swift.String { get }
   @objc optional var headerConnectToPower: Swift.String { get }
   @objc optional var explainedReadyToPair: Swift.String { get }
-  @objc optional var headerContactSensor: Swift.String { get }
   @objc optional var scanning: Swift.String { get }
   @objc optional var askUserToWait: Swift.String { get }
   @objc optional var bluetoothDisabled: Swift.String { get }
@@ -155,9 +153,6 @@ extension NamiPairingFramework.Pairing.Error {
     get
   }
   public var localizedDescription: Swift.String {
-    get
-  }
-  public var FAQLink: Swift.String? {
     get
   }
 }
@@ -576,21 +571,8 @@ public class Colors {
   public func forTheme(_ base: DeviceConnections.ThemeID, saturation: StandardPairingUI.Colors.ColorSaturation = .normal) -> SwiftUI.Color
   @objc deinit
 }
-public struct URLLinks {
-  public static let FAQNotPulsingBlue: Swift.String
-  public static let FAQNamiThreadTopology: Swift.String
-  public static let FAQNotConnectToThread: Swift.String
-}
 extension Lottie.LottieAnimation {
   final public func animationView(looping: Lottie.LottieLoopMode = .loop) -> some SwiftUI.View
-  
-}
-extension UIKit.UINavigationController {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func gestureRecognizerShouldBegin(_: UIKit.UIGestureRecognizer) -> Swift.Bool
-}
-extension SwiftUI.View {
-  public func allowSwipeBackNavigation(_ isAllowed: Swift.Bool) -> some SwiftUI.View
   
 }
 extension SwiftUI.Text {
@@ -774,18 +756,6 @@ public struct NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, 
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NamiTopNavigationScreenV4bodyQrvp", 0) __<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent>
 }
-public struct LottieAnimationView : SwiftUI.View {
-  public init(animation: Swift.KeyPath<StandardPairingUI.LottieAnimations, Lottie.LottieAnimation>)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI19LottieAnimationViewV4bodyQrvp", 0) __
-}
-public typealias LottieAnimations = StandardPairingUI.Animations
-public struct LottieAnimationsKey : SwiftUI.EnvironmentKey {
-  public static let defaultValue: StandardPairingUI.LottieAnimations
-  public typealias Value = StandardPairingUI.LottieAnimations
-}
 public struct CircleButton : SwiftUI.View {
   public init()
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
@@ -823,24 +793,6 @@ public struct NamiTextStyle : Swift.Identifiable {
     get
   }
   public typealias ID = Swift.String
-}
-@available(iOS 15, *)
-public struct NamiTextHyperLink : SwiftUI.View {
-  public init(content: Foundation.AttributedString)
-  public init(text: Swift.String, link: Swift.String, linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
-  public init(markdownString: Swift.String, linkTexts: Swift.String..., linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
-  public init(markdownString: Swift.String, linkTexts: [Swift.String], linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17NamiTextHyperLinkV4bodyQrvp", 0) __
-}
-public struct NamiTextHyperLinkLegacy : SwiftUI.View {
-  public init(text: Swift.String, link: Swift.String, linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NamiTextHyperLinkLegacyV4bodyQrvp", 0) __
 }
 public struct NotificationButtonStyle : SwiftUI.ButtonStyle {
   public init(color: SwiftUI.Color = Color(hex: 0xEAEAEA))

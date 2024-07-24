@@ -319,11 +319,6 @@ SWIFT_CLASS("_TtCV17StandardPairingUI13TextFieldView11Coordinator")
 
 
 
-
-@interface UINavigationController (SWIFT_EXTENSION(StandardPairingUI))
-- (void)viewDidLoad;
-@end
-
 @class NSString;
 
 SWIFT_PROTOCOL("_TtP17StandardPairingUI15WordingProtocol_")
@@ -338,7 +333,6 @@ SWIFT_PROTOCOL("_TtP17StandardPairingUI15WordingProtocol_")
 @property (nonatomic, readonly, copy) NSString * _Nonnull connectingToDevice;
 @property (nonatomic, readonly, copy) NSString * _Nonnull headerConnectToPower;
 @property (nonatomic, readonly, copy) NSString * _Nonnull explainedReadyToPair;
-@property (nonatomic, readonly, copy) NSString * _Nonnull headerContactSensor;
 @property (nonatomic, readonly, copy) NSString * _Nonnull scanning;
 @property (nonatomic, readonly, copy) NSString * _Nonnull askUserToWait;
 @property (nonatomic, readonly, copy) NSString * _Nonnull bluetoothDisabled;

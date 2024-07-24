@@ -945,7 +945,6 @@ public enum AskToConnect {
     public var isConnectingToThread: Swift.Bool
     public var updatingWifi: Swift.Bool
     public var devicesCount: Swift.Int
-    public var hasBorderRouter: Swift.Bool
     public var nextTapped: Swift.Bool
     public var doneLoading: Swift.Bool {
       get
