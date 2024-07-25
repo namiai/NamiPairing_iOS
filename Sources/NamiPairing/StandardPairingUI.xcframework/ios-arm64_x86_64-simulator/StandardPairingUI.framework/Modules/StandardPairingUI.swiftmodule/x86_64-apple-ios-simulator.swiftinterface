@@ -192,6 +192,7 @@ public protocol ThemeProtocol {
   var primaryBlack: SwiftUI.Color { get }
   var secondaryBlack: SwiftUI.Color { get }
   var tertiaryBlack: SwiftUI.Color { get }
+  var navigationTitleColor: SwiftUI.Color { get }
   var white: SwiftUI.Color { get }
   var background: SwiftUI.Color { get }
   var line: SwiftUI.Color { get }
@@ -224,6 +225,7 @@ public struct NamiTheme : StandardPairingUI.ThemeProtocol {
   public var primaryBlack: SwiftUI.Color
   public var secondaryBlack: SwiftUI.Color
   public var tertiaryBlack: SwiftUI.Color
+  public var navigationTitleColor: SwiftUI.Color
   public var white: SwiftUI.Color
   public var background: SwiftUI.Color
   public var line: SwiftUI.Color
@@ -309,6 +311,7 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI22BluetoothUsageHintViewV4bodyQrvp", 0) __
 }
 @_Concurrency.MainActor(unsafe) public struct EnableBluetoothInSettingsView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init()
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -370,6 +373,7 @@ public struct AnimationView : SwiftUI.View {
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI20OtherWiFiNetworkViewV4bodyQrvp", 0) __
 }
 @_Concurrency.MainActor(unsafe) public struct FinishingSetupView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init()
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -390,6 +394,7 @@ public struct AnimationView : SwiftUI.View {
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI0B15ErrorScreenViewV4bodyQrvp", 0) __
 }
 @_Concurrency.MainActor(unsafe) public struct EnableCameraInSettingsView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init()
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
