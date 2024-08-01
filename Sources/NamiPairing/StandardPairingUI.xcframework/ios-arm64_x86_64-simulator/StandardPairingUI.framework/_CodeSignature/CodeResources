@@ -6,11 +6,15 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		VFjnLCFBJBZ51cSqWZ/aYGtg4HI=
+		+QSAsmANCACHtjPIK3tuT5VJf/0=
+		</data>
+		<key>Contact Sensor_Pulse Dark Blue.json</key>
+		<data>
+		TZNBMCNb27shKp5snIkILalUBaY=
 		</data>
 		<key>Headers/StandardPairingUI-Swift.h</key>
 		<data>
-		lJ4oXyrVrnKo3w96UqFAZeJoiuw=
+		87poBi5Qh0TVt16q0XMPV1lRzBE=
 		</data>
 		<key>Headers/StandardPairingUI.h</key>
 		<data>
@@ -18,51 +22,55 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		WMFqtM/0XdBsQk8ykMQLXSD/3Wg=
+		TOADGFSxIR1ByrJP38y+kkHKQMc=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		LAIwcFYUyOEAO5a/fbsBPfC6QdI=
+		LdlD4sxWfkXu/jU31ZRZlvnxcHY=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		vZzUgBob5CbBiiTZnJ3nYAi4lmI=
+		j9ivgDUndZCzKs+Wp1GGfDXhfFw=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		LtZhGZ/TuRwJJdEno3wOSA3cXDU=
+		dUBCJjjEPB6RCZSOHZgTndvyQLg=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		vZzUgBob5CbBiiTZnJ3nYAi4lmI=
+		j9ivgDUndZCzKs+Wp1GGfDXhfFw=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		NUxdG1UvzVVU3w6zf2i9/lZsX/E=
+		IKG6sg7zQkNxFzFsYMxLjncsDYM=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		LAIwcFYUyOEAO5a/fbsBPfC6QdI=
+		LdlD4sxWfkXu/jU31ZRZlvnxcHY=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		sUEFz2lQEOHa+HPaLX+s2RIdEs4=
+		EOd7dReiopmqMiH9tN6zrkzjv8Y=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		roHWvEOQdttxgJAbsiPH9nCK4F4=
+		bNr/YTePTTbjAqsTa2C61fcdvYA=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		sUEFz2lQEOHa+HPaLX+s2RIdEs4=
+		EOd7dReiopmqMiH9tN6zrkzjv8Y=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4w+XejH1Fwhbotl/ZlOoQC4GnHU=
+		72pEcIBoFRd+WrUBsLBgatjZ85o=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		nKNglBJHk2lT0DlvspwlX7shkqA=
+		</data>
+		<key>Place Empty State.json</key>
+		<data>
+		vt0GfulZpSvM7K+AJYg4rKwCOIU=
 		</data>
 		<key>WiDAR_1_Positioning Rec.json</key>
 		<data>
@@ -79,6 +87,10 @@
 		<key>WiDAR_4_Positioning Done.json</key>
 		<data>
 		NGqd25DcVh6G4joPtryUWYq9WXM=
+		</data>
+		<key>contact_sensor_devkit_1.webp</key>
+		<data>
+		VX9IhzDHzfoO2mrwl1YEv2sSlR8=
 		</data>
 		<key>esp32_s3_tmcu_c3_h2_devkitc_1_v2.webp</key>
 		<data>
@@ -179,14 +191,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			20YujLM8KHqPT8f3vx5GeRuQ7HWUAs/XD9EzSPHGDIQ=
+			rxvV/AA1dj63VTfjjX3rtX7C9gMbAMNykv4ep9rFS44=
+			</data>
+		</dict>
+		<key>Contact Sensor_Pulse Dark Blue.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FHhoRfxxcD1vsp6ksAMQEDHylxy5JuHk2KRtrmbcuz0=
 			</data>
 		</dict>
 		<key>Headers/StandardPairingUI-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			q5hJ4MuLRftooJuPKdjnFi6ygbK4dGAPZldkMYfwmPA=
+			xVxyJFdcyoMtOkqhTYAFuga5rBsovA5sX07igoYSUP8=
 			</data>
 		</dict>
 		<key>Headers/StandardPairingUI.h</key>
@@ -200,70 +219,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dZ9YuS2DQLk9a9colSdMTtWnBzDyehtHVUBX+bzjgt8=
+			OJfFuVZ5sQ2LJgUVMwS70cMX1VN4/LOlDpJj5w8xH94=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0EFKqIvLuQ9EObgQnMvsqC5/GJrvXr3pC9nNIoGRKF8=
+			M6+Y2Xzdt/EVhfdDA90zVFMNjMKn/NHpLVPMOwEs9Qc=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0RZ+UCCB+uiVIUidLjVK5BUJ15z90GeKGsNbKunN+I8=
+			Gh84H9rBDR14lER6xAgwIHhbkdWeNVONTFA9UKaQprg=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0EFKqIvLuQ9EObgQnMvsqC5/GJrvXr3pC9nNIoGRKF8=
+			M6+Y2Xzdt/EVhfdDA90zVFMNjMKn/NHpLVPMOwEs9Qc=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xCYAjRZFd+ikpAnWnQpLvr316izwZjeRXk5MF4s9OeM=
+			TxbIzl8fD2RGi5/hWSMA1PiiS6u35ATYPkvAMjC5xXQ=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dZ9YuS2DQLk9a9colSdMTtWnBzDyehtHVUBX+bzjgt8=
+			OJfFuVZ5sQ2LJgUVMwS70cMX1VN4/LOlDpJj5w8xH94=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x0Rn9JxBghnH1Lc/O9TYqZEziigTMD1DrTJXsGqgIPE=
+			dHpE1hRbmzt8Bz7iwa+HeGvT4CicEIafRr2c87O3GbI=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TdgkERm+XJtkdHd218jJgq2XpirIjLkArjp11G1gNRY=
+			YPcQok2gez99bZYXlLGmXoGK4k6kFGYeLU97skmJTgs=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x0Rn9JxBghnH1Lc/O9TYqZEziigTMD1DrTJXsGqgIPE=
+			dHpE1hRbmzt8Bz7iwa+HeGvT4CicEIafRr2c87O3GbI=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8FqrbkAleN4gwOtGi1xlKfPQHMBXOMq1zdy9vdo54y8=
+			xY3nRAXV3SEHnNfIWHKA1hZFZlX0cZJ+HeULJ4jD9iQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -271,6 +290,13 @@
 			<key>hash2</key>
 			<data>
 			PQyi2UfRNkLsF8qTSi87+Brh3+V1UvzEC5tCXGvfiEg=
+			</data>
+		</dict>
+		<key>Place Empty State.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			z3AWjnIdpbL4kgSEOowH6ztb5rSTnURCheml1qefQrQ=
 			</data>
 		</dict>
 		<key>WiDAR_1_Positioning Rec.json</key>
@@ -299,6 +325,13 @@
 			<key>hash2</key>
 			<data>
 			qKrXKQld3GyG5cGRIbAKspN+nSs3HQ1tpOQ2lAZQI4k=
+			</data>
+		</dict>
+		<key>contact_sensor_devkit_1.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GkixXuMrjZn0Or+o2Be6rtOfaMMFsUgX6IqztyGSQDc=
 			</data>
 		</dict>
 		<key>esp32_s3_tmcu_c3_h2_devkitc_1_v2.webp</key>
