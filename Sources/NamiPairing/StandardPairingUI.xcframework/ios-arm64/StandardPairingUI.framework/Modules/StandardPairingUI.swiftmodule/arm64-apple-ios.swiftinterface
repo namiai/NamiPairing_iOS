@@ -61,6 +61,10 @@ public protocol WordingProtocol {
   var askUserToWait: Swift.String { get }
   var bluetoothDisabled: Swift.String { get }
   var enableBlueToothInSettingsHeader: Swift.String { get }
+  var bluetoothIsOff: Swift.String { get }
+  var bluetoothIsOffDescription: Swift.String { get }
+  var bluetoothRestricted: Swift.String { get }
+  var bluetoothRestrictedDescription: Swift.String { get }
   var buttonSettings: Swift.String { get }
   var scanDeviceTitle: Swift.String { get }
   var scanDeviceSubtitle: Swift.String { get }
@@ -70,7 +74,9 @@ public protocol WordingProtocol {
   var deviceFoundHeader1: Swift.String { get }
   var deviceFoundHeader2: Swift.String { get }
   func askToNameHeader(productLabel: Swift.String) -> Swift.String
+  var nameYourDevice: Swift.String { get }
   var nameDeviceExplained: Swift.String { get }
+  var nameAlreadyInUseError: Swift.String { get }
   var setUpAsBorderRouter: Swift.String { get }
   var settingUpThisDevice: Swift.String { get }
   var nonFirstThreadDeviceDescription1: Swift.String { get }
@@ -89,12 +95,15 @@ public protocol WordingProtocol {
   var qrCodeError: Swift.String { get }
   var qrCodeMismatchError: Swift.String { get }
   var tryAgainButton: Swift.String { get }
+  var scanQRexpandCamera: Swift.String { get }
+  var scanQRwhereIsQR: Swift.String { get }
   var connectWifiTitle: Swift.String { get }
   var selectNetwork: Swift.String { get }
   var networkNotFound: Swift.String { get }
   var availableNetworks: Swift.String { get }
   var otherNetworkButton: Swift.String { get }
-  var enterPassword: Swift.String { get }
+  var otherNetworkTitle: Swift.String { get }
+  func enterPassword(for networkName: Swift.String) -> Swift.String
   func enterPasswordHeaderTitle(networkName: Swift.String) -> Swift.String
   var passwordEntryFieldPlaceholder: Swift.String { get }
   var passwordEntryFieldHint: Swift.String { get }
@@ -150,6 +159,8 @@ public protocol WordingProtocol {
   var pairingErrorDeviceWifiJoinIpTitle: Swift.String { get }
   var pairingErrorDeviceWifiJoinPasswordTitle: Swift.String { get }
   var pairingErrorDeviceMismatchTitle: Swift.String { get }
+  var pairingErrorConnectionTimeoutTitle: Swift.String { get }
+  var pairingErrorBleDisconnectedTitle: Swift.String { get }
   var pairingErrorUnexpectedStateDescription: Swift.String { get }
   var pairingErrorUnexpectedMessageDescription: Swift.String { get }
   var pairingErrorSeanceDescription: Swift.String { get }
@@ -157,6 +168,8 @@ public protocol WordingProtocol {
   var pairingErrorDeserializationDescription: Swift.String { get }
   var pairingErrorEncryptionErrorDescription: Swift.String { get }
   var pairingErrorDeviceMismatchDescription: Swift.String { get }
+  var pairingErrorConnectionTimeoutDescription: Swift.String { get }
+  func pairingErrorBleDisconnectedDescription(deviceName: Swift.String) -> Swift.String
   var pairingErrorDeviceSecureSessionDescription: Swift.String { get }
   var pairingErrorDeviceCloudChallengeDescription: Swift.String { get }
   var pairingErrorDeviceWifiScanDescription: Swift.String { get }
@@ -170,6 +183,7 @@ public protocol WordingProtocol {
   var pairingThreadErrorThreadNetworkNotFoundTitle: Swift.String { get }
   var pairingThreadErrorDatasetMissingDescription: Swift.String { get }
   func pairingThreadErrorContactSensorNoThreadNetworksFoundDescription1(zoneName: Swift.String) -> Swift.String
+  var pairingThreadErrorContactSensorNoThreadNetworksFoundDescription2: Swift.String { get }
   func pairingThreadErrorNoThreadNetworksFoundDescription(zoneName: Swift.String) -> Swift.String
   var positioningErrorTitle: Swift.String { get }
   var deviceNotFoundMessage: Swift.String { get }
@@ -179,6 +193,7 @@ public protocol WordingProtocol {
   var urlNamiThreadTopology: Swift.String { get }
   var urlNotConnectToThread: Swift.String { get }
   var pairingScanningBleFaq: Swift.String { get }
+  var pairingScanningBleFaqDoorSensor: Swift.String { get }
 }
 extension StandardPairingUI.WordingProtocol {
   public var ok: Swift.String {
@@ -215,6 +230,18 @@ extension StandardPairingUI.WordingProtocol {
   public var enableBlueToothInSettingsHeader: Swift.String {
     get
   }
+  public var bluetoothIsOff: Swift.String {
+    get
+  }
+  public var bluetoothIsOffDescription: Swift.String {
+    get
+  }
+  public var bluetoothRestricted: Swift.String {
+    get
+  }
+  public var bluetoothRestrictedDescription: Swift.String {
+    get
+  }
   public var buttonSettings: Swift.String {
     get
   }
@@ -240,7 +267,13 @@ extension StandardPairingUI.WordingProtocol {
     get
   }
   public func askToNameHeader(productLabel: Swift.String) -> Swift.String
+  public var nameYourDevice: Swift.String {
+    get
+  }
   public var nameDeviceExplained: Swift.String {
+    get
+  }
+  public var nameAlreadyInUseError: Swift.String {
     get
   }
   public var setUpAsBorderRouter: Swift.String {
@@ -291,6 +324,12 @@ extension StandardPairingUI.WordingProtocol {
   public var tryAgainButton: Swift.String {
     get
   }
+  public var scanQRexpandCamera: Swift.String {
+    get
+  }
+  public var scanQRwhereIsQR: Swift.String {
+    get
+  }
   public var connectWifiTitle: Swift.String {
     get
   }
@@ -306,9 +345,10 @@ extension StandardPairingUI.WordingProtocol {
   public var otherNetworkButton: Swift.String {
     get
   }
-  public var enterPassword: Swift.String {
+  public var otherNetworkTitle: Swift.String {
     get
   }
+  public func enterPassword(for networkName: Swift.String) -> Swift.String
   public func enterPasswordHeaderTitle(networkName: Swift.String) -> Swift.String
   public var passwordEntryFieldPlaceholder: Swift.String {
     get
@@ -468,6 +508,12 @@ extension StandardPairingUI.WordingProtocol {
   public var pairingErrorDeviceMismatchTitle: Swift.String {
     get
   }
+  public var pairingErrorConnectionTimeoutTitle: Swift.String {
+    get
+  }
+  public var pairingErrorBleDisconnectedTitle: Swift.String {
+    get
+  }
   public var pairingErrorUnexpectedStateDescription: Swift.String {
     get
   }
@@ -489,6 +535,10 @@ extension StandardPairingUI.WordingProtocol {
   public var pairingErrorDeviceMismatchDescription: Swift.String {
     get
   }
+  public var pairingErrorConnectionTimeoutDescription: Swift.String {
+    get
+  }
+  public func pairingErrorBleDisconnectedDescription(deviceName: Swift.String) -> Swift.String
   public var pairingErrorDeviceSecureSessionDescription: Swift.String {
     get
   }
@@ -524,6 +574,9 @@ extension StandardPairingUI.WordingProtocol {
     get
   }
   public func pairingThreadErrorContactSensorNoThreadNetworksFoundDescription1(zoneName: Swift.String) -> Swift.String
+  public var pairingThreadErrorContactSensorNoThreadNetworksFoundDescription2: Swift.String {
+    get
+  }
   public func pairingThreadErrorNoThreadNetworksFoundDescription(zoneName: Swift.String) -> Swift.String
   public var positioningErrorTitle: Swift.String {
     get
@@ -547,6 +600,9 @@ extension StandardPairingUI.WordingProtocol {
     get
   }
   public var pairingScanningBleFaq: Swift.String {
+    get
+  }
+  public var pairingScanningBleFaqDoorSensor: Swift.String {
     get
   }
 }
@@ -649,17 +705,14 @@ extension NamiPairingFramework.Pairing.Error {
 }
 public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public init()
-  public var bluetoothUsageHint: (NamiPairingFramework.BluetoothUsageHint.ViewModel) -> StandardPairingUI.BluetoothUsageHintView
   public var powerOnAndScanning: (NamiPairingFramework.PowerOnAndScanning.ViewModel) -> StandardPairingUI.PowerOnAndScanningView
-  public var enableBluetoothInSettings: () -> StandardPairingUI.EnableBluetoothInSettingsView
-  public var enableCameraInSettings: () -> StandardPairingUI.EnableCameraInSettingsView
+  public var enableCameraInSettings: (Swift.String) -> StandardPairingUI.EnableCameraInSettingsView
   public var bluetoothDeviceFound: (NamiPairingFramework.BluetoothDeviceFound.ViewModel) -> StandardPairingUI.BluetoothDeviceFoundView
-  public var askToConnect: (NamiPairingFramework.AskToConnect.ViewModel) -> StandardPairingUI.AskToConnectView
   public var qrCodeScanner: (NamiPairingFramework.QRScanner.ViewModel) -> StandardPairingUI.QRScannerView
   public var listWiFiNetworks: (NamiPairingFramework.ListWiFiNetworks.ViewModel) -> StandardPairingUI.ListWiFiNetworksView
   public var otherWiFiNetwork: (NamiPairingFramework.OtherWiFiNetwork.ViewModel) -> StandardPairingUI.OtherWiFiNetworkView
   public var enterWiFiPassword: (NamiPairingFramework.EnterWiFiPassword.ViewModel) -> StandardPairingUI.EnterWiFiPasswordView
-  public var finishingSetup: () -> StandardPairingUI.FinishingSetupView
+  public var finishingSetup: (Swift.String) -> StandardPairingUI.FinishingSetupView
   public var howToPosition: (NamiPairingFramework.HowToPosition.ViewModel) -> StandardPairingUI.HowToPositionView
   public var initialPositioningScreen: (NamiPairingFramework.InitialScreen.ViewModel) -> StandardPairingUI.InitialScreenView
   public var positioningGuidance: (NamiPairingFramework.PositioningGuidance.ViewModel) -> StandardPairingUI.PositioningGuidanceView
@@ -668,10 +721,7 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public var pairingError: (NamiPairingFramework.PairingErrorScreen.ViewModel) -> StandardPairingUI.PairingErrorScreenView
   public var backButton: () -> StandardPairingUI.CircleButton?
   public typealias BackButtonView = StandardPairingUI.CircleButton
-  public typealias ViewForAskToConnect = StandardPairingUI.AskToConnectView
   public typealias ViewForBluetoothDeviceFound = StandardPairingUI.BluetoothDeviceFoundView
-  public typealias ViewForBluetoothUsageHint = StandardPairingUI.BluetoothUsageHintView
-  public typealias ViewForEnableBluetoothInSettings = StandardPairingUI.EnableBluetoothInSettingsView
   public typealias ViewForEnableCameraInSettings = StandardPairingUI.EnableCameraInSettingsView
   public typealias ViewForEnterWiFiPassword = StandardPairingUI.EnterWiFiPasswordView
   public typealias ViewForFinishingSetup = StandardPairingUI.FinishingSetupView
@@ -706,20 +756,6 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI24BluetoothDeviceFoundViewV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor(unsafe) public struct BluetoothUsageHintView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.BluetoothUsageHint.ViewModel)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI22BluetoothUsageHintViewV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor(unsafe) public struct EnableBluetoothInSettingsView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init()
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI29EnableBluetoothInSettingsViewV4bodyQrvp", 0) __
 }
 @_Concurrency.MainActor(unsafe) public struct ErrorScreenView : SwiftUI.View {
   @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.ErrorScreen.ViewModel)
@@ -777,18 +813,11 @@ public struct AnimationView : SwiftUI.View {
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI20OtherWiFiNetworkViewV4bodyQrvp", 0) __
 }
 @_Concurrency.MainActor(unsafe) public struct FinishingSetupView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init()
+  @_Concurrency.MainActor(unsafe) public init(title: Swift.String? = nil)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI18FinishingSetupViewV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor(unsafe) public struct AskToConnectView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.AskToConnect.ViewModel)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI16AskToConnectViewV4bodyQrvp", 0) __
 }
 @_Concurrency.MainActor(unsafe) public struct PairingErrorScreenView : SwiftUI.View {
   @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.PairingErrorScreen.ViewModel)
@@ -798,7 +827,7 @@ public struct AnimationView : SwiftUI.View {
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI0B15ErrorScreenViewV4bodyQrvp", 0) __
 }
 @_Concurrency.MainActor(unsafe) public struct EnableCameraInSettingsView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init()
+  @_Concurrency.MainActor(unsafe) public init(deviceType: Swift.String? = nil)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -855,6 +884,9 @@ extension UIKit.UIImage {
 public enum DeviceImages {
   public static func image(for codeName: Swift.String) -> StandardPairingUI.AnimatableImageView
   public static func image(for model: DeviceConnections.NamiDeviceModel) -> StandardPairingUI.AnimatableImageView
+}
+public enum DeviceQRCodeLocationImages {
+  public static func qrCodeLocationImage(for name: Swift.String) -> StandardPairingUI.AnimatableImageView
 }
 extension SwiftUI.Image {
   public static func webp(_ name: Swift.String) -> SwiftUI.Image
@@ -1021,6 +1053,10 @@ public var screenWidth: CoreFoundation.CGFloat {
 public var firstKeyWindow: UIKit.UIWindow?
 public var defaultNavbarHeight: CoreFoundation.CGFloat
 extension SwiftUI.View {
+  public func navigationPopGestureDisabled(_ disabled: Swift.Bool) -> some SwiftUI.View
+  
+}
+extension SwiftUI.View {
   public func onHeightUpdate(_ action: @escaping (CoreFoundation.CGFloat) -> Swift.Void) -> some SwiftUI.View
   
   public func readSize(onChange: @escaping (CoreFoundation.CGSize) -> Swift.Void) -> some SwiftUI.View
@@ -1044,6 +1080,7 @@ extension SwiftUI.Color {
 }
 extension UIKit.UIFont {
   public class func preferredFont(from font: SwiftUI.Font) -> UIKit.UIFont
+  public class func convertToUIFontCustom(_ font: SwiftUI.Font) -> UIKit.UIFont
 }
 public struct ColorsKey : SwiftUI.EnvironmentKey {
   public static let defaultValue: StandardPairingUI.Colors
@@ -1111,7 +1148,7 @@ public struct NamiPageIndexIndicatorView : SwiftUI.View {
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI26NamiPageIndexIndicatorViewV4bodyQrvp", 0) __
 }
 public struct TextFieldView : SwiftUI.UIViewRepresentable {
-  public init(placeholder: Swift.String, text: SwiftUI.Binding<Swift.String>, isEditing: SwiftUI.Binding<Swift.Bool>, returnKeyType: UIKit.UIReturnKeyType = .default)
+  public init(placeholder: Swift.String, text: SwiftUI.Binding<Swift.String>, isEditing: SwiftUI.Binding<Swift.Bool>, returnKeyType: UIKit.UIReturnKeyType = .default, textColor: UIKit.UIColor? = nil, font: UIKit.UIFont? = nil)
   @objc final public class Coordinator : ObjectiveC.NSObject {
     public init(text: SwiftUI.Binding<Swift.String>, isEditing: SwiftUI.Binding<Swift.Bool>, showsPassword: SwiftUI.Binding<Swift.Bool>, showImageName: Swift.String, hideImageName: Swift.String)
     @objc deinit
@@ -1139,7 +1176,7 @@ public enum NamiTextFieldStyle {
   }
 }
 public struct NamiTextField : SwiftUI.View {
-  public init(placeholder: Swift.String, text: SwiftUI.Binding<Swift.String>, isEditing: SwiftUI.Binding<Swift.Bool>? = nil, returnKeyType: UIKit.UIReturnKeyType = .default, textFieldFont: SwiftUI.Font? = nil, subTextFont: SwiftUI.Font? = nil)
+  public init(placeholder: Swift.String, text: SwiftUI.Binding<Swift.String>, isEditing: SwiftUI.Binding<Swift.Bool>? = nil, returnKeyType: UIKit.UIReturnKeyType = .default, textFieldFont: SwiftUI.Font? = nil, subTextFont: SwiftUI.Font? = nil, textColor: SwiftUI.Color? = nil)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -1234,6 +1271,7 @@ public struct NamiTextHyperLink : SwiftUI.View {
   public init(text: Swift.String, link: Swift.String, linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
   public init(markdownString: Swift.String, linkTexts: Swift.String..., linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
   public init(markdownString: Swift.String, linkTexts: [Swift.String], linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
+  public init(content: Swift.String, textsAndLinks: [(Swift.String, Swift.String)], linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }

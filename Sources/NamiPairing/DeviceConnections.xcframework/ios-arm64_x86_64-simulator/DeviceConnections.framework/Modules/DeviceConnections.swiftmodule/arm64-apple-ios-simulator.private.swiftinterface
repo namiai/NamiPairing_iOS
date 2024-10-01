@@ -277,15 +277,14 @@ public enum I18n {
   public static let activityPresenceDetectedIn: Swift.String
   public static let activityTitle: Swift.String
   public static let activityTotalMotionTime: Swift.String
-  public static func alarmDetectedAt(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func alarmDetectedAtAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func alarmDetectedAtAndroid(_ p1: Any, _ p2: Any) -> Swift.String
   public static let alarmDisarm: Swift.String
-  public static func alarmFalseAlarmCauseListTitle(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func alarmFalseAlarmCauseListTitle(_ p1: Any) -> Swift.String
   public static let alarmFalseAlarmCauseMyself: Swift.String
   public static let alarmFalseAlarmCauseOther: Swift.String
   public static let alarmFalseAlarmCauseSmallMovingObjects: Swift.String
   public static let alarmFalseAlarmReportButtonTitle: Swift.String
-  public static func alarmFalseAlarmReportHint(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func alarmFalseAlarmReportHint(_ p1: Any) -> Swift.String
   public static let alarmFalseAlarmSelectCauseTitle: Swift.String
   public static let alarmFalseAlarmSensitivityExplanatioAdjustSensitivityButton: Swift.String
   public static let alarmFalseAlarmSensitivityExplanatioArmSelectedZones: Swift.String
@@ -293,36 +292,28 @@ public enum I18n {
   public static let alarmFalseAlarmSensitivityExplanatioSensitivityLevelHint: Swift.String
   public static let alarmFalseAlarmSensitivityExplanationReduceFalseAlarmsTitle: Swift.String
   public static let alarmFalseAlarmTitle: Swift.String
-  public static func alarmIntrusionDescription(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func alarmIntrusionDescriptionAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func alarmIntrusionDescription(_ p1: Any, _ p2: Any) -> Swift.String
+  public static func alarmIntrusionDescriptionAndroid(_ p1: Any, _ p2: Any) -> Swift.String
   public static let alarmIntrusionTitle: Swift.String
-  public static func alarmLiveAlarmActivitiesStopped(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func alarmLiveAlarmNoActivity(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func alarmLiveAlarmOngoingActivity(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func alarmLiveAlarmActivitiesStopped(_ p1: Any) -> Swift.String
+  public static func alarmLiveAlarmNoActivity(_ p1: Any) -> Swift.String
+  public static func alarmLiveAlarmOngoingActivity(_ p1: Any) -> Swift.String
   public static let alarmLiveAlarmSecurityMonitoring: Swift.String
-  public static func alarmLiveAlarmStartedAtInZone(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func alarmLiveAlarmStoppedActivity(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func alarmPillAlarmTriggered(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let alarmReasonCo2: Swift.String
-  public static let alarmReasonFire: Swift.String
-  public static let alarmReasonFlood: Swift.String
+  public static func alarmLiveAlarmStartedAtInZone(_ p1: Any, _ p2: Any) -> Swift.String
+  public static func alarmLiveAlarmStoppedActivity(_ p1: Any) -> Swift.String
   public static let alarmReasonIntrusion: Swift.String
   public static let alarmReportAlarmDisarmed: Swift.String
   public static let alarmReportAlarmTriggered: Swift.String
   public static let alarmReportDuration: Swift.String
-  public static func alarmReportEventStartEndTime(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func alarmReportEventStartEndTime(_ p1: Any, _ p2: Any) -> Swift.String
   public static let alarmReportFalse: Swift.String
   public static let alarmReportSecurityLog: Swift.String
-  public static func alarmReportStartedAt(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func alarmReportSubjectHistory(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func alarmReportStartedAt(_ p1: Any) -> Swift.String
+  public static func alarmReportSubjectHistory(_ p1: Any) -> Swift.String
   public static let alarmReportTitle: Swift.String
-  public static func alarmReportTotalActiveTime(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func alarmReportTotalActiveTime(_ p1: Any) -> Swift.String
   public static let alarmReportZonesAffected: Swift.String
-  public static func alertMessageNolongerAccess(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let alertMessagePluralPlacesWereDeleted: Swift.String
-  public static let alertMessageSingularPlaceWasDeleted: Swift.String
   public static let appName: Swift.String
-  public static let appNameDebug: Swift.String
   public static let areYouWantToCancelPairingProcess: Swift.String
   public static let automationAt: Swift.String
   public static let automationBack: Swift.String
@@ -337,8 +328,8 @@ public enum I18n {
   public static let automationEveryWeekday: Swift.String
   public static let automationEveryWeekend: Swift.String
   public static let automationFor: Swift.String
-  public static func automationFormatTimeZone(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func automationIsYourPlaceLocatedInThisTimeZone(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func automationFormatTimeZone(_ p1: Any) -> Swift.String
+  public static func automationIsYourPlaceLocatedInThisTimeZone(_ p1: Any) -> Swift.String
   public static let automationModes: Swift.String
   public static let automationMsgEmptyAutomation: Swift.String
   public static let automationNewAutomation: Swift.String
@@ -351,10 +342,7 @@ public enum I18n {
   public static let automationsActionCannotUndone: Swift.String
   public static let automationsAt: Swift.String
   public static let automationsAutomationCannotBeSaved: Swift.String
-  public static let automationsBack: Swift.String
-  public static let automationsChangeModeTo: Swift.String
   public static let automationsCreateAutomation: Swift.String
-  public static let automationsCreateError: Swift.String
   public static let automationsDateAndTimeBasedOn: Swift.String
   public static let automationsDeleteAutomation: Swift.String
   public static let automationsEditAutomation: Swift.String
@@ -362,15 +350,11 @@ public enum I18n {
   public static let automationsEveryWeekend: Swift.String
   public static let automationsEveryday: Swift.String
   public static let automationsFor: Swift.String
-  public static func automationsFormatTimeZone(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func automationsIsYourPlaceLocatedInThisTimeZone(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   public static let automationsModes: Swift.String
   public static let automationsNewAutomation: Swift.String
   public static let automationsNoZonesAvailable: Swift.String
   public static let automationsNoZonesSelected: Swift.String
   public static let automationsRepeatOn: Swift.String
-  public static let automationsSelectTime: Swift.String
-  public static let automationsSelectTimezone: Swift.String
   public static let automationsSetAScheduleToActivateModesAutomatically: Swift.String
   public static let automationsYouHaveConflict: Swift.String
   public static let changeUsernameEmptyErrorMessage: Swift.String
@@ -381,13 +365,11 @@ public enum I18n {
   public static let chooseRoomHeader: Swift.String
   public static let chooseRoomLoadDataFailed: Swift.String
   public static let chooseRoomSelectOrCreateHeader: Swift.String
-  public static let chooseZoneConfirm: Swift.String
   public static let chooseZoneCreateZone: Swift.String
   public static let chooseZoneHeader: Swift.String
-  public static let chooseZoneLoadDataFailed: Swift.String
   public static let chooseZoneNoDevices: Swift.String
-  public static func chooseZoneThreadDevicesCount(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func chooseZoneWifiDevicesCount(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func chooseZoneThreadDevicesCount(_ p1: Any) -> Swift.String
+  public static func chooseZoneWifiDevicesCount(_ p1: Any) -> Swift.String
   public static let commissioningModeCheckupZoneContactIsntaller: Swift.String
   public static let commissioningModeCompanionLandingCancel: Swift.String
   public static let commissioningModeCompanionLandingContactSupport: Swift.String
@@ -398,37 +380,23 @@ public enum I18n {
   public static let commissioningModeConfirmPlaceNamePlaceHint: Swift.String
   public static let commissioningModeConfirmPlaceNamePlacePlaceholder: Swift.String
   public static let commissioningModeLoadingScreenLoadingContent: Swift.String
-  public static let commissioningModePlaceDetailsAddDevice: Swift.String
   public static let commissioningModePlaceDetailsAddDevicesHint: Swift.String
   public static let commissioningModePlaceDetailsAddZone: Swift.String
   public static let commissioningModePlaceDetailsContactIsntaller: Swift.String
   public static let commissioningModePlaceDetailsCreatedAt: Swift.String
   public static let commissioningModePlaceDetailsCreatedAtAndroid: Swift.String
   public static let commissioningModePlaceDetailsExitButton: Swift.String
-  public static let commissioningModePlaceDetailsFinishSetupButton: Swift.String
-  public static let commissioningModePlaceDetailsRenamePlaceButton: Swift.String
   public static let commissioningModePlaceDetailsUpdatedAt: Swift.String
   public static let commissioningModePlaceDetailsUpdatedAtAndroid: Swift.String
   public static let commissioningModePlaceDetailsZonesSectionTitle: Swift.String
   public static let commissioningModeSetupModeSettingsExitSetup: Swift.String
-  public static let commissioningModeSetupModeSettingsInstaller: Swift.String
   public static let commissioningModeSetupModeSettingsPlaceSettings: Swift.String
   public static let commissioningModeSetupModeSettingsSettings: Swift.String
-  public static let commissioningModeSetupModeSettingsUser: Swift.String
-  public static let companionAddZone: Swift.String
   public static let companionEditPlaceNameHint: Swift.String
   public static let companionExitSetup: Swift.String
   public static let companionExitSetupAndroid: Swift.String
   public static let companionHomeContactYourInstallerToSetUpYourPlace: Swift.String
-  public static let companionZoneHealth: Swift.String
-  public static let companionZoneHealthCheckAllDevices: Swift.String
-  public static let companionZoneHealthDegraded: Swift.String
-  public static let companionZoneHealthHealthy: Swift.String
-  public static let companionZoneHealthUnhealthy: Swift.String
-  public static let companionZoneHealthWorksWell: Swift.String
-  public static let companionZoneMotionSensing: Swift.String
   public static let companionZoneMotionSensingConnectLocalWifi: Swift.String
-  public static let companionZoneMotionSensingDataNotAvailable: Swift.String
   public static let companionZoneMotionSensingMovementDetected: Swift.String
   public static let companionZoneMotionSensingNoMovementDetected: Swift.String
   public static let companionZones: Swift.String
@@ -455,37 +423,28 @@ public enum I18n {
   public static let createPlaceSectionTitle: Swift.String
   public static let createZoneButtonConfirm: Swift.String
   public static let createZoneDescription: Swift.String
-  public static let createZoneEnterName: Swift.String
   public static let createZoneEnterNameHint: Swift.String
+  public static let createZoneFirstFloor: Swift.String
   public static let createZoneHeader: Swift.String
   public static let createZoneNameTheZoneDescription: Swift.String
   public static let createZonePlaceholder: Swift.String
   public static let createZoneSecondFloorPlaceholder: Swift.String
   public static let createZoneTitle: Swift.String
   public static let dashboardAddNewPlace: Swift.String
-  public static let dashboardAddNewUser: Swift.String
-  public static let dashboardFineMessage: Swift.String
   public static func dashboardFormatDisconnectedDeviceInMultipleZoneAndroid(_ p1: Swift.Int) -> Swift.String
   public static func dashboardFormatDisconnectedDeviceInOneZoneAndroid(_ p1: Swift.Int) -> Swift.String
-  public static func dashboardFormatIssueInAPlace(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func dashboardFormatIssueInAPlace(_ p1: Any) -> Swift.String
   public static func dashboardFormatIssueInMultiplePlace(_ p1: Swift.Int) -> Swift.String
-  public static let dashboardLastSeen: Swift.String
-  public static let dashboardPeople: Swift.String
-  public static let dashboardPlaceTileAddOneMoreDevice: Swift.String
-  public static let dashboardPlaceTileAddTwoDevices: Swift.String
-  public static let dashboardPlaceTileCheckYourDeviceSetup: Swift.String
   public static let dashboardPlaceTileCurrentStatus: Swift.String
   public static let dashboardPlaceTileIntrusionDetected: Swift.String
   public static let dashboardPlaceTileMovementDetected: Swift.String
   public static let dashboardPlaceTileNoMovementDetected: Swift.String
   public static let dashboardPlaceTileNoSensingData: Swift.String
   public static let dashboardPlaceTileNotAvailable: Swift.String
-  public static let dashboardPlaceTilePairKit: Swift.String
   public static let dashboardPlaceTilePairMore: Swift.String
   public static let dashboardPlaceTilePairOneMore: Swift.String
-  public static let dashboardPlaceTilePairTwo: Swift.String
-  public static func dashboardPlaceTileSinceStartedDate(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func dashboardPlaceTileSinceStartedDateAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func dashboardPlaceTileSinceStartedDate(_ p1: Any) -> Swift.String
+  public static func dashboardPlaceTileSinceStartedDateAndroid(_ p1: Any) -> Swift.String
   public static let dashboardPlaces: Swift.String
   public static let dashboardSensingLinkBrokenInMultipleZone: Swift.String
   public static let dashboardSensingLinkBrokenInOneZone: Swift.String
@@ -510,18 +469,10 @@ public enum I18n {
   public static let deletePlaceThisActionIsIrreversible: Swift.String
   public static let deletePlaceThisWillAlso: Swift.String
   public static let deviceCategoryAccessories: Swift.String
+  public static let deviceCategoryActivitySensors: Swift.String
   public static let deviceCategorySensing: Swift.String
   public static let deviceDetailsConnected: Swift.String
-  public static func deviceDetailsDeleteDeviceFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func deviceDetailsLoadDataFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let deviceDetailsRelay: Swift.String
-  public static func deviceDetailsToggleDeviceFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let deviceDetailsTooltipConnect: Swift.String
-  public static let deviceDetailsTooltipNotConnect: Swift.String
-  public static let deviceEditCustomizeDeviceDescription: Swift.String
-  public static let deviceEditCustomizeDeviceTitle: Swift.String
-  public static let deviceEditDeviceInfoDescription: Swift.String
-  public static let deviceEditDeviceInfoTitle: Swift.String
+  public static func deviceDetailsLoadDataFailed(_ p1: Any) -> Swift.String
   public static let deviceEditDeviceNamePlaceholder: Swift.String
   public static let deviceEditTitle: Swift.String
   public static let deviceEnginesMotion: Swift.String
@@ -529,22 +480,18 @@ public enum I18n {
   public static let deviceEnginesUnknown: Swift.String
   public static let deviceInfoBbsid: Swift.String
   public static let deviceInfoBorderRouter: Swift.String
-  public static let deviceInfoBssid: Swift.String
   public static let deviceInfoCloudConnection: Swift.String
   public static let deviceInfoDeviceConnected: Swift.String
   public static let deviceInfoDeviceDisconnected: Swift.String
   public static let deviceInfoDeviceModel: Swift.String
   public static let deviceInfoDeviceModelId: Swift.String
-  public static let deviceInfoDeviceName: Swift.String
   public static let deviceInfoFirmvareVesrion: Swift.String
-  public static let deviceInfoFirmwareAutomaticUpdateHint: Swift.String
   public static let deviceInfoLocalConnection: Swift.String
   public static let deviceInfoMacAddress: Swift.String
   public static let deviceInfoNonBorderRouter: Swift.String
   public static let deviceInfoPairedAt: Swift.String
   public static let deviceInfoPanid: Swift.String
   public static let deviceInfoRole: Swift.String
-  public static let deviceInfoRoom: Swift.String
   public static let deviceInfoRssi: Swift.String
   public static let deviceInfoTechnicalInformation: Swift.String
   public static let deviceInfoThreadNetwork: Swift.String
@@ -570,102 +517,106 @@ public enum I18n {
   public static let deviceOverviewConnectionCloud: Swift.String
   public static let deviceOverviewConnectionDirect: Swift.String
   public static let deviceOverviewConnectionLost: Swift.String
-  public static func deviceOverviewDeletionDeleteAlertMessage(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let deviceOverviewDeletionDeleteAlertMessageAndroid: Swift.String
-  public static let deviceOverviewDeletionDeleteAlertTitle: Swift.String
-  public static let deviceOverviewDeletionDeleteButton: Swift.String
   public static let deviceOverviewDeletionDeleteConfirm: Swift.String
   public static let deviceOverviewRelayExplanation: Swift.String
   public static let deviceOverviewRelayIsOff: Swift.String
   public static let deviceOverviewRelayIsOn: Swift.String
-  public static let deviceOverviewSchedule: Swift.String
-  public static let deviceOverviewSiren: Swift.String
   public static let deviceOverviewStatus: Swift.String
-  public static func deviceOverviewWaitingForConnection(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func deviceOverviewWaitingForConnectionAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   public static let deviceOverviewWifiDisconnected: Swift.String
-  public static let deviceOverviewWifiGood: Swift.String
   public static let deviceOverviewWifiPoor: Swift.String
-  public static let deviceOverviewZone: Swift.String
+  public static let devicePlacementAvoidPlacingDeviceNearMetalic: Swift.String
   public static let devicePlacementConfirmButton: Swift.String
+  public static let devicePlacementDoNotConnectToPowerYet: Swift.String
+  public static let devicePlacementDoNotMountDoorSensorYet: Swift.String
+  public static let devicePlacementDoorSensorGuideContent1: Swift.String
+  public static func devicePlacementDoorSensorGuideContent2Imperial(_ p1: Any) -> Swift.String
+  public static func devicePlacementDoorSensorGuideContent2Metric(_ p1: Any) -> Swift.String
   public static let devicePlacementFirstDeviceSetup: Swift.String
   public static let devicePlacementFirstDeviceSetupStep1: Swift.String
-  public static let devicePlacementFirstDeviceSetupStep2: Swift.String
   public static let devicePlacementFirstDeviceSetupStep2Imperial: Swift.String
   public static let devicePlacementFirstDeviceSetupStep2Metric: Swift.String
+  public static let devicePlacementFirstSensePlugGuide1Imperial: Swift.String
+  public static let devicePlacementFirstSensePlugGuide1Metric: Swift.String
+  public static let devicePlacementFirstSensePlugGuide2: Swift.String
+  public static let devicePlacementFirstWifiSensorGuide1Imperial: Swift.String
+  public static let devicePlacementFirstWifiSensorGuide1Metric: Swift.String
+  public static let devicePlacementFirstWifiSensorGuide2: Swift.String
+  public static func devicePlacementFirstWifiSensorGuide3(_ p1: Any) -> Swift.String
+  public static func devicePlacementNonFirstSensePlugGuide2Imperial(_ p1: Any) -> Swift.String
+  public static func devicePlacementNonFirstSensePlugGuide2Metric(_ p1: Any) -> Swift.String
+  public static func devicePlacementNonFirstWidarSensorGuide2Imperial(_ p1: Any) -> Swift.String
+  public static func devicePlacementNonFirstWidarSensorGuide2Metric(_ p1: Any) -> Swift.String
+  public static let devicePlacementNonFirstWifiSensorGuide1Imperial: Swift.String
+  public static let devicePlacementNonFirstWifiSensorGuide1Metric: Swift.String
+  public static func devicePlacementNonFirstWifiSensorGuide2Imperial(_ p1: Any) -> Swift.String
+  public static func devicePlacementNonFirstWifiSensorGuide2Metric(_ p1: Any) -> Swift.String
   public static let devicePlacementNoticeNotice: Swift.String
-  public static func devicePlacementNoticeNoticeKnownZone(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func devicePlacementNoticeNoticeKnownZoneAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func devicePlacementNoticeNoticeKnownZone(_ p1: Any) -> Swift.String
+  public static let devicePlacementPlaceDeviceOnSameFloor: Swift.String
   public static let devicePlacementRemainingDevicesSetup: Swift.String
   public static let devicePlacementRemainingDevicesSetupStep1Imprerial: Swift.String
   public static let devicePlacementRemainingDevicesSetupStep1Metric: Swift.String
-  public static let devicePlacementRemainingDevicesSetupStep2: Swift.String
   public static let devicePlacementRemainingDevicesSetupStep2Imperial: Swift.String
   public static let devicePlacementRemainingDevicesSetupStep2Metric: Swift.String
   public static let devicePlacementRemainingDevicesSetupStep3: Swift.String
   public static let devicePlacementRemainingDevicesSetupStep4: Swift.String
+  public static let devicePlacementSensorDialogDescription: Swift.String
+  public static let devicePlacementSensorDialogTitle: Swift.String
+  public static let devicePlacementThreadBorderRouterDialogDescription: Swift.String
+  public static let devicePlacementThreadBorderRouterDialogTitle: Swift.String
+  public static let devicePlacementWhereToPlaceDevice: Swift.String
   public static let deviceSettingsCustomizeDeviceDescription: Swift.String
   public static let deviceSettingsCustomizeDeviceTitle: Swift.String
-  public static let deviceSettingsDeviceInfoDescription: Swift.String
   public static let deviceSettingsDeviceInfoTitle: Swift.String
   public static let deviceSettingsErrorDeviceNotFound: Swift.String
   public static let deviceSettingsRemoveDevice: Swift.String
-  public static func deviceSettingsRemoveDeviceName(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func deviceSettingsRemoveDeviceName(_ p1: Any) -> Swift.String
   public static let deviceSettingsTechnicalInformationSubtitleThread: Swift.String
   public static let deviceSettingsTechnicalInformationSubtitleWifi: Swift.String
   public static let deviceSettingsTitle: Swift.String
+  public static let deviceSetupAlarmPod: Swift.String
+  public static let deviceSetupContactSensor: Swift.String
+  public static let deviceSetupSecurityPod: Swift.String
+  public static let deviceSetupSensePlug: Swift.String
+  public static let deviceSetupWidarSensor: Swift.String
+  public static let deviceSetupWifiSensor: Swift.String
   public static let deviceTypeSelectionAccessoriesWarning: Swift.String
   public static let deviceTypeSelectionAccessoriesWarningLearnMore: Swift.String
   public static let deviceWidarMispositionedWarningMessage: Swift.String
   public static let devicesAddNewDevice: Swift.String
   public static let devicesAddNewRoom: Swift.String
   public static let devicesAddNewZone: Swift.String
-  public static let devicesInformationAutoUpdate: Swift.String
   public static let editDeviceEditDeviceNameHint: Swift.String
   public static let editDeviceEditDeviceTitle: Swift.String
   public static let editIconHeader: Swift.String
   public static let editPlaceCategory: Swift.String
-  public static let editPlaceColor: Swift.String
-  public static let editPlaceDeleteButton: Swift.String
   public static let editPlaceDeletePlaceGuideDescription2Android: Swift.String
   public static let editPlaceDeletePlaceGuideDescription4Android: Swift.String
   public static let editPlaceDeletePlaceGuideDescription6Android: Swift.String
   public static let editPlaceDeletePlaceGuideDescriptionAndroid: Swift.String
-  public static func editPlaceDeletionDeleteAlertMessage(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let editPlaceDeletionDeleteAlertMessageAndroid: Swift.String
-  public static let editPlaceDeletionDeleteAlertTitle: Swift.String
   public static let editPlaceDeletionDeleteButton: Swift.String
-  public static let editPlaceDeletionDeleteConfirm: Swift.String
-  public static let editPlaceDeviceEngine: Swift.String
-  public static let editPlaceDevices: Swift.String
-  public static let editPlaceDevicesAndroid: Swift.String
-  public static func editPlaceDevicesInZone(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func editPlaceDevicesInZoneAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   public static let editPlaceEditPlace: Swift.String
-  public static let editPlaceEditPlaceAndroid: Swift.String
   public static let editPlaceEditPlaceDescription: Swift.String
   public static let editPlaceEnterName: Swift.String
   public static let editPlaceIcon: Swift.String
   public static let editPlaceLeavePlaceGuideDescription4Android: Swift.String
   public static let editPlaceLeavePlaceGuideTitle: Swift.String
-  public static let editPlaceLocation: Swift.String
   public static let editPlacePluralDevicesAndroid: Swift.String
   public static let editPlaceSensitivity: Swift.String
   public static let editPlaceZeroDeviceAndroid: Swift.String
-  public static func editProfileLoadFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func editProfileSaveFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func editProfileLoadFailed(_ p1: Any) -> Swift.String
+  public static func editProfileSaveFailed(_ p1: Any) -> Swift.String
   public static let editRoomCategory: Swift.String
   public static let editRoomDeleteButton: Swift.String
-  public static let editRoomDeleteDisabledHint: Swift.String
-  public static func editRoomDeleteFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func editRoomDeleteZoneFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func editRoomDeleteFailed(_ p1: Any) -> Swift.String
+  public static func editRoomDeleteZoneFailed(_ p1: Any) -> Swift.String
   public static let editRoomDeletionDeleteRoomAlertMessage: Swift.String
   public static let editRoomDeletionDeleteZoneAlertMessage: Swift.String
   public static let editRoomEditRoom: Swift.String
   public static let editRoomEnterName: Swift.String
   public static let editRoomIcon: Swift.String
-  public static func editRoomLoadFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func editRoomSaveFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func editRoomLoadFailed(_ p1: Any) -> Swift.String
+  public static func editRoomSaveFailed(_ p1: Any) -> Swift.String
   public static let editUserProfileChooseImageColor: Swift.String
   public static let editUserProfileChooseProfileImage: Swift.String
   public static let editUserProfileEmptyErrorMessage: Swift.String
@@ -675,13 +626,17 @@ public enum I18n {
   public static let editZoneDeleteAlertDescription: Swift.String
   public static let editZoneDeleteAlertTitle: Swift.String
   public static let editZoneDeleteButton: Swift.String
-  public static let editZoneDeleteDisabledHint: Swift.String
   public static let editZoneEditZone: Swift.String
   public static let editZoneEnterName: Swift.String
+  public static let editZoneFailToCreateZone: Swift.String
+  public static let editZoneFailToDeleteZone: Swift.String
+  public static let editZoneFailToEditZone: Swift.String
+  public static let editZoneFailToGetZoneInformation: Swift.String
+  public static let editZoneTitle: Swift.String
+  public static let editZoneZoneNameAlreadyInUse: Swift.String
   public static let engineSettingsEngineSettingsDescription: Swift.String
   public static let engineSettingsMotionEngine: Swift.String
   public static let engineSettingsMotionEngineDescription: Swift.String
-  public static let engineSettingsSaveButton: Swift.String
   public static let engineSettingsSecurityEngine: Swift.String
   public static let engineSettingsSecurityEngineDescription: Swift.String
   public static let engineSettingsTitle: Swift.String
@@ -691,24 +646,24 @@ public enum I18n {
   public static let errorsJoinThreadNetworkFailMessage: Swift.String
   public static let errorsJoinThreadNetworkFailTitle: Swift.String
   public static let errorsLinkingErrorResponseParseError: Swift.String
-  public static let errorsLinkingErrorTitle: Swift.String
   public static let errorsMoveDeviceErrorNoDeviceSelected: Swift.String
   public static let errorsMoveDeviceErrorTitle: Swift.String
-  public static func errorsNetworkErrorConflict(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func errorsNetworkErrorConnectionError(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func errorsNetworkErrorInvalidParameters(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func errorsNetworkErrorNotFound(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func errorsNetworkErrorServerError(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func errorsNetworkErrorConflict(_ p1: Any) -> Swift.String
+  public static func errorsNetworkErrorConnectionError(_ p1: Any) -> Swift.String
+  public static func errorsNetworkErrorInvalidParameters(_ p1: Any) -> Swift.String
+  public static func errorsNetworkErrorNotFound(_ p1: Any) -> Swift.String
+  public static func errorsNetworkErrorServerError(_ p1: Any) -> Swift.String
   public static let errorsNetworkErrorTitle: Swift.String
-  public static func errorsNetworkErrorUnauthorized(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func errorsNetworkErrorUnknown(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func errorsNetworkErrorUnauthorized(_ p1: Any) -> Swift.String
+  public static func errorsNetworkErrorUnknown(_ p1: Any) -> Swift.String
+  public static func errorsPairingBleDisconnectedDescription(_ p1: Any) -> Swift.String
+  public static let errorsPairingConnectionTimeOutDescription: Swift.String
   public static let errorsPairingDeviceNotFoundDescription: Swift.String
   public static let errorsPairingDeviceNotFoundTitle: Swift.String
   public static let errorsPairingErrorDeviceCloudChallengeError: Swift.String
   public static let errorsPairingErrorDeviceSecureSessionError: Swift.String
   public static let errorsPairingErrorDeviceThreadJoinError: Swift.String
   public static let errorsPairingErrorDeviceThreadScanError: Swift.String
-  public static let errorsPairingErrorDeviceTitle: Swift.String
   public static let errorsPairingErrorDeviceUnknownUnrecognized: Swift.String
   public static let errorsPairingErrorDeviceWifiJoinError: Swift.String
   public static let errorsPairingErrorDeviceWifiJoinIpError: Swift.String
@@ -731,18 +686,17 @@ public enum I18n {
   public static let externalSigninConfirmRequest: Swift.String
   public static let externalSigninConfirmedTitle: Swift.String
   public static let externalSigninContinueOauth: Swift.String
-  public static func externalSigninFromLocation(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func externalSigninOnOs(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func externalSigninFromLocation(_ p1: Any) -> Swift.String
+  public static func externalSigninOnOs(_ p1: Any) -> Swift.String
   public static let externalSigninRejectRequest: Swift.String
   public static let externalSigninRequestCodeCodeScreenTitle: Swift.String
   public static let externalSigninRequestCodeGrantAccess: Swift.String
   public static let externalSigninRequestCodeInstructions: Swift.String
   public static let externalSigninRequestCodePasteboardAccessExplained: Swift.String
   public static let externalSigninRequestedTitle: Swift.String
-  public static func externalSigninSigninRequestPeekDescription(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>, _ p3: Swift.UnsafePointer<Swift.CChar>, _ p4: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let externalSigninSucce: Swift.String
+  public static func externalSigninSigninRequestPeekDescription(_ p1: Any, _ p2: Any, _ p3: Any, _ p4: Any) -> Swift.String
   public static let externalSigninSuccessMessage: Swift.String
-  public static func externalSigninWithBrowser(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func externalSigninWithBrowser(_ p1: Any) -> Swift.String
   public static let faqTitle: Swift.String
   public static let fcmMessageTitle: Swift.String
   public static let generalAnd: Swift.String
@@ -750,7 +704,6 @@ public enum I18n {
   public static let generalCamera: Swift.String
   public static let generalCancel: Swift.String
   public static let generalDelete: Swift.String
-  public static let generalDeleting: Swift.String
   public static let generalDone: Swift.String
   public static let generalError: Swift.String
   public static let generalErrorDescription: Swift.String
@@ -763,15 +716,13 @@ public enum I18n {
   public static let generalNotification: Swift.String
   public static let generalOk: Swift.String
   public static let generalSave: Swift.String
-  public static let generalSaving: Swift.String
-  public static let generalSuccess: Swift.String
   public static let generalUnavailable: Swift.String
   public static let generalYes: Swift.String
-  public static func hintIssueAlarmIssues(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func hintIssuePluralSystemIssues(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func hintIssueSingularSystemIssue(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func hintIssueAlarmIssues(_ p1: Any) -> Swift.String
+  public static func hintIssuePluralSystemIssues(_ p1: Any) -> Swift.String
+  public static func hintIssueSingularSystemIssue(_ p1: Any) -> Swift.String
   public static let homepageEmptyPlaceCreatePlace: Swift.String
-  public static func homepageEmptyPlaceWelcome(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func homepageEmptyPlaceWelcome(_ p1: Any) -> Swift.String
   public static let homepageEmptyPlaceWelcomeDescription: Swift.String
   public static let installationGuideCompleteInstallation: Swift.String
   public static let installationGuideInstallContactSensor: Swift.String
@@ -781,70 +732,59 @@ public enum I18n {
   public static let installationGuideItems3Metric: Swift.String
   public static let installationGuideItems4: Swift.String
   public static let internetConnection: Swift.String
-  public static func intrusionBannerIntrusionDetectedAt(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func intrusionBannerIntrusionDetectedAt(_ p1: Any) -> Swift.String
   public static let intrusionEventReportIntrusionHistory: Swift.String
   public static let intrusionHistoryErrorDataNotFound: Swift.String
   public static let intrusionHistoryHumanMotion: Swift.String
   public static let intrusionHistoryNoMotion: Swift.String
-  public static func intrusionHistoryTimestamp(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func intrusionHistoryTimestamp(_ p1: Any) -> Swift.String
   public static let intrusionHistoryTitle: Swift.String
   public static let intrusionLiveViewNoActivitySinceIntrusionBega: Swift.String
   public static let invitationDetailAcceptButton: Swift.String
   public static let invitationDetailAgreementDetails: Swift.String
   public static let invitationDetailCancelButton: Swift.String
   public static let invitationDetailDeclineButton: Swift.String
-  public static func invitationDetailHello(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func invitationDetailHelloAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func invitationDetailHello(_ p1: Any) -> Swift.String
+  public static func invitationDetailHelloAndroid(_ p1: Any) -> Swift.String
   public static let invitationDetailInviteFound: Swift.String
   public static let invitationDetailInviteNotFound: Swift.String
-  public static func invitationDetailQuestion(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func invitationDetailQuestionAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func invitationDetailQuestion(_ p1: Any) -> Swift.String
+  public static func invitationDetailQuestionAndroid(_ p1: Any) -> Swift.String
   public static let invitationDetailRetrievingInviteDetails: Swift.String
   public static let invitationDetailRole: Swift.String
-  public static let invitationDetailsRevoke: Swift.String
   public static let invitationDetailsRevokeRevokeAlertMessage: Swift.String
   public static let inviteDetailsAskRevokeButton: Swift.String
   public static let inviteDetailsAskShareButton: Swift.String
   public static let inviteDetailsConfirmRevokeButton: Swift.String
-  public static func inviteDetailsInviteExpirationText(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func inviteDetailsInviteExpirationTextAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func inviteDetailsInviteExpirationText(_ p1: Any) -> Swift.String
+  public static func inviteDetailsInviteExpirationTextAndroid(_ p1: Any) -> Swift.String
   public static let inviteDetailsInviteExpired: Swift.String
-  public static func inviteDetailsInviteExpiresInText(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func inviteDetailsInviteExpiresInTextAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func inviteDetailsInviteTitle(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func inviteDetailsInviteTitleAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func inviteDetailsRevokeAlertMessage(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func inviteDetailsRevokeAlertMessageAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func inviteDetailsInviteExpiresInText(_ p1: Any) -> Swift.String
+  public static func inviteDetailsInviteTitle(_ p1: Any) -> Swift.String
+  public static func inviteDetailsInviteTitleAndroid(_ p1: Any) -> Swift.String
+  public static func inviteDetailsRevokeAlertMessage(_ p1: Any) -> Swift.String
   public static let inviteDetailsRevokeAlertTitle: Swift.String
   public static let joinPlaceCameraPermissionGuide: Swift.String
   public static let joinPlaceInvalidInvite: Swift.String
   public static let joinPlaceInvalidQrCode: Swift.String
   public static let joinPlaceInviteFound: Swift.String
-  public static let joinPlaceRetrievingInvite: Swift.String
   public static let joinPlaceRoleGuide: Swift.String
   public static let joinPlaceRoleGuideAdmin: Swift.String
   public static let joinPlaceScanAgain: Swift.String
   public static let joinPlaceScanInviteQr: Swift.String
-  public static let letsAddDeviceChooseRoom: Swift.String
-  public static let letsAddDeviceCreateRoom: Swift.String
   public static let letsAddDeviceDismissScreen: Swift.String
-  public static let letsAddDeviceHeader: Swift.String
-  public static let localConnectionWithMobile: Swift.String
   public static let lostAccessPopupMessageMultiplePlaces: Swift.String
   public static let lostAccessPopupMessageSinglePlace: Swift.String
-  public static func lostAccessPopupTitle(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func lostAccessPopupTitle(_ p1: Any) -> Swift.String
   public static let manageDevicesEmptyPlace: Swift.String
-  public static func memberDetailsLeaveMessage(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   public static let memberDetailsLeavePlace: Swift.String
   public static let memberDetailsRemoveMember: Swift.String
-  public static func memberDetailsRemovePeopleMessage(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func memberDetailsRemovePeopleMessage(_ p1: Any, _ p2: Any) -> Swift.String
   public static let motionHistoryActiveTime: Swift.String
-  public static let motionHistoryActiveZones: Swift.String
   public static let motionHistoryDeviceIssue: Swift.String
   public static let motionHistoryDuration: Swift.String
   public static func motionHistoryFormatDaysAndroid(_ p1: Swift.Int) -> Swift.String
   public static func motionHistoryFormatHour(_ p1: Swift.Int) -> Swift.String
-  public static func motionHistoryFormatHours(_ p1: Swift.Int) -> Swift.String
   public static func motionHistoryFormatHoursAndroid(_ p1: Swift.Int) -> Swift.String
   public static func motionHistoryFormatMinute(_ p1: Swift.Int) -> Swift.String
   public static func motionHistoryFormatSecond(_ p1: Swift.Int) -> Swift.String
@@ -855,18 +795,15 @@ public enum I18n {
   public static let motionHistoryMonitorWasDisabledInZonesWithDeviceIssue: Swift.String
   public static let motionHistoryMotion: Swift.String
   public static let motionHistoryNoData: Swift.String
-  public static let motionHistoryNoMotion: Swift.String
   public static let motionHistoryNotAvailable: Swift.String
   public static let motionHistorySensingDataNotAvailable: Swift.String
   public static let motionHistoryTileHistory: Swift.String
   public static let motionHistoryTileToday: Swift.String
   public static let motionHistoryTileTotalActiveTime: Swift.String
-  public static let motionHistoryTitle: Swift.String
   public static let motionHistoryToday: Swift.String
   public static let motionNowConnectToWifi: Swift.String
   public static let motionNowConnectToWifiAsZone: Swift.String
   public static let motionNowConnectToWifiYourDeviceUsing: Swift.String
-  public static func motionNowFormatActiveZones(_ p1: Swift.Int) -> Swift.String
   public static func motionNowFormatActiveZonesAndroid(_ p1: Swift.Int) -> Swift.String
   public static let motionNowGoToWifiSettings: Swift.String
   public static let motionNowHowPlaceGraphWorks: Swift.String
@@ -883,83 +820,67 @@ public enum I18n {
   public static let motionNowTileMovementDetected: Swift.String
   public static let motionNowTileNoMovementDetected: Swift.String
   public static let motionNowTileNoSensingData: Swift.String
-  public static func motionNowTileNumberOfActiveZones(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func motionNowTileNumberOfActiveZonesAndroid(_ p1: Swift.Int) -> Swift.String
+  public static func motionNowTileNumberOfActiveZones(_ p1: Any) -> Swift.String
   public static let motionNowTileToViewMotionNow: Swift.String
   public static let motionNowTitle: Swift.String
   public static func muliplePlacesIntrusionInManyPlaces(_ p1: Swift.Int) -> Swift.String
-  public static func muliplePlacesIntrusionInOnePlace(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func muliplePlacesIntrusionInOnePlace(_ p1: Any) -> Swift.String
   public static let newInviteGenerateInviteButton: Swift.String
   public static let newInviteInviteDescription: Swift.String
   public static let newInviteInviteTitle: Swift.String
   public static let newInviteInviteeNamePlaceholder: Swift.String
   public static let newInviteInviteeNameTitle: Swift.String
   public static let notificationGoToSettings: Swift.String
-  public static func notificationMissingPermission(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func notificationMissingPermissionDesc(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func notificationMissingPermission(_ p1: Any) -> Swift.String
+  public static func notificationMissingPermissionDesc(_ p1: Any, _ p2: Any) -> Swift.String
   public static let notificationPermissionGuide: Swift.String
   public static let pairDeviceGoToSettings: Swift.String
-  public static func pairDeviceMissingPermission(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func pairDeviceMissingPermissionDesc(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let pairDevicePermissionBluetooth: Swift.String
-  public static let pairDevicePermissionLocationAndBluetooth: Swift.String
-  public static let pairDevicePermissionLocationAndBluetoothUsages: Swift.String
-  public static let pairingAddAnotherNetworkTitle: Swift.String
+  public static func pairDeviceMissingPermission(_ p1: Any) -> Swift.String
+  public static func pairDeviceMissingPermissionDesc(_ p1: Any, _ p2: Any) -> Swift.String
   public static let pairingAskToConnectConnectToWifi: Swift.String
-  public static let pairingAskToConnectConnectToWifiFirstDescription: Swift.String
-  public static func pairingAskToConnectConnectToWifiRemainingDescription(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   public static let pairingAskToConnectFirstThreadDeviceDescription1: Swift.String
   public static let pairingAskToConnectFirstThreadDeviceDescription2: Swift.String
   public static let pairingAskToConnectFirstThreadDeviceDescription3: Swift.String
-  public static func pairingAskToConnectFirstWifiDeviceDescription1(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func pairingAskToConnectFirstWifiDeviceDescription1(_ p1: Any) -> Swift.String
   public static let pairingAskToConnectFirstWifiDeviceDescription2: Swift.String
   public static let pairingAskToConnectNonFirstThreadDeviceDescription1: Swift.String
   public static let pairingAskToConnectNonFirstThreadDeviceDescription2: Swift.String
-  public static func pairingAskToConnectNonFirstThreadDeviceDescription3(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func pairingAskToConnectNonFirstWifiDeviceDescription1(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func pairingAskToConnectNonFirstThreadDeviceDescription3(_ p1: Any) -> Swift.String
+  public static func pairingAskToConnectNonFirstWifiDeviceDescription1(_ p1: Any) -> Swift.String
   public static let pairingAskToConnectRemainingThreadDevice: Swift.String
-  public static let pairingAskToConnectRemainingThreadDeviceDescription: Swift.String
-  public static let pairingAskToConnectThreadBorderRouter: Swift.String
-  public static let pairingAskToConnectThreadBorderRouterDescription: Swift.String
-  public static let pairingAskToConnectToWifiHeader: Swift.String
-  public static let pairingAskToConnectToWifiUseSameWifi: Swift.String
-  public static func pairingAskToConnectToWifiUseSameWifiAsZone(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   public static let pairingAskToConnectWifiDeviceImperialDistanceDescription: Swift.String
   public static let pairingAskToConnectWifiDeviceMetricDistanceDescription: Swift.String
   public static let pairingBluetoothDeviceFoundExplainedReadyToPair: Swift.String
+  public static let pairingBluetoothDeviceFoundExplainedReadyToPairContactSensor: Swift.String
   public static let pairingBluetoothDeviceFoundHeader1: Swift.String
-  public static func pairingBluetoothDeviceFoundHeader1Known(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func pairingBluetoothDeviceFoundHeader1KnownAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   public static let pairingBluetoothDeviceFoundHeader2: Swift.String
   public static let pairingBluetoothDeviceFoundHeaderConnectToPower: Swift.String
+  public static let pairingBluetoothDeviceFoundNameAlreadyInUse: Swift.String
   public static let pairingBluetoothDeviceFoundNameDeviceExplained: Swift.String
-  public static func pairingBluetoothDeviceFoundNameDeviceHeader(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func pairingBluetoothDeviceFoundNameDeviceHeader(_ p1: Any) -> Swift.String
+  public static let pairingBluetoothDeviceFoundNameYourDevice: Swift.String
   public static let pairingBluetoothDeviceFoundNextButton: Swift.String
-  public static let pairingBluetoothUsageHintConfirm: Swift.String
-  public static let pairingBluetoothUsageHintHeader: Swift.String
-  public static let pairingCameraPermissionGuide: Swift.String
   public static let pairingCancel: Swift.String
   public static let pairingConfirmCancelPairingDescription: Swift.String
   public static let pairingConfirmCancelPairingTitle: Swift.String
-  public static func pairingConnectSuccessDeviceHasBeenSetupInZone(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func pairingConnectSuccessDeviceHasBeenSetupInZone(_ p1: Any, _ p2: Any) -> Swift.String
   public static func pairingConnectSuccessDeviceHasBeenSetupInZoneOptimizePosition(_ p1: Any, _ p2: Any) -> Swift.String
+  public static func pairingConnectSuccessDeviceHasBeenSetupInZoneOptimizePositionIos(_ p1: Any, _ p2: Any) -> Swift.String
   public static let pairingConnectSuccessSetupAnotherDevice: Swift.String
-  public static func pairingConnectWifiInputPassword(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func pairingConnectWifiInputPassword(_ p1: Any) -> Swift.String
   public static let pairingConnectWifiNoWiFiNetworksFound: Swift.String
   public static let pairingConnectWifiSetUpAsBorderRouter: Swift.String
   public static let pairingConnectWifiSettingUpThisDevice: Swift.String
-  public static let pairingConnectWifiSettingUpYourDevice: Swift.String
-  public static let pairingConnectWifiTitle: Swift.String
   public static let pairingDeviceSetupNavigagtionTitle: Swift.String
+  public static let pairingDeviceSetupNavigationTitle: Swift.String
   public static let pairingDone: Swift.String
   public static let pairingEnableBluetoothInSettingsBluetoothDisabled: Swift.String
   public static let pairingEnableBluetoothInSettingsButtonSettings: Swift.String
   public static let pairingEnableBluetoothInSettingsHeader: Swift.String
-  public static let pairingEnterWifiPasswordButtonGoBack: Swift.String
   public static let pairingEnterWifiPasswordButtonReadyToConnect: Swift.String
-  public static let pairingEnterWifiPasswordEnterPassword: Swift.String
+  public static func pairingEnterWifiPasswordEnterPassword(_ p1: Any) -> Swift.String
+  public static func pairingEnterWifiPasswordEnterPasswordIos(_ p1: Any) -> Swift.String
   public static func pairingEnterWifiPasswordHeader(_ p1: Any) -> Swift.String
-  public static func pairingEnterWifiPasswordHeaderAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   public static let pairingEnterWifiPasswordPasswordEntryFieldHint: Swift.String
   public static let pairingEnterWifiPasswordPasswordPlaceholder: Swift.String
   public static let pairingErrorsActionIgnore: Swift.String
@@ -967,20 +888,18 @@ public enum I18n {
   public static let pairingErrorsActionRestartSetup: Swift.String
   public static let pairingErrorsActionTryAgain: Swift.String
   public static let pairingErrorsBleDisconnectedTitle: Swift.String
-  public static func pairingErrorsContactSensorSetupErrorNoThreadNetworksFoundDescription1(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func pairingErrorsContactSensorSetupErrorNoThreadNetworksFoundDescription1(_ p1: Any) -> Swift.String
   public static let pairingErrorsContactSensorSetupErrorNoThreadNetworksFoundDescription2: Swift.String
   public static let pairingErrorsContactSensorSetupErrorUnableJoinThreadNetworksDescription1: Swift.String
-  public static func pairingErrorsContactSensorSetupErrorUnableJoinThreadNetworksDescription2(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func pairingErrorsErrorOccurredDescription(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func pairingErrorsErrorOccurredDescriptionAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func pairingErrorsContactSensorSetupErrorUnableJoinThreadNetworksDescription2(_ p1: Any) -> Swift.String
   public static let pairingErrorsErrorOccurredTitle: Swift.String
   public static let pairingErrorsNeedHelp: Swift.String
   public static let pairingErrorsThreadSetupErrorBorderRouterOffline: Swift.String
-  public static func pairingErrorsThreadSetupErrorBorderRouterOfflineDescriptionAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func pairingErrorsThreadSetupErrorBorderRouterOfflineDescriptionAndroid(_ p1: Any, _ p2: Any) -> Swift.String
   public static let pairingErrorsThreadSetupErrorDeviceMismatchDescription: Swift.String
   public static let pairingErrorsThreadSetupErrorDeviceMismatchTitle: Swift.String
   public static let pairingErrorsThreadSetupErrorMissingThreadCredentials: Swift.String
-  public static func pairingErrorsThreadSetupErrorNoThreadNetworksFoundDescription(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func pairingErrorsThreadSetupErrorNoThreadNetworksFoundDescription(_ p1: Any) -> Swift.String
   public static let pairingErrorsThreadSetupErrorNoThreadNetworksFoundTitle: Swift.String
   public static let pairingErrorsTimeoutTitle: Swift.String
   public static let pairingErrorsUnexpectedDescription: Swift.String
@@ -993,81 +912,51 @@ public enum I18n {
   public static let pairingFinishingSetupHeader: Swift.String
   public static let pairingListWifiNetworksApOutOfReach: Swift.String
   public static let pairingListWifiNetworksAvailableNetworks: Swift.String
-  public static let pairingListWifiNetworksButtonCancelPairing: Swift.String
-  public static let pairingListWifiNetworksButtonContinue: Swift.String
   public static let pairingListWifiNetworksButtonOtherNetwork: Swift.String
-  public static let pairingListWifiNetworksButtonRefresh: Swift.String
   public static let pairingListWifiNetworksConnectWifiTitle: Swift.String
   public static let pairingListWifiNetworksForget: Swift.String
   public static let pairingListWifiNetworksFoundSavedPassword: Swift.String
-  public static let pairingListWifiNetworksHeader: Swift.String
-  public static func pairingListWifiNetworksHeader2Android(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func pairingListWifiNetworksHeader2BssidPinnedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let pairingListWifiNetworksLookingForNetworks: Swift.String
   public static let pairingListWifiNetworksNoNetworksFound: Swift.String
   public static let pairingListWifiNetworksProceed: Swift.String
-  public static let pairingListWifiNetworksRetryingForNetworks: Swift.String
   public static let pairingListWifiNetworksSelectNetwork: Swift.String
-  public static func pairingListWifiNetworksUseSavedPassword(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func pairingListWifiNetworksUseSavedPasswordAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let pairingListWifiNetworksWarning: Swift.String
-  public static func pairingLoadingDeviceConnecting(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let pairingMultizonesGuideAlertModesExplanation: Swift.String
-  public static let pairingMultizonesGuideCancelPairingButton: Swift.String
-  public static let pairingMultizonesGuideContinueButton: Swift.String
-  public static let pairingMultizonesGuideEnterFirstZoneName: Swift.String
-  public static let pairingMultizonesGuideInvitation: Swift.String
-  public static let pairingMultizonesGuideKeepSingleZoneButton: Swift.String
-  public static let pairingMultizonesGuideKeepSingleZoneDescription: Swift.String
-  public static let pairingMultizonesGuideNameSecondZoneDescription: Swift.String
-  public static let pairingMultizonesGuideRenameDefaultZoneDescription: Swift.String
-  public static let pairingMultizonesGuideSeveralZonesExplanation: Swift.String
-  public static let pairingMultizonesGuideShortDescription: Swift.String
-  public static let pairingMultizonesGuideSkipExplanationButton: Swift.String
-  public static let pairingMultizonesGuideUpdateToMultizones: Swift.String
-  public static let pairingMultizonesGuideUpgradeToMultizonesButton: Swift.String
+  public static func pairingListWifiNetworksUseSavedPassword(_ p1: Any) -> Swift.String
+  public static func pairingLoadingDeviceConnecting(_ p1: Any) -> Swift.String
   public static let pairingNo: Swift.String
   public static let pairingOther: Swift.String
-  public static let pairingOtherWifiNetworkButtonBack: Swift.String
+  public static let pairingOtherNetworkTitle: Swift.String
   public static let pairingOtherWifiNetworkDeviceConnectivityHint: Swift.String
   public static let pairingOtherWifiNetworkHeader: Swift.String
   public static let pairingOtherWifiNetworkNetworkNamePlaceholder: Swift.String
+  public static let pairingPairedSuccessfullyButtonAddDevice: Swift.String
   public static let pairingPairedSuccessfullyButtonDone: Swift.String
+  public static let pairingPairedSuccessfullyButtonNotNow: Swift.String
   public static let pairingPairedSuccessfullyButtonPairAnother: Swift.String
-  public static let pairingPairedSuccessfullyButtonReturn: Swift.String
   public static let pairingPairedSuccessfullyButtonUpdateAnother: Swift.String
-  public static let pairingPairedSuccessfullyHeader1: Swift.String
-  public static func pairingPairedSuccessfullyHeader1Known(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func pairingPairedSuccessfullyHeader1KnownAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let pairingPairedSuccessfullyHeader2: Swift.String
-  public static func pairingPairedSuccessfullyHeader2Known(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func pairingPairedSuccessfullyHeader2KnownAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static let pairingPairedSuccessfullyCompleteSetupForMotionSensing: Swift.String
+  public static func pairingPairedSuccessfullyCompleteSetupForMotionSensingDescription(_ p1: Any) -> Swift.String
   public static let pairingPairedSuccessfullyHeader3: Swift.String
   public static let pairingPowerOnAndScanningAskUserToWait: Swift.String
-  public static let pairingPowerOnAndScanningHeader1: Swift.String
-  public static let pairingPowerOnAndScanningHeader2: Swift.String
   public static let pairingPowerOnAndScanningScanning: Swift.String
-  public static let pairingScanBluetoothError: Swift.String
   public static let pairingScanDeviceConnectingToThisDevice: Swift.String
-  public static let pairingScanDeviceMissingBluetoothLocationPermissionsDescription: Swift.String
   public static let pairingScanDeviceMissingBluetoothLocationPermissionsTitle: Swift.String
-  public static let pairingScanDeviceMissingBluetoothPermissionDescription: Swift.String
   public static let pairingScanDeviceMissingBluetoothPermissionTitle: Swift.String
   public static let pairingScanDevicePleaseHold: Swift.String
   public static let pairingScanDeviceSearchingForDevice: Swift.String
   public static let pairingScanQrCodeErrorDescription: Swift.String
   public static let pairingScanQrCodeErrorTitle: Swift.String
+  public static let pairingScanQrExpandCameraView: Swift.String
   public static let pairingScanQrSubtitle: Swift.String
   public static let pairingScanQrTitle: Swift.String
+  public static let pairingScanQrWhereIsQr: Swift.String
   public static let pairingScanQrcodeMissingCameraPermissionDescription: Swift.String
   public static let pairingScanQrcodeMissingCameraPermissionTitle: Swift.String
   public static let pairingScanningBleFaq: Swift.String
   public static let pairingScanningBleHeaderContactSensor: Swift.String
   public static let pairingSuccess: Swift.String
-  public static let paringBluetoothIsOff: Swift.String
-  public static let paringExplanationTurnOnBluetooth: Swift.String
   public static let paringScanDeviceBluetoothIsOffDescription: Swift.String
   public static let paringScanDeviceBluetoothIsOffTitle: Swift.String
+  public static let paringScanDeviceBluetoothRestrictedDescription: Swift.String
+  public static let paringScanDeviceBluetoothRestrictedTitle: Swift.String
   public static let placeCreation: Swift.String
   public static let placeCreationCustomizeColorSelection: Swift.String
   public static let placeCreationCustomizeHeader: Swift.String
@@ -1077,7 +966,7 @@ public enum I18n {
   public static let placeCreationFailToUpdatePlace: Swift.String
   public static let placeCreationFloorDescription: Swift.String
   public static func placeCreationFloorFloorNumber(_ p1: Swift.Int) -> Swift.String
-  public static func placeCreationFloorFloorNumberAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func placeCreationFloorFloorNumberAndroid(_ p1: Any) -> Swift.String
   public static let placeCreationFloorHeader: Swift.String
   public static let placeCreationHeader: Swift.String
   public static let placeCreationNameCreatePlace: Swift.String
@@ -1090,7 +979,7 @@ public enum I18n {
   public static let placeCreationPetsHeader: Swift.String
   public static let placeCreationSizeDescription: Swift.String
   public static let placeCreationSizeHeader: Swift.String
-  public static func placeCreationZoneDefaultNameMultipleFloor(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func placeCreationZoneDefaultNameMultipleFloor(_ p1: Any) -> Swift.String
   public static let placeCreationZoneDefaultNameSingleFloor: Swift.String
   public static func placeDetailFormatDisconnectedDeviceInOneZoneAndroid(_ p1: Swift.Int) -> Swift.String
   public static func placeDetailNumberOfZone(_ p1: Swift.Int) -> Swift.String
@@ -1100,13 +989,11 @@ public enum I18n {
   public static let placeDetailsChangePlaceModeToAwareContainDegradedDescription: Swift.String
   public static let placeDetailsChangePlaceModeToAwareContainUnhealthyDescription: Swift.String
   public static let placeDetailsCustomize: Swift.String
-  public static func placeDetailsEventUserRemoveMessage(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>, _ p3: Swift.UnsafePointer<Swift.CChar>, _ p4: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   public static let placeDetailsEvents: Swift.String
   public static func placeDetailsFormatDisconnectedDeviceInMultipleZoneAndroid(_ p1: Swift.Int) -> Swift.String
   public static let placeDetailsGetHelp: Swift.String
   public static let placeDetailsGraph: Swift.String
-  public static let placeDetailsGraphLive: Swift.String
-  public static func placeDetailsMemberPendingExpiryTime(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func placeDetailsMemberPendingExpiryTime(_ p1: Any) -> Swift.String
   public static func placeDetailsMemberPendingExpiryTimeDays(_ p1: Swift.Int) -> Swift.String
   public static func placeDetailsMemberPendingExpiryTimeDaysWithHours(_ p1: Swift.Int, _ p2: Swift.Int) -> Swift.String
   public static func placeDetailsMemberPendingExpiryTimeHours(_ p1: Swift.Int) -> Swift.String
@@ -1118,7 +1005,6 @@ public enum I18n {
   public static func placeDetailsMembersMonths(_ p1: Swift.Int) -> Swift.String
   public static let placeDetailsNoDevicesPaired: Swift.String
   public static let placeDetailsOffline: Swift.String
-  public static func placeDetailsOfflineDeviceNotification(_ p1: Swift.Int) -> Swift.String
   public static let placeDetailsPeople: Swift.String
   public static let placeDetailsPlaceMode: Swift.String
   public static func placeDetailsProceedWithDegradedZone(_ p1: Swift.Int) -> Swift.String
@@ -1129,27 +1015,10 @@ public enum I18n {
   public static let placeDetailsSensingLinkBrokenInOneZone: Swift.String
   public static let placeDetailsSensorsAreNotResponding: Swift.String
   public static let placeDetailsYesProceed: Swift.String
-  public static func placeDetailsZoneInMode(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeEventsDisarmedBy(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeEventsDisarmedByAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func placeDetailsZoneInMode(_ p1: Any, _ p2: Any) -> Swift.String
   public static let placeEventsDownloadingHistory: Swift.String
-  public static func placeEventsEmptyHistoryPlaceholder(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeEventsEmptyHistoryPlaceholderAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let placeEventsEventsHistory: Swift.String
-  public static func placeEventsMessageIntrusion(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>, _ p3: Swift.UnsafePointer<Swift.CChar>, _ p4: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeEventsMessageUserJoined(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeEventsMessageUserJoinedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>, _ p3: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeEventsMessageUserLeft(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeEventsMessageUserLeftAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>, _ p3: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeEventsMessageUserRemoved(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>, _ p3: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeEventsMessageUserRemovedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>, _ p3: Swift.UnsafePointer<Swift.CChar>, _ p4: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let placeEventsTitleIntrusion: Swift.String
-  public static func placeEventsTitleUserJoined(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeEventsTitleUserJoinedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeEventsTitleUserLeft(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeEventsTitleUserLeftAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeEventsTitleUserRemoved(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeEventsTitleUserRemovedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func placeEventsEmptyHistoryPlaceholder(_ p1: Any) -> Swift.String
+  public static func placeEventsEmptyHistoryPlaceholderAndroid(_ p1: Any) -> Swift.String
   public static let placeInformationAvgFloorArea: Swift.String
   public static let placeInformationFloors: Swift.String
   public static let placeInformationName: Swift.String
@@ -1157,38 +1026,25 @@ public enum I18n {
   public static let placeInformationSearchTimeZone: Swift.String
   public static let placeInformationTitle: Swift.String
   public static let placeInformationType: Swift.String
-  public static func placeIntegrationsDescriptionPlaceholder(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func placeIntegrationsDescriptionPlaceholder(_ p1: Any) -> Swift.String
   public static let placeIntegrationsEnablingPlaceholder: Swift.String
-  public static func placeIntegrationsIntegrationIs(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func placeIntegrationsIntegrationIs(_ p1: Any) -> Swift.String
   public static let placeIntegrationsIntegrations: Swift.String
   public static let placeIntegrationsIsDisabled: Swift.String
   public static let placeIntegrationsIsEnabled: Swift.String
   public static let placeIntegrationsWantDisable: Swift.String
-  public static let placeOverviewGraphLegendBarFourHour: Swift.String
-  public static let placeOverviewGraphLegendBarThiryMin: Swift.String
-  public static let placeOverviewGraphLegendBarThirySec: Swift.String
-  public static let placeOverviewGraphLegendBarTwelveHour: Swift.String
   public static let placeOverviewGraphNow: Swift.String
-  public static let placeOverviewGraphPairOneMore: Swift.String
-  public static let placeOverviewGraphPairTwoDevices: Swift.String
   public static let placeOverviewGraphThirtySecsAgo: Swift.String
-  public static func placeOverviewIntrusionDetectionEndTime(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func placeOverviewIntrusionDetectionEndTime(_ p1: Any) -> Swift.String
   public static func placeOverviewIntrusionDetectionEndTimeFormatHour(_ p1: Swift.Int) -> Swift.String
   public static func placeOverviewIntrusionDetectionEndTimeFormatMinute(_ p1: Swift.Int) -> Swift.String
-  public static func placeOverviewIntrusionDetectionStartTime(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func placeOverviewIntrusionDetectionStartTime(_ p1: Any) -> Swift.String
   public static let placeOverviewIntrusionDetectionTitle: Swift.String
   public static let placeOverviewMotion: Swift.String
   public static let placeOverviewPairKitUnlockMotionSensing: Swift.String
   public static let placeOverviewPairingRequestAddDeviceButton: Swift.String
-  public static let placeOverviewPairingRequestAddMoreHint: Swift.String
-  public static let placeOverviewPairingRequestContinuePairingButton: Swift.String
   public static let placeOverviewPairingRequestSetupAKit: Swift.String
   public static let placeOverviewPairingRequestSetupAKitGuide: Swift.String
-  public static let placeOverviewPickerFourHr: Swift.String
-  public static let placeOverviewPickerThirtyMin: Swift.String
-  public static let placeOverviewPickerThirtySec: Swift.String
-  public static let placeOverviewPickerTwelveHr: Swift.String
-  public static let placeOverviewResumeSetupKitButton: Swift.String
   public static let placeOverviewSetupKitButton: Swift.String
   public static let placeOverviewZones: Swift.String
   public static let placePairOneMoreDeviceToUnlockTheMotionSensing: Swift.String
@@ -1203,7 +1059,6 @@ public enum I18n {
   public static let placePetsSmallPetsMetric: Swift.String
   public static let placePropertiesApartment: Swift.String
   public static let placePropertiesHouse: Swift.String
-  public static let placeResumeSetUpAKit: Swift.String
   public static let placeSettingEditPlaceToolbar: Swift.String
   public static let placeSettingHeaderGeneral: Swift.String
   public static let placeSettingHeaderSetup: Swift.String
@@ -1220,40 +1075,29 @@ public enum I18n {
   public static let placeSettingPlaceInformationName: Swift.String
   public static let placeSettingPlaceInformationSize: Swift.String
   public static let placeSettingPlaceInformationType: Swift.String
-  public static let placeSettingsCustomizePlaceDescription: Swift.String
   public static let placeSettingsDeletePlaceButton: Swift.String
-  public static func placeSettingsDevicesDescription(_ p1: Swift.Int) -> Swift.String
   public static func placeSettingsDevicesDescriptionAndroid(_ p1: Swift.Int) -> Swift.String
   public static let placeSettingsEditPlace: Swift.String
-  public static let placeSettingsEditPlaceAndroid: Swift.String
   public static let placeSettingsEditPlaceDescription: Swift.String
   public static let placeSettingsEngine: Swift.String
   public static let placeSettingsEngineDoesNotSupportSensitivity: Swift.String
-  public static let placeSettingsFeatureUnlockWarning: Swift.String
   public static let placeSettingsLeavePlaceButton: Swift.String
-  public static let placeSettingsManageDevices: Swift.String
   public static let placeSettingsMotion: Swift.String
-  public static func placeSettingsNumberOfDevices(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let placeSettingsOnlyAvailableForFirstKit: Swift.String
   public static let placeSettingsPlaceSettings: Swift.String
   public static let placeSettingsSectionGeneral: Swift.String
   public static let placeSettingsSectionSetup: Swift.String
   public static let placeSettingsSecurity: Swift.String
   public static let placeSettingsSensitivity: Swift.String
-  public static func placeSettingsSensitivityLevel(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func placeSettingsSensitivityLevel(_ p1: Any) -> Swift.String
   public static let placeSettingsSetupKit: Swift.String
-  public static let placeSettingsSetupKitDescription: Swift.String
-  public static let placeSettingsSetupSingleDevice: Swift.String
-  public static let placeSettingsSetupSingleDeviceDescription: Swift.String
   public static let placeSettingsTitle: Swift.String
   public static let placeSettingsUpdateWifiNetwork: Swift.String
   public static let placeSettingsUpdateWifiNetworkDescription: Swift.String
   public static let placeSettingsZeroDeviceDescription: Swift.String
-  public static func placeSettingsZonesDescription(_ p1: Swift.Int) -> Swift.String
   public static func placeSettingsZonesDescriptionAndroid(_ p1: Swift.Int) -> Swift.String
   public static let placeUsersInvitationInvitePeople: Swift.String
-  public static func placeUsersInvitationUsersLimitReached(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func placeUsersInvitationUsersLimitReachedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func placeUsersInvitationUsersLimitReached(_ p1: Any) -> Swift.String
+  public static func placeUsersInvitationUsersLimitReachedAndroid(_ p1: Any) -> Swift.String
   public static let placeUsersRoleRole: Swift.String
   public static let placesCategoryApartment: Swift.String
   public static let placesCategoryBusiness: Swift.String
@@ -1264,7 +1108,6 @@ public enum I18n {
   public static let placesCategoryTownhouse: Swift.String
   public static let placesCategoryUnknown: Swift.String
   public static let placesCategoryWork: Swift.String
-  public static let placesTitle: Swift.String
   public static let profileAbout: Swift.String
   public static let profileAccount: Swift.String
   public static let profileAccountManagementAccountDeletionDescription: Swift.String
@@ -1277,12 +1120,9 @@ public enum I18n {
   public static let profileAuthentication: Swift.String
   public static let profileCopied: Swift.String
   public static let profileCopyRecoveryKey: Swift.String
-  public static let profileCustomer: Swift.String
   public static let profileGoConfirmSigninRequest: Swift.String
   public static let profileHelpAndFeedback: Swift.String
   public static let profileHelpNFeedback: Swift.String
-  public static let profileInstaller: Swift.String
-  public static let profileJoined: Swift.String
   public static let profileLegal: Swift.String
   public static let profileLinkAccountGuideText: Swift.String
   public static let profileLinked3rdPartyAccount: Swift.String
@@ -1302,40 +1142,33 @@ public enum I18n {
   public static let profileSupportArticle: Swift.String
   public static let profileSupportArticles: Swift.String
   public static let profileTermsOfServices: Swift.String
-  public static let profileTitle: Swift.String
   public static let profileUnlinkAlertConfirm: Swift.String
   public static let profileUnlinkAlertMessage: Swift.String
   public static let profileUnlinkAlertMessageAndroid: Swift.String
   public static let profileUnlinkAlertTitle: Swift.String
   public static let profileUser: Swift.String
   public static let profileUsername: Swift.String
-  public static let profileUsernameMissing: Swift.String
   public static let profileUsernameYou: Swift.String
-  public static let pushRegisterPushTokenFailed: Swift.String
-  public static let qrscannerHelp: Swift.String
-  public static let qrscannerTitle: Swift.String
   public static let qrscannerWhereQr: Swift.String
-  public static let recoverKeyGoBack: Swift.String
   public static let recoveryButtonRecover: Swift.String
   public static let recoveryError: Swift.String
   public static let recoveryRecoveryKeyPlaceholder: Swift.String
   public static let recoveryTextGuide: Swift.String
   public static let removeDeviceChangeThreadNetwork: Swift.String
-  public static func removeDeviceChangeThreadNetworkDescription(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func removeDeviceChangeThreadNetworkDescription(_ p1: Any) -> Swift.String
   public static let removeDeviceDataRemovedWarningThread: Swift.String
   public static let removeDeviceDataRemovedWarningWifi: Swift.String
   public static let removeDeviceDisableSensingFunction: Swift.String
-  public static func removeDeviceDisableSensingFunctionDescription(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func removeDeviceRemoveDeviceName(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func removeDeviceDisableSensingFunctionDescription(_ p1: Any) -> Swift.String
+  public static func removeDeviceRemoveDeviceName(_ p1: Any) -> Swift.String
   public static let removeDeviceRemoveThisDevice: Swift.String
   public static let removeDeviceRemoveThreadNetwork: Swift.String
-  public static func removeDeviceRemoveThreadNetworkDescription(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func removeDeviceRestoreSensingInZone(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func removeDeviceRemoveThreadNetworkDescription(_ p1: Any) -> Swift.String
+  public static func removeDeviceRestoreSensingInZone(_ p1: Any) -> Swift.String
   public static let removeDeviceRestoreSensingInZoneDescription: Swift.String
   public static let reportFalseAlarmReportingAsFalseAlarmWillAlsoDisarmTheIntrusion: Swift.String
   public static let reportFalseAlarmTheIntrusionWasTriggeredBy: Swift.String
-  public static let roomSelectionConfirmButton: Swift.String
-  public static let roomSelectionDescription: Swift.String
+  public static let roomNamePlaceholder: Swift.String
   public static let roomSelectionTitle: Swift.String
   public static let roomsCategoryBathroom: Swift.String
   public static let roomsCategoryBedroom: Swift.String
@@ -1349,12 +1182,10 @@ public enum I18n {
   public static let roomsCategoryUnknown: Swift.String
   public static let securityModeAddMoreZoneToShowZoneSettings: Swift.String
   public static let securityModeDegradedZone: Swift.String
-  public static let securityModeDisabled: Swift.String
   public static let securityModeDisabledZone: Swift.String
   public static let securityModeDiscard: Swift.String
   public static let securityModeDiscardChanges: Swift.String
   public static let securityModeDiscardChangesDescription: Swift.String
-  public static func securityModePlaceDeviceOffline(_ p1: Swift.Int) -> Swift.String
   public static let securityModeStatusArmedDescription: Swift.String
   public static let securityModeStatusAwareDescription: Swift.String
   public static let securityModeStatusRelaxedDescription: Swift.String
@@ -1385,41 +1216,30 @@ public enum I18n {
   public static let selectPlaceTypeHeader: Swift.String
   public static let selectRoomCategoryHeader: Swift.String
   public static let selectRoomIconHeader: Swift.String
-  public static let selectUserIconChooseImageColor: Swift.String
   public static let selectUserIconChooseProfileImage: Swift.String
   public static let selectUserIconPromptMessage: Swift.String
   public static let selectZoneDescription: Swift.String
+  public static func selectZoneFormatAccessoryDevices(_ p1: Swift.Int) -> Swift.String
+  public static func selectZoneFormatSensingDevices(_ p1: Swift.Int) -> Swift.String
   public static func selectZoneFormatThreadDevices(_ p1: Swift.Int) -> Swift.String
-  public static func selectZoneFormatWifiDevices(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   public static func selectZoneFormatWifidevices(_ p1: Swift.Int) -> Swift.String
   public static let selectZoneTitle: Swift.String
+  public static let sensing: Swift.String
   public static let sensitivitySettingsDescriptionUnavailable: Swift.String
   public static let sensitivitySettingsEngineUnavailable: Swift.String
-  public static let sensitivitySettingsFourToSix: Swift.String
-  public static let sensitivitySettingsFourToSixDescription: Swift.String
-  public static func sensitivitySettingsLevelAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func sensitivitySettingsLevelAndroid(_ p1: Any) -> Swift.String
   public static let sensitivitySettingsMaxTitle: Swift.String
   public static let sensitivitySettingsMaxTitleAndroid: Swift.String
   public static let sensitivitySettingsMinTitle: Swift.String
   public static let sensitivitySettingsMinTitleAndroid: Swift.String
-  public static let sensitivitySettingsOneToThree: Swift.String
-  public static let sensitivitySettingsOneToThreeDescription: Swift.String
-  public static let sensitivitySettingsSaveSensitivtyButtonTitle: Swift.String
   public static let sensitivitySettingsSensitivityLevelDescription: Swift.String
-  public static let sensitivitySettingsSevenToNine: Swift.String
-  public static let sensitivitySettingsSevenToNineDescription: Swift.String
   public static let sensitivitySettingsSuccess: Swift.String
-  public static let sensitivitySettingsTenToTwelve: Swift.String
-  public static let sensitivitySettingsTenToTwelveDescription: Swift.String
-  public static let sensitivitySettingsTestSensitivityButtonTitle: Swift.String
   public static let sensitivitySettingsTitle: Swift.String
   public static let setupADeviceRoomSelectionSubTittle: Swift.String
   public static let setupADeviceRoomSelectionTittle: Swift.String
-  public static let setupADeviceToolbarTittle: Swift.String
   public static let setupAKitFeatureNotAvailableDescription: Swift.String
   public static let setupAKitFeatureNotAvailableHeader: Swift.String
   public static let setupAKitHowDeviceWorkDescription: Swift.String
-  public static let setupAKitHowDeviceWorkSubTittle: Swift.String
   public static let setupAKitHowDeviceWorkTittle: Swift.String
   public static let setupAKitHowDeviceWorksGuideContent1: Swift.String
   public static let setupAKitHowDeviceWorksGuideContent2: Swift.String
@@ -1428,36 +1248,22 @@ public enum I18n {
   public static let setupAKitHowDeviceWorksGuideContent5: Swift.String
   public static let setupAKitHowDeviceWorksStart: Swift.String
   public static let setupAKitHowToPlaceDeviceGuideContent1FirstPairedDevice: Swift.String
-  public static let setupAKitHowToPlaceDeviceGuideContent1NonFirstPairedDeviceImperial: Swift.String
-  public static let setupAKitHowToPlaceDeviceGuideContent1NonFirstPairedDeviceMetric: Swift.String
   public static let setupAKitHowToPlaceDeviceGuideContent2FirstPairedDeviceImperial: Swift.String
   public static let setupAKitHowToPlaceDeviceGuideContent2FirstPairedDeviceMetric: Swift.String
-  public static let setupAKitHowToPlaceDeviceGuideContent2FirstPairedDeviceSecurityKit: Swift.String
-  public static let setupAKitHowToPlaceDeviceGuideContent2NonFirstPairedDeviceImperial: Swift.String
-  public static let setupAKitHowToPlaceDeviceGuideContent2NonFirstPairedDeviceMetric: Swift.String
   public static let setupAKitHowToPlaceDeviceGuideContent3NonFirstPairedDevice: Swift.String
-  public static let setupAKitHowToPlaceDeviceGuideContent4NonFirstPairedDevice: Swift.String
   public static let setupAKitHowToPlaceDeviceGuideFirstDevice: Swift.String
   public static let setupAKitHowToPlaceDeviceGuideFirstDeviceInZone: Swift.String
   public static let setupAKitHowToPlaceDeviceGuideNonFirstDevice: Swift.String
   public static let setupAKitHowToPlaceDeviceNonFirstPairedDeviceGuideContent1: Swift.String
   public static let setupAKitHowToPlaceDeviceNonFirstPairedDeviceGuideContent2Imperial: Swift.String
   public static let setupAKitHowToPlaceDeviceNonFirstPairedDeviceGuideContent2Metric: Swift.String
-  public static let setupAKitHowToPlaceDeviceSensingZone: Swift.String
-  public static let setupAKitHowToPlaceDeviceSubTittle: Swift.String
-  public static let setupAKitHowToPlaceDeviceTittle: Swift.String
-  public static let setupAKitKitSelectionSubTittle: Swift.String
   public static let setupAKitKitSelectionTittle: Swift.String
   public static let setupAKitToolbarTittle: Swift.String
   public static let setupAKitWhereToSetupAddGuide: Swift.String
-  public static let setupAKitWhereToSetupFirstFloor: Swift.String
   public static let setupAKitWhereToSetupOneFloorTitle: Swift.String
-  public static func setupAKitWhereToSetupPlaceSizeLargeCoverage1Floor(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func setupAKitWhereToSetupPlaceSizeLargeCoverageMoreFloors(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func setupAKitWhereToSetupPlaceSizeLargeCoverage1Floor(_ p1: Any) -> Swift.String
+  public static func setupAKitWhereToSetupPlaceSizeLargeCoverageMoreFloors(_ p1: Any) -> Swift.String
   public static let setupAKitWhereToSetupPlaceSizeSmallCoverage1Floor: Swift.String
-  public static func setupAKitWhereToSetupPlaceSizeSmallCoverageMoreFloors(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let setupAKitWhereToSetupSubTittleFloorBigSize: Swift.String
-  public static let setupAKitWhereToSetupSubTittleFloorSmallSize: Swift.String
   public static let setupAKitWhereToSetupSubTittleMoreFloorMonitoring: Swift.String
   public static let setupAKitWhereToSetupSubTittleMoreFloorSecurity: Swift.String
   public static let setupAKitWhereToSetupSubtitleMonitorOneFloorBigSize: Swift.String
@@ -1470,35 +1276,31 @@ public enum I18n {
   public static let signUpAnonymousAccountText2: Swift.String
   public static let signUpAnonymousAccountText3: Swift.String
   public static let signUpButtonRecoveryKey: Swift.String
-  public static let signUpButtonSignUp: Swift.String
   public static let signUpButtonSignUpAnonymous: Swift.String
   public static let signUpContinueWithApple: Swift.String
   public static let signUpContinueWithGoogle: Swift.String
   public static let signUpOtherSignUpOptions: Swift.String
   public static let signUpPrivacyPolicy: Swift.String
   public static let signUpTermsOfService: Swift.String
-  public static let signUpTosAndPrivacy: Swift.String
   public static let signUpTosAndPrivacyPart1: Swift.String
   public static let signUpTosAndPrivacyPart2: Swift.String
   public static let signUpTosAndPrivacyPart2Android: Swift.String
   public static let signUpTosAndPrivacyPart3: Swift.String
   public static let signUpTosAndPrivacyPart4: Swift.String
   public static let signUpTosAndPrivacyPart4Android: Swift.String
-  public static let signUpUnknownProvider: Swift.String
   public static let signUpWelcomeText: Swift.String
   public static let statusAlert: Swift.String
   public static let statusArmedHint: Swift.String
   public static let statusArmedHintDisabled: Swift.String
   public static let statusAware: Swift.String
   public static let statusAwareHint: Swift.String
-  public static func statusInSwitchingMode(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func statusInSwitchingMode(_ p1: Any, _ p2: Any) -> Swift.String
   public static let statusRelaxed: Swift.String
   public static let statusRelaxedHint: Swift.String
   public static let timeZoneNoResultsFound: Swift.String
   public static let timeZoneSearchTimeZone: Swift.String
-  public static let timeZoneTitle: Swift.String
-  public static func updateWifiDeviceAlreadyUpdated(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func updateWifiDeviceNotInZone(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func updateWifiDeviceAlreadyUpdated(_ p1: Any) -> Swift.String
+  public static func updateWifiDeviceNotInZone(_ p1: Any) -> Swift.String
   public static let updateWifiHowItWorksConfirmButton: Swift.String
   public static let updateWifiHowItWorksDescription: Swift.String
   public static let updateWifiHowItWorksHelp: Swift.String
@@ -1512,44 +1314,34 @@ public enum I18n {
   public static let updateWifiHowItWorksTitle: Swift.String
   public static let updateWifiLocateDeviceButton: Swift.String
   public static let updateWifiNetworkCommissioningModeCustomizePlace: Swift.String
-  public static func updateWifiNetworkDeviceQrCodeDeviceAlreadyRepairedAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func updateWifiNetworkDeviceQrCodeDeviceNotInZoneAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let updateWifiNetworkDeviceQrCodeInvalid: Swift.String
+  public static func updateWifiNetworkDeviceQrCodeDeviceAlreadyRepairedAndroid(_ p1: Any) -> Swift.String
+  public static func updateWifiNetworkDeviceQrCodeDeviceNotInZoneAndroid(_ p1: Any) -> Swift.String
   public static let updateWifiNetworkHowItWorksGuideSubtitle: Swift.String
   public static let updateWifiNetworkResetDeviceGuidePlugType: Swift.String
   public static let updateWifiNetworkResetDeviceGuidePod2: Swift.String
   public static let updateWifiNetworkResetDeviceGuidePodType: Swift.String
   public static let updateWifiNetworkUpdateSuccessfullyHeader1: Swift.String
-  public static func updateWifiNetworkUpdateSuccessfullyHeader1KnownAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   public static let updateWifiNetworkZoneStatusGuideCompletedUpdate: Swift.String
   public static let updateWifiNetworkZonesSelectionGuide: Swift.String
-  public static func updateWifiNotNamiQrCode(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   public static let updateWifiNotNamiQrCodeNoZone: Swift.String
-  public static let updateWifiPlug: Swift.String
-  public static let updateWifiPod: Swift.String
   public static let updateWifiQrCodeError: Swift.String
   public static let updateWifiQrDoesNotMatch: Swift.String
-  public static let updateWifiRepeatQrScan: Swift.String
   public static let updateWifiResetDeviceConfirmButton: Swift.String
   public static let updateWifiResetDeviceDescription: Swift.String
-  public static func updateWifiResetDeviceHowToReset(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static let updateWifiResetDevicePlugResetInstructions: Swift.String
+  public static func updateWifiResetDeviceHowToReset(_ p1: Any) -> Swift.String
   public static let updateWifiResetDevicePlugResetInstructions1: Swift.String
   public static let updateWifiResetDevicePlugResetInstructions2: Swift.String
   public static let updateWifiResetDevicePlugResetInstructions3: Swift.String
   public static let updateWifiResetDevicePlugResetInstructions4: Swift.String
-  public static let updateWifiResetDevicePodResetInstructions: Swift.String
   public static let updateWifiResetDevicePodResetInstructions1: Swift.String
   public static let updateWifiResetDevicePodResetInstructions2: Swift.String
   public static let updateWifiResetDevicePodResetInstructions3: Swift.String
   public static let updateWifiResetDevicePodResetInstructions4: Swift.String
   public static let updateWifiResetDeviceTitle: Swift.String
-  public static let updateWifiResumeUpdate: Swift.String
-  public static func updateWifiResumeUpdateInstruction(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   public static let updateWifiSelectZoneToUpdateConfirmButton: Swift.String
   public static let updateWifiSelectZoneToUpdateDescription: Swift.String
   public static let updateWifiSelectZoneToUpdateNonThreadZoneSupport: Swift.String
-  public static func updateWifiSelectZoneToUpdateNumberOfDevices(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func updateWifiSelectZoneToUpdateNumberOfDevices(_ p1: Any) -> Swift.String
   public static let updateWifiSelectZoneToUpdateSelectZone: Swift.String
   public static let updateWifiSelectZoneToUpdateTitle: Swift.String
   public static let updateWifiTitle: Swift.String
@@ -1561,28 +1353,19 @@ public enum I18n {
   public static let updateWifiZoneWifiUpdateFinishButton: Swift.String
   public static let updateWifiZoneWifiUpdateLastDeviceDescription: Swift.String
   public static let updateWifiZoneWifiUpdateLocateDevice: Swift.String
-  public static let updateWifiZoneWifiUpdateLocateLastDevice: Swift.String
   public static let updateWifiZoneWifiUpdateSessionCompleted: Swift.String
-  public static let updateWifiZoneWifiUpdateTitle: Swift.String
   public static let updateWifiZoneWifiUpdateUpdateAnotherZoneButton: Swift.String
-  public static let updateWifiZoneWifiUpdateUpdateSuccess: Swift.String
-  public static func upgradeMultiZonesCreateFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func upgradeMultiZonesLoadDataFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func upgradeMultiZonesLoadZoneFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func upgradeMultiZonesUpdateFailed(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func upgradeMultiZonesCreateFailed(_ p1: Any) -> Swift.String
+  public static func upgradeMultiZonesLoadZoneFailed(_ p1: Any) -> Swift.String
+  public static func upgradeMultiZonesUpdateFailed(_ p1: Any) -> Swift.String
   public static let userDetailsAskLeavePlaceButton: Swift.String
-  public static func userDetailsAskRemoveUserAlertMessage(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
   public static let userDetailsAskRemoveUserButton: Swift.String
   public static let userDetailsConfirmLeavePlaceButton: Swift.String
   public static let userDetailsConfirmRemoveUserButton: Swift.String
-  public static func userDetailsLastActive(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func userDetailsLastActiveAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func userDetailsLeavePlaceAlertMessage(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func userDetailsLeavePlaceAlertMessage(_ p1: Any) -> Swift.String
   public static let userDetailsLeavePlaceAlertTitle: Swift.String
-  public static func userDetailsRemoveUserAlertMessage(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
-  public static func userDetailsRemoveUserAlertMessageAndroid(_ p1: Swift.UnsafePointer<Swift.CChar>, _ p2: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func userDetailsRemoveUserAlertMessage(_ p1: Any, _ p2: Any) -> Swift.String
   public static let userDetailsRemoveUserAlertTitle: Swift.String
-  public static let userDetailsRemoveUserButton: Swift.String
   public static let userDetailsSaveChangesButton: Swift.String
   public static let welcomePagePolicy: Swift.String
   public static let widarCancelPopupBackToPositioningButton: Swift.String
@@ -1607,14 +1390,14 @@ public enum I18n {
   public static let widarPositionStatusLabel: Swift.String
   public static let widarPositionStatusMispositioned: Swift.String
   public static let widarPositionStatusOptimized: Swift.String
-  public static let widarPositionTip: Swift.String
+  public static let widarPositionTertiaryButtonText: Swift.String
   public static let widarPositionTitle: Swift.String
   public static let widarRecommendationsButtonText: Swift.String
   public static let widarRecommendationsInfoAttachBase: Swift.String
   public static let widarRecommendationsInfoKeepAreaClear: Swift.String
   public static let widarRecommendationsInfoWireOnBack: Swift.String
   public static let widarRecommendationsTitle: Swift.String
-  public static func widarSuccessContentMessage(_ p1: Swift.UnsafePointer<Swift.CChar>) -> Swift.String
+  public static func widarSuccessContentMessage(_ p1: Any) -> Swift.String
   public static let widarSuccessDoneButton: Swift.String
   public static let widarSuccessTitle: Swift.String
   public static let zoneChecksMotionSensingCheckName: Swift.String
@@ -1631,12 +1414,18 @@ public enum I18n {
   public static let zoneChecksZoneHealthStatusUnhealthy: Swift.String
   public static let zoneChecksZoneHealthStatusUnknown: Swift.String
   public static let zoneDefaultName: Swift.String
+  public static let zoneGuideGotIt: Swift.String
+  public static let zoneGuideHeader: Swift.String
+  public static let zoneGuideSubtitle1: Swift.String
+  public static let zoneGuideSubtitle2: Swift.String
+  public static let zoneGuideTitle1: Swift.String
+  public static let zoneGuideTitle2: Swift.String
+  public static let zoneGuideTitle3: Swift.String
   public static let zoneSelectionAddYourKitTo: Swift.String
-  public static let zoneSelectionDescription: Swift.String
-  public static let zoneSelectionMonitoringKitDescription: Swift.String
+  public static let zoneSelectionIDontKnowWhatToChoose: Swift.String
   public static let zoneSelectionNonThreadBorderRouterZoneExplain: Swift.String
-  public static let zoneSelectionSecurityKitDescription: Swift.String
   public static let zoneSelectionTitle: Swift.String
+  public static let zoneSelectionZoneDeviceLimitationExplain: Swift.String
   public enum CreatePlace {
     public static func selectFloor(_ p1: Swift.Int) -> Swift.String
   }
@@ -1674,6 +1463,7 @@ public enum NamiDeviceCapability : Swift.Equatable {
   public static var plug: [DeviceConnections.NamiDeviceCapability]
   public static var devkit: [DeviceConnections.NamiDeviceCapability]
   public static var pod: [DeviceConnections.NamiDeviceCapability]
+  public static var alarmPod: [DeviceConnections.NamiDeviceCapability]
   public static var contactSensor: [DeviceConnections.NamiDeviceCapability]
   public static var widarSensor: [DeviceConnections.NamiDeviceCapability]
   public func hash(into hasher: inout Swift.Hasher)
@@ -1771,6 +1561,50 @@ extension Foundation.CharacterSet {
 }
 extension Swift.String {
   public func replacingCharacters(from characterSet: Foundation.CharacterSet, with replacement: Swift.String) -> Swift.String
+  public var trimmingWhitespaces: Swift.String {
+    get
+  }
+}
+public enum TimeZoneLoadingError : Swift.Error {
+  case fileNotFound
+  case decodingError
+  case noTimezonesAvailable
+  public static func == (a: DeviceConnections.TimeZoneLoadingError, b: DeviceConnections.TimeZoneLoadingError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class TimeZoneLoader {
+  public static let shared: DeviceConnections.TimeZoneLoader
+  public func findTimeZone(byId id: Swift.String) -> Combine.AnyPublisher<DeviceConnections.NamiTimeZone?, Swift.Never>
+  public func getTimezones() -> Combine.AnyPublisher<[DeviceConnections.NamiTimeZone], DeviceConnections.TimeZoneLoadingError>
+  @objc deinit
+}
+public struct TimeZoneLocation : Swift.Decodable, Swift.Hashable {
+  public init(from decoder: any Swift.Decoder) throws
+  public let countryCode: Swift.String
+  public let countryName: Swift.String
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: DeviceConnections.TimeZoneLocation, b: DeviceConnections.TimeZoneLocation) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct NamiTimeZone : Swift.Decodable, Swift.Hashable {
+  public init(from decoder: any Swift.Decoder) throws
+  public let id: Swift.String
+  public let city: Swift.String
+  public let location: DeviceConnections.TimeZoneLocation?
+  public let gmtOffset: Swift.String
+  public var timeZone: Foundation.TimeZone {
+    get
+  }
+  public static func == (lhs: DeviceConnections.NamiTimeZone, rhs: DeviceConnections.NamiTimeZone) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public typealias TokenString = Swift.String
 public typealias UserID = Swift.Int64
@@ -1845,6 +1679,7 @@ public enum NamiDeviceType : Swift.CaseIterable {
   case contactSensor
   case meshSensor
   case securityPod
+  case alarmPod
   case wifiSensor
   case widarSensor
   public static var allCases: [DeviceConnections.NamiDeviceType] {
@@ -1879,6 +1714,28 @@ public enum NamiAlertMode : Swift.Int, Swift.Comparable, Swift.Codable {
   public var rawValue: Swift.Int {
     get
   }
+}
+public enum NamiOutletType : Swift.CaseIterable {
+  case typeE
+  case typeF
+  case typeG
+  case typeB
+  case typeA
+  case unknown
+  public static func == (a: DeviceConnections.NamiOutletType, b: DeviceConnections.NamiOutletType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [DeviceConnections.NamiOutletType]
+  public static var allCases: [DeviceConnections.NamiOutletType] {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class OutletTypeMapper {
+  public static let shared: DeviceConnections.OutletTypeMapper
+  public func getOutletType(by countryCode: Swift.String) -> DeviceConnections.NamiOutletType
+  @objc deinit
 }
 public enum Log {
   public static func info(_ items: Any...)
@@ -2673,10 +2530,14 @@ extension DeviceConnections.MeasurementSystem : Swift.Equatable {}
 extension DeviceConnections.MeasurementSystem : Swift.Hashable {}
 extension DeviceConnections.NamiDeviceConnectivity : Swift.Equatable {}
 extension DeviceConnections.NamiDeviceConnectivity : Swift.Hashable {}
+extension DeviceConnections.TimeZoneLoadingError : Swift.Equatable {}
+extension DeviceConnections.TimeZoneLoadingError : Swift.Hashable {}
 extension DeviceConnections.NamiDeviceType : Swift.Equatable {}
 extension DeviceConnections.NamiDeviceType : Swift.Hashable {}
 extension DeviceConnections.NamiAlertMode : Swift.Hashable {}
 extension DeviceConnections.NamiAlertMode : Swift.RawRepresentable {}
+extension DeviceConnections.NamiOutletType : Swift.Equatable {}
+extension DeviceConnections.NamiOutletType : Swift.Hashable {}
 extension DeviceConnections.NamiDeviceCapability.ControlMessgeError : Swift.Equatable {}
 extension DeviceConnections.NamiDeviceCapability.ControlMessgeError : Swift.Hashable {}
 extension DeviceConnections.StateMessage.EndpointState.OnOff : Swift.Equatable {}

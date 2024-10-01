@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		+QSAsmANCACHtjPIK3tuT5VJf/0=
+		Yynoxy4lvri0I54DBI+AWN8WSyE=
 		</data>
 		<key>Contact Sensor_Pulse Dark Blue.json</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/StandardPairingUI-Swift.h</key>
 		<data>
-		87poBi5Qh0TVt16q0XMPV1lRzBE=
+		BDitzS1pAh3gjzPFd7EbfzQSMt0=
 		</data>
 		<key>Headers/StandardPairingUI.h</key>
 		<data>
@@ -22,15 +22,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		TOADGFSxIR1ByrJP38y+kkHKQMc=
+		Q8JQPiXPPYaQG2O9FqiQmCvY6cU=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		LdlD4sxWfkXu/jU31ZRZlvnxcHY=
+		MkZMLODBHpRVlV/SmkR/RFh1T0k=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		j9ivgDUndZCzKs+Wp1GGfDXhfFw=
+		6Li5KkN0GBWic6mmdJz2Lig2Zp0=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -38,19 +38,19 @@
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		j9ivgDUndZCzKs+Wp1GGfDXhfFw=
+		6Li5KkN0GBWic6mmdJz2Lig2Zp0=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		IKG6sg7zQkNxFzFsYMxLjncsDYM=
+		lxGB5X1faQT5sLZki44iwzH0fg0=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		LdlD4sxWfkXu/jU31ZRZlvnxcHY=
+		MkZMLODBHpRVlV/SmkR/RFh1T0k=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		EOd7dReiopmqMiH9tN6zrkzjv8Y=
+		EY7fP1yQy8GQeUkJj4/iqyfRY6A=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		EOd7dReiopmqMiH9tN6zrkzjv8Y=
+		EY7fP1yQy8GQeUkJj4/iqyfRY6A=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		72pEcIBoFRd+WrUBsLBgatjZ85o=
+		nX89b7pxG64mormVnjEovKjmsBU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -71,6 +71,54 @@
 		<key>Place Empty State.json</key>
 		<data>
 		vt0GfulZpSvM7K+AJYg4rKwCOIU=
+		</data>
+		<key>Pulse Dark Blue_Alarm Pod _ Security Pod.json</key>
+		<data>
+		Wg+JzXFc8EAaDmLvTDtXnuz4gco=
+		</data>
+		<key>Pulse Dark Blue_SensePlug DE.json</key>
+		<data>
+		C4VYrmcfO1UrHisNwjIDXDg6g78=
+		</data>
+		<key>Pulse Dark Blue_SensePlug FR.json</key>
+		<data>
+		FjNSDnT61QEgO6PdKvCLzSUQl1U=
+		</data>
+		<key>Pulse Dark Blue_SensePlug UK.json</key>
+		<data>
+		AYgHa5zkEg1TF2tggiq3GnXLHKg=
+		</data>
+		<key>Pulse Dark Blue_SensePlug US.json</key>
+		<data>
+		Nr4+MAPXp7RsZzr/pP9sy5MBsf0=
+		</data>
+		<key>Pulse Dark Blue_WiDAR.json</key>
+		<data>
+		rRdHGKIFuANTIc6aLzJ2/bXUpG4=
+		</data>
+		<key>Pulse Dark Blue_WiFi DE.json</key>
+		<data>
+		PQM8j7AYymqaqK1TkG7UVS39L2c=
+		</data>
+		<key>Pulse Dark Blue_WiFi FR.json</key>
+		<data>
+		5HrdcdGdRf6ClgPPxUvzlG4Km+g=
+		</data>
+		<key>Pulse Dark Blue_WiFi JP.json</key>
+		<data>
+		nXOi0XlJrT+dKs+6FcJIaJuVLgc=
+		</data>
+		<key>Pulse Dark Blue_WiFi UK.json</key>
+		<data>
+		giUkjQFzsxYdb3094cy82R0JJXM=
+		</data>
+		<key>Pulse Dark Blue_WiFi US.json</key>
+		<data>
+		rop3On4116sTvxO8DYH/FxWWucM=
+		</data>
+		<key>Pulse White_Door Sensor.json</key>
+		<data>
+		RshFAFWasn14sjM8NWDLTUmBYbQ=
 		</data>
 		<key>WiDAR_1_Positioning Rec.json</key>
 		<data>
@@ -88,9 +136,29 @@
 		<data>
 		NGqd25DcVh6G4joPtryUWYq9WXM=
 		</data>
+		<key>Zone guide_1_Expand zone.json</key>
+		<data>
+		hMGmdr/zHI44vp39nv8okykklKI=
+		</data>
+		<key>Zone guide_2_Create new zone.json</key>
+		<data>
+		eN2ea2Fb49CIyyzEhbm6PQpGBdI=
+		</data>
+		<key>Zone guide_3_Secure 2nd floor.json</key>
+		<data>
+		FQss+ezklVUv2LTakccQ6X3vnLw=
+		</data>
+		<key>alarmPod_qr_all.webp</key>
+		<data>
+		vrTaDPDA+p/cO33T58chS4mj+sk=
+		</data>
 		<key>contact_sensor_devkit_1.webp</key>
 		<data>
 		VX9IhzDHzfoO2mrwl1YEv2sSlR8=
+		</data>
+		<key>doorSensor_qr_all.webp</key>
+		<data>
+		BpeKX3buaZHT9kRqgKLW0kAQLC8=
 		</data>
 		<key>esp32_s3_tmcu_c3_h2_devkitc_1_v2.webp</key>
 		<data>
@@ -119,6 +187,22 @@
 		<key>preview_thread_sentinel_plug_us.webp</key>
 		<data>
 		aZJ1EtFXIcO46OcZO9ZTlVuGm10=
+		</data>
+		<key>sensePlug_qr_DE.webp</key>
+		<data>
+		1oi2+L9fpRY1MybezHaPlSNwXCo=
+		</data>
+		<key>sensePlug_qr_FR.webp</key>
+		<data>
+		ufEoF5XbCqu/XZ2YdvBmKMNTfSM=
+		</data>
+		<key>sensePlug_qr_UK.webp</key>
+		<data>
+		nRBlKSdxi4mGmYYs6+Pf2hIv3/I=
+		</data>
+		<key>sensePlug_qr_US.webp</key>
+		<data>
+		Q85DlnTswh2/DdRjHBWV2O6q2aA=
 		</data>
 		<key>sentinel_plug_de.webp</key>
 		<data>
@@ -160,6 +244,10 @@
 		<data>
 		2gcqZ7tkfFPtzv+5rVsJOWPjl0o=
 		</data>
+		<key>thread_security_pod.webp</key>
+		<data>
+		g1uriUWSvlDVq675PZp5qxv/ELY=
+		</data>
 		<key>thread_sentinel_plug_de.webp</key>
 		<data>
 		wD7m29515ZF5ZU4ILowRKPEy2v4=
@@ -184,6 +272,30 @@
 		<data>
 		0/R7rHUKi2wjr7VzmCMnRb/p8u0=
 		</data>
+		<key>widarSensor_qr_all.webp</key>
+		<data>
+		lTXlmN46LVry59niMaaHHsftu64=
+		</data>
+		<key>wifiSensor_qr_DE.webp</key>
+		<data>
+		JoC4cfu8hm7vVVwSrBsnge3wPQU=
+		</data>
+		<key>wifiSensor_qr_FR.webp</key>
+		<data>
+		oG2Zj/bK9ZF7npSgzkhyKtojFOo=
+		</data>
+		<key>wifiSensor_qr_JP.webp</key>
+		<data>
+		BnmGXdPqYe/MtLdtA0A8kKXEjgg=
+		</data>
+		<key>wifiSensor_qr_UK.webp</key>
+		<data>
+		0cdUJV3ymfsBsGugy7Zqp+/bw0E=
+		</data>
+		<key>wifiSensor_qr_US.webp</key>
+		<data>
+		3YiWXL9iSMLksWTW9CWT5HvqhXM=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -191,7 +303,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rxvV/AA1dj63VTfjjX3rtX7C9gMbAMNykv4ep9rFS44=
+			CcHWrXqijs42/8jBOOEJqRg818XE3bO1AlvE40iKV8c=
 			</data>
 		</dict>
 		<key>Contact Sensor_Pulse Dark Blue.json</key>
@@ -205,7 +317,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xVxyJFdcyoMtOkqhTYAFuga5rBsovA5sX07igoYSUP8=
+			XKVKKccIKzALUffSPWL/0DF9H5hA+VXM6JxN0lo0L04=
 			</data>
 		</dict>
 		<key>Headers/StandardPairingUI.h</key>
@@ -219,14 +331,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OJfFuVZ5sQ2LJgUVMwS70cMX1VN4/LOlDpJj5w8xH94=
+			fXVgeHOl401ntmVrUt06XcWHx+q9mAHfOLvfxgn72RY=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M6+Y2Xzdt/EVhfdDA90zVFMNjMKn/NHpLVPMOwEs9Qc=
+			/XH4CxlNHxW60e7/MR83mDnKvZXcyLWNrEC/sTRpDVc=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -240,28 +352,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M6+Y2Xzdt/EVhfdDA90zVFMNjMKn/NHpLVPMOwEs9Qc=
+			/XH4CxlNHxW60e7/MR83mDnKvZXcyLWNrEC/sTRpDVc=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TxbIzl8fD2RGi5/hWSMA1PiiS6u35ATYPkvAMjC5xXQ=
+			k41boW7ZX/4SPVBbWnUbLhztKe1ufu91MMZtDCFxwuA=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OJfFuVZ5sQ2LJgUVMwS70cMX1VN4/LOlDpJj5w8xH94=
+			fXVgeHOl401ntmVrUt06XcWHx+q9mAHfOLvfxgn72RY=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dHpE1hRbmzt8Bz7iwa+HeGvT4CicEIafRr2c87O3GbI=
+			Iamu9t7zOOTIVCwWcRPds1IcsdjrF/4g4UR7mnYuaM4=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -275,14 +387,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dHpE1hRbmzt8Bz7iwa+HeGvT4CicEIafRr2c87O3GbI=
+			Iamu9t7zOOTIVCwWcRPds1IcsdjrF/4g4UR7mnYuaM4=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xY3nRAXV3SEHnNfIWHKA1hZFZlX0cZJ+HeULJ4jD9iQ=
+			b1oBtdeYhF6P2zeiTJiGn9BYBmHN6ULSGvgmAPmiTQo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -297,6 +409,90 @@
 			<key>hash2</key>
 			<data>
 			z3AWjnIdpbL4kgSEOowH6ztb5rSTnURCheml1qefQrQ=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_Alarm Pod _ Security Pod.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fls/gBMZN/cQziCbd0CsOILJGM0xUjTZ9WtYKnh91/8=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_SensePlug DE.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oaQd8byQ8bjZ9OCPyiGCtyY4A3qWYOFH44Nv8qWI0Qc=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_SensePlug FR.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qezL7aCWC+lmeCSwXKWb5vJXwWkhJrMd0LbXe9K7BYo=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_SensePlug UK.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SA2GcqknWpmevYU5U6etpUdWmwjqJ6B1+EXp6risHtc=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_SensePlug US.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Q6w+PpDrKWxX2dUhii+Qqg/z4h4VtO+16l82RHAV0hI=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_WiDAR.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			W1xAAXTDGxqzVnzVivpBTqdrmQrSZcfrvcaWx7yto38=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_WiFi DE.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			g47D91Sd8QRweimd7yq07d+cPClrGKpLGTlIeicGAOA=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_WiFi FR.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			q/0JzVerC+NkzJdJmpBgyUfNjX4yHfha8/CRQEIsjCY=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_WiFi JP.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sVZD19MCoR4+IxcO/cX52NXkyYLUbEaIi5s6Y4o54OM=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_WiFi UK.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			YBnqa+TGpcnx1pw1WYNJsV6VtoKFncTWppSZkL1hrhw=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_WiFi US.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pKXfupAEztQ+KnLYsMAxaQ+bgVFdFe0ujCj79Mmx6Z0=
+			</data>
+		</dict>
+		<key>Pulse White_Door Sensor.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rYlX8x+0ex9x3eQ2nvW7niMNr2MyZgXP5SbaRA22bCs=
 			</data>
 		</dict>
 		<key>WiDAR_1_Positioning Rec.json</key>
@@ -327,11 +523,46 @@
 			qKrXKQld3GyG5cGRIbAKspN+nSs3HQ1tpOQ2lAZQI4k=
 			</data>
 		</dict>
+		<key>Zone guide_1_Expand zone.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8LXMOAaBAlyrhVkINgu817+BwGBZJlkXU7JJYLQf+Uo=
+			</data>
+		</dict>
+		<key>Zone guide_2_Create new zone.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pacG6JfrT78sFST/+bneH5aBK4carcIUL3/bco5HR0g=
+			</data>
+		</dict>
+		<key>Zone guide_3_Secure 2nd floor.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KS/lfBqLjxe3F7Fz4xGK12TBcJI04rYJwyWJZbaBHD8=
+			</data>
+		</dict>
+		<key>alarmPod_qr_all.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			28cyJc0TLZ1hg8CxAZSZ6tKBlHQv5z+k6Wv/mJJnfmw=
+			</data>
+		</dict>
 		<key>contact_sensor_devkit_1.webp</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			GkixXuMrjZn0Or+o2Be6rtOfaMMFsUgX6IqztyGSQDc=
+			</data>
+		</dict>
+		<key>doorSensor_qr_all.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7PCmipBMjIFLJ9UiDSgHjEaL3KMWnTkMGjvNDadplDs=
 			</data>
 		</dict>
 		<key>esp32_s3_tmcu_c3_h2_devkitc_1_v2.webp</key>
@@ -381,6 +612,34 @@
 			<key>hash2</key>
 			<data>
 			r7vsujOIxzjwhYGdWTshdiBf05lhVCnC/fbGQt5Sm+U=
+			</data>
+		</dict>
+		<key>sensePlug_qr_DE.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5/CTdn3E1qy84mH9fTl0BVutZf5Z0DO86LyqhL4SnnM=
+			</data>
+		</dict>
+		<key>sensePlug_qr_FR.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xwAW98glAuig/Y1BUXbUcVk29E69T49cel40ZuXRW+4=
+			</data>
+		</dict>
+		<key>sensePlug_qr_UK.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2bhRJ66gTKV4fgiutUaOvMwCkgNc64N01rxl1Xh/L/s=
+			</data>
+		</dict>
+		<key>sensePlug_qr_US.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			EjASbIu3zY/hvNtPJeUgd5azEFDN/m1ogWJYgBnR8rg=
 			</data>
 		</dict>
 		<key>sentinel_plug_de.webp</key>
@@ -453,6 +712,13 @@
 			WRh3k1LQLKjHhEkrMRew5h3jxLHRzHNcX/gHGbbc+MI=
 			</data>
 		</dict>
+		<key>thread_security_pod.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZrlN0gCYcFGZbyEQ5Ksde4z/L/PbMFZL/RxurAotWwA=
+			</data>
+		</dict>
 		<key>thread_sentinel_plug_de.webp</key>
 		<dict>
 			<key>hash2</key>
@@ -493,6 +759,48 @@
 			<key>hash2</key>
 			<data>
 			KrtO55rOd90QmkMMLwbcWyh0Uzx+ZBpKZb6ED6eF4ZA=
+			</data>
+		</dict>
+		<key>widarSensor_qr_all.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kLpGv7MLRdW6GsapTbLQnJ2yYGawZVc3bwidGUm78jw=
+			</data>
+		</dict>
+		<key>wifiSensor_qr_DE.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MPPk+esMCow57nKO0SxGuX2QsdgcQ0tMltALXA4S7U4=
+			</data>
+		</dict>
+		<key>wifiSensor_qr_FR.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9J2WVRMAsutoU6jVGE7p47yprkodW+oLpYYexnXH1/Y=
+			</data>
+		</dict>
+		<key>wifiSensor_qr_JP.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			prmZ+YM2hLrcYL/+uck5CXHwOT7S5nww5yhM0Xs/sdc=
+			</data>
+		</dict>
+		<key>wifiSensor_qr_UK.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4LcKVQTXScQt7kiP69HZDhaEkdSQgPocVCV1C7tL86E=
+			</data>
+		</dict>
+		<key>wifiSensor_qr_US.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tbQtQyPI3f2q1jzJQWMGbM3YrFVW3GOtp+wBxpWb2lg=
 			</data>
 		</dict>
 	</dict>
