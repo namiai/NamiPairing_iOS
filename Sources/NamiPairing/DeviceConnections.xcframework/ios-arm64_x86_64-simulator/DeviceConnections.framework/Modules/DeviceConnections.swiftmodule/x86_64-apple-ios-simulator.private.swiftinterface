@@ -314,6 +314,13 @@ public enum I18n {
   public static func alarmReportTotalActiveTime(_ p1: Any) -> Swift.String
   public static let alarmReportZonesAffected: Swift.String
   public static let appName: Swift.String
+  public static let appWidgetDescriptionMedium: Swift.String
+  public static let appWidgetDescriptionSmall: Swift.String
+  public static let appWidgetErrorNoInternetConnection: Swift.String
+  public static let appWidgetLabelMedium: Swift.String
+  public static let appWidgetLabelSmall: Swift.String
+  public static let appwidgetDefaultPlaceName: Swift.String
+  public static let appwidgetErrorText: Swift.String
   public static let areYouWantToCancelPairingProcess: Swift.String
   public static let automationAt: Swift.String
   public static let automationBack: Swift.String
@@ -471,6 +478,9 @@ public enum I18n {
   public static let deviceCategoryAccessories: Swift.String
   public static let deviceCategoryActivitySensors: Swift.String
   public static let deviceCategorySensing: Swift.String
+  public static let deviceDetailDoorSensorLowBattery: Swift.String
+  public static let deviceDetailDoorSensorLowBatteryWarning: Swift.String
+  public static let deviceDetailDoorSensorLowBatteryWarningLearnHow: Swift.String
   public static let deviceDetailsConnected: Swift.String
   public static func deviceDetailsLoadDataFailed(_ p1: Any) -> Swift.String
   public static let deviceEditDeviceNamePlaceholder: Swift.String
@@ -572,6 +582,7 @@ public enum I18n {
   public static let deviceSettingsRemoveDevice: Swift.String
   public static func deviceSettingsRemoveDeviceName(_ p1: Any) -> Swift.String
   public static let deviceSettingsTechnicalInformationSubtitleThread: Swift.String
+  public static let deviceSettingsTechnicalInformationSubtitleThreadEnd: Swift.String
   public static let deviceSettingsTechnicalInformationSubtitleWifi: Swift.String
   public static let deviceSettingsTitle: Swift.String
   public static let deviceSetupAlarmPod: Swift.String
@@ -586,6 +597,10 @@ public enum I18n {
   public static let devicesAddNewDevice: Swift.String
   public static let devicesAddNewRoom: Swift.String
   public static let devicesAddNewZone: Swift.String
+  public static let doorSensorBatteryLevel: Swift.String
+  public static func doorSensorBatteryPercentageAndroid(_ p1: Swift.Int) -> Swift.String
+  public static let doorSensorClosed: Swift.String
+  public static let doorSensorOpen: Swift.String
   public static let editDeviceEditDeviceNameHint: Swift.String
   public static let editDeviceEditDeviceTitle: Swift.String
   public static let editIconHeader: Swift.String
@@ -717,6 +732,7 @@ public enum I18n {
   public static let generalOk: Swift.String
   public static let generalSave: Swift.String
   public static let generalUnavailable: Swift.String
+  public static let generalUndefined: Swift.String
   public static let generalYes: Swift.String
   public static func hintIssueAlarmIssues(_ p1: Any) -> Swift.String
   public static func hintIssuePluralSystemIssues(_ p1: Any) -> Swift.String
@@ -1033,6 +1049,15 @@ public enum I18n {
   public static let placeIntegrationsIsDisabled: Swift.String
   public static let placeIntegrationsIsEnabled: Swift.String
   public static let placeIntegrationsWantDisable: Swift.String
+  public static func placeModeWidgetAlarmIntrusionSince(_ p1: Any) -> Swift.String
+  public static let placeModeWidgetConfigureSelectPlace: Swift.String
+  public static let placeModeWidgetConfigureTitle: Swift.String
+  public static let placeModeWidgetDataNotAvailable: Swift.String
+  public static let placeModeWidgetErrorNoPlaces: Swift.String
+  public static let placeModeWidgetErrorNoSelectedPlace: Swift.String
+  public static let placeModeWidgetErrorUserLoggedOut: Swift.String
+  public static let placeModeWidgetLogIn: Swift.String
+  public static let placeModeWidgetSensingWarning: Swift.String
   public static let placeOverviewGraphNow: Swift.String
   public static let placeOverviewGraphThirtySecsAgo: Swift.String
   public static func placeOverviewIntrusionDetectionEndTime(_ p1: Any) -> Swift.String
@@ -1456,6 +1481,9 @@ public enum NamiDeviceCapability : Swift.Equatable {
   case devkitLed
   case devkitAlarm
   case widar
+  case doorSensorOpenClosed
+  case doorSensorTempered
+  case powerSupply
   public var endpoint: DeviceConnections.NamiDeviceEndpoint {
     get
   }
@@ -1484,6 +1512,9 @@ public struct NamiDeviceEndpoint : Swift.Equatable {
       case stateThreadNetworkInfo
       case stateWiDar
       case stateSensingConfig
+      case stateDoorSensorOpenClosed
+      case stateDoorSensorTempered
+      case statePowerSupplyInfo
       public static func == (a: DeviceConnections.NamiDeviceEndpoint.EndpointType.ReadableCluster, b: DeviceConnections.NamiDeviceEndpoint.EndpointType.ReadableCluster) -> Swift.Bool
       public func hash(into hasher: inout Swift.Hasher)
       public var hashValue: Swift.Int {
@@ -1817,6 +1848,8 @@ public enum DeviceConnectionsManagerCommunicationError : Swift.RawRepresentable 
   }
   public static func errorThrowingPublisher<Output>(for error: DeviceConnections.DeviceConnectionsManagerCommunicationError) -> Combine.AnyPublisher<Output, any Swift.Error>
 }
+public typealias DoorSensorState = DeviceConnections.StateMessage.EndpointState.DoorSensorState
+public typealias PowerSupplyInfo = DeviceConnections.StateMessage.EndpointState.PowerSupplyInfo
 public struct NamiDeviceObservation {
   public init(uid: DeviceConnections.DeviceUniversalID, seqTime: Swift.UInt64, activity: [Swift.Int32]? = nil, state: DeviceConnections.StateMessage? = nil, error: (any Swift.Error)? = nil)
   public let uid: DeviceConnections.DeviceUniversalID
@@ -1916,6 +1949,29 @@ public struct StateMessage {
       public var positioningQuality: DeviceConnections.StateMessage.EndpointState.WiDarInfo.PositioningQuality
       public var positioningProcess: DeviceConnections.StateMessage.EndpointState.WiDarInfo.PositioningProcessState
     }
+    public enum DoorSensorState {
+      case open
+      case closed
+      public static func == (a: DeviceConnections.StateMessage.EndpointState.DoorSensorState, b: DeviceConnections.StateMessage.EndpointState.DoorSensorState) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+    public struct PowerSupplyInfo {
+      public enum BatteryState {
+        case unspecified
+        case normal
+        case low
+        public static func == (a: DeviceConnections.StateMessage.EndpointState.PowerSupplyInfo.BatteryState, b: DeviceConnections.StateMessage.EndpointState.PowerSupplyInfo.BatteryState) -> Swift.Bool
+        public func hash(into hasher: inout Swift.Hasher)
+        public var hashValue: Swift.Int {
+          get
+        }
+      }
+      public var batteryState: DeviceConnections.StateMessage.EndpointState.PowerSupplyInfo.BatteryState
+      public var batteryValue: Swift.UInt32
+    }
     public var onOff: DeviceConnections.StateMessage.EndpointState.OnOff
     public var warning: DeviceConnections.StateMessage.EndpointState.Warning
     public var colorControl: DeviceConnections.StateMessage.EndpointState.ColorControl?
@@ -1924,6 +1980,9 @@ public struct StateMessage {
     public var wiFiInfo: DeviceConnections.StateMessage.EndpointState.WiFiInfo?
     public var threadInfo: DeviceConnections.StateMessage.EndpointState.ThreadInfo?
     public var widarInfo: DeviceConnections.StateMessage.EndpointState.WiDarInfo?
+    public var doorSensorState: DeviceConnections.StateMessage.EndpointState.DoorSensorState?
+    public var doorSensorTemprered: Swift.Bool?
+    public var powerSupplyInfo: DeviceConnections.StateMessage.EndpointState.PowerSupplyInfo?
   }
   public init?(serializedData: Foundation.Data)
   public func stateForModel(_ deviceModel: DeviceConnections.NamiDeviceModel) -> [DeviceConnections.StateMessage.EndpointState]
@@ -2240,9 +2299,17 @@ public enum KeychainError : Swift.Error, Swift.Equatable {
   }
 }
 public enum SecureStorage {
+  public static var accessGroup: Swift.String {
+    get
+  }
   public static func storeOrUpdate(with data: Foundation.Data, at key: Swift.String, server: Swift.String)
   public static func retrieve(at key: Swift.String, server: Swift.String) -> Swift.Result<Foundation.Data, DeviceConnections.KeychainError>
   public static func delete(at key: Swift.String, server: Swift.String)
+}
+extension Swift.Int32 {
+  public var description: Swift.String {
+    get
+  }
 }
 public enum SCCoAPTransportLayerError : Swift.Error {
   case setupError(errorDescription: Swift.String), sendError(errorDescription: Swift.String), encodeError, pingTimeoutError
@@ -2548,6 +2615,10 @@ extension DeviceConnections.StateMessage.EndpointState.WiDarInfo.PositioningQual
 extension DeviceConnections.StateMessage.EndpointState.WiDarInfo.PositioningQuality : Swift.Hashable {}
 extension DeviceConnections.StateMessage.EndpointState.WiDarInfo.PositioningProcessState : Swift.Equatable {}
 extension DeviceConnections.StateMessage.EndpointState.WiDarInfo.PositioningProcessState : Swift.Hashable {}
+extension DeviceConnections.StateMessage.EndpointState.DoorSensorState : Swift.Equatable {}
+extension DeviceConnections.StateMessage.EndpointState.DoorSensorState : Swift.Hashable {}
+extension DeviceConnections.StateMessage.EndpointState.PowerSupplyInfo.BatteryState : Swift.Equatable {}
+extension DeviceConnections.StateMessage.EndpointState.PowerSupplyInfo.BatteryState : Swift.Hashable {}
 extension DeviceConnections.KeychainError : Swift.Hashable {}
 extension DeviceConnections.SCType : Swift.Equatable {}
 extension DeviceConnections.SCType : Swift.Hashable {}

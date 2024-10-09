@@ -22,11 +22,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Q8JQPiXPPYaQG2O9FqiQmCvY6cU=
+		CrrxxLVP5Er+33xGISB69FRsY9k=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		MkZMLODBHpRVlV/SmkR/RFh1T0k=
+		goWlj/nZDu26ihyorfeuOhe2kOo=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -42,11 +42,11 @@
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		lxGB5X1faQT5sLZki44iwzH0fg0=
+		PBQoJ5dQGb+VSF4K1snMWnAtxYc=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		MkZMLODBHpRVlV/SmkR/RFh1T0k=
+		goWlj/nZDu26ihyorfeuOhe2kOo=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		nX89b7pxG64mormVnjEovKjmsBU=
+		Bk38qRPon20TC77r9tROMXVVtjo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -154,7 +154,7 @@
 		</data>
 		<key>contact_sensor_devkit_1.webp</key>
 		<data>
-		VX9IhzDHzfoO2mrwl1YEv2sSlR8=
+		pgLzbzsyTuTA9RKgiymJgV4veYI=
 		</data>
 		<key>doorSensor_qr_all.webp</key>
 		<data>
@@ -331,7 +331,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fXVgeHOl401ntmVrUt06XcWHx+q9mAHfOLvfxgn72RY=
+			Zh5L+ycOlvkzH236qnenhUze4IZ3FrI6l6hmvSDoCUk=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -359,14 +359,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			k41boW7ZX/4SPVBbWnUbLhztKe1ufu91MMZtDCFxwuA=
+			VwLQV9sfwj0qOq547q7mObDx1t9aKOE8NAU6wkUrURs=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fXVgeHOl401ntmVrUt06XcWHx+q9mAHfOLvfxgn72RY=
+			Zh5L+ycOlvkzH236qnenhUze4IZ3FrI6l6hmvSDoCUk=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -394,7 +394,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			b1oBtdeYhF6P2zeiTJiGn9BYBmHN6ULSGvgmAPmiTQo=
+			e+eQZVakFqcGFvlkIogsgF1Ws4WFn5NUR1Vw8TC8Fu4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -555,7 +555,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GkixXuMrjZn0Or+o2Be6rtOfaMMFsUgX6IqztyGSQDc=
+			FwBEFs+Q1fEBj14Pe0//Kp8a1KzVy6ufmv7vw7iaD7w=
 			</data>
 		</dict>
 		<key>doorSensor_qr_all.webp</key>
