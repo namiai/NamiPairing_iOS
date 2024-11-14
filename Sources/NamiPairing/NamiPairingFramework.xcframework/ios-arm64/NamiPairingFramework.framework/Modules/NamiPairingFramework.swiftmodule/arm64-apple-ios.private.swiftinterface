@@ -884,6 +884,7 @@ public enum BluetoothDeviceFound {
     public var deviceName: Swift.String
     public var deviceNames: [Swift.String]
     public var deviceNameConfirmed: Swift.Bool
+    public var renameDevice: Swift.Bool
     public var showDuplicateError: Swift.Bool {
       get
     }
@@ -1175,7 +1176,7 @@ public enum Pairing {
     case qrCodeScanner(DeviceConnections.NamiDeviceType, DeviceConnections.NamiOutletType?, NamiPairingFramework.NamiQRCode?)
     case cameraEnableInSettings(DeviceConnections.NamiDeviceType)
     case powerOnAndScanning(DeviceConnections.NamiDeviceType, DeviceConnections.NamiOutletType?)
-    case deviceFound(NamiPairingFramework.PlaceID, DeviceConnections.NamiDeviceType, DeviceConnections.NamiDeviceModel, DeviceConnections.WiFiCredentialsUpdateSessionID?)
+    case deviceFound(placeId: NamiPairingFramework.PlaceID, deviceType: DeviceConnections.NamiDeviceType, deviceModel: DeviceConnections.NamiDeviceModel, updateWiFiCredentialsSessionId: DeviceConnections.WiFiCredentialsUpdateSessionID?, deviceName: Swift.String?)
     case listWiFiNetworks(zoneId: NamiPairingFramework.PlaceZoneID, deviceType: DeviceConnections.NamiDeviceType, wifiNetworks: [NamiPairingFramework.NamiWiFiNetwork]?, bssidLookupComplete: Swift.Bool)
     case finishingSetup(DeviceConnections.NamiDeviceType)
     public static func == (a: NamiPairingFramework.Pairing.Routes, b: NamiPairingFramework.Pairing.Routes) -> Swift.Bool
@@ -1209,6 +1210,7 @@ public enum Pairing {
     case shouldContinuePairing
     case didContinuePairing
     case setDeviceName(Swift.String)
+    case renameDevice(Swift.String)
     case gotDeviceCertificate(Swift.String)
     case gotPairingChallenge(challenge: Swift.String, model: DeviceConnections.NamiDeviceModel)
     case gotDeviceChallengeResponse(Foundation.Data)
@@ -1248,6 +1250,8 @@ public enum Pairing {
     case stopTimerForConnectionTimeOut
     case connectionTimeOutError
     case bluetoothDisconnected(Swift.Bool)
+    case doneRenamingDevice
+    case doneDeletingDevice
     case exitPairing
     public static func == (a: NamiPairingFramework.Pairing.Event, b: NamiPairingFramework.Pairing.Event) -> Swift.Bool
   }
@@ -1362,6 +1366,7 @@ public protocol PairingWiFiStorageProtocol {
   func removeAll()
 }
 public protocol PairingWebAPIProtocol {
+  associatedtype Pairing_DeviceResponse : NamiPairingFramework.DeviceProtocol
   associatedtype Pairing_DevicesResponse : NamiPairingFramework.DevicesResponseProtocol
   associatedtype Pairing_PairDeviceResponse : NamiPairingFramework.PairDeviceResponseProtocol
   associatedtype Pairing_Place : NamiPairingFramework.PlaceProtocol
@@ -1373,6 +1378,7 @@ public protocol PairingWebAPIProtocol {
   func listPlaceZones(for placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[Self.Pairing_PlaceZone], any Swift.Error>
   func requestPairingChallenge(roomId: NamiPairingFramework.RoomID, deviceCertificate: Swift.String) -> Combine.AnyPublisher<Self.Pairing_PairingChallengeResponse, any Swift.Error>
   func pairDevice(roomId: NamiPairingFramework.RoomID, deviceName: Swift.String, cloudChallenge: Swift.String, deviceResponse: Swift.String, deviceCertificate: Swift.String, intent: Swift.String?) -> Combine.AnyPublisher<Self.Pairing_PairDeviceResponse, any Swift.Error>
+  func renameDevice(deviceId: NamiPairingFramework.DeviceID, name: Swift.String) -> Combine.AnyPublisher<Self.Pairing_DeviceResponse, any Swift.Error>
   func deleteDevice(id: NamiPairingFramework.DeviceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   func getWiFiCredentialsUpdateSession(id: DeviceConnections.WiFiCredentialsUpdateSessionID) -> Combine.AnyPublisher<Self.Pairing_WiFiCredentialsUpdateSession, any Swift.Error>
   func deleteDeviceFromSession(uid: NamiPairingFramework.DeviceUniversalID, sessionId: DeviceConnections.WiFiCredentialsUpdateSessionID) -> Combine.AnyPublisher<Self.Pairing_WiFiCredentialsUpdateSession, any Swift.Error>

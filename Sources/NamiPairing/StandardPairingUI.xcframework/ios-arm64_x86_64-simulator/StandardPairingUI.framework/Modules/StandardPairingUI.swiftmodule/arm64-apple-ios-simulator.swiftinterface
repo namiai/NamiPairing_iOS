@@ -932,6 +932,7 @@ public class Colors {
     public let primaryBlackDisabled: SwiftUI.Color
     public let secondaryBlack: SwiftUI.Color
     public let tertiaryBlack: SwiftUI.Color
+    public let gradientGray: SwiftUI.Color
     public let white: SwiftUI.Color
     public let whiteDisabled: SwiftUI.Color
     public let background: SwiftUI.Color
@@ -1202,7 +1203,7 @@ public struct NamiChatBubble : SwiftUI.View {
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI14NamiChatBubbleV4bodyQrvp", 0) __
 }
 public struct NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent> : SwiftUI.View where LeadingGroup : SwiftUI.View, TrailingGroup : SwiftUI.View, BottomGroup : SwiftUI.View, NotificationArea : SwiftUI.View, Subviews : SwiftUI.View, MainContent : SwiftUI.View {
-  public init(title: Swift.String? = nil, largeTitle: Swift.String? = nil, themeId: DeviceConnections.ThemeID = 0, colorOverride: SwiftUI.Color? = nil, statusbarColorOverride: SwiftUI.Color = .clear, navbarBackgroundBleed: CoreFoundation.CGFloat = 0, contentBehavior: StandardPairingUI.NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent>.ContentBehavior = .scrollable, @SwiftUI.ViewBuilder mainContent: @escaping () -> MainContent = { EmptyView() }, @SwiftUI.ViewBuilder leadingButtonsGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUI.ViewBuilder trailingButtonsGroup: @escaping () -> TrailingGroup = { EmptyView() }, @SwiftUI.ViewBuilder notificationAreaView: @escaping () -> NotificationArea = { EmptyView() }, @SwiftUI.ViewBuilder additionalViews: @escaping () -> Subviews = { EmptyView() }, @SwiftUI.ViewBuilder bottomButtonsGroup: @escaping () -> BottomGroup = { EmptyView() })
+  public init(title: Swift.String? = nil, largeTitle: Swift.String? = nil, themeId: DeviceConnections.ThemeID = 0, colorOverride: SwiftUI.Color? = nil, statusbarColorOverride: SwiftUI.Color? = nil, backgroundOverride: SwiftUI.Color? = nil, navbarBackgroundBleed: CoreFoundation.CGFloat = 0, contentBehavior: StandardPairingUI.NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent>.ContentBehavior = .scrollable, @SwiftUI.ViewBuilder mainContent: @escaping () -> MainContent = { EmptyView() }, @SwiftUI.ViewBuilder leadingButtonsGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUI.ViewBuilder trailingButtonsGroup: @escaping () -> TrailingGroup = { EmptyView() }, @SwiftUI.ViewBuilder notificationAreaView: @escaping () -> NotificationArea = { EmptyView() }, @SwiftUI.ViewBuilder additionalViews: @escaping () -> Subviews = { EmptyView() }, @SwiftUI.ViewBuilder bottomButtonsGroup: @escaping () -> BottomGroup = { EmptyView() })
   public enum ContentBehavior {
     case scrollabe(onScroll: (CoreFoundation.CGFloat) -> Swift.Void)
     case fixed
@@ -1216,7 +1217,7 @@ public struct NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, 
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NamiTopNavigationScreenV4bodyQrvp", 0) __<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent>
 }
 public struct LottieAnimationView : SwiftUI.View {
-  public init(animation: Swift.KeyPath<StandardPairingUI.LottieAnimations, Lottie.LottieAnimation>)
+  public init(animation: Swift.KeyPath<StandardPairingUI.Animations, Lottie.LottieAnimation>, loopMode: Lottie.LottieLoopMode = .loop)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -1316,6 +1317,13 @@ public struct NamiAuthButtonStyle : SwiftUI.ButtonStyle {
   }
   public func makeBody(configuration: StandardPairingUI.NamiAuthButtonStyle.Configuration) -> some SwiftUI.View
   
+  public struct ConstraintLayout {
+    public static let LeadingToSuperView: CoreFoundation.CGFloat
+    public static let TrailingToSuperView: CoreFoundation.CGFloat
+    public static let BottomToSuperView: CoreFoundation.CGFloat
+    public static let BottomToNextButton: CoreFoundation.CGFloat
+    public static let BottomTokeyboard: CoreFoundation.CGFloat
+  }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI19NamiAuthButtonStyleV8makeBody13configurationQr05SwiftC00fG13ConfigurationV_tF", 0) __
 }
 public struct NamiActionButtonStyle : SwiftUI.ButtonStyle {

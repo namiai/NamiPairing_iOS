@@ -14,15 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		57ICWmez74O9Km02D00ShMAaQTE=
+		cjMs49ZFScR1t/K0Jbl0TLd/4dg=
 		</data>
 		<key>Modules/DeviceConnections.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		95esEPgGgu87rqe/UWjtWBT9mwY=
+		8Qm/JBzVs86P6pVwgrJxwaGk3CQ=
 		</data>
 		<key>Modules/DeviceConnections.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		XyEnJsYN+eys7DsfXNX1sbWsn/I=
+		OSnNlYLePBlIndEc6pJQsRlgw68=
 		</data>
 		<key>Modules/DeviceConnections.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,19 +30,19 @@
 		</data>
 		<key>Modules/DeviceConnections.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		XyEnJsYN+eys7DsfXNX1sbWsn/I=
+		OSnNlYLePBlIndEc6pJQsRlgw68=
 		</data>
 		<key>Modules/DeviceConnections.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		TENdSX1Wgo5ybax4k9hKj7Z9ico=
+		R2vJ1DR4kYGzQaV2ORIPzUyzIz0=
 		</data>
 		<key>Modules/DeviceConnections.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		95esEPgGgu87rqe/UWjtWBT9mwY=
+		8Qm/JBzVs86P6pVwgrJxwaGk3CQ=
 		</data>
 		<key>Modules/DeviceConnections.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Gvqvbg/Laie4GO/aZzdVa7ZZfRY=
+		sJ6GYX1tc8b1lZ2+YRau8fr1Wrc=
 		</data>
 		<key>Modules/DeviceConnections.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/DeviceConnections.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Gvqvbg/Laie4GO/aZzdVa7ZZfRY=
+		sJ6GYX1tc8b1lZ2+YRau8fr1Wrc=
 		</data>
 		<key>Modules/DeviceConnections.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		8thuWVsuPFCAzdyXAQGNtZGXtvI=
+		WuqYlikyBsugPv/rwPjs3gmXn8I=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -82,7 +82,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0sp9o4P3JqnXZoZnGfnaRgIQeJ4=
+			4AzFwkgCTG5uQSQ+qzoEBa1HLug=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -139,14 +139,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6vczRFdX7kMHLeb01b9LRYRouEhWWINYDnU4AtqdoUU=
+			I+jvnm1ENbmqDBdJEhBOmN6UAcwwBiFNWMofffM1WDs=
 			</data>
 		</dict>
 		<key>Modules/DeviceConnections.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			w4OZoGQXkXI9zhH4Z8IZq9zIsNcSqXH4MnpkXk72c4k=
+			BfdGrp4b1xyXwB858fdkNoid+9cdlqfpWLipler24jI=
 			</data>
 		</dict>
 		<key>Modules/DeviceConnections.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -160,28 +160,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			w4OZoGQXkXI9zhH4Z8IZq9zIsNcSqXH4MnpkXk72c4k=
+			BfdGrp4b1xyXwB858fdkNoid+9cdlqfpWLipler24jI=
 			</data>
 		</dict>
 		<key>Modules/DeviceConnections.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			okEPExhfjAxr5uq99JCXwe86Qq3dxhR+VxUBxrXEF/g=
+			Z1zsBe+frEO1id8IwTx3jf8hnwU7CV8hCZB/vhW56qw=
 			</data>
 		</dict>
 		<key>Modules/DeviceConnections.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6vczRFdX7kMHLeb01b9LRYRouEhWWINYDnU4AtqdoUU=
+			I+jvnm1ENbmqDBdJEhBOmN6UAcwwBiFNWMofffM1WDs=
 			</data>
 		</dict>
 		<key>Modules/DeviceConnections.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M88fPK6ZT1SSLTs3VeRxTPRNno27c3UdM3uTJXNeqNc=
+			bh9WCCKWmltRN4rkrfXT6qfCAOJ1TPVHlkeC5Gbu3xY=
 			</data>
 		</dict>
 		<key>Modules/DeviceConnections.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -195,14 +195,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M88fPK6ZT1SSLTs3VeRxTPRNno27c3UdM3uTJXNeqNc=
+			bh9WCCKWmltRN4rkrfXT6qfCAOJ1TPVHlkeC5Gbu3xY=
 			</data>
 		</dict>
 		<key>Modules/DeviceConnections.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			epCwJ0gl9jFroBFzHZnMWr7CoroRQHAn8IDC3c3iPtA=
+			0jfylzgGUzWKSwIwJaO1JMKbCrFk/fLSnUvc5BwKcn4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -234,7 +234,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vBq6To9qCSr82fsTiS2bVz/e5lJ5kZT5Asli4oapjQA=
+			4bAit+sdTN5ZYgzTvo5IVmDoR/XSfMblAEbGgbU5+/c=
 			</data>
 			<key>optional</key>
 			<true/>

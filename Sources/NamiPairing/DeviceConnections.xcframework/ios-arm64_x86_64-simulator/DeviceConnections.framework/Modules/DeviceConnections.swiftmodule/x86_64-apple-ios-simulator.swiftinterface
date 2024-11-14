@@ -2311,6 +2311,9 @@ extension Swift.Int32 {
     get
   }
 }
+public enum KeychainMigration {
+  public static func migrateToAccessGroupStorage(server: Swift.String)
+}
 public enum SCCoAPTransportLayerError : Swift.Error {
   case setupError(errorDescription: Swift.String), sendError(errorDescription: Swift.String), encodeError, pingTimeoutError
 }
