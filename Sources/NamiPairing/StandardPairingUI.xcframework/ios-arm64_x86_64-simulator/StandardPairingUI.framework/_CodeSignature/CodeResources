@@ -6,11 +6,59 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		R2X81NWbdUHm9jgKbXSYZezqoNo=
+		zNClLy2gmxxp1Bmcb059M9FKezI=
+		</data>
+		<key>BSS_1st kit_Introduction to zones.json</key>
+		<data>
+		UFqaIRm6NpKzMPf7D9KhpTrFSBc=
+		</data>
+		<key>BSS_1st kit_Set up motion sensing first.json</key>
+		<data>
+		l1tmV8+4QHzfiXr4eaYoo7eCdEQ=
+		</data>
+		<key>BSS_non-1st kit_hasBR_Set up motion sensing first.json</key>
+		<data>
+		f1meStEz3ujn9i+8ezFXXx0umW4=
+		</data>
+		<key>BSS_non-1st kit_noBR_Set up motion sensing first.json</key>
+		<data>
+		YengXAGC9oVUiXQmyWQPpUll3QU=
+		</data>
+		<key>BSS_non-1stkit_1floor_Select your preferred zone.json</key>
+		<data>
+		Qf1wZQ+nl0bOUkxLLf4JfKPM8/w=
+		</data>
+		<key>BSS_non-1stkit_2floors_Select your preferred zone.json</key>
+		<data>
+		cP75ZbHbM5d2nja+WCk1Rc9Rh9c=
 		</data>
 		<key>Contact Sensor_Pulse Dark Blue.json</key>
 		<data>
 		TZNBMCNb27shKp5snIkILalUBaY=
+		</data>
+		<key>HMS_1st kit_Introduction to zones.json</key>
+		<data>
+		RD7rk2J8k7gpn8MgVvbX2bWGyBI=
+		</data>
+		<key>HMS_1st kit_Set up motion sensing first.json</key>
+		<data>
+		HZriYNPM1dEp+Br/Cb3nEL79eSo=
+		</data>
+		<key>HMS_non-1st kit_hasBR_Set up motion sensing first.json</key>
+		<data>
+		Zlpp5Mmh6LzwWYNv97pnDAsbOKA=
+		</data>
+		<key>HMS_non-1st kit_noBR_Set up motion sensing first.json</key>
+		<data>
+		U1mED5tWmKuLuLsI55oAqqVWp4M=
+		</data>
+		<key>HMS_non-1stkit_1floor_Select your preferred zone.json</key>
+		<data>
+		O21msgqPluAFTM47jgSqSpdz6cQ=
+		</data>
+		<key>HMS_non-1stkit_2floors_Select your preferred zone.json</key>
+		<data>
+		GmfhcVlapFVu0HmOi7YbRQ4maak=
 		</data>
 		<key>Headers/StandardPairingUI-Swift.h</key>
 		<data>
@@ -18,11 +66,11 @@
 		</data>
 		<key>Headers/StandardPairingUI.h</key>
 		<data>
-		22cYP2NWkRcC8NvMb/XJDS69A8M=
+		uVNv8mqPgdlgp9xDZ4Cexntb+bs=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		CqcfhgvfLF288aksDeNwPYiedxE=
+		88R3D3p9wdnKYDqa4jwDTIzZA9E=
 		</data>
 		<key>Lookout24 Horizontal Logo_v2.json</key>
 		<data>
@@ -30,43 +78,43 @@
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		nr9vPBAxUJQdfknTBrUpl9BIEV4=
+		95+NpDKeS0CAuUAPVw1WFRZcl8c=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		12lW+BLkaeEE+guZ8aUBjR5hlYI=
+		i9scoP01RLyZDw4FYUDfuBaBRNY=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		1MytU4+rE/BDL02vgg5nTOnx7Ko=
+		xU8dVZeHJRDf4jBod19v8JQHZek=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		12lW+BLkaeEE+guZ8aUBjR5hlYI=
+		i9scoP01RLyZDw4FYUDfuBaBRNY=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		aaklmacIA0CdHppo1SnghuG/K8A=
+		W5nP4gyObO8On8Gnr+9zmVAkUKY=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		nr9vPBAxUJQdfknTBrUpl9BIEV4=
+		95+NpDKeS0CAuUAPVw1WFRZcl8c=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		rUCZnAUBrT10pxxJ/EWhVPS45h4=
+		E54FpdewEb4FwxVNL/3R4mhKuhA=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		A2rnthsFxQiPmrOIiplS4n/AY8M=
+		QMlKvgq60uVDKNbF1NWX+hbZ6ps=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		rUCZnAUBrT10pxxJ/EWhVPS45h4=
+		E54FpdewEb4FwxVNL/3R4mhKuhA=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ppOLVvYylTZTpVDZEodsM3ib5/Q=
+		+Y7cUyQMr9vORd4kLQuR7C/E2JA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -74,7 +122,15 @@
 		</data>
 		<key>Place Empty State.json</key>
 		<data>
-		vt0GfulZpSvM7K+AJYg4rKwCOIU=
+		dREV2dzKfkw2V+WLoRXKpERuY1o=
+		</data>
+		<key>Plan device placement_imperial.json</key>
+		<data>
+		c2d/oAgLFRMX3HuRSuqcc9ZkHUU=
+		</data>
+		<key>Plan device placement_metric.json</key>
+		<data>
+		HEZjpfqtBcSuUqvxz50Mc9IUOyE=
 		</data>
 		<key>Pulse Dark Blue_Alarm Pod _ Security Pod.json</key>
 		<data>
@@ -128,6 +184,14 @@
 		<data>
 		CXIQSwl6T4ie/BZNz3aRoUAuW3Q=
 		</data>
+		<key>WiDAR_1st kit_Introduction to zones.json</key>
+		<data>
+		DufiWthfy6Le8zkHwjoSZiSmd+0=
+		</data>
+		<key>WiDAR_1st kit_Set up motion sensing first.json</key>
+		<data>
+		EVS8przIm+U3xmNXNZgDGKADTcs=
+		</data>
 		<key>WiDAR_2_Positioning Example.json</key>
 		<data>
 		pmqXVYZBZsBvjqOv2dhbK7v3rbQ=
@@ -140,21 +204,37 @@
 		<data>
 		NGqd25DcVh6G4joPtryUWYq9WXM=
 		</data>
+		<key>WiDAR_non-1st kit_hasBR_Set up motion sensing first.json</key>
+		<data>
+		dKQ6Pb3iUS8LtGSFKEkWijvCQiE=
+		</data>
+		<key>WiDAR_non-1st kit_noBR_Set up motion sensing first.json</key>
+		<data>
+		1d2CBSRk9c8S8tOTo8/AVIEH0is=
+		</data>
+		<key>WiDAR_non-1stkit_1floor_Select your preferred zone.json</key>
+		<data>
+		GwGu6HmMiOqQq2NU2KIrepO0G3I=
+		</data>
+		<key>WiDAR_non-1stkit_2floors_Select your preferred zone.json</key>
+		<data>
+		PoeYg5dCovQuVmJzonyFu0hlZBg=
+		</data>
 		<key>Zone guide_1_Expand zone.json</key>
 		<data>
 		hMGmdr/zHI44vp39nv8okykklKI=
 		</data>
 		<key>Zone guide_2_Create new zone.json</key>
 		<data>
-		eN2ea2Fb49CIyyzEhbm6PQpGBdI=
+		PEOZsocrvEgNsXwwzxGtOAsjdmE=
 		</data>
 		<key>Zone guide_3_Secure 2nd floor.json</key>
 		<data>
-		FQss+ezklVUv2LTakccQ6X3vnLw=
+		BychcU5aixlAEvGLlG1RaOvlyvk=
 		</data>
 		<key>alarmPod_qr_all.webp</key>
 		<data>
-		vrTaDPDA+p/cO33T58chS4mj+sk=
+		WdKfKitezX/+KN9zOA7h6S/qTpw=
 		</data>
 		<key>contact_sensor_devkit_1.webp</key>
 		<data>
@@ -250,7 +330,7 @@
 		</data>
 		<key>thread_security_pod.webp</key>
 		<data>
-		g1uriUWSvlDVq675PZp5qxv/ELY=
+		3I8t2B5FfqcQp8DgKVY9myiJioQ=
 		</data>
 		<key>thread_sentinel_plug_de.webp</key>
 		<data>
@@ -307,7 +387,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NNlPp+0z8aoVkj7fx+ORshpwogJ1oRBG8xg603pQmwk=
+			GuOFByx7nDODrdc9W8Gz+66yWvpwhRhcqBU17vxI86M=
+			</data>
+		</dict>
+		<key>BSS_1st kit_Introduction to zones.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			f5S1tKi1rjR/NeEAEXW4ZpYM4uVqf+J5AmGMzbDCiro=
+			</data>
+		</dict>
+		<key>BSS_1st kit_Set up motion sensing first.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NFUCasZ6wFus/A/xezms74wtkPXNUJuQ/8HdrVDM9fc=
+			</data>
+		</dict>
+		<key>BSS_non-1st kit_hasBR_Set up motion sensing first.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5VtIxDTzEBsh1Km7rrFcdnnzJaSPw+0f1jy4vktm+WI=
+			</data>
+		</dict>
+		<key>BSS_non-1st kit_noBR_Set up motion sensing first.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			POZxcn5GUe/QvYsaE5phWhHijvXxHFxcQ1NZ8M+CydI=
+			</data>
+		</dict>
+		<key>BSS_non-1stkit_1floor_Select your preferred zone.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2F8mhsp4aQ8W+jWXzbvBXoJYrvlDWF4mXQOlwTM5VLg=
+			</data>
+		</dict>
+		<key>BSS_non-1stkit_2floors_Select your preferred zone.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zelp/IHAouLh6nr/F+ISndAo87KFqallmOxNc5opAi4=
 			</data>
 		</dict>
 		<key>Contact Sensor_Pulse Dark Blue.json</key>
@@ -315,6 +437,48 @@
 			<key>hash2</key>
 			<data>
 			FHhoRfxxcD1vsp6ksAMQEDHylxy5JuHk2KRtrmbcuz0=
+			</data>
+		</dict>
+		<key>HMS_1st kit_Introduction to zones.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			u67khvgrjf8R3ugYgq3/0lqE6FYKjP5dOeh+atcVA1M=
+			</data>
+		</dict>
+		<key>HMS_1st kit_Set up motion sensing first.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BGr+zSuSggDEKuTpmkGE8YmuRzRgSJTKoS5suiNQPJo=
+			</data>
+		</dict>
+		<key>HMS_non-1st kit_hasBR_Set up motion sensing first.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fFHBbyNLFkHu3RAbbTiKddh37EOVbeil4U6s9+QYNhU=
+			</data>
+		</dict>
+		<key>HMS_non-1st kit_noBR_Set up motion sensing first.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			u7mGs6KQpw7tWRUqOa08+kVt8r5b3MU6DJaQWUh6wAA=
+			</data>
+		</dict>
+		<key>HMS_non-1stkit_1floor_Select your preferred zone.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			050hvURUeYffhkHSrj/KCnixiK27aV/+OZOPga4alfw=
+			</data>
+		</dict>
+		<key>HMS_non-1stkit_2floors_Select your preferred zone.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nMOTxAEThfBWI1ydComZ1IyuT+ICESyLaa2NbJqpk0U=
 			</data>
 		</dict>
 		<key>Headers/StandardPairingUI-Swift.h</key>
@@ -328,7 +492,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nzaZYMDseKB66WxBbNGsEJ2cUcEIUWSfiMNUmukHIe4=
+			zIXF2ZDmqWhy2zGjjtu9hZ3Y6vB+1msbZi1/gk1aetU=
 			</data>
 		</dict>
 		<key>Lookout24 Horizontal Logo_v2.json</key>
@@ -342,70 +506,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			o1OlaAInUnP1OwsTeB87MSizgGs5lLPr2/ekpYHBRtQ=
+			ZLE+L3xIs2sn/JuQOGxVN+HTW9Csn/lGovXexyKolXk=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TGmsXRNwRk1Ibak80LSg4MC/vh9jlwzgRz83Q6s88zA=
+			DjdAGh8q+2LnlZlaLv6GbhI1SBDN0jlBMK8p8ZxlJ8k=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oD5MZmif5gu4d6W2G5adnDzXPdIInnY5W1w0nM582K0=
+			vACw0S70wthIfyXAnbfEglW73xOHi6vmE4ds5B2UlqU=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TGmsXRNwRk1Ibak80LSg4MC/vh9jlwzgRz83Q6s88zA=
+			DjdAGh8q+2LnlZlaLv6GbhI1SBDN0jlBMK8p8ZxlJ8k=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CfpnMdznUZSzodR2xWExQhvU488P+Y8oI1Z77a9BDpw=
+			KVyGBD5U3lagOARzD8QvvqurF2EAPvVlcAzoBHR32LE=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			o1OlaAInUnP1OwsTeB87MSizgGs5lLPr2/ekpYHBRtQ=
+			ZLE+L3xIs2sn/JuQOGxVN+HTW9Csn/lGovXexyKolXk=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iNnGEGnOomVXhMhc/mpDSmw8w62Tbf6dCibbXfViQ2g=
+			yuYpPaMAaojfd3cwHjdsZiwsjopnffCpwmXdIxlyg+Y=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			20a8qFwoownic8kATFgr18Uu7Ao752O/w4ASBQAWfYc=
+			T0uOBdkleFdcjKME+Idux4gG3hlRFUhYpjsFQpAHDT8=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iNnGEGnOomVXhMhc/mpDSmw8w62Tbf6dCibbXfViQ2g=
+			yuYpPaMAaojfd3cwHjdsZiwsjopnffCpwmXdIxlyg+Y=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PYLp+qhkJ1CiVVvucYTpkOiQI4vKGCT9B+9ckua3eSw=
+			2GcT48PcDusmh0LEIhIDjSIBcjaAJoWTTlOuLYyyqhM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -419,7 +583,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			z3AWjnIdpbL4kgSEOowH6ztb5rSTnURCheml1qefQrQ=
+			MQ308rRYLoRLzWJEi9fGfe8qPdriIaouUfZr1i09ClU=
+			</data>
+		</dict>
+		<key>Plan device placement_imperial.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			S6o03RoWw4SeU5zRyyCNTN/wQTcH4pqJTSCHeOa9yHk=
+			</data>
+		</dict>
+		<key>Plan device placement_metric.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0eNEg+u5HA+LHXTOu7bxMcbqrFeU38Md8N9BG6t/olI=
 			</data>
 		</dict>
 		<key>Pulse Dark Blue_Alarm Pod _ Security Pod.json</key>
@@ -513,6 +691,20 @@
 			33vLPNV6AuUw9nQXgoANYwU7B+4kE5JpCLgsEMIVbAs=
 			</data>
 		</dict>
+		<key>WiDAR_1st kit_Introduction to zones.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DC9gibDnBDZNxE8j3Svgg2SSJJpv1X33hKrcOZJBc9o=
+			</data>
+		</dict>
+		<key>WiDAR_1st kit_Set up motion sensing first.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dElWhABMJsd5g3blbVCgTVL1Epe5/aH3FoEsBlJAYOU=
+			</data>
+		</dict>
 		<key>WiDAR_2_Positioning Example.json</key>
 		<dict>
 			<key>hash2</key>
@@ -534,6 +726,34 @@
 			qKrXKQld3GyG5cGRIbAKspN+nSs3HQ1tpOQ2lAZQI4k=
 			</data>
 		</dict>
+		<key>WiDAR_non-1st kit_hasBR_Set up motion sensing first.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/TUT+WXnOwDvUFlxUVGaAttykcwjNsPi3j/r3tvX9lE=
+			</data>
+		</dict>
+		<key>WiDAR_non-1st kit_noBR_Set up motion sensing first.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dfS4VB/FhxnbkvI1z1VPUTqQl4grmqeRPE47pT+ZV94=
+			</data>
+		</dict>
+		<key>WiDAR_non-1stkit_1floor_Select your preferred zone.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FhXHdPPeQfcUz0nenaZmlWcyKvnv0DOGJipIiHOP1aY=
+			</data>
+		</dict>
+		<key>WiDAR_non-1stkit_2floors_Select your preferred zone.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4RxhBf8YLWqv0OPhgQ/WwEofCHlQAzZ+L78grTBWxic=
+			</data>
+		</dict>
 		<key>Zone guide_1_Expand zone.json</key>
 		<dict>
 			<key>hash2</key>
@@ -545,21 +765,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pacG6JfrT78sFST/+bneH5aBK4carcIUL3/bco5HR0g=
+			WxG0qAwRr2r8IjFnqX4UmoK7TsC+hCwBj6oAcUr49XA=
 			</data>
 		</dict>
 		<key>Zone guide_3_Secure 2nd floor.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KS/lfBqLjxe3F7Fz4xGK12TBcJI04rYJwyWJZbaBHD8=
+			gD6S7wnbcH54YTCSWg7OtN4S2G6wjyARqEQdZqcHnAc=
 			</data>
 		</dict>
 		<key>alarmPod_qr_all.webp</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			28cyJc0TLZ1hg8CxAZSZ6tKBlHQv5z+k6Wv/mJJnfmw=
+			qXhFp0MsiH6PQ4vRCZk0NyEv9cyz6w/TfQZ9crSFCx8=
 			</data>
 		</dict>
 		<key>contact_sensor_devkit_1.webp</key>
@@ -727,7 +947,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZrlN0gCYcFGZbyEQ5Ksde4z/L/PbMFZL/RxurAotWwA=
+			co+lOY5ZW7j/qDRkRMKumV4+ikHCUEuu9d4YR3HAzcQ=
 			</data>
 		</dict>
 		<key>thread_sentinel_plug_de.webp</key>

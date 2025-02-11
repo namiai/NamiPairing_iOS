@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target arm64-apple-ios14.5 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name NamiPairingFramework
+// swift-module-flags: -target arm64-apple-ios16 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name NamiPairingFramework
 import AVFoundation
 import Combine
 import CommonCrypto
@@ -15,6 +15,17 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+public enum SDKError : Swift.Error, Foundation.LocalizedError {
+  case sessionActivateNoData
+  case sessionActivateMalformedResponse(Foundation.Data)
+  case roomUuidNotInTopology
+  case incorrectDeviceUID
+  case authenticationError(NamiPairingFramework.AuthenticationError)
+  case storageError(NamiPairingFramework.StorageError)
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 extension Foundation.URLRequest {
   public init(method: Swift.String = "GET", base: Foundation.URL, path: Swift.String, query: [Swift.String : Swift.String], headers: [Swift.String : Swift.String] = [:], body: Foundation.Data? = nil)
   public init(method: Swift.String = "GET", base: Foundation.URL, path: Swift.String, query: [Foundation.URLQueryItem] = [], headers: [Swift.String : Swift.String] = [:], body: Foundation.Data? = nil)
@@ -36,6 +47,7 @@ extension Foundation.URLRequest {
 }
 public enum AuthenticationError : Swift.Error {
   case loginRequired
+  case tokenExpired
   case unknown
   public static func == (a: NamiPairingFramework.AuthenticationError, b: NamiPairingFramework.AuthenticationError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -200,6 +212,15 @@ public struct Room : Swift.Codable, Swift.Equatable, Swift.Identifiable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct AccessToken : Swift.Equatable, Swift.Codable {
+  public init(accessToken: DeviceConnections.TokenString, expiresAt: Foundation.Date)
+  public var accessToken: DeviceConnections.TokenString
+  public var expiresAt: Foundation.Date
+  public func isValid() -> Swift.Bool
+  public static func == (a: NamiPairingFramework.AccessToken, b: NamiPairingFramework.AccessToken) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 public struct PairingChallengeRequest : Swift.Encodable {
   public init(certificate: Swift.String)
   public var certificate: Swift.String
@@ -227,21 +248,21 @@ public struct WiFiCredentialsUpdateSession : NamiPairingFramework.WiFiCredential
   public typealias UpdatedDevice = NamiPairingFramework.UpdatedDevice
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct DeveloperParameters {
+  public let accessToken: NamiPairingFramework.AccessToken?
+  public init(accessToken: NamiPairingFramework.AccessToken? = nil)
+}
 public class NamiPairing<Container> where Container : NamiPairingFramework.PairingStepsContainer {
   public typealias PairingParameters = NamiPairingFramework.Tomonari<Container>.PairingParameters
-  public enum SDKError : Swift.Error {
-    case sessionActivateNoData
-    case sessionActivateMalformedResponse(Foundation.Data)
-    case roomUuidNotInTopology
-    case incorrectDeviceUID
-  }
   public var api: any NamiPairingFramework.PairingWebAPIProtocol
   public var wifiStorage: any NamiPairingFramework.PairingWiFiStorageProtocol
   public var threadDatasetProvider: any NamiPairingFramework.PairingThreadOperationalDatasetProviderProtocol
+  public var onError: ((NamiPairingFramework.SDKError) -> Swift.Void)?
   public var devicePairingState: Combine.PassthroughSubject<NamiPairingFramework.Tomonari<Container>.DevicePairingState, any Swift.Error> {
     get
   }
-  public init<WiFiStorage, SecureStorage>(sessionCode: Swift.String, wifiStorage: WiFiStorage = InMemoryWiFiStorage(), threadDatasetStore: SecureStorage.Type = InMemoryThreadDatasetStorage.self) throws where WiFiStorage : NamiPairingFramework.PairingWiFiStorageProtocol, SecureStorage : NamiPairingFramework.ThreadSecureStorageProtocol
+  public init<WiFiStorage, SecureStorage>(sessionCode: Swift.String, wifiStorage: WiFiStorage = InMemoryWiFiStorage(), threadDatasetStore: SecureStorage.Type = InMemoryThreadDatasetStorage.self, onError: ((NamiPairingFramework.SDKError) -> Swift.Void)? = nil, developerParameters: NamiPairingFramework.DeveloperParameters = DeveloperParameters()) throws where WiFiStorage : NamiPairingFramework.PairingWiFiStorageProtocol, SecureStorage : NamiPairingFramework.ThreadSecureStorageProtocol
+  public static func fallbackInstance() -> NamiPairingFramework.NamiPairing<Container>
   public func startPairing(roomId: Swift.String, deviceType: DeviceConnections.NamiDeviceType = .unknown, pairingSteps: Container, pairingParameters: NamiPairingFramework.NamiPairing<Container>.PairingParameters = .none) throws -> some SwiftUI.View
   
   public func startPositioning(deviceName: Swift.String, deviceUid: Swift.String, pairingSteps: Container, onPositioningEnded: @escaping (NamiPairingFramework.PositioningResult) -> Swift.Void) throws -> some SwiftUI.View
@@ -254,6 +275,19 @@ final public class InMemoryWiFiStorage : NamiPairingFramework.PairingWiFiStorage
   final public func password(for networkSSID: Swift.String) -> Swift.String?
   final public func removeAll()
   @objc deinit
+}
+public enum StorageError : Swift.Error {
+  case wifiCredentialsStorage
+  case threadDatasetStorage
+  case deviceConnectionsStorage
+  public var localizedDescription: Swift.String {
+    get
+  }
+  public static func == (a: NamiPairingFramework.StorageError, b: NamiPairingFramework.StorageError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public enum PacketBoatError : Swift.String, Swift.Error {
   case wrongDataFormat
@@ -710,6 +744,7 @@ public enum QRScanner {
     public var deviceType: DeviceConnections.NamiDeviceType
     public var qrCode: NamiPairingFramework.NamiQRCode?
     public var outletType: DeviceConnections.NamiOutletType?
+    public var kit: DeviceConnections.KitCategory?
     public var error: NamiPairingFramework.QRScanner.ScanError?
     public static func == (a: NamiPairingFramework.QRScanner.State, b: NamiPairingFramework.QRScanner.State) -> Swift.Bool
   }
@@ -1225,7 +1260,7 @@ public enum Pairing {
     case otherNetwork
     case enterPassword(NamiPairingFramework.NamiWiFiNetwork)
     case didSendWiFiCredentials
-    case shouldScanForThreadNetwork
+    case shouldStartScanForThreadNetwork
     case didStartScanForThreadNetwork
     case shouldSendThreadOperationalDataset(Foundation.Data)
     case didSentThreadOperationalDataset
@@ -1373,6 +1408,7 @@ public protocol PairingWebAPIProtocol {
   associatedtype Pairing_PlaceZone : NamiPairingFramework.PlaceZoneProtocol
   associatedtype Pairing_PairingChallengeResponse : NamiPairingFramework.PairingChallengeResponseProtocol
   associatedtype Pairing_WiFiCredentialsUpdateSession : NamiPairingFramework.WiFiCredentialsUpdateSessionProtocol
+  var errorPublisher: Combine.PassthroughSubject<any Swift.Error, Swift.Never> { get }
   func placeDetails(for placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Self.Pairing_Place, any Swift.Error>
   func listDevices(query: any NamiPairingFramework.DevicesQueryProtocol) -> Combine.AnyPublisher<Self.Pairing_DevicesResponse, any Swift.Error>
   func listPlaceZones(for placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[Self.Pairing_PlaceZone], any Swift.Error>
@@ -1521,6 +1557,8 @@ extension NamiPairingFramework.InMemoryThreadDatasetStorage.StorageError : Swift
 extension NamiPairingFramework.InMemoryThreadDatasetStorage.StorageError : Swift.Hashable {}
 extension NamiPairingFramework.AuthenticationError : Swift.Equatable {}
 extension NamiPairingFramework.AuthenticationError : Swift.Hashable {}
+extension NamiPairingFramework.StorageError : Swift.Equatable {}
+extension NamiPairingFramework.StorageError : Swift.Hashable {}
 extension NamiPairingFramework.PacketBoatError : Swift.Equatable {}
 extension NamiPairingFramework.PacketBoatError : Swift.Hashable {}
 extension NamiPairingFramework.PacketBoatError : Swift.RawRepresentable {}
