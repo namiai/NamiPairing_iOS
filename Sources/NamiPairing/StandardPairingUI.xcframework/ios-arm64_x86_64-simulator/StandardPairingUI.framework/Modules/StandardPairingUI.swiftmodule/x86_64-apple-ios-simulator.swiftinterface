@@ -173,6 +173,7 @@ public protocol WordingProtocol {
   var pairingErrorDeserializationDescription: Swift.String { get }
   var pairingErrorEncryptionErrorDescription: Swift.String { get }
   var pairingErrorDeviceMismatchDescription: Swift.String { get }
+  var pairingErrorKitDeviceMismatchDescription: Swift.String { get }
   var pairingErrorConnectionTimeoutDescription: Swift.String { get }
   func pairingErrorBleDisconnectedDescription(deviceName: Swift.String) -> Swift.String
   var pairingErrorDeviceSecureSessionDescription: Swift.String { get }
@@ -547,6 +548,9 @@ extension StandardPairingUI.WordingProtocol {
     get
   }
   public var pairingErrorDeviceMismatchDescription: Swift.String {
+    get
+  }
+  public var pairingErrorKitDeviceMismatchDescription: Swift.String {
     get
   }
   public var pairingErrorConnectionTimeoutDescription: Swift.String {
@@ -1310,7 +1314,7 @@ public enum NamiTextHyperLinkHelpers {
   
 }
 extension SwiftUI.View {
-  public func dynamicBottomSheet<SheetContent>(isPresented: SwiftUI.Binding<Swift.Bool>, dragIndicatorVisible: Swift.Bool = false, onDismiss: SwiftUI.Binding<(() -> Swift.Void)?>, @SwiftUI.ViewBuilder content: @escaping () -> SheetContent) -> some SwiftUI.View where SheetContent : SwiftUI.View
+  public func dynamicBottomSheet<SheetContent>(isPresented: SwiftUI.Binding<Swift.Bool>, dragIndicatorVisible: Swift.Bool = false, onDismiss: SwiftUI.Binding<(() -> Swift.Void)?>, backgroundColor: SwiftUI.Binding<SwiftUI.Color> = .constant(.white), @SwiftUI.ViewBuilder content: @escaping () -> SheetContent) -> some SwiftUI.View where SheetContent : SwiftUI.View
   
 }
 public struct NotificationButtonStyle : SwiftUI.ButtonStyle {

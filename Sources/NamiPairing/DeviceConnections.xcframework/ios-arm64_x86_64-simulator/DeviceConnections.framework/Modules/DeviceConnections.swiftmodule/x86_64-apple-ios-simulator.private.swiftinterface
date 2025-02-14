@@ -828,8 +828,8 @@ public enum I18n {
   public static let kitExplanationFirstKitPlaceDevicesOnFirstFloor: Swift.String
   public static let kitExplanationNonFirstKitBssProvidesAdditionalSecurity: Swift.String
   public static let kitExplanationNonFirstKitHmsMonitorAdditionalAreas: Swift.String
-  public static let kitTrackerPluralDeviceLeft: Swift.String
-  public static let kitTrackerPluralDevicesAdded: Swift.String
+  public static func kitTrackerPluralDeviceLeft(_ p1: Swift.Int) -> Swift.String
+  public static func kitTrackerPluralDevicesAdded(_ p1: Swift.Int) -> Swift.String
   public static let letsAddDeviceDismissScreen: Swift.String
   public static let lostAccessPopupMessageMultiplePlaces: Swift.String
   public static let lostAccessPopupMessageSinglePlace: Swift.String
@@ -1052,6 +1052,8 @@ public enum I18n {
   public static let placeCreationSizeHeader: Swift.String
   public static func placeCreationZoneDefaultNameMultipleFloor(_ p1: Any) -> Swift.String
   public static let placeCreationZoneDefaultNameSingleFloor: Swift.String
+  public static func placeDetailDoorSensorOpenAlert(_ p1: Swift.Int) -> Swift.String
+  public static func placeDetailDoorSensorOpenAlertIos(_ p1: Swift.Int) -> Swift.String
   public static func placeDetailFormatDisconnectedDeviceInOneZoneAndroid(_ p1: Swift.Int) -> Swift.String
   public static func placeDetailNumberOfZone(_ p1: Swift.Int) -> Swift.String
   public static let placeDetailSystemNotReadyToSecure: Swift.String
@@ -1093,7 +1095,8 @@ public enum I18n {
   public static let placeDetailsStayModeNotAvailableDescription: Swift.String
   public static let placeDetailsSystemNotReadyToSecureDescription: Swift.String
   public static let placeDetailsYesProceed: Swift.String
-  public static func placeDetailsZoneInMode(_ p1: Any, _ p2: Any) -> Swift.String
+  public static func placeDetailsZoneInMode(_ p1: Swift.Int) -> Swift.String
+  public static func placeDetailsZonesInModeAndroid(_ p1: Swift.Int) -> Swift.String
   public static let placeEventDateFilter: Swift.String
   public static let placeEventToday: Swift.String
   public static let placeEventYesterday: Swift.String
@@ -1121,6 +1124,8 @@ public enum I18n {
   public static let placeModeAlertDialogStayModeWarningConfirm: Swift.String
   public static let placeModeAlertDialogStayModeWarningMessage: Swift.String
   public static let placeModeAlertDialogStayModeWarningTitle: Swift.String
+  public static func placeModeDoorSensorOfflineAlert(_ p1: Swift.Int) -> Swift.String
+  public static func placeModeDoorSensorOfflineAlertIos(_ p1: Swift.Int) -> Swift.String
   public static func placeModeWidgetAlarmIntrusionSince(_ p1: Any) -> Swift.String
   public static let placeModeWidgetConfigureSelectPlace: Swift.String
   public static let placeModeWidgetConfigureTitle: Swift.String
@@ -1182,7 +1187,7 @@ public enum I18n {
   public static let placeSettingsEngine: Swift.String
   public static let placeSettingsEngineDoesNotSupportSensitivity: Swift.String
   public static let placeSettingsLeavePlaceButton: Swift.String
-  public static let placeSettingsManageDevices: Swift.String
+  public static func placeSettingsManageDevices(_ p1: Swift.Int) -> Swift.String
   public static let placeSettingsMotion: Swift.String
   public static let placeSettingsPlaceSettings: Swift.String
   public static let placeSettingsSectionGeneral: Swift.String
@@ -1222,7 +1227,6 @@ public enum I18n {
   public static let planDevicePlacementGuide5Imperial: Swift.String
   public static let planDevicePlacementGuide5Metric: Swift.String
   public static let planDevicePlacementTitle: Swift.String
-  public static let profileAbout: Swift.String
   public static let profileAccount: Swift.String
   public static let profileAccountManagementAccountDeletionDescription: Swift.String
   public static let profileAccountManagementConfirmAccountDeletion: Swift.String
@@ -1234,6 +1238,8 @@ public enum I18n {
   public static let profileAuthentication: Swift.String
   public static let profileCopied: Swift.String
   public static let profileCopyRecoveryKey: Swift.String
+  public static let profileDeveloperModeAlertDescription: Swift.String
+  public static let profileDeveloperModeAlertTitle: Swift.String
   public static let profileDeveloperModeDeactivateAction: Swift.String
   public static let profileDeveloperModeDeactivateAlertDescription: Swift.String
   public static let profileDeveloperModeDeactivateAlertTitle: Swift.String
@@ -1630,27 +1636,6 @@ public enum I18n {
   public static let zoneSelectionNonThreadBorderRouterZoneExplain: Swift.String
   public static let zoneSelectionTitle: Swift.String
   public static let zoneSelectionZoneDeviceLimitationExplain: Swift.String
-  public enum CreatePlace {
-    public static func selectFloor(_ p1: Swift.Int) -> Swift.String
-  }
-  public enum General {
-    public static func zones(_ p1: Swift.Int) -> Swift.String
-  }
-  public enum PlaceDetails {
-    public static func proceedWithDegradedZones(_ p1: Swift.Int) -> Swift.String
-    public static func proceedWithDisabledZones(_ p1: Swift.Int) -> Swift.String
-  }
-  public enum PlaceOverview {
-    public static func disconnectedDevices(_ p1: Swift.Int, _ p2: Swift.Int) -> Swift.String
-  }
-  public enum PlaceSettings {
-    public static func devicesInZones(_ p1: Swift.Int, _ p2: Swift.Int) -> Swift.String
-    public static func manageDevices(_ p1: Swift.Int) -> Swift.String
-    public static func numberOfDevices(_ p1: Swift.Int) -> Swift.String
-  }
-  public enum PlaceTileView {
-    public static func disconnectedDevices(_ p1: Swift.Int, _ p2: Swift.Int) -> Swift.String
-  }
 }
 public enum NamiDeviceCapability : Swift.Equatable {
   case deviceInformation
@@ -1993,6 +1978,12 @@ public enum Log {
   public static func info(_ items: Any...)
   public static func warning(_ items: Any...)
   public static func `if`(_ condition: Swift.Bool = true, run: () -> Swift.Void)
+  public static func enableLogtoFile(enableLogtoFile: Swift.Bool)
+  public static func getLogFile() -> Foundation.URL?
+  public static func resetLogFile()
+  public static var isEnabledLogFile: Swift.Bool {
+    get
+  }
 }
 public enum ISO8601MsecDecoder {
   public static let defaultFormatter: Foundation.ISO8601DateFormatter
