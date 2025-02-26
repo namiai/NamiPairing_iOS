@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target arm64-apple-ios16 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name StandardPairingUI
+// swift-module-flags: -target arm64-apple-ios14.5 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name StandardPairingUI
 import ActivityKit
 import Combine
 import CoreGraphics
@@ -173,7 +173,6 @@ public protocol WordingProtocol {
   var pairingErrorDeserializationDescription: Swift.String { get }
   var pairingErrorEncryptionErrorDescription: Swift.String { get }
   var pairingErrorDeviceMismatchDescription: Swift.String { get }
-  var pairingErrorKitDeviceMismatchDescription: Swift.String { get }
   var pairingErrorConnectionTimeoutDescription: Swift.String { get }
   func pairingErrorBleDisconnectedDescription(deviceName: Swift.String) -> Swift.String
   var pairingErrorDeviceSecureSessionDescription: Swift.String { get }
@@ -548,9 +547,6 @@ extension StandardPairingUI.WordingProtocol {
     get
   }
   public var pairingErrorDeviceMismatchDescription: Swift.String {
-    get
-  }
-  public var pairingErrorKitDeviceMismatchDescription: Swift.String {
     get
   }
   public var pairingErrorConnectionTimeoutDescription: Swift.String {
@@ -1311,10 +1307,6 @@ public struct NamiTextHyperLinkLegacy : SwiftUI.View {
 }
 public enum NamiTextHyperLinkHelpers {
   public static func hyperLink(text: Swift.String, link: Swift.String, linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil) -> some SwiftUI.View
-  
-}
-extension SwiftUI.View {
-  public func dynamicBottomSheet<SheetContent>(isPresented: SwiftUI.Binding<Swift.Bool>, dragIndicatorVisible: Swift.Bool = false, onDismiss: SwiftUI.Binding<(() -> Swift.Void)?>, backgroundColor: SwiftUI.Binding<SwiftUI.Color> = .constant(.white), @SwiftUI.ViewBuilder content: @escaping () -> SheetContent) -> some SwiftUI.View where SheetContent : SwiftUI.View
   
 }
 public struct NotificationButtonStyle : SwiftUI.ButtonStyle {

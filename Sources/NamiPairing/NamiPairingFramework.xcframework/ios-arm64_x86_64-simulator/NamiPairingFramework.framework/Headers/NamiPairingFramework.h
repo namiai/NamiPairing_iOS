@@ -1,4 +1,9 @@
-// Copyright (c) nami.ai
+//
+//  NamiPairingFramework.h
+//  NamiPairingFramework
+//
+//  Created by Yachin Ilya on 17.05.2023.
+//
 
 #import <Foundation/Foundation.h>
 

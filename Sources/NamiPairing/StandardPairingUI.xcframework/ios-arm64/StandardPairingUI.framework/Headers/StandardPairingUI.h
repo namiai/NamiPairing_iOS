@@ -1,4 +1,9 @@
-// Copyright (c) nami.ai
+//
+//  StandardPairingUI.h
+//  StandardPairingUI
+//
+//  Created by Yachin Ilya on 12.06.2023.
+//
 
 #import <Foundation/Foundation.h>
 

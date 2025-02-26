@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target arm64-apple-ios16 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name DeviceConnections
+// swift-module-flags: -target arm64-apple-ios14.5 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name DeviceConnections
 import Combine
 import CryptoKit
 @_exported import DeviceConnections
@@ -160,7 +160,6 @@ public struct DevicesQuery : DeviceConnections.DevicesQueryProtocol {
 }
 final public class DeviceConnectionsAPI : DeviceConnections.DeviceConnectionsManagerWebAPIProtocol {
   public init(baseUrl: Foundation.URL, session: Foundation.URLSession, accessToken: DeviceConnections.AccessToken, refreshToken: DeviceConnections.TokenString)
-  final public var errorPublisher: Combine.PassthroughSubject<any Swift.Error, Swift.Never>
   final public func listDevices(query: any DeviceConnections.DevicesQueryProtocol) -> Combine.AnyPublisher<DeviceConnections.DevicesResponse, any Swift.Error>
   final public func sendDeviceCommandRequests(in placeId: DeviceConnections.PlaceID, uids: [DeviceConnections.DeviceUniversalID], messages: [Foundation.Data]) -> Combine.AnyPublisher<DeviceConnections.DevicesCommandResponse, any Swift.Error>
   final public func listPlaceKeys() -> Combine.AnyPublisher<[DeviceConnections.CloudPlaceKey], any Swift.Error>
@@ -205,7 +204,6 @@ public enum NetworkErrorCode : Swift.Equatable {
 }
 public enum AuthenticationError : Swift.Error {
   case loginRequired
-  case tokenExpired
   case unknown
   public static func == (a: DeviceConnections.AuthenticationError, b: DeviceConnections.AuthenticationError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -214,7 +212,6 @@ public enum AuthenticationError : Swift.Error {
   }
 }
 final public class InMemoryDeviceConnectionsStorage : DeviceConnections.DeviceConnectionsManagerStorageProtocol {
-  final public var errorPublisher: Combine.PassthroughSubject<any Swift.Error, Swift.Never>
   public init(api: DeviceConnections.DeviceConnectionsAPI)
   final public func placeIds() -> Combine.AnyPublisher<[DeviceConnections.PlaceID], Swift.Never>
   final public func placeKeys() -> Combine.AnyPublisher<[DeviceConnections.NamiPlaceKey], Swift.Never>
@@ -1726,16 +1723,6 @@ extension Foundation.Locale {
   public static let usMeasurementSystem: Swift.String
   public static let ukMeasurementSystem: Swift.String
 }
-public enum NamiAlertReason : Swift.String, Swift.Comparable, Swift.Codable {
-  case motion
-  case device
-  public static func < (lhs: DeviceConnections.NamiAlertReason, rhs: DeviceConnections.NamiAlertReason) -> Swift.Bool
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
 public enum KitCategory : Swift.String, Swift.CaseIterable {
   case bss
   case hms
@@ -1811,9 +1798,8 @@ public enum TimeZoneLoadingError : Swift.Error {
 }
 public struct TimeZoneLocation : Swift.Decodable, Swift.Hashable {
   public init(from decoder: any Swift.Decoder) throws
-  public init?(code: Swift.String?)
   public let countryCode: Swift.String
-  public let countryName: Swift.String?
+  public let countryName: Swift.String
   public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: DeviceConnections.TimeZoneLocation, b: DeviceConnections.TimeZoneLocation) -> Swift.Bool
   public var hashValue: Swift.Int {
@@ -1822,19 +1808,14 @@ public struct TimeZoneLocation : Swift.Decodable, Swift.Hashable {
 }
 public struct NamiTimeZone : Swift.Decodable, Swift.Hashable {
   public init(from decoder: any Swift.Decoder) throws
-  public init(id: Swift.String, city: Swift.String, location: DeviceConnections.TimeZoneLocation?, continent: Swift.String?, gmtOffset: Swift.String, aliases: [Swift.String])
   public let id: Swift.String
   public let city: Swift.String
   public let location: DeviceConnections.TimeZoneLocation?
-  public let continent: Swift.String?
   public let gmtOffset: Swift.String
-  public let aliases: [Swift.String]
   public var timeZone: Foundation.TimeZone {
     get
   }
   public static func == (lhs: DeviceConnections.NamiTimeZone, rhs: DeviceConnections.NamiTimeZone) -> Swift.Bool
-  public func displayName() -> Swift.String
-  public func displayNameWithGMT() -> Swift.String
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
@@ -1870,9 +1851,6 @@ public struct DeviceUniversalID : Swift.Equatable, Swift.Decodable, Swift.Hashab
   public init(_ number: Swift.UInt64)
   public init(from decoder: any Swift.Decoder) throws
   public var macFormatted: Swift.String {
-    get
-  }
-  public var uInt64Formatted: Swift.UInt64 {
     get
   }
   public static func == (a: DeviceConnections.DeviceUniversalID, b: DeviceConnections.DeviceUniversalID) -> Swift.Bool
@@ -1943,8 +1921,8 @@ public enum NamiDeviceType : Swift.CaseIterable {
 }
 public enum NamiAlertMode : Swift.Int, Swift.Comparable, Swift.Codable {
   case armed
-  case stay
-  case standby
+  case aware
+  case relaxed
   public static func < (lhs: DeviceConnections.NamiAlertMode, rhs: DeviceConnections.NamiAlertMode) -> Swift.Bool
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
@@ -2420,7 +2398,6 @@ extension DeviceConnections.CoAPConnections {
 public protocol DeviceConnectionsManagerWebAPIProtocol {
   associatedtype DeviceConnections_DevicesCommandResponse : DeviceConnections.DevicesCommandResponseProtocol
   associatedtype DeviceConnections_DevicesResponse : DeviceConnections.DevicesResponseProtocol
-  var errorPublisher: Combine.PassthroughSubject<any Swift.Error, Swift.Never> { get }
   func sendDeviceCommandRequests(in placeId: DeviceConnections.PlaceID, uids: [DeviceConnections.DeviceUniversalID], messages: [Foundation.Data]) -> Combine.AnyPublisher<Self.DeviceConnections_DevicesCommandResponse, any Swift.Error>
   func listDevices(query: any DeviceConnections.DevicesQueryProtocol) -> Combine.AnyPublisher<Self.DeviceConnections_DevicesResponse, any Swift.Error>
 }
@@ -2811,8 +2788,6 @@ extension DeviceConnections.NamiDeviceEndpoint.EndpointType.WritableCluster : Sw
 extension DeviceConnections.NamiDeviceEndpoint.EndpointType.WritableCluster : Swift.Hashable {}
 extension DeviceConnections.MeasurementSystem : Swift.Equatable {}
 extension DeviceConnections.MeasurementSystem : Swift.Hashable {}
-extension DeviceConnections.NamiAlertReason : Swift.Hashable {}
-extension DeviceConnections.NamiAlertReason : Swift.RawRepresentable {}
 extension DeviceConnections.KitCategory : Swift.Equatable {}
 extension DeviceConnections.KitCategory : Swift.Hashable {}
 extension DeviceConnections.KitCategory : Swift.RawRepresentable {}
