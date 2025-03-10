@@ -304,6 +304,8 @@ public enum I18n {
   public static let alarmReasonIntrusion: Swift.String
   public static let alarmReportAlarmDisarmed: Swift.String
   public static let alarmReportAlarmTriggered: Swift.String
+  public static func alarmReportDeviceClosed(_ p1: Any) -> Swift.String
+  public static func alarmReportDeviceOpened(_ p1: Any) -> Swift.String
   public static let alarmReportDuration: Swift.String
   public static func alarmReportEventStartEndTime(_ p1: Any, _ p2: Any) -> Swift.String
   public static let alarmReportFalse: Swift.String
@@ -745,6 +747,8 @@ public enum I18n {
   public static let generalAt: Swift.String
   public static let generalCamera: Swift.String
   public static let generalCancel: Swift.String
+  public static let generalConnectionLost: Swift.String
+  public static let generalConnectionLostExplanation: Swift.String
   public static let generalDelete: Swift.String
   public static let generalDone: Swift.String
   public static let generalError: Swift.String
@@ -788,7 +792,7 @@ public enum I18n {
   public static let intrusionLiveReportDoorClosed: Swift.String
   public static let intrusionLiveReportDoorOpened: Swift.String
   public static let intrusionLiveReportMotion: Swift.String
-  public static let intrusionLiveViewNoActivitySinceIntrusionBega: Swift.String
+  public static let intrusionLiveViewNoActivitySinceIntrusionBegan: Swift.String
   public static let invitationDetailAcceptButton: Swift.String
   public static let invitationDetailAgreementDetails: Swift.String
   public static let invitationDetailCancelButton: Swift.String
@@ -884,6 +888,7 @@ public enum I18n {
   public static func motionNowTileNumberOfActiveZones(_ p1: Any) -> Swift.String
   public static let motionNowTileToViewMotionNow: Swift.String
   public static let motionNowTitle: Swift.String
+  public static let msgSessionExpired: Swift.String
   public static func muliplePlacesIntrusionInManyPlaces(_ p1: Swift.Int) -> Swift.String
   public static func muliplePlacesIntrusionInOnePlace(_ p1: Any) -> Swift.String
   public static let newInviteGenerateInviteButton: Swift.String
@@ -944,6 +949,13 @@ public enum I18n {
   public static func pairingEnterWifiPasswordHeader(_ p1: Any) -> Swift.String
   public static let pairingEnterWifiPasswordPasswordEntryFieldHint: Swift.String
   public static let pairingEnterWifiPasswordPasswordPlaceholder: Swift.String
+  public static let pairingErrorAllBorderRouterOffline: Swift.String
+  public static func pairingErrorAllBorderRouterOfflineDescription(_ p1: Any) -> Swift.String
+  public static func pairingErrorAllBorderRouterOfflineDeviceInZone(_ p1: Any, _ p2: Any) -> Swift.String
+  public static let pairingErrorMobilePhoneIsNotConnectedToWifi: Swift.String
+  public static let pairingErrorMobilePhoneIsNotConnectedToWifiDescription: Swift.String
+  public static let pairingErrorNoThreadBorderRouterInPlace: Swift.String
+  public static let pairingErrorNoThreadBorderRouterInPlaceDescription: Swift.String
   public static let pairingErrorsActionIgnore: Swift.String
   public static let pairingErrorsActionRestart: Swift.String
   public static let pairingErrorsActionRestartSetup: Swift.String
@@ -1570,6 +1582,7 @@ public enum I18n {
   public static func userDetailsRemoveUserAlertMessage(_ p1: Any, _ p2: Any) -> Swift.String
   public static let userDetailsRemoveUserAlertTitle: Swift.String
   public static let userDetailsSaveChangesButton: Swift.String
+  public static let userRoleAdministrator: Swift.String
   public static let welcomePagePolicy: Swift.String
   public static let widarCancelPopupBackToPositioningButton: Swift.String
   public static let widarCancelPopupCancelButton: Swift.String
