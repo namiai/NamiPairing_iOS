@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target x86_64-apple-ios14.5-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name StandardPairingUI
+// swift-module-flags: -target x86_64-apple-ios16-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name StandardPairingUI
 import ActivityKit
 import Combine
 import CoreGraphics
@@ -49,6 +49,12 @@ public class WordingManager : Foundation.ObservableObject {
   public func updatePairingTitle(to newTitle: Swift.String)
   public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @objc deinit
+}
+extension SwiftUI.EnvironmentValues {
+  public var wordingManager: StandardPairingUI.WordingManager {
+    get
+    set
+  }
 }
 public protocol WordingProtocol {
   var ok: Swift.String { get }
@@ -173,6 +179,7 @@ public protocol WordingProtocol {
   var pairingErrorDeserializationDescription: Swift.String { get }
   var pairingErrorEncryptionErrorDescription: Swift.String { get }
   var pairingErrorDeviceMismatchDescription: Swift.String { get }
+  var pairingErrorKitDeviceMismatchDescription: Swift.String { get }
   var pairingErrorConnectionTimeoutDescription: Swift.String { get }
   func pairingErrorBleDisconnectedDescription(deviceName: Swift.String) -> Swift.String
   var pairingErrorDeviceSecureSessionDescription: Swift.String { get }
@@ -549,6 +556,9 @@ extension StandardPairingUI.WordingProtocol {
   public var pairingErrorDeviceMismatchDescription: Swift.String {
     get
   }
+  public var pairingErrorKitDeviceMismatchDescription: Swift.String {
+    get
+  }
   public var pairingErrorConnectionTimeoutDescription: Swift.String {
     get
   }
@@ -643,6 +653,12 @@ public class ThemeManager : Foundation.ObservableObject {
   public func setTheme(_ theme: any StandardPairingUI.ThemeProtocol)
   public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @objc deinit
+}
+extension SwiftUI.EnvironmentValues {
+  public var themeManager: StandardPairingUI.ThemeManager {
+    get
+    set
+  }
 }
 extension SwiftUI.View {
   public func namiNavBar() -> some SwiftUI.View
@@ -826,8 +842,8 @@ public struct AnimationView : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI20OtherWiFiNetworkViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct FinishingSetupView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(title: Swift.String? = nil)
+public struct FinishingSetupView : SwiftUI.View {
+  public init(title: Swift.String? = nil)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -840,8 +856,8 @@ public struct AnimationView : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI0B15ErrorScreenViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct EnableCameraInSettingsView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(deviceType: Swift.String? = nil)
+public struct EnableCameraInSettingsView : SwiftUI.View {
+  public init(deviceType: Swift.String? = nil)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -854,8 +870,8 @@ public struct AnimationView : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI20ListWiFiNetworksViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct SetupTopNavigationBar<LeadingGroup, TrailingGroup, NotificationArea, Subviews> : SwiftUI.View where LeadingGroup : SwiftUI.View, TrailingGroup : SwiftUI.View, NotificationArea : SwiftUI.View, Subviews : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(title: Swift.String?, largeTitle: Swift.String?, color: SwiftUI.Color, statusbarColorOverride: SwiftUI.Color = .clear, navbarBackgroundBleed: CoreFoundation.CGFloat = 0, @SwiftUI.ViewBuilder leadingButtonGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUI.ViewBuilder trailingButtonGroup: @escaping () -> TrailingGroup = { EmptyView() }, @SwiftUI.ViewBuilder notificationAreaView: @escaping () -> NotificationArea = { EmptyView() }, @SwiftUI.ViewBuilder additionalViews: @escaping () -> Subviews = { EmptyView() })
+public struct SetupTopNavigationBar<LeadingGroup, TrailingGroup, NotificationArea, Subviews> : SwiftUI.View where LeadingGroup : SwiftUI.View, TrailingGroup : SwiftUI.View, NotificationArea : SwiftUI.View, Subviews : SwiftUI.View {
+  public init(title: Swift.String?, largeTitle: Swift.String?, color: SwiftUI.Color, statusbarColorOverride: SwiftUI.Color = .clear, navbarBackgroundBleed: CoreFoundation.CGFloat = 0, @SwiftUI.ViewBuilder leadingButtonGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUI.ViewBuilder trailingButtonGroup: @escaping () -> TrailingGroup = { EmptyView() }, @SwiftUI.ViewBuilder notificationAreaView: @escaping () -> NotificationArea = { EmptyView() }, @SwiftUI.ViewBuilder additionalViews: @escaping () -> Subviews = { EmptyView() })
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -867,14 +883,14 @@ public struct PongView : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI8PongViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct DeviceSetupScreen<LeadingGroup, Subview, BottomGroup> : SwiftUI.View where LeadingGroup : SwiftUI.View, Subview : SwiftUI.View, BottomGroup : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(title: Swift.String, @SwiftUI.ViewBuilder subview: @escaping () -> Subview, @SwiftUI.ViewBuilder leadingButtonsGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUI.ViewBuilder bottomButtonsGroup: @escaping () -> BottomGroup = { EmptyView() })
+public struct DeviceSetupScreen<LeadingGroup, Subview, BottomGroup> : SwiftUI.View where LeadingGroup : SwiftUI.View, Subview : SwiftUI.View, BottomGroup : SwiftUI.View {
+  public init(title: Swift.String, @SwiftUI.ViewBuilder subview: @escaping () -> Subview, @SwiftUI.ViewBuilder leadingButtonsGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUI.ViewBuilder bottomButtonsGroup: @escaping () -> BottomGroup = { EmptyView() })
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17DeviceSetupScreenV4bodyQrvp", 0) __<LeadingGroup, Subview, BottomGroup>
 }
-@_Concurrency.MainActor(unsafe) public struct SetupScreenTitleTextView : SwiftUI.View {
+public struct SetupScreenTitleTextView : SwiftUI.View {
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -1307,6 +1323,10 @@ public struct NamiTextHyperLinkLegacy : SwiftUI.View {
 }
 public enum NamiTextHyperLinkHelpers {
   public static func hyperLink(text: Swift.String, link: Swift.String, linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil) -> some SwiftUI.View
+  
+}
+extension SwiftUI.View {
+  public func dynamicBottomSheet<SheetContent>(isPresented: SwiftUI.Binding<Swift.Bool>, dragIndicatorVisible: Swift.Bool = false, onDismiss: SwiftUI.Binding<(() -> Swift.Void)?>, backgroundColor: SwiftUI.Binding<SwiftUI.Color> = .constant(.white), @SwiftUI.ViewBuilder content: @escaping () -> SheetContent) -> some SwiftUI.View where SheetContent : SwiftUI.View
   
 }
 public struct NotificationButtonStyle : SwiftUI.ButtonStyle {
