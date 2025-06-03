@@ -169,6 +169,10 @@
 "automation_modes" = "Modes";
 "automation_msg_empty_automation" = "Set a schedule to activate modes automatically";
 "automation_new_automation" = "New automation";
+"automation_no_automation_available_yet" = "No automations available yet";
+"automation_no_permission_to_make_change_dialog_description" = "Contact an Administrator for assistance.";
+"automation_no_permission_to_make_change_dialog_got_it" = "Got it";
+"automation_no_permission_to_make_change_dialog_title" = "You do not have permission to make changes";
 "automation_no_zones_available" = "No zones available";
 "automation_no_zones_selected" = "No zones selected";
 "automation_repeat_on" = "Repeat on";
@@ -331,10 +335,10 @@
 
 /*Button text for adding a new place on the main dashboard (when there are no places).*/
 "dashboard_add_new_place" = "Add place";
-"dashboard_format_disconnected_device_in_multiple_zone_android" = "%d devices with issues in multiple zones";
+"dashboard_format_disconnected_device_in_multiple_zone_android" = "%d offline devices in multiple zones";
 
 /*plurals*/
-"dashboard_format_disconnected_device_in_one_zone_android" = "%d device with issues in one zone";
+"dashboard_format_disconnected_device_in_one_zone_android" = "%d offline device(s) in one zone";
 "dashboard_format_issue_in_a_place" = "Attention required in %@";
 "dashboard_format_issue_in_multiple_place" = "Attention required in %d places";
 "dashboard_place_tile_current_status" = "Current status";
@@ -345,7 +349,7 @@
 "dashboard_place_tile_not_available" = "Not available";
 
 /*pair more device in place detail for old place without property info*/
-"dashboard_place_tile_pair_more" = "Add another device to start securing your place";
+"dashboard_place_tile_pair_more" = "Add another activity sensor to enable Wi-Fi motion sensing";
 
 /*pair more device in place detail for old place without property info*/
 "dashboard_place_tile_pair_one_more" = "Add devices to start securing your place";
@@ -440,6 +444,9 @@
 
 /*Device editing screen title.*/
 "device_edit_title" = "Edit device";
+
+/*Aerial Motion V1*/
+"device_engines_aerial_motion_v1" = "Aerial Motion V1";
 
 /*Device engines: motion engine*/
 "device_engines_motion" = "Motion engine";
@@ -648,7 +655,7 @@
 "device_placement_remaining_devices_setup_step_2_metric" = "Ensure device is at most 10 m from your Wi-Fi access point";
 
 /*device placement: remaining devices setup title*/
-"device_placement_remaining_devices_setup_step_3" = "Do not stack devices or use the same power strip";
+"device_placement_remaining_devices_setup_step_3" = "Avoid placing device directly behind furniture or electronics";
 
 /*device placement: remaining devices setup title*/
 "device_placement_remaining_devices_setup_step_4" = "Do not place devices on different floors";
@@ -738,10 +745,10 @@
 "edit_room_category" = "Type";
 
 /*Edit room: delete button text*/
-"edit_room_delete_button" = "Delete room";
+"edit_room_delete_button" = "Delete this room";
 "edit_room_delete_failed" = "Failed to delete room: %@";
 "edit_room_delete_zone_failed" = "Failed to delete zone: %@";
-"edit_room_deletion_delete_room_alert_message" = "Are you sure you want to delete this room?";
+"edit_room_deletion_delete_room_alert_message" = "All data and devices in this room will be removed.";
 "edit_room_deletion_delete_zone_alert_message" = "All data and devices in this zone will be removed.";
 
 /*Edit room: title*/
@@ -811,6 +818,9 @@
 
 /*Engine settinge: title*/
 "engine_settings_title" = "Engine";
+
+/*Fuzzy*/
+"error_insufficient_permission_action_can_not_be_completed" = "Action cannot be completed due to insufficient permissions.";
 "error_no_internet_connection" = "No internet connection";
 
 /*Errors*/
@@ -828,6 +838,7 @@
 Connection error provided with [underlying error description] from the system.*/
 /*Fuzzy*/
 "errors_network_error_connection_error" = "Connection to the server failed. %@";
+"errors_network_error_forbidden" = "Action cannot be completed due to insufficient permissions.";
 "errors_network_error_invalid_parameters" = "The network request contains invalid parameters (Code %@).";
 "errors_network_error_not_found" = "The server could not find the requested URL (Code %@).";
 "errors_network_error_server_error" = "The server could not process the network request (Code %@).";
@@ -1010,8 +1021,8 @@ Connection error provided with [underlying error description] from the system.*/
 "invite_details_confirm_revoke_button" = "Revoke";
 
 /*Invite details expiration [time]*/
-"invite_details_invite_expiration_text" = "Expires at %@";
-"invite_details_invite_expiration_text_android" = "Expires at %@";
+"invite_details_invite_expiration_text" = "Expires on %@";
+"invite_details_invite_expiration_text_android" = "Expires on %@";
 
 /*Invite details expired*/
 "invite_details_invite_expired" = "Expired";
@@ -1028,6 +1039,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Revoke alert title*/
 "invite_details_revoke_alert_title" = "Revoke invite";
+"invite_details_revoke_invitation_title" = "Revoke invite for “%@”?";
 "join_place_camera_permission_guide" = "scan QR code invitation!";
 "join_place_invalid_invite" = "The invite is invalid.";
 
@@ -1038,6 +1050,7 @@ Connection error provided with [underlying error description] from the system.*/
 "join_place_invite_found" = "Invite found!";
 "join_place_role_guide" = "You will be able to access all devices and settings, manage people, see activity and events happening in the place, and receive notification about them.";
 "join_place_role_guide_admin" = "control devices, remove people, see what happens, and receive notification about them.";
+"join_place_role_user_guide" = "You will be able to edit security modes, view devices and events happening in the place, and receive notifications about them.";
 
 /*Join place: scan again*/
 "join_place_scan_again" = "The invitation QR code is either invalid or expired. Please verify and try again.";
@@ -1063,7 +1076,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Motion history: active time*/
 "motion_history_active_time" = "Total motion time";
-"motion_history_device_issue" = "Device issue";
+"motion_history_device_issue" = "No data";
 
 /*Motion history: duration*/
 "motion_history_duration" = "Duration";
@@ -1073,10 +1086,10 @@ Connection error provided with [underlying error description] from the system.*/
 "motion_history_format_minute" = "%d min";
 "motion_history_format_second" = "%d second";
 "motion_history_intensity" = "Intensity";
-"motion_history_monitor_was_degraded_due_to_device_issue" = "Monitoring was degraded due to device issues.";
-"motion_history_monitor_was_degraded_in_zones_with_device_issue" = "Monitoring was degraded in zones with device issues.";
-"motion_history_monitor_was_disabled_due_to_device_issue" = "Monitoring was disabled due to device issues.";
-"motion_history_monitor_was_disabled_in_zones_with_device_issue" = "Monitoring was disabled in zones with device issues.";
+"motion_history_monitor_was_degraded_due_to_device_issue" = "Reduced coverage: Motion sensing was active, but the area covered was smaller than usual.";
+"motion_history_monitor_was_degraded_in_zones_with_device_issue" = "Reduced coverage: Motion sensing was active, but the area covered was smaller than usual.";
+"motion_history_monitor_was_disabled_due_to_device_issue" = "No coverage: Motion sensing was not available.";
+"motion_history_monitor_was_disabled_in_zones_with_device_issue" = "No coverage: Motion sensing was not available.";
 
 /*Motion history: motion*/
 "motion_history_motion" = "Motion";
@@ -1100,11 +1113,11 @@ Connection error provided with [underlying error description] from the system.*/
 "motion_history_today" = "Today";
 
 /*Motion now: connect to same wifi network*/
-"motion_now_connect_to_wifi" = "Connect to the Wi-Fi network that the zones are using to view live motion";
+"motion_now_connect_to_wifi" = "Connect to the Wi-Fi network of your devices and ensure they are powered on";
 
 /*Motion now: connect to same wifi network as zone*/
-"motion_now_connect_to_wifi_as_zone" = "Connect to the Wi-Fi network that this zone is using to view live motion";
-"motion_now_connect_to_wifi_your_device_using" = "Connect to the Wi-Fi network that your zones are using, then wait for local communication";
+"motion_now_connect_to_wifi_as_zone" = "Connect to the Wi-Fi network of your devices and ensure they are powered on";
+"motion_now_connect_to_wifi_your_device_using" = "Connect to the Wi-Fi network of your devices and ensure they are powered on";
 "motion_now_explanation_description_1" = "The motion now graph displays the intensity of real-time motion detected, without any filtering.";
 "motion_now_explanation_description_2" = "You may notice differences when comparing it to the motion history graph, which shows motion activity filtered based on your sensitivity settings.";
 "motion_now_explanation_got_it" = "Got it";
@@ -1137,7 +1150,7 @@ Connection error provided with [underlying error description] from the system.*/
 "motion_now_thirty_secs_ago" = "30s ago";
 
 /*Motion now tile: connect to same wifi network*/
-"motion_now_tile_connect_to_wifi" = "Connect to the Wi-Fi network that your devices are using to view live motion";
+"motion_now_tile_connect_to_wifi" = "Connect to the Wi-Fi network of your devices and ensure they are powered on";
 
 /*Motion now tile: more*/
 "motion_now_tile_more" = "More";
@@ -1167,10 +1180,13 @@ Connection error provided with [underlying error description] from the system.*/
 "new_invite_generate_invite_button" = "Generate invite";
 
 /*New invite generation screen: Invite description*/
+/*Fuzzy*/
+"new_invite_invite_admin_description" = "Administrators can manage devices, settings and people. They can also view and receive notifications about events in the place.";
 "new_invite_invite_description" = "Administrators can manage devices, settings and people. They can also view and receive notifications about events in the place.";
 
 /*New invite generation screen: Navbar title*/
 "new_invite_invite_title" = "Share access";
+"new_invite_invite_user_description" = "Users can edit security modes, view devices and events happening in the place, and receive notifications about them.";
 
 /*New invite generation screen: Invitee name placeholder*/
 "new_invite_invitee_name_placeholder" = "Invitee name";
@@ -1258,8 +1274,8 @@ Connection error provided with [underlying error description] from the system.*/
 /*Pairing, Enter Wi-Fi password: placeholder for the password field.*/
 "pairing_enter_wifi_password_password_placeholder" = "Password";
 "pairing_error_all_border_router_offline" = "All Thread border router(s) in your place are offline";
-"pairing_error_all_border_router_offline_description" = "Connect one of these device(s) to power and try again: %@";
-"pairing_error_all_border_router_offline_device_in_zone" = "%1$@'s %2$@.";
+"pairing_error_all_border_router_offline_description" = "Connect one of these device(s) to power and try again: %@.";
+"pairing_error_all_border_router_offline_device_in_zone" = "%1$@'s %2$@";
 "pairing_error_mobile_phone_is_not_connected_to_wifi" = "Your mobile phone is not connected to the Wi-Fi network";
 "pairing_error_mobile_phone_is_not_connected_to_wifi_description" = "Ensure your mobile phone is connected to your place’s Wi-Fi network before trying to set up again.";
 "pairing_error_no_thread_border_router_in_place" = "No Thread Border Router in your place";
@@ -1421,7 +1437,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_creation_size_header" = "What is your floor area?";
 "place_creation_zone_default_name_multiple_floor" = "%@ floor";
 "place_creation_zone_default_name_single_floor" = "Sensing zone 1";
-"place_detail_format_disconnected_device_in_one_zone_android" = "%d device with issues in one zone. Tap to check on your device.";
+"place_detail_format_disconnected_device_in_one_zone_android" = "%d offline device(s) in one zone. Tap to view devices.";
 "place_detail_number_of_zone" = "%d zone";
 "place_detail_system_not_ready_to_secure" = "System is not ready to secure";
 "place_detail_timezone" = "Time zone";
@@ -1434,7 +1450,7 @@ Connection error provided with [underlying error description] from the system.*/
 /*Fuzzy*/
 "place_details_dashboard" = "Dashboard";
 "place_details_events" = "Events";
-"place_details_format_disconnected_device_in_multiple_zone_android" = "%d devices with issues in multiple zones. Tap to check on your devices.";
+"place_details_format_disconnected_device_in_multiple_zone_android" = "%d offline devices in multiple zones. Tap to view devices.";
 "place_details_get_help" = "Get help";
 "place_details_graph" = "Graph";
 "place_details_member_pending_expiry_time" = "Invite expires in %@";
@@ -1569,6 +1585,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place Overview: motion section title*/
 "place_overview_motion" = "Motion";
+"place_overview_no_devices_has_been_added" = "No devices have been added yet";
 
 /*Place Overview: pair a kit to unlock motion sensing*/
 "place_overview_pair_kit_unlock_motion_sensing" = "Add devices to start securing your place";
@@ -1581,7 +1598,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place Overview: zones section title*/
 "place_overview_zones" = "Zones";
-"place_pair_one_more_device_to_unlock_the_motion_sensing" = "Add another device to start securing your place";
+"place_pair_one_more_device_to_unlock_the_motion_sensing" = "Add another activity sensor to enable Wi-Fi motion sensing";
 "place_people_invite_title" = "Invite people";
 "place_pets" = "Pets";
 "place_pets_big_pets" = "Big pets";
@@ -1632,6 +1649,8 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: sensitivity engine not supported*/
 "place_settings_engine_does_not_support_sensitivity" = "Unavailable for motion engine";
+"place_settings_last_admin_leave_dialog_description" = "You're the last Administrator in %@. To leave, please assign another User as the Administrator to manage this place.";
+"place_settings_last_admin_leave_dialog_title" = "Assign a new Administrator before leaving";
 
 /*Place settings: leave place*/
 "place_settings_leave_place_button" = "Leave place";
@@ -1673,7 +1692,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_settings_zones_description_android" = "in %d zone";
 
 /*Invite people button*/
-"place_users_invitation_invite_people" = "Share access";
+"place_users_invitation_invite_people" = "Invite people";
 
 /*Invite people button tile description on reaching the [max number] of users in place*/
 "place_users_invitation_users_limit_reached" = "For now, the number of users per place is limited to %@.";
@@ -1704,6 +1723,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place Category*/
 "places_category_work" = "Work";
+"plan_device_placement_avoid_placement_near_electronic" = "Avoid placement near electronic appliances or large metal objects";
 "plan_device_placement_guide_1_imperial" = "Identify 2 power sockets on the same floor 10-30ft apart";
 "plan_device_placement_guide_1_metric" = "Identify 2 power sockets on the same floor 3-10m apart ";
 "plan_device_placement_guide_2_imperial" = "One socket to be within 30ft of both your front door and Wi-Fi access point";
@@ -1741,6 +1761,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*User profile: title for the inactive button when the key has just been copied.*/
 "profile_copied" = "Copied!";
+"profile_copied_to_clipboard" = "Copied to clipboard";
 
 /*User profile: title for the button to copy the recovery key.*/
 "profile_copy_recovery_key" = "Copy recovery key";
@@ -1873,8 +1894,8 @@ Connection error provided with [underlying error description] from the system.*/
 "rooms_category_store_room" = "Storeroom";
 "rooms_category_unknown" = "Unknown";
 "security_mode_add_more_zone_to_show_zone_settings" = "Your place has only 1 zone. To customize security modes per zone, you can add more zones with devices.";
-"security_mode_degraded_zone" = "Degraded: Monitoring coverage is reduced";
-"security_mode_disabled_zone" = "Disabled: Monitoring is not working";
+"security_mode_degraded_zone" = "Reduced coverage: motion sensing is active, but the area covered is smaller than usual.";
+"security_mode_disabled_zone" = "No coverage: motion sensing is not available.";
 "security_mode_discard" = "Discard";
 "security_mode_discard_changes" = "Discard unsaved changes?";
 "security_mode_discard_changes_description" = "If you proceed, you will lose all unsaved changes.";
@@ -2040,7 +2061,7 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 "setup_a_kit_how_to_place_device_guide_content1_first_paired_device" = "Choose the Wi-Fi access point most central in the area you want to cover";
 "setup_a_kit_how_to_place_device_guide_content2_first_paired_device_imperial" = "Place the first device at most 30 ft away from your selected access point";
 "setup_a_kit_how_to_place_device_guide_content2_first_paired_device_metric" = "Place the first device at most 10 m away from your selected access point";
-"setup_a_kit_how_to_place_device_guide_content3_non_first_paired_device" = "Do not stack devices or use the same power strip";
+"setup_a_kit_how_to_place_device_guide_content3_non_first_paired_device" = "Avoid placing device directly behind furniture or electronics";
 "setup_a_kit_how_to_place_device_guide_first_device" = "How to place first device";
 "setup_a_kit_how_to_place_device_guide_first_device_in_zone" = "First device in this zone";
 "setup_a_kit_how_to_place_device_guide_non_first_device" = "Remaining devices setup";
@@ -2079,11 +2100,12 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 "setup_kit_security_mode_select_security_mode_for_place" = "Select a security mode for your place";
 "setup_kit_security_mode_what_is_security_mode" = "What are security modes?";
 "setup_kit_security_mode_you_can_change_later" = "You can change this security mode later";
-"setup_kit_test_system_complete_test" = "Complete Test";
+"setup_kit_test_system_complete_test" = "Complete test";
 "setup_kit_test_system_door_sensor_description" = "Open the door and the icon on the right should change to an open door.";
 "setup_kit_test_system_door_sensor_faq" = "The icon is not changing";
 "setup_kit_test_system_motion_sensing_description" = "Move around the area monitored by the activity sensors, then stop moving. Check the graph below for the change.";
 "setup_kit_test_system_motion_sensing_faq" = "Motion sensing is not working";
+"setup_kit_test_system_preparing_device" = "Preparing device...";
 "setup_kit_test_system_siren" = "Siren";
 "setup_kit_test_system_siren_description" = "Tap on ‘Sound siren’ to check that the siren is working.";
 "setup_kit_test_system_siren_faq" = "I don’t hear the siren";
@@ -2378,7 +2400,10 @@ Update Wifi: select a zone to update - number of devices*/
 
 /*Button to save changes applied to user (e.g. user role)*/
 "user_details_save_changes_button" = "Save";
+"user_remove_user_description" = "This action cannot be undone.";
+"user_remove_user_title" = "Remove “%@”?";
 "user_role_administrator" = "Administrator";
+"user_role_user" = "User";
 "welcome_page_policy" = "By continuing, you agree to our Terms of Service\nand acknowledge that you have read our Privacy Policy.";
 "widar_cancel_popup_back_to_positioning_button" = "Back to positioning";
 "widar_cancel_popup_cancel_button" = "Yes, cancel";

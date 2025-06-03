@@ -168,6 +168,10 @@
 "automation_modes" = "";
 "automation_msg_empty_automation" = "";
 "automation_new_automation" = "";
+"automation_no_automation_available_yet" = "";
+"automation_no_permission_to_make_change_dialog_description" = "";
+"automation_no_permission_to_make_change_dialog_got_it" = "";
+"automation_no_permission_to_make_change_dialog_title" = "";
 "automation_no_zones_available" = "";
 "automation_no_zones_selected" = "";
 "automation_repeat_on" = "";
@@ -439,6 +443,9 @@
 
 /*Device editing screen title.*/
 "device_edit_title" = "";
+
+/*Aerial Motion V1*/
+"device_engines_aerial_motion_v1" = "";
 
 /*Device engines: motion engine*/
 "device_engines_motion" = "";
@@ -810,6 +817,7 @@
 
 /*Engine settinge: title*/
 "engine_settings_title" = "";
+"error_insufficient_permission_action_can_not_be_completed" = "";
 "error_no_internet_connection" = "";
 
 /*Errors*/
@@ -826,6 +834,7 @@
 /*Error shown when connection to the cloud failed
 Connection error provided with [underlying error description] from the system.*/
 "errors_network_error_connection_error" = "";
+"errors_network_error_forbidden" = "Akci nelze dokončit kvůli nedostatečným oprávněním.";
 "errors_network_error_invalid_parameters" = "";
 "errors_network_error_not_found" = "";
 "errors_network_error_server_error" = "";
@@ -1022,6 +1031,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Revoke alert title*/
 "invite_details_revoke_alert_title" = "";
+"invite_details_revoke_invitation_title" = "";
 "join_place_camera_permission_guide" = "";
 "join_place_invalid_invite" = "";
 
@@ -1032,6 +1042,7 @@ Connection error provided with [underlying error description] from the system.*/
 "join_place_invite_found" = "";
 "join_place_role_guide" = "";
 "join_place_role_guide_admin" = "";
+"join_place_role_user_guide" = "";
 
 /*Join place: scan again*/
 "join_place_scan_again" = "";
@@ -1161,10 +1172,12 @@ Connection error provided with [underlying error description] from the system.*/
 "new_invite_generate_invite_button" = "";
 
 /*New invite generation screen: Invite description*/
+"new_invite_invite_admin_description" = "";
 "new_invite_invite_description" = "";
 
 /*New invite generation screen: Navbar title*/
 "new_invite_invite_title" = "";
+"new_invite_invite_user_description" = "";
 
 /*New invite generation screen: Invitee name placeholder*/
 "new_invite_invitee_name_placeholder" = "";
@@ -1542,6 +1555,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place Overview: motion section title*/
 "place_overview_motion" = "";
+"place_overview_no_devices_has_been_added" = "";
 
 /*Place Overview: pair a kit to unlock motion sensing*/
 "place_overview_pair_kit_unlock_motion_sensing" = "";
@@ -1605,6 +1619,8 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: sensitivity engine not supported*/
 "place_settings_engine_does_not_support_sensitivity" = "";
+"place_settings_last_admin_leave_dialog_description" = "";
+"place_settings_last_admin_leave_dialog_title" = "";
 
 /*Place settings: leave place*/
 "place_settings_leave_place_button" = "";
@@ -1677,6 +1693,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place Category*/
 "places_category_work" = "";
+"plan_device_placement_avoid_placement_near_electronic" = "Vyhněte se umístění v blízkosti elektronických zařízení nebo velkých kovových předmětů";
 "plan_device_placement_guide_1_imperial" = "";
 "plan_device_placement_guide_1_metric" = "";
 "plan_device_placement_guide_2_imperial" = "";
@@ -1714,6 +1731,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*User profile: title for the inactive button when the key has just been copied.*/
 "profile_copied" = "";
+"profile_copied_to_clipboard" = "";
 
 /*User profile: title for the button to copy the recovery key.*/
 "profile_copy_recovery_key" = "";
@@ -2047,6 +2065,7 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 "setup_kit_test_system_door_sensor_faq" = "The icon is not changing";
 "setup_kit_test_system_motion_sensing_description" = "Move around the area monitored by the activity sensors, then stop moving. Check the graph below for the change.";
 "setup_kit_test_system_motion_sensing_faq" = "Motion sensing is not working";
+"setup_kit_test_system_preparing_device" = "";
 "setup_kit_test_system_siren" = "Siren";
 "setup_kit_test_system_siren_description" = "Tap on ‘Sound siren’ to check that the siren is working.";
 "setup_kit_test_system_siren_faq" = "I don’t hear the siren";
@@ -2341,7 +2360,10 @@ Update Wifi: select a zone to update - number of devices*/
 
 /*Button to save changes applied to user (e.g. user role)*/
 "user_details_save_changes_button" = "";
+"user_remove_user_description" = "";
+"user_remove_user_title" = "";
 "user_role_administrator" = "";
+"user_role_user" = "Uživatel";
 "welcome_page_policy" = "Pokračováním souhlasíte s našimi Podmínkami služby a potvrzujete, že jste si přečetli naše Zásady ochrany osobních údajů.";
 "widar_cancel_popup_back_to_positioning_button" = "";
 "widar_cancel_popup_cancel_button" = "";

@@ -128,7 +128,7 @@
 
 /*Alert report: zones affected*/
 "alarm_report_zones_affected" = "影響を受ける地域";
-"app_name" = "";
+"app_name" = "nami Lookout24";
 
 /*app_widget*/
 "app_widget_description_medium" = "あなたの場所のセキュリティモードに素早くアクセス";
@@ -169,6 +169,10 @@
 "automation_modes" = "モード";
 "automation_msg_empty_automation" = "モードを自動的にアクティブにするスケジュールを設定する";
 "automation_new_automation" = "新しい自動化";
+"automation_no_automation_available_yet" = "自動化はまだ利用できません";
+"automation_no_permission_to_make_change_dialog_description" = "サポートが必要な場合は管理者にお問い合わせください。";
+"automation_no_permission_to_make_change_dialog_got_it" = "わかった";
+"automation_no_permission_to_make_change_dialog_title" = "変更する権限がありません";
 "automation_no_zones_available" = "利用可能なゾーンはありません";
 "automation_no_zones_selected" = "ゾーンが選択されていません";
 "automation_repeat_on" = "繰り返し";
@@ -441,6 +445,9 @@
 /*Device editing screen title.*/
 "device_edit_title" = "デバイスを編集";
 
+/*Aerial Motion V1*/
+"device_engines_aerial_motion_v1" = "Aerial Motion V1";
+
 /*Device engines: motion engine*/
 "device_engines_motion" = "モーションエンジン";
 
@@ -676,7 +683,7 @@
 "device_setup_activity_sensors" = "アクティビティセンサー";
 "device_setup_alarm_pod" = "アラームポッド";
 "device_setup_contact_sensor" = "ドアセンサー";
-"device_setup_motion_sensor" = "";
+"device_setup_motion_sensor" = "Motion Sensor";
 "device_setup_others" = "その他";
 "device_setup_security_pod" = "セキュリティポッド";
 "device_setup_sense_plug" = "センスプラグ";
@@ -811,6 +818,9 @@
 
 /*Engine settinge: title*/
 "engine_settings_title" = "エンジン";
+
+/*Fuzzy*/
+"error_insufficient_permission_action_can_not_be_completed" = "権限が不十分なため、アクションを完了できません。";
 "error_no_internet_connection" = "インターネット接続なし";
 
 /*Errors*/
@@ -827,6 +837,7 @@
 /*Error shown when connection to the cloud failed
 Connection error provided with [underlying error description] from the system.*/
 "errors_network_error_connection_error" = "サーバーへの接続に失敗しました。%@";
+"errors_network_error_forbidden" = "権限が不十分なため、アクションを完了できません。";
 "errors_network_error_invalid_parameters" = "ネットワーク要求に無効なパラメータが含まれています (コード %@)。";
 "errors_network_error_not_found" = "サーバーは要求された URL (コード %@) を見つけることができませんでした。";
 "errors_network_error_server_error" = "サーバーはネットワーク要求を処理できませんでした (コード %@)。";
@@ -1025,6 +1036,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Revoke alert title*/
 "invite_details_revoke_alert_title" = "招待を取り消す";
+"invite_details_revoke_invitation_title" = "“%@” への招待を取り消しますか？";
 "join_place_camera_permission_guide" = "QRコード招待状をスキャンしてください！";
 "join_place_invalid_invite" = "招待は無効です。";
 
@@ -1035,6 +1047,7 @@ Connection error provided with [underlying error description] from the system.*/
 "join_place_invite_found" = "招待状が見つかりました!";
 "join_place_role_guide" = "すべてのデバイスと設定にアクセスし、人々を管理し、その場所で起こっているアクティビティやイベントを確認し、それらに関する通知を受け取ることができます。";
 "join_place_role_guide_admin" = "デバイスを制御し、人を削除し、何が起こるかを確認し、それらに関する通知を受け取ります。";
+"join_place_role_user_guide" = "セキュリティ モードを編集したり、その場所で発生しているデバイスやイベントを表示したり、それらに関する通知を受け取ったりできるようになります。";
 
 /*Join place: scan again*/
 "join_place_scan_again" = "招待 QR コードが無効または期限切れです。確認してもう一度お試しください。";
@@ -1164,10 +1177,13 @@ Connection error provided with [underlying error description] from the system.*/
 "new_invite_generate_invite_button" = "招待状を生成する";
 
 /*New invite generation screen: Invite description*/
+/*Fuzzy*/
+"new_invite_invite_admin_description" = "管理者はデバイス、設定、ユーザーを管理できます。また、その場所でのイベントに関する通知を表示したり受信したりすることもできます。";
 "new_invite_invite_description" = "管理者はデバイス、設定、ユーザーを管理できます。また、その場所でのイベントに関する通知を表示したり受信したりすることもできます。";
 
 /*New invite generation screen: Navbar title*/
 "new_invite_invite_title" = "共有アクセス";
+"new_invite_invite_user_description" = "ユーザーは、セキュリティモードの編集、デバイスや場所で発生しているイベントの確認、それらに関する通知の受信ができます。";
 
 /*New invite generation screen: Invitee name placeholder*/
 "new_invite_invitee_name_placeholder" = "招待者名";
@@ -1249,13 +1265,13 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Pairing, Enter Wi-Fi password: placeholder for the password field.*/
 "pairing_enter_wifi_password_password_placeholder" = "パスワード";
-"pairing_error_all_border_router_offline" = "";
-"pairing_error_all_border_router_offline_description" = "";
-"pairing_error_all_border_router_offline_device_in_zone" = "";
-"pairing_error_mobile_phone_is_not_connected_to_wifi" = "";
-"pairing_error_mobile_phone_is_not_connected_to_wifi_description" = "";
-"pairing_error_no_thread_border_router_in_place" = "";
-"pairing_error_no_thread_border_router_in_place_description" = "";
+"pairing_error_all_border_router_offline" = "あなたの場所にあるスレッドボーダールーターはすべてオフラインです。";
+"pairing_error_all_border_router_offline_description" = "次のデバイスのいずれかを電源に接続して、もう一度お試しください: %@.";
+"pairing_error_all_border_router_offline_device_in_zone" = "%1$@の%2$@";
+"pairing_error_mobile_phone_is_not_connected_to_wifi" = "携帯電話がWi-Fiネットワークに接続されていません";
+"pairing_error_mobile_phone_is_not_connected_to_wifi_description" = "再度設定を試みる前に、携帯電話がご自分の場所の Wi-Fi ネットワークに接続されていることを確認してください。";
+"pairing_error_no_thread_border_router_in_place" = "あなたの場所にスレッドボーダールーターはありません";
+"pairing_error_no_thread_border_router_in_place_description" = "すべてのデバイスを削除して再度設定してください。";
 
 /*Pairing, Error handling: title for action button to ignore the current error.*/
 "pairing_errors_action_ignore" = "無視して続行";
@@ -1545,6 +1561,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place Overview: motion section title*/
 "place_overview_motion" = "モーション";
+"place_overview_no_devices_has_been_added" = "まだデバイスが追加されていません";
 
 /*Place Overview: pair a kit to unlock motion sensing*/
 "place_overview_pair_kit_unlock_motion_sensing" = "デバイスを追加して場所のセキュリティを確保しましょう";
@@ -1608,6 +1625,8 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: sensitivity engine not supported*/
 "place_settings_engine_does_not_support_sensitivity" = "モーションエンジンでは利用できません";
+"place_settings_last_admin_leave_dialog_description" = "あなたは %@ の最後の管理者です。退出するには、他のユーザーを管理者に設定して、この場所を管理できるようにしてください。";
+"place_settings_last_admin_leave_dialog_title" = "退職前に新しい管理者を割り当てる";
 
 /*Place settings: leave place*/
 "place_settings_leave_place_button" = "場所を離れる";
@@ -1680,6 +1699,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place Category*/
 "places_category_work" = "仕事";
+"plan_device_placement_avoid_placement_near_electronic" = "電子機器や大きな金属物の近くに置かないでください";
 "plan_device_placement_guide_1_imperial" = "同じフロアにある10〜30フィート離れた2つの電源ソケットを特定する";
 "plan_device_placement_guide_1_metric" = "同じフロアにある3〜10m離れた2つの電源ソケットを特定する ";
 "plan_device_placement_guide_2_imperial" = "玄関とWi-Fiアクセスポイントの両方から30フィート以内に1つのソケットを設置する";
@@ -1717,6 +1737,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*User profile: title for the inactive button when the key has just been copied.*/
 "profile_copied" = "コピーしました！";
+"profile_copied_to_clipboard" = "クリップボードにコピーされました";
 
 /*User profile: title for the button to copy the recovery key.*/
 "profile_copy_recovery_key" = "回復キーをコピーする";
@@ -2050,6 +2071,7 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 "setup_kit_test_system_door_sensor_faq" = "アイコンは変化しない";
 "setup_kit_test_system_motion_sensing_description" = "アクティビティセンサーで監視されているエリア内を移動し、移動を止めます。変化については下のグラフを確認してください。";
 "setup_kit_test_system_motion_sensing_faq" = "モーションセンサーが機能していません";
+"setup_kit_test_system_preparing_device" = "デバイスを準備しています...";
 "setup_kit_test_system_siren" = "サイレン";
 "setup_kit_test_system_siren_description" = "「サイレンを鳴らす」をタップして、サイレンが作動していることを確認します。";
 "setup_kit_test_system_siren_faq" = "サイレンが聞こえない";
@@ -2344,7 +2366,10 @@ Update Wifi: select a zone to update - number of devices*/
 
 /*Button to save changes applied to user (e.g. user role)*/
 "user_details_save_changes_button" = "保存";
+"user_remove_user_description" = "この操作は元に戻せません。";
+"user_remove_user_title" = "“%@” を削除しますか？";
 "user_role_administrator" = "管理者";
+"user_role_user" = "ユーザー";
 "welcome_page_policy" = "続行すると、当社の利用規約に同意し、当社のプライバシーポリシーを読んだことを認めることになります。";
 "widar_cancel_popup_back_to_positioning_button" = "ポジショニングに戻る";
 "widar_cancel_popup_cancel_button" = "はい、キャンセルします";

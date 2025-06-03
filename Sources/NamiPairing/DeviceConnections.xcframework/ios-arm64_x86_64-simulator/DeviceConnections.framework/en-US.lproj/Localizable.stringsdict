@@ -13,9 +13,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>%d device with issues in one zone</string>
+			<string>%d offline device in one zone</string>
 			<key>other</key>
-			<string>%d devices with issues in one zone</string>
+			<string>%d offline devices in one zone</string>
 		</dict>
 	</dict>
 	<key>kit_tracker_plural_device_left</key>
@@ -157,9 +157,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>%d device with issues in one zone. Tap to check on your device.</string>
+			<string>%d offline device in one zone. Tap to check on your device.</string>
 			<key>other</key>
-			<string>%d devices with issues in one zone. Tap to check on your devices.</string>
+			<string>%d offline devices in one zone. Tap to check on your devices.</string>
 		</dict>
 	</dict>
 	<key>place_detail_number_of_zone</key>

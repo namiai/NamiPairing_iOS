@@ -346,6 +346,10 @@ public enum I18n {
   public static let automationModes: Swift.String
   public static let automationMsgEmptyAutomation: Swift.String
   public static let automationNewAutomation: Swift.String
+  public static let automationNoAutomationAvailableYet: Swift.String
+  public static let automationNoPermissionToMakeChangeDialogDescription: Swift.String
+  public static let automationNoPermissionToMakeChangeDialogGotIt: Swift.String
+  public static let automationNoPermissionToMakeChangeDialogTitle: Swift.String
   public static let automationNoZonesAvailable: Swift.String
   public static let automationNoZonesSelected: Swift.String
   public static let automationRepeatOn: Swift.String
@@ -493,6 +497,7 @@ public enum I18n {
   public static func deviceDetailsLoadDataFailed(_ p1: Any) -> Swift.String
   public static let deviceEditDeviceNamePlaceholder: Swift.String
   public static let deviceEditTitle: Swift.String
+  public static let deviceEnginesAerialMotionV1: Swift.String
   public static let deviceEnginesMotion: Swift.String
   public static let deviceEnginesSecurity: Swift.String
   public static let deviceEnginesUnknown: Swift.String
@@ -686,6 +691,7 @@ public enum I18n {
   public static let engineSettingsSecurityEngine: Swift.String
   public static let engineSettingsSecurityEngineDescription: Swift.String
   public static let engineSettingsTitle: Swift.String
+  public static let errorInsufficientPermissionActionCanNotBeCompleted: Swift.String
   public static let errorNoInternetConnection: Swift.String
   public static let errorsAuthenticationLoginRequired: Swift.String
   public static let errorsAuthenticationTitle: Swift.String
@@ -697,6 +703,7 @@ public enum I18n {
   public static let errorsMoveDeviceErrorTitle: Swift.String
   public static func errorsNetworkErrorConflict(_ p1: Any) -> Swift.String
   public static func errorsNetworkErrorConnectionError(_ p1: Any) -> Swift.String
+  public static let errorsNetworkErrorForbidden: Swift.String
   public static func errorsNetworkErrorInvalidParameters(_ p1: Any) -> Swift.String
   public static func errorsNetworkErrorNotFound(_ p1: Any) -> Swift.String
   public static func errorsNetworkErrorServerError(_ p1: Any) -> Swift.String
@@ -821,12 +828,14 @@ public enum I18n {
   public static func inviteDetailsInviteTitleAndroid(_ p1: Any) -> Swift.String
   public static func inviteDetailsRevokeAlertMessage(_ p1: Any) -> Swift.String
   public static let inviteDetailsRevokeAlertTitle: Swift.String
+  public static func inviteDetailsRevokeInvitationTitle(_ p1: Any) -> Swift.String
   public static let joinPlaceCameraPermissionGuide: Swift.String
   public static let joinPlaceInvalidInvite: Swift.String
   public static let joinPlaceInvalidQrCode: Swift.String
   public static let joinPlaceInviteFound: Swift.String
   public static let joinPlaceRoleGuide: Swift.String
   public static let joinPlaceRoleGuideAdmin: Swift.String
+  public static let joinPlaceRoleUserGuide: Swift.String
   public static let joinPlaceScanAgain: Swift.String
   public static let joinPlaceScanInviteQr: Swift.String
   public static let kitExplanationFirstKitDesignedToHelpSecureYourPlace: Swift.String
@@ -896,8 +905,10 @@ public enum I18n {
   public static func muliplePlacesIntrusionInManyPlaces(_ p1: Swift.Int) -> Swift.String
   public static func muliplePlacesIntrusionInOnePlace(_ p1: Any) -> Swift.String
   public static let newInviteGenerateInviteButton: Swift.String
+  public static let newInviteInviteAdminDescription: Swift.String
   public static let newInviteInviteDescription: Swift.String
   public static let newInviteInviteTitle: Swift.String
+  public static let newInviteInviteUserDescription: Swift.String
   public static let newInviteInviteeNamePlaceholder: Swift.String
   public static let newInviteInviteeNameTitle: Swift.String
   public static let notificationGoToSettings: Swift.String
@@ -1156,6 +1167,7 @@ public enum I18n {
   public static func placeOverviewIntrusionDetectionStartTime(_ p1: Any) -> Swift.String
   public static let placeOverviewIntrusionDetectionTitle: Swift.String
   public static let placeOverviewMotion: Swift.String
+  public static let placeOverviewNoDevicesHasBeenAdded: Swift.String
   public static let placeOverviewPairKitUnlockMotionSensing: Swift.String
   public static let placeOverviewPairingRequestAddDeviceButton: Swift.String
   public static let placeOverviewPairingRequestSetupAKit: Swift.String
@@ -1199,6 +1211,8 @@ public enum I18n {
   public static let placeSettingsEditPlaceDescription: Swift.String
   public static let placeSettingsEngine: Swift.String
   public static let placeSettingsEngineDoesNotSupportSensitivity: Swift.String
+  public static func placeSettingsLastAdminLeaveDialogDescription(_ p1: Any) -> Swift.String
+  public static let placeSettingsLastAdminLeaveDialogTitle: Swift.String
   public static let placeSettingsLeavePlaceButton: Swift.String
   public static func placeSettingsManageDevices(_ p1: Swift.Int) -> Swift.String
   public static let placeSettingsMotion: Swift.String
@@ -1229,6 +1243,7 @@ public enum I18n {
   public static let placesCategoryTownhouse: Swift.String
   public static let placesCategoryUnknown: Swift.String
   public static let placesCategoryWork: Swift.String
+  public static let planDevicePlacementAvoidPlacementNearElectronic: Swift.String
   public static let planDevicePlacementGuide1Imperial: Swift.String
   public static let planDevicePlacementGuide1Metric: Swift.String
   public static let planDevicePlacementGuide2Imperial: Swift.String
@@ -1250,6 +1265,7 @@ public enum I18n {
   public static let profileAppVersion: Swift.String
   public static let profileAuthentication: Swift.String
   public static let profileCopied: Swift.String
+  public static let profileCopiedToClipboard: Swift.String
   public static let profileCopyRecoveryKey: Swift.String
   public static let profileDeveloperModeAlertDescription: Swift.String
   public static let profileDeveloperModeAlertTitle: Swift.String
@@ -1447,6 +1463,7 @@ public enum I18n {
   public static let setupKitTestSystemDoorSensorFaq: Swift.String
   public static let setupKitTestSystemMotionSensingDescription: Swift.String
   public static let setupKitTestSystemMotionSensingFaq: Swift.String
+  public static let setupKitTestSystemPreparingDevice: Swift.String
   public static let setupKitTestSystemSiren: Swift.String
   public static let setupKitTestSystemSirenDescription: Swift.String
   public static let setupKitTestSystemSirenFaq: Swift.String
@@ -1586,7 +1603,10 @@ public enum I18n {
   public static func userDetailsRemoveUserAlertMessage(_ p1: Any, _ p2: Any) -> Swift.String
   public static let userDetailsRemoveUserAlertTitle: Swift.String
   public static let userDetailsSaveChangesButton: Swift.String
+  public static let userRemoveUserDescription: Swift.String
+  public static func userRemoveUserTitle(_ p1: Any) -> Swift.String
   public static let userRoleAdministrator: Swift.String
+  public static let userRoleUser: Swift.String
   public static let welcomePagePolicy: Swift.String
   public static let widarCancelPopupBackToPositioningButton: Swift.String
   public static let widarCancelPopupCancelButton: Swift.String
@@ -1945,6 +1965,9 @@ public enum NamiDeviceType : Swift.CaseIterable {
   public static var allSensorDevices: [DeviceConnections.NamiDeviceType] {
     get
   }
+  public static var allThreadDevices: [DeviceConnections.NamiDeviceType] {
+    get
+  }
   public static var allAccessoryDevices: [DeviceConnections.NamiDeviceType] {
     get
   }
@@ -2053,6 +2076,7 @@ public protocol DeviceConnectionsManagerProtocol {
   func removeFromCloudObserved(placeId: DeviceConnections.PlaceID)
   func sendControlMessage(_ controlMessage: any DeviceConnections.ControlMessage, for capability: DeviceConnections.NamiDeviceCapability, uid: DeviceConnections.DeviceUniversalID, in placeId: DeviceConnections.PlaceID) -> Combine.AnyPublisher<DeviceConnections.NamiDeviceControlResponse, any Swift.Error>
   func deviceStateRequest(to device: DeviceConnections.DeviceUniversalID, connectedIn placeId: DeviceConnections.PlaceID) -> Combine.AnyPublisher<DeviceConnections.StateMessage, any Swift.Error>
+  func threadCredentialsRequest(to device: DeviceConnections.DeviceUniversalID, connectedIn placeId: DeviceConnections.PlaceID) -> Combine.AnyPublisher<DeviceConnections.ThreadCredentialsMessage, any Swift.Error>
 }
 public class DeviceConnectionsManager<Storage, API> : DeviceConnections.DeviceConnectionsManagerProtocol where Storage : DeviceConnections.DeviceConnectionsManagerStorageProtocol, API : DeviceConnections.DeviceConnectionsManagerWebAPIProtocol {
   public init(storage: Storage, bonjourPublisher: DeviceConnections.BonjourPublisher, api: API, coapInitializer: @escaping ([any DeviceConnections.PlaceKeyProtocol]) -> any DeviceConnections.CoAPConnectionsProtocol = CoAPConnections.init)
@@ -2063,6 +2087,7 @@ public class DeviceConnectionsManager<Storage, API> : DeviceConnections.DeviceCo
   final public let publisher: Combine.PassthroughSubject<DeviceConnections.NamiDeviceObservation, Swift.Never>
   public func sendControlMessage(_ controlMessage: any DeviceConnections.ControlMessage, for capability: DeviceConnections.NamiDeviceCapability, uid: DeviceConnections.DeviceUniversalID, in placeId: DeviceConnections.PlaceID) -> Combine.AnyPublisher<DeviceConnections.NamiDeviceControlResponse, any Swift.Error>
   public func deviceStateRequest(to deviceUid: DeviceConnections.DeviceUniversalID, connectedIn placeId: DeviceConnections.PlaceID) -> Combine.AnyPublisher<DeviceConnections.StateMessage, any Swift.Error>
+  public func threadCredentialsRequest(to deviceUid: DeviceConnections.DeviceUniversalID, connectedIn placeId: DeviceConnections.PlaceID) -> Combine.AnyPublisher<DeviceConnections.ThreadCredentialsMessage, any Swift.Error>
   public func addToCloudObserved(placeId: DeviceConnections.PlaceID)
   public func removeFromCloudObserved(placeId: DeviceConnections.PlaceID)
 }
@@ -2121,6 +2146,15 @@ public struct DevkitLEDControlMessage : DeviceConnections.ControlMessage {
 }
 public struct WiDarControlMessage : DeviceConnections.ControlMessage {
   public init(isPositioning: Swift.Bool)
+}
+public struct ThreadCredentialsMessage : Swift.Equatable {
+  public var panID: Swift.UInt32
+  public var extendedPanID: Swift.UInt64
+  public var networkName: Swift.String
+  public var channel: Swift.UInt32
+  public var borderAgentID: Foundation.Data
+  public var operationalDataset: Foundation.Data
+  public static func == (a: DeviceConnections.ThreadCredentialsMessage, b: DeviceConnections.ThreadCredentialsMessage) -> Swift.Bool
 }
 public struct StateMessage {
   public struct EndpointState {
@@ -2754,6 +2788,7 @@ public enum SCAllowedRoute : Swift.UInt {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class SCMessage : ObjectiveC.NSObject {
+  public static let kCoapErrorDomain: Swift.String
   public var code: DeviceConnections.SCCodeValue
   public var type: DeviceConnections.SCType
   public var payload: Foundation.Data?

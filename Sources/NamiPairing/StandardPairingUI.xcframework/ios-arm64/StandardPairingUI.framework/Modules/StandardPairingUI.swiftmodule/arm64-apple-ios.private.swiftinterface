@@ -193,10 +193,12 @@ public protocol WordingProtocol {
   var pairingErrorDeviceUnknownUnrecognizedDescription: Swift.String { get }
   var pairingThreadErrorDatasetMissingTitle: Swift.String { get }
   var pairingThreadErrorThreadNetworkNotFoundTitle: Swift.String { get }
+  var pairingErrorMobilePhoneIsNotConnectedToWifi: Swift.String { get }
   var pairingThreadErrorDatasetMissingDescription: Swift.String { get }
   func pairingThreadErrorContactSensorNoThreadNetworksFoundDescription1(zoneName: Swift.String) -> Swift.String
   var pairingThreadErrorContactSensorNoThreadNetworksFoundDescription2: Swift.String { get }
   func pairingThreadErrorNoThreadNetworksFoundDescription(zoneName: Swift.String) -> Swift.String
+  var pairingErrorMobilePhoneIsNotConnectedToWifiDescription: Swift.String { get }
   var positioningErrorTitle: Swift.String { get }
   var deviceNotFoundMessage: Swift.String { get }
   var retryPositioningButton: Swift.String { get }
@@ -594,6 +596,9 @@ extension StandardPairingUI.WordingProtocol {
   public var pairingThreadErrorThreadNetworkNotFoundTitle: Swift.String {
     get
   }
+  public var pairingErrorMobilePhoneIsNotConnectedToWifi: Swift.String {
+    get
+  }
   public var pairingThreadErrorDatasetMissingDescription: Swift.String {
     get
   }
@@ -602,6 +607,9 @@ extension StandardPairingUI.WordingProtocol {
     get
   }
   public func pairingThreadErrorNoThreadNetworksFoundDescription(zoneName: Swift.String) -> Swift.String
+  public var pairingErrorMobilePhoneIsNotConnectedToWifiDescription: Swift.String {
+    get
+  }
   public var positioningErrorTitle: Swift.String {
     get
   }
@@ -967,9 +975,12 @@ public class Colors {
     public let whiteDisabled: SwiftUI.Color
     public let background: SwiftUI.Color
     public let line: SwiftUI.Color
+    public let shadow: SwiftUI.Color
   }
   public struct Text {
     public let disabledText: SwiftUI.Color
+    public let dangerPrimary: SwiftUI.Color
+    public let dangerContrast: SwiftUI.Color
   }
   public struct Graph {
     public let noData: SwiftUI.Color
@@ -1010,7 +1021,9 @@ public class Colors {
   final public let redAlert4: SwiftUI.Color
   final public let success3: SwiftUI.Color
   final public let success4: SwiftUI.Color
+  final public let snackbarBackground: SwiftUI.Color
   final public let neutral: StandardPairingUI.Colors.Neutral
+  final public let text: StandardPairingUI.Colors.Text
   final public let graph: StandardPairingUI.Colors.Graph
   public var globalBlue: SwiftUI.Color {
     get
@@ -1210,7 +1223,7 @@ public enum NamiTextFieldStyle {
   }
 }
 public struct NamiTextField : SwiftUI.View {
-  public init(placeholder: Swift.String, text: SwiftUI.Binding<Swift.String>, isEditing: SwiftUI.Binding<Swift.Bool>? = nil, returnKeyType: UIKit.UIReturnKeyType = .default, textFieldFont: SwiftUI.Font? = nil, subTextFont: SwiftUI.Font? = nil, textColor: SwiftUI.Color? = nil)
+  public init(placeholder: Swift.String, text: SwiftUI.Binding<Swift.String>, isEditing: SwiftUI.Binding<Swift.Bool>? = nil, returnKeyType: UIKit.UIReturnKeyType = .default, textFieldFont: SwiftUI.Font? = nil, subTextFont: SwiftUI.Font? = nil, textColor: SwiftUI.Color? = nil, maxLength: Swift.Int? = nil)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -1243,7 +1256,7 @@ public struct NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, 
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NamiTopNavigationScreenV4bodyQrvp", 0) __<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent>
 }
 public enum ContentBehavior {
-  case scrollable(onScroll: (CoreFoundation.CGFloat) -> Swift.Void, scrollDisabled: SwiftUI.Binding<Swift.Bool>? = nil)
+  case scrollable(onScroll: (CoreFoundation.CGFloat) -> Swift.Void, scrollDisabled: SwiftUI.Binding<Swift.Bool>? = nil, scrollHeight: SwiftUI.Binding<CoreFoundation.CGFloat>? = nil)
   case fixed
   public static var scrollable: StandardPairingUI.ContentBehavior {
     get

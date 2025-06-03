@@ -9,6 +9,7 @@ import CryptoKit
 import DeviceConnections
 import Foundation
 @_exported import NamiPairingFramework
+import Network
 import Swift
 import SwiftUI
 import UIKit
@@ -205,8 +206,11 @@ public struct PlaceZone : NamiPairingFramework.PlaceZoneProtocol, Swift.Decodabl
   public typealias ID = NamiPairingFramework.PlaceZoneID
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct Room : Swift.Codable, Swift.Equatable, Swift.Identifiable {
+public struct Room : NamiPairingFramework.PlaceRoomProtocol, Swift.Codable, Swift.Equatable, Swift.Identifiable {
   public var id: NamiPairingFramework.RoomID
+  public var externalId: Swift.String
+  public var name: Swift.String
+  public var placeId: NamiPairingFramework.PlaceID
   public static func == (a: NamiPairingFramework.Room, b: NamiPairingFramework.Room) -> Swift.Bool
   public typealias ID = NamiPairingFramework.RoomID
   public func encode(to encoder: any Swift.Encoder) throws
@@ -258,6 +262,9 @@ public class NamiPairing<Container> where Container : NamiPairingFramework.Pairi
   public var wifiStorage: any NamiPairingFramework.PairingWiFiStorageProtocol
   public var threadDatasetProvider: any NamiPairingFramework.PairingThreadOperationalDatasetProviderProtocol
   public var devicePairingState: Combine.PassthroughSubject<NamiPairingFramework.Tomonari<Container>.DevicePairingState, any Swift.Error> {
+    get
+  }
+  public var placeId: NamiPairingFramework.PlaceID {
     get
   }
   public init<WiFiStorage, SecureStorage>(sessionCode: Swift.String, wifiStorage: WiFiStorage = InMemoryWiFiStorage(), threadDatasetStore: SecureStorage.Type = InMemoryThreadDatasetStorage.self, developerParameters: NamiPairingFramework.DeveloperParameters = DeveloperParameters()) throws where WiFiStorage : NamiPairingFramework.PairingWiFiStorageProtocol, SecureStorage : NamiPairingFramework.ThreadSecureStorageProtocol
@@ -1183,6 +1190,7 @@ public enum Pairing {
   public enum ThreadError : Swift.Error, Swift.Equatable {
     case threadOperationalDatasetMissing
     case threadNetworkNotFound(zoneName: Swift.String, deviceType: DeviceConnections.NamiDeviceType)
+    case wifiIsDisconnected
     public static func == (a: NamiPairingFramework.Pairing.ThreadError, b: NamiPairingFramework.Pairing.ThreadError) -> Swift.Bool
   }
   public enum ActionOnError : Swift.Equatable {
@@ -1263,6 +1271,12 @@ public enum Pairing {
     case shouldStartScanForThreadNetwork
     case didStartScanForThreadNetwork
     case shouldSendThreadOperationalDataset(Foundation.Data)
+    case shouldStartThreadCredentialsRetrieval([NamiPairingFramework.DeviceUniversalID])
+    case shouldStartCheckThreadCommissioningConditions
+    case didStartCheckThreadCommissioningConditions
+    case didIssueThreadCredentialsRetrievalRequest
+    case gotThreadCredentials(DeviceConnections.ThreadCredentialsMessage)
+    case failedToRetreiveThreadCredentials(NamiPairingFramework.DeviceUniversalID)
     case didSentThreadOperationalDataset
     case shouldDismissItself
     case dismissalApproved(NamiPairingFramework.DeviceID?)
@@ -1273,7 +1287,6 @@ public enum Pairing {
     case gotAPIError(NamiPairingFramework.Pairing.Error)
     case gotPairingMachineError(NamiPairingFramework.PairingMachineError)
     case gotErrorAction(NamiPairingFramework.Pairing.Error, NamiPairingFramework.Pairing.ActionOnError)
-    case threadOperationalDatasetMissing
     case askTryRescanThreadNetworks
     case notSupportedDeviceTypeError(DeviceConnections.NamiDeviceType)
     case pairingCancelled(NamiPairingFramework.Pairing.PairingCancellationdReason)
@@ -1288,6 +1301,7 @@ public enum Pairing {
     case doneRenamingDevice
     case doneDeletingDevice
     case exitPairing
+    case updatedWifiReachability(Network.NWPath)
     public static func == (a: NamiPairingFramework.Pairing.Event, b: NamiPairingFramework.Pairing.Event) -> Swift.Bool
   }
   @_hasMissingDesignatedInitializers final public class ViewModel<Container> where Container : NamiPairingFramework.PairingStepsContainer {
@@ -1372,6 +1386,7 @@ public protocol PairingThreadOperationalDatasetProviderProtocol {
   func newRandomDataset(networkName: Swift.String?) -> Self.Pairing_NamiThreadOperationalDataset
   func retrieve(placeId: NamiPairingFramework.PlaceID) -> Self.Pairing_NamiThreadOperationalDataset?
   func removeDataset(for placeId: NamiPairingFramework.PlaceID)
+  func storeDataset(_ dataset: Foundation.Data, for placeId: NamiPairingFramework.PlaceID)
   func storeDataset(_ dataset: Self.Pairing_NamiThreadOperationalDataset, for placeId: NamiPairingFramework.PlaceID)
 }
 public protocol PairingNamiThreadOperationalDatasetProtocol : Swift.Decodable, Swift.Encodable {
@@ -1455,6 +1470,12 @@ public protocol PlaceZoneProtocol : Swift.Equatable {
   var externalId: Swift.String { get }
   var name: Swift.String { get }
 }
+public protocol PlaceRoomProtocol : Swift.Equatable {
+  var id: NamiPairingFramework.RoomID { get }
+  var externalId: Swift.String { get }
+  var placeId: NamiPairingFramework.PlaceID { get }
+  var name: Swift.String { get }
+}
 public protocol PlaceProtocol : Swift.Equatable {
   var id: NamiPairingFramework.PlaceID { get }
   var name: Swift.String { get }
@@ -1535,6 +1556,7 @@ final public class ThreadOperationalDatasetProvider<SecureStorage> where SecureS
   final public func newRandomDataset(networkName: Swift.String?) -> NamiPairingFramework.NamiThreadOperationalDataset
   final public func retrieve(placeId: NamiPairingFramework.PlaceID) -> NamiPairingFramework.NamiThreadOperationalDataset?
   final public func removeDataset(for placeId: NamiPairingFramework.PlaceID)
+  final public func storeDataset(_ dataset: Foundation.Data, for placeId: NamiPairingFramework.PlaceID)
   final public func storeDataset(_ dataset: NamiPairingFramework.NamiThreadOperationalDataset, for placeId: NamiPairingFramework.PlaceID)
   @objc deinit
 }

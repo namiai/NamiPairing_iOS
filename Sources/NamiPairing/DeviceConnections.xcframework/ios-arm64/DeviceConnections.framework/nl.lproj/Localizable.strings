@@ -5,15 +5,15 @@
 "account_linking_sign_in_error" = "Fout bij inloggen";
 "account_linking_sign_in_request_ip_time_browser" = "Verzoek om in te loggen%1$@ op %2$@%3$@%4$@.";
 "account_linking_sign_in_request_place_ip_time_browser_android" = "Verzoek om in te loggen%1$@ op %2$@%3$@%4$@.";
-"activity_event_ongoing" = "";
-"activity_motion" = "";
-"activity_motion_detected_in" = "";
-"activity_no_motion" = "";
-"activity_no_presence" = "";
-"activity_presence" = "";
-"activity_presence_detected_in" = "";
-"activity_title" = "";
-"activity_total_motion_time" = "";
+"activity_event_ongoing" = "Doorlopend";
+"activity_motion" = "Beweging";
+"activity_motion_detected_in" = "Beweging gedetecteerd in:";
+"activity_no_motion" = "Geen beweging";
+"activity_no_presence" = "Geen aanwezigheid";
+"activity_presence" = "Aanwezigheid";
+"activity_presence_detected_in" = "Aanwezigheid gedetecteerd in:";
+"activity_title" = "Activiteit";
+"activity_total_motion_time" = "Totale bewegingstijd";
 "alarm_detected_at_android" = "%@ gedetecteerd in %@";
 
 /*Disarm intrusion alarm*/
@@ -95,10 +95,10 @@
 "alarm_report_alarm_triggered" = "Alarm geactiveerd";
 
 /*To use in the intrusion report event tile "<Device name> closed"*/
-"alarm_report_device_closed" = "";
+"alarm_report_device_closed" = "%@ gesloten";
 
 /*To use in the intrusion report event tile: "<Device name> opened"*/
-"alarm_report_device_opened" = "";
+"alarm_report_device_opened" = "%@ geopend";
 
 /*Alert report: duration*/
 "alarm_report_duration" = "Totale duur";
@@ -108,7 +108,7 @@
 
 /*Report false alarm.*/
 "alarm_report_false" = "Raporteer vals alarm";
-"alarm_report_motion_started_in" = "";
+"alarm_report_motion_started_in" = "Beweging gestart in %@";
 
 /*Alert report: security log*/
 "alarm_report_security_log" = "Beveiligings logboek";
@@ -130,72 +130,76 @@
 "app_name" = "nami Lookout24";
 
 /*app_widget*/
-"app_widget_description_medium" = "";
+"app_widget_description_medium" = "Snelle toegang tot de beveiligingsmodus van uw locatie";
 
 /*app_widget*/
-"app_widget_description_small" = "";
+"app_widget_description_small" = "Bekijk de beveiligingsmodus van uw locatie";
 
 /*app_widget*/
-"app_widget_error_no_internet_connection" = "";
+"app_widget_error_no_internet_connection" = "Geen internetverbinding";
 
 /*app_widget*/
-"app_widget_label_medium" = "";
+"app_widget_label_medium" = "Plaatsmodusbediening";
 
 /*app_widget*/
-"app_widget_label_small" = "";
+"app_widget_label_small" = "Plaatsmodusweergave";
 
 /*app_widget*/
-"appwidget_default_placeName" = "";
+"appwidget_default_placeName" = "Santa Monica";
 
 /*app_widget*/
-"appwidget_error_text" = "";
+"appwidget_error_text" = "Er is iets fout gegaan!";
 "are_you_want_to_cancel_pairing_process" = "Weet je zeker dat je het koppelingsproces wilt stoppen?";
-"automation_at" = "";
-"automation_back" = "";
-"automation_change_mode_to" = "";
-"automation_conflict_automation_description" = "";
-"automation_conflict_automation_title" = "";
-"automation_create_automation" = "";
-"automation_delete_automation" = "";
-"automation_delete_automation_description" = "";
-"automation_edit_automation" = "";
-"automation_every_day" = "";
-"automation_every_weekday" = "";
-"automation_every_weekend" = "";
-"automation_for" = "";
-"automation_format_time_zone" = "";
-"automation_is_your_place_located_in_this_time_zone" = "";
-"automation_modes" = "";
-"automation_msg_empty_automation" = "";
-"automation_new_automation" = "";
-"automation_no_zones_available" = "";
-"automation_no_zones_selected" = "";
-"automation_repeat_on" = "";
-"automation_select_time" = "";
+"automation_at" = "Bij";
+"automation_back" = "Rug";
+"automation_change_mode_to" = "Wijzig de modus naar";
+"automation_conflict_automation_description" = "Er zijn conflicten met bestaande automatisering(en), zoals hieronder in het rood gemarkeerd:";
+"automation_conflict_automation_title" = "Automatisering kan niet worden opgeslagen";
+"automation_create_automation" = "Automatisering creëren";
+"automation_delete_automation" = "Automatisering verwijderen?";
+"automation_delete_automation_description" = "Deze actie kan niet ongedaan worden gemaakt.";
+"automation_edit_automation" = "Bewerkingsautomatisering";
+"automation_every_day" = "Alledaags";
+"automation_every_weekday" = "Elke weekdag";
+"automation_every_weekend" = "Elk weekend";
+"automation_for" = "Voor";
+"automation_format_time_zone" = "Datum en tijd zijn gebaseerd op %@";
+"automation_is_your_place_located_in_this_time_zone" = "Bevindt %@ zich in deze tijdzone?";
+"automation_modes" = "Modi";
+"automation_msg_empty_automation" = "Stel een schema in om modi automatisch te activeren";
+"automation_new_automation" = "Nieuwe automatisering";
+"automation_no_automation_available_yet" = "Er zijn nog geen automatiseringen beschikbaar";
+"automation_no_permission_to_make_change_dialog_description" = "Neem contact op met een Beheerder voor hulp.";
+"automation_no_permission_to_make_change_dialog_got_it" = "Ik heb het";
+"automation_no_permission_to_make_change_dialog_title" = "U heeft geen toestemming om wijzigingen aan te brengen";
+"automation_no_zones_available" = "Geen zones beschikbaar";
+"automation_no_zones_selected" = "Geen zones geselecteerd";
+"automation_repeat_on" = "Herhaal op";
+"automation_select_time" = "Selecteer tijd";
 "automation_select_timezone" = "";
-"automation_select_zone" = "";
-"automation_tooltip_stay_mode_only_available" = "";
-"automation_tooltip_stay_mode_unselected_zones" = "";
-"automations_action_cannot_undone" = "";
-"automations_at" = "";
-"automations_automation_cannot_be_saved" = "";
-"automations_create_automation" = "";
-"automations_date_and_time_based_on" = "";
-"automations_delete_automation" = "";
-"automations_edit_automation" = "";
-"automations_every_weekday" = "";
-"automations_every_weekend" = "";
-"automations_everyday" = "";
-"automations_for" = "";
-"automations_modes" = "";
-"automations_new_automation" = "";
-"automations_no_zones_available" = "";
-"automations_no_zones_selected" = "";
-"automations_repeat_on" = "";
+"automation_select_zone" = "Selecteer tijdzone";
+"automation_tooltip_stay_mode_only_available" = "De blijfmodus is alleen beschikbaar voor zones met een deursensor.";
+"automation_tooltip_stay_mode_unselected_zones" = "Deselecteer de zone(s) zonder deursensor en sla uw automatisering opnieuw op: %@";
+"automations_action_cannot_undone" = "Deze actie kan niet ongedaan worden gemaakt.";
+"automations_at" = "Bij";
+"automations_automation_cannot_be_saved" = "Automatisering kan niet worden opgeslagen";
+"automations_create_automation" = "Automatisering creëren";
+"automations_date_and_time_based_on" = "Datum en tijd zijn gebaseerd op";
+"automations_delete_automation" = "Automatisering verwijderen?";
+"automations_edit_automation" = "Bewerkingsautomatisering";
+"automations_every_weekday" = "Elke weekdag";
+"automations_every_weekend" = "Elk weekend";
+"automations_everyday" = "Alledaags";
+"automations_for" = "Voor";
+"automations_modes" = "Modi";
+"automations_new_automation" = "Nieuwe automatisering";
+"automations_no_zones_available" = "Geen zones beschikbaar";
+"automations_no_zones_selected" = "Geen zones geselecteerd";
+"automations_repeat_on" = "Herhaal op";
 
 /*Automations: Empty state set a schedule to activate modes automatically*/
-"automations_set_a_schedule_to_activate_modes_automatically" = "";
-"automations_you_have_conflict" = "";
+"automations_set_a_schedule_to_activate_modes_automatically" = "Stel een schema in om modi automatisch te activeren";
+"automations_you_have_conflict" = "Er zijn conflicten met bestaande automatisering(en), zoals hieronder in het rood gemarkeerd:";
 
 /*Change username: Empty error message*/
 "change_username_empty_error_message" = "Gebruikersnaam moet ingevuld zijn";
@@ -215,7 +219,7 @@
 /*Choose room: header above the list of rooms, before pairing.*/
 "choose_room_header" = "Kies de kamer waar het apparaat geplaatst gaat worden.";
 "choose_room_load_data_failed" = "Kan lijst met kamers niet laden";
-"choose_room_select_or_create_header" = "";
+"choose_room_select_or_create_header" = "Waar wordt dit apparaat geplaatst?";
 
 /*Choose zone: button title to go to zone creation*/
 "choose_zone_create_zone" = "Zone aanmaken";
@@ -224,13 +228,13 @@
 "choose_zone_header" = "Kies een zone a.u.b.";
 
 /*0 devices*/
-"choose_zone_no_devices" = "";
+"choose_zone_no_devices" = "0 apparaten";
 
 /*[Count] Thread devices.*/
-"choose_zone_thread_devices_count" = "";
+"choose_zone_thread_devices_count" = "%@ Thread-apparaten";
 
 /*[Count] Wi-Fi devices.*/
-"choose_zone_wifi_devices_count" = "";
+"choose_zone_wifi_devices_count" = "%@ Wi-Fi-apparaten";
 "commissioning_mode_checkup_zone_contact_isntaller" = "Neem contact op met de installateur om de installatie af te ronden.";
 "commissioning_mode_companion_landing_cancel" = "Annuleren";
 "commissioning_mode_companion_landing_contact_support" = "Neem contact op met ondersteuning";
@@ -283,9 +287,9 @@
 "connectivity_indicator_device_connected" = "Verbonden";
 "connectivity_indicator_device_disconnected" = "Losgekoppeld";
 "connectivity_indicator_device_rssi" = "RSSI %d";
-"contact_sensor_setup_before_you_continue" = "";
-"contact_sensor_setup_guide_description1" = "";
-"contact_sensor_setup_guide_description2" = "";
+"contact_sensor_setup_before_you_continue" = "Voordat u verdergaat";
+"contact_sensor_setup_guide_description1" = "Zorg ervoor dat uw apparaat zich in de buurt van de gewenste installatieplek bevindt";
+"contact_sensor_setup_guide_description2" = "Verwijder het plastic batterijlipje";
 
 /*Create First Place: button to dismiss*/
 "create_first_place_cancel" = "Misschien later";
@@ -315,7 +319,7 @@
 "create_zone_button_confirm" = "Opslaan";
 "create_zone_description" = "To help identify different areas or floors in your place";
 "create_zone_enter_name_hint" = "Zone naam";
-"create_zone_first_floor" = "";
+"create_zone_first_floor" = "Eerste verdieping";
 
 /*Create zone: header text when confirming the name for a newly-created zone.*/
 "create_zone_header" = "Zone aanmaken";
@@ -330,12 +334,12 @@
 
 /*Button text for adding a new place on the main dashboard (when there are no places).*/
 "dashboard_add_new_place" = "Locatie toevoegen";
-"dashboard_format_disconnected_device_in_multiple_zone_android" = "";
+"dashboard_format_disconnected_device_in_multiple_zone_android" = "%d apparaten met problemen in meerdere zones";
 
 /*plurals*/
-"dashboard_format_disconnected_device_in_one_zone_android" = "";
-"dashboard_format_issue_in_a_place" = "";
-"dashboard_format_issue_in_multiple_place" = "";
+"dashboard_format_disconnected_device_in_one_zone_android" = "%d apparaat met problemen in één zone";
+"dashboard_format_issue_in_a_place" = "Aandacht vereist in %@";
+"dashboard_format_issue_in_multiple_place" = "Aandacht vereist op %d plaatsen";
 "dashboard_place_tile_current_status" = "Huidige status";
 "dashboard_place_tile_intrusion_detected" = "Inbraak gedetecteerd";
 "dashboard_place_tile_movement_detected" = "Beweging gedetecteerd";
@@ -344,7 +348,7 @@
 "dashboard_place_tile_not_available" = "Niet beschikbaar";
 
 /*pair more device in place detail for old place without property info*/
-"dashboard_place_tile_pair_more" = "";
+"dashboard_place_tile_pair_more" = "Voeg een extra activiteitssensor toe om Wi-Fi-bewegingsdetectie in te schakelen";
 
 /*pair more device in place detail for old place without property info*/
 "dashboard_place_tile_pair_one_more" = "Koppel nog een apparaat om beweging te detecteren";
@@ -353,8 +357,8 @@
 
 /*Title for the Places section of the main dashboard.*/
 "dashboard_places" = "Locatie";
-"dashboard_sensing_link_broken_in_multiple_zone" = "";
-"dashboard_sensing_link_broken_in_one_zone" = "";
+"dashboard_sensing_link_broken_in_multiple_zone" = "Sensoren reageren niet in meerdere zones";
+"dashboard_sensing_link_broken_in_one_zone" = "Sensoren reageren niet in één zone";
 
 /*push notification*/
 "default_notification_channel_id" = "algemeen";
@@ -415,20 +419,20 @@
 "delete_place_this_will_also" = "Dit zal ook:";
 
 /*Accessories*/
-"device_category_accessories" = "";
-"device_category_activity_sensors" = "";
+"device_category_accessories" = "Accessoires";
+"device_category_activity_sensors" = "Activiteitssensoren";
 
 /*Sensing*/
-"device_category_sensing" = "";
+"device_category_sensing" = "Voelen";
 
 /*door sensor*/
-"device_detail_door_sensor_low_battery" = "";
+"device_detail_door_sensor_low_battery" = "Batterij bijna leeg";
 
 /*door sensor*/
-"device_detail_door_sensor_low_battery_warning" = "";
+"device_detail_door_sensor_low_battery_warning" = "Batterij bijna leeg. Vervang de batterij zo snel mogelijk. Leer hoe.";
 
 /*door sensor*/
-"device_detail_door_sensor_low_battery_warning_learn_how" = "";
+"device_detail_door_sensor_low_battery_warning_learn_how" = "Leer hoe";
 
 /*Sensing*/
 "device_details_connected" = "Verbonden";
@@ -439,6 +443,9 @@
 
 /*Device editing screen title.*/
 "device_edit_title" = "Bewerk apparaat";
+
+/*Aerial Motion V1*/
+"device_engines_aerial_motion_v1" = "Aerial Motion V1";
 
 /*Device engines: motion engine*/
 "device_engines_motion" = "Bewegingsmode";
@@ -502,13 +509,13 @@
 
 /*Device information screen title*/
 "device_info_title" = "Apparaat informatie";
-"device_info_widar_position" = "";
-"device_info_widar_position_mispositioned" = "";
-"device_info_widar_position_not_available" = "";
-"device_info_widar_position_optimal" = "";
-"device_info_widar_position_status" = "";
-"device_info_widar_positioning_information" = "";
-"device_info_widar_sensing" = "";
+"device_info_widar_position" = "Positie";
+"device_info_widar_position_mispositioned" = "Verkeerd gepositioneerd";
+"device_info_widar_position_not_available" = "Niet beschikbaar";
+"device_info_widar_position_optimal" = "Optimaal";
+"device_info_widar_position_status" = "Positiestatus";
+"device_info_widar_positioning_information" = "Optimaliseer de positie van het apparaat";
+"device_info_widar_sensing" = "Voelen";
 
 /*Device information screen wi-fi network section title*/
 "device_info_wifi_network" = "Wi-Fi network";
@@ -568,22 +575,22 @@
 
 /*Device overview: description for Wi-Fi connection quality.*/
 "device_overview_wifi_poor" = "Slecht";
-"device_placement_avoid_placing_device_near_metalic" = "";
+"device_placement_avoid_placing_device_near_metalic" = "Plaats het apparaat niet op of in de buurt van metalen oppervlakken";
 
 /*device placement: confirm button*/
 "device_placement_confirm_button" = "Volgende";
-"device_placement_do_not_connect_to_power_yet" = "";
-"device_placement_do_not_install_or_connect_to_power_yet" = "";
-"device_placement_do_not_mount_door_sensor_yet" = "";
-"device_placement_door_sensor_guide_content_1" = "";
-"device_placement_door_sensor_guide_content_2_imperial" = "";
-"device_placement_door_sensor_guide_content_2_metric" = "";
-"device_placement_first_bss_guide_1_imperial" = "";
-"device_placement_first_bss_guide_1_metric" = "";
-"device_placement_first_bss_second_device_guide_2_imperial" = "";
-"device_placement_first_bss_second_device_guide_2_metric" = "";
-"device_placement_first_bss_third_device_guide_3_imperial" = "";
-"device_placement_first_bss_third_device_guide_3_metric" = "";
+"device_placement_do_not_connect_to_power_yet" = "Sluit het apparaat nog niet aan op het lichtnet.";
+"device_placement_do_not_install_or_connect_to_power_yet" = "Installeer de apparaten nog niet en sluit ze nog niet aan op het lichtnet.";
+"device_placement_do_not_mount_door_sensor_yet" = "Monteer de deursensor nog niet. De installatiehandleiding volgt nadat u het apparaat een naam hebt gegeven.";
+"device_placement_door_sensor_guide_content_1" = "Aanbevolen voor beveiliging van de voordeur";
+"device_placement_door_sensor_guide_content_2_imperial" = "Plaats het apparaat binnen 30 voet van een andere activiteitssensor in %@";
+"device_placement_door_sensor_guide_content_2_metric" = "Plaats het apparaat binnen 10 m van een andere activiteitssensor in %@";
+"device_placement_first_bss_guide_1_imperial" = "Plaats het apparaat binnen een straal van 9 meter van uw voordeur en het wifi-toegangspunt";
+"device_placement_first_bss_guide_1_metric" = "Plaats het apparaat binnen 10 meter van uw voordeur en het wifi-toegangspunt";
+"device_placement_first_bss_second_device_guide_2_imperial" = "Plaats het apparaat op een afstand van 3 tot 9 meter van de Alarm Pod";
+"device_placement_first_bss_second_device_guide_2_metric" = "Plaats het apparaat op een afstand van 3-10 meter van de Alarm Pod";
+"device_placement_first_bss_third_device_guide_3_imperial" = "Houd het apparaat binnen 30 voet van de Alarm Pod";
+"device_placement_first_bss_third_device_guide_3_metric" = "Houd het apparaat binnen 10 meter van de Alarm Pod";
 
 /*device placement: first device setup title*/
 "device_placement_first_device_setup" = "Eerste apparaat instellen";
@@ -596,40 +603,40 @@
 
 /*device placement: first device setup step 2 metric*/
 "device_placement_first_device_setup_step_2_metric" = "Plaats het eerste apparaat maximaal 10 meter van het geselecteerde access point";
-"device_placement_first_hms_second_device_guide_2_imperial" = "";
-"device_placement_first_hms_second_device_guide_2_metric" = "";
-"device_placement_first_hms_third_device_guide_3_imperial" = "";
-"device_placement_first_hms_third_device_guide_3_metric" = "";
-"device_placement_first_sense_plug_guide_1_imperial" = "";
-"device_placement_first_sense_plug_guide_1_metric" = "";
-"device_placement_first_sense_plug_guide_2" = "";
-"device_placement_first_wifi_sensor_guide_1_imperial" = "";
-"device_placement_first_wifi_sensor_guide_1_metric" = "";
-"device_placement_first_wifi_sensor_guide_2" = "";
-"device_placement_first_wifi_sensor_guide_3" = "";
-"device_placement_non_first_bss_has_br_guide_2_imperial" = "";
-"device_placement_non_first_bss_has_br_guide_2_metric" = "";
-"device_placement_non_first_bss_no_br_guide_1_imperial" = "";
-"device_placement_non_first_bss_no_br_guide_1_metric" = "";
-"device_placement_non_first_hss_third_device_no_device_guide_3_imperial" = "";
-"device_placement_non_first_hss_third_device_no_device_guide_3_metric" = "";
-"device_placement_non_first_sense_plug_guide_2_imperial" = "";
-"device_placement_non_first_sense_plug_guide_2_metric" = "";
-"device_placement_non_first_widar_has_br_guide_1_imperial" = "";
-"device_placement_non_first_widar_has_br_guide_1_metric" = "";
-"device_placement_non_first_widar_sensor_guide_2_imperial" = "";
-"device_placement_non_first_widar_sensor_guide_2_metric" = "";
-"device_placement_non_first_wifi_sensor_guide_1_imperial" = "";
-"device_placement_non_first_wifi_sensor_guide_1_metric" = "";
-"device_placement_non_first_wifi_sensor_guide_2_imperial" = "";
-"device_placement_non_first_wifi_sensor_guide_2_metric" = "";
+"device_placement_first_hms_second_device_guide_2_imperial" = "Plaats het apparaat op 3 tot 9 meter afstand van de eerste SensePlug";
+"device_placement_first_hms_second_device_guide_2_metric" = "Plaats het apparaat op 3-10 meter afstand van de eerste SensePlug";
+"device_placement_first_hms_third_device_guide_3_imperial" = "Houd het apparaat binnen een straal van 30 voet van een SensePlug";
+"device_placement_first_hms_third_device_guide_3_metric" = "Houd het apparaat binnen 10 meter van elke SensePlug ";
+"device_placement_first_sense_plug_guide_1_imperial" = "Plaats het apparaat binnen 30 voet van uw Wi-Fi-toegangspunt";
+"device_placement_first_sense_plug_guide_1_metric" = "Plaats het apparaat binnen 10 meter van uw Wi-Fi-toegangspunt";
+"device_placement_first_sense_plug_guide_2" = "Dit apparaat wordt toegevoegd als Thread border router";
+"device_placement_first_wifi_sensor_guide_1_imperial" = "Plaats het apparaat binnen 30 voet van uw Wi-Fi-toegangspunt";
+"device_placement_first_wifi_sensor_guide_1_metric" = "Plaats het apparaat binnen 10 meter van uw Wi-Fi-toegangspunt";
+"device_placement_first_wifi_sensor_guide_2" = "Kies het Wi-Fi-toegangspunt dat het meest centraal gelegen is binnen het gebied dat u wilt bestrijken";
+"device_placement_first_wifi_sensor_guide_3" = "Alle andere apparaten in %@ gebruiken het Wi-Fi-toegangspunt waarmee dit apparaat verbinding maakt";
+"device_placement_non_first_bss_has_br_guide_2_imperial" = "Plaats het apparaat binnen 30 voet van de geselecteerde deur voor de deursensor";
+"device_placement_non_first_bss_has_br_guide_2_metric" = "Plaats het apparaat binnen 10 m van de geselecteerde deur voor de deursensor";
+"device_placement_non_first_bss_no_br_guide_1_imperial" = "Plaats het apparaat binnen 30 voet van zowel uw Wi-Fi-toegangspunt als de geselecteerde deur voor de deursensor";
+"device_placement_non_first_bss_no_br_guide_1_metric" = "Plaats het apparaat binnen 10 meter van zowel uw Wi-Fi-toegangspunt als de geselecteerde deur voor de deursensor";
+"device_placement_non_first_hss_third_device_no_device_guide_3_imperial" = "Houd het apparaat binnen 30 voet van een SensePlug in %@";
+"device_placement_non_first_hss_third_device_no_device_guide_3_metric" = "Houd het apparaat binnen 10 meter van elke SensePlug in %@";
+"device_placement_non_first_sense_plug_guide_2_imperial" = "Plaats het apparaat op een afstand van 3 tot 9 meter van alle activiteitssensoren in %@";
+"device_placement_non_first_sense_plug_guide_2_metric" = "Plaats het apparaat op een afstand van 3-10 m van alle activiteitssensoren in %@";
+"device_placement_non_first_widar_has_br_guide_1_imperial" = "Plaats het apparaat tussen 3 en 9 meter van alle activiteitssensoren in %@";
+"device_placement_non_first_widar_has_br_guide_1_metric" = "Plaats het apparaat op een afstand van 3-10 m van alle activiteitssensoren in %@";
+"device_placement_non_first_widar_sensor_guide_2_imperial" = "Plaats het apparaat tussen 3 en 9 meter van alle activiteitssensoren in %@";
+"device_placement_non_first_widar_sensor_guide_2_metric" = "Plaats het apparaat op een afstand van 3-10 m van alle activiteitssensoren in %@";
+"device_placement_non_first_wifi_sensor_guide_1_imperial" = "Plaats het apparaat op dezelfde verdieping binnen een straal van 9 meter van uw Wi-Fi-toegangspunt";
+"device_placement_non_first_wifi_sensor_guide_1_metric" = "Plaats het apparaat op dezelfde verdieping binnen 10 m van uw Wi-Fi-toegangspunt";
+"device_placement_non_first_wifi_sensor_guide_2_imperial" = "Plaats het apparaat op een afstand van 3 tot 9 meter van een ander apparaat in %@";
+"device_placement_non_first_wifi_sensor_guide_2_metric" = "Plaats het apparaat op een afstand van 3-10 m van een ander apparaat in %@";
 
 /*Device Placement Notice screen message*/
 "device_placement_notice_notice" = "Plaats dit apparaat op dezelfde verdieping als het bestaande apparaat, binnen een bereik van 3 tot 9 meter.";
 
 /*Device Placement Notice screen message when the <place name> is known—multizones enambled*/
 "device_placement_notice_notice_known_zone" = "Plaats dit apparaat op dezelfde verdieping als het andere apparaat in %@, binnen een bereik van 3 tot 9 meter.";
-"device_placement_place_device_on_same_floor" = "";
+"device_placement_place_device_on_same_floor" = "Plaats het apparaat op dezelfde verdieping";
 
 /*device placement: remaining devices setup title*/
 "device_placement_remaining_devices_setup" = "Overige apparten instellen";
@@ -651,12 +658,12 @@
 
 /*device placement: remaining devices setup title*/
 "device_placement_remaining_devices_setup_step_4" = "Plaats apparaten niet op verschillende verdiepingen";
-"device_placement_secure_any_entry_or_room_door" = "";
-"device_placement_sensor_dialog_description" = "";
-"device_placement_sensor_dialog_title" = "";
-"device_placement_thread_border_router_dialog_description" = "";
-"device_placement_thread_border_router_dialog_title" = "";
-"device_placement_where_to_place_device" = "";
+"device_placement_secure_any_entry_or_room_door" = "Beveilig elke toegangs- of kamerdeur";
+"device_placement_sensor_dialog_description" = "Met activiteitssensoren worden de Alarm Pod en SensePlug bedoeld.";
+"device_placement_sensor_dialog_title" = "Wat zijn activiteitssensoren?";
+"device_placement_thread_border_router_dialog_description" = "U kunt het zien als de brug die uw andere Thread-apparaten verbindt met het internet, zodat ze soepel met elkaar kunnen communiceren.";
+"device_placement_thread_border_router_dialog_title" = "Wat is een Thread border router?";
+"device_placement_where_to_place_device" = "Waar het apparaat geplaatst moet worden";
 "device_settings_customize_device_description" = "Bewerk apparaatnaam";
 "device_settings_customize_device_title" = "Apparaat aanpassen";
 "device_settings_device_info_title" = "Apparaat informatie";
@@ -666,39 +673,39 @@
 "device_settings_technical_information_subtitle_thread" = "Wi-Fi, Thread, Hardwaregegevens";
 
 /*device settings*/
-"device_settings_technical_information_subtitle_thread_end" = "";
+"device_settings_technical_information_subtitle_thread_end" = "Draad, Hardware details";
 "device_settings_technical_information_subtitle_wifi" = "Wi-Fi network, Hardwaregegevens";
 
 /*Device settions*/
 "device_settings_title" = "Apparaat instellingen";
-"device_setup_accessories" = "";
-"device_setup_activity_sensors" = "";
-"device_setup_alarm_pod" = "";
-"device_setup_contact_sensor" = "";
-"device_setup_motion_sensor" = "";
-"device_setup_others" = "";
-"device_setup_security_pod" = "";
-"device_setup_sense_plug" = "";
-"device_setup_widar_sensor" = "";
-"device_setup_wifi_sensor" = "";
-"device_type_selection_accessories_warning" = "";
-"device_type_selection_accessories_warning_learn_more" = "";
-"device_widar_mispositioned_warning_message" = "";
+"device_setup_accessories" = "Accessoires";
+"device_setup_activity_sensors" = "Activiteitssensoren";
+"device_setup_alarm_pod" = "Alarm Pod";
+"device_setup_contact_sensor" = "Deursensor";
+"device_setup_motion_sensor" = "Motion Sensor";
+"device_setup_others" = "Anderen";
+"device_setup_security_pod" = "Beveiligingspod";
+"device_setup_sense_plug" = "SensePlug";
+"device_setup_widar_sensor" = "WiDAR-sensor";
+"device_setup_wifi_sensor" = "Wi-Fi-sensor";
+"device_type_selection_accessories_warning" = "Installeer eerst een Thread-randrouter voordat u accessoires toevoegt. Meer informatie";
+"device_type_selection_accessories_warning_learn_more" = "Meer informatie";
+"device_widar_mispositioned_warning_message" = "Optimaliseer de positie van het apparaat om de detectie te herstellen";
 "devices_add_new_device" = "Nieuw apparaat toevoegen";
 "devices_add_new_room" = "Nieuwe kamer toevoegen";
 "devices_add_new_zone" = "Nieuwe zone toevoegen";
 
 /*door sensor*/
-"door_sensor_battery_level" = "";
+"door_sensor_battery_level" = "Batterijniveau";
 
 /*door sensor*/
-"door_sensor_battery_percentage_android" = "";
+"door_sensor_battery_percentage_android" = "%D%%";
 
 /*door sensor*/
-"door_sensor_closed" = "";
+"door_sensor_closed" = "Gesloten";
 
 /*door sensor*/
-"door_sensor_open" = "";
+"door_sensor_open" = "Open";
 "edit_device_edit_device_name_hint" = "Apparaatnaam";
 "edit_device_edit_device_title" = "Apparaat instellingen";
 "edit_icon_header" = "Laten we je profiel aanpassen!";
@@ -786,12 +793,12 @@
 
 /*Edit room: hint to enter room name in the field*/
 "edit_zone_enter_name" = "Geef zone een naam";
-"edit_zone_fail_to_create_zone" = "";
-"edit_zone_fail_to_delete_zone" = "";
-"edit_zone_fail_to_edit_zone" = "";
-"edit_zone_fail_to_get_zone_information" = "";
-"edit_zone_title" = "";
-"edit_zone_zone_name_already_in_use" = "";
+"edit_zone_fail_to_create_zone" = "Zone niet kunnen creëren";
+"edit_zone_fail_to_delete_zone" = "Zone verwijderen mislukt";
+"edit_zone_fail_to_edit_zone" = "Zone bewerken mislukt";
+"edit_zone_fail_to_get_zone_information" = "Het is niet gelukt om zone-informatie op te halen";
+"edit_zone_title" = "Zonenaam bewerken";
+"edit_zone_zone_name_already_in_use" = "Deze zonenaam is al in gebruik. Gebruik een andere naam.";
 
 /*Engine settinge: engine settings description*/
 "engine_settings_engine_settings_description" = "Selecteer de verwerkingsoptie die je wil gebruiken.";
@@ -810,14 +817,17 @@
 
 /*Engine settinge: title*/
 "engine_settings_title" = "Verwerkingsoptie";
-"error_no_internet_connection" = "";
+
+/*Fuzzy*/
+"error_insufficient_permission_action_can_not_be_completed" = "Actie kan niet worden voltooid wegens onvoldoende rechten.";
+"error_no_internet_connection" = "Geen internetverbinding";
 
 /*Errors*/
 "errors_authentication_login_required" = "Meld je opnieuw aan met je herstelsleutel";
 "errors_authentication_title" = "Authenticatie fout";
-"errors_authentication_token_expired" = "";
-"errors_join_thread_network_fail_message" = "";
-"errors_join_thread_network_fail_title" = "";
+"errors_authentication_token_expired" = "Token is verlopen.";
+"errors_join_thread_network_fail_message" = "Controleer of u dezelfde mobiele telefoon gebruikt waarmee u eerder apparaten hebt ingesteld.\nAls u geen toegang meer hebt tot de mobiele telefoon, reset dan alle apparaten in deze zone.";
+"errors_join_thread_network_fail_title" = "Deelname aan het Thread-netwerk is mislukt";
 "errors_linking_error_response_parse_error" = "Kan niet verbinden met nami server.";
 "errors_move_device_error_no_device_selected" = "Selecteer een of meer apparaten om te verplaatsen";
 "errors_move_device_error_title" = "Verplaatsen van apparaten mislukt";
@@ -826,28 +836,29 @@
 /*Error shown when connection to the cloud failed
 Connection error provided with [underlying error description] from the system.*/
 "errors_network_error_connection_error" = "Kan niet verbinden met server. Controleer a.u.b. de internetverbinding.";
+"errors_network_error_forbidden" = "Actie kan niet worden voltooid vanwege onvoldoende rechten.";
 "errors_network_error_invalid_parameters" = "Het netwerkverzoek bevat ongeldige parameters (Code %@).";
 "errors_network_error_not_found" = "De server kan de gevraagde URL niet vinden (Code %@).";
 "errors_network_error_server_error" = "De server kan het netwerkverzoek niet verwerken (Code %@).";
 "errors_network_error_title" = "Netwerk fout";
 "errors_network_error_unauthorized" = "Het netwerkverzoek is niet toegestaan (Code %@).";
 "errors_network_error_unknown" = "Onbekende fout code (%@).";
-"errors_pairing_ble_disconnected_description" = "";
-"errors_pairing_connection_time_out_description" = "";
-"errors_pairing_device_not_found_description" = "";
-"errors_pairing_device_not_found_title" = "";
+"errors_pairing_ble_disconnected_description" = "Haal de stekker van %@ uit het stopcontact en sluit het apparaat opnieuw aan.";
+"errors_pairing_connection_time_out_description" = "Controleer of het apparaat aan staat en zich in de buurt van uw mobiele telefoon bevindt.";
+"errors_pairing_device_not_found_description" = "Haal de stekker van het apparaat uit het stopcontact en sluit het apparaat vervolgens weer aan op de stroomvoorziening.";
+"errors_pairing_device_not_found_title" = "Apparaat niet gevonden";
 "errors_pairing_error_device_cloud_challenge_error" = "Het apparaat kon het bericht van de nami cloud niet verwerken.";
 "errors_pairing_error_device_secure_session_error" = "Fout bij het maken van beveiligde verbinding met apparaat.";
 "errors_pairing_error_device_thread_join_error" = "Apparaat kan niet verbinden met Thread netwerk.";
 "errors_pairing_error_device_thread_scan_error" = "Kan geen Thread netwerken in de omgeving vinden, plaats het apparaat dichter bij de border router en probeer het opnieuw.";
-"errors_pairing_error_device_title" = "";
+"errors_pairing_error_device_title" = "Fout bij het koppelen van het apparaat";
 "errors_pairing_error_device_unknown_unrecognized" = "Het apparaat heeft een onbekende fout gestuurd.";
 "errors_pairing_error_device_wifi_join_error" = "Het apparaat kon geen verbinding maken met het geselecteerde Wi-Fi netwerk.";
 "errors_pairing_error_device_wifi_join_ip_error" = "Het apparaat heeft geen IP adres gekregen na het verbinden met het geselecteerde Wi-Fi netwerk.";
 "errors_pairing_error_device_wifi_join_password_error" = "Het ingevoerde wachtwoord voor het Wi-Fi netwerk is onjuist.";
 "errors_pairing_error_device_wifi_scan_error" = "Er is een fout opgetreden bij het zoeken naar Wi-Fi netwerken door het apparaat.";
-"errors_pairing_incorrect_wifi_password_description" = "";
-"errors_pairing_incorrect_wifi_password_title" = "";
+"errors_pairing_incorrect_wifi_password_description" = "Controleer of het wachtwoord dat u voor het geselecteerde netwerk hebt ingevoerd, correct is.";
+"errors_pairing_incorrect_wifi_password_title" = "Onjuist wifi-wachtwoord";
 "errors_pairing_machine_deserialization_error" = "Fout bij deserialiseren van het ontvangen koppelings bericht.";
 "errors_pairing_machine_encryption_error" = "Fout bij versleutelen van volgende koppelingsbericht.";
 "errors_pairing_machine_seance_error" = "Fout bij het maken van beveiligde verbinding met apparaat.";
@@ -858,7 +869,7 @@ Connection error provided with [underlying error description] from the system.*/
 "errors_pairing_thread_setup_error_mixed_environment" = "Koppelen van een Thread apparaat in een zone met bestaande Wi-Fi apparaten is niet toegestaan (en vice versa). Kies alsjeblieft een ander zone.";
 "errors_pairing_thread_setup_error_thread_network_not_found" = "Het Thread netwerk is niet gevonden. Plaats je apparaat dichter bij de andere Thread apparaten.";
 "errors_pairing_thread_setup_error_thread_operational_dataset_missing" = "Thread koppeling is uitgevoerd met een andere smartphone. Gebruik alsjeblieft dezelfde telefoon om alle Thread geschikte apparaten te koppelen";
-"errors_pairing_timed_out_connect_wifi" = "";
+"errors_pairing_timed_out_connect_wifi" = "Zorg ervoor dat de Wi-Fi-inloggegevens correct zijn en dat het apparaat dicht genoeg bij de router staat.";
 "external_signin_check_if_users_request" = "Heb jij dit verzoek gedaan?";
 "external_signin_confirm_request" = "Ja, inloggen";
 "external_signin_confirmed_title" = "Login bevestigd";
@@ -880,16 +891,16 @@ Connection error provided with [underlying error description] from the system.*/
 "fcm_message_title" = "nami Lookout24";
 
 /*lost access pop up / list removed place name pop up*/
-"general_and" = "";
+"general_and" = "En";
 
 /*at*/
-"general_at" = "";
+"general_at" = "bij";
 "general_camera" = "Camera";
 
 /*General: Cancel*/
 "general_cancel" = "Annuleren";
-"general_connection_lost" = "";
-"general_connection_lost_explanation" = "";
+"general_connection_lost" = "Verbinding verbroken";
+"general_connection_lost_explanation" = "Er is een probleem met de verbinding met onze servers. Probeer het later opnieuw.";
 
 /*A button to delete the displayed object (e.g. a empty Zone)*/
 "general_delete" = "Verwijderd";
@@ -922,43 +933,43 @@ Connection error provided with [underlying error description] from the system.*/
 "general_unavailable" = "Niet beschikbaar";
 
 /*general*/
-"general_undefined" = "";
+"general_undefined" = "-";
 "general_yes" = "Ja";
 
 /*Alarms in %@ places*/
-"hint_issue_alarmIssues" = "";
+"hint_issue_alarmIssues" = "Alarmen op %@ plaatsen";
 
 /*System issues in %@ places*/
-"hint_issue_pluralSystemIssues" = "";
+"hint_issue_pluralSystemIssues" = "Aandacht vereist op %@ plaatsen";
 
 /*System issue in %@*/
-"hint_issue_singularSystemIssue" = "";
+"hint_issue_singularSystemIssue" = "Aandacht vereist in %@";
 "homepage_empty_place_create_place" = "Locatie maken";
-"homepage_empty_place_welcome" = "";
-"homepage_empty_place_welcome_description" = "";
-"installation_guide_complete_installation" = "";
-"installation_guide_install_contact_sensor" = "";
-"installation_guide_items1" = "";
-"installation_guide_items2" = "";
-"installation_guide_items3_imperial" = "";
-"installation_guide_items3_metric" = "";
-"installation_guide_items4" = "";
+"homepage_empty_place_welcome" = "Welkom %@";
+"homepage_empty_place_welcome_description" = "Reserveer vandaag nog uw plaats";
+"installation_guide_complete_installation" = "Volledige installatie";
+"installation_guide_install_contact_sensor" = "Deursensor installeren";
+"installation_guide_items1" = "Zorg ervoor dat de installatieplek schoon en stofvrij is";
+"installation_guide_items2" = "Plaats het apparaat bovenaan de deur";
+"installation_guide_items3_imperial" = "Houd de sensor en de magneet niet meer dan 2 cm uit elkaar, met de indicatorlijnen uitgelijnd.";
+"installation_guide_items3_metric" = "Houd de sensor en de magneet niet meer dan 2 cm uit elkaar, met de indicatorlijnen uitgelijnd";
+"installation_guide_items4" = "Verwijder de kleeflaag en plak het apparaat stevig op de deur";
 "internet_connection" = "Internetverbinding";
 
 /*dashboard intrusion banner*/
 "intrusion_banner_intrusion_detected_at" = "Inbraak gedetecteerd in %@";
 "intrusion_event_report_intrusion_history" = "Intrusion history";
-"intrusion_history_error_data_not_found" = "";
-"intrusion_history_human_motion" = "";
-"intrusion_history_no_motion" = "";
-"intrusion_history_timestamp" = "";
-"intrusion_history_title" = "";
-"intrusion_live_disarm_security_system" = "";
-"intrusion_live_disarm_security_system_description" = "";
-"intrusion_live_report_by_door_sensor" = "";
-"intrusion_live_report_door_closed" = "";
-"intrusion_live_report_door_opened" = "";
-"intrusion_live_report_motion" = "";
+"intrusion_history_error_data_not_found" = "Het is niet gelukt om gegevens over inbraakdetectie op te halen!";
+"intrusion_history_human_motion" = "Menselijke beweging";
+"intrusion_history_no_motion" = "Geen beweging";
+"intrusion_history_timestamp" = "Sinds %@";
+"intrusion_history_title" = "Geschiedenis van inbraakdetectie";
+"intrusion_live_disarm_security_system" = "Beveiligingssysteem uitschakelen?";
+"intrusion_live_disarm_security_system_description" = "Met deze actie worden alle alarmen uitgeschakeld en schakelt het systeem over naar de standby-modus.";
+"intrusion_live_report_by_door_sensor" = "Geactiveerd op %1$@ door %2$@";
+"intrusion_live_report_door_closed" = "Gesloten";
+"intrusion_live_report_door_opened" = "Geopend";
+"intrusion_live_report_motion" = "Beweging";
 
 /*Fuzzy*/
 "intrusion_live_view_no_activity_since_intrusion_began" = "No activity since intrusion began";
@@ -1024,6 +1035,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Revoke alert title*/
 "invite_details_revoke_alert_title" = "Uitnodiging intrekken";
+"invite_details_revoke_invitation_title" = "Uitnodiging voor “%@” intrekken?";
 "join_place_camera_permission_guide" = "Scan QR-code uitnodiging!";
 "join_place_invalid_invite" = "De uitnodiging is ongeldig.";
 
@@ -1034,24 +1046,25 @@ Connection error provided with [underlying error description] from the system.*/
 "join_place_invite_found" = "Uitnodiging gevonden!";
 "join_place_role_guide" = "Door met deze locatie te verbinden, kun je %@ %@";
 "join_place_role_guide_admin" = "Apparaten bedienen, verwijder personen, kijken wat er gebeurt en meldingen hierover ontvangen.";
+"join_place_role_user_guide" = "U kunt beveiligingsmodi bewerken, apparaten en gebeurtenissen bekijken die op die plek plaatsvinden en hierover meldingen ontvangen.";
 
 /*Join place: scan again*/
 "join_place_scan_again" = "Zorg ervoor dat je een geldige uitnodigings QR-code scant.";
 
 /*Join place: scan invite qr code to join a place*/
 "join_place_scan_invite_qr" = "Scan de QR code die op het scherm van de beheerder wordt getoond";
-"kit_explanation_first_kit_designed_to_help_secure_your_place" = "";
-"kit_explanation_first_kit_place_devices_on_first_floor" = "";
-"kit_explanation_non_first_kit_bss_provides_additional_security" = "";
-"kit_explanation_non_first_kit_hms_monitor_additional_areas" = "";
-"kit_tracker_plural_device_left" = "";
-"kit_tracker_plural_devices_added" = "";
+"kit_explanation_first_kit_designed_to_help_secure_your_place" = "Ontworpen om u te helpen uw plaats en voordeur te beveiligen";
+"kit_explanation_first_kit_place_devices_on_first_floor" = "Plaats apparaten op de eerste verdieping om de beveiliging te optimaliseren";
+"kit_explanation_non_first_kit_bss_provides_additional_security" = "Biedt extra beveiliging voor uw woning en elke toegangsdeur";
+"kit_explanation_non_first_kit_hms_monitor_additional_areas" = "Houd toezicht op andere gedeelten van uw woning en elke toegangsdeur";
+"kit_tracker_plural_device_left" = "Nog 1 apparaat over";
+"kit_tracker_plural_devices_added" = "1 apparaat toegevoegd";
 
 /*Let's add device: button title for dismissing the screen.*/
 "lets_add_device_dismiss_screen" = "Misschien later";
-"lost_access_popup_message_multiple_places" = "";
-"lost_access_popup_message_single_place" = "";
-"lost_access_popup_title" = "";
+"lost_access_popup_message_multiple_places" = "Deze plaatsen zijn verwijderd of u bent eruit verwijderd.";
+"lost_access_popup_message_single_place" = "Hetzij is deze plaats verwijderd, hetzij bent u ervan verwijderd.";
+"lost_access_popup_title" = "Je hebt geen toegang meer tot %@";
 "manage_devices_empty_place" = "Je locatie is leeg.";
 "member_details_leave_place" = "Verlaat de locatie";
 "member_details_remove_member" = "Uit de locatie verwijderen";
@@ -1059,25 +1072,25 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Motion history: active time*/
 "motion_history_active_time" = "Active time";
-"motion_history_device_issue" = "";
+"motion_history_device_issue" = "Apparaatprobleem";
 
 /*Motion history: duration*/
 "motion_history_duration" = "Duration";
-"motion_history_format_days_android" = "";
+"motion_history_format_days_android" = "%d dag";
 "motion_history_format_hour" = "%d uur";
-"motion_history_format_hours_android" = "";
+"motion_history_format_hours_android" = "%d uur";
 "motion_history_format_minute" = "%d min";
 "motion_history_format_second" = "%d seconde";
 "motion_history_intensity" = "Intensiteit";
-"motion_history_monitor_was_degraded_due_to_device_issue" = "";
-"motion_history_monitor_was_degraded_in_zones_with_device_issue" = "";
-"motion_history_monitor_was_disabled_due_to_device_issue" = "";
-"motion_history_monitor_was_disabled_in_zones_with_device_issue" = "";
+"motion_history_monitor_was_degraded_due_to_device_issue" = "De monitoring was minder goed vanwege problemen met het apparaat.";
+"motion_history_monitor_was_degraded_in_zones_with_device_issue" = "De monitoring was minder goed in zones met apparaatproblemen.";
+"motion_history_monitor_was_disabled_due_to_device_issue" = "Monitoring is uitgeschakeld vanwege problemen met het apparaat.";
+"motion_history_monitor_was_disabled_in_zones_with_device_issue" = "Monitoring was uitgeschakeld in zones met apparaatproblemen.";
 
 /*Motion history: motion*/
 "motion_history_motion" = "Motion";
-"motion_history_motion_today" = "";
-"motion_history_no_data" = "";
+"motion_history_motion_today" = "Beweging vandaag";
+"motion_history_no_data" = "Geen gegevens";
 
 /*Motion history: not available*/
 "motion_history_not_available" = "N/A";
@@ -1101,11 +1114,11 @@ Connection error provided with [underlying error description] from the system.*/
 /*Motion now: connect to same wifi network as zone*/
 "motion_now_connect_to_wifi_as_zone" = "Verbind met het Wi-Fi netwerk dat door de zone wordt gebruikt om actuele beweging te zien";
 "motion_now_connect_to_wifi_your_device_using" = "Verbind met het Wi-Fi netwerk waar de zones gebruik van maken en wacht op lokale verbinding";
-"motion_now_explanation_description_1" = "";
-"motion_now_explanation_description_2" = "";
-"motion_now_explanation_got_it" = "";
-"motion_now_explanation_learn_more" = "";
-"motion_now_explanation_sub_title" = "";
+"motion_now_explanation_description_1" = "De bewegingsgrafiek geeft de intensiteit van de gedetecteerde realtimebeweging weer, zonder enige filtering.";
+"motion_now_explanation_description_2" = "U merkt mogelijk verschillen op wanneer u de grafiek vergelijkt met de bewegingsgeschiedenis. Hierin wordt de bewegingsactiviteit gefilterd op basis van uw gevoeligheidsinstellingen.";
+"motion_now_explanation_got_it" = "Ik heb het";
+"motion_now_explanation_learn_more" = "Meer informatie";
+"motion_now_explanation_sub_title" = "Snelle manier om bewegingsactiviteit te controleren en ervoor te zorgen dat uw apparaten goed werken";
 "motion_now_format_active_zones_android" = "%d zone actief";
 
 /*Motion now: go to wifi settings*/
@@ -1155,18 +1168,21 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Motion now: title*/
 "motion_now_title" = "Actuele beweging";
-"msg_session_expired" = "";
-"muliple_places_intrusion_in_many_places" = "";
-"muliple_places_intrusion_in_one_place" = "";
+"msg_session_expired" = "Sessie is verlopen, probeer het opnieuw!";
+"muliple_places_intrusion_in_many_places" = "Indringing op %d plaatsen";
+"muliple_places_intrusion_in_one_place" = "Inbraak in %@";
 
 /*New invite generation screen: generate invite button text*/
 "new_invite_generate_invite_button" = "Uitnodiging aanmaken";
 
 /*New invite generation screen: Invite description*/
+/*Fuzzy*/
+"new_invite_invite_admin_description" = "Alle personen in een gedeelde locatie kunnen apparaten besturen, zien wat er gebeurt, en notificaties hierover ontvangen.";
 "new_invite_invite_description" = "Alle personen in een gedeelde locatie kunnen apparaten besturen, zien wat er gebeurt, en notificaties hierover ontvangen.";
 
 /*New invite generation screen: Navbar title*/
 "new_invite_invite_title" = "Personen uitnodigen";
+"new_invite_invite_user_description" = "Gebruikers kunnen beveiligingsmodi bewerken, apparaten en gebeurtenissen bekijken die op een bepaalde plek plaatsvinden en meldingen hierover ontvangen.";
 
 /*New invite generation screen: Invitee name placeholder*/
 "new_invite_invitee_name_placeholder" = "Naam genodigde";
@@ -1180,22 +1196,22 @@ Connection error provided with [underlying error description] from the system.*/
 "pair_device_go_to_settings" = "Ga naar Instellingen";
 "pair_device_missing_permission" = "Toestemming %@ ontbreekt";
 "pair_device_missing_permission_desc" = "%@ toestemming is vereist voor %@";
-"pairing_ask_to_connect_connect_to_wifi" = "";
-"pairing_ask_to_connect_first_thread_device_description_1" = "";
+"pairing_ask_to_connect_connect_to_wifi" = "Maak verbinding met een wifi-netwerk";
+"pairing_ask_to_connect_first_thread_device_description_1" = "Het eerste apparaat van een detectiezone wordt ingesteld als een grensrouter";
 "pairing_ask_to_connect_first_thread_device_description_2" = "Connect this border router to a Wi-Fi network";
 "pairing_ask_to_connect_first_thread_device_description_3" = "To keep your Thread network running, leave this border router connected to power at all times";
-"pairing_ask_to_connect_first_wifi_device_description_1" = "";
-"pairing_ask_to_connect_first_wifi_device_description_2" = "";
-"pairing_ask_to_connect_non_first_thread_device_description_1" = "";
-"pairing_ask_to_connect_non_first_thread_device_description_2" = "";
-"pairing_ask_to_connect_non_first_thread_device_description_3" = "";
-"pairing_ask_to_connect_non_first_wifi_device_description_1" = "";
-"pairing_ask_to_connect_remaining_thread_device" = "";
-"pairing_ask_to_connect_wifi_device_imperial_distance_description" = "";
-"pairing_ask_to_connect_wifi_device_metric_distance_description" = "";
-"pairing_bluetooth_device_found_explained_ready_to_pair" = "";
-"pairing_bluetooth_device_found_explained_ready_to_pair_contact_sensor" = "";
-"pairing_bluetooth_device_found_header_connect_to_power" = "";
+"pairing_ask_to_connect_first_wifi_device_description_1" = "Alle andere apparaten in %@ gebruiken het Wi-Fi-toegangspunt waarmee dit apparaat verbinding maakt";
+"pairing_ask_to_connect_first_wifi_device_description_2" = "Kies het Wi-Fi-toegangspunt dat het meest centraal ligt in het gebied dat u wilt bestrijken";
+"pairing_ask_to_connect_non_first_thread_device_description_1" = "Dit apparaat zal zich aansluiten bij het bestaande Thread-netwerk op de plaats";
+"pairing_ask_to_connect_non_first_thread_device_description_2" = "Gebruik dezelfde mobiele telefoon die u eerder hebt gebruikt om andere Thread-apparaten in te stellen";
+"pairing_ask_to_connect_non_first_thread_device_description_3" = "Zorg ervoor dat de grensrouter in %@ is aangesloten op stroom";
+"pairing_ask_to_connect_non_first_wifi_device_description_1" = "Dit apparaat maakt verbinding met hetzelfde wifi-toegangspunt dat door andere apparaten in %@ wordt gebruikt";
+"pairing_ask_to_connect_remaining_thread_device" = "Resterende Thread-apparaten";
+"pairing_ask_to_connect_wifi_device_imperial_distance_description" = "Zorg ervoor dat dit apparaat maximaal 9 meter van het toegangspunt verwijderd is";
+"pairing_ask_to_connect_wifi_device_metric_distance_description" = "Zorg ervoor dat dit apparaat maximaal 10 meter van het toegangspunt verwijderd is";
+"pairing_bluetooth_device_found_explained_ready_to_pair" = "De LED zal donkerblauw pulseren om u te laten weten dat het apparaat klaar is om te koppelen";
+"pairing_bluetooth_device_found_explained_ready_to_pair_contact_sensor" = "De LED zal pulseren om u te laten weten dat het apparaat klaar is om te koppelen";
+"pairing_bluetooth_device_found_header_connect_to_power" = "Sluit het apparaat aan op het stopcontact";
 
 /*Pairing, Bluetooth device found: header 1 for the screen.*/
 "pairing_bluetooth_device_found_header1" = "Je apparaat is gevonden via Bluetooth. Mooi!";
@@ -1213,10 +1229,10 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_connect_success_device_has_been_setup_in_zone" = "%1$@ is ingesteld in %2$@";
 
 /*%1$@ has been set up in %2$@. Now let's optimize the device's position to enable sensing.*/
-"pairing_connect_success_device_has_been_setup_in_zone_optimize_position" = "";
+"pairing_connect_success_device_has_been_setup_in_zone_optimize_position" = "%1$@ is ingesteld in %2$@. Laten we nu de positie van het apparaat optimaliseren om detectie mogelijk te maken.";
 
 /*%1$@ has been set up in %2$@. Now let's optimize the device's position to enable sensing.*/
-"pairing_connect_success_device_has_been_setup_in_zone_optimize_position_ios" = "";
+"pairing_connect_success_device_has_been_setup_in_zone_optimize_position_ios" = "%1$@ is ingesteld in %2$@. Laten we nu de positie van het apparaat optimaliseren om detectie mogelijk te maken.";
 
 /*%1$@ has been set up in %2$@. Now let's optimize the device's position to enable sensing.*/
 "pairing_connect_success_setup_another_device" = "Ander apparaat instellen";
@@ -1227,7 +1243,7 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_device_setup_navigagtion_title" = "Apparaat instellen";
 
 /*Device setup*/
-"pairing_device_setup_navigation_title" = "";
+"pairing_device_setup_navigation_title" = "Apparaatinstellingen";
 "pairing_done" = "Klaar";
 "pairing_enable_bluetooth_in_settings_bluetooth_disabled" = "Bluetooth uitgeschakeld";
 
@@ -1240,7 +1256,7 @@ Connection error provided with [underlying error description] from the system.*/
 /*Pairing, Enter Wi-Fi password: title for “Ready to connect” button which sends credentials to device.*/
 "pairing_enter_wifi_password_button_ready_to_connect" = "Klaar om te verbinden";
 "pairing_enter_wifi_password_enter_password" = "Wachtwoord invoeren";
-"pairing_enter_wifi_password_enter_password_ios" = "";
+"pairing_enter_wifi_password_enter_password_ios" = "Voer wachtwoord in voor \"%@\"";
 
 /*Pairing, Enter Wi-Fi password: header for the screen.*/
 "pairing_enter_wifi_password_header" = "Je kunt verbinden middels het wachtwoord van je netwerk “%@.” Geen zorgen, het wachtwoord zal alleen op je telefoon worden opgeslagen en niet bij ons.";
@@ -1248,48 +1264,48 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Pairing, Enter Wi-Fi password: placeholder for the password field.*/
 "pairing_enter_wifi_password_password_placeholder" = "Wachtwoord";
-"pairing_error_all_border_router_offline" = "";
-"pairing_error_all_border_router_offline_description" = "";
-"pairing_error_all_border_router_offline_device_in_zone" = "";
-"pairing_error_mobile_phone_is_not_connected_to_wifi" = "";
-"pairing_error_mobile_phone_is_not_connected_to_wifi_description" = "";
-"pairing_error_no_thread_border_router_in_place" = "";
-"pairing_error_no_thread_border_router_in_place_description" = "";
+"pairing_error_all_border_router_offline" = "Alle Thread border router(s) op uw locatie zijn offline";
+"pairing_error_all_border_router_offline_description" = "Sluit een van deze apparaten aan op de stroomvoorziening en probeer het opnieuw: %@.";
+"pairing_error_all_border_router_offline_device_in_zone" = "%2$@ van %1$@";
+"pairing_error_mobile_phone_is_not_connected_to_wifi" = "Uw mobiele telefoon is niet verbonden met het wifi-netwerk";
+"pairing_error_mobile_phone_is_not_connected_to_wifi_description" = "Zorg ervoor dat uw mobiele telefoon is verbonden met het wifi-netwerk van uw locatie voordat u de installatie opnieuw uitvoert.";
+"pairing_error_no_thread_border_router_in_place" = "Geen Thread Border Router op uw locatie";
+"pairing_error_no_thread_border_router_in_place_description" = "Verwijder al uw apparaten en stel ze opnieuw in.";
 
 /*Pairing, Error handling: title for action button to ignore the current error.*/
 "pairing_errors_action_ignore" = "Negeren en doorgaan";
 
 /*Pairing, Error handling: title for action button to restart pairing anew.*/
 "pairing_errors_action_restart" = "Verlaat koppelen";
-"pairing_errors_action_restart_setup" = "";
-"pairing_errors_action_scan_device_again" = "";
+"pairing_errors_action_restart_setup" = "Installatie opnieuw starten";
+"pairing_errors_action_scan_device_again" = "Scan het apparaat opnieuw";
 
 /*Pairing, Error handling: title for action button to try the bad step again.*/
 "pairing_errors_action_try_again" = "Probeer opnieuw";
-"pairing_errors_ble_disconnected_title" = "";
-"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description1" = "";
-"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description2" = "";
-"pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description1" = "";
-"pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description2" = "";
-"pairing_errors_device_setup_error_device_mismatch_description" = "";
+"pairing_errors_ble_disconnected_title" = "Bluetooth is losgekoppeld";
+"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description1" = "Plaats een van uw activiteitssensoren in %@ dichter bij de deursensor.";
+"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description2" = "Zodra u klaar bent, drukt u nogmaals op de bovenste knop op de deursensor en probeert u het opnieuw.";
+"pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description1" = "Controleer of u dezelfde mobiele telefoon gebruikt die u eerder hebt gebruikt om apparaten in te stellen.";
+"pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description2" = "Als u geen toegang meer hebt tot de mobiele telefoon, reset dan alle apparaten in deze zone: %@.";
+"pairing_errors_device_setup_error_device_mismatch_description" = "De gescande QR-code komt niet overeen met de eerder gemaakte apparaatselectie. Controleer de code en probeer het opnieuw.";
 "pairing_errors_error_occurred_title" = "scan QR code op apparaat!";
-"pairing_errors_failed_to_join_wifi_title" = "";
-"pairing_errors_need_help" = "";
-"pairing_errors_thread_setup_error_border_router_offline" = "";
-"pairing_errors_thread_setup_error_border_router_offline_description_android" = "";
-"pairing_errors_thread_setup_error_device_mismatch_description" = "";
-"pairing_errors_thread_setup_error_device_mismatch_title" = "";
-"pairing_errors_thread_setup_error_missing_thread_credentials" = "";
+"pairing_errors_failed_to_join_wifi_title" = "Verbinding met wifi-netwerk mislukt";
+"pairing_errors_need_help" = "Hulp nodig";
+"pairing_errors_thread_setup_error_border_router_offline" = "Draadgrensrouter offline";
+"pairing_errors_thread_setup_error_border_router_offline_description_android" = "Sluit de %2$@ van %1$@ aan op de voeding en probeer het opnieuw.";
+"pairing_errors_thread_setup_error_device_mismatch_description" = "Controleer en scan de QR-code voor het apparaattype dat op het volgende scherm wordt weergegeven.";
+"pairing_errors_thread_setup_error_device_mismatch_title" = "Apparaat komt niet overeen";
+"pairing_errors_thread_setup_error_missing_thread_credentials" = "Ontbrekende Thread-inloggegevens";
 "pairing_errors_thread_setup_error_no_thread_networks_found_description" = "Plaats uw apparaat dichter bij andere Thread-apparaten in deze zone: %@";
-"pairing_errors_thread_setup_error_no_thread_networks_found_title" = "";
-"pairing_errors_timeout_description" = "";
-"pairing_errors_timeout_title" = "";
+"pairing_errors_thread_setup_error_no_thread_networks_found_title" = "Geen threadnetwerk gevonden";
+"pairing_errors_timeout_description" = "Controleer of het apparaat aan staat en zich in de buurt van uw mobiele telefoon bevindt.";
+"pairing_errors_timeout_title" = "Verbinding is verlopen";
 
 /*Something went wrong*/
-"pairing_errors_unexpected_description" = "";
+"pairing_errors_unexpected_description" = "Er is iets misgegaan ";
 
 /*An unexpected error*/
-"pairing_errors_unexpected_title" = "";
+"pairing_errors_unexpected_title" = "Een onverwachte fout";
 
 /*An unexpected error*/
 "pairing_exit" = "Annuleren";
@@ -1325,7 +1341,7 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_loading_device_connecting" = "Fout opgetreden:\n\n%@";
 "pairing_no" = "Verbinden met Wi-Fi netwerk";
 "pairing_other" = "Vergeten";
-"pairing_other_network_title" = "";
+"pairing_other_network_title" = "Ander netwerk";
 "pairing_other_wifi_network_device_connectivity_hint" = "Met welk netwerk wil je verbinden?";
 
 /*Pairing, Other Wi-Fi network: header above the text field for the custom Wi-Fi network name.*/
@@ -1333,88 +1349,88 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Pairing, Other Wi-Fi network: placeholder for the Wi-Fi network name textfield.*/
 "pairing_other_wifi_network_network_name_placeholder" = "Netwerknaam";
-"pairing_paired_successfully_button_add_device" = "";
+"pairing_paired_successfully_button_add_device" = "Apparaat toevoegen";
 
 /*Pairing, Paired successfully: button title for done.*/
 "pairing_paired_successfully_button_done" = "Klaar";
-"pairing_paired_successfully_button_not_now" = "";
+"pairing_paired_successfully_button_not_now" = "Niet nu";
 
 /*Pairing, Paired successfully: button title for pairing another device.*/
 "pairing_paired_successfully_button_pair_another" = "Ja";
 
 /*Pairing, Paired successfully: button title for update another device.*/
 "pairing_paired_successfully_button_update_another" = "Volgende";
-"pairing_paired_successfully_complete_setup_for_motion_sensing" = "";
-"pairing_paired_successfully_complete_setup_for_motion_sensing_description" = "";
+"pairing_paired_successfully_complete_setup_for_motion_sensing" = "Maak uw installatie voor bewegingsdetectie compleet";
+"pairing_paired_successfully_complete_setup_for_motion_sensing_description" = "U hebt minimaal 2 activiteitssensoren nodig om bewegingsdetectie in %@ in te schakelen.";
 
 /*Pairing, Paired successfully: header 3 for the update wifi credentials.*/
 "pairing_paired_successfully_header3" = "Je plug is succesvol bijgewerkt";
 "pairing_power_on_and_scanning_ask_user_to_wait" = "Ga verder";
 "pairing_power_on_and_scanning_scanning" = "Nee, één zone is voldoende";
 "pairing_scan_device_connecting_to_this_device" = "Kies een naam voor de nieuwe zone";
-"pairing_scan_device_missing_bluetooth_location_permission_explanation" = "";
+"pairing_scan_device_missing_bluetooth_location_permission_explanation" = "Om apparaten te verbinden en de installatie te voltooien, schakelt u Bluetooth- en locatiemachtigingen in via Instellingen.";
 "pairing_scan_device_missing_bluetooth_location_permissions_title" = "Je mag zelf bepalen hoe de zone eruit ziet! De meest gebruikte toepassing is het indelen van een huis in verdiepingen.";
 "pairing_scan_device_missing_bluetooth_permission_title" = "Ik weet dit al!";
 "pairing_scan_device_please_hold" = "Wil je je locatie bijwerken zodat deze meerdere zones ondersteunt?";
 "pairing_scan_device_searching_for_device" = "Ja, bijwerken!";
-"pairing_scan_device_the_led_light_is_not_pulsing" = "";
+"pairing_scan_device_the_led_light_is_not_pulsing" = "Het LED-lampje pulseert niet";
 "pairing_scan_qr_code_error_description" = "Nee";
 "pairing_scan_qr_code_error_title" = "Anders...";
 
 /*Expand camera view*/
-"pairing_scan_qr_expand_camera_view" = "";
+"pairing_scan_qr_expand_camera_view" = "Cameraweergave uitbreiden";
 "pairing_scan_qr_subtitle" = "Terug";
 "pairing_scan_qr_title" = "Scan de QR-code op het apparaat";
-"pairing_scan_qr_where_is_qr" = "";
+"pairing_scan_qr_where_is_qr" = "Waar is de QR-code?";
 "pairing_scan_qrcode_missing_camera_permission_description" = "Type hieronder de naam van het netwerk";
 "pairing_scan_qrcode_missing_camera_permission_title" = "Geen toestemming voor camera";
-"pairing_scanning_ble_faq" = "";
-"pairing_scanning_ble_header_contact_sensor" = "";
+"pairing_scanning_ble_faq" = "Mijn apparaat pulseert niet blauw";
+"pairing_scanning_ble_header_contact_sensor" = "Druk eenmaal op de bovenste knop";
 "pairing_success" = "Gelukt!";
 "paring_scan_device_bluetooth_is_off_description" = "Om verbinding te kunnen maken met je apparaten ga je naar Instellingen en schakel je Bluetooth in.";
 "paring_scan_device_bluetooth_is_off_title" = "Bluetooth staat uit";
-"paring_scan_device_bluetooth_restricted_description" = "";
-"paring_scan_device_bluetooth_restricted_title" = "";
-"pkan_device_placement_title" = "";
+"paring_scan_device_bluetooth_restricted_description" = "Om apparaten te verbinden en de installatie te voltooien, schakelt u Bluetooth in voor nieuwe verbindingen in Instellingen.";
+"paring_scan_device_bluetooth_restricted_title" = "Bluetooth toestaan voor nieuwe verbindingen";
+"pkan_device_placement_title" = "Plan de plaatsing van het apparaat";
 
 /*Create place: header text when selecting the place category.*/
 "place_creation" = "Maak een locatie";
 "place_creation_customize_color_selection" = "Locatie kleur";
 "place_creation_customize_header" = "Locatie aanpassen";
 "place_creation_error_no_category" = "Geen locatie categorie";
-"place_creation_fail_to_create_place" = "";
-"place_creation_fail_to_get_place_information" = "";
-"place_creation_fail_to_update_place" = "";
+"place_creation_fail_to_create_place" = "Het niet creëren van een plek";
+"place_creation_fail_to_get_place_information" = "Het lukt niet om plaatsinformatie te verkrijgen";
+"place_creation_fail_to_update_place" = "Plaats kan niet worden bijgewerkt";
 "place_creation_floor_description" = "Kies het aantal verdiepingen. Wij vertellen je waar de Nami apparaten geplaatst kunnen worden.";
-"place_creation_floor_floor_number" = "";
+"place_creation_floor_floor_number" = "%d verdieping";
 "place_creation_floor_floorNumber_android" = "%@ verdieping";
 "place_creation_floor_header" = "Hoeveel verdiepingen heeft je locatie?";
 "place_creation_header" = "Wat voor soort locatie is dit?";
-"place_creation_name_create_place" = "";
-"place_creation_name_default_name" = "";
+"place_creation_name_create_place" = "Plaats creëren";
+"place_creation_name_default_name" = "Thuis";
 "place_creation_name_description" = "Om verschillende soorten locaties te definieren";
 "place_creation_name_edit_hint" = "Naam van locatie";
 "place_creation_name_error" = "Deze naam bestaat al. Kies alsjeblieft een andere naam.";
 "place_creation_name_header" = "Geef je locatie een naam";
-"place_creation_pets_description" = "";
-"place_creation_pets_header" = "";
+"place_creation_pets_description" = "Hiermee kunnen we de instellingen voor bewegingsdetectie verbeteren en zo het aantal valse alarmen beperken.";
+"place_creation_pets_header" = "Hoe groot zijn uw huisdieren?";
 "place_creation_size_description" = "Als je locatie meerdere verdieping heeft geef dan alsjeblieft door wat de gemiddelde vloeroppervlakte per verdieping is.";
 "place_creation_size_header" = "Wat is de oppervlakte?";
 "place_creation_zone_default_name_multiple_floor" = "%@ verdieping";
 "place_creation_zone_default_name_single_floor" = "Sensing zone 1";
-"place_detail_format_disconnected_device_in_one_zone_android" = "";
-"place_detail_number_of_zone" = "";
-"place_detail_system_not_ready_to_secure" = "";
-"place_detail_timezone" = "";
-"place_details_change_place_mode_to_armed_contain_degraded_description" = "";
-"place_details_change_place_mode_to_armed_contain_unhealthy_description" = "";
-"place_details_change_place_mode_to_aware_contain_degraded_description" = "";
-"place_details_change_place_mode_to_aware_contain_unhealthy_description" = "";
-"place_details_customize" = "";
-"place_details_dashboard" = "";
+"place_detail_format_disconnected_device_in_one_zone_android" = "%d apparaat met problemen in één zone. Tik om uw apparaat te controleren.";
+"place_detail_number_of_zone" = "%d zone";
+"place_detail_system_not_ready_to_secure" = "Het systeem is niet klaar om te beveiligen";
+"place_detail_timezone" = "Tijdzone";
+"place_details_change_place_mode_to_armed_contain_degraded_description" = "De bewakingsdekking is beperkt en indringing wordt mogelijk niet gedetecteerd in zones met apparaatproblemen.";
+"place_details_change_place_mode_to_armed_contain_unhealthy_description" = "U ontvangt geen inbraakmeldingen voor zones waarvan er niet voldoende apparaten werken.";
+"place_details_change_place_mode_to_aware_contain_degraded_description" = "De bewakingsdekking is beperkt en activiteit wordt mogelijk niet gedetecteerd in zones met apparaatproblemen.";
+"place_details_change_place_mode_to_aware_contain_unhealthy_description" = "U ontvangt geen meldingen voor zones waar niet voldoende apparaten werken.";
+"place_details_customize" = "Aanpassen";
+"place_details_dashboard" = "Dashboard";
 "place_details_events" = "Gebeurtenissen";
-"place_details_format_disconnected_device_in_multiple_zone_android" = "";
-"place_details_get_help" = "";
+"place_details_format_disconnected_device_in_multiple_zone_android" = "%d apparaten met problemen in meerdere zones. Tik om je apparaten te controleren.";
+"place_details_get_help" = "Hulp krijgen";
 "place_details_graph" = "Grafiek";
 "place_details_member_pending_expiry_time" = "In behandeling .. verloopt over %@";
 "place_details_member_pending_expiry_time_days" = "%1$d dagen";
@@ -1426,42 +1442,42 @@ Connection error provided with [underlying error description] from the system.*/
 "place_details_members_hours" = "Laatst actief %d uur geleden";
 "place_details_members_minutes" = "Laatst actief %d minuten geleden";
 "place_details_members_months" = "Laatst actief %d maanden geleden";
-"place_details_no_devices_paired" = "";
-"place_details_offline" = "";
+"place_details_no_devices_paired" = "Geen apparaten";
+"place_details_offline" = "Offline";
 "place_details_people" = "Personen";
-"place_details_place_mode" = "";
-"place_details_proceed_with_degraded_zone" = "";
-"place_details_proceed_with_unhealthy_zone" = "";
+"place_details_place_mode" = "Plaatsmodus";
+"place_details_proceed_with_degraded_zone" = "Doorgaan met %d gedegradeerde detectiezone?";
+"place_details_proceed_with_unhealthy_zone" = "Doorgaan met %d uitgeschakelde detectiezone?";
 "place_details_security_mode" = "Security mode";
 "place_details_security_mode_description" = "Place mode shows the highest level of security across all zones. Tap below to control the mode for all zones.";
-"place_details_sensing_link_broken_in_multiple_zone" = "";
-"place_details_sensing_link_broken_in_one_zone" = "";
-"place_details_sensors_are_not_responding" = "";
-"place_details_stay_mode_not_activated_all_zones" = "";
-"place_details_stay_mode_not_activated_all_zones_description" = "";
-"place_details_stay_mode_not_available" = "";
-"place_details_stay_mode_not_available_description" = "";
-"place_details_system_not_ready_to_secure_description" = "";
-"place_details_yes_proceed" = "";
-"place_details_zone_in_mode" = "";
+"place_details_sensing_link_broken_in_multiple_zone" = "Sensoren reageren niet in meerdere zones. Tik om uw zones te controleren.";
+"place_details_sensing_link_broken_in_one_zone" = "Sensoren reageren niet in één zone. Tik om uw zones te controleren.";
+"place_details_sensors_are_not_responding" = "Sensor reageert niet";
+"place_details_stay_mode_not_activated_all_zones" = "De verblijfsmodus wordt alleen geactiveerd voor zones met een deursensor";
+"place_details_stay_mode_not_activated_all_zones_description" = "Voor de overige zones zonder deursensor wordt de standby-modus geactiveerd.";
+"place_details_stay_mode_not_available" = "Blijf-modus is niet beschikbaar";
+"place_details_stay_mode_not_available_description" = "Een deursensor is vereist om de Stay-modus te activeren. Selecteer een andere modus.";
+"place_details_system_not_ready_to_secure_description" = "Er zijn beveiligingsapparaten open, gemanipuleerd of offline. Als u doorgaat, activeren ze mogelijk geen inbraakalarm, ondanks dat ze in de ingeschakelde of aan-stand staan.";
+"place_details_yes_proceed" = "Ga toch door";
+"place_details_zone_in_mode" = "%1$@ in %2$@";
 
 /*place_event*/
-"place_event_date_filter" = "";
-"place_event_today" = "";
-"place_event_yesterday" = "";
+"place_event_date_filter" = "Datumfilter";
+"place_event_today" = "Vandaag";
+"place_event_yesterday" = "Gisteren";
 
 /*Shown while checking for the events history availability on initial screen load*/
 "place_events_downloading_history" = "Controleer gebeurtenissen";
 
 /*place_events*/
-"place_events_empty_description" = "";
+"place_events_empty_description" = "Er zijn nog geen gebeurtenissen geregistreerd voor %@";
 
 /*Tells that the screen is to be populated with the events history once it's available for the [place]*/
 "place_events_empty_history_placeholder" = "Op deze plek worden de gebeurtenissen van %@ geregistreerd";
 "place_events_empty_history_placeholder_android" = "Op deze plek worden de gebeurtenissen van %@ geregistreerd";
 
 /*place_events*/
-"place_events_search_not_found_description" = "";
+"place_events_search_not_found_description" = "Selecteer een andere datum of wis het filter om andere evenementen te bekijken.";
 
 /*Place infromation: average floor area*/
 "place_information_avg_floor_area" = "Gemiddelde vloeroppervlakte";
@@ -1471,8 +1487,8 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place infromation: name*/
 "place_information_name" = "Naam";
-"place_information_pets" = "";
-"place_information_search_time_zone" = "";
+"place_information_pets" = "Huisdieren";
+"place_information_search_time_zone" = "Zoek tijdzone";
 
 /*Place infromation: title*/
 "place_information_title" = "Locatie informatie";
@@ -1500,50 +1516,51 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Text to present on a button disabling an integration.*/
 "place_integrations_want_disable" = "Integratie uitschakelen";
-"place_mode_alert_dialog_stay_mode_not_all_zones_message" = "";
-"place_mode_alert_dialog_stay_mode_not_all_zones_title" = "";
-"place_mode_alert_dialog_stay_mode_warning_confirm" = "";
-"place_mode_alert_dialog_stay_mode_warning_message" = "";
-"place_mode_alert_dialog_stay_mode_warning_title" = "";
+"place_mode_alert_dialog_stay_mode_not_all_zones_message" = "Voor de overige zones zonder deursensor wordt de standby-modus geactiveerd.";
+"place_mode_alert_dialog_stay_mode_not_all_zones_title" = "De verblijfsmodus wordt alleen geactiveerd voor zones met een deursensor";
+"place_mode_alert_dialog_stay_mode_warning_confirm" = "Ik heb het";
+"place_mode_alert_dialog_stay_mode_warning_message" = "Een deursensor is vereist om de Stay-modus te activeren. Selecteer een andere modus.";
+"place_mode_alert_dialog_stay_mode_warning_title" = "Blijf-modus is niet beschikbaar";
 
 /*app_widget*/
-"place_mode_widget_alarm_intrusion_since" = "";
+"place_mode_widget_alarm_intrusion_since" = "Sinds %@";
 
 /*app_widget*/
-"place_mode_widget_configure_select_place" = "";
+"place_mode_widget_configure_select_place" = "Selecteer een plaats";
 
 /*app_widget*/
-"place_mode_widget_configure_title" = "";
+"place_mode_widget_configure_title" = "Widget";
 
 /*app_widget*/
-"place_mode_widget_data_not_available" = "";
+"place_mode_widget_data_not_available" = "Geen gegevens beschikbaar";
 
 /*app_widget*/
-"place_mode_widget_error_no_places" = "";
+"place_mode_widget_error_no_places" = "Een plek aanmaken of erbij aansluiten";
 
 /*app_widget*/
-"place_mode_widget_error_no_selected_place" = "";
+"place_mode_widget_error_no_selected_place" = "Plaats configureren";
 
 /*app_widget*/
-"place_mode_widget_error_user_logged_out" = "";
+"place_mode_widget_error_user_logged_out" = "Meld u aan om uw plaats te bekijken";
 
 /*app_widget*/
-"place_mode_widget_log_in" = "";
+"place_mode_widget_log_in" = "Meld u aan om de plaatsmodus te bekijken";
 
 /*app_widget*/
-"place_mode_widget_sensing_warning" = "";
+"place_mode_widget_sensing_warning" = "Tik om apparaatproblemen te controleren";
 
 /*Place Overview grapth hints*/
 "place_overview_graph_now" = "Actuele beweging";
 "place_overview_graph_thirty_secs_ago" = "30s ago";
-"place_overview_intrusion_detection_end_time" = "";
-"place_overview_intrusion_detection_end_time_format_hour" = "";
-"place_overview_intrusion_detection_end_time_format_minute" = "";
-"place_overview_intrusion_detection_start_time" = "";
-"place_overview_intrusion_detection_title" = "";
+"place_overview_intrusion_detection_end_time" = "afgelopen %@ geleden";
+"place_overview_intrusion_detection_end_time_format_hour" = "%dh";
+"place_overview_intrusion_detection_end_time_format_minute" = "%dm";
+"place_overview_intrusion_detection_start_time" = "begonnen %@ geleden";
+"place_overview_intrusion_detection_title" = "Inbraakdetectie";
 
 /*Place Overview: motion section title*/
 "place_overview_motion" = "Beweging";
+"place_overview_no_devices_has_been_added" = "Nog geen apparaten toegevoegd.";
 
 /*Place Overview: pair a kit to unlock motion sensing*/
 "place_overview_pair_kit_unlock_motion_sensing" = "Koppel een kit om bewegingsdetectie te activeren";
@@ -1557,16 +1574,16 @@ Connection error provided with [underlying error description] from the system.*/
 /*Place Overview: zones section title*/
 "place_overview_zones" = "Zones";
 "place_pair_one_more_device_to_unlock_the_motion_sensing" = "Koppele één of meerdere apparaten voor detectie";
-"place_people_invite_title" = "";
-"place_pets" = "";
-"place_pets_big_pets" = "";
-"place_pets_big_pets_imperial" = "";
-"place_pets_big_pets_metric" = "";
-"place_pets_both_small_big_pets" = "";
-"place_pets_none" = "";
-"place_pets_small_pets" = "";
-"place_pets_small_pets_imperial" = "";
-"place_pets_small_pets_metric" = "";
+"place_people_invite_title" = "Mensen uitnodigen";
+"place_pets" = "Huisdieren";
+"place_pets_big_pets" = "Grote huisdieren";
+"place_pets_big_pets_imperial" = "Grote huisdieren > 20 lb";
+"place_pets_big_pets_metric" = "Grote huisdieren > 10 kg";
+"place_pets_both_small_big_pets" = "Zowel kleine als grote huisdieren";
+"place_pets_none" = "Geen";
+"place_pets_small_pets" = "Kleine huisdieren";
+"place_pets_small_pets_imperial" = "Kleine huisdieren < 20 lb";
+"place_pets_small_pets_metric" = "Kleine huisdieren < 10 kg";
 
 /*Place properties: apartment*/
 "place_properties_apartment" = "Appartement";
@@ -1574,8 +1591,8 @@ Connection error provided with [underlying error description] from the system.*/
 /*Place properties: house*/
 "place_properties_house" = "Huis";
 "place_setting_editPlace_toolbar" = "Locatie thema aanpassen";
-"place_setting_header_add_devices" = "";
-"place_setting_header_add_devices_description" = "";
+"place_setting_header_add_devices" = "Apparaten toevoegen";
+"place_setting_header_add_devices_description" = "Breid uw beveiligingssysteem uit";
 "place_setting_header_general" = "Algemeen";
 "place_setting_header_setup" = "Instellen";
 "place_setting_header_setup_a_device_description" = "Aanpassen voor detectie";
@@ -1607,10 +1624,12 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: sensitivity engine not supported*/
 "place_settings_engine_does_not_support_sensitivity" = "Niet beschikbaar voor bewegingsoptie";
+"place_settings_last_admin_leave_dialog_description" = "Je bent de laatste Beheerder in %@. Om te vertrekken, wijs eerst een andere gebruiker aan als Beheerder om deze plek te beheren.";
+"place_settings_last_admin_leave_dialog_title" = "Wijs een nieuwe Beheerder toe voordat u vertrekt";
 
 /*Place settings: leave place*/
 "place_settings_leave_place_button" = "Verlaat locatie";
-"place_settings_manage_devices" = "";
+"place_settings_manage_devices" = "Apparaten beheren";
 
 /*Edit place: motion*/
 "place_settings_motion" = "Beweging";
@@ -1656,13 +1675,13 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place Users roles section title*/
 "place_users_role_role" = "Rol";
-"place_widget_door_sensor_is_required_to_activate_stay_mode" = "";
-"place_widget_stay_mode_activated_for_zones_without_door_sensor" = "";
+"place_widget_door_sensor_is_required_to_activate_stay_mode" = "Om de Stay-modus te activeren, is een deursensor nodig.";
+"place_widget_stay_mode_activated_for_zones_without_door_sensor" = "Zones zonder deursensor in standby-modus";
 
 /*Place Category*/
 "places_category_apartment" = "Appartement";
-"places_category_business" = "";
-"places_category_detached_house" = "";
+"places_category_business" = "Bedrijf";
+"places_category_detached_house" = "Vrijstaande woning";
 
 /*Place Category*/
 "places_category_eating" = "Café";
@@ -1672,24 +1691,25 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place Category*/
 "places_category_shopping" = "Winkelen";
-"places_category_townhouse" = "";
+"places_category_townhouse" = "Stadswoning";
 
 /*Place Category*/
 "places_category_unknown" = "Onbekend";
 
 /*Place Category*/
 "places_category_work" = "Werk";
-"plan_device_placement_guide_1_imperial" = "";
-"plan_device_placement_guide_1_metric" = "";
-"plan_device_placement_guide_2_imperial" = "";
-"plan_device_placement_guide_2_metric" = "";
-"plan_device_placement_guide_3_imperial" = "";
-"plan_device_placement_guide_3_metric" = "";
-"plan_device_placement_guide_4_imperial" = "";
-"plan_device_placement_guide_4_metric" = "";
-"plan_device_placement_guide_5_imperial" = "";
-"plan_device_placement_guide_5_metric" = "";
-"plan_device_placement_title" = "";
+"plan_device_placement_avoid_placement_near_electronic" = "Plaats het niet in de buurt van elektronische apparaten of grote metalen voorwerpen";
+"plan_device_placement_guide_1_imperial" = "Zoek 2 stopcontacten op dezelfde verdieping, 3 tot 9 meter uit elkaar";
+"plan_device_placement_guide_1_metric" = "Identificeer 2 stopcontacten op dezelfde verdieping, 3-10 m uit elkaar ";
+"plan_device_placement_guide_2_imperial" = "Eén stopcontact binnen 9 meter van zowel uw voordeur als uw wifi-toegangspunt";
+"plan_device_placement_guide_2_metric" = "Eén stopcontact binnen 10 meter van zowel uw voordeur als uw wifi-toegangspunt";
+"plan_device_placement_guide_3_imperial" = "Eén stopcontact binnen 30 voet van zowel uw Wi-Fi-toegangspunt als de geselecteerde deur voor de deursensor";
+"plan_device_placement_guide_3_metric" = "Eén stopcontact binnen 10 meter van zowel uw Wi-Fi-toegangspunt als de geselecteerde deur voor de deursensor";
+"plan_device_placement_guide_4_imperial" = "Beide stopcontacten moeten 3 tot 9 meter verwijderd zijn van bestaande activiteitssensoren in %@";
+"plan_device_placement_guide_4_metric" = "Beide stopcontacten moeten 3-10 m verwijderd zijn van bestaande activiteitssensoren in %@";
+"plan_device_placement_guide_5_imperial" = "Eén stopcontact binnen 30 voet van de geselecteerde deur voor de deursensor";
+"plan_device_placement_guide_5_metric" = "Eén stopcontact binnen 10 m van de geselecteerde deur voor de deursensor";
+"plan_device_placement_title" = "Plan de plaatsing van het apparaat";
 "profile_account" = "Account";
 
 /*Account deletion explanaition text.*/
@@ -1716,23 +1736,24 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*User profile: title for the inactive button when the key has just been copied.*/
 "profile_copied" = "Gekopiëerd!";
+"profile_copied_to_clipboard" = "Gekopieerd naar klembord";
 
 /*User profile: title for the button to copy the recovery key.*/
 "profile_copy_recovery_key" = "Kopiëer herstelsleutel";
-"profile_developer_mode_alert_description" = "";
-"profile_developer_mode_alert_title" = "";
+"profile_developer_mode_alert_description" = "U verliest de toegang tot functies die alleen beschikbaar zijn in de ontwikkelaarsmodus.";
+"profile_developer_mode_alert_title" = "Ontwikkelaarsmodus deactiveren?";
 
 /*User profile: developer mode.*/
-"profile_developer_mode_deactivate_action" = "";
+"profile_developer_mode_deactivate_action" = "Deactiveren";
 
 /*User profile: developer mode.*/
-"profile_developer_mode_deactivate_alert_description" = "";
+"profile_developer_mode_deactivate_alert_description" = "U verliest de toegang tot functies die alleen beschikbaar zijn in de ontwikkelaarsmodus.";
 
 /*User profile: developer mode.*/
-"profile_developer_mode_deactivate_alert_title" = "";
+"profile_developer_mode_deactivate_alert_title" = "Ontwikkelaarsmodus deactiveren?";
 
 /*User profile: developer mode.*/
-"profile_developer_mode_title" = "";
+"profile_developer_mode_title" = "Ontwikkelaarsmodus";
 
 /*User profile: a button to show an input for signin request authorization.*/
 "profile_go_confirm_signin_request" = "Verzoek om in te loggen goedkeuren";
@@ -1816,7 +1837,7 @@ Connection error provided with [underlying error description] from the system.*/
 "remove_device_change_thread_network" = "Verander Thread-netwerk.";
 "remove_device_change_thread_network_description" = "De resterende apparaten in %@ zullen automatisch verbinden met een ander beschikbaar Thread-netwerk. Sensoren blijven functioneren.";
 "remove_device_data_removed_warning_thread" = "Dit apparaat en de bijbehorende gegevens zullen uit uw plaats worden verwijderd. Het verwijderen van deze Thread grensrouter zal ook:";
-"remove_device_data_removed_warning_thread_in_zone" = "";
+"remove_device_data_removed_warning_thread_in_zone" = "Omdat dit apparaat ook fungeert als Thread border router voor %@, kunnen alle apparaten in deze zone worden losgekoppeld.";
 "remove_device_data_removed_warning_wifi" = "Dit apparaat en de bijbehorende gegevens zullen uit uw locatie worden verwijderd.";
 "remove_device_disable_sensing_function" = "Sensfunctie uitschakelen.";
 "remove_device_disable_sensing_function_description" = "De apparaten in %@ kunnen geen sensordata meer verzamelen.";
@@ -1828,7 +1849,7 @@ Connection error provided with [underlying error description] from the system.*/
 "remove_device_remove_thread_network_description" = "De resterende apparaten in %@ zullen worden losgekoppeld van het Thread-netwerk.";
 "remove_device_restore_sensing_in_zone" = "Om sensoren te herstellen in %@.";
 "remove_device_restore_sensing_in_zone_description" = "Stel een ander Thread-apparaat in als de grensrouter.";
-"report_false_alarm_by_continuing_intrusion_will_be_disarmed" = "";
+"report_false_alarm_by_continuing_intrusion_will_be_disarmed" = "Als u doorgaat, wordt de inbraak onschadelijk gemaakt.";
 "report_false_alarm_reporting_as_false_alarm_will_also_disarm_the_intrusion" = "Reporting as false alarm will also disarm the intrusion.";
 "report_false_alarm_the_intrusion_was_triggered_by" = "The intrusion was triggered by";
 
@@ -1839,39 +1860,39 @@ Connection error provided with [underlying error description] from the system.*/
 "room_selection_title" = "Where is this device?";
 "rooms_category_bathroom" = "Badkamer";
 "rooms_category_bedroom" = "Slaapkamer";
-"rooms_category_dinning_area" = "";
+"rooms_category_dinning_area" = "Eetgedeelte";
 "rooms_category_kitchen" = "Keuken";
 "rooms_category_living_room" = "Woonkamer";
-"rooms_category_office" = "";
+"rooms_category_office" = "Kantoor";
 "rooms_category_other" = "Andere kamer";
-"rooms_category_retail_space" = "";
-"rooms_category_store_room" = "";
+"rooms_category_retail_space" = "Winkelruimte";
+"rooms_category_store_room" = "Berging";
 "rooms_category_unknown" = "Onbekend";
 "security_mode_add_more_zone_to_show_zone_settings" = "Your place has only 1 zone. To customize security modes per zone, you can add more zones with devices.";
-"security_mode_degraded_zone" = "";
-"security_mode_disabled_zone" = "";
+"security_mode_degraded_zone" = "Gedegradeerd: De monitoringsdekking is verminderd";
+"security_mode_disabled_zone" = "Uitgeschakeld: Monitoring werkt niet";
 "security_mode_discard" = "Discard";
 "security_mode_discard_changes" = "Discard unsaved changes?";
 "security_mode_discard_changes_description" = "If you proceed, you will lose all unsaved changes.";
-"security_mode_explanation_bottom_sheet_got_it" = "";
-"security_mode_explanation_bottom_sheet_learn_more" = "";
-"security_mode_explanation_got_it" = "";
-"security_mode_explanation_learn_more" = "";
-"security_mode_explanation_status_armed_description" = "";
-"security_mode_explanation_status_standby_description" = "";
-"security_mode_explanation_status_stay_description" = "";
-"security_mode_explanation_sub_title" = "";
-"security_mode_explanation_title" = "";
+"security_mode_explanation_bottom_sheet_got_it" = "Ik heb het";
+"security_mode_explanation_bottom_sheet_learn_more" = "Meer informatie";
+"security_mode_explanation_got_it" = "Ik heb het";
+"security_mode_explanation_learn_more" = "Meer informatie";
+"security_mode_explanation_status_armed_description" = "Er klinkt een alarm en er worden waarschuwingen voor indringing verzonden voor alle activiteiten";
+"security_mode_explanation_status_standby_description" = "Er worden geen waarschuwingen verzonden, maar apparaten registreren activiteit";
+"security_mode_explanation_status_stay_description" = "Het alarm gaat af en er worden alleen inbraakmeldingen verzonden als een deursensor wordt geopend";
+"security_mode_explanation_sub_title" = "Bepaal hoe uw plek wordt beschermd";
+"security_mode_explanation_title" = "Beveiligingsmodi";
 "security_mode_status_armed_description" = "Receive intrusion alert for all motion";
 "security_mode_status_aware_description" = "Receive notifications for all motion";
 "security_mode_status_relaxed_description" = "No notifications for all motion";
-"security_mode_status_standby_description" = "";
-"security_mode_status_stay_description" = "";
+"security_mode_status_standby_description" = "Er worden geen waarschuwingen verzonden, maar apparaten registreren activiteit";
+"security_mode_status_stay_description" = "Het alarm gaat af en er worden alleen inbraakmeldingen verzonden als een deursensor wordt geopend";
 "security_mode_zone_mode" = "Zone mode";
 "security_mode_zone_mode_description" = "Tap below to control individual zone modes.";
 
 /*Contact sensor commissioning feature*/
-"select_device_setup_description" = "";
+"select_device_setup_description" = "Selecteer een apparaat om in te stellen";
 
 /*Select floor area: description*/
 "select_floor_area_description" = "Als je locatie meerdere verdiepingen heeft, geef dan alsjeblieft de gemiddelde vloeroppervlakte per verdieping";
@@ -1951,12 +1972,12 @@ Connection error provided with [underlying error description] from the system.*/
 /*Select user icon: Prompt message*/
 "select_user_icon_prompt_message" = "Laten we je profiel aanpassen";
 "select_zone_description" = "Devices in the same zone must be placed on the same floor";
-"select_zone_format_accessory_devices" = "";
-"select_zone_format_sensing_devices" = "";
+"select_zone_format_accessory_devices" = "%d accessoire";
+"select_zone_format_sensing_devices" = "%d activiteitssensor";
 "select_zone_format_thread_devices" = "%@d Thread device";
-"select_zone_format_wifidevices" = "";
+"select_zone_format_wifidevices" = "%d Wi-Fi-apparaat";
 "select_zone_title" = "Select or create a zone";
-"sensing" = "";
+"sensing" = "Voelen";
 "sensitivity_settings_description_unavailable" = "Hier kun je de gevoeligheidsinstellingen van je locatie aanpassen. Koppel apparaten om deze functie vrij te geven.";
 "sensitivity_settings_engine_unavailable" = "Hier kun je de verwerkingsoptie van je locatie aanpassen. Koppel apparaten om deze functie vrij te geven.";
 "sensitivity_settings_level_android" = "Niveau %@";
@@ -1987,16 +2008,16 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 "sensitivity_settings_title" = "Gevoeligheid";
 "setup_a_device_room_selection_sub_tittle" = "Kies een plek voor je apparaat. Dit helpt je om je apparaten te organiseren.";
 "setup_a_device_room_selection_tittle" = "Waar is je apparaat?";
-"setup_a_device_toolbar_title" = "";
+"setup_a_device_toolbar_title" = "Apparaatinstellingen";
 "setup_a_kit_feature_not_available_description" = "Maak alsjeblieft een nieuwe locatie aan of koppel apparaten vanuit de locatie instellingen.";
 "setup_a_kit_feature_not_available_header" = "Functie niet beschikbaar";
 "setup_a_kit_how_device_work_description" = "nami gebruikt Wi-Fi signalen om beweging in een gebied te detecteren, bekend als een sensing zone.";
 "setup_a_kit_how_device_work_tittle" = "Hoe nami sensing werkt";
-"setup_a_kit_how_device_works_explanation_content1" = "";
-"setup_a_kit_how_device_works_explanation_content2" = "";
-"setup_a_kit_how_device_works_explanation_content3" = "";
-"setup_a_kit_how_device_works_explanation_content4" = "";
-"setup_a_kit_how_device_works_explanation_content5" = "";
+"setup_a_kit_how_device_works_explanation_content1" = "Ontworpen om u te helpen uw plaats en voordeur te beveiligen";
+"setup_a_kit_how_device_works_explanation_content2" = "Plaats apparaten op de eerste verdieping om de beveiliging te optimaliseren";
+"setup_a_kit_how_device_works_explanation_content3" = "Biedt extra beveiliging voor uw woning en elke toegangsdeur";
+"setup_a_kit_how_device_works_explanation_content4" = "Houd toezicht op andere gedeelten van uw woning en elke toegangsdeur";
+"setup_a_kit_how_device_works_explanation_content5" = "Zorgt voor extra beveiliging van een kamer en elke toegangsdeur.";
 "setup_a_kit_how_device_works_guide_content1" = "Each sensing zone covers one floor";
 
 /*Fuzzy*/
@@ -2009,9 +2030,9 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 /*Fuzzy*/
 "setup_a_kit_how_device_works_guide_content5" = "Gebruik het access point dat het meest centraal is geplaatst in het gebied dat je wilt meten";
 "setup_a_kit_how_device_works_start" = "Start met instellen";
-"setup_a_kit_how_to_place_device_add_device" = "";
-"setup_a_kit_how_to_place_device_add_first_sense_plug" = "";
-"setup_a_kit_how_to_place_device_add_second_sense_plug" = "";
+"setup_a_kit_how_to_place_device_add_device" = "Voeg %@ toe";
+"setup_a_kit_how_to_place_device_add_first_sense_plug" = "Voeg de eerste SensePlug toe";
+"setup_a_kit_how_to_place_device_add_second_sense_plug" = "Tweede SensePlug toevoegen";
 "setup_a_kit_how_to_place_device_guide_content1_first_paired_device" = "Kies het Wi-Fi access point dat het meest centraal is geplaats in het gebied dat je wilt meten";
 "setup_a_kit_how_to_place_device_guide_content2_first_paired_device_imperial" = "Plaats het eerste apparaat maximaal 30 ft van het gekozen access point";
 "setup_a_kit_how_to_place_device_guide_content2_first_paired_device_metric" = "Plaats het eerste apparaat maximaal 10 meter van het gekozen access point";
@@ -2022,39 +2043,40 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 "setup_a_kit_how_to_place_device_non_first_paired_device_guide_content1" = "Place devices on the same floor";
 "setup_a_kit_how_to_place_device_non_first_paired_device_guide_content2_imperial" = "Ensure at least 10 ft between two devices";
 "setup_a_kit_how_to_place_device_non_first_paired_device_guide_content2_metric" = "Ensure at least 3m between two devices";
-"setup_a_kit_how_to_place_device_non_first_widar_has_br_guide_content_3" = "";
-"setup_a_kit_introduce_zone_content1" = "";
-"setup_a_kit_introduce_zone_content2" = "";
-"setup_a_kit_introduce_zone_content3" = "";
-"setup_a_kit_introduce_zone_content4" = "";
-"setup_a_kit_introduce_zone_content5" = "";
-"setup_a_kit_introduce_zone_title" = "";
+"setup_a_kit_how_to_place_device_non_first_widar_has_br_guide_content_3" = "Plaats het apparaat niet op of in de buurt van metalen oppervlakken";
+"setup_a_kit_introduce_zone_content1" = "Met zones kunt u apparaten die in verschillende kamers zijn geplaatst, groeperen en bedienen";
+"setup_a_kit_introduce_zone_content2" = "Elke zone heeft zijn eigen beveiligingsmodus en bewegingsgegevens";
+"setup_a_kit_introduce_zone_content3" = "Alle 3 apparaten worden aan dezelfde zone toegevoegd";
+"setup_a_kit_introduce_zone_content4" = "Beide apparaten worden aan dezelfde zone toegevoegd";
+"setup_a_kit_introduce_zone_content5" = "Voeg ze toe aan een bestaande zone of maak een nieuwe zone";
+"setup_a_kit_introduce_zone_title" = "Inleiding tot zones";
 "setup_a_kit_kit_selection_tittle" = "Wat ga je instellen?";
-"setup_a_kit_select_your_preferred_zone_title" = "";
+"setup_a_kit_select_your_preferred_zone_title" = "Selecteer uw voorkeurszone";
 
 /*set up a kit*/
 "setup_a_kit_toolbar_tittle" = "Kit instellen";
 "setup_a_kit_where_to_setup_add_guide" = "Kit toevoegen aan";
-"setup_a_kit_where_to_setup_one_floor_title" = "";
+"setup_a_kit_where_to_setup_one_floor_title" = "Stel de detectiezone in";
 "setup_a_kit_where_to_setup_placeSize_large_coverage_1_floor" = "Iedere kit beslaat tot %@ per locatie";
 "setup_a_kit_where_to_setup_placeSize_large_coverage_more_floors" = "Iedere kit beslaat tot %@ per verdieping";
 "setup_a_kit_where_to_setup_placeSize_small_coverage_1_floor" = "Deze kit beslaat een volledige locatie";
 "setup_a_kit_where_to_setup_sub_tittle_more_floor_monitoring" = "Plaats apparaten waar je beweging wilt detecteren";
 "setup_a_kit_where_to_setup_sub_tittle_more_floor_security" = "Kies inbraakgevoelige locaties die je wilt beveiligen";
-"setup_a_kit_where_to_setup_subtitle_monitor_one_floor_big_size" = "";
-"setup_a_kit_where_to_setup_subtitle_one_floor_small_size" = "";
-"setup_a_kit_where_to_setup_subtitle_security_one_floor_big_size" = "";
+"setup_a_kit_where_to_setup_subtitle_monitor_one_floor_big_size" = "Kies een deel van uw woning waar u beweging wilt detecteren.";
+"setup_a_kit_where_to_setup_subtitle_one_floor_small_size" = "Apparaten in dezelfde zone moeten op dezelfde verdieping worden geplaatst";
+"setup_a_kit_where_to_setup_subtitle_security_one_floor_big_size" = "Kies een deel van je huis waar je beweging wilt detecteren. Overweeg om gebieden af te dekken waar indringers het vaakst binnenkomen.";
 "setup_a_kit_where_to_setup_tittle" = "Kies een verdieping als sensing zone";
-"setup_kit_kit_tracker_all_devices_added" = "";
-"setup_kit_security_mode_control_how_your_place_is_protected" = "";
-"setup_kit_security_mode_select_security_mode_for_place" = "";
-"setup_kit_security_mode_what_is_security_mode" = "";
-"setup_kit_security_mode_you_can_change_later" = "";
+"setup_kit_kit_tracker_all_devices_added" = "Alle apparaten toegevoegd";
+"setup_kit_security_mode_control_how_your_place_is_protected" = "Bepaal hoe uw plek wordt beschermd";
+"setup_kit_security_mode_select_security_mode_for_place" = "Selecteer een beveiligingsmodus voor uw locatie";
+"setup_kit_security_mode_what_is_security_mode" = "Wat zijn beveiligingsmodi?";
+"setup_kit_security_mode_you_can_change_later" = "U kunt deze beveiligingsmodus later wijzigen";
 "setup_kit_test_system_complete_test" = "Complete Test";
 "setup_kit_test_system_door_sensor_description" = "Open the door and the icon on the right should change to an open door.";
 "setup_kit_test_system_door_sensor_faq" = "The icon is not changing";
 "setup_kit_test_system_motion_sensing_description" = "Move around the area monitored by the activity sensors, then stop moving. Check the graph below for the change.";
 "setup_kit_test_system_motion_sensing_faq" = "Motion sensing is not working";
+"setup_kit_test_system_preparing_device" = "Apparaat voorbereiden...";
 "setup_kit_test_system_siren" = "Siren";
 "setup_kit_test_system_siren_description" = "Tap on ‘Sound siren’ to check that the siren is working.";
 "setup_kit_test_system_siren_faq" = "I don’t hear the siren";
@@ -2065,22 +2087,22 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 
 /*Setup kit: title*/
 "setup_kit_title" = "Kit instellen";
-"setup_kit_your_system_is_ready_to_secure_your_place" = "";
-"setup_kit_youre_all_set" = "";
-"setup_motion_sensing_first_bss_first_kit" = "";
-"setup_motion_sensing_first_bss_non_first_kit_has_br" = "";
-"setup_motion_sensing_first_bss_non_first_kit_no_br" = "";
-"setup_motion_sensing_first_hms_first_kit" = "";
-"setup_motion_sensing_first_hms_non_first_kit_has_br" = "";
-"setup_motion_sensing_first_hms_non_first_kit_no_br" = "";
-"setup_motion_sensing_first_not" = "";
-"setup_motion_sensing_first_the_door_sensor_does_not_detect_motion" = "";
-"setup_motion_sensing_first_the_door_sensor_does_not_detect_motion_markdown" = "";
-"setup_motion_sensing_first_title" = "";
-"setup_motion_sensing_first_widar_first_kit" = "";
-"setup_motion_sensing_first_widar_non_first_kit_has_br_1" = "";
-"setup_motion_sensing_first_widar_non_first_kit_has_br_2" = "";
-"setup_motion_sensing_first_widar_non_first_kit_no_br" = "";
+"setup_kit_your_system_is_ready_to_secure_your_place" = "Uw systeem is klaar om uw plaats veilig te stellen";
+"setup_kit_youre_all_set" = "Je bent klaar!";
+"setup_motion_sensing_first_bss_first_kit" = "De Alarm Pod en SensePlug vormen een detectiegebied dat beweging detecteert";
+"setup_motion_sensing_first_bss_non_first_kit_has_br" = "De Alarm Pod en SensePlug breiden het detectiegebied uit voor %@";
+"setup_motion_sensing_first_bss_non_first_kit_no_br" = "De Alarm Pod en SensePlug vormen een detectiegebied dat beweging detecteert";
+"setup_motion_sensing_first_hms_first_kit" = "De 2 SensePlugs vormen een detectiegebied dat beweging detecteert";
+"setup_motion_sensing_first_hms_non_first_kit_has_br" = "De 2 SensePlugs breiden het detectiegebied uit voor %@";
+"setup_motion_sensing_first_hms_non_first_kit_no_br" = "De 2 SensePlugs vormen een detectiegebied dat beweging detecteert";
+"setup_motion_sensing_first_not" = "niet";
+"setup_motion_sensing_first_the_door_sensor_does_not_detect_motion" = "De deursensor detecteert geen beweging.";
+"setup_motion_sensing_first_the_door_sensor_does_not_detect_motion_markdown" = "De deursensor detecteert **geen** beweging.";
+"setup_motion_sensing_first_title" = "Stel eerst de bewegingsdetectie in";
+"setup_motion_sensing_first_widar_first_kit" = "De WiDAR-sensor detecteert beweging in de kamer waar hij is geplaatst";
+"setup_motion_sensing_first_widar_non_first_kit_has_br_1" = "De WiDAR-sensor werkt samen met andere bestaande apparaten in %@ om het detectiegebied uit te breiden";
+"setup_motion_sensing_first_widar_non_first_kit_has_br_2" = "Het kan ook onafhankelijk beweging detecteren in de kamer waar het is geplaatst";
+"setup_motion_sensing_first_widar_non_first_kit_no_br" = "De WiDAR-sensor detecteert beweging in de kamer waar hij is geplaatst";
 
 /*Sign up: anonymous account text for other sign up options*/
 "sign_up_anonymous_account_text" = "nami ondersteunt anoniem inloggen. Dit is bedoeld om je account zo privé mogelijk te houden.\n\nHet enige nadeel van deze manier van inloggen is dat wanneer je uitlogt (bijvoorbeeld bij wisselen van telefoon of verwijderen van de app) je alleen nog kunt inloggen aan de hand van een herstelsleutel.\n\nGa naar je profielpagina en kies \"kopieer herstelsleutel\" en sla deze op een veilige plaats op";
@@ -2128,7 +2150,7 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 
 /*Status decription: armed and alert.*/
 "status_alert" = "Alarm ingeschakeld";
-"status_armed" = "";
+"status_armed" = "Gewapend";
 
 /*Status hint in Alert Switcher: Armed.*/
 "status_armed_hint" = "Signaleer inbraak en laat alarm afgaan";
@@ -2150,26 +2172,26 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 
 /*Status hint in Alert Switcher: Relaxed.*/
 "status_relaxed_hint" = "Sensoren geactiveerd";
-"status_standby" = "";
-"status_standby_hint" = "";
-"status_stay" = "";
-"status_stay_hint" = "";
+"status_standby" = "Stand-by";
+"status_standby_hint" = "Geen meldingen";
+"status_stay" = "Verblijf";
+"status_stay_hint" = "Zachte meldingen";
 "status_stay_hint_disabled" = "";
-"system_setup_basic_security_system" = "";
-"system_setup_basic_security_system_description" = "";
-"system_setup_home_monitoring_system" = "";
-"system_setup_home_monitoring_system_description" = "";
-"system_setup_others" = "";
-"system_setup_setup_single_device_dialog_button" = "";
-"system_setup_setup_single_device_dialog_description" = "";
-"system_setup_setup_single_device_dialog_title" = "";
-"system_setup_widar_door_sensor" = "";
-"system_setup_widar_door_sensor_description" = "";
-"tabbar_title_automation" = "";
-"tabbar_title_place" = "";
-"tabbar_title_settings" = "";
-"time_zone_no_results_found" = "";
-"time_zone_search_time_zone" = "";
+"system_setup_basic_security_system" = "Alarm Starterpakket";
+"system_setup_basic_security_system_description" = "1 Alarm Pod, 1 SensePlug, 1 Deursensor";
+"system_setup_home_monitoring_system" = "Uitbreidingspakket";
+"system_setup_home_monitoring_system_description" = "2 SensePlugs, 1 deursensor";
+"system_setup_others" = "Anderen";
+"system_setup_setup_single_device_dialog_button" = "Ik heb het";
+"system_setup_setup_single_device_dialog_description" = "U wordt niet begeleid bij het optimaal plaatsen van apparaten wanneer u ze afzonderlijk instelt. Als u het niet zeker weet, raden we u aan de bovenstaande opties te selecteren om ze door het systeem te laten instellen voor een soepelere ervaring.";
+"system_setup_setup_single_device_dialog_title" = "Belangrijke opmerking";
+"system_setup_widar_door_sensor" = "WiDAR + deursensorkit";
+"system_setup_widar_door_sensor_description" = "1 WiDAR-sensor, 1 deursensor";
+"tabbar_title_automation" = "Automatisering";
+"tabbar_title_place" = "Plaats";
+"tabbar_title_settings" = "Instellingen";
+"time_zone_no_results_found" = "Geen resultaten gevonden";
+"time_zone_search_time_zone" = "Zoek tijdzone";
 
 /*Update Wifi error: device already updated*/
 "update_wifi_device_already_updated" = "Dit apparaat is al bijgewerkt. Scan de QR -code van een apparaat in %1$@";
@@ -2222,7 +2244,7 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 "update_wifi_network_update_successfully_header1" = "Perfect! Je apparaat is nu bijgewerkt.";
 "update_wifi_network_zone_status_guide_completed_update" = "Wi-Fi gegevens bijgewerkt!";
 "update_wifi_network_zones_selection_guide" = "Apparaten binnen een zone moeten met hetzelfde Wi-Fi netwerk verbonden zijn. Werk alle apparaten bij behoud huidige instelling";
-"update_wifi_not_nami_qr_code_no_zone" = "";
+"update_wifi_not_nami_qr_code_no_zone" = "Deze QR-code komt niet overeen met een nami-apparaat.";
 
 /*Update Wifi error: QR code error*/
 "update_wifi_qr_code_error" = "QR-code fout";
@@ -2274,7 +2296,7 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 
 /*Update Wifi: select a zone to update - non support for thread zone
 Update Wifi: select a zone to update - non support for thread zone*/
-"update_wifi_select_zone_to_update_non_thread_zone_support" = "";
+"update_wifi_select_zone_to_update_non_thread_zone_support" = "Deze functie is momenteel niet beschikbaar voor zones met Thread-apparaten.";
 
 /*Update Wifi: select a zone to update - non support for thread zone
 Update Wifi: select a zone to update - non support for thread zone
@@ -2349,44 +2371,47 @@ Update Wifi: select a zone to update - number of devices*/
 
 /*Button to save changes applied to user (e.g. user role)*/
 "user_details_save_changes_button" = "Opslaan";
-"user_role_administrator" = "";
+"user_remove_user_description" = "Deze actie kan niet ongedaan worden gemaakt.";
+"user_remove_user_title" = "“%@” verwijderen?";
+"user_role_administrator" = "Beheerder";
+"user_role_user" = "Gebruiker";
 "welcome_page_policy" = "Wanneer je verder gaat, ga je akkoord met onze Algemene Voorwaarden en bevestig je dat je ons Privacyverklaring hebt gelezen.";
-"widar_cancel_popup_back_to_positioning_button" = "";
-"widar_cancel_popup_cancel_button" = "";
-"widar_cancel_popup_message" = "";
-"widar_cancel_popup_title" = "";
-"widar_error_device_not_found_message" = "";
-"widar_error_exit_button" = "";
-"widar_error_retry_button" = "";
-"widar_error_title" = "";
-"widar_error_wrong_step" = "";
-"widar_header_title" = "";
-"widar_info_button_text" = "";
-"widar_info_info_avoid_moving_when_optimized" = "";
-"widar_info_info_must_optimise_position" = "";
-"widar_info_title" = "";
-"widar_position_cancel_button" = "";
-"widar_position_finish_button" = "";
-"widar_position_guide_imperial" = "";
-"widar_position_guide_metric" = "";
-"widar_position_imperial_guide" = "";
-"widar_position_metric_guide" = "";
-"widar_position_status_checking" = "";
-"widar_position_status_getting_better" = "";
-"widar_position_status_label" = "";
-"widar_position_status_mispositioned" = "";
-"widar_position_status_optimized" = "";
-"widar_position_tertiary_button_text" = "";
-"widar_position_tip" = "";
-"widar_position_title" = "";
-"widar_recommendations_button_text" = "";
-"widar_recommendations_info_attach_base" = "";
-"widar_recommendations_info_keep_area_clear" = "";
-"widar_recommendations_info_wire_on_back" = "";
-"widar_recommendations_title" = "";
-"widar_success_content_message" = "";
-"widar_success_done_button" = "";
-"widar_success_title" = "";
+"widar_cancel_popup_back_to_positioning_button" = "Terug naar positionering";
+"widar_cancel_popup_cancel_button" = "Ja, annuleren";
+"widar_cancel_popup_message" = "Het apparaat werkt mogelijk pas als de positionering is voltooid.";
+"widar_cancel_popup_title" = "Apparaatpositionering annuleren?";
+"widar_error_device_not_found_message" = "Haal de stekker van het apparaat uit het stopcontact en sluit het apparaat vervolgens opnieuw aan op de stroomvoorziening.";
+"widar_error_exit_button" = "Uitgang";
+"widar_error_retry_button" = "Probeer het opnieuw";
+"widar_error_title" = "Kan geen verbinding maken met het apparaat";
+"widar_error_wrong_step" = "Verkeerde stap";
+"widar_header_title" = "Positionering";
+"widar_info_button_text" = "Volgende";
+"widar_info_info_avoid_moving_when_optimized" = "Zodra de optimale positie is gevonden, zal de detectie stoppen met werken als u het apparaat verplaatst.";
+"widar_info_info_must_optimise_position" = "Om de detectie te laten werken, moet het apparaat in een optimale positie worden geplaatst.";
+"widar_info_title" = "Positionering van het apparaat";
+"widar_position_cancel_button" = "Annuleren";
+"widar_position_finish_button" = "Volledige positionering";
+"widar_position_guide_imperial" = "Beweeg het apparaat 2,5 tot 5 cm over hetzelfde oppervlak en pauzeer. Herhaal dit totdat het apparaat groen oplicht.";
+"widar_position_guide_metric" = "Beweeg het apparaat 2-3 cm over hetzelfde oppervlak en pauzeer. Herhaal dit totdat het apparaat groen oplicht.";
+"widar_position_imperial_guide" = "Beweeg het apparaat 2,5 tot 5 cm over hetzelfde oppervlak en pauzeer. Herhaal dit totdat het apparaat groen oplicht.";
+"widar_position_metric_guide" = "Beweeg het apparaat 2-3 cm over hetzelfde oppervlak en pauzeer. Herhaal dit totdat het apparaat groen oplicht.";
+"widar_position_status_checking" = "Controleren";
+"widar_position_status_getting_better" = "Beter worden";
+"widar_position_status_label" = "Status:";
+"widar_position_status_mispositioned" = "Verkeerd gepositioneerd";
+"widar_position_status_optimized" = "Geoptimaliseerd";
+"widar_position_tertiary_button_text" = "Uitgangspositionering";
+"widar_position_tip" = "Tip: Beweeg het apparaat voorzichtig rond dit gebied";
+"widar_position_title" = "Positie-apparaat";
+"widar_recommendations_button_text" = "Begin met positioneren";
+"widar_recommendations_info_attach_base" = "Bevestig de basis als het apparaat plat op een tafel wordt geplaatst";
+"widar_recommendations_info_keep_area_clear" = "Houd het gebied voor het apparaat vrij";
+"widar_recommendations_info_wire_on_back" = "Plaats het apparaat in een hoek van de kamer met de draad aan de achterkant";
+"widar_recommendations_title" = "Hoe u uw apparaat positioneert";
+"widar_success_content_message" = "Detectie is ingeschakeld voor %@";
+"widar_success_done_button" = "Klaar";
+"widar_success_title" = "Positionering voltooid";
 "zone_checks_motion_sensing_check_name" = "Bewegingsdetectie";
 "zone_checks_motion_sensing_status_disconnected" = "Gegevens niet beschikbaar";
 "zone_checks_motion_sensing_status_not_working" = "Werkt niet";
@@ -2401,19 +2426,19 @@ Update Wifi: select a zone to update - number of devices*/
 "zone_checks_zone_health_status_unhealthy" = "Ongezond";
 "zone_checks_zone_health_status_unknown" = "Onbekend";
 "zone_default_name" = "Zone 1";
-"zone_guide_got_it" = "";
-"zone_guide_header" = "";
-"zone_guide_subtitle_1" = "";
-"zone_guide_subtitle_2" = "";
-"zone_guide_title_1" = "";
-"zone_guide_title_2" = "";
-"zone_guide_title_3" = "";
+"zone_guide_got_it" = "Ik heb het";
+"zone_guide_header" = "Moet ik mijn apparaten toevoegen aan een bestaande zone of een nieuwe zone aanmaken?";
+"zone_guide_subtitle_1" = "Hiermee kunt u de gehele ruimte beter bedekken.";
+"zone_guide_subtitle_2" = "Dit wordt vaak gebruikt om de garage te beveiligen en niet de woonkamer wanneer er mensen thuis zijn.";
+"zone_guide_title_1" = "Als dit uw tweede kit is, raden wij u aan uw bestaande zone uit te breiden.";
+"zone_guide_title_2" = "Als u de beveiligingsmodus voor verschillende gebieden in uw huis wilt aanpassen, maakt u een nieuwe zone. ";
+"zone_guide_title_3" = "Als u een extra verdieping wilt beveiligen, moet u een nieuwe zone aanmaken.";
 
 /*Zone selection: add your kit to*/
 "zone_selection_add_your_kit_to" = "Voeg kit toe aan";
-"zone_selection_i_dont_know_what_to_choose" = "";
-"zone_selection_non_thread_border_router_zone_explain" = "";
+"zone_selection_i_dont_know_what_to_choose" = "Ik weet niet wat ik moet kiezen";
+"zone_selection_non_thread_border_router_zone_explain" = "Uw apparaat kan alleen deelnemen aan bestaande zones met een Thread border router.";
 
 /*Zone selection: title*/
 "zone_selection_title" = "Kies een verdieping om als sensing zone te gebruiken";
-"zone_selection_zone_device_limitation_explain" = "";
+"zone_selection_zone_device_limitation_explain" = "Uw apparaat(en) kunnen alleen deelnemen aan bestaande zones als het toevoegen ervan de limiet van 4 activiteitssensoren per zone niet overschrijdt";
