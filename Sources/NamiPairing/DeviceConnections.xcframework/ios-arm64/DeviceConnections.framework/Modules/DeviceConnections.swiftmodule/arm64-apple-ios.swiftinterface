@@ -552,6 +552,8 @@ public enum I18n {
   public static let devicePlacementDoNotConnectToPowerYet: Swift.String
   public static let devicePlacementDoNotInstallOrConnectToPowerYet: Swift.String
   public static let devicePlacementDoNotMountDoorSensorYet: Swift.String
+  public static let devicePlacementDoNotMountKeypadYet: Swift.String
+  public static let devicePlacementDoNotMountMotionSensorYet: Swift.String
   public static let devicePlacementDoorSensorGuideContent1: Swift.String
   public static func devicePlacementDoorSensorGuideContent2Imperial(_ p1: Any) -> Swift.String
   public static func devicePlacementDoorSensorGuideContent2Metric(_ p1: Any) -> Swift.String
@@ -576,6 +578,8 @@ public enum I18n {
   public static let devicePlacementFirstWifiSensorGuide1Metric: Swift.String
   public static let devicePlacementFirstWifiSensorGuide2: Swift.String
   public static func devicePlacementFirstWifiSensorGuide3(_ p1: Any) -> Swift.String
+  public static let devicePlacementKeypadGuideContent1: Swift.String
+  public static let devicePlacementMotionSensorGuideContent1: Swift.String
   public static let devicePlacementNonFirstBssHasBrGuide2Imperial: Swift.String
   public static let devicePlacementNonFirstBssHasBrGuide2Metric: Swift.String
   public static let devicePlacementNonFirstBssNoBrGuide1Imperial: Swift.String
@@ -789,6 +793,8 @@ public enum I18n {
   public static let installationGuideItems3Imperial: Swift.String
   public static let installationGuideItems3Metric: Swift.String
   public static let installationGuideItems4: Swift.String
+  public static let installationGuideKeypadItem2: Swift.String
+  public static func installationGuideTitle(_ p1: Any) -> Swift.String
   public static let internetConnection: Swift.String
   public static func intrusionBannerIntrusionDetectedAt(_ p1: Any) -> Swift.String
   public static let intrusionEventReportIntrusionHistory: Swift.String
@@ -838,6 +844,8 @@ public enum I18n {
   public static let joinPlaceRoleUserGuide: Swift.String
   public static let joinPlaceScanAgain: Swift.String
   public static let joinPlaceScanInviteQr: Swift.String
+  public static let keypadSetupGuideDescription2: Swift.String
+  public static let keypadSetupGuideDescription3: Swift.String
   public static let kitExplanationFirstKitDesignedToHelpSecureYourPlace: Swift.String
   public static let kitExplanationFirstKitPlaceDevicesOnFirstFloor: Swift.String
   public static let kitExplanationNonFirstKitBssProvidesAdditionalSecurity: Swift.String
@@ -901,6 +909,23 @@ public enum I18n {
   public static func motionNowTileNumberOfActiveZones(_ p1: Any) -> Swift.String
   public static let motionNowTileToViewMotionNow: Swift.String
   public static let motionNowTitle: Swift.String
+  public static let motionSensorCoverageDoNotMountDeviceYet: Swift.String
+  public static let motionSensorCoverageGuideTitle: Swift.String
+  public static let motionSensorInstallationGuide1: Swift.String
+  public static let motionSensorInstallationGuide2: Swift.String
+  public static let motionSensorInstallationGuide3: Swift.String
+  public static let motionSensorInstallationPreGuide1Imperial: Swift.String
+  public static let motionSensorInstallationPreGuide1Metric: Swift.String
+  public static let motionSensorInstallationPreGuide2Imperial: Swift.String
+  public static let motionSensorInstallationPreGuide2Metric: Swift.String
+  public static let motionSensorInstallationPreGuide3: Swift.String
+  public static let motionSensorPreGuideDescription1: Swift.String
+  public static let motionSensorPreGuideDescription2: Swift.String
+  public static let motionSensorPreGuideDescription3: Swift.String
+  public static let motionSensorPreGuideTitle1: Swift.String
+  public static let motionSensorPreGuideTitle2: Swift.String
+  public static let motionSensorPreGuideTitle3: Swift.String
+  public static let motionSensorPreGuideTitle4: Swift.String
   public static let msgSessionExpired: Swift.String
   public static func muliplePlacesIntrusionInManyPlaces(_ p1: Swift.Int) -> Swift.String
   public static func muliplePlacesIntrusionInOnePlace(_ p1: Any) -> Swift.String
@@ -1205,6 +1230,7 @@ public enum I18n {
   public static let placeSettingPlaceInformationName: Swift.String
   public static let placeSettingPlaceInformationSize: Swift.String
   public static let placeSettingPlaceInformationType: Swift.String
+  public static let placeSettingsClearThreadCredential: Swift.String
   public static let placeSettingsDeletePlaceButton: Swift.String
   public static func placeSettingsDevicesDescriptionAndroid(_ p1: Swift.Int) -> Swift.String
   public static let placeSettingsEditPlace: Swift.String
@@ -1693,6 +1719,7 @@ public enum NamiDeviceCapability : Swift.Equatable {
   public static var alarmPod: [DeviceConnections.NamiDeviceCapability]
   public static var contactSensor: [DeviceConnections.NamiDeviceCapability]
   public static var motionSensor: [DeviceConnections.NamiDeviceCapability]
+  public static var keypad: [DeviceConnections.NamiDeviceCapability]
   public static var widarSensor: [DeviceConnections.NamiDeviceCapability]
   public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: DeviceConnections.NamiDeviceCapability, b: DeviceConnections.NamiDeviceCapability) -> Swift.Bool
@@ -1958,6 +1985,7 @@ public enum NamiDeviceType : Swift.CaseIterable {
   case securityPod
   case alarmPod
   case wifiSensor
+  case keypad
   case widarSensor
   public static var allCases: [DeviceConnections.NamiDeviceType] {
     get

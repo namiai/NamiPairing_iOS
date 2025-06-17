@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		SG4VTVc1N5cJ8IA5foSmEQWmpEw=
+		WYSWyQiy0cf1/Xlgwf6OSvO++UE=
 		</data>
 		<key>BSS_1st kit_Introduction to zones.json</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		GnIFkr6+R97EoICkYi3YD00O45o=
+		odvS96WKHjssffwyUTYCiTmASY0=
 		</data>
 		<key>Lookout24 Horizontal Logo_v2.json</key>
 		<data>
@@ -78,11 +78,11 @@
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		9azPoLiWlY33HpN4HnkxCkyzw84=
+		WS/D2Aky/AZ7aquaFBYsdb9QIN4=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		9ygq6gdHuZZ8loh2H4aGlJz130Y=
+		5bGZ8ZGsl6Xa42dEGOaC3TNAoWc=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -90,19 +90,19 @@
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		9ygq6gdHuZZ8loh2H4aGlJz130Y=
+		5bGZ8ZGsl6Xa42dEGOaC3TNAoWc=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		y2NFlz3K8DorlRCY7Yk6hMpBBEs=
+		+5HnBDX0fRghEHSsB5AAUtMTTFo=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		9azPoLiWlY33HpN4HnkxCkyzw84=
+		WS/D2Aky/AZ7aquaFBYsdb9QIN4=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		L6FFqlPhn6CNjGvvRjNXD0wtjUU=
+		NNgYAotUpiNczFMzQ7D20tWB4rA=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -110,11 +110,11 @@
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		L6FFqlPhn6CNjGvvRjNXD0wtjUU=
+		NNgYAotUpiNczFMzQ7D20tWB4rA=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		PbwvJQNeR/F389QJOtqMu5ZDCBc=
+		t/Hkld/EqqGI4ynm7iMwqsbsz6g=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -179,6 +179,14 @@
 		<key>Pulse White_Door Sensor.json</key>
 		<data>
 		RshFAFWasn14sjM8NWDLTUmBYbQ=
+		</data>
+		<key>Pulse White_Keypad.json</key>
+		<data>
+		JMpKwsKCK/V429qTp5h6nT93PPk=
+		</data>
+		<key>Pulse White_Motion Sensor.json</key>
+		<data>
+		MzPEdN/v/S0ZLbDH1Z7finfQdrY=
 		</data>
 		<key>WiDAR_1_Positioning Rec.json</key>
 		<data>
@@ -251,6 +259,18 @@
 		<key>external_active_beacon.webp</key>
 		<data>
 		Mr2ZBbNQUET9MHn1PVGS/JRVQuw=
+		</data>
+		<key>keypad_devkit_1.webp</key>
+		<data>
+		JGF6XvkRM5u7tcytR7sR8C46mUA=
+		</data>
+		<key>keypad_qr_all.webp</key>
+		<data>
+		SYRIwLaSoSvZp2bhuuvpP4eoR60=
+		</data>
+		<key>motionSensor_qr_all.webp</key>
+		<data>
+		pGetWloNIzUZ+p4Qq+6fWrpN+7Y=
 		</data>
 		<key>motion_sensor_devkit_1.webp</key>
 		<data>
@@ -336,6 +356,10 @@
 		<data>
 		pgLzbzsyTuTA9RKgiymJgV4veYI=
 		</data>
+		<key>thread_keypad.webp</key>
+		<data>
+		JGF6XvkRM5u7tcytR7sR8C46mUA=
+		</data>
 		<key>thread_motion_sensor.webp</key>
 		<data>
 		LNzPO8h7TGCOvoCD4j8GUNcSBUs=
@@ -399,7 +423,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RNsWWgs1dxU92EWvS2TguKijGnQ45yXxb1DP6MZpEGk=
+			GZdbHBq4mnRCE5cTh9V4F9yMQW/wmY/4nMI9LNzmGt8=
 			</data>
 		</dict>
 		<key>BSS_1st kit_Introduction to zones.json</key>
@@ -518,14 +542,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lHO6sCfH3zXLORZLV/JFIfw4aclYfOpXHPPo5H/t8+E=
+			RXppWYqhRcufZq0f8cezLS24+2OA5jdYifD/cZSKptM=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UstL5jrkIlS2hAntlO1UfFXaa/pQQ0btccbSuHBPmBU=
+			mCTUBOyw4YyrlHz9xijYDaocmvxoegFgILrJ6MhEK68=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -539,28 +563,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UstL5jrkIlS2hAntlO1UfFXaa/pQQ0btccbSuHBPmBU=
+			mCTUBOyw4YyrlHz9xijYDaocmvxoegFgILrJ6MhEK68=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xvoDIvN3e7YjmlpHXaGyr4pVW+8qNFKXxO8lfprME/s=
+			PnghYFQuRsBl4KzRnsgXNysG0CIukp+Z1F63ZDQgyps=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lHO6sCfH3zXLORZLV/JFIfw4aclYfOpXHPPo5H/t8+E=
+			RXppWYqhRcufZq0f8cezLS24+2OA5jdYifD/cZSKptM=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tUCz6i9Wy5DVD0BE7Mexp6LXXRWZ79dqDo+NxV494pE=
+			16Ij8tdL+ofpX8ro5oVjyC5it553YxOO1KxyA8pAO3I=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -574,14 +598,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tUCz6i9Wy5DVD0BE7Mexp6LXXRWZ79dqDo+NxV494pE=
+			16Ij8tdL+ofpX8ro5oVjyC5it553YxOO1KxyA8pAO3I=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/dK0AGLTItZudsQO8NkVfRFjlqwDeTRJxmmic8RL9T8=
+			XK0/WRdpEWWNFE3sRuR+59n641gLBXIHTRz8V+1r/4c=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -694,6 +718,20 @@
 			<key>hash2</key>
 			<data>
 			rYlX8x+0ex9x3eQ2nvW7niMNr2MyZgXP5SbaRA22bCs=
+			</data>
+		</dict>
+		<key>Pulse White_Keypad.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Tb7lIuubZum1y8K6UURs5TlR3BMkIf6AAcUq+Tez3rQ=
+			</data>
+		</dict>
+		<key>Pulse White_Motion Sensor.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kRk+JPZCrMVVTq0dR/tO35FnZBBKib4sSCxe8Yd589k=
 			</data>
 		</dict>
 		<key>WiDAR_1_Positioning Rec.json</key>
@@ -820,6 +858,27 @@
 			<key>hash2</key>
 			<data>
 			9XzgSy8J40NV9kEbZY9hhVyxoP09GuNpiUs/fkwPRRM=
+			</data>
+		</dict>
+		<key>keypad_devkit_1.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			n0QURwJolvVVU5Lx0vDHpm1bgjb8g8G61Ed/LsWqv58=
+			</data>
+		</dict>
+		<key>keypad_qr_all.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9ZZ3SaYmv7ByYStY7IzZrSQaJGYJxwxjIAR8KdA8OuY=
+			</data>
+		</dict>
+		<key>motionSensor_qr_all.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6tC1U3zBeyvzOca+mnAlnx/sVf+ZO5CxB6MF9cA25zI=
 			</data>
 		</dict>
 		<key>motion_sensor_devkit_1.webp</key>
@@ -967,6 +1026,13 @@
 			<key>hash2</key>
 			<data>
 			FwBEFs+Q1fEBj14Pe0//Kp8a1KzVy6ufmv7vw7iaD7w=
+			</data>
+		</dict>
+		<key>thread_keypad.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			n0QURwJolvVVU5Lx0vDHpm1bgjb8g8G61Ed/LsWqv58=
 			</data>
 		</dict>
 		<key>thread_motion_sensor.webp</key>

@@ -583,6 +583,8 @@
 "device_placement_do_not_connect_to_power_yet" = "デバイスをまだ電源に接続しないでください。";
 "device_placement_do_not_install_or_connect_to_power_yet" = "まだデバイスをインストールしたり、電源に接続したりしないでください。";
 "device_placement_do_not_mount_door_sensor_yet" = "ドアセンサーはまだ取り付けないでください。デバイスの名前を付けた後にインストールガイドが続きます。";
+"device_placement_do_not_mount_keypad_yet" = "";
+"device_placement_do_not_mount_motion_sensor_yet" = "モーションセンサーはまだ取り付けないでください。デバイスに名前を付けた後に、取り付けガイドが表示されます。";
 "device_placement_door_sensor_guide_content_1" = "玄関のセキュリティにおすすめ";
 "device_placement_door_sensor_guide_content_2_imperial" = "%@ 内の別のアクティビティ センサーから 30 フィート以内にデバイスを配置します";
 "device_placement_door_sensor_guide_content_2_metric" = "%@ 内の別のアクティビティ センサーから 10 m 以内にデバイスを配置します";
@@ -615,6 +617,8 @@
 "device_placement_first_wifi_sensor_guide_1_metric" = "デバイスをWi-Fiアクセスポイントから10m以内に置きます";
 "device_placement_first_wifi_sensor_guide_2" = "カバーしたいエリア内で最も中心に位置するWi-Fiアクセスポイントを選択します";
 "device_placement_first_wifi_sensor_guide_3" = "%@ 内の他のすべてのデバイスは、このデバイスが接続する Wi-Fi アクセス ポイントを使用します";
+"device_placement_keypad_guide_content_1" = "";
+"device_placement_motion_sensor_guide_content_1" = "";
 "device_placement_non_first_bss_has_br_guide_2_imperial" = "ドアセンサーの選択したドアから30フィート以内にデバイスを配置します";
 "device_placement_non_first_bss_has_br_guide_2_metric" = "ドアセンサーの選択したドアから10m以内にデバイスを設置します";
 "device_placement_non_first_bss_no_br_guide_1_imperial" = "デバイスをWi-Fiアクセスポイントとドアセンサーに選択したドアの両方から30フィート以内に配置します。";
@@ -955,6 +959,8 @@ Connection error provided with [underlying error description] from the system.*/
 "installation_guide_items3_imperial" = "センサーと磁石の間隔を0.8インチ以内に保って、インジケータラインを揃えます。";
 "installation_guide_items3_metric" = "センサーと磁石のインジケータラインを揃え、2cm以内の距離を保つ";
 "installation_guide_items4" = "粘着テープを剥がし、デバイスをドアにしっかりと貼り付けます。";
+"installation_guide_keypad_item_2" = "キーパッドをテーブルに置くか、取り付けプレートを壁に貼り付けます";
+"installation_guide_title" = "%@ をインストール";
 "internet_connection" = "接続ステータス";
 
 /*dashboard intrusion banner*/
@@ -1054,6 +1060,8 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Join place: scan invite qr code to join a place*/
 "join_place_scan_invite_qr" = "QRコード招待状をスキャン";
+"keypad_setup_guide_description_2" = "電池カバーを外す";
+"keypad_setup_guide_description_3" = "プラスチックのバッテリータブを引き出します";
 "kit_explanation_first_kit_designed_to_help_secure_your_place" = "あなたの場所と玄関を安全に守るために設計されています";
 "kit_explanation_first_kit_place_devices_on_first_floor" = "セキュリティを最適化するためにデバイスを1階に設置する";
 "kit_explanation_non_first_kit_bss_provides_additional_security" = "あなたの場所とあらゆる出入り口のセキュリティを強化します";
@@ -1169,6 +1177,23 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Motion now: title*/
 "motion_now_title" = "今すぐモーション";
+"motion_sensor_coverage_do_not_mount_device_yet" = "";
+"motion_sensor_coverage_guide_title" = "";
+"motion_sensor_installation_guide_1" = "";
+"motion_sensor_installation_guide_2" = "";
+"motion_sensor_installation_guide_3" = "";
+"motion_sensor_installation_pre_guide_1_imperial" = "";
+"motion_sensor_installation_pre_guide_1_metric" = "";
+"motion_sensor_installation_pre_guide_2_imperial" = "";
+"motion_sensor_installation_pre_guide_2_metric" = "";
+"motion_sensor_installation_pre_guide_3" = "";
+"motion_sensor_pre_guide_description_1" = "";
+"motion_sensor_pre_guide_description_2" = "";
+"motion_sensor_pre_guide_description_3" = "";
+"motion_sensor_pre_guide_title_1" = "";
+"motion_sensor_pre_guide_title_2" = "";
+"motion_sensor_pre_guide_title_3" = "";
+"motion_sensor_pre_guide_title_4" = "";
 "msg_session_expired" = "セッションが期限切れです。もう一度お試しください。";
 "muliple_places_intrusion_in_many_places" = "%d か所に侵入";
 "muliple_places_intrusion_in_one_place" = "%@ への侵入";
@@ -1609,6 +1634,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_placeInformation_name" = "名前";
 "place_setting_placeInformation_size" = "平均床面積";
 "place_setting_placeInformation_type" = "タイプ";
+"place_settings_clear_thread_credential" = "";
 
 /*Place settings: delete place*/
 "place_settings_delete_place_button" = "場所を削除";

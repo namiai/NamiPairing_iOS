@@ -199,6 +199,8 @@ public protocol WordingProtocol {
   var pairingThreadErrorContactSensorNoThreadNetworksFoundDescription2: Swift.String { get }
   func pairingThreadErrorNoThreadNetworksFoundDescription(zoneName: Swift.String) -> Swift.String
   var pairingErrorMobilePhoneIsNotConnectedToWifiDescription: Swift.String { get }
+  var pairingErrorNoThreadBorderRouterInPlace: Swift.String { get }
+  var pairingErrorAllBorderRouterOffline: Swift.String { get }
   var positioningErrorTitle: Swift.String { get }
   var deviceNotFoundMessage: Swift.String { get }
   var retryPositioningButton: Swift.String { get }
@@ -608,6 +610,12 @@ extension StandardPairingUI.WordingProtocol {
   }
   public func pairingThreadErrorNoThreadNetworksFoundDescription(zoneName: Swift.String) -> Swift.String
   public var pairingErrorMobilePhoneIsNotConnectedToWifiDescription: Swift.String {
+    get
+  }
+  public var pairingErrorNoThreadBorderRouterInPlace: Swift.String {
+    get
+  }
+  public var pairingErrorAllBorderRouterOffline: Swift.String {
     get
   }
   public var positioningErrorTitle: Swift.String {

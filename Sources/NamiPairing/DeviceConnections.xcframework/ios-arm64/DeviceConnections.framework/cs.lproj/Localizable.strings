@@ -582,6 +582,8 @@
 "device_placement_do_not_connect_to_power_yet" = "";
 "device_placement_do_not_install_or_connect_to_power_yet" = "";
 "device_placement_do_not_mount_door_sensor_yet" = "";
+"device_placement_do_not_mount_keypad_yet" = "";
+"device_placement_do_not_mount_motion_sensor_yet" = "Pohybový senzor zatím nemontujte. Instalační příručka bude následovat po pojmenování zařízení.";
 "device_placement_door_sensor_guide_content_1" = "";
 "device_placement_door_sensor_guide_content_2_imperial" = "";
 "device_placement_door_sensor_guide_content_2_metric" = "";
@@ -614,6 +616,8 @@
 "device_placement_first_wifi_sensor_guide_1_metric" = "";
 "device_placement_first_wifi_sensor_guide_2" = "";
 "device_placement_first_wifi_sensor_guide_3" = "";
+"device_placement_keypad_guide_content_1" = "";
+"device_placement_motion_sensor_guide_content_1" = "";
 "device_placement_non_first_bss_has_br_guide_2_imperial" = "";
 "device_placement_non_first_bss_has_br_guide_2_metric" = "";
 "device_placement_non_first_bss_no_br_guide_1_imperial" = "";
@@ -952,6 +956,8 @@ Connection error provided with [underlying error description] from the system.*/
 "installation_guide_items3_imperial" = "";
 "installation_guide_items3_metric" = "";
 "installation_guide_items4" = "";
+"installation_guide_keypad_item_2" = "";
+"installation_guide_title" = "";
 "internet_connection" = "připojení k internetu";
 
 /*dashboard intrusion banner*/
@@ -1049,6 +1055,8 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Join place: scan invite qr code to join a place*/
 "join_place_scan_invite_qr" = "";
+"keypad_setup_guide_description_2" = "";
+"keypad_setup_guide_description_3" = "";
 "kit_explanation_first_kit_designed_to_help_secure_your_place" = "";
 "kit_explanation_first_kit_place_devices_on_first_floor" = "";
 "kit_explanation_non_first_kit_bss_provides_additional_security" = "";
@@ -1164,6 +1172,23 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Motion now: title*/
 "motion_now_title" = "";
+"motion_sensor_coverage_do_not_mount_device_yet" = "";
+"motion_sensor_coverage_guide_title" = "";
+"motion_sensor_installation_guide_1" = "";
+"motion_sensor_installation_guide_2" = "";
+"motion_sensor_installation_guide_3" = "";
+"motion_sensor_installation_pre_guide_1_imperial" = "";
+"motion_sensor_installation_pre_guide_1_metric" = "";
+"motion_sensor_installation_pre_guide_2_imperial" = "";
+"motion_sensor_installation_pre_guide_2_metric" = "";
+"motion_sensor_installation_pre_guide_3" = "";
+"motion_sensor_pre_guide_description_1" = "";
+"motion_sensor_pre_guide_description_2" = "";
+"motion_sensor_pre_guide_description_3" = "";
+"motion_sensor_pre_guide_title_1" = "";
+"motion_sensor_pre_guide_title_2" = "";
+"motion_sensor_pre_guide_title_3" = "";
+"motion_sensor_pre_guide_title_4" = "";
 "msg_session_expired" = "";
 "muliple_places_intrusion_in_many_places" = "";
 "muliple_places_intrusion_in_one_place" = "";
@@ -1603,6 +1628,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_placeInformation_name" = "";
 "place_setting_placeInformation_size" = "";
 "place_setting_placeInformation_type" = "";
+"place_settings_clear_thread_credential" = "";
 
 /*Place settings: delete place*/
 "place_settings_delete_place_button" = "";

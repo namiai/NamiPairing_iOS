@@ -582,6 +582,8 @@
 "device_placement_do_not_connect_to_power_yet" = "Sluit het apparaat nog niet aan op het lichtnet.";
 "device_placement_do_not_install_or_connect_to_power_yet" = "Installeer de apparaten nog niet en sluit ze nog niet aan op het lichtnet.";
 "device_placement_do_not_mount_door_sensor_yet" = "Monteer de deursensor nog niet. De installatiehandleiding volgt nadat u het apparaat een naam hebt gegeven.";
+"device_placement_do_not_mount_keypad_yet" = "";
+"device_placement_do_not_mount_motion_sensor_yet" = "Monteer de bewegingssensor nog niet. De installatiehandleiding volgt nadat het apparaat is benoemd.";
 "device_placement_door_sensor_guide_content_1" = "Aanbevolen voor beveiliging van de voordeur";
 "device_placement_door_sensor_guide_content_2_imperial" = "Plaats het apparaat binnen 30 voet van een andere activiteitssensor in %@";
 "device_placement_door_sensor_guide_content_2_metric" = "Plaats het apparaat binnen 10 m van een andere activiteitssensor in %@";
@@ -614,6 +616,8 @@
 "device_placement_first_wifi_sensor_guide_1_metric" = "Plaats het apparaat binnen 10 meter van uw Wi-Fi-toegangspunt";
 "device_placement_first_wifi_sensor_guide_2" = "Kies het Wi-Fi-toegangspunt dat het meest centraal gelegen is binnen het gebied dat u wilt bestrijken";
 "device_placement_first_wifi_sensor_guide_3" = "Alle andere apparaten in %@ gebruiken het Wi-Fi-toegangspunt waarmee dit apparaat verbinding maakt";
+"device_placement_keypad_guide_content_1" = "";
+"device_placement_motion_sensor_guide_content_1" = "";
 "device_placement_non_first_bss_has_br_guide_2_imperial" = "Plaats het apparaat binnen 30 voet van de geselecteerde deur voor de deursensor";
 "device_placement_non_first_bss_has_br_guide_2_metric" = "Plaats het apparaat binnen 10 m van de geselecteerde deur voor de deursensor";
 "device_placement_non_first_bss_no_br_guide_1_imperial" = "Plaats het apparaat binnen 30 voet van zowel uw Wi-Fi-toegangspunt als de geselecteerde deur voor de deursensor";
@@ -954,6 +958,8 @@ Connection error provided with [underlying error description] from the system.*/
 "installation_guide_items3_imperial" = "Houd de sensor en de magneet niet meer dan 2 cm uit elkaar, met de indicatorlijnen uitgelijnd.";
 "installation_guide_items3_metric" = "Houd de sensor en de magneet niet meer dan 2 cm uit elkaar, met de indicatorlijnen uitgelijnd";
 "installation_guide_items4" = "Verwijder de kleeflaag en plak het apparaat stevig op de deur";
+"installation_guide_keypad_item_2" = "Plaats het toetsenbord op een tafel of plak de montageplaat aan de muur";
+"installation_guide_title" = "%@ installeren";
 "internet_connection" = "Internetverbinding";
 
 /*dashboard intrusion banner*/
@@ -1053,6 +1059,8 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Join place: scan invite qr code to join a place*/
 "join_place_scan_invite_qr" = "Scan de QR code die op het scherm van de beheerder wordt getoond";
+"keypad_setup_guide_description_2" = "Verwijder het batterijklepje";
+"keypad_setup_guide_description_3" = "Trek het plastic batterijlipje eruit";
 "kit_explanation_first_kit_designed_to_help_secure_your_place" = "Ontworpen om u te helpen uw plaats en voordeur te beveiligen";
 "kit_explanation_first_kit_place_devices_on_first_floor" = "Plaats apparaten op de eerste verdieping om de beveiliging te optimaliseren";
 "kit_explanation_non_first_kit_bss_provides_additional_security" = "Biedt extra beveiliging voor uw woning en elke toegangsdeur";
@@ -1168,6 +1176,23 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Motion now: title*/
 "motion_now_title" = "Actuele beweging";
+"motion_sensor_coverage_do_not_mount_device_yet" = "";
+"motion_sensor_coverage_guide_title" = "";
+"motion_sensor_installation_guide_1" = "";
+"motion_sensor_installation_guide_2" = "";
+"motion_sensor_installation_guide_3" = "";
+"motion_sensor_installation_pre_guide_1_imperial" = "";
+"motion_sensor_installation_pre_guide_1_metric" = "";
+"motion_sensor_installation_pre_guide_2_imperial" = "";
+"motion_sensor_installation_pre_guide_2_metric" = "";
+"motion_sensor_installation_pre_guide_3" = "";
+"motion_sensor_pre_guide_description_1" = "";
+"motion_sensor_pre_guide_description_2" = "";
+"motion_sensor_pre_guide_description_3" = "";
+"motion_sensor_pre_guide_title_1" = "";
+"motion_sensor_pre_guide_title_2" = "";
+"motion_sensor_pre_guide_title_3" = "";
+"motion_sensor_pre_guide_title_4" = "";
 "msg_session_expired" = "Sessie is verlopen, probeer het opnieuw!";
 "muliple_places_intrusion_in_many_places" = "Indringing op %d plaatsen";
 "muliple_places_intrusion_in_one_place" = "Inbraak in %@";
@@ -1608,6 +1633,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_placeInformation_name" = "Naam";
 "place_setting_placeInformation_size" = "Gemiddelde vloeroppervlakte";
 "place_setting_placeInformation_type" = "Type";
+"place_settings_clear_thread_credential" = "";
 
 /*Place settings: delete place*/
 "place_settings_delete_place_button" = "Verwijder locatie";

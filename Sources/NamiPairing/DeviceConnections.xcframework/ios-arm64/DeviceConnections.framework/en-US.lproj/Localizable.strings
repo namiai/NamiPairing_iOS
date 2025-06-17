@@ -583,6 +583,8 @@
 "device_placement_do_not_connect_to_power_yet" = "Do not connect device to power yet.";
 "device_placement_do_not_install_or_connect_to_power_yet" = "Do not install or connect devices to power yet.";
 "device_placement_do_not_mount_door_sensor_yet" = "Do not mount the Door Sensor yet. The installation guide will follow after naming device.";
+"device_placement_do_not_mount_keypad_yet" = "Do not mount the Keypad yet. The installation guide will follow after naming device.";
+"device_placement_do_not_mount_motion_sensor_yet" = "Do not mount the Motion Sensor yet. The installation guide will follow after naming device.";
 "device_placement_door_sensor_guide_content_1" = "Recommended for front door security";
 "device_placement_door_sensor_guide_content_2_imperial" = "Place device within 30ft of another activity sensor in %@";
 "device_placement_door_sensor_guide_content_2_metric" = "Place device within 10m of another activity sensor in %@";
@@ -615,6 +617,8 @@
 "device_placement_first_wifi_sensor_guide_1_metric" = "Place device within 10m of your Wi-Fi access point";
 "device_placement_first_wifi_sensor_guide_2" = "Choose the Wi-Fi access point most centrally located within the area you want to cover";
 "device_placement_first_wifi_sensor_guide_3" = "All other devices in %@ will use the Wi-Fi access point that this device connects to";
+"device_placement_keypad_guide_content_1" = "Place device near the door for easy access";
+"device_placement_motion_sensor_guide_content_1" = "Place device in a corner or by a wall to cover the entire area";
 "device_placement_non_first_bss_has_br_guide_2_imperial" = "Place device within 30ft of the selected door for the Door Sensor";
 "device_placement_non_first_bss_has_br_guide_2_metric" = "Place device within 10m of the selected door for the Door Sensor";
 "device_placement_non_first_bss_no_br_guide_1_imperial" = "Place device within 30ft of both your Wi-Fi access point and the selected door for the Door Sensor";
@@ -956,6 +960,8 @@ Connection error provided with [underlying error description] from the system.*/
 "installation_guide_items3_imperial" = "Keep sensor and magnet no more than 0.8 in apart with their indicator lines aligned";
 "installation_guide_items3_metric" = "Keep sensor and magnet no more than 2 cm apart with their indicator lines aligned";
 "installation_guide_items4" = "Peel off the adhesive backing and firmly stick device on the door";
+"installation_guide_keypad_item_2" = "Place the keypad on a table or stick the mounting plate to the wall";
+"installation_guide_title" = "Install %@";
 "internet_connection" = "Connection status";
 
 /*dashboard intrusion banner*/
@@ -1057,6 +1063,8 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Join place: scan invite qr code to join a place*/
 "join_place_scan_invite_qr" = "Scan QR code invitation";
+"keypad_setup_guide_description_2" = "Remove the battery cover";
+"keypad_setup_guide_description_3" = "Pull out the plastic battery tab";
 "kit_explanation_first_kit_designed_to_help_secure_your_place" = "Designed to help you secure your place and front door";
 "kit_explanation_first_kit_place_devices_on_first_floor" = "Place devices on first floor to optimize security";
 "kit_explanation_non_first_kit_bss_provides_additional_security" = "Provides additional security for your place and any entry door";
@@ -1172,6 +1180,25 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Motion now: title*/
 "motion_now_title" = "Motion now";
+"motion_sensor_coverage_do_not_mount_device_yet" = "Do not mount the device yet. The installation guide will follow next.";
+"motion_sensor_coverage_guide_title" = "Maximise your coverage area";
+"motion_sensor_installation_guide_1" = "Screw on or peel off the adhesive backing to firmly secure the base on the wall";
+"motion_sensor_installation_guide_2" = "Point sensor towards the desired detection area";
+"motion_sensor_installation_guide_3" = "Avoid pointing sensor towards heat sources or moving objects to prevent false triggers";
+
+/*Fuzzy*/
+"motion_sensor_installation_pre_guide_1_imperial" = "Place device at least 5ft above the floor";
+"motion_sensor_installation_pre_guide_1_metric" = "Place device at least 5ft above the floor";
+"motion_sensor_installation_pre_guide_2_imperial" = "Motion detection is limited to 20ft away and within a 110° field of view";
+"motion_sensor_installation_pre_guide_2_metric" = "Motion detection is limited to 6m away and within a 110° field of view";
+"motion_sensor_installation_pre_guide_3" = "Avoid large furniture or walls blocking the sensor’s field of view";
+"motion_sensor_pre_guide_description_1" = "Use a coin or tool to screw back the battery cover until you hear a ‘click’";
+"motion_sensor_pre_guide_description_2" = "Rotate to close the sensor";
+"motion_sensor_pre_guide_description_3" = "Bring the sensor near your desired installation area";
+"motion_sensor_pre_guide_title_1" = "Rotate to open the sensor";
+"motion_sensor_pre_guide_title_2" = "Use a coin or another tool to unscrew the battery cover";
+"motion_sensor_pre_guide_title_3" = "Pull to remove the plastic battery tab";
+"motion_sensor_pre_guide_title_4" = "Reassemble the sensor";
 "msg_session_expired" = "Session is expired, please try again!";
 "muliple_places_intrusion_in_many_places" = "Intrusion in %d places";
 "muliple_places_intrusion_in_one_place" = "Intrusion in %@";
@@ -1633,6 +1660,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_placeInformation_name" = "Name";
 "place_setting_placeInformation_size" = "Average floor area";
 "place_setting_placeInformation_type" = "Type";
+"place_settings_clear_thread_credential" = "Clear thread credential";
 
 /*Place settings: delete place*/
 "place_settings_delete_place_button" = "Delete place";

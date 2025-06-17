@@ -1191,6 +1191,8 @@ public enum Pairing {
     case threadOperationalDatasetMissing
     case threadNetworkNotFound(zoneName: Swift.String, deviceType: DeviceConnections.NamiDeviceType)
     case wifiIsDisconnected
+    case noBorderRouter
+    case allBorderRoutersOffline
     public static func == (a: NamiPairingFramework.Pairing.ThreadError, b: NamiPairingFramework.Pairing.ThreadError) -> Swift.Bool
   }
   public enum ActionOnError : Swift.Equatable {
@@ -1302,6 +1304,8 @@ public enum Pairing {
     case doneDeletingDevice
     case exitPairing
     case updatedWifiReachability(Network.NWPath)
+    case noBorderRouterError
+    case allBorderRoutersOfflineError
     public static func == (a: NamiPairingFramework.Pairing.Event, b: NamiPairingFramework.Pairing.Event) -> Swift.Bool
   }
   @_hasMissingDesignatedInitializers final public class ViewModel<Container> where Container : NamiPairingFramework.PairingStepsContainer {
