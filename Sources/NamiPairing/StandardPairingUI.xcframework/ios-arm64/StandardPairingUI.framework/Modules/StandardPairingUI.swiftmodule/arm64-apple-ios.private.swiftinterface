@@ -1,20 +1,16 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target arm64-apple-ios16 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name StandardPairingUI
-import ActivityKit
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios16 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name StandardPairingUI
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import Combine
-import CoreGraphics
 import DeveloperToolsSupport
-import DeviceConnections
 import Foundation
 import Lottie
 import NamiPairingFramework
-import SafariServices
 @_exported import StandardPairingUI
 import Swift
 import SwiftUI
 import UIKit
-import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
@@ -26,7 +22,7 @@ public enum LottieLoopModeWrapper {
   case repeatBackwards(Swift.Float)
 }
 public struct LottieAnimationWrapper {
-  public func animationView(looping: StandardPairingUI.LottieLoopModeWrapper = .loop) -> some SwiftUI.View
+  public func animationView(looping: StandardPairingUI.LottieLoopModeWrapper = .loop) -> some SwiftUICore.View
   
 }
 public class WordingManager : Foundation.ObservableObject {
@@ -50,7 +46,7 @@ public class WordingManager : Foundation.ObservableObject {
   public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @objc deinit
 }
-extension SwiftUI.EnvironmentValues {
+extension SwiftUICore.EnvironmentValues {
   public var wordingManager: StandardPairingUI.WordingManager {
     get
     set
@@ -199,8 +195,6 @@ public protocol WordingProtocol {
   var pairingThreadErrorContactSensorNoThreadNetworksFoundDescription2: Swift.String { get }
   func pairingThreadErrorNoThreadNetworksFoundDescription(zoneName: Swift.String) -> Swift.String
   var pairingErrorMobilePhoneIsNotConnectedToWifiDescription: Swift.String { get }
-  var pairingErrorNoThreadBorderRouterInPlace: Swift.String { get }
-  var pairingErrorAllBorderRouterOffline: Swift.String { get }
   var positioningErrorTitle: Swift.String { get }
   var deviceNotFoundMessage: Swift.String { get }
   var retryPositioningButton: Swift.String { get }
@@ -670,43 +664,43 @@ public class ThemeManager : Foundation.ObservableObject {
   public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @objc deinit
 }
-extension SwiftUI.EnvironmentValues {
+extension SwiftUICore.EnvironmentValues {
   public var themeManager: StandardPairingUI.ThemeManager {
     get
     set
   }
 }
-extension SwiftUI.View {
-  public func namiNavBar() -> some SwiftUI.View
+extension SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public func namiNavBar() -> some SwiftUICore.View
   
 }
 public protocol ThemeProtocol {
-  var headline1: SwiftUI.Font { get }
-  var headline2: SwiftUI.Font { get }
-  var headline3: SwiftUI.Font { get }
-  var headline4: SwiftUI.Font { get }
-  var headline5: SwiftUI.Font { get }
-  var headline6: SwiftUI.Font { get }
-  var paragraph1: SwiftUI.Font { get }
-  var paragraph2: SwiftUI.Font { get }
-  var small1: SwiftUI.Font { get }
-  var small2: SwiftUI.Font { get }
-  var primaryBlack: SwiftUI.Color { get }
-  var secondaryBlack: SwiftUI.Color { get }
-  var tertiaryBlack: SwiftUI.Color { get }
-  var navigationTitleColor: SwiftUI.Color { get }
-  var white: SwiftUI.Color { get }
-  var background: SwiftUI.Color { get }
-  var line: SwiftUI.Color { get }
-  var accent: SwiftUI.Color { get }
-  var negative: SwiftUI.Color { get }
-  var warning: SwiftUI.Color { get }
-  var positive: SwiftUI.Color { get }
-  var lowAttentionAlert: SwiftUI.Color { get }
-  var redAlert3: SwiftUI.Color { get }
-  var redAlert4: SwiftUI.Color { get }
-  var success3: SwiftUI.Color { get }
-  var success4: SwiftUI.Color { get }
+  var headline1: SwiftUICore.Font { get }
+  var headline2: SwiftUICore.Font { get }
+  var headline3: SwiftUICore.Font { get }
+  var headline4: SwiftUICore.Font { get }
+  var headline5: SwiftUICore.Font { get }
+  var headline6: SwiftUICore.Font { get }
+  var paragraph1: SwiftUICore.Font { get }
+  var paragraph2: SwiftUICore.Font { get }
+  var small1: SwiftUICore.Font { get }
+  var small2: SwiftUICore.Font { get }
+  var primaryBlack: SwiftUICore.Color { get }
+  var secondaryBlack: SwiftUICore.Color { get }
+  var tertiaryBlack: SwiftUICore.Color { get }
+  var navigationTitleColor: SwiftUICore.Color { get }
+  var white: SwiftUICore.Color { get }
+  var background: SwiftUICore.Color { get }
+  var line: SwiftUICore.Color { get }
+  var accent: SwiftUICore.Color { get }
+  var negative: SwiftUICore.Color { get }
+  var warning: SwiftUICore.Color { get }
+  var positive: SwiftUICore.Color { get }
+  var lowAttentionAlert: SwiftUICore.Color { get }
+  var redAlert3: SwiftUICore.Color { get }
+  var redAlert4: SwiftUICore.Color { get }
+  var success3: SwiftUICore.Color { get }
+  var success4: SwiftUICore.Color { get }
   var primaryActionButtonStyle: any SwiftUI.ButtonStyle { get }
   var secondaryActionButtonStyle: any SwiftUI.ButtonStyle { get }
   var tertiaryActionButtonStyle: any SwiftUI.ButtonStyle { get }
@@ -714,32 +708,32 @@ public protocol ThemeProtocol {
 }
 public struct NamiTheme : StandardPairingUI.ThemeProtocol {
   public init()
-  public var headline1: SwiftUI.Font
-  public var headline2: SwiftUI.Font
-  public var headline3: SwiftUI.Font
-  public var headline4: SwiftUI.Font
-  public var headline5: SwiftUI.Font
-  public var headline6: SwiftUI.Font
-  public var paragraph1: SwiftUI.Font
-  public var paragraph2: SwiftUI.Font
-  public var small1: SwiftUI.Font
-  public var small2: SwiftUI.Font
-  public var primaryBlack: SwiftUI.Color
-  public var secondaryBlack: SwiftUI.Color
-  public var tertiaryBlack: SwiftUI.Color
-  public var navigationTitleColor: SwiftUI.Color
-  public var white: SwiftUI.Color
-  public var background: SwiftUI.Color
-  public var line: SwiftUI.Color
-  public var accent: SwiftUI.Color
-  public var negative: SwiftUI.Color
-  public var warning: SwiftUI.Color
-  public var positive: SwiftUI.Color
-  public var lowAttentionAlert: SwiftUI.Color
-  public var redAlert3: SwiftUI.Color
-  public var redAlert4: SwiftUI.Color
-  public var success3: SwiftUI.Color
-  public var success4: SwiftUI.Color
+  public var headline1: SwiftUICore.Font
+  public var headline2: SwiftUICore.Font
+  public var headline3: SwiftUICore.Font
+  public var headline4: SwiftUICore.Font
+  public var headline5: SwiftUICore.Font
+  public var headline6: SwiftUICore.Font
+  public var paragraph1: SwiftUICore.Font
+  public var paragraph2: SwiftUICore.Font
+  public var small1: SwiftUICore.Font
+  public var small2: SwiftUICore.Font
+  public var primaryBlack: SwiftUICore.Color
+  public var secondaryBlack: SwiftUICore.Color
+  public var tertiaryBlack: SwiftUICore.Color
+  public var navigationTitleColor: SwiftUICore.Color
+  public var white: SwiftUICore.Color
+  public var background: SwiftUICore.Color
+  public var line: SwiftUICore.Color
+  public var accent: SwiftUICore.Color
+  public var negative: SwiftUICore.Color
+  public var warning: SwiftUICore.Color
+  public var positive: SwiftUICore.Color
+  public var lowAttentionAlert: SwiftUICore.Color
+  public var redAlert3: SwiftUICore.Color
+  public var redAlert4: SwiftUICore.Color
+  public var success3: SwiftUICore.Color
+  public var success4: SwiftUICore.Color
   public var primaryActionButtonStyle: any SwiftUI.ButtonStyle
   public var secondaryActionButtonStyle: any SwiftUI.ButtonStyle
   public var tertiaryActionButtonStyle: any SwiftUI.ButtonStyle
@@ -765,8 +759,8 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public var positioningComplete: (NamiPairingFramework.PositioningComplete.ViewModel) -> StandardPairingUI.PositioningCompleteView
   public var positionError: (NamiPairingFramework.ErrorScreen.ViewModel) -> StandardPairingUI.ErrorScreenView
   public var pairingError: (NamiPairingFramework.PairingErrorScreen.ViewModel) -> StandardPairingUI.PairingErrorScreenView
-  public var backButton: () -> StandardPairingUI.CircleButton?
-  public typealias BackButtonView = StandardPairingUI.CircleButton
+  public var backButton: () -> NamiPairingFramework.CircleButton?
+  public typealias BackButtonView = NamiPairingFramework.CircleButton
   public typealias ViewForBluetoothDeviceFound = StandardPairingUI.BluetoothDeviceFoundView
   public typealias ViewForEnableCameraInSettings = StandardPairingUI.EnableCameraInSettingsView
   public typealias ViewForEnterWiFiPassword = StandardPairingUI.EnterWiFiPasswordView
@@ -782,670 +776,152 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public typealias ViewForPowerOnAndScanning = StandardPairingUI.PowerOnAndScanningView
   public typealias ViewForQRCodeScanner = StandardPairingUI.QRScannerView
 }
-@_Concurrency.MainActor(unsafe) public struct QRScannerView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.QRScanner.ViewModel)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct QRScannerView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.QRScanner.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI13QRScannerViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct PowerOnAndScanningView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.PowerOnAndScanning.ViewModel)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct PowerOnAndScanningView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.PowerOnAndScanning.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI22PowerOnAndScanningViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct BluetoothDeviceFoundView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.BluetoothDeviceFound.ViewModel)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct BluetoothDeviceFoundView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.BluetoothDeviceFound.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI24BluetoothDeviceFoundViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct ErrorScreenView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.ErrorScreen.ViewModel)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct ErrorScreenView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.ErrorScreen.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI15ErrorScreenViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct PositioningCompleteView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.PositioningComplete.ViewModel)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct PositioningCompleteView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.PositioningComplete.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23PositioningCompleteViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct InitialScreenView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.InitialScreen.ViewModel)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct InitialScreenView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.InitialScreen.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17InitialScreenViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct HowToPositionView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.HowToPosition.ViewModel)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct HowToPositionView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.HowToPosition.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17HowToPositionViewV4bodyQrvp", 0) __
 }
-public struct AnimationView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct AnimationView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI13AnimationViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct PositioningGuidanceView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.PositioningGuidance.ViewModel)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct PositioningGuidanceView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.PositioningGuidance.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23PositioningGuidanceViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct EnterWiFiPasswordView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.EnterWiFiPassword.ViewModel)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct EnterWiFiPasswordView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.EnterWiFiPassword.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI21EnterWiFiPasswordViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct OtherWiFiNetworkView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.OtherWiFiNetwork.ViewModel)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct OtherWiFiNetworkView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.OtherWiFiNetwork.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI20OtherWiFiNetworkViewV4bodyQrvp", 0) __
 }
-public struct FinishingSetupView : SwiftUI.View {
-  public init(title: Swift.String? = nil)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct FinishingSetupView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(title: Swift.String? = nil)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI18FinishingSetupViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct PairingErrorScreenView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.PairingErrorScreen.ViewModel)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct PairingErrorScreenView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.PairingErrorScreen.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI0B15ErrorScreenViewV4bodyQrvp", 0) __
 }
-public struct EnableCameraInSettingsView : SwiftUI.View {
-  public init(deviceType: Swift.String? = nil)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct EnableCameraInSettingsView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(deviceType: Swift.String? = nil)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI26EnableCameraInSettingsViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor(unsafe) public struct ListWiFiNetworksView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public init(viewModel: NamiPairingFramework.ListWiFiNetworks.ViewModel)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct ListWiFiNetworksView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.ListWiFiNetworks.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI20ListWiFiNetworksViewV4bodyQrvp", 0) __
 }
-public struct SetupTopNavigationBar<LeadingGroup, TrailingGroup, NotificationArea, Subviews> : SwiftUI.View where LeadingGroup : SwiftUI.View, TrailingGroup : SwiftUI.View, NotificationArea : SwiftUI.View, Subviews : SwiftUI.View {
-  public init(title: Swift.String?, largeTitle: Swift.String?, color: SwiftUI.Color, statusbarColorOverride: SwiftUI.Color = .clear, navbarBackgroundBleed: CoreFoundation.CGFloat = 0, @SwiftUI.ViewBuilder leadingButtonGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUI.ViewBuilder trailingButtonGroup: @escaping () -> TrailingGroup = { EmptyView() }, @SwiftUI.ViewBuilder notificationAreaView: @escaping () -> NotificationArea = { EmptyView() }, @SwiftUI.ViewBuilder additionalViews: @escaping () -> Subviews = { EmptyView() })
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct SetupTopNavigationBar<LeadingGroup, TrailingGroup, NotificationArea, Subviews> : SwiftUICore.View where LeadingGroup : SwiftUICore.View, TrailingGroup : SwiftUICore.View, NotificationArea : SwiftUICore.View, Subviews : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(title: Swift.String?, largeTitle: Swift.String?, color: SwiftUICore.Color, statusbarColorOverride: SwiftUICore.Color = .clear, navbarBackgroundBleed: CoreFoundation.CGFloat = 0, @SwiftUICore.ViewBuilder leadingButtonGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUICore.ViewBuilder trailingButtonGroup: @escaping () -> TrailingGroup = { EmptyView() }, @SwiftUICore.ViewBuilder notificationAreaView: @escaping () -> NotificationArea = { EmptyView() }, @SwiftUICore.ViewBuilder additionalViews: @escaping () -> Subviews = { EmptyView() })
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI21SetupTopNavigationBarV4bodyQrvp", 0) __<LeadingGroup, TrailingGroup, NotificationArea, Subviews>
 }
-public struct PongView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct PongView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI8PongViewV4bodyQrvp", 0) __
 }
-public struct DeviceSetupScreen<LeadingGroup, Subview, BottomGroup> : SwiftUI.View where LeadingGroup : SwiftUI.View, Subview : SwiftUI.View, BottomGroup : SwiftUI.View {
-  public init(title: Swift.String, @SwiftUI.ViewBuilder subview: @escaping () -> Subview, @SwiftUI.ViewBuilder leadingButtonsGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUI.ViewBuilder bottomButtonsGroup: @escaping () -> BottomGroup = { EmptyView() })
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct DeviceSetupScreen<LeadingGroup, Subview, BottomGroup> : SwiftUICore.View where LeadingGroup : SwiftUICore.View, Subview : SwiftUICore.View, BottomGroup : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(title: Swift.String, @SwiftUICore.ViewBuilder subview: @escaping () -> Subview, @SwiftUICore.ViewBuilder leadingButtonsGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUICore.ViewBuilder bottomButtonsGroup: @escaping () -> BottomGroup = { EmptyView() })
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17DeviceSetupScreenV4bodyQrvp", 0) __<LeadingGroup, Subview, BottomGroup>
 }
-public struct SetupScreenTitleTextView : SwiftUI.View {
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+@_Concurrency.MainActor @preconcurrency public struct SetupScreenTitleTextView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI24SetupScreenTitleTextViewV4bodyQrvp", 0) __
 }
-public class Animations {
-  public init()
-  @objc deinit
-}
-extension UIKit.UIImage {
-  public enum AnimatableImageFormat : Swift.String {
-    case gif
-    case webP
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-}
-public enum DeviceImages {
-  public static func image(for codeName: Swift.String) -> StandardPairingUI.AnimatableImageView
-  public static func image(for model: DeviceConnections.NamiDeviceModel) -> StandardPairingUI.AnimatableImageView
-}
-public enum DeviceQRCodeLocationImages {
-  public static func qrCodeLocationImage(for name: Swift.String) -> StandardPairingUI.AnimatableImageView
-}
-extension SwiftUI.Image {
-  public static func webp(_ name: Swift.String) -> SwiftUI.Image
-  public static func webp(_ name: Swift.String, in bundle: Foundation.Bundle) -> SwiftUI.Image
-}
-public struct AnimatableImageView : SwiftUI.UIViewRepresentable {
-  public init?(webP: Swift.String, in bundle: Foundation.Bundle)
-  public init(uiImage: UIKit.UIImage)
-  @_Concurrency.MainActor(unsafe) public func makeUIView(context: StandardPairingUI.AnimatableImageView.Context) -> UIKit.UIImageView
-  @_Concurrency.MainActor(unsafe) public func updateUIView(_ uiView: UIKit.UIImageView, context: StandardPairingUI.AnimatableImageView.Context)
-  public func resizable() -> some SwiftUI.View
-  
-  public typealias Body = Swift.Never
-  public typealias Coordinator = Swift.Void
-  public typealias UIViewType = UIKit.UIImageView
-}
-public class Colors {
-  public init()
-  public enum ColorSaturation : Swift.String {
-    case lite
-    case normal
-    case saturated
-    case striking
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public enum ColorSaturationNumber : Swift.Int {
-    case saturation30
-    case saturation40
-    case saturation50
-    case saturation60
-    public init?(rawValue: Swift.Int)
-    public typealias RawValue = Swift.Int
-    public var rawValue: Swift.Int {
-      get
-    }
-  }
-  public struct Neutral {
-    public let primaryBlack: SwiftUI.Color
-    public let primaryBlackDisabled: SwiftUI.Color
-    public let secondaryBlack: SwiftUI.Color
-    public let tertiaryBlack: SwiftUI.Color
-    public let gradientGray: SwiftUI.Color
-    public let white: SwiftUI.Color
-    public let whiteDisabled: SwiftUI.Color
-    public let background: SwiftUI.Color
-    public let line: SwiftUI.Color
-    public let shadow: SwiftUI.Color
-  }
-  public struct Text {
-    public let disabledText: SwiftUI.Color
-    public let dangerPrimary: SwiftUI.Color
-    public let dangerContrast: SwiftUI.Color
-  }
-  public struct Graph {
-    public let noData: SwiftUI.Color
-    public let movement: SwiftUI.Color
-    public let noMovement: SwiftUI.Color
-    public let occupied: SwiftUI.Color
-    public let notOccupied: SwiftUI.Color
-    public let notHealthy: SwiftUI.Color
-    public let healthy: SwiftUI.Color
-    public let rest: SwiftUI.Color
-    public let notRest: SwiftUI.Color
-  }
-  public struct DataRepresentations {
-    public static func maroon(_ intensity: StandardPairingUI.Colors.ColorSaturationNumber) -> SwiftUI.Color
-    public static func maroon(_ intensity: StandardPairingUI.Colors.ColorSaturation) -> SwiftUI.Color
-    public static func arctic(_ intensity: StandardPairingUI.Colors.ColorSaturationNumber) -> SwiftUI.Color
-    public static func arctic(_ intensity: StandardPairingUI.Colors.ColorSaturation) -> SwiftUI.Color
-  }
-  public static let allThemes: [DeviceConnections.ThemeID]
-  final public let accent: SwiftUI.Color
-  final public let headline: SwiftUI.Color
-  final public let linkText: SwiftUI.Color
-  final public let negative: SwiftUI.Color
-  final public let warning: SwiftUI.Color
-  final public let warningLight: SwiftUI.Color
-  final public let positive: SwiftUI.Color
-  final public let allGood: SwiftUI.Color
-  final public let placeholder: SwiftUI.Color
-  final public let authButtonStroke: SwiftUI.Color
-  final public let buttonedFieldBackground: SwiftUI.Color
-  final public let buttonedFieldStroke: SwiftUI.Color
-  final public let progressSelected: SwiftUI.Color
-  final public let lowAttentionAlert: SwiftUI.Color
-  final public let lowAttentionAlertLight: SwiftUI.Color
-  final public let alert1: SwiftUI.Color
-  final public let alert2: SwiftUI.Color
-  final public let redAlert3: SwiftUI.Color
-  final public let redAlert4: SwiftUI.Color
-  final public let success3: SwiftUI.Color
-  final public let success4: SwiftUI.Color
-  final public let snackbarBackground: SwiftUI.Color
-  final public let neutral: StandardPairingUI.Colors.Neutral
-  final public let text: StandardPairingUI.Colors.Text
-  final public let graph: StandardPairingUI.Colors.Graph
-  public var globalBlue: SwiftUI.Color {
-    get
-  }
-  final public let warningAlert: SwiftUI.Color
-  public var alert0: SwiftUI.Color {
-    get
-  }
-  public var alert3: SwiftUI.Color {
-    get
-  }
-  public var bodyText: SwiftUI.Color {
-    get
-  }
-  public var darkText: SwiftUI.Color {
-    get
-  }
-  public var primary: SwiftUI.Color {
-    get
-  }
-  public var lowerBackground: SwiftUI.Color {
-    get
-  }
-  public var borderStroke: SwiftUI.Color {
-    get
-  }
-  public var graphLines: SwiftUI.Color {
-    get
-  }
-  public var profileTileBackground: SwiftUI.Color {
-    get
-  }
-  public func forTheme(_ base: DeviceConnections.ThemeID, saturation: StandardPairingUI.Colors.ColorSaturation = .normal) -> SwiftUI.Color
-  @objc deinit
-}
-public struct URLLinks {
-  public static let FAQNotPulsingBlue: Swift.String
-  public static let FAQNamiThreadTopology: Swift.String
-  public static let FAQNotConnectToThread: Swift.String
-}
-extension Lottie.LottieAnimation {
-  final public func animationView(looping: Lottie.LottieLoopMode = .loop) -> some SwiftUI.View
-  
-}
-extension UIKit.UINavigationController {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func gestureRecognizerShouldBegin(_: UIKit.UIGestureRecognizer) -> Swift.Bool
-}
-extension SwiftUI.View {
-  public func allowSwipeBackNavigation(_ isAllowed: Swift.Bool) -> some SwiftUI.View
-  
-}
-extension SwiftUI.Text {
-  public init(_ content: any Swift.StringProtocol, font: StandardPairingUI.NamiTextStyle)
-  public init(_ content: any Swift.StringProtocol, font: SwiftUI.Font)
-  public func fillWidth(_ width: CoreFoundation.CGFloat = .infinity, alignment: SwiftUI.Alignment = .leading) -> some SwiftUI.View
-  
-}
-public var statusbarAndNavbarShift: CoreFoundation.CGFloat {
-  get
-}
-public var statusbarShift: CoreFoundation.CGFloat {
-  get
-}
-public var navbarBackgroundViewHeight: CoreFoundation.CGFloat {
-  get
-}
-public var navbarContentViewHeight: CoreFoundation.CGFloat {
-  get
-}
-public var screenWidth: CoreFoundation.CGFloat {
-  get
-}
-public var firstKeyWindow: UIKit.UIWindow?
-public var defaultNavbarHeight: CoreFoundation.CGFloat
-extension SwiftUI.View {
-  public func navigationPopGestureDisabled(_ disabled: Swift.Bool) -> some SwiftUI.View
-  
-}
-extension SwiftUI.View {
-  public func onHeightUpdate(_ action: @escaping (CoreFoundation.CGFloat) -> Swift.Void) -> some SwiftUI.View
-  
-  public func readSize(onChange: @escaping (CoreFoundation.CGSize) -> Swift.Void) -> some SwiftUI.View
-  
-}
-extension SwiftUI.Color {
-  public init(hex: Swift.UInt, alpha: Swift.Double = 1.0)
-  public static var namiColors: StandardPairingUI.Colors
-  public static var systemBackground: SwiftUI.Color {
-    get
-  }
-  public static var textLabel: SwiftUI.Color {
-    get
-  }
-  public static var invertedTextLabel: SwiftUI.Color {
-    get
-  }
-  public static var tint: SwiftUI.Color {
-    get
-  }
-}
-extension UIKit.UIFont {
-  public class func preferredFont(from font: SwiftUI.Font) -> UIKit.UIFont
-  public class func convertToUIFontCustom(_ font: SwiftUI.Font) -> UIKit.UIFont
-}
-public struct ColorsKey : SwiftUI.EnvironmentKey {
-  public static let defaultValue: StandardPairingUI.Colors
-  public typealias Value = StandardPairingUI.Colors
-}
-extension SwiftUI.EnvironmentValues {
-  public var colors: StandardPairingUI.Colors {
-    get
-    set
-  }
-}
-public struct RoundedRectContainerView<Subviews> : SwiftUI.View where Subviews : SwiftUI.View {
-  public init(spacing: CoreFoundation.CGFloat? = nil, cornerRadius: CoreFoundation.CGFloat = 16.0, excludingCorners: UIKit.UIRectCorner = [], shadowRadius: CoreFoundation.CGFloat? = nil, strokeWidth: CoreFoundation.CGFloat? = nil, strokeColor: SwiftUI.Color = Color.primary, backgroundColor: SwiftUI.Color = Color(UIColor.systemBackground), alignment: SwiftUI.Alignment? = .center, @SwiftUI.ViewBuilder subviews: () -> Subviews)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI24RoundedRectContainerViewV4bodyQrvp", 0) __<Subviews>
-}
-public struct NamiXMarkButton : SwiftUI.View {
-  public init(appearance: StandardPairingUI.NamiXMarkButton.Appearance = .regular, diameter: CoreFoundation.CGFloat = 60, onTap: @escaping () -> Swift.Void)
-  public enum Appearance {
-    case regular
-    case inverted
-    public static func == (a: StandardPairingUI.NamiXMarkButton.Appearance, b: StandardPairingUI.NamiXMarkButton.Appearance) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI15NamiXMarkButtonV4bodyQrvp", 0) __
-}
-public struct NamiNavBackButton : SwiftUI.View {
-  public var action: () -> Swift.Void
-  public init()
-  public init(action: @escaping () -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17NamiNavBackButtonV4bodyQrvp", 0) __
-}
-public struct NamiCircularXMarkButton : SwiftUI.View {
-  public init(appearance: StandardPairingUI.NamiCircularXMarkButton.Appearance = .regular, diameter: CoreFoundation.CGFloat = 60, onTap: @escaping () -> Swift.Void)
-  public enum Appearance {
-    case regular
-    case inverted
-    public static func == (a: StandardPairingUI.NamiCircularXMarkButton.Appearance, b: StandardPairingUI.NamiCircularXMarkButton.Appearance) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NamiCircularXMarkButtonV4bodyQrvp", 0) __
-}
-public struct NamiPageIndexIndicatorView : SwiftUI.View {
-  public init(numberOfPages: Swift.Int, currentIndex: Swift.Int, activeColor: SwiftUI.Color = Color.gray, inactiveColor: SwiftUI.Color = Color.gray.opacity(0.5), heightOfIndicator: CoreFoundation.CGFloat = 16, spacingOfIndicator: CoreFoundation.CGFloat = 12)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI26NamiPageIndexIndicatorViewV4bodyQrvp", 0) __
-}
-public struct TextFieldView : SwiftUI.UIViewRepresentable {
-  public init(placeholder: Swift.String, text: SwiftUI.Binding<Swift.String>, isEditing: SwiftUI.Binding<Swift.Bool>, returnKeyType: UIKit.UIReturnKeyType = .default, textColor: UIKit.UIColor? = nil, font: UIKit.UIFont? = nil)
-  @objc final public class Coordinator : ObjectiveC.NSObject {
-    public init(text: SwiftUI.Binding<Swift.String>, isEditing: SwiftUI.Binding<Swift.Bool>, showsPassword: SwiftUI.Binding<Swift.Bool>, showImageName: Swift.String, hideImageName: Swift.String)
-    @objc deinit
-  }
-  @_Concurrency.MainActor(unsafe) public static func dismantleUIView(_ uiView: UIKit.UITextField, coordinator: StandardPairingUI.TextFieldView.Coordinator)
-  @_Concurrency.MainActor(unsafe) public func makeCoordinator() -> StandardPairingUI.TextFieldView.Coordinator
-  @_Concurrency.MainActor(unsafe) public func makeUIView(context: StandardPairingUI.TextFieldView.Context) -> UIKit.UITextField
-  @_Concurrency.MainActor(unsafe) public func updateUIView(_ textField: UIKit.UITextField, context: StandardPairingUI.TextFieldView.Context)
-  public typealias Body = Swift.Never
-  public typealias UIViewType = UIKit.UITextField
-}
-extension StandardPairingUI.TextFieldView.Coordinator : UIKit.UITextFieldDelegate {
-  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidBeginEditing(_: UIKit.UITextField)
-  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidEndEditing(_: UIKit.UITextField)
-  @_Concurrency.MainActor(unsafe) @objc final public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
-}
-public enum NamiTextFieldStyle {
-  case neutral
-  case positive
-  case negative
-  public static func == (a: StandardPairingUI.NamiTextFieldStyle, b: StandardPairingUI.NamiTextFieldStyle) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public struct NamiTextField : SwiftUI.View {
-  public init(placeholder: Swift.String, text: SwiftUI.Binding<Swift.String>, isEditing: SwiftUI.Binding<Swift.Bool>? = nil, returnKeyType: UIKit.UIReturnKeyType = .default, textFieldFont: SwiftUI.Font? = nil, subTextFont: SwiftUI.Font? = nil, textColor: SwiftUI.Color? = nil, maxLength: Swift.Int? = nil)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI13NamiTextFieldV4bodyQrvp", 0) __
-}
-extension StandardPairingUI.NamiTextField {
-  public func style(_ style: StandardPairingUI.NamiTextFieldStyle) -> StandardPairingUI.NamiTextField
-  public func subText(_ subText: Swift.String?) -> StandardPairingUI.NamiTextField
-  public func secureTextEntry(_ secure: Swift.Bool) -> StandardPairingUI.NamiTextField
-}
-public struct NamiErrorChatBubble : SwiftUI.View {
-  public init(_ text: Swift.String)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI19NamiErrorChatBubbleV4bodyQrvp", 0) __
-}
-public struct NamiChatBubble : SwiftUI.View {
-  public init(_ text: Swift.String)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI14NamiChatBubbleV4bodyQrvp", 0) __
-}
-public struct NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent> : SwiftUI.View where LeadingGroup : SwiftUI.View, TrailingGroup : SwiftUI.View, BottomGroup : SwiftUI.View, NotificationArea : SwiftUI.View, Subviews : SwiftUI.View, MainContent : SwiftUI.View {
-  public init(title: Swift.String? = nil, largeTitle: Swift.String? = nil, themeId: DeviceConnections.ThemeID = 0, colorOverride: SwiftUI.Color? = nil, statusbarColorOverride: SwiftUI.Color? = nil, backgroundOverride: SwiftUI.Color? = nil, navbarBackgroundBleed: CoreFoundation.CGFloat = 0, contentBehavior: SwiftUI.Binding<StandardPairingUI.ContentBehavior>? = nil, @SwiftUI.ViewBuilder mainContent: @escaping () -> MainContent = { EmptyView() }, @SwiftUI.ViewBuilder leadingButtonsGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUI.ViewBuilder trailingButtonsGroup: @escaping () -> TrailingGroup = { EmptyView() }, @SwiftUI.ViewBuilder notificationAreaView: @escaping () -> NotificationArea = { EmptyView() }, @SwiftUI.ViewBuilder additionalViews: @escaping () -> Subviews = { EmptyView() }, @SwiftUI.ViewBuilder bottomButtonsGroup: @escaping () -> BottomGroup = { EmptyView() })
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NamiTopNavigationScreenV4bodyQrvp", 0) __<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent>
-}
-public enum ContentBehavior {
-  case scrollable(onScroll: (CoreFoundation.CGFloat) -> Swift.Void, scrollDisabled: SwiftUI.Binding<Swift.Bool>? = nil, scrollHeight: SwiftUI.Binding<CoreFoundation.CGFloat>? = nil)
-  case fixed
-  public static var scrollable: StandardPairingUI.ContentBehavior {
-    get
-  }
-}
-extension StandardPairingUI.ContentBehavior : Swift.Equatable {
-  public static func == (lhs: StandardPairingUI.ContentBehavior, rhs: StandardPairingUI.ContentBehavior) -> Swift.Bool
-}
-public struct LottieAnimationView : SwiftUI.View {
-  public init(animation: Swift.KeyPath<StandardPairingUI.Animations, Lottie.LottieAnimation>, loopMode: Lottie.LottieLoopMode = .loop)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI19LottieAnimationViewV4bodyQrvp", 0) __
-}
-public typealias LottieAnimations = StandardPairingUI.Animations
-public struct LottieAnimationsKey : SwiftUI.EnvironmentKey {
-  public static let defaultValue: StandardPairingUI.LottieAnimations
-  public typealias Value = StandardPairingUI.LottieAnimations
-}
-public struct CircleButton : SwiftUI.View {
-  public init()
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI12CircleButtonV4bodyQrvp", 0) __
-}
-public struct NamiTextStyle : Swift.Identifiable {
-  public enum Leading {
-    case loose
-    case tight
-    case standard
-    public init?(rawValue: SwiftUI.Font.Leading)
-    public static func == (a: StandardPairingUI.NamiTextStyle.Leading, b: StandardPairingUI.NamiTextStyle.Leading) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  public static let headline: StandardPairingUI.NamiTextStyle
-  public static let headline2: StandardPairingUI.NamiTextStyle
-  public static let headline3: StandardPairingUI.NamiTextStyle
-  public static let headline4: StandardPairingUI.NamiTextStyle
-  public static let headline5: StandardPairingUI.NamiTextStyle
-  public static let headline6: StandardPairingUI.NamiTextStyle
-  public static let paragraph1: StandardPairingUI.NamiTextStyle
-  public static let paragraph2: StandardPairingUI.NamiTextStyle
-  public static let small: StandardPairingUI.NamiTextStyle
-  public static let small2: StandardPairingUI.NamiTextStyle
-  public let id: Swift.String
-  public var font: SwiftUI.Font {
-    get
-  }
-  public var uiFont: UIKit.UIFont {
-    get
-  }
-  public typealias ID = Swift.String
-}
-@available(iOS 15, *)
-public struct NamiTextHyperLink : SwiftUI.View {
-  public init(content: Foundation.AttributedString)
-  public init(text: Swift.String, link: Swift.String, linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
-  public init(markdownString: Swift.String, linkTexts: Swift.String..., linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
-  public init(markdownString: Swift.String, linkTexts: [Swift.String], linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
-  public init(content: Swift.String, textsAndLinks: [(Swift.String, Swift.String)], linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17NamiTextHyperLinkV4bodyQrvp", 0) __
-}
-public struct NamiTextHyperLinkLegacy : SwiftUI.View {
-  public init(text: Swift.String, link: Swift.String, linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NamiTextHyperLinkLegacyV4bodyQrvp", 0) __
-}
-public enum NamiTextHyperLinkHelpers {
-  public static func hyperLink(text: Swift.String, link: Swift.String, linkColor: SwiftUI.Color, underlineColor: SwiftUI.Color? = nil) -> some SwiftUI.View
-  
-}
-extension SwiftUI.View {
-  public func dynamicBottomSheet<SheetContent>(isPresented: SwiftUI.Binding<Swift.Bool>, dragIndicatorVisible: Swift.Bool = false, onDismiss: SwiftUI.Binding<(() -> Swift.Void)?>, backgroundColor: SwiftUI.Binding<SwiftUI.Color> = .constant(.white), @SwiftUI.ViewBuilder content: @escaping () -> SheetContent) -> some SwiftUI.View where SheetContent : SwiftUI.View
-  
-}
-public struct NotificationButtonStyle : SwiftUI.ButtonStyle {
-  public init(color: SwiftUI.Color = Color(hex: 0xEAEAEA))
-  public struct NotificationButton : SwiftUI.View {
-    public init(configuration: StandardPairingUI.NotificationButtonStyle.Configuration, color: SwiftUI.Color)
-    @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-      get
-    }
-    public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NotificationButtonStyleV0dE0V4bodyQrvp", 0) __
-  }
-  public func makeBody(configuration: StandardPairingUI.NotificationButtonStyle.Configuration) -> some SwiftUI.View
-  
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23NotificationButtonStyleV8makeBody13configurationQr05SwiftC00eF13ConfigurationV_tF", 0) __
-}
-public struct NamiAuthButtonStyle : SwiftUI.ButtonStyle {
-  public init(mode: StandardPairingUI.NamiAuthButtonStyle.AppearanceColorMode = .light)
-  public struct NamiAuthButton : SwiftUI.View {
-    @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-      get
-    }
-    public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI19NamiAuthButtonStyleV0deF0V4bodyQrvp", 0) __
-  }
-  public enum AppearanceColorMode {
-    case light
-    case dark
-    public static func == (a: StandardPairingUI.NamiAuthButtonStyle.AppearanceColorMode, b: StandardPairingUI.NamiAuthButtonStyle.AppearanceColorMode) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  public func makeBody(configuration: StandardPairingUI.NamiAuthButtonStyle.Configuration) -> some SwiftUI.View
-  
-  public struct ConstraintLayout {
-    public static let LeadingToSuperView: CoreFoundation.CGFloat
-    public static let TrailingToSuperView: CoreFoundation.CGFloat
-    public static let BottomToSuperView: CoreFoundation.CGFloat
-    public static let BottomToNextButton: CoreFoundation.CGFloat
-    public static let BottomTokeyboard: CoreFoundation.CGFloat
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI19NamiAuthButtonStyleV8makeBody13configurationQr05SwiftC00fG13ConfigurationV_tF", 0) __
-}
-public struct NamiActionButtonStyle : SwiftUI.ButtonStyle {
-  public init(rank: StandardPairingUI.NamiActionButtonStyle.AppearanceHierarchyRank = .primary, sharpCorner: UIKit.UIRectCorner = .topRight)
-  public struct NamiActionButton : SwiftUI.View {
-    @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-      get
-    }
-    public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI21NamiActionButtonStyleV0deF0V4bodyQrvp", 0) __
-  }
-  public enum AppearanceHierarchyRank {
-    case primary
-    case secondary
-    case tertiary
-    case destructive
-    public static func == (a: StandardPairingUI.NamiActionButtonStyle.AppearanceHierarchyRank, b: StandardPairingUI.NamiActionButtonStyle.AppearanceHierarchyRank) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  public func makeBody(configuration: StandardPairingUI.NamiActionButtonStyle.Configuration) -> some SwiftUI.View
-  
-  public struct ConstraintLayout {
-    public static let LeadingToSuperView: CoreFoundation.CGFloat
-    public static let TrailingToSuperView: CoreFoundation.CGFloat
-    public static let BottomToSuperView: CoreFoundation.CGFloat
-    public static let BottomToNextButton: CoreFoundation.CGFloat
-    public static let BottomTokeyboard: CoreFoundation.CGFloat
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI21NamiActionButtonStyleV8makeBody13configurationQr05SwiftC00fG13ConfigurationV_tF", 0) __
-}
-public struct ScrollViewWithOnScrollAction<Subviews> : SwiftUI.View where Subviews : SwiftUI.View {
-  public init(onScroll action: @escaping ((CoreFoundation.CGFloat) -> Swift.Void) = { _ in }, scrollDisabled: SwiftUI.Binding<Swift.Bool>? = nil, @SwiftUI.ViewBuilder subviews: () -> Subviews)
-  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI016ScrollViewWithOnD6ActionV4bodyQrvp", 0) __<Subviews>
-}
-extension UIKit.UIImage.AnimatableImageFormat : Swift.Equatable {}
-extension UIKit.UIImage.AnimatableImageFormat : Swift.Hashable {}
-extension UIKit.UIImage.AnimatableImageFormat : Swift.RawRepresentable {}
-extension StandardPairingUI.Colors.ColorSaturation : Swift.Equatable {}
-extension StandardPairingUI.Colors.ColorSaturation : Swift.Hashable {}
-extension StandardPairingUI.Colors.ColorSaturation : Swift.RawRepresentable {}
-extension StandardPairingUI.Colors.ColorSaturationNumber : Swift.Equatable {}
-extension StandardPairingUI.Colors.ColorSaturationNumber : Swift.Hashable {}
-extension StandardPairingUI.Colors.ColorSaturationNumber : Swift.RawRepresentable {}
-extension StandardPairingUI.NamiXMarkButton.Appearance : Swift.Equatable {}
-extension StandardPairingUI.NamiXMarkButton.Appearance : Swift.Hashable {}
-extension StandardPairingUI.NamiCircularXMarkButton.Appearance : Swift.Equatable {}
-extension StandardPairingUI.NamiCircularXMarkButton.Appearance : Swift.Hashable {}
-extension StandardPairingUI.NamiTextFieldStyle : Swift.Equatable {}
-extension StandardPairingUI.NamiTextFieldStyle : Swift.Hashable {}
-extension StandardPairingUI.NamiTextStyle.Leading : Swift.Equatable {}
-extension StandardPairingUI.NamiTextStyle.Leading : Swift.Hashable {}
-extension StandardPairingUI.NamiAuthButtonStyle.AppearanceColorMode : Swift.Equatable {}
-extension StandardPairingUI.NamiAuthButtonStyle.AppearanceColorMode : Swift.Hashable {}
-extension StandardPairingUI.NamiActionButtonStyle.AppearanceHierarchyRank : Swift.Equatable {}
-extension StandardPairingUI.NamiActionButtonStyle.AppearanceHierarchyRank : Swift.Hashable {}
+extension StandardPairingUI.QRScannerView : Swift.Sendable {}
+extension StandardPairingUI.PowerOnAndScanningView : Swift.Sendable {}
+extension StandardPairingUI.BluetoothDeviceFoundView : Swift.Sendable {}
+extension StandardPairingUI.ErrorScreenView : Swift.Sendable {}
+extension StandardPairingUI.PositioningCompleteView : Swift.Sendable {}
+extension StandardPairingUI.InitialScreenView : Swift.Sendable {}
+extension StandardPairingUI.HowToPositionView : Swift.Sendable {}
+extension StandardPairingUI.AnimationView : Swift.Sendable {}
+extension StandardPairingUI.PositioningGuidanceView : Swift.Sendable {}
+extension StandardPairingUI.EnterWiFiPasswordView : Swift.Sendable {}
+extension StandardPairingUI.OtherWiFiNetworkView : Swift.Sendable {}
+extension StandardPairingUI.FinishingSetupView : Swift.Sendable {}
+extension StandardPairingUI.PairingErrorScreenView : Swift.Sendable {}
+extension StandardPairingUI.EnableCameraInSettingsView : Swift.Sendable {}
+extension StandardPairingUI.ListWiFiNetworksView : Swift.Sendable {}
+extension StandardPairingUI.SetupTopNavigationBar : Swift.Sendable {}
+extension StandardPairingUI.PongView : Swift.Sendable {}
+extension StandardPairingUI.DeviceSetupScreen : Swift.Sendable {}
+extension StandardPairingUI.SetupScreenTitleTextView : Swift.Sendable {}
