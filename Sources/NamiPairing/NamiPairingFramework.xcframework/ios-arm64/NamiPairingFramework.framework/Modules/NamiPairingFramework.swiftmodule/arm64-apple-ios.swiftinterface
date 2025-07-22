@@ -39,8 +39,6 @@ extension NamiPairingFramework.NamiDeviceModel : Swift.Codable, Swift.Hashable {
   }
 }
 extension NamiPairingFramework.InMemoryStorage : NamiPairingFramework.DeviceConnectionsManagerStorageProtocol {
-  final public func refreshPlaceKeys() -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
-  final public func refreshDevices(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   final public func updateDeviceState(uid: NamiPairingFramework.DeviceUniversalID, state: Foundation.Data, seqTime: Swift.UInt64) throws
   final public func placeIds() -> Combine.AnyPublisher<[NamiPairingFramework.PlaceID], Swift.Never>
   final public func deviceUids(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[NamiPairingFramework.DeviceUniversalID], Swift.Never>
@@ -99,7 +97,8 @@ extension NamiPairingFramework.InMemoryStorage : @retroactive NamiPairingFramewo
   final public func deleteRoom(_ roomId: NamiPairingFramework.RoomID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_Place, any Swift.Error>
 }
 public class Authenticator {
-  public init(base: Foundation.URL)
+  public init(base: Foundation.URL, accessToken: NamiPairingFramework.AccessToken, refreshToken: Swift.String)
+  public func validToken() -> Combine.AnyPublisher<NamiPairingFramework.AccessToken, any Swift.Error>
   public func requestWebToken() -> Combine.AnyPublisher<NamiPairingFramework.AccessToken, any Swift.Error>
   @objc deinit
 }
@@ -467,6 +466,8 @@ public struct NamiDevicesQuery : NamiPairingFramework.DevicesQueryProtocol {
   public var cursor: Swift.String?
   public init(anyDeviceQuery: any NamiPairingFramework.DevicesQueryProtocol)
   public init(placeIds: [NamiPairingFramework.PlaceID] = [], zoneIds: [NamiPairingFramework.PlaceZoneID] = [], roomIds: [NamiPairingFramework.RoomID] = [], uids: [NamiPairingFramework.DeviceUniversalID] = [], cursor: Swift.String? = nil)
+  public static func parameters(placeIds: [NamiPairingFramework.PlaceID] = [], zoneIds: [NamiPairingFramework.PlaceZoneID] = [], roomIds: [NamiPairingFramework.RoomID] = [], uids: [NamiPairingFramework.DeviceUniversalID] = []) -> NamiPairingFramework.NamiDevicesQuery
+  public static func cursor(_ cursor: Swift.String) -> NamiPairingFramework.NamiDevicesQuery
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -1022,9 +1023,12 @@ public struct MoveDevicesRequest : Swift.Encodable {
 }
 public typealias DeviceAttributeStatesQuery = NamiPairingFramework.RemoteTemplateUI_DeviceAttributeStatesQuery
 final public class WebAPI {
-  public init(baseUrl: Foundation.URL, session: Foundation.URLSession = URLSession.shared)
+  public init(baseUrl: Foundation.URL, session: Foundation.URLSession = URLSession.shared, authentication: NamiPairingFramework.CompanionModeAuthentication)
   final public var errorPublisher: Combine.PassthroughSubject<any Swift.Error, Swift.Never>
   @objc deinit
+}
+extension NamiPairingFramework.WebAPI {
+  final public func collectDevices(query: NamiPairingFramework.WebAPI.DevicesQuery) -> Combine.AnyPublisher<[NamiPairingFramework.Device], any Swift.Error>
 }
 extension NamiPairingFramework.WebAPI : NamiPairingFramework.RemoteTemplateUI_WebAPIProtocol, NamiPairingFramework.PairingWebAPIProtocol {
   public typealias RepresentablePlaceMotionAggregates = NamiPairingFramework.PlaceMotionAggregates
@@ -1299,6 +1303,10 @@ final public class InMemoryStorage {
   final public func refreshAllPlaceUsers() -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   final public func refreshPlaceUsers(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   final public func refreshAllDevices() -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  final public func refreshDevices(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  final public func refreshDevices(ofType: NamiPairingFramework.NamiDeviceType) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  final public func refreshDevices(uids: [NamiPairingFramework.DeviceUniversalID]) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  final public func refreshPlaceKeys() -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   final public func createZone(placeId: NamiPairingFramework.PlaceID, name: Swift.String) -> Combine.AnyPublisher<NamiPairingFramework.PlaceZoneID, any Swift.Error>
   final public func createRoom(placeZoneId: NamiPairingFramework.PlaceZoneID, name: Swift.String, iconId: NamiPairingFramework.IconID) -> Combine.AnyPublisher<NamiPairingFramework.RoomID, any Swift.Error>
   final public func deleteAutomation(placeId: NamiPairingFramework.PlaceID, automationId: NamiPairingFramework.AutomationID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
@@ -1438,9 +1446,6 @@ public enum RemoteTemplateEntrypoint : Swift.String, NamiPairingFramework.Remote
   case setupKitGuide
   case setupDeviceGuide
   case settings
-  public var path: Swift.String {
-    get
-  }
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -1475,7 +1480,7 @@ public class NamiPairing<Container> where Container : NamiPairingFramework.Pairi
   
   public func startPositioning(deviceName: Swift.String, deviceUid: Swift.String, pairingSteps: Container, onPositioningEnded: @escaping (NamiPairingFramework.PositioningResult) -> Swift.Void) throws -> some SwiftUICore.View
   
-  public func presentEntryPoint(entrypoint: NamiPairingFramework.RemoteTemplateEntrypoint) -> some SwiftUICore.View
+  @_Concurrency.MainActor public func presentEntryPoint(entrypoint: NamiPairingFramework.RemoteTemplateEntrypoint) -> some SwiftUICore.View
   
   @objc deinit
 }
@@ -2717,14 +2722,13 @@ public protocol RemoteTemplateUIConfigProtocol {
   var appearance: NamiPairingFramework.NamiAppearance { get set }
 }
 public protocol RemoteTemplatesUIControllerProtocol {
-  associatedtype API : NamiPairingFramework.RemoteTemplateUI_WebAPIProtocol
-  associatedtype Storage : NamiPairingFramework.RemoteTemplateStateRepositoryProtocol
+  associatedtype Storage : NamiPairingFramework.DeviceConnectionsManagerStorageProtocol, NamiPairingFramework.RemoteTemplateStateRepositoryProtocol
   associatedtype Config : NamiPairingFramework.RemoteTemplateUIConfigProtocol
   associatedtype Event : NamiPairingFramework.RemoteTemplatesUIControllerEvent
   associatedtype Error : NamiPairingFramework.RemoteTemplatesUIControllerError
   associatedtype TemplatesView : SwiftUICore.View
-  init(api: Self.API, store: Self.Storage, deviceConnectionsManager: any NamiPairingFramework.DeviceConnectionsManagerProtocol, config: Self.Config)
-  func present(entrypoint: some RemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.PlaceID) -> Self.TemplatesView
+  init(store: Self.Storage, deviceConnectionsManager: any NamiPairingFramework.DeviceConnectionsManagerProtocol, config: Self.Config)
+  @_Concurrency.MainActor func present(entrypoint: some RemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.PlaceID) -> Self.TemplatesView
   var eventsPublisher: Combine.PassthroughSubject<Self.Event, Self.Error> { get }
 }
 public protocol RemoteTemplatesUIControllerEvent {
@@ -5465,22 +5469,33 @@ public class TemplatesVariablesBridge : Swift.AnyObject {
   public init(initial: [Swift.String : Swift.AnyHashable], onUpsert: @escaping (_ name: Swift.String, _ newValue: Swift.AnyHashable) -> Swift.Void)
   public func setNewValueInTemplate(_ name: Swift.String, _ newValue: Swift.AnyHashable)
   public func setNewVariablesDictionaryInTemplate(_ newValues: [Swift.String : Swift.AnyHashable])
+  public func getValue<T>(name: Swift.String) -> T?
   @objc deinit
 }
 
 
 
 
+public struct PresentedScreen {
+  public init(url: Foundation.URL, title: Swift.String? = nil, backButtonEnabled: Swift.Bool = true)
+}
 
 
 final public class NamiSDUIPresenter : Foundation.ObservableObject {
   @usableFromInline
   internal static func defaultOnLoadError(_ error: any Swift.Error)
   @usableFromInline
-  internal static func mapUrl(_ url: Foundation.URL) -> Foundation.URL
-  public init(variablesBridge: NamiPairingFramework.TemplatesVariablesBridge, onLoadError: @escaping (any Swift.Error) -> Swift.Void = NamiSDUIPresenter.defaultOnLoadError, mapUrl: @escaping (Foundation.URL) -> Foundation.URL? = NamiSDUIPresenter.mapUrl)
-  @_Concurrency.MainActor final public func present(_ urls: Foundation.URL..., onDismiss: @escaping () -> Swift.Void = {}) -> some SwiftUICore.View
+  internal static func mapUrl(_ url: Foundation.URL) -> NamiPairingFramework.PresentedScreen
+  public enum PresentationUpdate {
+    case replaceByUrl(NamiPairingFramework.PresentedScreen)
+    case replaceByIndex(Swift.Int, NamiPairingFramework.PresentedScreen)
+    case replaceTopmost(NamiPairingFramework.PresentedScreen)
+    case replaceStack([NamiPairingFramework.PresentedScreen])
+  }
+  public init(variablesBridge: NamiPairingFramework.TemplatesVariablesBridge, onLoadError: @escaping (any Swift.Error) -> Swift.Void = NamiSDUIPresenter.defaultOnLoadError, mapUrl: @escaping (Foundation.URL) -> NamiPairingFramework.PresentedScreen? = NamiSDUIPresenter.mapUrl)
+  @_Concurrency.MainActor final public func present(_ screens: NamiPairingFramework.PresentedScreen..., onDismiss: @escaping () -> Swift.Void = {}) -> some SwiftUICore.View
   
+  @_Concurrency.MainActor final public func updatePresentedScreens(with replacement: NamiPairingFramework.NamiSDUIPresenter.PresentationUpdate)
   public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @objc deinit
 }
@@ -5879,10 +5894,11 @@ public enum SetupGuideEvent : NamiPairingFramework.RemoteTemplatesUIControllerEv
   case viewDismissed
   case guideEnded(NamiPairingFramework.PlaceID, NamiPairingFramework.PlaceZoneID, NamiPairingFramework.RoomID, NamiPairingFramework.NamiDeviceType)
 }
-final public class RemoteTemplateUIController<API, Storage, Config> : @preconcurrency NamiPairingFramework.RemoteTemplatesUIControllerProtocol where API : NamiPairingFramework.DeviceConnectionsManagerWebAPIProtocol, API : NamiPairingFramework.RemoteTemplateUI_WebAPIProtocol, Storage : NamiPairingFramework.DeviceConnectionsManagerStorageProtocol, Storage : NamiPairingFramework.RemoteTemplateStateRepositoryProtocol, Config : NamiPairingFramework.RemoteTemplateUIConfigProtocol {
-  public init(api: API, store: Storage, deviceConnectionsManager: any NamiPairingFramework.DeviceConnectionsManagerProtocol, config: NamiPairingFramework.RemoteTemplateUIControllerConfig)
+final public class RemoteTemplateUIController<Storage> : NamiPairingFramework.RemoteTemplatesUIControllerProtocol where Storage : NamiPairingFramework.DeviceConnectionsManagerStorageProtocol, Storage : NamiPairingFramework.RemoteTemplateStateRepositoryProtocol {
+  public init(store: Storage, deviceConnectionsManager: any NamiPairingFramework.DeviceConnectionsManagerProtocol, config: NamiPairingFramework.RemoteTemplateUIControllerConfig)
   final public let eventsPublisher: Combine.PassthroughSubject<NamiPairingFramework.SetupGuideEvent, NamiPairingFramework.SetupGuideError>
   @_Concurrency.MainActor final public func present(entrypoint: some RemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.PlaceID) -> SwiftUICore.AnyView
+  public typealias Config = NamiPairingFramework.RemoteTemplateUIControllerConfig
   public typealias Error = NamiPairingFramework.SetupGuideError
   public typealias Event = NamiPairingFramework.SetupGuideEvent
   public typealias TemplatesView = SwiftUICore.AnyView
@@ -7025,6 +7041,8 @@ extension NamiPairingFramework.AlertMode : Swift.RawRepresentable {}
 extension NamiPairingFramework.WiFiCredentialsUpdateStatus : Swift.Equatable {}
 extension NamiPairingFramework.WiFiCredentialsUpdateStatus : Swift.Hashable {}
 extension NamiPairingFramework.WiFiCredentialsUpdateStatus : Swift.RawRepresentable {}
+extension NamiPairingFramework.NamiDeviceType : Swift.Equatable {}
+extension NamiPairingFramework.NamiDeviceType : Swift.Hashable {}
 extension NamiPairingFramework.InMemoryThreadDatasetStorage.StorageError : Swift.Equatable {}
 extension NamiPairingFramework.InMemoryThreadDatasetStorage.StorageError : Swift.Hashable {}
 extension NamiPairingFramework.RemoteTemplateEntrypoint : Swift.Equatable {}
@@ -7055,8 +7073,6 @@ extension NamiPairingFramework.TimeZoneLoadingError : Swift.Equatable {}
 extension NamiPairingFramework.TimeZoneLoadingError : Swift.Hashable {}
 extension NamiPairingFramework.NamiAppearance : Swift.Hashable {}
 extension NamiPairingFramework.NamiAppearance : Swift.RawRepresentable {}
-extension NamiPairingFramework.NamiDeviceType : Swift.Equatable {}
-extension NamiPairingFramework.NamiDeviceType : Swift.Hashable {}
 extension NamiPairingFramework.NamiOutletType : Swift.Equatable {}
 extension NamiPairingFramework.NamiOutletType : Swift.Hashable {}
 extension NamiPairingFramework.Tokens : Swift.Equatable {}
