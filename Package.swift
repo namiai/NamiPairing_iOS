@@ -20,7 +20,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/Yandex/DivKit.git", from: "31.0.0")
+        .package(url: "https://github.com/Yandex/DivKit.git", from: "32.9.0")
     ],
     targets: [
         .binaryTarget(
