@@ -12,33 +12,13 @@ let package = Package(
     products: [
         .library(
             name: "NamiPairing",
-            targets: ["NamiPairingCore", "StandardPairingUI"]
-        ),
+            targets: ["NamiPairingFramework", "StandardPairingUI"]),
         .library(
             name: "NamiPairing-NoUI", 
-            targets: ["NamiPairingCore"]
-        )
-    ],
-    dependencies: [
-        .package(url: "https://github.com/Yandex/DivKit.git", from: "31.0.0")
+            targets: ["NamiPairingFramework"])
     ],
     targets: [
-        .binaryTarget(
-            name: "NamiPairingFramework", 
-            path: "Sources/NamiPairing/NamiPairingFramework.xcframework"
-        ),
-        .binaryTarget(
-            name: "StandardPairingUI", 
-            path: "Sources/NamiPairing/StandardPairingUI.xcframework"
-        ),
-        .target(
-            name: "NamiPairingCore",
-            dependencies: [
-                "NamiPairingFramework",
-                .product(name: "DivKit", package: "DivKit")
-            ],
-            path: "Sources/NamiPairing/NamiPairingCore",
-            publicHeadersPath: "."
-        ),
+        .binaryTarget(name: "NamiPairingFramework", path: "Sources/NamiPairing/NamiPairingFramework.xcframework"),
+        .binaryTarget(name: "StandardPairingUI", path: "Sources/NamiPairing/StandardPairingUI.xcframework"),
     ]
 )
