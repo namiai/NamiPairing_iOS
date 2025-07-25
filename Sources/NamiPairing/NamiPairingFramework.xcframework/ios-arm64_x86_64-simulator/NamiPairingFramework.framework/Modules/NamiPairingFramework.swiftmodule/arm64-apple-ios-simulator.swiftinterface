@@ -471,14 +471,14 @@ public struct NamiDevicesQuery : NamiPairingFramework.DevicesQueryProtocol {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct NamiDevicesResponse : Swift.Decodable, NamiPairingFramework.DevicesResponseProtocol {
+public struct NamiDevicesResponse : NamiPairingFramework.DevicesResponseProtocol {
   public var devices: [NamiPairingFramework.Device]
   public var total: Swift.Int
   public var pageSize: Swift.Int
   public var cursor: Swift.String?
-  public typealias Device = NamiPairingFramework.Device
-  public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public typealias Device = NamiPairingFramework.Device
 }
 public struct Device : NamiPairingFramework.DeviceProtocol, Swift.Codable {
   public typealias State = NamiPairingFramework.DeviceCloudState
@@ -493,14 +493,13 @@ public struct Device : NamiPairingFramework.DeviceProtocol, Swift.Codable {
   public var productId: NamiPairingFramework.DeviceProductID
   public var createdAt: Foundation.Date
   public var updatedAt: Foundation.Date
-  public var zoneId: NamiPairingFramework.PlaceZoneID
   public var model: any NamiPairingFramework.DeviceModelProtocol
   public var cloudConnection: NamiPairingFramework.Device.CloudConnection?
   public var deviceState: NamiPairingFramework.Device.State?
   public var isBorderRouter: Swift.Bool {
     get
   }
-  public init(id: NamiPairingFramework.DeviceID, uid: NamiPairingFramework.DeviceUniversalID, urn: Swift.String, roomId: NamiPairingFramework.RoomID, bleDiscriminator: Swift.Int32? = nil, name: Swift.String, codeName: Swift.String, productId: NamiPairingFramework.DeviceProductID, createdAt: Foundation.Date, updatedAt: Foundation.Date, model: any NamiPairingFramework.DeviceModelProtocol, zoneId: NamiPairingFramework.PlaceZoneID)
+  public init(id: NamiPairingFramework.DeviceID, uid: NamiPairingFramework.DeviceUniversalID, urn: Swift.String, roomId: NamiPairingFramework.RoomID, bleDiscriminator: Swift.Int32? = nil, name: Swift.String, codeName: Swift.String, productId: NamiPairingFramework.DeviceProductID, createdAt: Foundation.Date, updatedAt: Foundation.Date, model: any NamiPairingFramework.DeviceModelProtocol)
   public init(anyDevice: any NamiPairingFramework.DeviceProtocol)
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
@@ -1463,12 +1462,21 @@ public struct DeveloperParameters {
   public let accessToken: NamiPairingFramework.AccessToken?
   public init(accessToken: NamiPairingFramework.AccessToken? = nil)
 }
+public struct NamiSdkConfig : NamiPairingFramework.RemoteTemplateUIConfigProtocol {
+  public init(baseURL: Foundation.URL, countryCode: Swift.String, measurementSystem: NamiPairingFramework.NamiMeasurementSystem, clientId: Swift.String, language: Swift.String, appearance: NamiPairingFramework.NamiAppearance)
+  public var baseURL: Foundation.URL
+  public var countryCode: Swift.String
+  public var measurementSystem: NamiPairingFramework.NamiMeasurementSystem
+  public var clientId: Swift.String
+  public var language: Swift.String
+  public var appearance: NamiPairingFramework.NamiAppearance
+  public var topologyRoomsSupported: Swift.Bool
+}
 public class NamiPairing<Container> where Container : NamiPairingFramework.PairingStepsContainer {
   public typealias PairingParameters = NamiPairingFramework.Tomonari<Container>.PairingParameters
   public var api: NamiPairingFramework.WebAPI
   public var wifiStorage: any NamiPairingFramework.PairingWiFiStorageProtocol
   public var threadDatasetProvider: any NamiPairingFramework.PairingThreadOperationalDatasetProviderProtocol
-  public var config: any NamiPairingFramework.RemoteTemplateUIConfigProtocol
   public var devicePairingState: Combine.PassthroughSubject<NamiPairingFramework.Tomonari<Container>.DevicePairingState, any Swift.Error> {
     get
   }
@@ -1476,12 +1484,12 @@ public class NamiPairing<Container> where Container : NamiPairingFramework.Pairi
   public var placeId: NamiPairingFramework.PlaceID {
     get
   }
-  public init<WiFiStorage, SecureStorage>(sessionCode: Swift.String, clientId: Swift.String, templatesBaseUrl: Swift.String, countryCode: Swift.String, language: Swift.String, appearance: NamiPairingFramework.NamiAppearance, measurementSystem: NamiPairingFramework.NamiMeasurementSystem, wifiStorage: WiFiStorage = InMemoryWiFiStorage(), threadDatasetStore: SecureStorage.Type = InMemoryThreadDatasetStorage.self, developerParameters: NamiPairingFramework.DeveloperParameters = DeveloperParameters()) throws where WiFiStorage : NamiPairingFramework.PairingWiFiStorageProtocol, SecureStorage : NamiPairingFramework.ThreadSecureStorageProtocol
+  public init<WiFiStorage, SecureStorage>(sessionCode: Swift.String, wifiStorage: WiFiStorage = InMemoryWiFiStorage(), threadDatasetStore: SecureStorage.Type = InMemoryThreadDatasetStorage.self, developerParameters: NamiPairingFramework.DeveloperParameters = DeveloperParameters()) throws where WiFiStorage : NamiPairingFramework.PairingWiFiStorageProtocol, SecureStorage : NamiPairingFramework.ThreadSecureStorageProtocol
   public func startPairing(roomId: Swift.String, deviceType: NamiPairingFramework.NamiDeviceType = .unknown, pairingSteps: Container, pairingParameters: NamiPairingFramework.NamiPairing<Container>.PairingParameters = .none) throws -> some SwiftUICore.View
   
   public func startPositioning(deviceName: Swift.String, deviceUid: Swift.String, pairingSteps: Container, onPositioningEnded: @escaping (NamiPairingFramework.PositioningResult) -> Swift.Void) throws -> some SwiftUICore.View
   
-  @_Concurrency.MainActor public func presentEntryPoint(entrypoint: NamiPairingFramework.RemoteTemplateEntrypoint, pairingSteps: Container) -> some SwiftUICore.View
+  @_Concurrency.MainActor public func presentEntryPoint(entrypoint: NamiPairingFramework.RemoteTemplateEntrypoint, config: NamiPairingFramework.NamiSdkConfig, pairingSteps: Container) -> some SwiftUICore.View
   
   @objc deinit
 }
@@ -1833,7 +1841,7 @@ extension NamiPairingFramework.DeviceUniversalID : Swift.Encodable {
 extension Swift.UInt64 {
   public init(_ uid: NamiPairingFramework.DeviceUniversalID)
 }
-public struct RemoteTemplateUI_Place : Swift.Codable {
+public struct RemoteTemplateUI_Place : Swift.Codable, Swift.Equatable {
   public init(id: NamiPairingFramework.PlaceID, urn: Swift.String, name: Swift.String, timeZone: Swift.String? = nil, createdAt: Foundation.Date, updatedAt: Foundation.Date, alertMode: Swift.String)
   public var id: NamiPairingFramework.PlaceID
   public var urn: Swift.String
@@ -1842,10 +1850,11 @@ public struct RemoteTemplateUI_Place : Swift.Codable {
   public var createdAt: Foundation.Date
   public var updatedAt: Foundation.Date
   public var alertMode: Swift.String
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_Place, b: NamiPairingFramework.RemoteTemplateUI_Place) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_PlaceUser : Swift.Codable {
+public struct RemoteTemplateUI_PlaceUser : Swift.Codable, Swift.Equatable {
   public var id: NamiPairingFramework.PlaceUserID
   public var userId: NamiPairingFramework.UserID
   public var name: Swift.String
@@ -1855,10 +1864,11 @@ public struct RemoteTemplateUI_PlaceUser : Swift.Codable {
   public var iconId: NamiPairingFramework.UserIconID
   public var themeId: NamiPairingFramework.ThemeID
   public var placeId: NamiPairingFramework.PlaceID
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_PlaceUser, b: NamiPairingFramework.RemoteTemplateUI_PlaceUser) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_InviteLink : Swift.Codable {
+public struct RemoteTemplateUI_InviteLink : Swift.Codable, Swift.Equatable {
   public var code: NamiPairingFramework.InviteCode
   public var name: Swift.String
   public var roleId: Swift.String
@@ -1868,16 +1878,18 @@ public struct RemoteTemplateUI_InviteLink : Swift.Codable {
   public var state: Swift.String
   public var inviteUrl: Foundation.URL
   public var expiresAt: Foundation.Date
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_InviteLink, b: NamiPairingFramework.RemoteTemplateUI_InviteLink) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_PlaceUsageLimits : Swift.Codable {
+public struct RemoteTemplateUI_PlaceUsageLimits : Swift.Codable, Swift.Equatable {
   public var urn: NamiPairingFramework.URN
   public var membership: Swift.UInt
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_PlaceUsageLimits, b: NamiPairingFramework.RemoteTemplateUI_PlaceUsageLimits) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_Zone : Swift.Codable {
+public struct RemoteTemplateUI_Zone : Swift.Codable, Swift.Equatable {
   public init(id: NamiPairingFramework.PlaceZoneID, urn: Swift.String, name: Swift.String, alertMode: Swift.String, createdAt: Foundation.Date, updatedAt: Foundation.Date, rooms: [NamiPairingFramework.RemoteTemplateUI_Room], devices: NamiPairingFramework.RemoteTemplateUI_DevicesByCategory)
   public var id: NamiPairingFramework.PlaceZoneID
   public var urn: Swift.String
@@ -1887,10 +1899,11 @@ public struct RemoteTemplateUI_Zone : Swift.Codable {
   public var devices: NamiPairingFramework.RemoteTemplateUI_DevicesByCategory
   public var createdAt: Foundation.Date
   public var updatedAt: Foundation.Date
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_Zone, b: NamiPairingFramework.RemoteTemplateUI_Zone) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_Room : Swift.Codable {
+public struct RemoteTemplateUI_Room : Swift.Codable, Swift.Equatable {
   public init(id: NamiPairingFramework.RoomID, urn: Swift.String, name: Swift.String, zoneId: NamiPairingFramework.PlaceZoneID, iconId: NamiPairingFramework.IconID, createdAt: Foundation.Date, updatedAt: Foundation.Date, devices: NamiPairingFramework.RemoteTemplateUI_DevicesByCategory)
   public var id: NamiPairingFramework.RoomID
   public var urn: Swift.String
@@ -1900,26 +1913,29 @@ public struct RemoteTemplateUI_Room : Swift.Codable {
   public var devices: NamiPairingFramework.RemoteTemplateUI_DevicesByCategory
   public var createdAt: Foundation.Date
   public var updatedAt: Foundation.Date
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_Room, b: NamiPairingFramework.RemoteTemplateUI_Room) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_DevicesByCategory : Swift.Codable {
+public struct RemoteTemplateUI_DevicesByCategory : Swift.Codable, Swift.Equatable {
   public var activitySensors: [NamiPairingFramework.RemoteTemplateUI_Device]
   public var accessories: [NamiPairingFramework.RemoteTemplateUI_Device]
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_DevicesByCategory, b: NamiPairingFramework.RemoteTemplateUI_DevicesByCategory) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_DeviceState : Swift.Codable {
+public struct RemoteTemplateUI_DeviceState : Swift.Codable, Swift.Equatable {
   public init(cloudAccessible: Swift.Bool? = nil, lastCloudAccess: Foundation.Date? = nil, seqTime: Swift.UInt64, state: Foundation.Data, stateUpdatedAt: Foundation.Date)
   public var cloudAccessible: Swift.Bool?
   public var lastCloudAccess: Foundation.Date?
   public var seqTime: Swift.UInt64
   public var state: Foundation.Data
   public var stateUpdatedAt: Foundation.Date
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_DeviceState, b: NamiPairingFramework.RemoteTemplateUI_DeviceState) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_Device : Swift.Codable {
+public struct RemoteTemplateUI_Device : Swift.Codable, Swift.Equatable {
   public init(id: NamiPairingFramework.DeviceID, uid: NamiPairingFramework.DeviceUniversalID, urn: Swift.String, name: Swift.String, codeName: Swift.String, createdAt: Foundation.Date, updatedAt: Foundation.Date, isBr: Swift.Bool, state: NamiPairingFramework.RemoteTemplateUI_DeviceState)
   public var id: NamiPairingFramework.DeviceID
   public var uid: NamiPairingFramework.DeviceUniversalID
@@ -1930,69 +1946,77 @@ public struct RemoteTemplateUI_Device : Swift.Codable {
   public var state: NamiPairingFramework.RemoteTemplateUI_DeviceState?
   public var createdAt: Foundation.Date
   public var updatedAt: Foundation.Date
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_Device, b: NamiPairingFramework.RemoteTemplateUI_Device) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_DeviceType : Swift.Codable {
+public struct RemoteTemplateUI_DeviceType : Swift.Codable, Swift.Equatable {
   public init(name: Swift.String, localizedName: Swift.String)
   public func encode(to encoder: any Swift.Encoder) throws
   public init(_ deviceType: NamiPairingFramework.NamiDeviceType)
   public var localizedName: Swift.String
   public var name: Swift.String
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_DeviceType, b: NamiPairingFramework.RemoteTemplateUI_DeviceType) -> Swift.Bool
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_DevicesKit : Swift.Codable {
+public struct RemoteTemplateUI_DevicesKit : Swift.Codable, Swift.Equatable {
   public init(name: Swift.String, kitId: Swift.UInt64, firstInZone: Swift.Bool, includedDevices: [NamiPairingFramework.RemoteTemplateUI_DeviceType], pairedDevices: [NamiPairingFramework.DeviceUniversalID])
   public var name: Swift.String
   public var kitId: Swift.UInt64
   public var firstInZone: Swift.Bool
   public var includedDevices: [NamiPairingFramework.RemoteTemplateUI_DeviceType]
   public var pairedDevices: [NamiPairingFramework.DeviceUniversalID]
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_DevicesKit, b: NamiPairingFramework.RemoteTemplateUI_DevicesKit) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_AutomationAction : Swift.Codable {
+public struct RemoteTemplateUI_AutomationAction : Swift.Codable, Swift.Equatable {
   public init(type: Swift.String, mode: NamiPairingFramework.NamiAlertMode)
   public var type: Swift.String
   public var mode: NamiPairingFramework.NamiAlertMode
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_AutomationAction, b: NamiPairingFramework.RemoteTemplateUI_AutomationAction) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_AutomationReaction : Swift.Codable {
+public struct RemoteTemplateUI_AutomationReaction : Swift.Codable, Swift.Equatable {
   public init(uuid: Swift.String, targetType: Swift.String, targetIds: [NamiPairingFramework.PlaceZoneID], action: NamiPairingFramework.RemoteTemplateUI_AutomationAction)
   public var uuid: Swift.String
   public var targetType: Swift.String
   public var targetIds: [NamiPairingFramework.PlaceZoneID]
   public var action: NamiPairingFramework.RemoteTemplateUI_AutomationAction
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_AutomationReaction, b: NamiPairingFramework.RemoteTemplateUI_AutomationReaction) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_AutomationTrigger : Swift.Codable {
+public struct RemoteTemplateUI_AutomationTrigger : Swift.Codable, Swift.Equatable {
   public init(type: Swift.String, hour: Swift.Int, minute: Swift.Int, daysOfWeek: [Swift.String])
   public var type: Swift.String
   public var hour: Swift.Int
   public var minute: Swift.Int
   public var daysOfWeek: [Swift.String]
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_AutomationTrigger, b: NamiPairingFramework.RemoteTemplateUI_AutomationTrigger) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_NamiAutomation : Swift.Codable {
+public struct RemoteTemplateUI_NamiAutomation : Swift.Codable, Swift.Equatable {
   public init(id: NamiPairingFramework.AutomationID, trigger: NamiPairingFramework.RemoteTemplateUI_AutomationTrigger, reactions: [NamiPairingFramework.RemoteTemplateUI_AutomationReaction], active: Swift.Bool)
   public var id: NamiPairingFramework.AutomationID
   public var trigger: NamiPairingFramework.RemoteTemplateUI_AutomationTrigger
   public var reactions: [NamiPairingFramework.RemoteTemplateUI_AutomationReaction]
   public var active: Swift.Bool
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_NamiAutomation, b: NamiPairingFramework.RemoteTemplateUI_NamiAutomation) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_MemebershipResponse : Swift.Codable {
+public struct RemoteTemplateUI_MemebershipResponse : Swift.Codable, Swift.Equatable {
   public init(users: [NamiPairingFramework.RemoteTemplateUI_PlaceUser], invites: [NamiPairingFramework.RemoteTemplateUI_InviteLink])
   public var users: [NamiPairingFramework.RemoteTemplateUI_PlaceUser]
   public var invites: [NamiPairingFramework.RemoteTemplateUI_InviteLink]
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_MemebershipResponse, b: NamiPairingFramework.RemoteTemplateUI_MemebershipResponse) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_InvitePeek : Swift.Codable {
+public struct RemoteTemplateUI_InvitePeek : Swift.Codable, Swift.Equatable {
   public init(code: NamiPairingFramework.InviteCode, name: Swift.String, roleId: Swift.String, roleName: Swift.String, placeId: NamiPairingFramework.PlaceID, placeName: Swift.String, placeIconId: NamiPairingFramework.IconID)
   public var code: NamiPairingFramework.InviteCode
   public var name: Swift.String
@@ -2001,151 +2025,169 @@ public struct RemoteTemplateUI_InvitePeek : Swift.Codable {
   public var placeId: NamiPairingFramework.PlaceID
   public var placeName: Swift.String
   public var placeIconId: NamiPairingFramework.IconID
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_InvitePeek, b: NamiPairingFramework.RemoteTemplateUI_InvitePeek) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_DevicesResponse : Swift.Codable {
+public struct RemoteTemplateUI_DevicesResponse : Swift.Codable, Swift.Equatable {
   public init(devices: [NamiPairingFramework.RemoteTemplateUI_Device], total: Swift.Int, pageSize: Swift.Int, cursor: Swift.String? = nil)
   public var devices: [NamiPairingFramework.RemoteTemplateUI_Device]
   public var total: Swift.Int
   public var pageSize: Swift.Int
   public var cursor: Swift.String?
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_DevicesResponse, b: NamiPairingFramework.RemoteTemplateUI_DevicesResponse) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_DevicesCommandResponseResult : Swift.Codable {
+public struct RemoteTemplateUI_DevicesCommandResponseResult : Swift.Codable, Swift.Equatable {
   public init(uid: NamiPairingFramework.DeviceUniversalID, success: Swift.Bool, errorMessage: Swift.String? = nil, errorCode: Swift.String? = nil)
   public var uid: NamiPairingFramework.DeviceUniversalID
   public var success: Swift.Bool
   public var errorMessage: Swift.String?
   public var errorCode: Swift.String?
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_DevicesCommandResponseResult, b: NamiPairingFramework.RemoteTemplateUI_DevicesCommandResponseResult) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_DevicesCommandResponse : Swift.Codable {
+public struct RemoteTemplateUI_DevicesCommandResponse : Swift.Codable, Swift.Equatable {
   public init(seqTime: Swift.UInt64, results: [NamiPairingFramework.RemoteTemplateUI_DevicesCommandResponseResult])
   public var seqTime: Swift.UInt64
   public var results: [NamiPairingFramework.RemoteTemplateUI_DevicesCommandResponseResult]
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_DevicesCommandResponse, b: NamiPairingFramework.RemoteTemplateUI_DevicesCommandResponse) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_DevicesQuery : Swift.Codable {
+public struct RemoteTemplateUI_DevicesQuery : Swift.Codable, Swift.Equatable {
   public init(placeIds: [NamiPairingFramework.PlaceID], zoneIds: [NamiPairingFramework.PlaceZoneID], roomIds: [NamiPairingFramework.RoomID], uids: [NamiPairingFramework.DeviceUniversalID], cursor: Swift.String? = nil)
   public var placeIds: [NamiPairingFramework.PlaceID]
   public var zoneIds: [NamiPairingFramework.PlaceZoneID]
   public var roomIds: [NamiPairingFramework.RoomID]
   public var uids: [NamiPairingFramework.DeviceUniversalID]
   public var cursor: Swift.String?
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_DevicesQuery, b: NamiPairingFramework.RemoteTemplateUI_DevicesQuery) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_ActivityEvent : Swift.Codable {
+public struct RemoteTemplateUI_ActivityEvent : Swift.Codable, Swift.Equatable {
   public init(uuid: Foundation.UUID? = nil, startedAt: Foundation.Date, endedAt: Foundation.Date? = nil, detection: Swift.Bool, health: Swift.String)
   public var uuid: Foundation.UUID?
   public var startedAt: Foundation.Date
   public var endedAt: Foundation.Date?
   public var detection: Swift.Bool
   public var health: Swift.String
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_ActivityEvent, b: NamiPairingFramework.RemoteTemplateUI_ActivityEvent) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_ZoneMotionEvent : Swift.Codable {
+public struct RemoteTemplateUI_ZoneMotionEvent : Swift.Codable, Swift.Equatable {
   public init(zoneId: NamiPairingFramework.PlaceZoneID, motionEvents: [NamiPairingFramework.RemoteTemplateUI_ActivityEvent], occupancyEvents: [NamiPairingFramework.RemoteTemplateUI_ActivityEvent])
   public var zoneId: NamiPairingFramework.PlaceZoneID
   public var motionEvents: [NamiPairingFramework.RemoteTemplateUI_ActivityEvent]
   public var occupancyEvents: [NamiPairingFramework.RemoteTemplateUI_ActivityEvent]
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_ZoneMotionEvent, b: NamiPairingFramework.RemoteTemplateUI_ZoneMotionEvent) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_ZoneMotionStatus : Swift.Codable {
+public struct RemoteTemplateUI_ZoneMotionStatus : Swift.Codable, Swift.Equatable {
   public init(id: NamiPairingFramework.PlaceZoneID, detection: Swift.Bool? = nil, startedAt: Foundation.Date? = nil, health: Swift.String)
   public var id: NamiPairingFramework.PlaceZoneID
   public var detection: Swift.Bool?
   public var startedAt: Foundation.Date?
   public var health: Swift.String
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_ZoneMotionStatus, b: NamiPairingFramework.RemoteTemplateUI_ZoneMotionStatus) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_PlaceMotionHistory : Swift.Codable {
+public struct RemoteTemplateUI_PlaceMotionHistory : Swift.Codable, Swift.Equatable {
   public init(placeId: NamiPairingFramework.PlaceID, motionEvents: [NamiPairingFramework.RemoteTemplateUI_ActivityEvent], occupancyEvents: [NamiPairingFramework.RemoteTemplateUI_ActivityEvent])
   public var placeId: NamiPairingFramework.PlaceID
   public var motionEvents: [NamiPairingFramework.RemoteTemplateUI_ActivityEvent]
   public var occupancyEvents: [NamiPairingFramework.RemoteTemplateUI_ActivityEvent]
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_PlaceMotionHistory, b: NamiPairingFramework.RemoteTemplateUI_PlaceMotionHistory) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_MotionInterval : Swift.Codable {
+public struct RemoteTemplateUI_MotionInterval : Swift.Codable, Swift.Equatable {
   public init(start: Foundation.Date, value: Swift.UInt8)
   public var start: Foundation.Date
   public var value: Swift.UInt8
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_MotionInterval, b: NamiPairingFramework.RemoteTemplateUI_MotionInterval) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_MotionAggregate : Swift.Codable {
+public struct RemoteTemplateUI_MotionAggregate : Swift.Codable, Swift.Equatable {
   public init(metric: Swift.String, resolution: Swift.String, intervalLength: Foundation.TimeInterval, intervals: [NamiPairingFramework.RemoteTemplateUI_MotionInterval])
   public var metric: Swift.String
   public var resolution: Swift.String
   public var intervalLength: Foundation.TimeInterval
   public var intervals: [NamiPairingFramework.RemoteTemplateUI_MotionInterval]
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_MotionAggregate, b: NamiPairingFramework.RemoteTemplateUI_MotionAggregate) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_ZoneSparkline : Swift.Codable {
+public struct RemoteTemplateUI_ZoneSparkline : Swift.Codable, Swift.Equatable {
   public init(zoneUrn: Swift.String, metric: Swift.String, resolution: Swift.String, intervalLength: Foundation.TimeInterval, intervals: [NamiPairingFramework.RemoteTemplateUI_MotionInterval])
   public var zoneUrn: Swift.String
   public var metric: Swift.String
   public var resolution: Swift.String
   public var intervalLength: Foundation.TimeInterval
   public var intervals: [NamiPairingFramework.RemoteTemplateUI_MotionInterval]
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_ZoneSparkline, b: NamiPairingFramework.RemoteTemplateUI_ZoneSparkline) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_PlaceMotionAggregates : Swift.Codable {
+public struct RemoteTemplateUI_PlaceMotionAggregates : Swift.Codable, Swift.Equatable {
   public init(placeId: NamiPairingFramework.PlaceID, aggregates: [NamiPairingFramework.RemoteTemplateUI_MotionAggregate], sparklines: [NamiPairingFramework.RemoteTemplateUI_ZoneSparkline]? = nil)
   public var placeId: NamiPairingFramework.PlaceID
   public var aggregates: [NamiPairingFramework.RemoteTemplateUI_MotionAggregate]
   public var sparklines: [NamiPairingFramework.RemoteTemplateUI_ZoneSparkline]?
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_PlaceMotionAggregates, b: NamiPairingFramework.RemoteTemplateUI_PlaceMotionAggregates) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_ZoneMotionAggregates : Swift.Codable {
+public struct RemoteTemplateUI_ZoneMotionAggregates : Swift.Codable, Swift.Equatable {
   public init(zoneId: NamiPairingFramework.PlaceZoneID, aggregates: [NamiPairingFramework.RemoteTemplateUI_MotionAggregate])
   public var zoneId: NamiPairingFramework.PlaceZoneID
   public var aggregates: [NamiPairingFramework.RemoteTemplateUI_MotionAggregate]
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_ZoneMotionAggregates, b: NamiPairingFramework.RemoteTemplateUI_ZoneMotionAggregates) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_RestEvent : Swift.Codable {
+public struct RemoteTemplateUI_RestEvent : Swift.Codable, Swift.Equatable {
   public init(deviceUid: NamiPairingFramework.DeviceUniversalID, startedAt: Foundation.Date, endedAt: Foundation.Date)
   public var deviceUid: NamiPairingFramework.DeviceUniversalID
   public var startedAt: Foundation.Date
   public var endedAt: Foundation.Date
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_RestEvent, b: NamiPairingFramework.RemoteTemplateUI_RestEvent) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_RestEventsResponse : Swift.Codable {
+public struct RemoteTemplateUI_RestEventsResponse : Swift.Codable, Swift.Equatable {
   public init(restEvents: [NamiPairingFramework.RemoteTemplateUI_RestEvent])
   public var restEvents: [NamiPairingFramework.RemoteTemplateUI_RestEvent]
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_RestEventsResponse, b: NamiPairingFramework.RemoteTemplateUI_RestEventsResponse) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_RestInsight : Swift.Codable {
+public struct RemoteTemplateUI_RestInsight : Swift.Codable, Swift.Equatable {
   public init(deviceUid: NamiPairingFramework.DeviceUniversalID, totalRestTime: Swift.Int, numberOfInterruptions: Swift.Int, timeToBed: Foundation.Date? = nil, outOfBedAt: Foundation.Date? = nil)
   public var deviceUid: NamiPairingFramework.DeviceUniversalID
   public var totalRestTime: Swift.Int
   public var numberOfInterruptions: Swift.Int
   public var timeToBed: Foundation.Date?
   public var outOfBedAt: Foundation.Date?
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_RestInsight, b: NamiPairingFramework.RemoteTemplateUI_RestInsight) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_RestInsightsResponse : Swift.Codable {
+public struct RemoteTemplateUI_RestInsightsResponse : Swift.Codable, Swift.Equatable {
   public init(restInsights: [NamiPairingFramework.RemoteTemplateUI_RestInsight])
   public var restInsights: [NamiPairingFramework.RemoteTemplateUI_RestInsight]
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_RestInsightsResponse, b: NamiPairingFramework.RemoteTemplateUI_RestInsightsResponse) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_DeviceAttributeState : Swift.Codable {
+public struct RemoteTemplateUI_DeviceAttributeState : Swift.Codable, Swift.Equatable {
   public init(uid: NamiPairingFramework.DeviceUniversalID, endpoint: Swift.Int, path: Swift.String, value: Swift.String? = nil, updatedAt: Foundation.Date, isDeleted: Swift.Bool)
   public var uid: NamiPairingFramework.DeviceUniversalID
   public var endpoint: Swift.Int
@@ -2153,15 +2195,17 @@ public struct RemoteTemplateUI_DeviceAttributeState : Swift.Codable {
   public var value: Swift.String?
   public var updatedAt: Foundation.Date
   public var isDeleted: Swift.Bool
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_DeviceAttributeState, b: NamiPairingFramework.RemoteTemplateUI_DeviceAttributeState) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RemoteTemplateUI_DeviceAttributeStateResponse : Swift.Codable {
+public struct RemoteTemplateUI_DeviceAttributeStateResponse : Swift.Codable, Swift.Equatable {
   public init(deviceAttributeStates: [NamiPairingFramework.RemoteTemplateUI_DeviceAttributeState], total: Swift.Int, pageSize: Swift.Int, cursor: Swift.String? = nil)
   public var deviceAttributeStates: [NamiPairingFramework.RemoteTemplateUI_DeviceAttributeState]
   public var total: Swift.Int
   public var pageSize: Swift.Int
   public var cursor: Swift.String?
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_DeviceAttributeStateResponse, b: NamiPairingFramework.RemoteTemplateUI_DeviceAttributeStateResponse) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -2384,7 +2428,6 @@ public protocol DeviceProtocol : Swift.Decodable, Swift.Encodable {
   var createdAt: Foundation.Date { get }
   var updatedAt: Foundation.Date { get }
   var model: any NamiPairingFramework.DeviceModelProtocol { get }
-  var zoneId: NamiPairingFramework.PlaceZoneID { get }
   var isBorderRouter: Swift.Bool { get }
   var cloudConnection: Self.CloudConnection? { get }
   var deviceState: Self.State? { get }
@@ -4706,7 +4749,6 @@ public struct PairingDevice : NamiPairingFramework.DeviceProtocol, Swift.Codable
   public var productId: NamiPairingFramework.DeviceProductID
   public var createdAt: Foundation.Date
   public var updatedAt: Foundation.Date
-  public var zoneId: NamiPairingFramework.PlaceZoneID
   public var model: any NamiPairingFramework.DeviceModelProtocol
   public var cloudConnection: NamiPairingFramework.PairingDevice.CloudConnection?
   public var deviceState: NamiPairingFramework.PairingDevice.State?
@@ -5554,6 +5596,8 @@ extension SwiftUICore.View {
   
   @_Concurrency.MainActor @preconcurrency public func readSize(onChange: @escaping (CoreFoundation.CGSize) -> Swift.Void) -> some SwiftUICore.View
   
+  @_Concurrency.MainActor @preconcurrency public func readSafeAreaInsets(onChange: @escaping (SwiftUICore.EdgeInsets) -> Swift.Void) -> some SwiftUICore.View
+  
 }
 extension SwiftUICore.Color {
   public init(hex: Swift.UInt, alpha: Swift.Double = 1.0)
@@ -5870,6 +5914,8 @@ extension SwiftUICore.View {
 public struct RemoteTemplateEntrypointHelper {
   public init(config: NamiPairingFramework.RemoteTemplateUIControllerConfig)
 }
+extension NamiPairingFramework.NamiDeviceType : @unchecked @retroactive Swift.Sendable {
+}
 extension NamiPairingFramework.StateMessage : @retroactive Swift.Equatable, @retroactive Swift.Hashable, @retroactive Swift.Encodable {
   public static func == (lhs: NamiPairingFramework.StateMessage, rhs: NamiPairingFramework.StateMessage) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -5893,8 +5939,14 @@ public struct RemoteTemplateUIControllerConfig : NamiPairingFramework.RemoteTemp
   public var appearance: NamiPairingFramework.NamiAppearance
   public var topologyRoomsSupported: Swift.Bool
 }
-@_hasMissingDesignatedInitializers public class SetupGuideState : Swift.Encodable, @unchecked Swift.Sendable {
+@_hasMissingDesignatedInitializers public class SetupGuideInputs : Swift.Encodable, @unchecked Swift.Sendable {
   public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class SetupGuideState : Combine.ObservableObject, Swift.Encodable, @unchecked Swift.Sendable, Swift.Equatable {
+  public static func == (lhs: NamiPairingFramework.SetupGuideState, rhs: NamiPairingFramework.SetupGuideState) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @objc deinit
 }
 public enum SetupGuideError : Swift.Error, NamiPairingFramework.RemoteTemplatesUIControllerError {
@@ -5915,9 +5967,9 @@ public enum PairingResultStatus {
   case succeeded(NamiPairingFramework.DeviceID)
   case cancelled(NamiPairingFramework.DeviceID?)
 }
-final public class RemoteTemplateUIController<Storage> : NamiPairingFramework.RemoteTemplatesUIControllerProtocol where Storage : NamiPairingFramework.DeviceConnectionsManagerStorageProtocol, Storage : NamiPairingFramework.RemoteTemplateStateRepositoryProtocol {
-  public init(store: Storage, deviceConnectionsManager: any NamiPairingFramework.DeviceConnectionsManagerProtocol, config: NamiPairingFramework.RemoteTemplateUIControllerConfig)
-  final public let eventsPublisher: Combine.PassthroughSubject<NamiPairingFramework.SetupGuideEvent, NamiPairingFramework.SetupGuideError>
+@_Concurrency.MainActor @preconcurrency final public class RemoteTemplateUIController<Storage> : @preconcurrency NamiPairingFramework.RemoteTemplatesUIControllerProtocol, @unchecked Swift.Sendable where Storage : NamiPairingFramework.DeviceConnectionsManagerStorageProtocol, Storage : NamiPairingFramework.RemoteTemplateStateRepositoryProtocol {
+  @_Concurrency.MainActor public init(store: Storage, deviceConnectionsManager: any NamiPairingFramework.DeviceConnectionsManagerProtocol, config: NamiPairingFramework.RemoteTemplateUIControllerConfig)
+  @_Concurrency.MainActor @preconcurrency final public let eventsPublisher: Combine.PassthroughSubject<NamiPairingFramework.SetupGuideEvent, NamiPairingFramework.SetupGuideError>
   @_Concurrency.MainActor final public func present(entrypoint: some RemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.PlaceID) -> SwiftUICore.AnyView
   public typealias Config = NamiPairingFramework.RemoteTemplateUIControllerConfig
   public typealias Error = NamiPairingFramework.SetupGuideError
@@ -6380,19 +6432,6 @@ public struct ThreadCredentialsMessage : Swift.Codable, Swift.Equatable, NamiPai
   public func encode(to encoder: any Swift.Encoder) throws
 }
 public struct StateMessage {
-  public var uid: NamiPairingFramework.DeviceUniversalID
-  public var seqTime: Swift.UInt64
-  public var state: Foundation.Data
-  public var receivedAt: Foundation.Date
-  public var capabilities: [NamiPairingFramework.NamiDeviceCapability]
-  public var batteryLevel: Swift.Float?
-  public var signalStrength: Swift.Int?
-  public var firmwareVersion: Swift.String?
-  public var hardwareVersion: Swift.String?
-  public var softwareVersion: Swift.String?
-  public var modelNumber: Swift.String?
-  public var serialNumber: Swift.String?
-  public var manufacturerName: Swift.String?
   public struct EndpointState {
     public enum OnOff {
       case unknown
@@ -6493,7 +6532,7 @@ public struct StateMessage {
     public var doorSensorTemprered: Swift.Bool?
     public var powerSupplyInfo: NamiPairingFramework.StateMessage.EndpointState.PowerSupplyInfo?
   }
-  public init?(serializedData: Foundation.Data, uid: NamiPairingFramework.DeviceUniversalID = DeviceUniversalID(0))
+  public init?(serializedData: Foundation.Data)
   public func stateForModel(_ deviceModel: NamiPairingFramework.NamiDeviceModel) -> [NamiPairingFramework.StateMessage.EndpointState]
   public func stateForEndpoints(_ modelEndpoints: [NamiPairingFramework.NamiDeviceEndpoint]) -> [NamiPairingFramework.StateMessage.EndpointState]
   public func diagnosticsState() -> [NamiPairingFramework.StateMessage.EndpointState]
