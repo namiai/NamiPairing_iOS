@@ -2774,15 +2774,15 @@ public protocol RemoteTemplateUIConfigProtocol {
   var clientId: Swift.String { get set }
   var language: Swift.String { get set }
   var appearance: NamiPairingFramework.NamiAppearance { get set }
+  var topologyRoomsSupported: Swift.Bool { get set }
 }
 public protocol RemoteTemplatesUIControllerProtocol {
   associatedtype Storage : NamiPairingFramework.DeviceConnectionsManagerStorageProtocol, NamiPairingFramework.RemoteTemplateStateRepositoryProtocol
-  associatedtype Config : NamiPairingFramework.RemoteTemplateUIConfigProtocol
   associatedtype Event : NamiPairingFramework.RemoteTemplatesUIControllerEvent
   associatedtype Error : NamiPairingFramework.RemoteTemplatesUIControllerError
   associatedtype TemplatesView : SwiftUICore.View
-  init(store: Self.Storage, deviceConnectionsManager: any NamiPairingFramework.DeviceConnectionsManagerProtocol, config: Self.Config)
-  @_Concurrency.MainActor func present(entrypoint: some RemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.PlaceID) -> Self.TemplatesView
+  init(store: Self.Storage, deviceConnectionsManager: any NamiPairingFramework.DeviceConnectionsManagerProtocol)
+  @_Concurrency.MainActor func present(entrypoint: some RemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.PlaceID, config: any NamiPairingFramework.RemoteTemplateUIConfigProtocol) -> Self.TemplatesView
   var eventsPublisher: Combine.PassthroughSubject<Self.Event, Self.Error> { get }
 }
 public protocol RemoteTemplatesUIControllerEvent {
@@ -5912,7 +5912,7 @@ extension SwiftUICore.View {
   public typealias Body = @_opaqueReturnTypeOf("$s20NamiPairingFramework016ScrollViewWithOnD6ActionV4bodyQrvp", 0) __<Subviews>
 }
 public struct RemoteTemplateEntrypointHelper {
-  public init(config: NamiPairingFramework.RemoteTemplateUIControllerConfig)
+  public init(config: any NamiPairingFramework.RemoteTemplateUIConfigProtocol)
 }
 extension NamiPairingFramework.NamiDeviceType : @unchecked @retroactive Swift.Sendable {
 }
@@ -5928,26 +5928,13 @@ extension NamiPairingFramework.SecureStorage : NamiPairingFramework.SecureStorag
   public typealias SecureStorageError = NamiPairingFramework.KeychainError
   public typealias Thread_SecureStorageError = NamiPairingFramework.KeychainError
 }
-public struct RemoteTemplateUIControllerConfig : NamiPairingFramework.RemoteTemplateUIConfigProtocol {
-  public init(baseURL: Foundation.URL, countryCode: Swift.String, measurementSystem: NamiPairingFramework.NamiMeasurementSystem, clientId: Swift.String, language: Swift.String, appearance: NamiPairingFramework.NamiAppearance)
-  public init(anyConfig: any NamiPairingFramework.RemoteTemplateUIConfigProtocol)
-  public var baseURL: Foundation.URL
-  public var countryCode: Swift.String
-  public var measurementSystem: NamiPairingFramework.NamiMeasurementSystem
-  public var clientId: Swift.String
-  public var language: Swift.String
-  public var appearance: NamiPairingFramework.NamiAppearance
-  public var topologyRoomsSupported: Swift.Bool
-}
 @_hasMissingDesignatedInitializers public class SetupGuideInputs : Swift.Encodable, @unchecked Swift.Sendable {
   public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class SetupGuideState : Combine.ObservableObject, Swift.Encodable, @unchecked Swift.Sendable, Swift.Equatable {
+public struct SetupGuideState : Swift.Encodable, @unchecked Swift.Sendable, Swift.Equatable {
   public static func == (lhs: NamiPairingFramework.SetupGuideState, rhs: NamiPairingFramework.SetupGuideState) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
-  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
-  @objc deinit
 }
 public enum SetupGuideError : Swift.Error, NamiPairingFramework.RemoteTemplatesUIControllerError {
   case api(any Swift.Error)
@@ -5967,11 +5954,10 @@ public enum PairingResultStatus {
   case succeeded(NamiPairingFramework.DeviceID)
   case cancelled(NamiPairingFramework.DeviceID?)
 }
-@_Concurrency.MainActor @preconcurrency final public class RemoteTemplateUIController<Storage> : @preconcurrency NamiPairingFramework.RemoteTemplatesUIControllerProtocol, @unchecked Swift.Sendable where Storage : NamiPairingFramework.DeviceConnectionsManagerStorageProtocol, Storage : NamiPairingFramework.RemoteTemplateStateRepositoryProtocol {
-  @_Concurrency.MainActor public init(store: Storage, deviceConnectionsManager: any NamiPairingFramework.DeviceConnectionsManagerProtocol, config: NamiPairingFramework.RemoteTemplateUIControllerConfig)
-  @_Concurrency.MainActor @preconcurrency final public let eventsPublisher: Combine.PassthroughSubject<NamiPairingFramework.SetupGuideEvent, NamiPairingFramework.SetupGuideError>
-  @_Concurrency.MainActor final public func present(entrypoint: some RemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.PlaceID) -> SwiftUICore.AnyView
-  public typealias Config = NamiPairingFramework.RemoteTemplateUIControllerConfig
+final public class RemoteTemplateUIController<Storage> : @preconcurrency NamiPairingFramework.RemoteTemplatesUIControllerProtocol, @unchecked Swift.Sendable where Storage : NamiPairingFramework.DeviceConnectionsManagerStorageProtocol, Storage : NamiPairingFramework.RemoteTemplateStateRepositoryProtocol {
+  @_Concurrency.MainActor public init(store: Storage, deviceConnectionsManager: any NamiPairingFramework.DeviceConnectionsManagerProtocol)
+  final public let eventsPublisher: Combine.PassthroughSubject<NamiPairingFramework.SetupGuideEvent, NamiPairingFramework.SetupGuideError>
+  @_Concurrency.MainActor final public func present(entrypoint: some RemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.PlaceID, config: any NamiPairingFramework.RemoteTemplateUIConfigProtocol) -> SwiftUICore.AnyView
   public typealias Error = NamiPairingFramework.SetupGuideError
   public typealias Event = NamiPairingFramework.SetupGuideEvent
   public typealias TemplatesView = SwiftUICore.AnyView
