@@ -599,6 +599,7 @@ final public class InMemoryStorage {
   final public func editRoom(updated room: NamiPairingFramework.NamiRoom) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   final public func deletePlace(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   final public func createOrUpdateDeviceState(uid: NamiPairingFramework.DeviceUniversalID, state: Foundation.Data, seqTime: Swift.UInt64)
+  final public func updateDevice(_ device: NamiPairingFramework.Device, placeId: NamiPairingFramework.PlaceID)
   final public func updatePlace(_ place: NamiPairingFramework.Place)
   final public func updateRoom(_ room: NamiPairingFramework.Room)
   final public func updateZone(_ zone: NamiPairingFramework.PlaceZone)
@@ -8127,6 +8128,7 @@ public protocol WebAPIProtocol {
 final public class WebAPI : NamiPairingFramework.WebAPIProtocol {
   final public var errorPublisher: Combine.PassthroughSubject<any Swift.Error, Swift.Never>
   required public init(base: Foundation.URL, signUpBase: Foundation.URL, session: any NamiPairingFramework.NetworkSession, tokenStore: any NamiPairingFramework.TokenStore)
+  public init(baseUrl: Foundation.URL, session: any NamiPairingFramework.NetworkSession, authentication: NamiPairingFramework.CompanionModeAuthentication)
   final public func signUpAnonymously() -> Combine.AnyPublisher<NamiPairingFramework.AnonymousUserResponse, any Swift.Error>
   final public func signUp(with provider: NamiPairingFramework.OAuthProvider, signUpPath: Swift.String, callbackURLScheme: Swift.String, contextProvider: any AuthenticationServices.ASWebAuthenticationPresentationContextProviding) -> Combine.AnyPublisher<NamiPairingFramework.UserResponse, any Swift.Error>
   final public func connect(using provider: NamiPairingFramework.OAuthProvider, signUpPath: Swift.String, callbackURLScheme: Swift.String, contextProvider: any AuthenticationServices.ASWebAuthenticationPresentationContextProviding) -> Combine.AnyPublisher<NamiPairingFramework.User, any Swift.Error>
@@ -8217,6 +8219,20 @@ public enum AuthenticationError : Swift.Error {
   public var hashValue: Swift.Int {
     get
   }
+}
+public protocol AuthenticatorProtocol {
+  func validToken(forceRefresh: Swift.Bool) -> Combine.AnyPublisher<NamiPairingFramework.AccessToken, any Swift.Error>
+}
+public class Authenticator : NamiPairingFramework.AuthenticatorProtocol {
+  public init(base: Foundation.URL, accessToken: NamiPairingFramework.AccessToken, refreshToken: Swift.String)
+  public func validToken(forceRefresh: Swift.Bool = false) -> Combine.AnyPublisher<NamiPairingFramework.AccessToken, any Swift.Error>
+  public func requestWebToken() -> Combine.AnyPublisher<NamiPairingFramework.AccessToken, any Swift.Error>
+  @objc deinit
+}
+final public class TokenStoreAuthenticator : NamiPairingFramework.AuthenticatorProtocol {
+  public init(base: Foundation.URL, session: any NamiPairingFramework.NetworkSession, tokenStore: any NamiPairingFramework.TokenStore)
+  final public func validToken(forceRefresh: Swift.Bool) -> Combine.AnyPublisher<NamiPairingFramework.AccessToken, any Swift.Error>
+  @objc deinit
 }
 public enum LinkingError : Swift.Error, Swift.Equatable {
   case failure(reason: Swift.String)
