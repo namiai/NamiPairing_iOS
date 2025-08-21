@@ -685,22 +685,8 @@ public protocol ThemeProtocol {
   var paragraph2: SwiftUICore.Font { get }
   var small1: SwiftUICore.Font { get }
   var small2: SwiftUICore.Font { get }
-  var primaryBlack: SwiftUICore.Color { get }
-  var secondaryBlack: SwiftUICore.Color { get }
-  var tertiaryBlack: SwiftUICore.Color { get }
-  var navigationTitleColor: SwiftUICore.Color { get }
-  var white: SwiftUICore.Color { get }
-  var background: SwiftUICore.Color { get }
-  var line: SwiftUICore.Color { get }
-  var accent: SwiftUICore.Color { get }
-  var negative: SwiftUICore.Color { get }
-  var warning: SwiftUICore.Color { get }
-  var positive: SwiftUICore.Color { get }
-  var lowAttentionAlert: SwiftUICore.Color { get }
-  var redAlert3: SwiftUICore.Color { get }
-  var redAlert4: SwiftUICore.Color { get }
-  var success3: SwiftUICore.Color { get }
-  var success4: SwiftUICore.Color { get }
+  var navigationTitleColor: SwiftUICore.Color? { get }
+  var navigationBarColor: SwiftUICore.Color? { get }
   var primaryActionButtonStyle: any SwiftUI.ButtonStyle { get }
   var secondaryActionButtonStyle: any SwiftUI.ButtonStyle { get }
   var tertiaryActionButtonStyle: any SwiftUI.ButtonStyle { get }
@@ -718,22 +704,8 @@ public struct NamiTheme : StandardPairingUI.ThemeProtocol {
   public var paragraph2: SwiftUICore.Font
   public var small1: SwiftUICore.Font
   public var small2: SwiftUICore.Font
-  public var primaryBlack: SwiftUICore.Color
-  public var secondaryBlack: SwiftUICore.Color
-  public var tertiaryBlack: SwiftUICore.Color
-  public var navigationTitleColor: SwiftUICore.Color
-  public var white: SwiftUICore.Color
-  public var background: SwiftUICore.Color
-  public var line: SwiftUICore.Color
-  public var accent: SwiftUICore.Color
-  public var negative: SwiftUICore.Color
-  public var warning: SwiftUICore.Color
-  public var positive: SwiftUICore.Color
-  public var lowAttentionAlert: SwiftUICore.Color
-  public var redAlert3: SwiftUICore.Color
-  public var redAlert4: SwiftUICore.Color
-  public var success3: SwiftUICore.Color
-  public var success4: SwiftUICore.Color
+  public var navigationTitleColor: SwiftUICore.Color?
+  public var navigationBarColor: SwiftUICore.Color?
   public var primaryActionButtonStyle: any SwiftUI.ButtonStyle
   public var secondaryActionButtonStyle: any SwiftUI.ButtonStyle
   public var tertiaryActionButtonStyle: any SwiftUI.ButtonStyle
@@ -880,25 +852,11 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI20ListWiFiNetworksViewV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor @preconcurrency public struct SetupTopNavigationBar<LeadingGroup, TrailingGroup, NotificationArea, Subviews> : SwiftUICore.View where LeadingGroup : SwiftUICore.View, TrailingGroup : SwiftUICore.View, NotificationArea : SwiftUICore.View, Subviews : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(title: Swift.String?, largeTitle: Swift.String?, color: SwiftUICore.Color, statusbarColorOverride: SwiftUICore.Color = .clear, navbarBackgroundBleed: CoreFoundation.CGFloat = 0, @SwiftUICore.ViewBuilder leadingButtonGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUICore.ViewBuilder trailingButtonGroup: @escaping () -> TrailingGroup = { EmptyView() }, @SwiftUICore.ViewBuilder notificationAreaView: @escaping () -> NotificationArea = { EmptyView() }, @SwiftUICore.ViewBuilder additionalViews: @escaping () -> Subviews = { EmptyView() })
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI21SetupTopNavigationBarV4bodyQrvp", 0) __<LeadingGroup, TrailingGroup, NotificationArea, Subviews>
-}
 @_Concurrency.MainActor @preconcurrency public struct PongView : SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI8PongViewV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct DeviceSetupScreen<LeadingGroup, Subview, BottomGroup> : SwiftUICore.View where LeadingGroup : SwiftUICore.View, Subview : SwiftUICore.View, BottomGroup : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(title: Swift.String, @SwiftUICore.ViewBuilder subview: @escaping () -> Subview, @SwiftUICore.ViewBuilder leadingButtonsGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUICore.ViewBuilder bottomButtonsGroup: @escaping () -> BottomGroup = { EmptyView() })
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17DeviceSetupScreenV4bodyQrvp", 0) __<LeadingGroup, Subview, BottomGroup>
 }
 @_Concurrency.MainActor @preconcurrency public struct SetupScreenTitleTextView : SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
@@ -921,7 +879,5 @@ extension StandardPairingUI.FinishingSetupView : Swift.Sendable {}
 extension StandardPairingUI.PairingErrorScreenView : Swift.Sendable {}
 extension StandardPairingUI.EnableCameraInSettingsView : Swift.Sendable {}
 extension StandardPairingUI.ListWiFiNetworksView : Swift.Sendable {}
-extension StandardPairingUI.SetupTopNavigationBar : Swift.Sendable {}
 extension StandardPairingUI.PongView : Swift.Sendable {}
-extension StandardPairingUI.DeviceSetupScreen : Swift.Sendable {}
 extension StandardPairingUI.SetupScreenTitleTextView : Swift.Sendable {}
