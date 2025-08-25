@@ -3588,6 +3588,7 @@ public class Seance {
   }
   public static func preProcessPassword(_ password: Swift.UInt32, salt: [Swift.UInt8], iterations: Swift.UInt32 = 100000) throws -> Foundation.Data
   public static func deriveKey(_ password: Swift.String, salt: [Swift.UInt8], iterations: Swift.UInt32, hashingAlgorithm: NamiPairingFramework.Seance.HashingAlgorithm = .sha256, derivedKeyLength: Swift.Int = 32) throws -> Foundation.Data
+  public static func deriveKey(_ password: [Swift.UInt8], salt: [Swift.UInt8], iterations: Swift.UInt32, hashingAlgorithm: NamiPairingFramework.Seance.HashingAlgorithm = .sha256, derivedKeyLength: Swift.Int = 32) throws -> Foundation.Data
   public func start(preProcessedPassword: Foundation.Data) throws -> Foundation.Data
   public func makeSharedKey(otherKeyData: Foundation.Data) throws -> Foundation.Data
   public func verify(otherValue: Foundation.Data) throws -> NamiPairingFramework.GhostBox
@@ -4957,6 +4958,9 @@ extension SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public func readSafeAreaInsets(onChange: @escaping (SwiftUICore.EdgeInsets) -> Swift.Void) -> some SwiftUICore.View
   
 }
+extension SwiftUICore.Binding {
+  public static func bindingBool<Item>(_ item: SwiftUICore.Binding<Item?>) -> SwiftUICore.Binding<Swift.Bool>
+}
 extension UIKit.UIFont {
   public class func preferredFont(from font: SwiftUICore.Font) -> UIKit.UIFont
   public class func convertToUIFontCustom(_ font: SwiftUICore.Font) -> UIKit.UIFont
@@ -5136,6 +5140,14 @@ public struct NamiTextStyle : Swift.Identifiable {
     get
   }
   public typealias ID = Swift.String
+}
+@_Concurrency.MainActor @preconcurrency public struct NamiSFSafariView : SwiftUI.UIViewControllerRepresentable {
+  @_Concurrency.MainActor @preconcurrency public init(url: Foundation.URL)
+  @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context _: SwiftUI.UIViewControllerRepresentableContext<NamiPairingFramework.NamiSFSafariView>) -> SafariServices.SFSafariViewController
+  @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_: SafariServices.SFSafariViewController, context _: SwiftUI.UIViewControllerRepresentableContext<NamiPairingFramework.NamiSFSafariView>)
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+  public typealias UIViewControllerType = SafariServices.SFSafariViewController
 }
 @available(iOS 15, *)
 @_Concurrency.MainActor @preconcurrency public struct NamiTextHyperLink : SwiftUICore.View {
@@ -8701,6 +8713,7 @@ extension NamiPairingFramework.LottieAnimationView : Swift.Sendable {}
 extension NamiPairingFramework.CircleButton : Swift.Sendable {}
 extension NamiPairingFramework.NamiTextStyle.Leading : Swift.Equatable {}
 extension NamiPairingFramework.NamiTextStyle.Leading : Swift.Hashable {}
+extension NamiPairingFramework.NamiSFSafariView : Swift.Sendable {}
 @available(iOS 15, *)
 extension NamiPairingFramework.NamiTextHyperLink : Swift.Sendable {}
 extension NamiPairingFramework.NamiTextHyperLinkLegacy : Swift.Sendable {}
