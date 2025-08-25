@@ -4907,6 +4907,7 @@ final public class NamiSDUIPresenter : Foundation.ObservableObject {
     case replaceTopmost(NamiPairingFramework.PresentedScreen)
     case replaceStack([NamiPairingFramework.PresentedScreen])
     case pushOnStack(NamiPairingFramework.PresentedScreen)
+    case popTopmost
   }
   public init(variablesBridge: NamiPairingFramework.TemplatesVariablesBridge, onLoadError: @escaping (any Swift.Error) -> Swift.Void = NamiSDUIPresenter.defaultOnLoadError, mapUrl: @escaping (Foundation.URL) -> NamiPairingFramework.PresentedScreen? = NamiSDUIPresenter.mapUrl)
   @_Concurrency.MainActor final public func present(_ screens: NamiPairingFramework.PresentedScreen..., onDismiss: @escaping () -> Swift.Void = {}) throws -> some SwiftUICore.View
