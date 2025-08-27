@@ -4913,6 +4913,7 @@ final public class NamiSDUIPresenter : Foundation.ObservableObject {
   @_Concurrency.MainActor final public func present(_ screens: NamiPairingFramework.PresentedScreen..., onDismiss: @escaping () -> Swift.Void = {}) throws -> some SwiftUICore.View
   
   @_Concurrency.MainActor final public func updatePresentedScreens(with mutation: NamiPairingFramework.NamiSDUIPresenter.PresentationUpdate)
+  @_Concurrency.MainActor final public func showProgressIndicator(_ show: Swift.Bool)
   public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @objc deinit
 }

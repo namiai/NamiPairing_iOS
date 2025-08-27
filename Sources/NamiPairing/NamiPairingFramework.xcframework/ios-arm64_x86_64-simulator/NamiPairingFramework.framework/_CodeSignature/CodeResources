@@ -70,7 +70,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		j3UtgWpB2CZBZBd95IzCAqUPzV0=
+		rKZS0UcQ7JbEh24s6YB8wst0gto=
 		</data>
 		<key>Lookout24 Horizontal Logo_v2.json</key>
 		<data>
@@ -78,43 +78,43 @@
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		r5ZpghFM0e4lqFPM6uI34ZxtcMc=
+		6FAJhu65s3W87tH15HZF6wj8x/0=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		J5sA3GAk+i0KOHF7DfcFB43Q51Q=
+		TG5K/iTOrBXYtYN1eTBzHsukICw=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		BeoKaLsX0zbFlkelmlg30IcI2zY=
+		FXDFhGepGHmCNiIb4baAQjircqE=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		J5sA3GAk+i0KOHF7DfcFB43Q51Q=
+		TG5K/iTOrBXYtYN1eTBzHsukICw=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		yixYFQ0OWaALKVcdobBviY/1JjI=
+		vhtl0bZtwOVX/x7PESVW9SkQeTs=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		r5ZpghFM0e4lqFPM6uI34ZxtcMc=
+		6FAJhu65s3W87tH15HZF6wj8x/0=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		VvKhxoykiC03ICtKmVh6gP47+C4=
+		oQX/Ah0W1dGQZExkrgJKJ/UrB0o=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		UjiA39QY138TXnomCfZMf4F0AKo=
+		S3gaNLoEr+aS7qDbYJKyXDqhyYQ=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		VvKhxoykiC03ICtKmVh6gP47+C4=
+		oQX/Ah0W1dGQZExkrgJKJ/UrB0o=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		b3dbKJ4x/kEPXHcoDE7MfWKGN+M=
+		mTQWDhAIhjL3z/NbpiFOQavjay4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>Pulse White_Keypad.json</key>
 		<data>
-		JMpKwsKCK/V429qTp5h6nT93PPk=
+		e/xvN55ynWqZ78YbWV67IJ/hwJc=
 		</data>
 		<key>Pulse White_Motion Sensor.json</key>
 		<data>
@@ -284,11 +284,11 @@
 		</dict>
 		<key>keypad_devkit_1.webp</key>
 		<data>
-		JGF6XvkRM5u7tcytR7sR8C46mUA=
+		pBvrLO2/rccNZsPhaGVjct5KU3E=
 		</data>
 		<key>keypad_qr_all.webp</key>
 		<data>
-		SYRIwLaSoSvZp2bhuuvpP4eoR60=
+		5cLmAusEKweuOiuqBXa3ENfkIec=
 		</data>
 		<key>motionSensor_qr_all.webp</key>
 		<data>
@@ -384,7 +384,7 @@
 		</data>
 		<key>thread_keypad.webp</key>
 		<data>
-		JGF6XvkRM5u7tcytR7sR8C46mUA=
+		pBvrLO2/rccNZsPhaGVjct5KU3E=
 		</data>
 		<key>thread_motion_sensor.webp</key>
 		<data>
@@ -572,70 +572,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uPeJjLZyOphrHLIWc8jWPalm+DqWa3A/OvJndtECUaQ=
+			WMrfS9Q2graj4em7jrwPaKFWL3zWaWu80t4iyhIcA3o=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yqyZtyYXNhLYLlxL61ho18MobGamPvHAtkzMciEenLM=
+			1UlLGa50Yo37F46o8jrx5fzqAQm1eLw00Yrt5VjDZIY=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			i9e0gXuJKfBh4u51yFjqpakVsJNltRsHFdptqyb1a2s=
+			wH1+hPeO65ysK8dcfxAg7Zg2p/MHoAMNWXRuOICVvtE=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yqyZtyYXNhLYLlxL61ho18MobGamPvHAtkzMciEenLM=
+			1UlLGa50Yo37F46o8jrx5fzqAQm1eLw00Yrt5VjDZIY=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xWcgb+ePZg7ehalWxvP7Yykrx4L2EsvJ+tgVh/dmyhY=
+			7zdVPfX4lfVnxthxg0o5BJNT0wF9ZNMe4BggKOiHGf4=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uPeJjLZyOphrHLIWc8jWPalm+DqWa3A/OvJndtECUaQ=
+			WMrfS9Q2graj4em7jrwPaKFWL3zWaWu80t4iyhIcA3o=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			o/N0/1BHapGpa97bfkeWriZe5UJi275XybGNBnFJNUU=
+			V3Y/MpYmo2SqPRo7BvLw/+5M19dSinwWA/DD8yqjp6E=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			58mbi8/A+tx2O2H6AByTg3pAq+bSnPsu0r5XyLzTWPY=
+			vblvwwzgbN1opu4tRcWSXlh3E/wc/0wnM/+NQ5hXj1M=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			o/N0/1BHapGpa97bfkeWriZe5UJi275XybGNBnFJNUU=
+			V3Y/MpYmo2SqPRo7BvLw/+5M19dSinwWA/DD8yqjp6E=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pggHdhc19samQLnwBbejkCc3HnHe/HIRIX2DxBbBNG0=
+			59Uon8USrcM9Vr0vT2HEVlytheml6H8eoYT+AFiQfjs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -754,7 +754,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Tb7lIuubZum1y8K6UURs5TlR3BMkIf6AAcUq+Tez3rQ=
+			BjHqmUCk1d+u9wGQyz6XDWlotrZK+IEb1XDNGuB18D4=
 			</data>
 		</dict>
 		<key>Pulse White_Motion Sensor.json</key>
@@ -919,14 +919,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			n0QURwJolvVVU5Lx0vDHpm1bgjb8g8G61Ed/LsWqv58=
+			oEhPS1jr6Qkdkrl0HMz306becgk0qhLOXoIUMBnAOB4=
 			</data>
 		</dict>
 		<key>keypad_qr_all.webp</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9ZZ3SaYmv7ByYStY7IzZrSQaJGYJxwxjIAR8KdA8OuY=
+			+tlbrykSUknPOWfhCW+uJagv4KbvlLabEO+Q/w+iBR0=
 			</data>
 		</dict>
 		<key>motionSensor_qr_all.webp</key>
@@ -1094,7 +1094,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			n0QURwJolvVVU5Lx0vDHpm1bgjb8g8G61Ed/LsWqv58=
+			oEhPS1jr6Qkdkrl0HMz306becgk0qhLOXoIUMBnAOB4=
 			</data>
 		</dict>
 		<key>thread_motion_sensor.webp</key>
