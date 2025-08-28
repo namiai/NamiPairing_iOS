@@ -1,4 +1,4 @@
-// swift-tools-version: 5.7
+// swift-tools-version: 6.1
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -20,7 +20,6 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/divkit/divkit-ios", from: "32.9.0"),
         .package(url: "https://github.com/namiai/vgsl.git", from: "7.4.2")
-        
     ],
     targets: [
         .binaryTarget(name: "NamiPairingFramework", path: "Sources/NamiPairing/NamiPairingFramework.xcframework"),
