@@ -6,179 +6,63 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		bxMvc5E+sC9VRWvih+Y1MwTbyUQ=
-		</data>
-		<key>Contact Sensor_Pulse Dark Blue.json</key>
-		<data>
-		TZNBMCNb27shKp5snIkILalUBaY=
+		PMh+bd3KFoqkUGyMa2SayfMJd5c=
 		</data>
 		<key>Headers/StandardPairingUI-Swift.h</key>
 		<data>
-		87poBi5Qh0TVt16q0XMPV1lRzBE=
+		4SkRwDAUXt+18lsqKwKH8FfD27k=
 		</data>
 		<key>Headers/StandardPairingUI.h</key>
 		<data>
-		22cYP2NWkRcC8NvMb/XJDS69A8M=
+		uVNv8mqPgdlgp9xDZ4Cexntb+bs=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		KrGPDiZ1eV+YaPxvv6Hph4TrUNc=
+		d3r0/Ew/G6zqizidflQt5xtdFQQ=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		NXfrC2+DnwVjXHEgtgEV9cWcUDc=
+		Wlce1ODVKHton7+1I5/MiTtDj/0=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		5DHOH3aRdLRqRhK45HkUr+q8Zdw=
+		Q9FfMnHx4pntCloQI39DF0Pc+3s=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		dUBCJjjEPB6RCZSOHZgTndvyQLg=
+		godOKercD9mAP+uG9cfeYd07KpY=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		5DHOH3aRdLRqRhK45HkUr+q8Zdw=
+		Q9FfMnHx4pntCloQI39DF0Pc+3s=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		M2hvZY/C626gUpRX9eq7eaZlw00=
+		6Afj7CnTOllPX9r5VAiN3ao8FDM=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		NXfrC2+DnwVjXHEgtgEV9cWcUDc=
+		Wlce1ODVKHton7+1I5/MiTtDj/0=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		RSJgt0Qr5TfL+YUwQcNmtV7t/7o=
+		FftJwRpI+r4bjshhRiMIKuacnMQ=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		bNr/YTePTTbjAqsTa2C61fcdvYA=
+		5U816rDGmFQnzZd2XBlQsxMkW+M=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		RSJgt0Qr5TfL+YUwQcNmtV7t/7o=
+		FftJwRpI+r4bjshhRiMIKuacnMQ=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		bjl06gQKnXaGph/VgelJ0kz3r4s=
+		Q6H/TcwOJ0qtr6LB4Fe7+dfT0cA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		nKNglBJHk2lT0DlvspwlX7shkqA=
-		</data>
-		<key>WiDAR_1_Positioning Rec.json</key>
-		<data>
-		CXIQSwl6T4ie/BZNz3aRoUAuW3Q=
-		</data>
-		<key>WiDAR_2_Positioning Example.json</key>
-		<data>
-		pmqXVYZBZsBvjqOv2dhbK7v3rbQ=
-		</data>
-		<key>WiDAR_3_Position Optimised.json</key>
-		<data>
-		Veo7v+No+7Nk3adSeUpcjyHi12E=
-		</data>
-		<key>WiDAR_4_Positioning Done.json</key>
-		<data>
-		NGqd25DcVh6G4joPtryUWYq9WXM=
-		</data>
-		<key>contact_sensor_devkit_1.webp</key>
-		<data>
-		VX9IhzDHzfoO2mrwl1YEv2sSlR8=
-		</data>
-		<key>esp32_s3_tmcu_c3_h2_devkitc_1_v2.webp</key>
-		<data>
-		N/cPmI8RPKXbWKkSbMWHqQR/CgQ=
-		</data>
-		<key>external_active_beacon.webp</key>
-		<data>
-		Mr2ZBbNQUET9MHn1PVGS/JRVQuw=
-		</data>
-		<key>pebble.webp</key>
-		<data>
-		VVrMpwEJM7CpsYgntGgDLTG0BTo=
-		</data>
-		<key>preview_thread_sentinel_plug_de.webp</key>
-		<data>
-		wD7m29515ZF5ZU4ILowRKPEy2v4=
-		</data>
-		<key>preview_thread_sentinel_plug_fr.webp</key>
-		<data>
-		kxKitiDSmHlxC/d4ucAtJxJQX9Q=
-		</data>
-		<key>preview_thread_sentinel_plug_uk.webp</key>
-		<data>
-		4OjyaVJGVE0AMhNT/BjL8nTatXs=
-		</data>
-		<key>preview_thread_sentinel_plug_us.webp</key>
-		<data>
-		aZJ1EtFXIcO46OcZO9ZTlVuGm10=
-		</data>
-		<key>sentinel_plug_de.webp</key>
-		<data>
-		WaQc/WLthF/lLHIvN8M2m7Aw9HE=
-		</data>
-		<key>sentinel_plug_de_v2.webp</key>
-		<data>
-		MaCOVOKg6gm+3VU33ubJXC98P+c=
-		</data>
-		<key>sentinel_plug_fr_v2.webp</key>
-		<data>
-		y7QDlQiepQvai17+In7+Gsl8kzk=
-		</data>
-		<key>sentinel_plug_jp_v2.webp</key>
-		<data>
-		r5w0lhArz5CmyT7/qO0sj0NmYJk=
-		</data>
-		<key>sentinel_plug_uk.webp</key>
-		<data>
-		ZCe8k4l96uIVpJYn7u4Gnj+Vxrs=
-		</data>
-		<key>sentinel_plug_uk_v2.webp</key>
-		<data>
-		2pbTtP3AEdxRJtcFTu08gP7ksI0=
-		</data>
-		<key>sentinel_plug_us.webp</key>
-		<data>
-		Zof9ZxeUqLABFo0dwn+TqvYz9Cs=
-		</data>
-		<key>sentinel_plug_us_v2.webp</key>
-		<data>
-		Bw3s71vjwVXMM3CcC/RQrv33dh4=
-		</data>
-		<key>sentinel_pod.webp</key>
-		<data>
-		2gcqZ7tkfFPtzv+5rVsJOWPjl0o=
-		</data>
-		<key>sentinel_pod_v2.webp</key>
-		<data>
-		2gcqZ7tkfFPtzv+5rVsJOWPjl0o=
-		</data>
-		<key>thread_sentinel_plug_de.webp</key>
-		<data>
-		wD7m29515ZF5ZU4ILowRKPEy2v4=
-		</data>
-		<key>thread_sentinel_plug_fr.webp</key>
-		<data>
-		kxKitiDSmHlxC/d4ucAtJxJQX9Q=
-		</data>
-		<key>thread_sentinel_plug_uk.webp</key>
-		<data>
-		4OjyaVJGVE0AMhNT/BjL8nTatXs=
-		</data>
-		<key>thread_sentinel_plug_us.webp</key>
-		<data>
-		aZJ1EtFXIcO46OcZO9ZTlVuGm10=
-		</data>
-		<key>thread_widar_sensor.webp</key>
-		<data>
-		btdnJbzJ24eEtTLwdmS0Qf8YGQY=
-		</data>
-		<key>unknownmodel.webp</key>
-		<data>
-		0/R7rHUKi2wjr7VzmCMnRb/p8u0=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -187,98 +71,91 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eixx67yKAyR3Lbo3ssoJJEw7NvDimzQ3vf4jlLyk/nM=
-			</data>
-		</dict>
-		<key>Contact Sensor_Pulse Dark Blue.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			FHhoRfxxcD1vsp6ksAMQEDHylxy5JuHk2KRtrmbcuz0=
+			TEpbZxcpC5OP3J+fclFC/JfBGco8g88rZT7HT46cfYY=
 			</data>
 		</dict>
 		<key>Headers/StandardPairingUI-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xVxyJFdcyoMtOkqhTYAFuga5rBsovA5sX07igoYSUP8=
+			8Vf/hMZKPF6gQpyPNonFujcfX1GNPnIJtPUkfIhMej8=
 			</data>
 		</dict>
 		<key>Headers/StandardPairingUI.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nzaZYMDseKB66WxBbNGsEJ2cUcEIUWSfiMNUmukHIe4=
+			zIXF2ZDmqWhy2zGjjtu9hZ3Y6vB+1msbZi1/gk1aetU=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8gnd95kuHLrUFsZPHUgjtjVfilvFLeGINJ6GSGR+/NU=
+			4wwXxLYOfRf3wgByI9nEpFDVHrOG/ECsqC/OLwI6L3E=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			piCuf/2tjCpk/7sPBNANjGhZNgJeYw4IAi/RMHNQ/P8=
+			/pXmiYnSFQ1qI42KVRCjtoefCZxhCQahQtbG/rBG/B4=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Gh84H9rBDR14lER6xAgwIHhbkdWeNVONTFA9UKaQprg=
+			gUAbqWMkXqyeaE3y4fl3rfQhUqNWVDxZAPT6g17un+Y=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			piCuf/2tjCpk/7sPBNANjGhZNgJeYw4IAi/RMHNQ/P8=
+			/pXmiYnSFQ1qI42KVRCjtoefCZxhCQahQtbG/rBG/B4=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BjzX/p6y3JN3DlzgrGiJSrtxDZ+bb+jNKui0HrTJoB0=
+			XP2ruHhzAp4N9U+8go7GQuVgWZnaW6xYLh0WcvJAIFI=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8gnd95kuHLrUFsZPHUgjtjVfilvFLeGINJ6GSGR+/NU=
+			4wwXxLYOfRf3wgByI9nEpFDVHrOG/ECsqC/OLwI6L3E=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LYdyf8rUaGt3b22hgkdz3ZAaee7J4oJrTqCLfb+O1b8=
+			nNQxdUvbZdumjWON9CJUgjYWBkfnxrCRC9pwG4RgWDc=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YPcQok2gez99bZYXlLGmXoGK4k6kFGYeLU97skmJTgs=
+			JVs1e1sjUlWMByzQk4dDRq86hGAzLAHw3+VPFFZKpwg=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LYdyf8rUaGt3b22hgkdz3ZAaee7J4oJrTqCLfb+O1b8=
+			nNQxdUvbZdumjWON9CJUgjYWBkfnxrCRC9pwG4RgWDc=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0g3lEU4I9bov7aqSqdpa/MpKtUZnLzVmxoW/xSptQ6s=
+			2AyDud1ecW9AWjaqcOrNIFvlXgrhi6AF5rwuk8BvWAg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -286,202 +163,6 @@
 			<key>hash2</key>
 			<data>
 			PQyi2UfRNkLsF8qTSi87+Brh3+V1UvzEC5tCXGvfiEg=
-			</data>
-		</dict>
-		<key>WiDAR_1_Positioning Rec.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			33vLPNV6AuUw9nQXgoANYwU7B+4kE5JpCLgsEMIVbAs=
-			</data>
-		</dict>
-		<key>WiDAR_2_Positioning Example.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			28AAPQq3/bEFn8FtMiYd2rrKE87cBEp2e8SKNheG4AY=
-			</data>
-		</dict>
-		<key>WiDAR_3_Position Optimised.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			pGK/c9nkK+z3zWrNZDY4RgKnsP4HcpB7tWHGBH3r24k=
-			</data>
-		</dict>
-		<key>WiDAR_4_Positioning Done.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			qKrXKQld3GyG5cGRIbAKspN+nSs3HQ1tpOQ2lAZQI4k=
-			</data>
-		</dict>
-		<key>contact_sensor_devkit_1.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			GkixXuMrjZn0Or+o2Be6rtOfaMMFsUgX6IqztyGSQDc=
-			</data>
-		</dict>
-		<key>esp32_s3_tmcu_c3_h2_devkitc_1_v2.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			mvhHSAeSDx2jSJvOQO8XTnXso04bh6mYTcDtdU7V5Q0=
-			</data>
-		</dict>
-		<key>external_active_beacon.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			9XzgSy8J40NV9kEbZY9hhVyxoP09GuNpiUs/fkwPRRM=
-			</data>
-		</dict>
-		<key>pebble.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Ln9RhyoA0yn2jfTYZGs3HyI8w7U6IvFaGRZa+QQNtPw=
-			</data>
-		</dict>
-		<key>preview_thread_sentinel_plug_de.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			xVmvEhVMVXYNONjeKFmbuVKj0GMvhhBnb+/AvHV0xyM=
-			</data>
-		</dict>
-		<key>preview_thread_sentinel_plug_fr.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			c48m0Xr6wfhWpGqfQiwhi2S8oxmxI4HZCQekry5GUcU=
-			</data>
-		</dict>
-		<key>preview_thread_sentinel_plug_uk.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			KWAKLS7uugBK5BFqjrQruKNuExM0di6igbXh+MIH2TQ=
-			</data>
-		</dict>
-		<key>preview_thread_sentinel_plug_us.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			r7vsujOIxzjwhYGdWTshdiBf05lhVCnC/fbGQt5Sm+U=
-			</data>
-		</dict>
-		<key>sentinel_plug_de.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Blv+t5G9LBQqDrwxOhlW6/BnDtEMk4k3lxyIpv0fEFc=
-			</data>
-		</dict>
-		<key>sentinel_plug_de_v2.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			MjGBlP/Tb51vEO2b6VQTVKOWddHCLgbID8X1Z/CCpac=
-			</data>
-		</dict>
-		<key>sentinel_plug_fr_v2.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			JCA3Ru/SnK9LLZxYpBc4cQiqYTb4qbtZPdTGxMt/U5Q=
-			</data>
-		</dict>
-		<key>sentinel_plug_jp_v2.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			APLO2r5WHu21Q+83tpBVOnvwPW7ziU1ePdiFiAFuACU=
-			</data>
-		</dict>
-		<key>sentinel_plug_uk.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			+faiH4FCbq0BPXJYbYbEa4lD/rf9/ZeyvETOCmOemmE=
-			</data>
-		</dict>
-		<key>sentinel_plug_uk_v2.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ODNUR1Han071+74Qmiu2GArdy3EC1VUEcTH9vrjsnls=
-			</data>
-		</dict>
-		<key>sentinel_plug_us.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			S9Nmxl3gkVw1u29vSt20BRGJ/SlAWMRLntYwj7dQuC8=
-			</data>
-		</dict>
-		<key>sentinel_plug_us_v2.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			JH6scBg0UxSY7RMKqC5m7i6rHnG7uESIG5j9Pgc6rxY=
-			</data>
-		</dict>
-		<key>sentinel_pod.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			WRh3k1LQLKjHhEkrMRew5h3jxLHRzHNcX/gHGbbc+MI=
-			</data>
-		</dict>
-		<key>sentinel_pod_v2.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			WRh3k1LQLKjHhEkrMRew5h3jxLHRzHNcX/gHGbbc+MI=
-			</data>
-		</dict>
-		<key>thread_sentinel_plug_de.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			xVmvEhVMVXYNONjeKFmbuVKj0GMvhhBnb+/AvHV0xyM=
-			</data>
-		</dict>
-		<key>thread_sentinel_plug_fr.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			c48m0Xr6wfhWpGqfQiwhi2S8oxmxI4HZCQekry5GUcU=
-			</data>
-		</dict>
-		<key>thread_sentinel_plug_uk.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			KWAKLS7uugBK5BFqjrQruKNuExM0di6igbXh+MIH2TQ=
-			</data>
-		</dict>
-		<key>thread_sentinel_plug_us.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			r7vsujOIxzjwhYGdWTshdiBf05lhVCnC/fbGQt5Sm+U=
-			</data>
-		</dict>
-		<key>thread_widar_sensor.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			O3O7p1KKYusEtcWP+7s/KiqUqmDsZwvcNq5+a32wFos=
-			</data>
-		</dict>
-		<key>unknownmodel.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			KrtO55rOd90QmkMMLwbcWyh0Uzx+ZBpKZb6ED6eF4ZA=
 			</data>
 		</dict>
 	</dict>
