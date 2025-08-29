@@ -63,6 +63,7 @@ public protocol WordingProtocol {
   var headerConnectToPower: Swift.String { get }
   var explainedReadyToPair: Swift.String { get }
   var headerContactSensor: Swift.String { get }
+  var headerKeypad: Swift.String { get }
   var scanning: Swift.String { get }
   var askUserToWait: Swift.String { get }
   var bluetoothDisabled: Swift.String { get }
@@ -232,6 +233,9 @@ extension StandardPairingUI.WordingProtocol {
     get
   }
   public var headerContactSensor: Swift.String {
+    get
+  }
+  public var headerKeypad: Swift.String {
     get
   }
   public var scanning: Swift.String {
