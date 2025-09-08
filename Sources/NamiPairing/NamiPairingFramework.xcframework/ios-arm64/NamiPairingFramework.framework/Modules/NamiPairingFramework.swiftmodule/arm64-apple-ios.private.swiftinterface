@@ -12,9 +12,7 @@ import CoreGraphics
 import CryptoKit
 import DeveloperToolsSupport
 import Dispatch
-import DivKitSVG
 import Foundation
-import LayoutKit
 import Lottie
 @_exported import NamiPairingFramework
 import Network
@@ -1128,6 +1126,10 @@ public enum NamiAlertReason : Swift.String, Swift.Comparable, Swift.Codable {
   public var rawValue: Swift.String {
     get
   }
+}
+public struct DevicePeerInfo {
+  public var wifiMac: Swift.UInt64
+  public var rssi: Swift.Int32
 }
 public enum NamiMeasurementSystem : Swift.String, Swift.CaseIterable, Swift.Identifiable {
   case metric
@@ -5376,8 +5378,8 @@ extension NamiPairingFramework.NamiDeviceType : @unchecked @retroactive Swift.Se
   @objc deinit
 }
 public struct SetupGuideState : Swift.Encodable, @unchecked Swift.Sendable, Swift.Equatable {
-  public static func == (lhs: NamiPairingFramework.SetupGuideState, rhs: NamiPairingFramework.SetupGuideState) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (a: NamiPairingFramework.SetupGuideState, b: NamiPairingFramework.SetupGuideState) -> Swift.Bool
 }
 public enum SetupGuideError : Swift.Error, NamiPairingFramework.RemoteTemplatesUIControllerError {
   case api(any Swift.Error)
@@ -5722,6 +5724,19 @@ public struct RemoteTemplateUI_MotionData : Swift.Codable, Swift.Equatable {
   public var isMovementDetected: Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public static func == (a: NamiPairingFramework.RemoteTemplateUI_MotionData, b: NamiPairingFramework.RemoteTemplateUI_MotionData) -> Swift.Bool
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RemoteTemplateUI_SensingLinks : Swift.Codable, Swift.Equatable {
+  public struct LinkStats : Swift.Codable, Swift.Equatable {
+    public var rssi: Swift.Int32
+    public func encode(to encoder: any Swift.Encoder) throws
+    public static func == (a: NamiPairingFramework.RemoteTemplateUI_SensingLinks.LinkStats, b: NamiPairingFramework.RemoteTemplateUI_SensingLinks.LinkStats) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public var sensingLink: [Swift.String : [Swift.String : NamiPairingFramework.RemoteTemplateUI_SensingLinks.LinkStats]]
+  public init(_ sensingLinks: [NamiPairingFramework.DeviceUniversalID : [NamiPairingFramework.DeviceUniversalID : Swift.Int32]])
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_SensingLinks, b: NamiPairingFramework.RemoteTemplateUI_SensingLinks) -> Swift.Bool
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct RemoteTemplateUI_RestEvent : Swift.Codable, Swift.Equatable {
@@ -6541,10 +6556,11 @@ extension NamiPairingFramework.DeviceConnectionsManager_DevicesQuery {
   public static func forDevices(_ deviceUIDs: [NamiPairingFramework.DeviceUniversalID]) -> NamiPairingFramework.DeviceConnectionsManager_DevicesQuery
 }
 public struct NamiDeviceObservation {
-  public init(uid: NamiPairingFramework.DeviceUniversalID, seqTime: Swift.UInt64, activity: [Swift.Int32]? = nil, state: NamiPairingFramework.StateMessage? = nil, error: (any Swift.Error)? = nil)
+  public init(uid: NamiPairingFramework.DeviceUniversalID, seqTime: Swift.UInt64, activity: [Swift.Int32]? = nil, peers: [NamiPairingFramework.DevicePeerInfo]? = nil, state: NamiPairingFramework.StateMessage? = nil, error: (any Swift.Error)? = nil)
   public let uid: NamiPairingFramework.DeviceUniversalID
   public let seqTime: Swift.UInt64
   public let activity: [Swift.Int32]?
+  public let peers: [NamiPairingFramework.DevicePeerInfo]?
   public let state: NamiPairingFramework.StateMessage?
   public let error: (any Swift.Error)?
   public let data: Foundation.Data
