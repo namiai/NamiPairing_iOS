@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		rFXJJBZGsMpMvTsRwXS1pBN8xj4=
+		hnoCKGMP/2P+mxyzW5Dg1S4ZEaQ=
 		</data>
 		<key>Headers/NamiPairingFramework-Swift.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		9UJRkz4zmvXfBzq0oPPb/vddgz8=
+		XcwpxXvFoC9lSAdRcDP3Xw1LPDI=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -92,7 +92,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			40fIwWUTl1Hzaoq5KANrkWROCNQ=
+			oSVvTCaes6vRxA1BiRIINO3o9zQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -277,7 +277,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			04gbQ8dwS4UYX3Ko4Ygu/JRqO5Ua5mIvEk6GQtf+YbM=
+			p1XCrjd62CX3YMMCkonYDs4PbMvjNgwAyiMAaFVNpMw=
 			</data>
 		</dict>
 		<key>Headers/NamiPairingFramework-Swift.h</key>
@@ -417,7 +417,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			v4UCnMchR6APj91FFFnaGNv6lb6H2Zv4vK9pi8RVkBI=
+			9AnbxMo5p3s9Gz7oWQ2XU6pr4zU0ZD5oZQ0LDvYbfok=
 			</data>
 			<key>optional</key>
 			<true/>
