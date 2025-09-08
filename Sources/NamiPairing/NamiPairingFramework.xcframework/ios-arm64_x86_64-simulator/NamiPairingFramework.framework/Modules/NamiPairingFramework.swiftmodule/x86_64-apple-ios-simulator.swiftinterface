@@ -2890,6 +2890,7 @@ public enum I18n {
   public static let pairingScanQrcodeMissingCameraPermissionTitle: Swift.String
   public static let pairingScanningBleFaq: Swift.String
   public static let pairingScanningBleHeaderContactSensor: Swift.String
+  public static let pairingScanningBleHeaderKeypad: Swift.String
   public static let pairingSuccess: Swift.String
   public static let paringScanDeviceBluetoothIsOffDescription: Swift.String
   public static let paringScanDeviceBluetoothIsOffTitle: Swift.String
@@ -4964,7 +4965,11 @@ public class TemplatesVariablesBridge : Swift.AnyObject {
 
 
 public struct PresentedScreen : Swift.Sendable {
-  public init(url: Foundation.URL, title: Swift.String? = nil, backButtonEnabled: Swift.Bool = true)
+  public enum TrailingItem : Swift.Sendable {
+    case support(Foundation.URL)
+    public init?(type: Swift.String, url: Foundation.URL)
+  }
+  public init(url: Foundation.URL, title: Swift.String? = nil, backButtonEnabled: Swift.Bool = true, trailingItem: NamiPairingFramework.PresentedScreen.TrailingItem? = nil)
 }
 
 
@@ -5004,7 +5009,7 @@ final public class NamiSDUIPresenter : Foundation.ObservableObject {
     case replaceTopmost(NamiPairingFramework.PresentedScreen)
     case replaceStack([NamiPairingFramework.PresentedScreen])
     case pushOnStack(NamiPairingFramework.PresentedScreen)
-    case popTopmost
+    case popTopmost(_: Swift.Int = 1)
   }
   public init(variablesBridge: NamiPairingFramework.TemplatesVariablesBridge, onLoadError: @escaping (any Swift.Error) -> Swift.Void = NamiSDUIPresenter.defaultOnLoadError, mapUrl: @escaping (Foundation.URL) -> NamiPairingFramework.PresentedScreen? = NamiSDUIPresenter.mapUrl)
   @_Concurrency.MainActor final public func present(_ screens: NamiPairingFramework.PresentedScreen..., onDismiss: @escaping () -> Swift.Void = {}) throws -> some SwiftUICore.View
@@ -5013,6 +5018,13 @@ final public class NamiSDUIPresenter : Foundation.ObservableObject {
   @_Concurrency.MainActor final public func showProgressIndicator(_ show: Swift.Bool)
   public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @objc deinit
+}
+@_Concurrency.MainActor @preconcurrency public struct CircleImageButton : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(image: SwiftUICore.Image, foregroundColor: SwiftUICore.Color? = nil, backgroundColor: SwiftUICore.Color? = nil, imagePadding: CoreFoundation.CGFloat = 0, action: @escaping () -> Swift.Void = {})
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s20NamiPairingFramework17CircleImageButtonV4bodyQrvp", 0) __
 }
 extension UIKit.UINavigationController : @retroactive UIKit.UIGestureRecognizerDelegate {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
@@ -5358,6 +5370,32 @@ public struct RemoteTemplateEntrypointHelper {
   public init(config: any NamiPairingFramework.RemoteTemplateUIConfigProtocol)
 }
 extension NamiPairingFramework.NamiDeviceType : @unchecked @retroactive Swift.Sendable {
+}
+@_hasMissingDesignatedInitializers public class SetupGuideInputs : Swift.Encodable, @unchecked Swift.Sendable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
+}
+public struct SetupGuideState : Swift.Encodable, @unchecked Swift.Sendable, Swift.Equatable {
+  public static func == (lhs: NamiPairingFramework.SetupGuideState, rhs: NamiPairingFramework.SetupGuideState) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public enum SetupGuideError : Swift.Error, NamiPairingFramework.RemoteTemplatesUIControllerError {
+  case api(any Swift.Error)
+  case storage(any Swift.Error)
+  case deviceConnections(any Swift.Error)
+  case divKit(any Swift.Error)
+  case invalidState((any Swift.Error)?)
+}
+public typealias OnPairingFinishedCallback = (NamiPairingFramework.PairingResultStatus) -> Swift.Void
+public enum SetupGuideEvent : NamiPairingFramework.RemoteTemplatesUIControllerEvent {
+  case gotUrl(Foundation.URL)
+  case variableUpdated(Swift.String, Swift.AnyHashable)
+  case viewDismissed
+  case pairingRequested(NamiPairingFramework.PlaceID, NamiPairingFramework.PlaceZoneID, NamiPairingFramework.RoomID, NamiPairingFramework.NamiDeviceType, NamiPairingFramework.OnPairingFinishedCallback)
+}
+public enum PairingResultStatus {
+  case succeeded(NamiPairingFramework.DeviceID)
+  case cancelled(NamiPairingFramework.DeviceID?)
 }
 public struct RemoteTemplateUI_Place : Swift.Codable, Swift.Equatable {
   public init(id: NamiPairingFramework.PlaceID, urn: Swift.String, name: Swift.String, timeZone: Swift.String? = nil, createdAt: Foundation.Date, updatedAt: Foundation.Date, alertMode: Swift.String, entryDelay: NamiPairingFramework.EntryDelay, exitDelay: NamiPairingFramework.ExitDelay, placeSensitivity: Swift.Int = 0)
@@ -5775,32 +5813,6 @@ extension NamiPairingFramework.SecureStorage : NamiPairingFramework.SecureStorag
   public typealias SecureStorageError = NamiPairingFramework.KeychainError
   public typealias Thread_SecureStorageError = NamiPairingFramework.KeychainError
 }
-@_hasMissingDesignatedInitializers public class SetupGuideInputs : Swift.Encodable, @unchecked Swift.Sendable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  @objc deinit
-}
-public struct SetupGuideState : Swift.Encodable, @unchecked Swift.Sendable, Swift.Equatable {
-  public static func == (lhs: NamiPairingFramework.SetupGuideState, rhs: NamiPairingFramework.SetupGuideState) -> Swift.Bool
-  public func encode(to encoder: any Swift.Encoder) throws
-}
-public enum SetupGuideError : Swift.Error, NamiPairingFramework.RemoteTemplatesUIControllerError {
-  case api(any Swift.Error)
-  case storage(any Swift.Error)
-  case deviceConnections(any Swift.Error)
-  case divKit(any Swift.Error)
-  case invalidState((any Swift.Error)?)
-}
-public typealias OnPairingFinishedCallback = (NamiPairingFramework.PairingResultStatus) -> Swift.Void
-public enum SetupGuideEvent : NamiPairingFramework.RemoteTemplatesUIControllerEvent {
-  case gotUrl(Foundation.URL)
-  case variableUpdated(Swift.String, Swift.AnyHashable)
-  case viewDismissed
-  case pairingRequested(NamiPairingFramework.PlaceID, NamiPairingFramework.PlaceZoneID, NamiPairingFramework.RoomID, NamiPairingFramework.NamiDeviceType, NamiPairingFramework.OnPairingFinishedCallback)
-}
-public enum PairingResultStatus {
-  case succeeded(NamiPairingFramework.DeviceID)
-  case cancelled(NamiPairingFramework.DeviceID?)
-}
 final public class RemoteTemplateUIController<Storage> : @preconcurrency NamiPairingFramework.RemoteTemplatesUIControllerProtocol, @unchecked Swift.Sendable where Storage : NamiPairingFramework.DeviceConnectionsManagerStorageProtocol, Storage : NamiPairingFramework.RemoteTemplateStateRepositoryProtocol, Storage : Swift.Sendable {
   @_Concurrency.MainActor public init(store: Storage, deviceConnectionsManager: any NamiPairingFramework.DeviceConnectionsManagerProtocol, placeId: NamiPairingFramework.PlaceID? = nil)
   final public let eventsPublisher: Combine.PassthroughSubject<NamiPairingFramework.SetupGuideEvent, NamiPairingFramework.SetupGuideError>
@@ -6122,6 +6134,24 @@ extension SwiftUICore.Image {
   public typealias Body = Swift.Never
   public typealias Coordinator = Swift.Void
   public typealias UIViewType = UIKit.UIImageView
+}
+public struct Icons {
+  public static let bluetooth: SwiftUICore.Image
+  public static let camera: SwiftUICore.Image
+  public static let checkmark: SwiftUICore.Image
+  public static let chevronleft: SwiftUICore.Image
+  public static let errorindicator: SwiftUICore.Image
+  public static let eyeclosed: SwiftUICore.Image
+  public static let eyeopen: SwiftUICore.Image
+  public static let question: SwiftUICore.Image
+  public static let warning: SwiftUICore.Image
+  public static let wifi: SwiftUICore.Image
+  public static let wifierror: SwiftUICore.Image
+  public static let wifimedium: SwiftUICore.Image
+  public static let wifiweak: SwiftUICore.Image
+  public static let greenTick: SwiftUICore.Image
+  public static let xmark: SwiftUICore.Image
+  public static let expand: SwiftUICore.Image
 }
 extension SwiftUICore.Color {
   public init(rgba: Swift.UInt)
@@ -8811,6 +8841,7 @@ extension NamiPairingFramework.Pairing.ViewModel : NamiPairingFramework.PairingS
 extension NamiPairingFramework.NoView : Swift.Sendable {}
 extension NamiPairingFramework.ValueRepresentation : Swift.Hashable {}
 extension NamiPairingFramework.SplineGraph : Swift.Sendable {}
+extension NamiPairingFramework.CircleImageButton : Swift.Sendable {}
 extension NamiPairingFramework.RoundedRectContainerView : Swift.Sendable {}
 extension NamiPairingFramework.NamiXMarkButton : Swift.Sendable {}
 extension NamiPairingFramework.NamiXMarkButton.Appearance : Swift.Equatable {}

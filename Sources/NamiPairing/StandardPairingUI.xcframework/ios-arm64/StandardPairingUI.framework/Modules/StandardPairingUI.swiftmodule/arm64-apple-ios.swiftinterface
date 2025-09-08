@@ -3,14 +3,12 @@
 // swift-module-flags: -target arm64-apple-ios16 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name StandardPairingUI
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import Combine
-import DeveloperToolsSupport
 import Foundation
 import Lottie
 import NamiPairingFramework
 @_exported import StandardPairingUI
 import Swift
 import SwiftUI
-import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
@@ -63,6 +61,7 @@ public protocol WordingProtocol {
   var headerConnectToPower: Swift.String { get }
   var explainedReadyToPair: Swift.String { get }
   var headerContactSensor: Swift.String { get }
+  var headerKeypad: Swift.String { get }
   var scanning: Swift.String { get }
   var askUserToWait: Swift.String { get }
   var bluetoothDisabled: Swift.String { get }
@@ -232,6 +231,9 @@ extension StandardPairingUI.WordingProtocol {
     get
   }
   public var headerContactSensor: Swift.String {
+    get
+  }
+  public var headerKeypad: Swift.String {
     get
   }
   public var scanning: Swift.String {
