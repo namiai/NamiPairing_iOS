@@ -14,12 +14,8 @@ let package = Package(
             name: "NamiPairing",
             targets: ["NamiPairingCore", "StandardPairingUI"]),
         .library(
-            name: "NamiPairing-NoUI", 
+            name: "NamiPairing-NoUI",
             targets: ["NamiPairingCore"])
-    ],
-    dependencies: [
-        .package(url: "https://github.com/divkit/divkit-ios", from: "32.9.0"),
-        .package(url: "https://github.com/namiai/vgsl.git", from: "7.4.2")
     ],
     targets: [
         .binaryTarget(name: "NamiPairingFramework", path: "Sources/NamiPairing/NamiPairingFramework.xcframework"),
@@ -28,10 +24,6 @@ let package = Package(
           name: "NamiPairingCore",
           dependencies: [
             "NamiPairingFramework",
-            .product(name: "DivKit", package: "divkit-ios"),
-            .product(name: "DivKitSVG", package: "divkit-ios"),
-            .product(name: "DivKitExtensions", package: "divkit-ios"),
-            .product(name: "VGSL", package: "vgsl"),
           ],
           path: "Sources/NamiPairing/NamiPairingCore"
         ),

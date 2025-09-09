@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
-// swift-module-flags: -target x86_64-apple-ios16-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name NamiPairingFramework
+// swift-module-flags: -target x86_64-apple-ios16-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name NamiPairingFramework
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import AVFoundation
 import ActivityKit
@@ -12,9 +12,7 @@ import CoreGraphics
 import CryptoKit
 import DeveloperToolsSupport
 import Dispatch
-import DivKitSVG
 import Foundation
-import LayoutKit
 import Lottie
 @_exported import NamiPairingFramework
 import Network
@@ -1128,6 +1126,10 @@ public enum NamiAlertReason : Swift.String, Swift.Comparable, Swift.Codable {
   public var rawValue: Swift.String {
     get
   }
+}
+public struct DevicePeerInfo {
+  public var wifiMac: Swift.UInt64
+  public var rssi: Swift.Int32
 }
 public enum NamiMeasurementSystem : Swift.String, Swift.CaseIterable, Swift.Identifiable {
   case metric
@@ -3624,6 +3626,7 @@ public enum SeanceError : Swift.Error {
   case wrongState(Swift.String)
   case keyAgreementError
   case verificationError
+  case unsupportedHashingAlgorithm(Swift.String)
 }
 public class Seance {
   public init(role: NamiPairingFramework.Seance.Role)
@@ -3651,6 +3654,7 @@ public class Seance {
     case sha256
     case sha384
     case sha512
+    public init(_ algo: Swift.String) throws
     public static func == (a: NamiPairingFramework.Seance.HashingAlgorithm, b: NamiPairingFramework.Seance.HashingAlgorithm) -> Swift.Bool
     public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
@@ -4314,7 +4318,7 @@ final public class Tomonari<Container> where Container : NamiPairingFramework.Pa
   public typealias DevicePairingStatePublisher = Combine.PassthroughSubject<NamiPairingFramework.Tomonari<Container>.DevicePairingState, any Swift.Error>
   public typealias DevicePositioningStatePublisher = Combine.PassthroughSubject<NamiPairingFramework.PositioningStep, any Swift.Error>
   public struct PairingParameters : Swift.Equatable {
-    public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID? = nil, bssid: Foundation.Data? = nil)
+    public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID? = nil, bssid: Foundation.Data? = nil, countryCode: Swift.String? = nil)
     public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID? = nil, bssid: [Swift.UInt8])
     public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID? = nil, bssid: Swift.String)
     public static var none: NamiPairingFramework.Tomonari<Container>.PairingParameters {
@@ -4323,6 +4327,7 @@ final public class Tomonari<Container> where Container : NamiPairingFramework.Pa
     public let qrCode: NamiPairingFramework.NamiQRCode?
     public let updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID?
     public let bssid: Foundation.Data?
+    public let countryCode: Swift.String?
     public static func == (a: NamiPairingFramework.Tomonari<Container>.PairingParameters, b: NamiPairingFramework.Tomonari<Container>.PairingParameters) -> Swift.Bool
   }
   public enum DevicePairingState {
@@ -4965,7 +4970,11 @@ public class TemplatesVariablesBridge : Swift.AnyObject {
 
 
 public struct PresentedScreen : Swift.Sendable {
-  public init(url: Foundation.URL, title: Swift.String? = nil, backButtonEnabled: Swift.Bool = true)
+  public enum TrailingItem : Swift.Sendable {
+    case support(Foundation.URL)
+    public init?(type: Swift.String, url: Foundation.URL)
+  }
+  public init(url: Foundation.URL, title: Swift.String? = nil, backButtonEnabled: Swift.Bool = true, trailingItem: NamiPairingFramework.PresentedScreen.TrailingItem? = nil)
 }
 
 
@@ -5005,7 +5014,8 @@ final public class NamiSDUIPresenter : Foundation.ObservableObject {
     case replaceTopmost(NamiPairingFramework.PresentedScreen)
     case replaceStack([NamiPairingFramework.PresentedScreen])
     case pushOnStack(NamiPairingFramework.PresentedScreen)
-    case popTopmost
+    case popTopmost(_: Swift.Int = 1)
+    case popUntil(Swift.String)
   }
   public init(variablesBridge: NamiPairingFramework.TemplatesVariablesBridge, onLoadError: @escaping (any Swift.Error) -> Swift.Void = NamiSDUIPresenter.defaultOnLoadError, mapUrl: @escaping (Foundation.URL) -> NamiPairingFramework.PresentedScreen? = NamiSDUIPresenter.mapUrl)
   @_Concurrency.MainActor final public func present(_ screens: NamiPairingFramework.PresentedScreen..., onDismiss: @escaping () -> Swift.Void = {}) throws -> some SwiftUICore.View
@@ -5014,6 +5024,13 @@ final public class NamiSDUIPresenter : Foundation.ObservableObject {
   @_Concurrency.MainActor final public func showProgressIndicator(_ show: Swift.Bool)
   public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @objc deinit
+}
+@_Concurrency.MainActor @preconcurrency public struct CircleImageButton : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(image: SwiftUICore.Image, foregroundColor: SwiftUICore.Color? = nil, backgroundColor: SwiftUICore.Color? = nil, imagePadding: CoreFoundation.CGFloat = 0, action: @escaping () -> Swift.Void = {})
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s20NamiPairingFramework17CircleImageButtonV4bodyQrvp", 0) __
 }
 extension UIKit.UINavigationController : @retroactive UIKit.UIGestureRecognizerDelegate {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
@@ -5360,6 +5377,32 @@ public struct RemoteTemplateEntrypointHelper {
 }
 extension NamiPairingFramework.NamiDeviceType : @unchecked @retroactive Swift.Sendable {
 }
+@_hasMissingDesignatedInitializers public class SetupGuideInputs : Swift.Encodable, @unchecked Swift.Sendable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
+}
+public struct SetupGuideState : Swift.Encodable, @unchecked Swift.Sendable, Swift.Equatable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (a: NamiPairingFramework.SetupGuideState, b: NamiPairingFramework.SetupGuideState) -> Swift.Bool
+}
+public enum SetupGuideError : Swift.Error, NamiPairingFramework.RemoteTemplatesUIControllerError {
+  case api(any Swift.Error)
+  case storage(any Swift.Error)
+  case deviceConnections(any Swift.Error)
+  case divKit(any Swift.Error)
+  case invalidState((any Swift.Error)?)
+}
+public typealias OnPairingFinishedCallback = (NamiPairingFramework.PairingResultStatus) -> Swift.Void
+public enum SetupGuideEvent : NamiPairingFramework.RemoteTemplatesUIControllerEvent {
+  case gotUrl(Foundation.URL)
+  case variableUpdated(Swift.String, Swift.AnyHashable)
+  case viewDismissed
+  case pairingRequested(NamiPairingFramework.PlaceID, NamiPairingFramework.PlaceZoneID, NamiPairingFramework.RoomID, NamiPairingFramework.NamiDeviceType, Swift.String, NamiPairingFramework.OnPairingFinishedCallback)
+}
+public enum PairingResultStatus {
+  case succeeded(NamiPairingFramework.DeviceID)
+  case cancelled(NamiPairingFramework.DeviceID?)
+}
 public struct RemoteTemplateUI_Place : Swift.Codable, Swift.Equatable {
   public init(id: NamiPairingFramework.PlaceID, urn: Swift.String, name: Swift.String, timeZone: Swift.String? = nil, createdAt: Foundation.Date, updatedAt: Foundation.Date, alertMode: Swift.String, entryDelay: NamiPairingFramework.EntryDelay, exitDelay: NamiPairingFramework.ExitDelay, placeSensitivity: Swift.Int = 0)
   public var id: NamiPairingFramework.PlaceID
@@ -5687,6 +5730,19 @@ public struct RemoteTemplateUI_MotionData : Swift.Codable, Swift.Equatable {
   public static func == (a: NamiPairingFramework.RemoteTemplateUI_MotionData, b: NamiPairingFramework.RemoteTemplateUI_MotionData) -> Swift.Bool
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct RemoteTemplateUI_SensingLinks : Swift.Codable, Swift.Equatable {
+  public struct LinkStats : Swift.Codable, Swift.Equatable {
+    public var rssi: Swift.Int32
+    public func encode(to encoder: any Swift.Encoder) throws
+    public static func == (a: NamiPairingFramework.RemoteTemplateUI_SensingLinks.LinkStats, b: NamiPairingFramework.RemoteTemplateUI_SensingLinks.LinkStats) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public var sensingLink: [Swift.String : [Swift.String : NamiPairingFramework.RemoteTemplateUI_SensingLinks.LinkStats]]
+  public init(_ sensingLinks: [NamiPairingFramework.DeviceUniversalID : [NamiPairingFramework.DeviceUniversalID : Swift.Int32]])
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_SensingLinks, b: NamiPairingFramework.RemoteTemplateUI_SensingLinks) -> Swift.Bool
+  public init(from decoder: any Swift.Decoder) throws
+}
 public struct RemoteTemplateUI_RestEvent : Swift.Codable, Swift.Equatable {
   public init(deviceUid: NamiPairingFramework.DeviceUniversalID, startedAt: Foundation.Date, endedAt: Foundation.Date)
   public var deviceUid: NamiPairingFramework.DeviceUniversalID
@@ -5775,32 +5831,6 @@ extension NamiPairingFramework.StateMessage : @retroactive Swift.Equatable, @ret
 extension NamiPairingFramework.SecureStorage : NamiPairingFramework.SecureStorageProtocol, @retroactive NamiPairingFramework.ThreadSecureStorageProtocol {
   public typealias SecureStorageError = NamiPairingFramework.KeychainError
   public typealias Thread_SecureStorageError = NamiPairingFramework.KeychainError
-}
-@_hasMissingDesignatedInitializers public class SetupGuideInputs : Swift.Encodable, @unchecked Swift.Sendable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  @objc deinit
-}
-public struct SetupGuideState : Swift.Encodable, @unchecked Swift.Sendable, Swift.Equatable {
-  public static func == (lhs: NamiPairingFramework.SetupGuideState, rhs: NamiPairingFramework.SetupGuideState) -> Swift.Bool
-  public func encode(to encoder: any Swift.Encoder) throws
-}
-public enum SetupGuideError : Swift.Error, NamiPairingFramework.RemoteTemplatesUIControllerError {
-  case api(any Swift.Error)
-  case storage(any Swift.Error)
-  case deviceConnections(any Swift.Error)
-  case divKit(any Swift.Error)
-  case invalidState((any Swift.Error)?)
-}
-public typealias OnPairingFinishedCallback = (NamiPairingFramework.PairingResultStatus) -> Swift.Void
-public enum SetupGuideEvent : NamiPairingFramework.RemoteTemplatesUIControllerEvent {
-  case gotUrl(Foundation.URL)
-  case variableUpdated(Swift.String, Swift.AnyHashable)
-  case viewDismissed
-  case pairingRequested(NamiPairingFramework.PlaceID, NamiPairingFramework.PlaceZoneID, NamiPairingFramework.RoomID, NamiPairingFramework.NamiDeviceType, NamiPairingFramework.OnPairingFinishedCallback)
-}
-public enum PairingResultStatus {
-  case succeeded(NamiPairingFramework.DeviceID)
-  case cancelled(NamiPairingFramework.DeviceID?)
 }
 final public class RemoteTemplateUIController<Storage> : @preconcurrency NamiPairingFramework.RemoteTemplatesUIControllerProtocol, @unchecked Swift.Sendable where Storage : NamiPairingFramework.DeviceConnectionsManagerStorageProtocol, Storage : NamiPairingFramework.RemoteTemplateStateRepositoryProtocol, Storage : Swift.Sendable {
   @_Concurrency.MainActor public init(store: Storage, deviceConnectionsManager: any NamiPairingFramework.DeviceConnectionsManagerProtocol, placeId: NamiPairingFramework.PlaceID? = nil)
@@ -6123,6 +6153,24 @@ extension SwiftUICore.Image {
   public typealias Body = Swift.Never
   public typealias Coordinator = Swift.Void
   public typealias UIViewType = UIKit.UIImageView
+}
+public struct Icons {
+  public static let bluetooth: SwiftUICore.Image
+  public static let camera: SwiftUICore.Image
+  public static let checkmark: SwiftUICore.Image
+  public static let chevronleft: SwiftUICore.Image
+  public static let errorindicator: SwiftUICore.Image
+  public static let eyeclosed: SwiftUICore.Image
+  public static let eyeopen: SwiftUICore.Image
+  public static let question: SwiftUICore.Image
+  public static let warning: SwiftUICore.Image
+  public static let wifi: SwiftUICore.Image
+  public static let wifierror: SwiftUICore.Image
+  public static let wifimedium: SwiftUICore.Image
+  public static let wifiweak: SwiftUICore.Image
+  public static let greenTick: SwiftUICore.Image
+  public static let xmark: SwiftUICore.Image
+  public static let expand: SwiftUICore.Image
 }
 extension SwiftUICore.Color {
   public init(rgba: Swift.UInt)
@@ -6512,10 +6560,11 @@ extension NamiPairingFramework.DeviceConnectionsManager_DevicesQuery {
   public static func forDevices(_ deviceUIDs: [NamiPairingFramework.DeviceUniversalID]) -> NamiPairingFramework.DeviceConnectionsManager_DevicesQuery
 }
 public struct NamiDeviceObservation {
-  public init(uid: NamiPairingFramework.DeviceUniversalID, seqTime: Swift.UInt64, activity: [Swift.Int32]? = nil, state: NamiPairingFramework.StateMessage? = nil, error: (any Swift.Error)? = nil)
+  public init(uid: NamiPairingFramework.DeviceUniversalID, seqTime: Swift.UInt64, activity: [Swift.Int32]? = nil, peers: [NamiPairingFramework.DevicePeerInfo]? = nil, state: NamiPairingFramework.StateMessage? = nil, error: (any Swift.Error)? = nil)
   public let uid: NamiPairingFramework.DeviceUniversalID
   public let seqTime: Swift.UInt64
   public let activity: [Swift.Int32]?
+  public let peers: [NamiPairingFramework.DevicePeerInfo]?
   public let state: NamiPairingFramework.StateMessage?
   public let error: (any Swift.Error)?
   public let data: Foundation.Data
@@ -8812,6 +8861,7 @@ extension NamiPairingFramework.Pairing.ViewModel : NamiPairingFramework.PairingS
 extension NamiPairingFramework.NoView : Swift.Sendable {}
 extension NamiPairingFramework.ValueRepresentation : Swift.Hashable {}
 extension NamiPairingFramework.SplineGraph : Swift.Sendable {}
+extension NamiPairingFramework.CircleImageButton : Swift.Sendable {}
 extension NamiPairingFramework.RoundedRectContainerView : Swift.Sendable {}
 extension NamiPairingFramework.NamiXMarkButton : Swift.Sendable {}
 extension NamiPairingFramework.NamiXMarkButton.Appearance : Swift.Equatable {}
