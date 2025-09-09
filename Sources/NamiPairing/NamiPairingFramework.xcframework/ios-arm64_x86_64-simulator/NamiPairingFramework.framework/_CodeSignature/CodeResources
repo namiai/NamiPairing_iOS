@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		XJDaqDBlqF8i77invRpoIbFvUgE=
+		BIbESSKLp5laSXrlP/WwIYCxQXs=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		np4DnEEyQXJO3f8VufsqN6eYigc=
+		Xu0pW7RvJyCUiK5pbYLuhIhO7wQ=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		np4DnEEyQXJO3f8VufsqN6eYigc=
+		Xu0pW7RvJyCUiK5pbYLuhIhO7wQ=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		L7S2w2uAtjRzlGpfXZGYKkPRieg=
+		naEM+PrfcyAMIfkflVGyjN96Nzo=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		wII3yvccFWoS/HVpS75ZKhgwOnM=
+		lBCFmZAAtLQOxmHQFdCnlWVwOgA=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -54,15 +54,71 @@
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		wII3yvccFWoS/HVpS75ZKhgwOnM=
+		lBCFmZAAtLQOxmHQFdCnlWVwOgA=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		UWXBEUIPM+KTvy7dh5qktolBRZA=
+		TC+T7P1O2iHCgb6yOB3KpaR7mkQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		QbZwyFWujujrlObdKWtLKqcc6jY=
+		</data>
+		<key>Pulse Dark Blue_Alarm Pod _ Security Pod.json</key>
+		<data>
+		Wg+JzXFc8EAaDmLvTDtXnuz4gco=
+		</data>
+		<key>Pulse Dark Blue_SensePlug DE.json</key>
+		<data>
+		C4VYrmcfO1UrHisNwjIDXDg6g78=
+		</data>
+		<key>Pulse Dark Blue_SensePlug FR.json</key>
+		<data>
+		FjNSDnT61QEgO6PdKvCLzSUQl1U=
+		</data>
+		<key>Pulse Dark Blue_SensePlug UK.json</key>
+		<data>
+		AYgHa5zkEg1TF2tggiq3GnXLHKg=
+		</data>
+		<key>Pulse Dark Blue_SensePlug US.json</key>
+		<data>
+		Nr4+MAPXp7RsZzr/pP9sy5MBsf0=
+		</data>
+		<key>Pulse Dark Blue_WiDAR.json</key>
+		<data>
+		rRdHGKIFuANTIc6aLzJ2/bXUpG4=
+		</data>
+		<key>Pulse Dark Blue_WiFi DE.json</key>
+		<data>
+		PQM8j7AYymqaqK1TkG7UVS39L2c=
+		</data>
+		<key>Pulse Dark Blue_WiFi FR.json</key>
+		<data>
+		5HrdcdGdRf6ClgPPxUvzlG4Km+g=
+		</data>
+		<key>Pulse Dark Blue_WiFi JP.json</key>
+		<data>
+		nXOi0XlJrT+dKs+6FcJIaJuVLgc=
+		</data>
+		<key>Pulse Dark Blue_WiFi UK.json</key>
+		<data>
+		giUkjQFzsxYdb3094cy82R0JJXM=
+		</data>
+		<key>Pulse Dark Blue_WiFi US.json</key>
+		<data>
+		rop3On4116sTvxO8DYH/FxWWucM=
+		</data>
+		<key>Pulse White_Door Sensor.json</key>
+		<data>
+		RshFAFWasn14sjM8NWDLTUmBYbQ=
+		</data>
+		<key>Pulse White_Keypad.json</key>
+		<data>
+		e/xvN55ynWqZ78YbWV67IJ/hwJc=
+		</data>
+		<key>Pulse White_Motion Sensor.json</key>
+		<data>
+		MzPEdN/v/S0ZLbDH1Z7finfQdrY=
 		</data>
 		<key>alarmPod_qr_all.webp</key>
 		<data>
@@ -305,7 +361,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			J6xu3cvaB7dg6qUg+ZC2thfe3puc7YSzVrltSZp4q0E=
+			VUww2N9jG//qB4qM9YZQbswyoynYgjyO3JbYLJOD7iU=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -319,14 +375,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			J6xu3cvaB7dg6qUg+ZC2thfe3puc7YSzVrltSZp4q0E=
+			VUww2N9jG//qB4qM9YZQbswyoynYgjyO3JbYLJOD7iU=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YLPrVzHOwGxnrauOtFZaKkvUjz1nysX0MIf2dWGz/fA=
+			2ZRgi8SjQiidFgOZAZ2j1usXXp/sO8w3ggcOkZDyI2g=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -340,7 +396,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IilhnC2X6l2j+B41Q/EsMX5Cm5Z+J3E8q1kBgf/M+KU=
+			b/Bbv4LihPsQY/ZbaqG+1mzOkpc7s2L9FkVoNYPqlbU=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -354,14 +410,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IilhnC2X6l2j+B41Q/EsMX5Cm5Z+J3E8q1kBgf/M+KU=
+			b/Bbv4LihPsQY/ZbaqG+1mzOkpc7s2L9FkVoNYPqlbU=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZJv+ssKjCq4T6Bq2GNf0+CEBJJf9xsEPwD9eXZd/1OA=
+			euBFdzKZMrTX9+6BSaZybpuFIoFt99eH0pmmT0M8YSQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -369,6 +425,104 @@
 			<key>hash2</key>
 			<data>
 			8CR9uOhIbYWxr1QsJOyWunBuO5Es3tXYcJWPDA77CCE=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_Alarm Pod _ Security Pod.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fls/gBMZN/cQziCbd0CsOILJGM0xUjTZ9WtYKnh91/8=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_SensePlug DE.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oaQd8byQ8bjZ9OCPyiGCtyY4A3qWYOFH44Nv8qWI0Qc=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_SensePlug FR.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qezL7aCWC+lmeCSwXKWb5vJXwWkhJrMd0LbXe9K7BYo=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_SensePlug UK.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SA2GcqknWpmevYU5U6etpUdWmwjqJ6B1+EXp6risHtc=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_SensePlug US.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Q6w+PpDrKWxX2dUhii+Qqg/z4h4VtO+16l82RHAV0hI=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_WiDAR.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			W1xAAXTDGxqzVnzVivpBTqdrmQrSZcfrvcaWx7yto38=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_WiFi DE.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			g47D91Sd8QRweimd7yq07d+cPClrGKpLGTlIeicGAOA=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_WiFi FR.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			q/0JzVerC+NkzJdJmpBgyUfNjX4yHfha8/CRQEIsjCY=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_WiFi JP.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sVZD19MCoR4+IxcO/cX52NXkyYLUbEaIi5s6Y4o54OM=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_WiFi UK.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			YBnqa+TGpcnx1pw1WYNJsV6VtoKFncTWppSZkL1hrhw=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_WiFi US.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pKXfupAEztQ+KnLYsMAxaQ+bgVFdFe0ujCj79Mmx6Z0=
+			</data>
+		</dict>
+		<key>Pulse White_Door Sensor.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rYlX8x+0ex9x3eQ2nvW7niMNr2MyZgXP5SbaRA22bCs=
+			</data>
+		</dict>
+		<key>Pulse White_Keypad.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BjHqmUCk1d+u9wGQyz6XDWlotrZK+IEb1XDNGuB18D4=
+			</data>
+		</dict>
+		<key>Pulse White_Motion Sensor.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kRk+JPZCrMVVTq0dR/tO35FnZBBKib4sSCxe8Yd589k=
 			</data>
 		</dict>
 		<key>alarmPod_qr_all.webp</key>
