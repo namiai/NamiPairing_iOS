@@ -3626,6 +3626,7 @@ public enum SeanceError : Swift.Error {
   case wrongState(Swift.String)
   case keyAgreementError
   case verificationError
+  case unsupportedHashingAlgorithm(Swift.String)
 }
 public class Seance {
   public init(role: NamiPairingFramework.Seance.Role)
@@ -3653,6 +3654,7 @@ public class Seance {
     case sha256
     case sha384
     case sha512
+    public init(_ algo: Swift.String) throws
     public static func == (a: NamiPairingFramework.Seance.HashingAlgorithm, b: NamiPairingFramework.Seance.HashingAlgorithm) -> Swift.Bool
     public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
@@ -4316,7 +4318,7 @@ final public class Tomonari<Container> where Container : NamiPairingFramework.Pa
   public typealias DevicePairingStatePublisher = Combine.PassthroughSubject<NamiPairingFramework.Tomonari<Container>.DevicePairingState, any Swift.Error>
   public typealias DevicePositioningStatePublisher = Combine.PassthroughSubject<NamiPairingFramework.PositioningStep, any Swift.Error>
   public struct PairingParameters : Swift.Equatable {
-    public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID? = nil, bssid: Foundation.Data? = nil)
+    public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID? = nil, bssid: Foundation.Data? = nil, countryCode: Swift.String? = nil)
     public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID? = nil, bssid: [Swift.UInt8])
     public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID? = nil, bssid: Swift.String)
     public static var none: NamiPairingFramework.Tomonari<Container>.PairingParameters {
@@ -4325,6 +4327,7 @@ final public class Tomonari<Container> where Container : NamiPairingFramework.Pa
     public let qrCode: NamiPairingFramework.NamiQRCode?
     public let updateWiFiCredentialsSessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID?
     public let bssid: Foundation.Data?
+    public let countryCode: Swift.String?
     public static func == (a: NamiPairingFramework.Tomonari<Container>.PairingParameters, b: NamiPairingFramework.Tomonari<Container>.PairingParameters) -> Swift.Bool
   }
   public enum DevicePairingState {
@@ -5012,6 +5015,7 @@ final public class NamiSDUIPresenter : Foundation.ObservableObject {
     case replaceStack([NamiPairingFramework.PresentedScreen])
     case pushOnStack(NamiPairingFramework.PresentedScreen)
     case popTopmost(_: Swift.Int = 1)
+    case popUntil(Swift.String)
   }
   public init(variablesBridge: NamiPairingFramework.TemplatesVariablesBridge, onLoadError: @escaping (any Swift.Error) -> Swift.Void = NamiSDUIPresenter.defaultOnLoadError, mapUrl: @escaping (Foundation.URL) -> NamiPairingFramework.PresentedScreen? = NamiSDUIPresenter.mapUrl)
   @_Concurrency.MainActor final public func present(_ screens: NamiPairingFramework.PresentedScreen..., onDismiss: @escaping () -> Swift.Void = {}) throws -> some SwiftUICore.View
@@ -5393,7 +5397,7 @@ public enum SetupGuideEvent : NamiPairingFramework.RemoteTemplatesUIControllerEv
   case gotUrl(Foundation.URL)
   case variableUpdated(Swift.String, Swift.AnyHashable)
   case viewDismissed
-  case pairingRequested(NamiPairingFramework.PlaceID, NamiPairingFramework.PlaceZoneID, NamiPairingFramework.RoomID, NamiPairingFramework.NamiDeviceType, NamiPairingFramework.OnPairingFinishedCallback)
+  case pairingRequested(NamiPairingFramework.PlaceID, NamiPairingFramework.PlaceZoneID, NamiPairingFramework.RoomID, NamiPairingFramework.NamiDeviceType, Swift.String, NamiPairingFramework.OnPairingFinishedCallback)
 }
 public enum PairingResultStatus {
   case succeeded(NamiPairingFramework.DeviceID)
