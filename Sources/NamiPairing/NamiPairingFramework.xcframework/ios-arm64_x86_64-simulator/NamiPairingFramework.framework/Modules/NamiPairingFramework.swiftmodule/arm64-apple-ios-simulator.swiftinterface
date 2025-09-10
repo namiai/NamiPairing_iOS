@@ -57,7 +57,7 @@ public struct PlaceKey : Swift.Codable, Swift.Equatable, Swift.Identifiable, Nam
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-extension NamiPairingFramework.InMemoryStorage : @retroactive NamiPairingFramework.RemoteTemplateStateRepositoryProtocol {
+extension NamiPairingFramework.InMemoryStorage : NamiPairingFramework.RemoteTemplateStateRepositoryProtocol {
   final public func place(id placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_Place, Swift.Never>
   final public func zones(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[NamiPairingFramework.RemoteTemplateUI_Zone], Swift.Never>
   final public func rooms(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[NamiPairingFramework.RemoteTemplateUI_Room], Swift.Never>
@@ -74,6 +74,10 @@ extension NamiPairingFramework.InMemoryStorage : @retroactive NamiPairingFramewo
   final public func deleteRoom(_ roomId: NamiPairingFramework.RoomID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_Place, any Swift.Error>
   final public func updateEntryExitDelay(_ placeId: NamiPairingFramework.PlaceID, entryDelay: NamiPairingFramework.EntryDelay, exitDelay: NamiPairingFramework.ExitDelay) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_Place, any Swift.Error>
   final public func updateSensitivity(_ placeId: NamiPairingFramework.PlaceID, sensitivity: Swift.Int) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  final public func listPins(in place: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[NamiPairingFramework.RemoteTemplateUI_PinCredentialRecord], any Swift.Error>
+  final public func createPin(for place: NamiPairingFramework.PlaceID, pinNamed name: Swift.String, pinValue: Swift.String) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_PinCredentialRecord, any Swift.Error>
+  final public func deletePin(from place: NamiPairingFramework.PlaceID, pinId: NamiPairingFramework.PinCredentialID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_PinCredentialRecord, any Swift.Error>
+  final public func updatePin(in place: NamiPairingFramework.PlaceID, pinId: NamiPairingFramework.PinCredentialID, newName: Swift.String?, newValue: Swift.String?) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_PinCredentialRecord, any Swift.Error>
 }
 public struct NamiPlace : Swift.Codable, Swift.Equatable, Swift.Identifiable, NamiPairingFramework.StorablePlaceProtocol {
   public init(id: NamiPairingFramework.PlaceID, urn: Swift.String, name: Swift.String, themeId: NamiPairingFramework.ThemeID, iconId: NamiPairingFramework.IconID, createdAt: Foundation.Date = Date(), updatedAt: Foundation.Date = Date(), alertMode: Swift.String, entryDelay: NamiPairingFramework.EntryDelay, exitDelay: NamiPairingFramework.ExitDelay)
@@ -744,7 +748,10 @@ final public class InMemoryStorage {
   final public func deleteZone(_ zoneId: NamiPairingFramework.PlaceZoneID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   final public func deleteRoom(_ roomId: NamiPairingFramework.RoomID) -> Combine.AnyPublisher<NamiPairingFramework.NamiPlace, any Swift.Error>
   final public func deletePlaceUser(_ userId: NamiPairingFramework.UserID, placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<NamiPairingFramework.MembershipResponse, any Swift.Error>
-  final public func createPin(for place: NamiPairingFramework.PlaceID, pinNamed name: Swift.String, pinValue: Swift.String) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  final public func createPin(for place: NamiPairingFramework.PlaceID, pinNamed name: Swift.String, pinValue: Swift.String) -> Combine.AnyPublisher<NamiPairingFramework.PinCredentialRecord, any Swift.Error>
+  final public func listPins(in place: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[NamiPairingFramework.PinCredentialRecord], any Swift.Error>
+  final public func deletePin(from place: NamiPairingFramework.PlaceID, pinId: NamiPairingFramework.PinCredentialID) -> Combine.AnyPublisher<NamiPairingFramework.PinCredentialRecord, any Swift.Error>
+  final public func updatePin(in place: NamiPairingFramework.PlaceID, pinId: NamiPairingFramework.PinCredentialID, newName: Swift.String?, newValue: Swift.String?) -> Combine.AnyPublisher<NamiPairingFramework.PinCredentialRecord, any Swift.Error>
   final public func clearAll()
   @objc deinit
 }
@@ -1278,7 +1285,19 @@ public struct NamiTimeZone : Swift.Decodable, Swift.Hashable {
     get
   }
 }
-@propertyWrapper public struct HexEncoded<T> : Swift.Codable where T : Swift.Decodable, T : Swift.Encodable {
+public protocol HexValue {
+  static func decodeHex(from c: any Swift.SingleValueDecodingContainer) throws -> Self
+  func encodeHex(to c: inout any Swift.SingleValueEncodingContainer) throws
+}
+extension Foundation.Data : NamiPairingFramework.HexValue {
+  public static func decodeHex(from c: any Swift.SingleValueDecodingContainer) throws -> Foundation.Data
+  public func encodeHex(to c: inout any Swift.SingleValueEncodingContainer) throws
+}
+extension Swift.Optional : NamiPairingFramework.HexValue where Wrapped == Foundation.Data {
+  public static func decodeHex(from c: any Swift.SingleValueDecodingContainer) throws -> Swift.Optional<Foundation.Data>
+  public func encodeHex(to c: inout any Swift.SingleValueEncodingContainer) throws
+}
+@propertyWrapper public struct HexEncoded<T> : Swift.Codable where T : NamiPairingFramework.HexValue, T : Swift.Decodable, T : Swift.Encodable {
   public var wrappedValue: T
   public init(wrappedValue: T)
   public init(from decoder: any Swift.Decoder) throws
@@ -1309,6 +1328,7 @@ public typealias PropertyElevationID = Swift.Int64
 public typealias PropertyAvgFloorAreaID = Swift.Int64
 public typealias AutomationID = Swift.Int64
 public typealias PetTypeID = Swift.Int64
+public typealias PinCredentialID = Swift.Int64
 public struct EntryDelay : Swift.RawRepresentable, Swift.Equatable, Swift.Codable {
   public let rawValue: Swift.UInt
   public init(rawValue: Swift.UInt)
@@ -2798,7 +2818,6 @@ public enum I18n {
   public static let pairingConnectWifiNoWiFiNetworksFound: Swift.String
   public static let pairingConnectWifiSetUpAsBorderRouter: Swift.String
   public static let pairingConnectWifiSettingUpThisDevice: Swift.String
-  public static let pairingDeviceSetupNavigagtionTitle: Swift.String
   public static let pairingDeviceSetupNavigationTitle: Swift.String
   public static let pairingDone: Swift.String
   public static let pairingEnableBluetoothInSettingsBluetoothDisabled: Swift.String
@@ -3518,6 +3537,9 @@ public enum I18n {
   public static let zoneSelectionNonThreadBorderRouterZoneExplain: Swift.String
   public static let zoneSelectionTitle: Swift.String
   public static let zoneSelectionZoneDeviceLimitationExplain: Swift.String
+}
+extension NamiPairingFramework.I18n {
+  public static func setLanguageOverride(_ languageCode: Swift.String?)
 }
 public enum Log {
   public static func info(_ items: Any...)
@@ -5820,6 +5842,13 @@ public struct RemoteTemplateUI_EngineConfig : Swift.Codable, Swift.Equatable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct RemoteTemplateUI_PinCredentialRecord : Swift.Codable, Swift.Equatable {
+  public var id: NamiPairingFramework.PinCredentialID
+  public var name: Swift.String
+  public static func == (a: NamiPairingFramework.RemoteTemplateUI_PinCredentialRecord, b: NamiPairingFramework.RemoteTemplateUI_PinCredentialRecord) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 extension NamiPairingFramework.StateMessage : @retroactive Swift.Equatable, @retroactive Swift.Hashable, @retroactive Swift.Encodable {
   public static func == (lhs: NamiPairingFramework.StateMessage, rhs: NamiPairingFramework.StateMessage) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -5853,24 +5882,6 @@ public protocol RemoteTemplateUIConfigProtocol {
   var language: Swift.String { get set }
   var appearance: NamiPairingFramework.NamiAppearance { get set }
   var topologyRoomsSupported: Swift.Bool { get set }
-}
-public protocol RemoteTemplateUI_StorageProtocol {
-  associatedtype Place : NamiPairingFramework.StorablePlaceProtocol
-  associatedtype Zone : NamiPairingFramework.StorableZoneProtocol
-  associatedtype Room : NamiPairingFramework.StorableRoomProtocol
-  associatedtype Device : NamiPairingFramework.StorableDeviceProtocol
-  associatedtype PlaceAutomation : NamiPairingFramework.StorableAutomationProtocol
-  associatedtype PlaceUser : NamiPairingFramework.StorablePlaceUserProtocol
-  associatedtype UserInvite : NamiPairingFramework.StorableInviteLinkProtocol
-  associatedtype PlaceUsageLimits : NamiPairingFramework.StorablePlaceUsageLimitsProtocol
-  func place(id placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Self.Place, Swift.Never>
-  func zones(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[Self.Zone], Swift.Never>
-  func rooms(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[Self.Room], Swift.Never>
-  func devices(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[Self.Device], Swift.Never>
-  func automations(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[Self.PlaceAutomation], Swift.Never>
-  func placeUsers(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[Self.PlaceUser], Swift.Never>
-  func placeInvites(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[Self.UserInvite], Swift.Never>
-  func usageLimits(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Self.PlaceUsageLimits, Swift.Never>
 }
 public protocol RemoteTemplateUI_WebAPIProtocol {
   associatedtype RepresentablePlace : NamiPairingFramework.PlaceProtocol
@@ -5958,7 +5969,10 @@ public protocol RemoteTemplateStateRepositoryProtocol {
   func deleteDevice(uid: NamiPairingFramework.DeviceUniversalID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   func deleteZone(_ zoneId: NamiPairingFramework.PlaceZoneID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   func deleteRoom(_ roomId: NamiPairingFramework.RoomID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_Place, any Swift.Error>
-  func createPin(for place: NamiPairingFramework.PlaceID, pinNamed name: Swift.String, pinValue: Swift.String) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  func listPins(in place: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[NamiPairingFramework.RemoteTemplateUI_PinCredentialRecord], any Swift.Error>
+  func createPin(for place: NamiPairingFramework.PlaceID, pinNamed name: Swift.String, pinValue: Swift.String) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_PinCredentialRecord, any Swift.Error>
+  func deletePin(from place: NamiPairingFramework.PlaceID, pinId: NamiPairingFramework.PinCredentialID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_PinCredentialRecord, any Swift.Error>
+  func updatePin(in place: NamiPairingFramework.PlaceID, pinId: NamiPairingFramework.PinCredentialID, newName: Swift.String?, newValue: Swift.String?) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_PinCredentialRecord, any Swift.Error>
   func updateEntryExitDelay(_ placeId: NamiPairingFramework.PlaceID, entryDelay: NamiPairingFramework.EntryDelay, exitDelay: NamiPairingFramework.ExitDelay) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_Place, any Swift.Error>
   func updateSensitivity(_ placeId: NamiPairingFramework.PlaceID, sensitivity: Swift.Int) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
 }
@@ -8440,6 +8454,15 @@ public struct PinHashingParameters : Swift.Decodable {
 public struct CreatePinCredentialRequest : Swift.Encodable {
   public func encode(to encoder: any Swift.Encoder) throws
 }
+public struct UpdatePinCredentialRequest : Swift.Encodable {
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct PinCredentialRecord : Swift.Decodable, Swift.Identifiable {
+  public var id: NamiPairingFramework.PinCredentialID
+  public var name: Swift.String
+  public typealias ID = NamiPairingFramework.PinCredentialID
+  public init(from decoder: any Swift.Decoder) throws
+}
 public protocol NetworkSession : AnyObject {
   func publisher(for request: Foundation.URLRequest, token: NamiPairingFramework.AccessToken?) -> Combine.AnyPublisher<Foundation.Data, any Swift.Error>
   func publisher(for request: Foundation.URLRequest, token: NamiPairingFramework.AccessToken?, retries: Swift.Int, backoffBase: Swift.Double, jitter: NamiPairingFramework.JitterStrategy) -> Combine.AnyPublisher<Foundation.Data, any Swift.Error>
@@ -8645,7 +8668,10 @@ public protocol WebAPIProtocol {
   func getDeviceAttributeStatesRecent(query: NamiPairingFramework.DeviceAttributeStatesQuery) -> Combine.AnyPublisher<NamiPairingFramework.DeviceAttributeStateResponse, any Swift.Error>
   func collectDeviceAttributeStatesRecent(query: NamiPairingFramework.DeviceAttributeStatesQuery) -> Combine.AnyPublisher<[NamiPairingFramework.DeviceAttributeState], any Swift.Error>
   func getPinHashingParameters(for place: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<NamiPairingFramework.PinHashingParameters, any Swift.Error>
-  func createPinCredentials(for place: NamiPairingFramework.PlaceID, pinName: Swift.String, hashedPin: Foundation.Data) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  func createPinCredentials(for place: NamiPairingFramework.PlaceID, pinName: Swift.String, hashedPin: Foundation.Data) -> Combine.AnyPublisher<NamiPairingFramework.PinCredentialRecord, any Swift.Error>
+  func updatePinCredentials(for place: NamiPairingFramework.PlaceID, pinId: NamiPairingFramework.PinCredentialID, pinName: Swift.String?, hashedPin: Foundation.Data?) -> Combine.AnyPublisher<NamiPairingFramework.PinCredentialRecord, any Swift.Error>
+  func deletePinCredentials(for place: NamiPairingFramework.PlaceID, id: NamiPairingFramework.PinCredentialID) -> Combine.AnyPublisher<NamiPairingFramework.PinCredentialRecord, any Swift.Error>
+  func listPinCredentials(for place: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[NamiPairingFramework.PinCredentialRecord], any Swift.Error>
 }
 final public class WebAPI : NamiPairingFramework.WebAPIProtocol {
   final public var errorPublisher: Combine.PassthroughSubject<any Swift.Error, Swift.Never>
@@ -8730,7 +8756,10 @@ final public class WebAPI : NamiPairingFramework.WebAPIProtocol {
   final public func getDeviceAttributeStatesRecent(query: NamiPairingFramework.DeviceAttributeStatesQuery) -> Combine.AnyPublisher<NamiPairingFramework.DeviceAttributeStateResponse, any Swift.Error>
   final public func collectDeviceAttributeStatesRecent(query: NamiPairingFramework.DeviceAttributeStatesQuery) -> Combine.AnyPublisher<[NamiPairingFramework.DeviceAttributeState], any Swift.Error>
   final public func getPinHashingParameters(for place: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<NamiPairingFramework.PinHashingParameters, any Swift.Error>
-  final public func createPinCredentials(for place: NamiPairingFramework.PlaceID, pinName: Swift.String, hashedPin: Foundation.Data) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  final public func createPinCredentials(for place: NamiPairingFramework.PlaceID, pinName: Swift.String, hashedPin: Foundation.Data) -> Combine.AnyPublisher<NamiPairingFramework.PinCredentialRecord, any Swift.Error>
+  final public func updatePinCredentials(for place: NamiPairingFramework.PlaceID, pinId: NamiPairingFramework.PinCredentialID, pinName: Swift.String? = nil, hashedPin: Foundation.Data? = nil) -> Combine.AnyPublisher<NamiPairingFramework.PinCredentialRecord, any Swift.Error>
+  final public func deletePinCredentials(for place: NamiPairingFramework.PlaceID, id: NamiPairingFramework.PinCredentialID) -> Combine.AnyPublisher<NamiPairingFramework.PinCredentialRecord, any Swift.Error>
+  final public func listPinCredentials(for place: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[NamiPairingFramework.PinCredentialRecord], any Swift.Error>
   @objc deinit
 }
 public enum AuthenticationError : Swift.Error {
