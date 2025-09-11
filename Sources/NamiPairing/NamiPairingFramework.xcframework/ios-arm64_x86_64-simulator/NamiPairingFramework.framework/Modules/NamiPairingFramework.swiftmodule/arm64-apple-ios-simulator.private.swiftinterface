@@ -2582,6 +2582,7 @@ public enum I18n {
   public static let errorsPairingThreadSetupErrorThreadNetworkNotFound: Swift.String
   public static let errorsPairingThreadSetupErrorThreadOperationalDatasetMissing: Swift.String
   public static let errorsPairingTimedOutConnectWifi: Swift.String
+  public static let errorsUnexpectedOccurredPleaseTryAgain: Swift.String
   public static let externalSigninCheckIfUsersRequest: Swift.String
   public static let externalSigninConfirmRequest: Swift.String
   public static let externalSigninConfirmedTitle: Swift.String
@@ -5096,6 +5097,9 @@ extension SwiftUICore.View {
   
   @_Concurrency.MainActor @preconcurrency public func readSafeAreaInsets(onChange: @escaping (SwiftUICore.EdgeInsets) -> Swift.Void) -> some SwiftUICore.View
   
+  @_Concurrency.MainActor @preconcurrency public var anyView: SwiftUICore.AnyView {
+    get
+  }
 }
 extension SwiftUICore.Binding {
   public static func bindingBool<Item>(_ item: SwiftUICore.Binding<Item?>) -> SwiftUICore.Binding<Swift.Bool>
@@ -5110,6 +5114,45 @@ extension UIKit.UIFont {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s20NamiPairingFramework24RoundedRectContainerViewV4bodyQrvp", 0) __<Subviews>
+}
+@available(iOS 13, macOS 11, *)
+@_Concurrency.MainActor @preconcurrency public struct ToastView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(type: NamiPairingFramework.ToastView.ToastType, title: Swift.String? = nil, subTitle: Swift.String? = nil, style: NamiPairingFramework.ToastView.AlertStyle? = nil, animationType: NamiPairingFramework.ToastView.ToastAnimationType? = .slide, hideCloseButton: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public init(type: NamiPairingFramework.ToastView.ToastType, title: Swift.String? = nil, animationType: NamiPairingFramework.ToastView.ToastAnimationType? = .slide, hideCloseButton: Swift.Bool = false)
+  public enum ToastAnimationType {
+    case slide
+    case pop
+    public static func == (a: NamiPairingFramework.ToastView.ToastAnimationType, b: NamiPairingFramework.ToastView.ToastAnimationType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum ToastType : Swift.Equatable {
+    case info
+    case success
+    case warning
+    case error
+    case systemImage(_: Swift.String, _: SwiftUICore.Color)
+    case image(_: Swift.String, _: SwiftUICore.Color)
+    case regular
+    public static func == (a: NamiPairingFramework.ToastView.ToastType, b: NamiPairingFramework.ToastView.ToastType) -> Swift.Bool
+  }
+  public enum AlertStyle : Swift.Equatable {
+    case style(backgroundColor: SwiftUICore.Color? = nil, titleColor: SwiftUICore.Color? = nil, subTitleColor: SwiftUICore.Color? = nil, titleFont: SwiftUICore.Font? = nil, subTitleFont: SwiftUICore.Font? = nil)
+    public static func == (a: NamiPairingFramework.ToastView.AlertStyle, b: NamiPairingFramework.ToastView.AlertStyle) -> Swift.Bool
+  }
+  @_Concurrency.MainActor @preconcurrency public var type: NamiPairingFramework.ToastView.ToastType
+  @_Concurrency.MainActor @preconcurrency public var title: Swift.String?
+  @_Concurrency.MainActor @preconcurrency public var subTitle: Swift.String?
+  @_Concurrency.MainActor @preconcurrency public var style: NamiPairingFramework.ToastView.AlertStyle?
+  @_Concurrency.MainActor @preconcurrency public var animationType: NamiPairingFramework.ToastView.ToastAnimationType?
+  @_Concurrency.MainActor @preconcurrency public var hideCloseButton: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  @available(iOS 13, macOS 11, *)
+  public typealias Body = @_opaqueReturnTypeOf("$s20NamiPairingFramework9ToastViewV4bodyQrvp", 0) __
 }
 @_Concurrency.MainActor @preconcurrency public struct NamiXMarkButton : SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public init(appearance: NamiPairingFramework.NamiXMarkButton.Appearance = .regular, diameter: CoreFoundation.CGFloat = 60, onTap: @escaping () -> Swift.Void)
@@ -5420,6 +5463,7 @@ public enum SetupGuideEvent : NamiPairingFramework.RemoteTemplatesUIControllerEv
   case variableUpdated(Swift.String, Swift.AnyHashable)
   case viewDismissed
   case pairingRequested(NamiPairingFramework.PlaceID, NamiPairingFramework.PlaceZoneID, NamiPairingFramework.RoomID, NamiPairingFramework.NamiDeviceType, Swift.String, NamiPairingFramework.OnPairingFinishedCallback)
+  case warning(NamiPairingFramework.SetupGuideError)
 }
 public enum PairingResultStatus {
   case succeeded(NamiPairingFramework.DeviceID)
@@ -6178,6 +6222,7 @@ public struct Icons {
   public static let eyeopen: SwiftUICore.Image
   public static let question: SwiftUICore.Image
   public static let warning: SwiftUICore.Image
+  public static let warningPurple: SwiftUICore.Image
   public static let wifi: SwiftUICore.Image
   public static let wifierror: SwiftUICore.Image
   public static let wifimedium: SwiftUICore.Image
@@ -6185,6 +6230,9 @@ public struct Icons {
   public static let greenTick: SwiftUICore.Image
   public static let xmark: SwiftUICore.Image
   public static let expand: SwiftUICore.Image
+  public static let info: SwiftUICore.Image
+  public static let infoBlue: SwiftUICore.Image
+  public static let redCross: SwiftUICore.Image
 }
 extension SwiftUICore.Color {
   public init(rgba: Swift.UInt)
@@ -8892,6 +8940,12 @@ extension NamiPairingFramework.ValueRepresentation : Swift.Hashable {}
 extension NamiPairingFramework.SplineGraph : Swift.Sendable {}
 extension NamiPairingFramework.CircleImageButton : Swift.Sendable {}
 extension NamiPairingFramework.RoundedRectContainerView : Swift.Sendable {}
+@available(iOS 13, macOS 11, *)
+extension NamiPairingFramework.ToastView : Swift.Sendable {}
+@available(iOS 13, macOS 11, *)
+extension NamiPairingFramework.ToastView.ToastAnimationType : Swift.Equatable {}
+@available(iOS 13, macOS 11, *)
+extension NamiPairingFramework.ToastView.ToastAnimationType : Swift.Hashable {}
 extension NamiPairingFramework.NamiXMarkButton : Swift.Sendable {}
 extension NamiPairingFramework.NamiXMarkButton.Appearance : Swift.Equatable {}
 extension NamiPairingFramework.NamiXMarkButton.Appearance : Swift.Hashable {}
