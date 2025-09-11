@@ -40,7 +40,7 @@ public class WordingManager : Foundation.ObservableObject {
   public init(wordings: any StandardPairingUI.WordingProtocol)
   public func setWordings(_ wordings: any StandardPairingUI.WordingProtocol)
   public func resetWordings()
-  public func updatePairingTitle(to newTitle: Swift.String)
+  public func updateKitNameTitle(to newTitle: Swift.String)
   public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @objc deinit
 }
@@ -54,7 +54,8 @@ public protocol WordingProtocol {
   var ok: Swift.String { get }
   var next: Swift.String { get }
   var cancel: Swift.String { get }
-  var pairingNavigationBarTitle: Swift.String { get set }
+  var pairingNavigationBarTitle: Swift.String { get }
+  var kitNameNavigationBarTitle: Swift.String { get set }
   func connectingToDevice(deviceName: Swift.String) -> Swift.String
   var basicSecuritySystem: Swift.String { get }
   var homeSecuritySystem: Swift.String { get }
@@ -215,6 +216,9 @@ extension StandardPairingUI.WordingProtocol {
     get
   }
   public var pairingNavigationBarTitle: Swift.String {
+    get
+  }
+  public var kitNameNavigationBarTitle: Swift.String {
     get
   }
   public func connectingToDevice(deviceName: Swift.String) -> Swift.String
