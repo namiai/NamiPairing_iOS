@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target x86_64-apple-ios16-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name StandardPairingUI
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Combine
 import Foundation
 import Lottie
@@ -650,7 +650,9 @@ extension NamiPairingFramework.Pairing.Error {
   public var localizedDescription: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getFAQLink(wordings: any StandardPairingUI.WordingProtocol) -> Swift.String?
+  #endif
 }
 public class ThemeManager : Foundation.ObservableObject {
   @Combine.Published @_projectedValueProperty($selectedTheme) public var selectedTheme: any StandardPairingUI.ThemeProtocol {
@@ -691,8 +693,12 @@ public protocol ThemeProtocol {
   var paragraph2: SwiftUICore.Font { get }
   var small1: SwiftUICore.Font { get }
   var small2: SwiftUICore.Font { get }
+  #if compiler(>=5.3) && $NonescapableTypes
   var navigationTitleColor: SwiftUICore.Color? { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   var navigationBarColor: SwiftUICore.Color? { get }
+  #endif
   var primaryActionButtonStyle: any SwiftUI.ButtonStyle { get }
   var secondaryActionButtonStyle: any SwiftUI.ButtonStyle { get }
   var tertiaryActionButtonStyle: any SwiftUI.ButtonStyle { get }
@@ -831,7 +837,9 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI20OtherWiFiNetworkViewV4bodyQrvp", 0) __
 }
 @_Concurrency.MainActor @preconcurrency public struct FinishingSetupView : SwiftUICore.View {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public init(title: Swift.String? = nil)
+  #endif
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
@@ -845,7 +853,9 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI0B15ErrorScreenViewV4bodyQrvp", 0) __
 }
 @_Concurrency.MainActor @preconcurrency public struct EnableCameraInSettingsView : SwiftUICore.View {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public init(deviceType: Swift.String? = nil)
+  #endif
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
