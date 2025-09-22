@@ -17,6 +17,9 @@ let package = Package(
             name: "NamiPairing-NoUI",
             targets: ["NamiPairingCore"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/airbnb/lottie-spm.git", .upToNextMajor(from: "4.4.3")),
+    ],
     targets: [
         .binaryTarget(
             name: "NamiPairingFramework",
@@ -26,7 +29,8 @@ let package = Package(
         .target(
             name: "NamiPairingCore",
             dependencies: [
-                "NamiPairingFramework"
+                "NamiPairingFramework",
+                .product(name: "Lottie", package: "lottie-spm")
             ],
             path: "Sources/NamiPairing/NamiPairingCore"
         ),
