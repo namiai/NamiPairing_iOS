@@ -833,9 +833,6 @@ final public class InMemoryStorage {
   @objc deinit
 }
 public enum SDKError : Swift.Error, Foundation.LocalizedError {
-  case missingPlaceId
-  case sessionNotActivated
-  case placeIdDoesntMatchSession
   case sessionActivateNoData
   case sessionActivateMalformedResponse(Foundation.Data)
   case roomUuidNotInTopology
@@ -974,6 +971,12 @@ extension NamiPairingFramework.NamiThreadOperationalDataset : NamiPairingFramewo
 }
 public struct PairingHelper {
 }
+public struct DeveloperParameters {
+  public let accessToken: NamiPairingFramework.AccessToken?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(accessToken: NamiPairingFramework.AccessToken? = nil)
+  #endif
+}
 public struct NamiSdkConfig : NamiPairingFramework.RemoteTemplateUIConfigProtocol {
   public init(baseURL: Foundation.URL, countryCode: Swift.String, measurementSystem: NamiPairingFramework.NamiMeasurementSystem, clientId: Swift.String, language: Swift.String, appearance: NamiPairingFramework.NamiAppearance)
   public var baseURL: Foundation.URL
@@ -984,7 +987,6 @@ public struct NamiSdkConfig : NamiPairingFramework.RemoteTemplateUIConfigProtoco
   public var appearance: NamiPairingFramework.NamiAppearance
   public var topologyRoomsSupported: Swift.Bool
 }
-public typealias PairingLocalStorage = NamiPairingFramework.DeviceConnectionsManagerStorageProtocol & NamiPairingFramework.RemoteTemplateStateRepositoryProtocol
 public class NamiPairing<Container> where Container : NamiPairingFramework.PairingStepsContainer {
   public typealias PairingParameters = NamiPairingFramework.Tomonari<Container>.PairingParameters
   public var api: NamiPairingFramework.WebAPI
@@ -994,24 +996,16 @@ public class NamiPairing<Container> where Container : NamiPairingFramework.Pairi
     get
   }
   public var setupGuideState: Combine.PassthroughSubject<NamiPairingFramework.SetupGuideEvent, any Swift.Error>
-  #if compiler(>=5.3) && $NonescapableTypes
-  public var sessionPlaceId: NamiPairingFramework.PlaceID? {
+  public var placeId: NamiPairingFramework.PlaceID {
     get
   }
-  #endif
-  public init<WiFiStorage, SecureStorage>(sessionCode: Swift.String, wifiStorage: WiFiStorage = InMemoryWiFiStorage(), threadDatasetStore: SecureStorage.Type = InMemoryThreadDatasetStorage.self) throws where WiFiStorage : NamiPairingFramework.PairingWiFiStorageProtocol, SecureStorage : NamiPairingFramework.ThreadSecureStorageProtocol
-  public init(api: NamiPairingFramework.WebAPI, localStorage: any NamiPairingFramework.DeviceConnectionsManagerStorageProtocol & NamiPairingFramework.RemoteTemplateStateRepositoryProtocol, wifiStorage: any NamiPairingFramework.PairingWiFiStorageProtocol, threadDatasetProvider: any NamiPairingFramework.PairingThreadOperationalDatasetProviderProtocol, deviceConnectionsManager: any NamiPairingFramework.DeviceConnectionsManagerProtocol)
-  convenience public init(tokenStore: any NamiPairingFramework.TokenStore, wifiStorage: any NamiPairingFramework.PairingWiFiStorageProtocol = InMemoryWiFiStorage())
+  public init<WiFiStorage, SecureStorage>(sessionCode: Swift.String, wifiStorage: WiFiStorage = InMemoryWiFiStorage(), threadDatasetStore: SecureStorage.Type = InMemoryThreadDatasetStorage.self, developerParameters: NamiPairingFramework.DeveloperParameters = DeveloperParameters()) throws where WiFiStorage : NamiPairingFramework.PairingWiFiStorageProtocol, SecureStorage : NamiPairingFramework.ThreadSecureStorageProtocol
   public func startPairing(roomId: Swift.String, deviceType: NamiPairingFramework.NamiDeviceType = .unknown, pairingSteps: Container, pairingParameters: NamiPairingFramework.NamiPairing<Container>.PairingParameters = .none) throws -> some SwiftUICore.View
-  
-  public func startPairing(placeId: NamiPairingFramework.PlaceID, zoneId: NamiPairingFramework.PlaceZoneID, roomId: NamiPairingFramework.RoomID, deviceType: NamiPairingFramework.NamiDeviceType = .unknown, pairingSteps: Container, pairingParameters: NamiPairingFramework.NamiPairing<Container>.PairingParameters = .none) -> some SwiftUICore.View
   
   public func startPositioning(deviceName: Swift.String, deviceUid: Swift.String, pairingSteps: Container, onPositioningEnded: @escaping (NamiPairingFramework.PositioningResult) -> Swift.Void) throws -> some SwiftUICore.View
   
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor public func presentEntryPoint(entrypoint: any NamiPairingFramework.RemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.PlaceID? = nil, config: NamiPairingFramework.NamiSdkConfig, pairingSteps: Container) throws -> some SwiftUICore.View
+  @_Concurrency.MainActor public func presentEntryPoint(entrypoint: any NamiPairingFramework.RemoteTemplateEntrypointProtocol, config: NamiPairingFramework.NamiSdkConfig, pairingSteps: Container) -> some SwiftUICore.View
   
-  #endif
   @objc deinit
 }
 extension NamiPairingFramework.RemoteTemplateUI_Zone {
