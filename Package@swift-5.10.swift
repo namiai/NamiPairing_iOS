@@ -12,10 +12,10 @@ let package = Package(
     products: [
         .library(
             name: "NamiPairing",
-            targets: ["NamiPairingCore", "StandardPairingUI"]),
+            targets: ["NamiPairingCore", "StandardPairingUI", "NamiPairingResources"]),
         .library(
             name: "NamiPairing-NoUI",
-            targets: ["NamiPairingCore"])
+            targets: ["NamiPairingCore", "NamiPairingResources"])
     ],
     dependencies: [
         .package(url: "https://github.com/airbnb/lottie-spm.git", .upToNextMajor(from: "4.4.3")),
@@ -30,6 +30,16 @@ let package = Package(
             .product(name: "Lottie", package: "lottie-spm"),
           ],
           path: "Sources/NamiPairing/NamiPairingCore"
+        ),
+        .target(
+          name: "NamiPairingResources",
+          path: "Sources/NamiPairing/NamiPairingResources",
+          resources: [
+            .copy("Resources/I18n_I18n.bundle"),
+            .copy("Resources/SharedAssets_SharedAssets.bundle"),
+            .copy("Resources/CommonTypes_CommonTypes.bundle"),
+            .copy("Resources/NamiSharedUIElements_NamiSharedUIElements.bundle")
+          ]
         ),
     ]
 )
