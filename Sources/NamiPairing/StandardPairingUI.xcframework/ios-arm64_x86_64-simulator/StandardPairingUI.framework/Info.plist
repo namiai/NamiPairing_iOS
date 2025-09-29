@@ -23,7 +23,7 @@
 		<string>iPhoneSimulator</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>202509290651</string>
+	<string>202509290716</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
@@ -37,9 +37,9 @@
 	<key>DTSDKName</key>
 	<string>iphonesimulator26.0</string>
 	<key>DTXcode</key>
-	<string>2601</string>
+	<string>2600</string>
 	<key>DTXcodeBuild</key>
-	<string>17A400</string>
+	<string>17A324</string>
 	<key>MinimumOSVersion</key>
 	<string>16</string>
 	<key>UIDeviceFamily</key>

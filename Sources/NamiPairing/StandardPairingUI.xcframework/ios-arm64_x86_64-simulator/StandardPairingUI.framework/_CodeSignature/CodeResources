@@ -14,11 +14,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		jQt0t7cx1ZMmAydESCbQIGrtsXk=
+		HwpZXUNZzcrnHb1pzBksL9A6Jdk=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		lhNqKJ2TE0qI9ExwCBDmu8k0nBI=
+		MjogBf4aqIjfxCMpa9CRpW2qB6s=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Ue/8OfmRECgcjZcYFt3PNnaDAvE=
+		bk6q+daKG04zYHXWQ/dVa3+2wsk=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		lhNqKJ2TE0qI9ExwCBDmu8k0nBI=
+		MjogBf4aqIjfxCMpa9CRpW2qB6s=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -54,93 +54,12 @@
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		47OycF8B6dQoov2r/MqMIUm5K0g=
+		O4JgJsTbR+bwJMt5hPuEo132ijc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		nKNglBJHk2lT0DlvspwlX7shkqA=
 		</data>
-		<key>cs.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			BcAsPOMJ1sgDGakzXdHxp6xZNRY=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>cs.lproj/Localizable.stringsdict</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			PWtDr6HkzD8HwxGdNBjXFQXxDl4=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en-US.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			pMSYezF0LTxJjDviMXuS/twXto0=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en-US.lproj/Localizable.stringsdict</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			5eOxN+96wxCVlfKWeO1ECUYt1OA=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>fr.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			eo7/NN9IeCOnTIw2vxsRHyWSyqQ=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>ja.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			hiO2rWCylcUL808jz5cSajjiskI=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>ja.lproj/Localizable.stringsdict</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ck0OlX56/ZWno/yE0+ouizp1PjQ=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>nl.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			SIPFR7YvAZUfoh1W/FZy/mHLiOw=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>nl.lproj/Localizable.stringsdict</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			iJLt430Cg0QnwFVnP/eSJy8YS4k=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -162,7 +81,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1EmgjJgBi66VBJXQLgKt5fK7V3LLogcvaEZsAvX5yDk=
+			dc/CRYE61MkMsw9Now2tB0i//hXUpwmIJ+PA8ruBi+E=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -190,14 +109,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OFSrzhby0CLkDo/hNF07ySzghIvuk3rdKNHYN7SRRno=
+			pxAzFjx9yXs4rffdxGB42c/047RATXaXQHLVUkPGWL4=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1EmgjJgBi66VBJXQLgKt5fK7V3LLogcvaEZsAvX5yDk=
+			dc/CRYE61MkMsw9Now2tB0i//hXUpwmIJ+PA8ruBi+E=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -225,7 +144,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VakW5Voi/HiUoJQLMfgH+Nj7SeX86AFpWEyJoKNmMDA=
+			JsYKhvOSCYgYC0sealwa6b/O3s83aPJJUgqzkr1HpSU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -234,87 +153,6 @@
 			<data>
 			PQyi2UfRNkLsF8qTSi87+Brh3+V1UvzEC5tCXGvfiEg=
 			</data>
-		</dict>
-		<key>cs.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			YEW2Q1s2yE/S9tvm8xs1I0KRKWnnU/W6gAxhSIVVCeQ=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>cs.lproj/Localizable.stringsdict</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			WkI74mtCI87f7s16x+r3siMgSQQCqW9M6qOX0ChmSUs=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en-US.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			89n/2rWzlaH7oJQZkzVZBsRcbeTLcUAfUzofRPQFOPo=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>en-US.lproj/Localizable.stringsdict</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			GQNw57ZeD2gC0mGL9zym943g6Qc0lwBJOr1mqxN7SvA=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>fr.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			oBLwWljvNkam/wSQRzIpR6PyxAMKwWx/WsM32kptuUg=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>ja.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			f2aZqJ5RoUI/WOn1dG2GQBcc2wSWQL7G+ethyD5g6s8=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>ja.lproj/Localizable.stringsdict</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			8iIbjRbKx/URVcyEN+qQzxqRexqK768W2B6FruiC7D8=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>nl.lproj/Localizable.strings</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			vytQzPPNT9z1fLMkmijFIDOzyaMrVrSQaTVAM31rKmg=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>nl.lproj/Localizable.stringsdict</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			vph4msUKjlZD2CzpN5cxchakbQKgGx4KVUbw7SB7bnA=
-			</data>
-			<key>optional</key>
-			<true/>
 		</dict>
 	</dict>
 	<key>rules</key>
