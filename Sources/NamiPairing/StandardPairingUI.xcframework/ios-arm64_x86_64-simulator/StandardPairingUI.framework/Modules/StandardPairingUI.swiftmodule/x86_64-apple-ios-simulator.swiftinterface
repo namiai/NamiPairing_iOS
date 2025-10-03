@@ -650,6 +650,9 @@ extension NamiPairingFramework.Pairing.Error {
   public var localizedDescription: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getFAQLink(wordings: any StandardPairingUI.WordingProtocol) -> Swift.String?
+  #endif
 }
 public class ThemeManager : Foundation.ObservableObject {
   @Combine.Published @_projectedValueProperty($selectedTheme) public var selectedTheme: any StandardPairingUI.ThemeProtocol {
@@ -806,7 +809,6 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17HowToPositionViewV4bodyQrvp", 0) __
 }
-public typealias Animations = NamiPairingFramework.Animations
 @_Concurrency.MainActor @preconcurrency public struct AnimationView : SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
