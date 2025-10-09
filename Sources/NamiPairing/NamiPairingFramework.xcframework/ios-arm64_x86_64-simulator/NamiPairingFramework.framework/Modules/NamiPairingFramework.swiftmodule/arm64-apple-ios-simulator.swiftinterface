@@ -2338,6 +2338,7 @@ public protocol SecureStorageProtocol {
   #endif
   static func delete(at key: Swift.String, server: Swift.String)
 }
+public typealias NamiI18n = NamiPairingFramework.I18n
 public enum I18n {
   public static let accountLinkingAuthorizeSignInRequest: Swift.String
   public static let accountLinkingDidYouMakeThisRequest: Swift.String
@@ -2701,6 +2702,7 @@ public enum I18n {
   public static let deviceSetupActivitySensors: Swift.String
   public static let deviceSetupAlarmPod: Swift.String
   public static let deviceSetupContactSensor: Swift.String
+  public static let deviceSetupKeypad: Swift.String
   public static let deviceSetupMotionSensor: Swift.String
   public static let deviceSetupOthers: Swift.String
   public static let deviceSetupSecurityPod: Swift.String
