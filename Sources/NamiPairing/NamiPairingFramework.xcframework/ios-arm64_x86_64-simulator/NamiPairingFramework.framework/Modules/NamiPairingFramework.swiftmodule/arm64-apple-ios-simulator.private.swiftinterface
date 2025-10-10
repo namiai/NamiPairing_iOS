@@ -5705,7 +5705,7 @@ public enum NamiTextHyperLinkHelpers {
 }
 extension SwiftUICore.View {
   #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public func dynamicBottomSheet<SheetContent>(isPresented: SwiftUICore.Binding<Swift.Bool>, dragIndicatorVisible: Swift.Bool = false, onDismiss: SwiftUICore.Binding<(() -> Swift.Void)?>, backgroundColor: SwiftUICore.Binding<SwiftUICore.Color> = .constant(.white), @SwiftUICore.ViewBuilder content: @escaping () -> SheetContent) -> some SwiftUICore.View where SheetContent : SwiftUICore.View
+  @_Concurrency.MainActor @preconcurrency public func dynamicBottomSheet<SheetContent>(isPresented: SwiftUICore.Binding<Swift.Bool>, dragIndicatorVisible: Swift.Bool = false, onDismiss: SwiftUICore.Binding<(() -> Swift.Void)?>, backgroundColor: SwiftUICore.Color = .white, @SwiftUICore.ViewBuilder content: @escaping () -> SheetContent) -> some SwiftUICore.View where SheetContent : SwiftUICore.View
   
   #endif
 }
@@ -7222,6 +7222,20 @@ public struct WiDarControlMessage : NamiPairingFramework.DeviceControlMessagePro
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct WifiSensingControlMessage : NamiPairingFramework.DeviceControlMessageProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(reportCsi: Swift.Bool? = nil, motionReportingMode: NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.MotionReportingMode? = nil)
+  #endif
+  public var messageType: Swift.String {
+    get
+  }
+  public var data: Foundation.Data {
+    get
+  }
+  public func encode() throws -> Foundation.Data
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 public struct ThreadCredentialsMessage : Swift.Codable, Swift.Equatable, NamiPairingFramework.ThreadCredentialsMessageProtocol {
   public var panId: Swift.UInt16
   public var extendedPanId: Foundation.Data
@@ -7332,6 +7346,26 @@ public struct StateMessage {
       public var batteryState: NamiPairingFramework.StateMessage.EndpointState.PowerSupplyInfo.BatteryState
       public var batteryValue: Swift.UInt32
     }
+    public struct MotionSensingConfig {
+      public enum MotionReportingMode : Swift.CaseIterable, Swift.Hashable, Swift.Codable {
+        case unspecified
+        case mode1s
+        case mode20s
+        public static func == (a: NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.MotionReportingMode, b: NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.MotionReportingMode) -> Swift.Bool
+        public typealias AllCases = [NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.MotionReportingMode]
+        nonisolated public static var allCases: [NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.MotionReportingMode] {
+          get
+        }
+        public func encode(to encoder: any Swift.Encoder) throws
+        public func hash(into hasher: inout Swift.Hasher)
+        public var hashValue: Swift.Int {
+          get
+        }
+        public init(from decoder: any Swift.Decoder) throws
+      }
+      public var reportCsi: Swift.Bool
+      public var motionReportingMode: NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.MotionReportingMode
+    }
     public var onOff: NamiPairingFramework.StateMessage.EndpointState.OnOff
     public var warning: NamiPairingFramework.StateMessage.EndpointState.Warning
     public var colorControl: NamiPairingFramework.StateMessage.EndpointState.ColorControl?
@@ -7343,6 +7377,7 @@ public struct StateMessage {
     public var doorSensorState: NamiPairingFramework.StateMessage.EndpointState.DoorSensorState?
     public var doorSensorTemprered: Swift.Bool?
     public var powerSupplyInfo: NamiPairingFramework.StateMessage.EndpointState.PowerSupplyInfo?
+    public var motionSensingConfig: NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig?
   }
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(serializedData: Foundation.Data)

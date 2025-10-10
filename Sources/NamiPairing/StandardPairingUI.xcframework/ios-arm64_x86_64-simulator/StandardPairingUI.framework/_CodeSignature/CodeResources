@@ -14,11 +14,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		2Q0Mq3d6i1liWZPD0RaKL49Tkz0=
+		7WwU+8CW4bysw+Qjsi4gcuoHjU0=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		OTD32vPyY7tMbzQKB5RpkK2AFOM=
+		gEjv9RgGwEtcV5o7Wosl9P73S0I=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		OTD32vPyY7tMbzQKB5RpkK2AFOM=
+		gEjv9RgGwEtcV5o7Wosl9P73S0I=
 		</data>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -81,7 +81,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qLXyW7DxkoBnq79om1iu6VdSWNPnHAqoqfPGfePUPLU=
+			UVIxzZw63BAGJOurWLfdPJxut3SyzViTeRbJrMjTlqU=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -116,7 +116,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qLXyW7DxkoBnq79om1iu6VdSWNPnHAqoqfPGfePUPLU=
+			UVIxzZw63BAGJOurWLfdPJxut3SyzViTeRbJrMjTlqU=
 			</data>
 		</dict>
 		<key>Modules/StandardPairingUI.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
