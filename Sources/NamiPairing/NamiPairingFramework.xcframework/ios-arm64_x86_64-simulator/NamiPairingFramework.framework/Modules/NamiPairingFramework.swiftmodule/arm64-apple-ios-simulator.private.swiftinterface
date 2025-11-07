@@ -2754,6 +2754,7 @@ public enum I18n {
   public static let deviceSetupOthers: Swift.String
   public static let deviceSetupSecurityPod: Swift.String
   public static let deviceSetupSensePlug: Swift.String
+  public static let deviceSetupSensePod: Swift.String
   public static let deviceSetupWidarSensor: Swift.String
   public static let deviceSetupWifiSensor: Swift.String
   public static let deviceTypeSelectionAccessoriesWarning: Swift.String
