@@ -1184,6 +1184,7 @@ public enum NamiDeviceCapability : Swift.Equatable {
   public static var devkit: [NamiPairingFramework.NamiDeviceCapability]
   public static var pod: [NamiPairingFramework.NamiDeviceCapability]
   public static var alarmPod: [NamiPairingFramework.NamiDeviceCapability]
+  public static var sensePod: [NamiPairingFramework.NamiDeviceCapability]
   public static var contactSensor: [NamiPairingFramework.NamiDeviceCapability]
   public static var motionSensor: [NamiPairingFramework.NamiDeviceCapability]
   public static var keypad: [NamiPairingFramework.NamiDeviceCapability]
@@ -1578,6 +1579,7 @@ public enum NamiDeviceType : Swift.CaseIterable {
   case meshSensor
   case securityPod
   case alarmPod
+  case sensePod
   case wifiSensor
   case keypad
   case widarSensor
@@ -4408,7 +4410,7 @@ final public class Tomonari<Container> where Container : NamiPairingFramework.Pa
   public typealias DevicePairingStatePublisher = Combine.PassthroughSubject<NamiPairingFramework.Tomonari<Container>.DevicePairingState, any Swift.Error>
   public struct PairingParameters : Swift.Equatable {
     #if compiler(>=5.3) && $NonescapableTypes
-    public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentials: Swift.Bool = false, bssid: Foundation.Data? = nil, countryCode: Swift.String? = nil)
+    public init(qrCode: NamiPairingFramework.NamiQRCode? = nil, updateWiFiCredentials: Swift.Bool = false, bssid: Foundation.Data? = nil, countryCode: Swift.String? = nil, deviceName: Swift.String? = nil)
     #endif
     #if compiler(>=5.3) && $NonescapableTypes
     @available(*, deprecated, message: "`updateWiFiCredentialsSessionId` is deprecated. We are dropping the 'update session' logic.\nUpdates are now volatile: once the user exits the flow, the state resets and they can retry updating all devices.\nTomonari (library) and backend no longer persist which devices were updated. Use `updateWiFiCredentials` instead.")
@@ -4435,6 +4437,9 @@ final public class Tomonari<Container> where Container : NamiPairingFramework.Pa
       get
     }
     public var countryCode: Swift.String? {
+      get
+    }
+    public var deviceName: Swift.String? {
       get
     }
     public static func == (a: NamiPairingFramework.Tomonari<Container>.PairingParameters, b: NamiPairingFramework.Tomonari<Container>.PairingParameters) -> Swift.Bool
@@ -5614,7 +5619,7 @@ public enum SetupGuideEvent : NamiPairingFramework.RemoteTemplatesUIControllerEv
   case variableUpdated(Swift.String, Swift.AnyHashable)
   case viewDismissed
   case pairingRequested(NamiPairingFramework.PlaceID, NamiPairingFramework.PlaceZoneID, NamiPairingFramework.RoomID, NamiPairingFramework.NamiDeviceType, Swift.String, NamiPairingFramework.OnPairingFinishedCallback)
-  case updateWiFiCredsRequested(NamiPairingFramework.PlaceID, NamiPairingFramework.PlaceZoneID, NamiPairingFramework.RoomID, NamiPairingFramework.NamiDeviceType, NamiPairingFramework.CountryCode, NamiPairingFramework.ZoneBSSID?, NamiPairingFramework.OnPairingFinishedCallback)
+  case updateWiFiCredsRequested(NamiPairingFramework.PlaceID, NamiPairingFramework.PlaceZoneID, NamiPairingFramework.RoomID, NamiPairingFramework.NamiDeviceType, NamiPairingFramework.CountryCode, NamiPairingFramework.ZoneBSSID?, Swift.String?, NamiPairingFramework.OnPairingFinishedCallback)
   case warning(NamiPairingFramework.SetupGuideError)
 }
 public enum PairingResultStatus {
@@ -6983,6 +6988,19 @@ extension Lottie.LottieAnimation {
   final public func animationView(looping: Lottie.LottieLoopMode = .loop) -> some SwiftUICore.View
   
 }
+public enum BonjourBrowserStatus : Swift.Equatable {
+  case ready
+  case searching
+  case failed(NamiPairingFramework.BonjourBrowserError)
+  public static func == (a: NamiPairingFramework.BonjourBrowserStatus, b: NamiPairingFramework.BonjourBrowserStatus) -> Swift.Bool
+}
+public enum BonjourBrowserError : Swift.Error, Swift.Equatable {
+  case permissionDenied
+  case notPermitted
+  case defunctConnection
+  case other(Swift.String)
+  public static func == (a: NamiPairingFramework.BonjourBrowserError, b: NamiPairingFramework.BonjourBrowserError) -> Swift.Bool
+}
 public struct NamiDevicesEndpoint : Swift.Hashable {
   public init(uid: NamiPairingFramework.DeviceUniversalID, endpoint: Network.NWEndpoint, isAccessible: Swift.Bool = true)
   #if compiler(>=5.3) && $NonescapableTypes
@@ -6999,12 +7017,15 @@ public struct NamiDevicesEndpoint : Swift.Hashable {
 }
 public protocol BonjourServiceDiscoveryProtocol : AnyObject {
   static func subscribeOnResults(for service: Swift.String) -> NamiPairingFramework.BonjourPublisher
+  static func subscribeOnStatus(for service: Swift.String) -> NamiPairingFramework.BonjourStatusPublisher
 }
 @_hasMissingDesignatedInitializers final public class BonjourServiceDiscovery : NamiPairingFramework.BonjourServiceDiscoveryProtocol {
   public static func subscribeOnResults(for service: Swift.String) -> NamiPairingFramework.BonjourPublisher
+  public static func subscribeOnStatus(for service: Swift.String) -> NamiPairingFramework.BonjourStatusPublisher
   @objc deinit
 }
 public typealias BonjourPublisher = Combine.AnyPublisher<Swift.Set<NamiPairingFramework.NamiDevicesEndpoint>, any Swift.Error>
+public typealias BonjourStatusPublisher = Combine.AnyPublisher<NamiPairingFramework.BonjourBrowserStatus, Swift.Never>
 extension Combine.AnyPublisher where Output == Swift.Set<NamiPairingFramework.NamiDevicesEndpoint>, Failure == any Swift.Error {
   #if compiler(>=5.3) && $NonescapableTypes
   public func endpoint(for uid: NamiPairingFramework.DeviceUniversalID) -> Combine.AnyPublisher<NamiPairingFramework.NamiDevicesEndpoint?, any Swift.Error>
@@ -7029,6 +7050,9 @@ public class DeviceConnectionsManager<Storage, API> : NamiPairingFramework.Devic
   final public let publisher: Combine.PassthroughSubject<NamiPairingFramework.NamiDeviceObservation, Swift.Never>
   public func deviceStateRequest(to device: NamiPairingFramework.DeviceUniversalID, connectedIn placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Foundation.Data, any Swift.Error>
   public func devicesStateRequest(connectedIn placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[Foundation.Data], any Swift.Error>
+  public enum PlaceThreadCredentialsAcquisitionError : Swift.Error {
+    case allChecksFailed([any Swift.Error])
+  }
   public func threadCredentialsRequest(to deviceUid: NamiPairingFramework.DeviceUniversalID, connectedIn placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<any NamiPairingFramework.ThreadCredentialsMessageProtocol, any Swift.Error>
   public func threadCredentialsRequest(connectedIn placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[any NamiPairingFramework.ThreadCredentialsMessageProtocol], any Swift.Error>
   public func sendControlMessage(_ controlMessage: any NamiPairingFramework.DeviceControlMessageProtocol, for capability: NamiPairingFramework.NamiDeviceCapability, uid: NamiPairingFramework.DeviceUniversalID, in placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<any NamiPairingFramework.DevicesCommandResponseProtocol, any Swift.Error>
@@ -7155,7 +7179,7 @@ public struct WiDarControlMessage : NamiPairingFramework.DeviceControlMessagePro
 }
 public struct WifiSensingControlMessage : NamiPairingFramework.DeviceControlMessageProtocol {
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(reportCsi: Swift.Bool? = nil, motionReportingMode: NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.MotionReportingMode? = nil)
+  public init(reportCsi: Swift.Bool? = nil, motionReportingMode: NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.MotionReportingMode? = nil, sensingPeers: NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.SensingPeers? = nil)
   #endif
   public var messageType: Swift.String {
     get
@@ -7278,6 +7302,30 @@ public struct StateMessage {
       public var batteryValue: Swift.UInt32
     }
     public struct MotionSensingConfig {
+      public struct SensingPeers : Swift.Codable {
+        public struct Peer : Swift.Codable {
+          public enum Config : Swift.Codable {
+            case AerialEngineV1(NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.SensingPeers.Peer.AEMotionV1Config)
+            public func encode(to encoder: any Swift.Encoder) throws
+            public init(from decoder: any Swift.Decoder) throws
+          }
+          public struct AEMotionV1Config : Swift.Codable {
+            public var reportActivityLevels: Swift.Bool
+            public init(reportActivityLevels: Swift.Bool)
+            public func encode(to encoder: any Swift.Encoder) throws
+            public init(from decoder: any Swift.Decoder) throws
+          }
+          public var conf: NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.SensingPeers.Peer.Config
+          public var wifiMac: Swift.UInt64
+          public init(conf: NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.SensingPeers.Peer.Config, wifiMac: Swift.UInt64)
+          public func encode(to encoder: any Swift.Encoder) throws
+          public init(from decoder: any Swift.Decoder) throws
+        }
+        public var peers: [NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.SensingPeers.Peer]
+        public init(peers: [NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.SensingPeers.Peer])
+        public func encode(to encoder: any Swift.Encoder) throws
+        public init(from decoder: any Swift.Decoder) throws
+      }
       public enum MotionReportingMode : Swift.CaseIterable, Swift.Hashable, Swift.Codable {
         case unspecified
         case mode1s
@@ -7296,6 +7344,7 @@ public struct StateMessage {
       }
       public var reportCsi: Swift.Bool
       public var motionReportingMode: NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.MotionReportingMode
+      public var sensingPeers: NamiPairingFramework.StateMessage.EndpointState.MotionSensingConfig.SensingPeers
     }
     public var onOff: NamiPairingFramework.StateMessage.EndpointState.OnOff
     public var warning: NamiPairingFramework.StateMessage.EndpointState.Warning
