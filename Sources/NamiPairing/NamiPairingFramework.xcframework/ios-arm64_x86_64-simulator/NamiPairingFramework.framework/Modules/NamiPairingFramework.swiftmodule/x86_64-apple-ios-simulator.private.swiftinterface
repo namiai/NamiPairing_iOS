@@ -6420,6 +6420,11 @@ public class Animations {
   }
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
+  public var sensePodPulseDarkBlue: Lottie.LottieAnimation! {
+    get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var sensePlugDEPulseDarkBlue: Lottie.LottieAnimation! {
     get
   }

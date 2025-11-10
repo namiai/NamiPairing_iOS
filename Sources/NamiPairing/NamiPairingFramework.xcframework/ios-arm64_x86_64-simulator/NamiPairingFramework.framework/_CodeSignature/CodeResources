@@ -18,15 +18,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		buBuLm2ICYSY+WLtJLRxMbR51M4=
+		iWd1t6Y1npsKbiWSFnkqKtZhZQI=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		4Q3y3S2xeR+W1oqoXlYIAdW0HCs=
+		coEwFCtt98A3x+CatxJAkVIBLg8=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		lnKomghN1NYUy51HjJeydKRTgg0=
+		zhT0NE8vjg8xGdN6KhBbv01jxKg=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -34,19 +34,19 @@
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		lnKomghN1NYUy51HjJeydKRTgg0=
+		zhT0NE8vjg8xGdN6KhBbv01jxKg=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		slOLAUQG9bXQQ4/VU9omgb8vBcg=
+		S6nX9povcQIsbR1LvKgmF2dr4I4=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		4Q3y3S2xeR+W1oqoXlYIAdW0HCs=
+		coEwFCtt98A3x+CatxJAkVIBLg8=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		vLuMx3SlM424bmvIetHlkoIXtag=
+		6z7dAhO07lxVRFOqqEB10KCfQHs=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		vLuMx3SlM424bmvIetHlkoIXtag=
+		6z7dAhO07lxVRFOqqEB10KCfQHs=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		aBcWB1i0xgjv2iJhAXqv9l7DHHo=
+		xZAv7rIcsf4jUPGEq7FbeelpySY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -87,6 +87,10 @@
 		<key>Pulse Dark Blue_SensePlug US.json</key>
 		<data>
 		Nr4+MAPXp7RsZzr/pP9sy5MBsf0=
+		</data>
+		<key>Pulse Dark Blue_SensePod.json</key>
+		<data>
+		sgqB2A25gs0WP9VCBjDhh+cwrLs=
 		</data>
 		<key>Pulse Dark Blue_WiDAR.json</key>
 		<data>
@@ -330,6 +334,10 @@
 		<data>
 		Q85DlnTswh2/DdRjHBWV2O6q2aA=
 		</data>
+		<key>sensePod_qr_all.webp</key>
+		<data>
+		ilezSxQtu4Vo5m+0JebaE7f0ev8=
+		</data>
 		<key>sentinel_plug_de.webp</key>
 		<data>
 		WaQc/WLthF/lLHIvN8M2m7Aw9HE=
@@ -400,7 +408,7 @@
 		</data>
 		<key>thread_sensepod.webp</key>
 		<data>
-		3I8t2B5FfqcQp8DgKVY9myiJioQ=
+		hTr3EP2Gqq4RSkcoeJpyvK1RRiY=
 		</data>
 		<key>thread_sentinel_plug_de.webp</key>
 		<data>
@@ -486,14 +494,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8AoVHvhQhrEwcGxjpfqB9NzJ3PLCndWLAkJ0NgLjF64=
+			4YDDHd3xYbUpMogfS1iU0mYap4bSOO69rN++5smWwyM=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VAb+73INia87He0IMqYvEvQT5bRFAiQYY4VytPoUy1k=
+			4VdJBaerAJvHeUYoQb+xrZ51tgZGC1HuWN0mkLZhXBc=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -507,28 +515,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VAb+73INia87He0IMqYvEvQT5bRFAiQYY4VytPoUy1k=
+			4VdJBaerAJvHeUYoQb+xrZ51tgZGC1HuWN0mkLZhXBc=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WWLMr2GkkXO34rX/vKrMS23A9k3E4CzQUahDisp3hec=
+			mP3qdRr9Nox4pxBrNbb7Ip28VHo0HhyzdDf42uitE+Y=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8AoVHvhQhrEwcGxjpfqB9NzJ3PLCndWLAkJ0NgLjF64=
+			4YDDHd3xYbUpMogfS1iU0mYap4bSOO69rN++5smWwyM=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pYx9XIK2Eplrpwh6JQy1OLfX5sPmiBSuVI7YGFjuNKI=
+			8/qJrcWcHIwruXFU6xgw74iv2xYQYgieuYKudksFZZ4=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -542,14 +550,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pYx9XIK2Eplrpwh6JQy1OLfX5sPmiBSuVI7YGFjuNKI=
+			8/qJrcWcHIwruXFU6xgw74iv2xYQYgieuYKudksFZZ4=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XtcfoJ0fI/MaUAZxH3ronspQoBsBhvv4WVzw7Q9aS3o=
+			VnWGOKz6OycdYRy0HugV/7pRDGcq/eSpigjbnmjAN9k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -599,6 +607,13 @@
 			<key>hash2</key>
 			<data>
 			Q6w+PpDrKWxX2dUhii+Qqg/z4h4VtO+16l82RHAV0hI=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_SensePod.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lDIDe5mDklrYYLWv3BTShanPJZl2gLweMv3O49sbZH8=
 			</data>
 		</dict>
 		<key>Pulse Dark Blue_WiDAR.json</key>
@@ -930,6 +945,13 @@
 			EjASbIu3zY/hvNtPJeUgd5azEFDN/m1ogWJYgBnR8rg=
 			</data>
 		</dict>
+		<key>sensePod_qr_all.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fMkc5ShMx94DXhLv0kBEIdoDEz47P7qMwyP6CG5EIOc=
+			</data>
+		</dict>
 		<key>sentinel_plug_de.webp</key>
 		<dict>
 			<key>hash2</key>
@@ -1053,7 +1075,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			co+lOY5ZW7j/qDRkRMKumV4+ikHCUEuu9d4YR3HAzcQ=
+			mNeYFs8mkCW96lHjoPlMcaRsfXb5QD4smT6i240M4lM=
 			</data>
 		</dict>
 		<key>thread_sentinel_plug_de.webp</key>
