@@ -737,11 +737,6 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public var otherWiFiNetwork: (NamiPairingFramework.OtherWiFiNetwork.ViewModel) -> StandardPairingUI.OtherWiFiNetworkView
   public var enterWiFiPassword: (NamiPairingFramework.EnterWiFiPassword.ViewModel) -> StandardPairingUI.EnterWiFiPasswordView
   public var finishingSetup: (Swift.String) -> StandardPairingUI.FinishingSetupView
-  public var howToPosition: (NamiPairingFramework.HowToPosition.ViewModel) -> StandardPairingUI.HowToPositionView
-  public var initialPositioningScreen: (NamiPairingFramework.InitialScreen.ViewModel) -> StandardPairingUI.InitialScreenView
-  public var positioningGuidance: (NamiPairingFramework.PositioningGuidance.ViewModel) -> StandardPairingUI.PositioningGuidanceView
-  public var positioningComplete: (NamiPairingFramework.PositioningComplete.ViewModel) -> StandardPairingUI.PositioningCompleteView
-  public var positionError: (NamiPairingFramework.ErrorScreen.ViewModel) -> StandardPairingUI.ErrorScreenView
   public var pairingError: (NamiPairingFramework.PairingErrorScreen.ViewModel) -> StandardPairingUI.PairingErrorScreenView
   public var backButton: () -> NamiPairingFramework.CircleButton?
   public typealias BackButtonView = NamiPairingFramework.CircleButton
@@ -749,14 +744,9 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public typealias ViewForEnableCameraInSettings = StandardPairingUI.EnableCameraInSettingsView
   public typealias ViewForEnterWiFiPassword = StandardPairingUI.EnterWiFiPasswordView
   public typealias ViewForFinishingSetup = StandardPairingUI.FinishingSetupView
-  public typealias ViewForHowToPosition = StandardPairingUI.HowToPositionView
-  public typealias ViewForInitialPositioningScreen = StandardPairingUI.InitialScreenView
   public typealias ViewForListWiFiNetworks = StandardPairingUI.ListWiFiNetworksView
   public typealias ViewForOtherWiFiNetwork = StandardPairingUI.OtherWiFiNetworkView
   public typealias ViewForPairingError = StandardPairingUI.PairingErrorScreenView
-  public typealias ViewForPositioningComplete = StandardPairingUI.PositioningCompleteView
-  public typealias ViewForPositioningErrorScreen = StandardPairingUI.ErrorScreenView
-  public typealias ViewForPositioningGuidance = StandardPairingUI.PositioningGuidanceView
   public typealias ViewForPowerOnAndScanning = StandardPairingUI.PowerOnAndScanningView
   public typealias ViewForQRCodeScanner = StandardPairingUI.QRScannerView
 }
@@ -780,47 +770,6 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI24BluetoothDeviceFoundViewV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct ErrorScreenView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.ErrorScreen.ViewModel)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI15ErrorScreenViewV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct PositioningCompleteView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.PositioningComplete.ViewModel)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23PositioningCompleteViewV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct InitialScreenView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.InitialScreen.ViewModel)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17InitialScreenViewV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct HowToPositionView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.HowToPosition.ViewModel)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17HowToPositionViewV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct AnimationView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI13AnimationViewV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct PositioningGuidanceView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.PositioningGuidance.ViewModel)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23PositioningGuidanceViewV4bodyQrvp", 0) __
 }
 @_Concurrency.MainActor @preconcurrency public struct EnterWiFiPasswordView : SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.EnterWiFiPassword.ViewModel)
@@ -883,12 +832,6 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
 extension StandardPairingUI.QRScannerView : Swift.Sendable {}
 extension StandardPairingUI.PowerOnAndScanningView : Swift.Sendable {}
 extension StandardPairingUI.BluetoothDeviceFoundView : Swift.Sendable {}
-extension StandardPairingUI.ErrorScreenView : Swift.Sendable {}
-extension StandardPairingUI.PositioningCompleteView : Swift.Sendable {}
-extension StandardPairingUI.InitialScreenView : Swift.Sendable {}
-extension StandardPairingUI.HowToPositionView : Swift.Sendable {}
-extension StandardPairingUI.AnimationView : Swift.Sendable {}
-extension StandardPairingUI.PositioningGuidanceView : Swift.Sendable {}
 extension StandardPairingUI.EnterWiFiPasswordView : Swift.Sendable {}
 extension StandardPairingUI.OtherWiFiNetworkView : Swift.Sendable {}
 extension StandardPairingUI.FinishingSetupView : Swift.Sendable {}

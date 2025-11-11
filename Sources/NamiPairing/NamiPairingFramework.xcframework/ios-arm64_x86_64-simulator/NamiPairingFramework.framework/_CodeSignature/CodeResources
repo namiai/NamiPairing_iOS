@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		9XG+WZekcYoXm5Qg5NVAvt4Cfg0=
+		Wwk+0KGVFjciSRc5pD6meWWDVdM=
 		</data>
 		<key>Headers/NamiPairingFramework-Swift.h</key>
 		<data>
@@ -18,47 +18,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		/RROhw6WtDSTGTvJcOhm9JyorFQ=
+		FaFW1Pf4C7OJCoKDSvrnbMSLp58=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		iTmhnoz5LFfiC2tbtN/llPvn5hQ=
+		coEwFCtt98A3x+CatxJAkVIBLg8=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		KkodMbI13/1un83BRPuaDkRjMyE=
+		zhT0NE8vjg8xGdN6KhBbv01jxKg=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		LUCNFklLmHE7MvxRYQESopBs1cA=
+		ltZsqzJk7HLYxXLNzSeLj5mvth8=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		KkodMbI13/1un83BRPuaDkRjMyE=
+		zhT0NE8vjg8xGdN6KhBbv01jxKg=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		xYN/5UoCqxNlmEDw6Mgi46gmJtg=
+		S6nX9povcQIsbR1LvKgmF2dr4I4=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		iTmhnoz5LFfiC2tbtN/llPvn5hQ=
+		coEwFCtt98A3x+CatxJAkVIBLg8=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		/Q0FenxDWSu+z/BazYuMNMH8UCI=
+		6z7dAhO07lxVRFOqqEB10KCfQHs=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Bvg4dbmYjUp9HEZ1D4TfbfMdYec=
+		35+I8d9e1pkS9IvpqG2+k4R+2IM=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		/Q0FenxDWSu+z/BazYuMNMH8UCI=
+		6z7dAhO07lxVRFOqqEB10KCfQHs=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		LaOlxGjrxrllTkWD+X0JBZhVlmo=
+		xZAv7rIcsf4jUPGEq7FbeelpySY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -87,6 +87,10 @@
 		<key>Pulse Dark Blue_SensePlug US.json</key>
 		<data>
 		Nr4+MAPXp7RsZzr/pP9sy5MBsf0=
+		</data>
+		<key>Pulse Dark Blue_SensePod.json</key>
+		<data>
+		sgqB2A25gs0WP9VCBjDhh+cwrLs=
 		</data>
 		<key>Pulse Dark Blue_WiDAR.json</key>
 		<data>
@@ -136,20 +140,20 @@
 		<data>
 		pgLzbzsyTuTA9RKgiymJgV4veYI=
 		</data>
-		<key>cs.lproj/Localizable.strings</key>
+		<key>de.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JEgTVLWdcA/rlwuNTS0cv4tLMm0=
+			4gM4tGr0rWaFv0cIPrIHS+GheGs=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>cs.lproj/Localizable.stringsdict</key>
+		<key>de.lproj/Localizable.stringsdict</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PWtDr6HkzD8HwxGdNBjXFQXxDl4=
+			zmV6UqBSo6r1NOz798vd5O4zTBA=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -162,7 +166,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TmWnlYxTSKyXbb6Fh7aOShbBuF8=
+			z7mJ5a3lU5HMC0TXdLBmkw6gU3g=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -180,7 +184,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hX6W0Yazq+KJ9vY2JvIL5iUaQWE=
+			lzkmSzJbHTCqc0HS3SbXaP7/Rhw=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -206,7 +210,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			b4A+KCDdrYg6Ed4yg2ok+B35oxE=
+			rP7AjdK1PvN0I509J07kuzQZxG0=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -224,7 +228,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			El2QftPA/1BNgtOXlI2Aze6lp+w=
+			DLtuZQxmz7eup9X++3H5cgp1hQ8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -258,7 +262,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Zn0BVkRMO2StjVWeWk+eQ+uLayo=
+			iPOTO3DhT8gxxWuTiiwbUbSA0Qk=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -276,6 +280,24 @@
 		<data>
 		VVrMpwEJM7CpsYgntGgDLTG0BTo=
 		</data>
+		<key>pl.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			D4qu1ccGXsCtUNQOrPpxsWy/JgA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>pl.lproj/Localizable.stringsdict</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			zmV6UqBSo6r1NOz798vd5O4zTBA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>preview_thread_sentinel_plug_de.webp</key>
 		<data>
 		wD7m29515ZF5ZU4ILowRKPEy2v4=
@@ -311,6 +333,10 @@
 		<key>sensePlug_qr_US.webp</key>
 		<data>
 		Q85DlnTswh2/DdRjHBWV2O6q2aA=
+		</data>
+		<key>sensePod_qr_all.webp</key>
+		<data>
+		ilezSxQtu4Vo5m+0JebaE7f0ev8=
 		</data>
 		<key>sentinel_plug_de.webp</key>
 		<data>
@@ -380,6 +406,10 @@
 		<data>
 		3I8t2B5FfqcQp8DgKVY9myiJioQ=
 		</data>
+		<key>thread_sensepod.webp</key>
+		<data>
+		hTr3EP2Gqq4RSkcoeJpyvK1RRiY=
+		</data>
 		<key>thread_sentinel_plug_de.webp</key>
 		<data>
 		wD7m29515ZF5ZU4ILowRKPEy2v4=
@@ -443,7 +473,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			T3f366cp4GRLmSHEnL4gfJKAZOBEm2GF49JsSwsBqhg=
+			x0zV7hwy9rhZQH0KVD054PsagXRSTbXyl4gogMArwVE=
 			</data>
 		</dict>
 		<key>Headers/NamiPairingFramework-Swift.h</key>
@@ -464,70 +494,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OsLujqb9TfXIkJnREMcIJsgfQUOMce7Ll7uMlyVrqKk=
+			4YDDHd3xYbUpMogfS1iU0mYap4bSOO69rN++5smWwyM=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5b+hO1MvfLq5+rA9VRtfSaqfzgsjYMjw5WGNMU0wBxk=
+			4VdJBaerAJvHeUYoQb+xrZ51tgZGC1HuWN0mkLZhXBc=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2vf/4Sf0qB4LMYqtuv3b91aXBGr/Uh7kQ+zwo0Wdqqk=
+			I5r1+/Gg4Z+0yEhXWfYkjPHF89L7WZyLKGbjYovTZvM=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5b+hO1MvfLq5+rA9VRtfSaqfzgsjYMjw5WGNMU0wBxk=
+			4VdJBaerAJvHeUYoQb+xrZ51tgZGC1HuWN0mkLZhXBc=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AYMpqJKDcx5/Bq8PPUwSGN1dqkSMpkM8AX0TTJfvu3Y=
+			mP3qdRr9Nox4pxBrNbb7Ip28VHo0HhyzdDf42uitE+Y=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OsLujqb9TfXIkJnREMcIJsgfQUOMce7Ll7uMlyVrqKk=
+			4YDDHd3xYbUpMogfS1iU0mYap4bSOO69rN++5smWwyM=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L5UyyizDqqTTp/M9bEDMDOoFUKbvIHa6+0quN5ASW0w=
+			8/qJrcWcHIwruXFU6xgw74iv2xYQYgieuYKudksFZZ4=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AfyOMgqlcjd0+V9yHzEQh1O/G917bIWJT+KcJ6oEtPc=
+			T972MUnspDKCzEshuG4eoxJlY0yHXHN3JS8WTS5fKqw=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L5UyyizDqqTTp/M9bEDMDOoFUKbvIHa6+0quN5ASW0w=
+			8/qJrcWcHIwruXFU6xgw74iv2xYQYgieuYKudksFZZ4=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e6t/B79n2bQyoPPZ9Id2ry+1/ScyvWNq9gKW0iGyjzs=
+			VnWGOKz6OycdYRy0HugV/7pRDGcq/eSpigjbnmjAN9k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -577,6 +607,13 @@
 			<key>hash2</key>
 			<data>
 			Q6w+PpDrKWxX2dUhii+Qqg/z4h4VtO+16l82RHAV0hI=
+			</data>
+		</dict>
+		<key>Pulse Dark Blue_SensePod.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lDIDe5mDklrYYLWv3BTShanPJZl2gLweMv3O49sbZH8=
 			</data>
 		</dict>
 		<key>Pulse Dark Blue_WiDAR.json</key>
@@ -663,20 +700,20 @@
 			FwBEFs+Q1fEBj14Pe0//Kp8a1KzVy6ufmv7vw7iaD7w=
 			</data>
 		</dict>
-		<key>cs.lproj/Localizable.strings</key>
+		<key>de.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			A2bKyucs5qmXiblqz83pIar+uWMBx3IgHvxk/ZH9piU=
+			gPXdj0QoXSWcsrLDJ9olc/z+Vg5bcR7aH54ZnzDXosI=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>cs.lproj/Localizable.stringsdict</key>
+		<key>de.lproj/Localizable.stringsdict</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WkI74mtCI87f7s16x+r3siMgSQQCqW9M6qOX0ChmSUs=
+			kmHsztpgjvF0JW5f3HdMHm49z1M0CcG8OT1JDQHHE/E=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -692,7 +729,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hxjCjVRNMUDx/uthzGlqx7EDKyCeFYfQ9FBfRo03lLw=
+			2kGsK8B8Dvn2vwrAfiEfUleZLW/QfMGqxxuETbQC7jY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -710,7 +747,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			u6983HSVhotfSePJ6IZs2kSgBsj303lxKuu9RdHRL78=
+			yXzTmNk8OKgM8fm+oNZSHM2E7/3gVo7fQzlCi8NnPzk=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -742,7 +779,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			G4bN3LDwlkkCCv8hBiG+EpGJkweD6UmpBSuKqnOrqrc=
+			CkmirrT9NgD5k/s7+qBLWksopgckMY3/wEJqKn+2rWg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -760,7 +797,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YuJ8jGRm2+VcdFpWoRFAvqi75uHNC+X8YE3lw7DoNs8=
+			N6+tzHVpzHBFUbT1G11lVjdyEQoW5OovQ2sI0iyYDXQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -806,7 +843,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ltf5P1IPFIXU3b3UnisnkCJWzg/dAZMoXyp7DKp2kHk=
+			KH42An5dsKpt8mzdqtBCOG6adsVrOiEYYrhs1k/R40E=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -826,6 +863,24 @@
 			<data>
 			Ln9RhyoA0yn2jfTYZGs3HyI8w7U6IvFaGRZa+QQNtPw=
 			</data>
+		</dict>
+		<key>pl.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CZn5KXFt76035tLXG6iuAFmAjxvXXgnD4z2YWR0pjQ4=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>pl.lproj/Localizable.stringsdict</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kmHsztpgjvF0JW5f3HdMHm49z1M0CcG8OT1JDQHHE/E=
+			</data>
+			<key>optional</key>
+			<true/>
 		</dict>
 		<key>preview_thread_sentinel_plug_de.webp</key>
 		<dict>
@@ -888,6 +943,13 @@
 			<key>hash2</key>
 			<data>
 			EjASbIu3zY/hvNtPJeUgd5azEFDN/m1ogWJYgBnR8rg=
+			</data>
+		</dict>
+		<key>sensePod_qr_all.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fMkc5ShMx94DXhLv0kBEIdoDEz47P7qMwyP6CG5EIOc=
 			</data>
 		</dict>
 		<key>sentinel_plug_de.webp</key>
@@ -1007,6 +1069,13 @@
 			<key>hash2</key>
 			<data>
 			co+lOY5ZW7j/qDRkRMKumV4+ikHCUEuu9d4YR3HAzcQ=
+			</data>
+		</dict>
+		<key>thread_sensepod.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mNeYFs8mkCW96lHjoPlMcaRsfXb5QD4smT6i240M4lM=
 			</data>
 		</dict>
 		<key>thread_sentinel_plug_de.webp</key>
