@@ -1021,6 +1021,9 @@ public class NamiPairing<Container> where Container : NamiPairingFramework.Pairi
   @available(*, deprecated, renamed: "presentEntryPoint(_:placeId:config:pairingSteps:)", message: "This method is replaced with `presentEntryPoint(_:placeId:config:pairingSteps:)` which allows passing optional `PlaceID` and throwing on mismatch/missing when session is not active.")
   @_Concurrency.MainActor public func presentEntryPoint(entrypoint: any NamiPairingFramework.RemoteTemplateEntrypointProtocol, config: NamiPairingFramework.NamiSdkConfig, pairingSteps: Container) -> some SwiftUICore.View
   
+  @available(*, deprecated, message: "This method is deprecated and will be removed in a future version. Not to be replaced by any other method as the system is not supporting this functionality anymore.")
+  public func startPositioning(deviceName: Swift.String, deviceUid: Swift.String, pairingSteps: Container, onPositioningEnded: @escaping (NamiPairingFramework.PositioningResult) -> Swift.Void) throws -> some SwiftUICore.View
+  
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor public func presentEntryPoint(_ entrypoint: any NamiPairingFramework.RemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.PlaceID? = nil, config: NamiPairingFramework.NamiSdkConfig, pairingSteps: Container) throws -> some SwiftUICore.View
   
@@ -4455,6 +4458,16 @@ final public class Tomonari<Container> where Container : NamiPairingFramework.Pa
   final public func startPairing(placeId: NamiPairingFramework.PlaceID, zoneId: NamiPairingFramework.PlaceZoneID, roomId: NamiPairingFramework.RoomID, deviceType: NamiPairingFramework.NamiDeviceType = .unknown, pairingParameters: NamiPairingFramework.Tomonari<Container>.PairingParameters = .none, pairingSteps: Container) -> some SwiftUICore.View
   
   @objc deinit
+}
+@available(*, deprecated, message: "`PositioningResult` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This view initialization closure is to be dropped in the future versions of the SDK.")
+public enum PositioningResult {
+  case finished
+  case cancelled
+  public static func == (a: NamiPairingFramework.PositioningResult, b: NamiPairingFramework.PositioningResult) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 extension NamiPairingFramework.NamiDeviceType {
   public func qrCodeImageName(outletType: NamiPairingFramework.NamiOutletType) -> Swift.String
@@ -10026,6 +10039,10 @@ extension NamiPairingFramework.CodeScannerView.Coordinator : AVFoundation.AVCapt
 extension NamiPairingFramework.QRScanner.ScanError : Swift.Equatable {}
 extension NamiPairingFramework.QRScanner.ScanError : Swift.Hashable {}
 extension NamiPairingFramework.QRScanner.ScanError : Swift.RawRepresentable {}
+@available(*, deprecated, message: "`PositioningResult` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This view initialization closure is to be dropped in the future versions of the SDK.")
+extension NamiPairingFramework.PositioningResult : Swift.Equatable {}
+@available(*, deprecated, message: "`PositioningResult` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This view initialization closure is to be dropped in the future versions of the SDK.")
+extension NamiPairingFramework.PositioningResult : Swift.Hashable {}
 extension NamiPairingFramework.ListWiFiNetworks.State : NamiPairingFramework.ViewModelState {}
 extension NamiPairingFramework.ListWiFiNetworks.ViewModel : NamiPairingFramework.PairingStepEventSendableViewModelProtocol {}
 extension NamiPairingFramework.OtherWiFiNetwork.State : NamiPairingFramework.ViewModelState {}
