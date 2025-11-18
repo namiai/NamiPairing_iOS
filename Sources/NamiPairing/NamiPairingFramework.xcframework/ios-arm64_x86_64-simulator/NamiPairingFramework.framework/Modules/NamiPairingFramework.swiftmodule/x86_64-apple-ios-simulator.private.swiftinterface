@@ -1021,6 +1021,9 @@ public class NamiPairing<Container> where Container : NamiPairingFramework.Pairi
   @available(*, deprecated, renamed: "presentEntryPoint(_:placeId:config:pairingSteps:)", message: "This method is replaced with `presentEntryPoint(_:placeId:config:pairingSteps:)` which allows passing optional `PlaceID` and throwing on mismatch/missing when session is not active.")
   @_Concurrency.MainActor public func presentEntryPoint(entrypoint: any NamiPairingFramework.RemoteTemplateEntrypointProtocol, config: NamiPairingFramework.NamiSdkConfig, pairingSteps: Container) -> some SwiftUICore.View
   
+  @available(*, deprecated, message: "This method is deprecated and will be removed in a future version. Not to be replaced by any other method as the system is not supporting this functionality anymore.")
+  public func startPositioning(deviceName: Swift.String, deviceUid: Swift.String, pairingSteps: Container, onPositioningEnded: @escaping (NamiPairingFramework.PositioningResult) -> Swift.Void) throws -> some SwiftUICore.View
+  
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor public func presentEntryPoint(_ entrypoint: any NamiPairingFramework.RemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.PlaceID? = nil, config: NamiPairingFramework.NamiSdkConfig, pairingSteps: Container) throws -> some SwiftUICore.View
   
@@ -4456,6 +4459,16 @@ final public class Tomonari<Container> where Container : NamiPairingFramework.Pa
   
   @objc deinit
 }
+@available(*, deprecated, message: "`PositioningResult` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This view initialization closure is to be dropped in the future versions of the SDK.")
+public enum PositioningResult {
+  case finished
+  case cancelled
+  public static func == (a: NamiPairingFramework.PositioningResult, b: NamiPairingFramework.PositioningResult) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 extension NamiPairingFramework.NamiDeviceType {
   public func qrCodeImageName(outletType: NamiPairingFramework.NamiOutletType) -> Swift.String
 }
@@ -4782,6 +4795,221 @@ public enum EnterWiFiPassword {
     @objc deinit
   }
 }
+@available(*, deprecated, message: "The `HowToPosition` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+public enum HowToPosition {
+  public struct State : Swift.Equatable {
+    public static func == (a: NamiPairingFramework.HowToPosition.State, b: NamiPairingFramework.HowToPosition.State) -> Swift.Bool
+  }
+  public enum Event : Swift.Equatable {
+    case wantToDismiss
+    case startPositioningTapped
+    public static func == (a: NamiPairingFramework.HowToPosition.Event, b: NamiPairingFramework.HowToPosition.Event) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_hasMissingDesignatedInitializers final public class ViewModel : NamiPairingFramework.WiDarPositioningEventSendableViewModelProtocol {
+    public typealias State = NamiPairingFramework.HowToPosition.State
+    public typealias Event = NamiPairingFramework.HowToPosition.Event
+    @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.HowToPosition.ViewModel.State {
+      get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      @available(*, deprecated, message: "The `HowToPosition` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      @available(*, deprecated, message: "The `HowToPosition` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      _modify
+    }
+    final public var $state: Combine.Published<NamiPairingFramework.HowToPosition.ViewModel.State>.Publisher {
+      get
+      @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+      @available(*, deprecated, message: "The `HowToPosition` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      set
+    }
+    final public func send(_ event: NamiPairingFramework.HowToPosition.ViewModel.Event)
+    @available(*, deprecated, message: "The `HowToPosition` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+    public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+    @objc deinit
+  }
+}
+@available(*, deprecated, message: "The `InitialScreen` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+public enum InitialScreen {
+  public struct State : Swift.Equatable {
+    public static func == (a: NamiPairingFramework.InitialScreen.State, b: NamiPairingFramework.InitialScreen.State) -> Swift.Bool
+  }
+  public enum Event : Swift.Equatable {
+    case howToPositionTapped
+    public static func == (a: NamiPairingFramework.InitialScreen.Event, b: NamiPairingFramework.InitialScreen.Event) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_hasMissingDesignatedInitializers final public class ViewModel : NamiPairingFramework.WiDarPositioningEventSendableViewModelProtocol {
+    public typealias State = NamiPairingFramework.InitialScreen.State
+    public typealias Event = NamiPairingFramework.InitialScreen.Event
+    @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.InitialScreen.ViewModel.State {
+      get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      @available(*, deprecated, message: "The `InitialScreen` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      @available(*, deprecated, message: "The `InitialScreen` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      _modify
+    }
+    final public var $state: Combine.Published<NamiPairingFramework.InitialScreen.ViewModel.State>.Publisher {
+      get
+      @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+      @available(*, deprecated, message: "The `InitialScreen` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      set
+    }
+    final public func send(_ event: NamiPairingFramework.InitialScreen.Event)
+    @available(*, deprecated, message: "The `InitialScreen` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+    public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+    @objc deinit
+  }
+}
+@available(*, deprecated, message: "The `PositioningGuidance` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+public enum PositioningGuidance {
+  public enum PositioningQuality : Swift.Equatable {
+    case unknown
+    public static func == (a: NamiPairingFramework.PositioningGuidance.PositioningQuality, b: NamiPairingFramework.PositioningGuidance.PositioningQuality) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum PositioningState : Swift.Equatable {
+    case unknown
+    public static func == (a: NamiPairingFramework.PositioningGuidance.PositioningState, b: NamiPairingFramework.PositioningGuidance.PositioningState) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct State : Swift.Equatable {
+    public var wantCancel: Swift.Bool
+    public var canNotFinish: Swift.Bool
+    public var canNotCancel: Swift.Bool {
+      get
+    }
+    public var positioningQuality: NamiPairingFramework.PositioningGuidance.PositioningQuality
+    public var positioningState: NamiPairingFramework.PositioningGuidance.PositioningState
+    public static func == (a: NamiPairingFramework.PositioningGuidance.State, b: NamiPairingFramework.PositioningGuidance.State) -> Swift.Bool
+  }
+  public enum Event : Swift.Equatable {
+    case cancelViewDismissed
+    case wantToDismiss
+    case wantFinishTapped
+    case wantCancelTapped
+    case confirmPositioningCancel
+    public static func == (a: NamiPairingFramework.PositioningGuidance.Event, b: NamiPairingFramework.PositioningGuidance.Event) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_hasMissingDesignatedInitializers final public class ViewModel : NamiPairingFramework.WiDarPositioningEventSendableViewModelProtocol {
+    public typealias State = NamiPairingFramework.PositioningGuidance.State
+    public typealias Event = NamiPairingFramework.PositioningGuidance.Event
+    @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.PositioningGuidance.ViewModel.State {
+      get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      @available(*, deprecated, message: "The `PositioningGuidance` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      @available(*, deprecated, message: "The `PositioningGuidance` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      _modify
+    }
+    final public var $state: Combine.Published<NamiPairingFramework.PositioningGuidance.ViewModel.State>.Publisher {
+      get
+      @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+      @available(*, deprecated, message: "The `PositioningGuidance` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      set
+    }
+    final public func send(_ event: NamiPairingFramework.PositioningGuidance.Event)
+    @available(*, deprecated, message: "The `PositioningGuidance` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+    public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+    @objc deinit
+  }
+}
+@available(*, deprecated, message: "The `PositioningComplete` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+public enum PositioningComplete {
+  public struct State : Swift.Equatable {
+    public var deviceName: Swift.String
+    public static func == (a: NamiPairingFramework.PositioningComplete.State, b: NamiPairingFramework.PositioningComplete.State) -> Swift.Bool
+  }
+  public enum Event {
+    case confirmPositioningComplete
+    public static func == (a: NamiPairingFramework.PositioningComplete.Event, b: NamiPairingFramework.PositioningComplete.Event) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_hasMissingDesignatedInitializers final public class ViewModel : NamiPairingFramework.WiDarPositioningEventSendableViewModelProtocol {
+    public typealias State = NamiPairingFramework.PositioningComplete.State
+    public typealias Event = NamiPairingFramework.PositioningComplete.Event
+    @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.PositioningComplete.ViewModel.State {
+      get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      @available(*, deprecated, message: "The `PositioningComplete` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      @available(*, deprecated, message: "The `PositioningComplete` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      _modify
+    }
+    final public var $state: Combine.Published<NamiPairingFramework.PositioningComplete.ViewModel.State>.Publisher {
+      get
+      @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+      @available(*, deprecated, message: "The `PositioningComplete` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      set
+    }
+    final public func send(_ event: NamiPairingFramework.PositioningComplete.Event)
+    @available(*, deprecated, message: "The `PositioningComplete` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+    public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+    @objc deinit
+  }
+}
+@available(*, deprecated, message: "The `ErrorScreen` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+public enum ErrorScreen {
+  public struct State : Swift.Equatable {
+    public static func == (a: NamiPairingFramework.ErrorScreen.State, b: NamiPairingFramework.ErrorScreen.State) -> Swift.Bool
+  }
+  public enum Event : Swift.Equatable {
+    case cancelPositioning
+    case retryPositioning
+    public static func == (a: NamiPairingFramework.ErrorScreen.Event, b: NamiPairingFramework.ErrorScreen.Event) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_hasMissingDesignatedInitializers final public class ViewModel : NamiPairingFramework.WiDarPositioningEventSendableViewModelProtocol {
+    public typealias State = NamiPairingFramework.ErrorScreen.State
+    public typealias Event = NamiPairingFramework.ErrorScreen.Event
+    @Combine.Published @_projectedValueProperty($state) final public var state: NamiPairingFramework.ErrorScreen.ViewModel.State {
+      get
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      @available(*, deprecated, message: "The `ErrorScreen` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      set
+      @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+      @available(*, deprecated, message: "The `ErrorScreen` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      _modify
+    }
+    final public var $state: Combine.Published<NamiPairingFramework.ErrorScreen.ViewModel.State>.Publisher {
+      get
+      @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+      @available(*, deprecated, message: "The `ErrorScreen` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+      set
+    }
+    final public func send(_ event: NamiPairingFramework.ErrorScreen.Event)
+    @available(*, deprecated, message: "The `ErrorScreen` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+    public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+    @objc deinit
+  }
+}
 public enum Pairing {
   public struct CloudPayload : NamiPairingFramework.WiredPlaceKeysProtocol {
     public var ciphertext: Swift.String
@@ -5000,6 +5228,26 @@ public protocol PairingStepsContainer {
   #if compiler(>=5.3) && $NonescapableTypes
   var backButton: () -> Self.BackButtonView? { get }
   #endif
+  @available(*, deprecated, message: "The `ViewForPositioningErrorScreen` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This associatedtype is to be dropped in the future versions of the SDK.")
+  associatedtype ViewForPositioningErrorScreen : SwiftUICore.View
+  @available(*, deprecated, message: "The `ViewForHowToPosition` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This associatedtype is to be dropped in the future versions of the SDK.")
+  associatedtype ViewForHowToPosition : SwiftUICore.View
+  @available(*, deprecated, message: "The `ViewForInitialPositioningScreen` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This associatedtype is to be dropped in the future versions of the SDK.")
+  associatedtype ViewForInitialPositioningScreen : SwiftUICore.View
+  @available(*, deprecated, message: "The `ViewForPositioningGuidance` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This associatedtype is to be dropped in the future versions of the SDK.")
+  associatedtype ViewForPositioningGuidance : SwiftUICore.View
+  @available(*, deprecated, message: "The `ViewForPositioningComplete` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This associatedtype is to be dropped in the future versions of the SDK.")
+  associatedtype ViewForPositioningComplete : SwiftUICore.View
+  @available(*, deprecated, message: "The `howToPosition` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This view initialization closure is to be dropped in the future versions of the SDK.")
+  var howToPosition: (NamiPairingFramework.HowToPosition.ViewModel) -> Self.ViewForHowToPosition { get }
+  @available(*, deprecated, message: "The `initialPositioningScreen` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This view initialization closure is to be dropped in the future versions of the SDK.")
+  var initialPositioningScreen: (NamiPairingFramework.InitialScreen.ViewModel) -> Self.ViewForInitialPositioningScreen { get }
+  @available(*, deprecated, message: "The `positioningGuidance` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This view initialization closure is to be dropped in the future versions of the SDK.")
+  var positioningGuidance: (NamiPairingFramework.PositioningGuidance.ViewModel) -> Self.ViewForPositioningGuidance { get }
+  @available(*, deprecated, message: "The `positioningComplete` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This view initialization closure is to be dropped in the future versions of the SDK.")
+  var positioningComplete: (NamiPairingFramework.PositioningComplete.ViewModel) -> Self.ViewForPositioningComplete { get }
+  @available(*, deprecated, message: "The `positionError` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This view initialization closure is to be dropped in the future versions of the SDK.")
+  var positionError: (NamiPairingFramework.ErrorScreen.ViewModel) -> Self.ViewForPositioningErrorScreen { get }
 }
 extension NamiPairingFramework.PairingStepsContainer {
   #if compiler(>=5.3) && $NonescapableTypes
@@ -9791,6 +10039,10 @@ extension NamiPairingFramework.CodeScannerView.Coordinator : AVFoundation.AVCapt
 extension NamiPairingFramework.QRScanner.ScanError : Swift.Equatable {}
 extension NamiPairingFramework.QRScanner.ScanError : Swift.Hashable {}
 extension NamiPairingFramework.QRScanner.ScanError : Swift.RawRepresentable {}
+@available(*, deprecated, message: "`PositioningResult` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This view initialization closure is to be dropped in the future versions of the SDK.")
+extension NamiPairingFramework.PositioningResult : Swift.Equatable {}
+@available(*, deprecated, message: "`PositioningResult` is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK. This view initialization closure is to be dropped in the future versions of the SDK.")
+extension NamiPairingFramework.PositioningResult : Swift.Hashable {}
 extension NamiPairingFramework.ListWiFiNetworks.State : NamiPairingFramework.ViewModelState {}
 extension NamiPairingFramework.ListWiFiNetworks.ViewModel : NamiPairingFramework.PairingStepEventSendableViewModelProtocol {}
 extension NamiPairingFramework.OtherWiFiNetwork.State : NamiPairingFramework.ViewModelState {}
@@ -9799,6 +10051,22 @@ extension NamiPairingFramework.BluetoothUsageHint.Event : Swift.Equatable {}
 extension NamiPairingFramework.BluetoothUsageHint.Event : Swift.Hashable {}
 extension NamiPairingFramework.EnterWiFiPassword.Event : Swift.Equatable {}
 extension NamiPairingFramework.EnterWiFiPassword.Event : Swift.Hashable {}
+@available(*, deprecated, message: "The `HowToPosition` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+extension NamiPairingFramework.HowToPosition.Event : Swift.Hashable {}
+@available(*, deprecated, message: "The `InitialScreen` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+extension NamiPairingFramework.InitialScreen.Event : Swift.Hashable {}
+@available(*, deprecated, message: "The `PositioningGuidance` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+extension NamiPairingFramework.PositioningGuidance.PositioningQuality : Swift.Hashable {}
+@available(*, deprecated, message: "The `PositioningGuidance` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+extension NamiPairingFramework.PositioningGuidance.PositioningState : Swift.Hashable {}
+@available(*, deprecated, message: "The `PositioningGuidance` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+extension NamiPairingFramework.PositioningGuidance.Event : Swift.Hashable {}
+@available(*, deprecated, message: "The `PositioningComplete` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+extension NamiPairingFramework.PositioningComplete.Event : Swift.Equatable {}
+@available(*, deprecated, message: "The `PositioningComplete` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+extension NamiPairingFramework.PositioningComplete.Event : Swift.Hashable {}
+@available(*, deprecated, message: "The `ErrorScreen` type is deprecated as the positioning functionality required for the devices no longer in production was removed from the SDK.")
+extension NamiPairingFramework.ErrorScreen.Event : Swift.Hashable {}
 extension NamiPairingFramework.Pairing.ConnectTo : Swift.Hashable {}
 extension NamiPairingFramework.Pairing.ActionOnError : Swift.Hashable {}
 extension NamiPairingFramework.Pairing.PairingCancellationdReason : Swift.Equatable {}
