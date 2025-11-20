@@ -650,9 +650,6 @@ extension NamiPairingFramework.Pairing.Error {
   public var localizedDescription: Swift.String {
     get
   }
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func getFAQLink(wordings: any StandardPairingUI.WordingProtocol) -> Swift.String?
-  #endif
 }
 public class ThemeManager : Foundation.ObservableObject {
   @Combine.Published @_projectedValueProperty($selectedTheme) public var selectedTheme: any StandardPairingUI.ThemeProtocol {
@@ -737,13 +734,13 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public var otherWiFiNetwork: (NamiPairingFramework.OtherWiFiNetwork.ViewModel) -> StandardPairingUI.OtherWiFiNetworkView
   public var enterWiFiPassword: (NamiPairingFramework.EnterWiFiPassword.ViewModel) -> StandardPairingUI.EnterWiFiPasswordView
   public var finishingSetup: (Swift.String) -> StandardPairingUI.FinishingSetupView
-  public var pairingError: (NamiPairingFramework.PairingErrorScreen.ViewModel) -> StandardPairingUI.PairingErrorScreenView
-  public var backButton: () -> NamiPairingFramework.CircleButton?
   public var howToPosition: (NamiPairingFramework.HowToPosition.ViewModel) -> StandardPairingUI.HowToPositionView
   public var initialPositioningScreen: (NamiPairingFramework.InitialScreen.ViewModel) -> StandardPairingUI.InitialScreenView
   public var positioningGuidance: (NamiPairingFramework.PositioningGuidance.ViewModel) -> StandardPairingUI.PositioningGuidanceView
   public var positioningComplete: (NamiPairingFramework.PositioningComplete.ViewModel) -> StandardPairingUI.PositioningCompleteView
   public var positionError: (NamiPairingFramework.ErrorScreen.ViewModel) -> StandardPairingUI.ErrorScreenView
+  public var pairingError: (NamiPairingFramework.PairingErrorScreen.ViewModel) -> StandardPairingUI.PairingErrorScreenView
+  public var backButton: () -> NamiPairingFramework.CircleButton?
   public typealias BackButtonView = NamiPairingFramework.CircleButton
   public typealias ViewForBluetoothDeviceFound = StandardPairingUI.BluetoothDeviceFoundView
   public typealias ViewForEnableCameraInSettings = StandardPairingUI.EnableCameraInSettingsView
@@ -767,51 +764,6 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI13QRScannerViewV4bodyQrvp", 0) __
 }
-@available(*, deprecated, message: "`HowToPositionView` is deprecated and replaced with empty view as a placeholder")
-@_Concurrency.MainActor @preconcurrency public struct HowToPositionView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.HowToPosition.ViewModel)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @available(*, deprecated, message: "`HowToPositionView` is deprecated and replaced with empty view as a placeholder")
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17HowToPositionViewV4bodyQrvp", 0) __
-}
-@available(*, deprecated, message: "`InitialScreenView` is deprecated and replaced with empty view as a placeholder")
-@_Concurrency.MainActor @preconcurrency public struct InitialScreenView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.InitialScreen.ViewModel)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @available(*, deprecated, message: "`InitialScreenView` is deprecated and replaced with empty view as a placeholder")
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17InitialScreenViewV4bodyQrvp", 0) __
-}
-@available(*, deprecated, message: "`PositioningCompleteView` is deprecated and replaced with empty view as a placeholder")
-@_Concurrency.MainActor @preconcurrency public struct PositioningCompleteView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.PositioningComplete.ViewModel)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @available(*, deprecated, message: "`PositioningCompleteView` is deprecated and replaced with empty view as a placeholder")
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23PositioningCompleteViewV4bodyQrvp", 0) __
-}
-@available(*, deprecated, message: "`PositioningGuidanceView` is deprecated and replaced with empty view as a placeholder")
-@_Concurrency.MainActor @preconcurrency public struct PositioningGuidanceView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.PositioningGuidance.ViewModel)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @available(*, deprecated, message: "`PositioningGuidanceView` is deprecated and replaced with empty view as a placeholder")
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23PositioningGuidanceViewV4bodyQrvp", 0) __
-}
-@available(*, deprecated, message: "`ErrorScreenView` is deprecated and replaced with empty view as a placeholder")
-@_Concurrency.MainActor @preconcurrency public struct ErrorScreenView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.ErrorScreen.ViewModel)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @available(*, deprecated, message: "`ErrorScreenView` is deprecated and replaced with empty view as a placeholder")
-  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI15ErrorScreenViewV4bodyQrvp", 0) __
-}
 @_Concurrency.MainActor @preconcurrency public struct PowerOnAndScanningView : SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.PowerOnAndScanning.ViewModel)
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
@@ -825,6 +777,48 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI24BluetoothDeviceFoundViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor @preconcurrency public struct ErrorScreenView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.ErrorScreen.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI15ErrorScreenViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor @preconcurrency public struct PositioningCompleteView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.PositioningComplete.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23PositioningCompleteViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor @preconcurrency public struct InitialScreenView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.InitialScreen.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17InitialScreenViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor @preconcurrency public struct HowToPositionView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.HowToPosition.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI17HowToPositionViewV4bodyQrvp", 0) __
+}
+public typealias Animations = NamiPairingFramework.Animations
+@_Concurrency.MainActor @preconcurrency public struct AnimationView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI13AnimationViewV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor @preconcurrency public struct PositioningGuidanceView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.PositioningGuidance.ViewModel)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI23PositioningGuidanceViewV4bodyQrvp", 0) __
 }
 @_Concurrency.MainActor @preconcurrency public struct EnterWiFiPasswordView : SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.EnterWiFiPassword.ViewModel)
@@ -885,18 +879,14 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public typealias Body = @_opaqueReturnTypeOf("$s17StandardPairingUI24SetupScreenTitleTextViewV4bodyQrvp", 0) __
 }
 extension StandardPairingUI.QRScannerView : Swift.Sendable {}
-@available(*, deprecated, message: "`HowToPositionView` is deprecated and replaced with empty view as a placeholder")
-extension StandardPairingUI.HowToPositionView : Swift.Sendable {}
-@available(*, deprecated, message: "`InitialScreenView` is deprecated and replaced with empty view as a placeholder")
-extension StandardPairingUI.InitialScreenView : Swift.Sendable {}
-@available(*, deprecated, message: "`PositioningCompleteView` is deprecated and replaced with empty view as a placeholder")
-extension StandardPairingUI.PositioningCompleteView : Swift.Sendable {}
-@available(*, deprecated, message: "`PositioningGuidanceView` is deprecated and replaced with empty view as a placeholder")
-extension StandardPairingUI.PositioningGuidanceView : Swift.Sendable {}
-@available(*, deprecated, message: "`ErrorScreenView` is deprecated and replaced with empty view as a placeholder")
-extension StandardPairingUI.ErrorScreenView : Swift.Sendable {}
 extension StandardPairingUI.PowerOnAndScanningView : Swift.Sendable {}
 extension StandardPairingUI.BluetoothDeviceFoundView : Swift.Sendable {}
+extension StandardPairingUI.ErrorScreenView : Swift.Sendable {}
+extension StandardPairingUI.PositioningCompleteView : Swift.Sendable {}
+extension StandardPairingUI.InitialScreenView : Swift.Sendable {}
+extension StandardPairingUI.HowToPositionView : Swift.Sendable {}
+extension StandardPairingUI.AnimationView : Swift.Sendable {}
+extension StandardPairingUI.PositioningGuidanceView : Swift.Sendable {}
 extension StandardPairingUI.EnterWiFiPasswordView : Swift.Sendable {}
 extension StandardPairingUI.OtherWiFiNetworkView : Swift.Sendable {}
 extension StandardPairingUI.FinishingSetupView : Swift.Sendable {}
