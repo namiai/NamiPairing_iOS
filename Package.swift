@@ -19,6 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/airbnb/lottie-spm.git", .upToNextMajor(from: "4.4.3")),
+        .package(url: "https://github.com/apple/swift-protobuf.git", .upToNextMajor(from: "1.31.0")),
     ],
     targets: [
         .binaryTarget(
@@ -30,7 +31,8 @@ let package = Package(
             name: "NamiPairingCore",
             dependencies: [
                 "NamiPairingFramework",
-                .product(name: "Lottie", package: "lottie-spm")
+                .product(name: "Lottie", package: "lottie-spm"),
+                .product(name: "SwiftProtobuf", package: "swift-protobuf")
             ],
             path: "Sources/NamiPairing/NamiPairingCore"
         ),
