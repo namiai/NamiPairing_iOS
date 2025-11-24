@@ -37,6 +37,12 @@ extension NamiPairingFramework.NamiDeviceModel : Swift.Codable, Swift.Hashable {
     get
   }
 }
+extension NamiPairingFramework.InMemoryStorage : NamiPairingFramework.DeviceConnectionsManagerStorageProtocol {
+  final public func placeIds() -> Combine.AnyPublisher<[NamiPairingFramework.PlaceID], Swift.Never>
+  final public func deviceUids(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[NamiPairingFramework.DeviceUniversalID], Swift.Never>
+  final public func updateDeviceState(uid: NamiPairingFramework.DeviceUniversalID, state: Foundation.Data, seqTime: Swift.UInt64) throws
+  public typealias DeviceConnectionsManager_PlaceKey = NamiPairingFramework.NamiPlaceKey
+}
 public struct PlaceKey : Swift.Codable, Swift.Equatable, Swift.Identifiable, NamiPairingFramework.PlaceKeyProtocol {
   public let id: Swift.String
   public let placeId: NamiPairingFramework.PlaceID
@@ -49,6 +55,76 @@ public struct PlaceKey : Swift.Codable, Swift.Equatable, Swift.Identifiable, Nam
   public typealias ID = Swift.String
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
+}
+extension NamiPairingFramework.InMemoryStorage : NamiPairingFramework.RemoteTemplateStateRepositoryProtocol {
+  final public func place(id placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_Place, Swift.Never>
+  final public func zones(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[NamiPairingFramework.RemoteTemplateUI_Zone], Swift.Never>
+  final public func rooms(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[NamiPairingFramework.RemoteTemplateUI_Room], Swift.Never>
+  final public func rooms(zoneId: NamiPairingFramework.PlaceZoneID) -> Combine.AnyPublisher<[NamiPairingFramework.RemoteTemplateUI_Room], Swift.Never>
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func device(id: NamiPairingFramework.DeviceID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_Device?, Swift.Never>
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func device(urn: Swift.String) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_Device?, Swift.Never>
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func device(uid: NamiPairingFramework.DeviceUniversalID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_Device?, Swift.Never>
+  #endif
+  final public func devices(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[NamiPairingFramework.RemoteTemplateUI_Device], Swift.Never>
+  final public func devices(zoneId: NamiPairingFramework.PlaceZoneID) -> Combine.AnyPublisher<[NamiPairingFramework.RemoteTemplateUI_Device], Swift.Never>
+  final public func devices(roomId: NamiPairingFramework.RoomID) -> Combine.AnyPublisher<[NamiPairingFramework.RemoteTemplateUI_Device], Swift.Never>
+  final public func devicesPerZone(in placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[NamiPairingFramework.PlaceZoneID : [NamiPairingFramework.RemoteTemplateUI_Device]], Swift.Never>
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func deviceState(uid: NamiPairingFramework.DeviceUniversalID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_DeviceState?, Swift.Never>
+  #endif
+  final public func deviceStates(uids: [NamiPairingFramework.DeviceUniversalID]) -> Combine.AnyPublisher<[NamiPairingFramework.RemoteTemplateUI_DeviceState], Swift.Never>
+  final public func deleteRoom(_ roomId: NamiPairingFramework.RoomID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_Place, any Swift.Error>
+  final public func updateEntryExitDelay(_ placeId: NamiPairingFramework.PlaceID, entryDelay: NamiPairingFramework.EntryDelay, exitDelay: NamiPairingFramework.ExitDelay) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_Place, any Swift.Error>
+  final public func updateSensitivity(_ placeId: NamiPairingFramework.PlaceID, sensitivity: Swift.Int) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  final public func verifyPin(for place: NamiPairingFramework.PlaceID, pinNamed name: Swift.String, pinValue: Swift.String) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_PinVerificationResult, any Swift.Error>
+  final public func listPins(in place: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<[NamiPairingFramework.RemoteTemplateUI_PinCredentialRecord], any Swift.Error>
+  final public func createPin(for place: NamiPairingFramework.PlaceID, pinNamed name: Swift.String, pinValue: Swift.String) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_PinCredentialRecord, any Swift.Error>
+  final public func deletePin(from place: NamiPairingFramework.PlaceID, pinId: NamiPairingFramework.PinCredentialID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_PinCredentialRecord, any Swift.Error>
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func updatePin(in place: NamiPairingFramework.PlaceID, pinId: NamiPairingFramework.PinCredentialID, newName: Swift.String?, newValue: Swift.String?) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_PinCredentialRecord, any Swift.Error>
+  #endif
+}
+public struct NamiPlaceKey : Swift.Codable, Swift.Equatable, Swift.Identifiable, NamiPairingFramework.PlaceKeyProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(_ from: NamiPairingFramework.CloudPlaceKey)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(id: Swift.String, key: Swift.String)
+  #endif
+  public let id: Swift.String
+  public let placeId: NamiPairingFramework.PlaceID
+  public let valid: Foundation.DateInterval
+  public let key: Foundation.Data
+  public static func == (a: NamiPairingFramework.NamiPlaceKey, b: NamiPairingFramework.NamiPlaceKey) -> Swift.Bool
+  public typealias ID = Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+final public class InMemoryStorage {
+  public init(api: NamiPairingFramework.WebAPI)
+  final public func deviceModel(productId: NamiPairingFramework.DeviceProductID) -> Combine.AnyPublisher<NamiPairingFramework.NamiDeviceModel, Swift.Never>
+  final public func deviceModel(codeName: Swift.String) -> Combine.AnyPublisher<NamiPairingFramework.NamiDeviceModel, Swift.Never>
+  final public func placeKeys() -> Combine.AnyPublisher<[NamiPairingFramework.NamiPlaceKey], Swift.Never>
+  @discardableResult
+  final public func refreshPlace(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  final public func refreshDevices(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  final public func refreshPlaceKeys() -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  final public func createZone(placeId: NamiPairingFramework.PlaceID, name: Swift.String) -> Combine.AnyPublisher<NamiPairingFramework.PlaceZoneID, any Swift.Error>
+  final public func createRoom(placeZoneId: NamiPairingFramework.PlaceZoneID, name: Swift.String, iconId: NamiPairingFramework.IconID) -> Combine.AnyPublisher<NamiPairingFramework.RoomID, any Swift.Error>
+  final public func deleteDevice(uid: NamiPairingFramework.DeviceUniversalID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  final public func deleteZone(_ zoneId: NamiPairingFramework.PlaceZoneID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  final public func createWiFiCredentialsUpdateSession(zoneId: NamiPairingFramework.PlaceZoneID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_WiFiCredentialsUpdateSession, any Swift.Error>
+  final public func getAllWiFiCredentialsUpdateSessions() -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_WiFiCredentialsSessionsResponse, any Swift.Error>
+  final public func getWiFiCredentialsUpdateSession(id: NamiPairingFramework.WiFiCredentialsUpdateSessionID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_WiFiCredentialsUpdateSession, any Swift.Error>
+  final public func deleteDeviceFromSession(uid: NamiPairingFramework.DeviceUniversalID, sessionId: NamiPairingFramework.WiFiCredentialsUpdateSessionID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_WiFiCredentialsUpdateSession, any Swift.Error>
+  final public func createOrResetWiFiCredentialsUpdateSession(zoneId: NamiPairingFramework.PlaceZoneID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_WiFiCredentialsUpdateSession, any Swift.Error>
+  final public func resetWiFiCredentialsUpdateSession(id: NamiPairingFramework.WiFiCredentialsUpdateSessionID) -> Combine.AnyPublisher<NamiPairingFramework.RemoteTemplateUI_WiFiCredentialsUpdateSession, any Swift.Error>
+  @objc deinit
 }
 public enum SDKError : Swift.Error, Foundation.LocalizedError {
   case missingPlaceId
@@ -598,7 +674,6 @@ public enum TimeZoneLoadingError : Swift.Error {
   public func findTimeZone(byId id: Swift.String) -> Combine.AnyPublisher<NamiPairingFramework.NamiTimeZone?, Swift.Never>
   #endif
   public func getTimezones() -> Combine.AnyPublisher<[NamiPairingFramework.NamiTimeZone], NamiPairingFramework.TimeZoneLoadingError>
-  public func preloadTimezones()
   @objc deinit
 }
 public struct TimeZoneLocation : Swift.Decodable, Swift.Hashable {
@@ -9475,17 +9550,6 @@ extension SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public func navigationPopGestureDisabled(_ disabled: Swift.Bool) -> some SwiftUICore.View
   
 }
-extension SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public func namiOnHeightUpdate(_ action: @escaping (CoreFoundation.CGFloat) -> Swift.Void) -> some SwiftUICore.View
-  
-  @_Concurrency.MainActor @preconcurrency public func namiReadSize(onChange: @escaping (CoreFoundation.CGSize) -> Swift.Void) -> some SwiftUICore.View
-  
-  @_Concurrency.MainActor @preconcurrency public func namiReadSafeAreaInsets(onChange: @escaping (SwiftUICore.EdgeInsets) -> Swift.Void) -> some SwiftUICore.View
-  
-  @_Concurrency.MainActor @preconcurrency public var namiAnyView: SwiftUICore.AnyView {
-    get
-  }
-}
 extension SwiftUICore.Binding {
   #if compiler(>=5.3) && $NonescapableTypes
   public static func bindingBool<Item>(_ item: SwiftUICore.Binding<Item?>) -> SwiftUICore.Binding<Swift.Bool>
@@ -9657,7 +9721,7 @@ extension NamiPairingFramework.NamiTextField {
 }
 @_Concurrency.MainActor @preconcurrency public struct NamiTopNavigationScreen<LeadingGroup, TrailingGroup, BottomGroup, NotificationArea, Subviews, MainContent> : SwiftUICore.View where LeadingGroup : SwiftUICore.View, TrailingGroup : SwiftUICore.View, BottomGroup : SwiftUICore.View, NotificationArea : SwiftUICore.View, Subviews : SwiftUICore.View, MainContent : SwiftUICore.View {
   #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public init(title: Swift.String? = nil, largeTitle: Swift.String? = nil, themeId: NamiPairingFramework.ThemeID = 0, colorOverride: SwiftUICore.Color? = nil, statusbarColorOverride: SwiftUICore.Color? = nil, backgroundOverride: SwiftUICore.Color? = nil, navbarBackgroundBleed: CoreFoundation.CGFloat = 0, contentBehavior: NamiPairingFramework.ContentBehavior = .scrollable, scrollContentBackgroundColor: SwiftUICore.Color? = nil, lookout24usage: Swift.Bool = false, @SwiftUICore.ViewBuilder mainContent: @escaping () -> MainContent = { EmptyView() }, @SwiftUICore.ViewBuilder leadingButtonsGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUICore.ViewBuilder trailingButtonsGroup: @escaping () -> TrailingGroup = { EmptyView() }, @SwiftUICore.ViewBuilder notificationAreaView: @escaping () -> NotificationArea = { EmptyView() }, @SwiftUICore.ViewBuilder additionalViews: @escaping () -> Subviews = { EmptyView() }, @SwiftUICore.ViewBuilder bottomButtonsGroup: @escaping () -> BottomGroup = { EmptyView() })
+  @_Concurrency.MainActor @preconcurrency public init(title: Swift.String? = nil, largeTitle: Swift.String? = nil, themeId: NamiPairingFramework.ThemeID = 0, colorOverride: SwiftUICore.Color? = nil, statusbarColorOverride: SwiftUICore.Color? = nil, backgroundOverride: SwiftUICore.Color? = nil, navbarBackgroundBleed: CoreFoundation.CGFloat = 0, contentBehavior: NamiPairingFramework.ContentBehavior = .scrollable, @SwiftUICore.ViewBuilder mainContent: @escaping () -> MainContent = { EmptyView() }, @SwiftUICore.ViewBuilder leadingButtonsGroup: @escaping () -> LeadingGroup = { EmptyView() }, @SwiftUICore.ViewBuilder trailingButtonsGroup: @escaping () -> TrailingGroup = { EmptyView() }, @SwiftUICore.ViewBuilder notificationAreaView: @escaping () -> NotificationArea = { EmptyView() }, @SwiftUICore.ViewBuilder additionalViews: @escaping () -> Subviews = { EmptyView() }, @SwiftUICore.ViewBuilder bottomButtonsGroup: @escaping () -> BottomGroup = { EmptyView() })
   #endif
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
