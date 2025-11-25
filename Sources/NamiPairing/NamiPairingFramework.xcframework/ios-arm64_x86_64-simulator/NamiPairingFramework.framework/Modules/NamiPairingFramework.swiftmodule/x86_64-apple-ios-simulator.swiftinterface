@@ -526,6 +526,31 @@ public struct NamiZoneMotionStatus : Swift.Codable, Swift.Equatable, Swift.Ident
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct NamiDeviceMotionState : Swift.Codable, Swift.Equatable, Swift.Identifiable {
+  public init(detection: Swift.Bool, health: NamiPairingFramework.NamiDeviceMotionHealth, startedAt: Foundation.Date, uid: NamiPairingFramework.DeviceUniversalID, uuid: Foundation.UUID)
+  public var id: NamiPairingFramework.DeviceUniversalID {
+    get
+  }
+  public var detection: Swift.Bool
+  public var health: NamiPairingFramework.NamiDeviceMotionHealth
+  public var startedAt: Foundation.Date
+  public var uid: NamiPairingFramework.DeviceUniversalID
+  public var uuid: Foundation.UUID
+  public static func == (a: NamiPairingFramework.NamiDeviceMotionState, b: NamiPairingFramework.NamiDeviceMotionState) -> Swift.Bool
+  public typealias ID = NamiPairingFramework.DeviceUniversalID
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum NamiDeviceMotionHealth : Swift.String, Swift.Codable, Swift.Equatable {
+  case healthy
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public struct NamiMotionAggregate : Swift.Codable {
   public init(metric: Swift.String, resolution: NamiPairingFramework.MotionDataResolution, intervalLength: Foundation.TimeInterval, intervals: [NamiPairingFramework.MotionInterval])
   public var metric: Swift.String
@@ -713,6 +738,18 @@ final public class InMemoryStorage {
     @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
     set
   }
+  @Combine.Published @_projectedValueProperty($deviceMotionStateStore) final public var deviceMotionStateStore: [NamiPairingFramework.DeviceUniversalID : [NamiPairingFramework.NamiDeviceMotionState]] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  final public var $deviceMotionStateStore: Combine.Published<[NamiPairingFramework.DeviceUniversalID : [NamiPairingFramework.NamiDeviceMotionState]]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
   @Combine.Published @_projectedValueProperty($placeUsersStore) final public var placeUsersStore: [NamiPairingFramework.NamiPlaceUser] {
     get
     @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
@@ -802,6 +839,7 @@ final public class InMemoryStorage {
   final public func refreshPlaceUsers(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   final public func refreshAllDevices() -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   final public func refreshDevices(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  final public func refreshDevicesMotionStates(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   final public func refreshDevices(ofType: NamiPairingFramework.NamiDeviceType) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   final public func refreshDevices(uids: [NamiPairingFramework.DeviceUniversalID]) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   final public func refreshPlaceKeys() -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
@@ -1031,17 +1069,17 @@ public class NamiPairing<Container> where Container : NamiPairingFramework.Pairi
   @objc deinit
 }
 extension NamiPairingFramework.RemoteTemplateUI_Zone {
-  public init(zone: NamiPairingFramework.NamiZone, rooms: [NamiPairingFramework.NamiRoom], devices: [NamiPairingFramework.NamiDevice], devicesState: [NamiPairingFramework.NamiDeviceState])
+  public init(zone: NamiPairingFramework.NamiZone, rooms: [NamiPairingFramework.NamiRoom], devices: [NamiPairingFramework.NamiDevice], devicesState: [NamiPairingFramework.NamiDeviceState], deviceMotionStates: [NamiPairingFramework.DeviceUniversalID : [NamiPairingFramework.NamiDeviceMotionState]] = [:])
 }
 extension NamiPairingFramework.RemoteTemplateUI_Room {
-  public init(room: NamiPairingFramework.NamiRoom, devices: [NamiPairingFramework.NamiDevice], devicesState: [NamiPairingFramework.NamiDeviceState])
+  public init(room: NamiPairingFramework.NamiRoom, devices: [NamiPairingFramework.NamiDevice], devicesState: [NamiPairingFramework.NamiDeviceState], deviceMotionStates: [NamiPairingFramework.DeviceUniversalID : [NamiPairingFramework.NamiDeviceMotionState]] = [:])
 }
 extension NamiPairingFramework.RemoteTemplateUI_DeviceState {
   public init(deviceState: NamiPairingFramework.NamiDeviceState)
 }
 extension NamiPairingFramework.RemoteTemplateUI_Device {
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(device: NamiPairingFramework.NamiDevice, deviceState: NamiPairingFramework.NamiDeviceState?)
+  public init(device: NamiPairingFramework.NamiDevice, deviceState: NamiPairingFramework.NamiDeviceState?, deviceMotionState: NamiPairingFramework.NamiDeviceMotionState? = nil)
   #endif
 }
 public enum NamiPermission : Swift.String, Swift.CaseIterable, Swift.Codable {
@@ -6022,7 +6060,9 @@ public struct RemoteTemplateUI_DeviceState : Swift.Codable, Swift.Equatable, Swi
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct RemoteTemplateUI_Device : Swift.Codable, Swift.Equatable, Swift.Hashable {
-  public init(id: NamiPairingFramework.DeviceID, uid: NamiPairingFramework.DeviceUniversalID, urn: Swift.String, name: Swift.String, codeName: Swift.String, productId: NamiPairingFramework.DeviceProductID, createdAt: Foundation.Date, updatedAt: Foundation.Date, isBr: Swift.Bool, state: NamiPairingFramework.RemoteTemplateUI_DeviceState, roomId: NamiPairingFramework.RoomID, deviceType: NamiPairingFramework.RemoteTemplateUI_DeviceType)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(id: NamiPairingFramework.DeviceID, uid: NamiPairingFramework.DeviceUniversalID, urn: Swift.String, name: Swift.String, codeName: Swift.String, productId: NamiPairingFramework.DeviceProductID, createdAt: Foundation.Date, updatedAt: Foundation.Date, isBr: Swift.Bool, state: NamiPairingFramework.RemoteTemplateUI_DeviceState, roomId: NamiPairingFramework.RoomID, deviceType: NamiPairingFramework.RemoteTemplateUI_DeviceType, isMotionDetected: Swift.Bool? = nil)
+  #endif
   public var id: NamiPairingFramework.DeviceID
   public var uid: NamiPairingFramework.DeviceUniversalID
   public var urn: Swift.String
@@ -6036,6 +6076,7 @@ public struct RemoteTemplateUI_Device : Swift.Codable, Swift.Equatable, Swift.Ha
   public var createdAt: Foundation.Date
   public var updatedAt: Foundation.Date
   public var deviceType: NamiPairingFramework.RemoteTemplateUI_DeviceType
+  public var isMotionDetected: Swift.Bool?
   public func encode(to encoder: any Swift.Encoder) throws
   public static func == (a: NamiPairingFramework.RemoteTemplateUI_Device, b: NamiPairingFramework.RemoteTemplateUI_Device) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -6609,6 +6650,7 @@ public protocol RemoteTemplateStateRepositoryProtocol {
   func deviceStates(uids: [NamiPairingFramework.DeviceUniversalID]) -> Combine.AnyPublisher<[NamiPairingFramework.RemoteTemplateUI_DeviceState], Swift.Never>
   func refreshPlace(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   func refreshDevices(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
+  func refreshDevicesMotionStates(placeId: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
   func createZone(placeId: NamiPairingFramework.PlaceID, name: Swift.String) -> Combine.AnyPublisher<NamiPairingFramework.PlaceZoneID, any Swift.Error>
   func createRoom(placeZoneId: NamiPairingFramework.PlaceZoneID, name: Swift.String, iconId: NamiPairingFramework.IconID) -> Combine.AnyPublisher<NamiPairingFramework.RoomID, any Swift.Error>
   func deleteDevice(uid: NamiPairingFramework.DeviceUniversalID) -> Combine.AnyPublisher<Swift.Void, any Swift.Error>
@@ -9560,6 +9602,35 @@ public struct PinVerificationResultError : Swift.Decodable {
   public init(attribute: Swift.String)
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct DeviceMotionEvent : Swift.Decodable {
+  public var detection: Swift.Bool
+  public var health: Swift.String
+  public var startedAt: Foundation.Date
+  public var uid: NamiPairingFramework.DeviceUniversalID
+  public var uuid: Swift.String
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct DeviceMotionEventsResponse : Swift.Decodable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(events: [NamiPairingFramework.DeviceMotionEvent], total: Swift.Int, pageSize: Swift.Int, cursor: Swift.String? = nil)
+  #endif
+  public var events: [NamiPairingFramework.DeviceMotionEvent]
+  public var total: Swift.Int
+  public var pageSize: Swift.Int
+  public var cursor: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct DeviceMotionEventsQuery {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(uids: [NamiPairingFramework.DeviceUniversalID] = [], cursor: Swift.String? = nil)
+  #endif
+  public var uids: [NamiPairingFramework.DeviceUniversalID]
+  public var cursor: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func parameters(uids: [NamiPairingFramework.DeviceUniversalID] = [], cursor: Swift.String? = nil) -> NamiPairingFramework.DeviceMotionEventsQuery
+  #endif
+  public func getQueryItems() -> [Foundation.URLQueryItem]
+}
 public protocol NetworkSession : AnyObject {
   #if compiler(>=5.3) && $NonescapableTypes
   func publisher(for request: Foundation.URLRequest, token: NamiPairingFramework.AccessToken?) -> Combine.AnyPublisher<Foundation.Data, any Swift.Error>
@@ -9818,6 +9889,8 @@ public protocol WebAPIProtocol {
   func collectDeviceAttributeStatesHistory(query: NamiPairingFramework.DeviceAttributeStatesQuery) -> Combine.AnyPublisher<[NamiPairingFramework.DeviceAttributeState], any Swift.Error>
   func getDeviceAttributeStatesRecent(query: NamiPairingFramework.DeviceAttributeStatesQuery) -> Combine.AnyPublisher<NamiPairingFramework.DeviceAttributeStateResponse, any Swift.Error>
   func collectDeviceAttributeStatesRecent(query: NamiPairingFramework.DeviceAttributeStatesQuery) -> Combine.AnyPublisher<[NamiPairingFramework.DeviceAttributeState], any Swift.Error>
+  func getDeviceMotionEventsRecent(query: NamiPairingFramework.DeviceMotionEventsQuery) -> Combine.AnyPublisher<NamiPairingFramework.DeviceMotionEventsResponse, any Swift.Error>
+  func collectDeviceMotionEventsRecent(query: NamiPairingFramework.DeviceMotionEventsQuery) -> Combine.AnyPublisher<[NamiPairingFramework.DeviceMotionEvent], any Swift.Error>
   func getPinHashingParameters(for place: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<NamiPairingFramework.PinHashingParameters, any Swift.Error>
   func verifyPinCredentials(for place: NamiPairingFramework.PlaceID, pinName: Swift.String, hashedPin: Foundation.Data) -> Combine.AnyPublisher<Swift.Void, NamiPairingFramework.PinVerificationResult>
   func createPinCredentials(for place: NamiPairingFramework.PlaceID, pinName: Swift.String, hashedPin: Foundation.Data) -> Combine.AnyPublisher<NamiPairingFramework.PinCredentialRecord, any Swift.Error>
@@ -9923,6 +9996,8 @@ final public class WebAPI : NamiPairingFramework.WebAPIProtocol {
   final public func collectDeviceAttributeStatesHistory(query: NamiPairingFramework.DeviceAttributeStatesQuery) -> Combine.AnyPublisher<[NamiPairingFramework.DeviceAttributeState], any Swift.Error>
   final public func getDeviceAttributeStatesRecent(query: NamiPairingFramework.DeviceAttributeStatesQuery) -> Combine.AnyPublisher<NamiPairingFramework.DeviceAttributeStateResponse, any Swift.Error>
   final public func collectDeviceAttributeStatesRecent(query: NamiPairingFramework.DeviceAttributeStatesQuery) -> Combine.AnyPublisher<[NamiPairingFramework.DeviceAttributeState], any Swift.Error>
+  final public func getDeviceMotionEventsRecent(query: NamiPairingFramework.DeviceMotionEventsQuery) -> Combine.AnyPublisher<NamiPairingFramework.DeviceMotionEventsResponse, any Swift.Error>
+  final public func collectDeviceMotionEventsRecent(query: NamiPairingFramework.DeviceMotionEventsQuery) -> Combine.AnyPublisher<[NamiPairingFramework.DeviceMotionEvent], any Swift.Error>
   final public func getPinHashingParameters(for place: NamiPairingFramework.PlaceID) -> Combine.AnyPublisher<NamiPairingFramework.PinHashingParameters, any Swift.Error>
   final public func verifyPinCredentials(for place: NamiPairingFramework.PlaceID, pinName: Swift.String, hashedPin: Foundation.Data) -> Combine.AnyPublisher<Swift.Void, NamiPairingFramework.PinVerificationResult>
   final public func createPinCredentials(for place: NamiPairingFramework.PlaceID, pinName: Swift.String, hashedPin: Foundation.Data) -> Combine.AnyPublisher<NamiPairingFramework.PinCredentialRecord, any Swift.Error>
@@ -9979,6 +10054,8 @@ extension NamiPairingFramework.NamiAlertMode : Swift.RawRepresentable {}
 extension NamiPairingFramework.NamiEngineConfig.CodingKeys : Swift.Equatable {}
 extension NamiPairingFramework.NamiEngineConfig.CodingKeys : Swift.Hashable {}
 extension NamiPairingFramework.NamiEngineConfig.CodingKeys : Swift.RawRepresentable {}
+extension NamiPairingFramework.NamiDeviceMotionHealth : Swift.Hashable {}
+extension NamiPairingFramework.NamiDeviceMotionHealth : Swift.RawRepresentable {}
 extension NamiPairingFramework.NamiEngineType : Swift.Hashable {}
 extension NamiPairingFramework.NamiEngineType : Swift.RawRepresentable {}
 extension NamiPairingFramework.NamiZoneHealth : Swift.Hashable {}
