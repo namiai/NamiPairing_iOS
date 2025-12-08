@@ -1,0 +1,2462 @@
+"account_linking_authorize_sign_in_request" = "サインインリクエストを承認してください";
+"account_linking_did_you_make_this_request" = "このリクエストを行ったのはあなたですか？";
+"account_linking_please_signin" = "アカウントを連携する前にサインインしてください";
+"account_linking_sign_in_confirmed_body_message" = "設定が完了しました。";
+"account_linking_sign_in_error" = "サインインエラー";
+"account_linking_sign_in_request_ip_time_browser" = "%3s 経由で、%1s の %2s にサインインが要求されました。";
+"account_linking_sign_in_request_place_ip_time_browser_android" = "%4s 経由で %2s %3s の %1s からサインインが要求されました。";
+"activity_event_ongoing" = "進行中";
+"activity_motion" = "動き";
+"activity_motion_detected_in" = "動きが検知されました:";
+"activity_no_motion" = "動きなし";
+"activity_no_presence" = "不在";
+"activity_presence" = "在室";
+"activity_presence_detected_in" = "在室が検知されました：";
+"activity_title" = "活動";
+"activity_total_motion_time" = "動作検知の合計時間";
+"alarm_detected_at_android" = "%@ が %@ で検出されました";
+
+/*Disarm intrusion alarm*/
+"alarm_disarm" = "アラーム解除";
+
+/*False alarm. The [alarm type] was triggered by.*/
+"alarm_false_alarm_cause_list_title" = "%@ が作動した原因：";
+
+/*False alarm cause.*/
+"alarm_false_alarm_cause_myself" = "人";
+
+/*False alarm cause.*/
+"alarm_false_alarm_cause_other" = "その他";
+
+/*False alarm cause.*/
+"alarm_false_alarm_cause_small_moving_objects" = "ペット/掃除機/扇風機";
+
+/*False alarm.*/
+"alarm_false_alarm_report_button_title" = "報告";
+
+/*False alarm. Reporting as false alarm would also disarm the [alert type].*/
+"alarm_false_alarm_report_hint" = "誤報として報告すると、%@ も解除されます。";
+
+/*False alarm.*/
+"alarm_false_alarm_select_cause_title" = "誤報の原因を選択";
+
+/*Sensetivity explanation screen on false alarm report.*/
+"alarm_false_alarm_sensitivity_explanatio_adjust_sensitivity_button" = "感度を調整する";
+
+/*Sensetivity explanation screen on false alarm report.*/
+"alarm_false_alarm_sensitivity_explanatio_arm_selected_zones" = "施設内にに複数のゾーンがある場合は、玄関周辺のゾーンのみアラームモードを有効にすることを検討してください。";
+
+/*Sensetivity explanation screen on false alarm report.*/
+"alarm_false_alarm_sensitivity_explanatio_possible_reasons" = "大型のペットや掃除ロボット、その他の非人間の動きによって侵入アラームが作動することがあります。";
+
+/*Sensetivity explanation screen on false alarm report.*/
+"alarm_false_alarm_sensitivity_explanatio_sensitivity_level_hint" = "小さく一時的な動きを除外するために、プレイスの感度レベルを調整することをおすすめします。";
+
+/*Sensetivity explanation screen on false alarm report.*/
+"alarm_false_alarm_sensitivity_explanation_reduce_false_alarms_title" = "誤報を減らす方法";
+
+/*False alarm.*/
+"alarm_false_alarm_title" = "誤報を報告する";
+
+/*Ongoing intrusion message states at [where] since [date] [time]*/
+"alarm_intrusion_description" = "%2$@ から %1$@ にて";
+
+/*Ongoing intrusion message states at [where] since [date] [time]*/
+"alarm_intrusion_description_android" = "%@ から %@ にて";
+
+/*Ongoing intrusion message title*/
+"alarm_intrusion_title" = "侵入を検知しました";
+
+/*All the activities in place are stopped more then 15 minutes ago at [time].*/
+"alarm_live_alarm_activities_stopped" = "侵入の動きは %@ に停止しました";
+
+/*Live alarm. "No activity since [alarm type] started."*/
+"alarm_live_alarm_noActivity" = "%@ の開始以降、動きは検出されていません";
+
+/*Live alarm. Activity ongoing for [period of time].*/
+"alarm_live_alarm_ongoing_activity" = "%@ 間、動きが継続しています";
+
+/*Live alarm. Security monitoring*/
+"alarm_live_alarm_security_monitoring" = "現在の状況";
+
+/*Live alarm. Started at [time] in [zone].*/
+"alarm_live_alarm_started_at_in_zone" = "%2$@ で動きを検知し、%1$@ にアラームが作動しました";
+
+/*Live alarm. Activity stopped [period of time] ago.*/
+"alarm_live_alarm_stopped_activity" = "%@ 前に動きが停止しました";
+
+/*Alarm reason Intrusion*/
+"alarm_reason_intrusion" = "侵入";
+
+/*Alert report: alarm disarmed*/
+"alarm_report_alarm_disarmed" = "アラームが解除されました";
+
+/*Alert report: alarm_triggered*/
+"alarm_report_alarm_triggered" = "アラームが作動しました";
+
+/*To use in the intrusion report event tile "<Device name> closed"*/
+"alarm_report_device_closed" = "%@ は閉じました";
+
+/*To use in the intrusion report event tile: "<Device name> opened"*/
+"alarm_report_device_opened" = "%@ が開きました";
+
+/*Alert report: duration*/
+"alarm_report_duration" = "合計時間";
+
+/*Alert report: start_time to end_time*/
+"alarm_report_event_start_end_time" = "%1$@ から %2$@ まで";
+
+/*Report false alarm.*/
+"alarm_report_false" = "誤報を報告する";
+"alarm_report_motion_started_in" = "%@ で動きが検知されました";
+
+/*Alert report: security log*/
+"alarm_report_security_log" = "セキュリティログ";
+
+/*Alert report: started at time*/
+"alarm_report_started_at" = "%@ に開始";
+
+/*Alert report: 'subject' history*/
+"alarm_report_subject_history" = "%@ の履歴";
+
+/*Alert report: title*/
+"alarm_report_title" = "イベントレポート";
+
+/*Alert report: total active time x min*/
+"alarm_report_total_active_time" = "合計アクティブ時間：%@";
+
+/*Alert report: zones affected*/
+"alarm_report_zones_affected" = "アラーム対象ゾーン";
+"app_name" = "nami Lookout24";
+
+/*app_widget*/
+"app_widget_description_medium" = "あなたのプレイスのセキュリティモードに素早くアクセス";
+
+/*app_widget*/
+"app_widget_description_small" = "あなたのプレイスのセキュリティモードを表示する";
+
+/*app_widget*/
+"app_widget_error_no_internet_connection" = "インターネット接続なし";
+
+/*app_widget*/
+"app_widget_label_medium" = "プレイスモードコントロール";
+
+/*app_widget*/
+"app_widget_label_small" = "プレイスモード表示";
+
+/*app_widget*/
+"appwidget_default_placeName" = "サンタモニカ";
+
+/*app_widget*/
+"appwidget_error_text" = "問題が発生しました。";
+"are_you_want_to_cancel_pairing_process" = "ペアリングの処理を本当に中止しますか？";
+"automation_at" = "で";
+"automation_back" = "戻る";
+"automation_change_mode_to" = "モードを変更する";
+"automation_conflict_automation_description" = "下記に赤字で表示された既存のオートメーション設定と競合しています";
+"automation_conflict_automation_title" = "オートメーションを保存できません";
+"automation_create_automation" = "オートメーションを作成する";
+"automation_delete_automation" = "オートメーションを削除しますか?";
+"automation_delete_automation_description" = "この操作は元に戻せません。";
+"automation_edit_automation" = "オートメーションの編集";
+"automation_every_day" = "毎日";
+"automation_every_weekday" = "平日";
+"automation_every_weekend" = "毎週末";
+"automation_for" = "のために";
+"automation_format_time_zone" = "日付と時刻は %@ に基づいています";
+"automation_is_your_place_located_in_this_time_zone" = "%@ はこのタイムゾーン内にありますか?";
+"automation_modes" = "モード";
+"automation_msg_empty_automation" = "モードを自動で切り替えるスケジュールを設定してください";
+"automation_new_automation" = "新しいオートメーション";
+"automation_no_automation_available_yet" = "現在、オートメーションは設定されていません";
+"automation_no_permission_to_make_change_dialog_description" = "サポートが必要な場合は管理者にお問い合わせください。";
+"automation_no_permission_to_make_change_dialog_got_it" = "OK";
+"automation_no_permission_to_make_change_dialog_title" = "変更する権限がありません";
+"automation_no_zones_available" = "利用可能なゾーンはありません";
+"automation_no_zones_selected" = "ゾーンが選択されていません";
+"automation_repeat_on" = "繰り返し";
+"automation_select_time" = "時刻を選択";
+"automation_select_timezone" = "タイムゾーンを選択";
+"automation_select_zone" = "タイムゾーンを選択";
+"automation_tooltip_stay_mode_only_available" = "ステイモードは、ドアセンサーのあるゾーンでのみ使用できます。";
+"automation_tooltip_stay_mode_unselected_zones" = "ドアセンサーのないゾーン（%@）を選択解除して、オートメーションを保存し直してください";
+"automations_action_cannot_undone" = "この操作は元に戻せません。";
+"automations_at" = "実行時刻：";
+"automations_automation_cannot_be_saved" = "オートメーションを保存できませんでした";
+"automations_create_automation" = "オートメーションを作成";
+"automations_date_and_time_based_on" = "日付と時刻は以下を基準に設定されています：";
+"automations_delete_automation" = "オートメーションを削除しますか?";
+"automations_edit_automation" = "オートメーションを編集";
+"automations_every_weekday" = "平日";
+"automations_every_weekend" = "毎週末";
+"automations_everyday" = "日常";
+"automations_for" = "対象：";
+"automations_modes" = "モード";
+"automations_new_automation" = "新しいオートメーション";
+"automations_no_zones_available" = "利用可能なゾーンはありません";
+"automations_no_zones_selected" = "ゾーンが選択されていません";
+"automations_repeat_on" = "繰り返し：";
+
+/*Automations: Empty state set a schedule to activate modes automatically*/
+"automations_set_a_schedule_to_activate_modes_automatically" = "モードを自動的に切り替えるスケジュールを設定します";
+"automations_you_have_conflict" = "以下に赤く表示されている既存のオートメーションと競合しています";
+
+/*Change username: Empty error message*/
+"change_username_empty_error_message" = "ニックネームを入力してください";
+
+/*Change username: Placeholder*/
+"change_username_placeholder" = "プロフィール名";
+
+/*Change username: Prompt message*/
+"change_username_prompt_message" = "プロフィール名を作成してください";
+
+/*Choose room: button title to confirm room selection.*/
+"choose_room_confirm" = "OK";
+
+/*Choose room: button title to go to room creation.*/
+"choose_room_create_room" = "部屋を作成";
+
+/*Choose room: header above the list of rooms, before pairing.*/
+"choose_room_header" = "このデバイスはどこに設置しますか？";
+"choose_room_load_data_failed" = "部屋一覧の読み込みに失敗しました";
+"choose_room_select_or_create_header" = "このデバイスはどこに設置しますか？";
+
+/*Choose zone: button title to go to zone creation*/
+"choose_zone_create_zone" = "ゾーンを作成する";
+
+/*Choose zone: header above the list of zones*/
+"choose_zone_header" = "ゾーンを選択してください";
+
+/*0 devices*/
+"choose_zone_no_devices" = "デバイスなし";
+
+/*[Count] Thread devices.*/
+"choose_zone_thread_devices_count" = "%@ 台のThreadデバイス";
+
+/*[Count] Wi-Fi devices.*/
+"choose_zone_wifi_devices_count" = "%@ 台の Wi-Fi デバイス";
+"commissioning_mode_checkup_zone_contact_isntaller" = "セットアップを完了するには、サービス提供元にご連絡ください。";
+"commissioning_mode_companion_landing_cancel" = "キャンセル";
+"commissioning_mode_companion_landing_contact_support" = "サポートにお問い合わせください";
+"commissioning_mode_companion_landing_go_to_place_button" = "プレイスへ移動";
+"commissioning_mode_companion_landing_loading_info" = "プレイスの情報を取得しています";
+"commissioning_mode_companion_landing_place_found" = "プレイスが確認されました";
+"commissioning_mode_confirm_place_confirm_button" = "確認";
+"commissioning_mode_confirm_place_name_place_hint" = "お好きな名前を設定できますが、他と区別しやすい名前（例：CRM番号など）を推奨します。";
+"commissioning_mode_confirm_place_name_place_placeholder" = "プレイスの名前";
+"commissioning_mode_loading_screen_loading_content" = "外部データを取得しています";
+"commissioning_mode_place_details_add_devices_hint" = "セットアップを完了するには、少なくとも2台のデバイスを追加してください";
+"commissioning_mode_place_details_add_zone" = "ゾーンを追加";
+"commissioning_mode_place_details_contact_isntaller" = "プレイスのセットアップについては、サービス提供元にご連絡ください。";
+"commissioning_mode_place_details_created_at" = "プレイスの作成日時";
+"commissioning_mode_place_details_created_at_android" = "プレイスの作成日時";
+"commissioning_mode_place_details_exit_button" = "終了";
+"commissioning_mode_place_details_updated_at" = "プレイスの更新日時";
+"commissioning_mode_place_details_updated_at_android" = "最新更新日時";
+"commissioning_mode_place_details_zones_section_title" = "ゾーン";
+"commissioning_mode_setup_mode_settings_exit_setup" = "セットアップを終了";
+"commissioning_mode_setup_mode_settings_place_settings" = "プレイスの設定";
+"commissioning_mode_setup_mode_settings_settings" = "設定";
+"companion_edit_place_name_hint" = "プレイスの名前";
+"companion_exit_setup" = "設定を終了";
+"companion_exit_setup_android" = "セットアップを終了";
+"companion_home_contact_your_installer_to_set_up_your_place" = "プレイスの設定には、サービス提供元にご連絡ください。";
+"companion_zone_motion_sensing_connect_local_wifi" = "動きの状態を見るには、ローカルWi-Fiに接続してください。";
+"companion_zone_motion_sensing_movement_detected" = "動きを検知をしました";
+"companion_zone_motion_sensing_no_movement_detected" = "動きは検出されませんでした。";
+"companion_zones" = "ゾーン";
+"confirm_cancel_pairing" = "ペアリングを解除してもよろしいですか？";
+
+/*Create place: when confirming the place name, the title of the Confirm button.*/
+"confirm_place_name_button_confirm" = "確認";
+
+/*Create place: header text when confirming the name for a newly-created place.*/
+"confirm_place_name_header" = "プレイス名を確認";
+
+/*Create place: subheader shortly describing the criteria for choosing a place name.*/
+"confirm_place_name_subhead" = "このプレイスの名前をどうしますか？お好きな名前を付けてください。";
+
+/*Create room: when confirming the room name, the title of the Confirm button.*/
+"confirm_room_name_button_confirm" = "部屋を作成";
+
+/*Create room: header text when confirming the name for a newly-created room.*/
+"confirm_room_name_header" = "部屋の名前を入力";
+
+/*Create room: subheader shortly describing the criteria for choosing a room name.*/
+"confirm_room_name_subhead" = "各部屋を見分けやすくするために";
+"connectivity_indicator_device_connected" = "接続";
+"connectivity_indicator_device_disconnected" = "切断";
+"connectivity_indicator_device_rssi" = "RSSI %d";
+"contact_sensor_setup_before_you_continue" = "続行する前に";
+"contact_sensor_setup_guide_description1" = "デバイスが設置したいプレイスの近くにあることを確認してください";
+"contact_sensor_setup_guide_description2" = "プラスチックの電池タブを外してください";
+
+/*Create First Place: button to dismiss*/
+"create_first_place_cancel" = "後で行う";
+
+/*Create First Place: button to start place creation*/
+"create_first_place_create_place" = "プレイスを作成";
+
+/*Create First Place: button to start place creation*/
+"create_first_place_create_place_slide_text" = "自分のプレイスを作成して、ユーザーを招待しましょう";
+
+/*Create First Place: button to join place*/
+"create_first_place_join_place" = "プレイスに参加";
+
+/*Create First Place: button to join place*/
+"create_first_place_join_place_slide_text" = "他のプレイスやコミュニティに参加しましょう";
+
+/*Create First Place: welcome and ask to create place*/
+"create_first_place_lets_start" = "まずは最初のプレイスを作成しましょう。";
+
+/*Create First Place: welcome*/
+"create_first_place_welcome_text" = "namiへようこそ！";
+
+/*Create place: section title*/
+"create_place_section_title" = "プレイスを作成";
+
+/*Create zone: when confirming the zone name, the title of the Confirm button.*/
+"create_zone_button_confirm" = "ゾーンを作成";
+"create_zone_description" = "部屋のグループや異なるフロアを見分けやすくするために使います";
+"create_zone_enter_name_hint" = "ゾーン名";
+"create_zone_first_floor" = "1階";
+
+/*Create zone: header text when confirming the name for a newly-created zone.*/
+"create_zone_header" = "ゾーンを作成";
+"create_zone_name_the_zone_description" = "部屋のグループや異なるフロアを見分けやすくするために使います";
+
+/*Create zone: placeholder text for zone name textfield*/
+"create_zone_placeholder" = "センシングゾーン";
+
+/*Create zone: placeholder text for zone name textfield for multiple floor place*/
+"create_zone_second_floor_placeholder" = "２階";
+"create_zone_title" = "ゾーンに名前をつける";
+
+/*Button text for adding a new place on the main dashboard (when there are no places).*/
+"dashboard_add_new_place" = "プレイスを追加";
+"dashboard_format_disconnected_device_in_multiple_zone_android" = "複数のゾーンで %d 台のデバイスがオフラインです";
+
+/*plurals*/
+"dashboard_format_disconnected_device_in_one_zone_android" = "1つのゾーンにオフラインのデバイスが %d 台あります";
+"dashboard_format_issue_in_a_place" = "%@ に対応が必要です";
+"dashboard_format_issue_in_multiple_place" = "%d か所で対応が必要です";
+"dashboard_place_tile_current_status" = "現在の状況";
+"dashboard_place_tile_intrusion_detected" = "侵入を検知";
+"dashboard_place_tile_movement_detected" = "動きを検知";
+"dashboard_place_tile_no_movement_detected" = "動きは検出されませんでした";
+"dashboard_place_tile_no_sensing_data" = "センシングデータなし";
+"dashboard_place_tile_not_available" = "利用不可";
+
+/*pair more device in place detail for old place without property info*/
+"dashboard_place_tile_pair_more" = "Wi-Fiによる動作検知を有効にするには、アクティビティセンサーをさらに追加する必要があります";
+
+/*pair more device in place detail for old place without property info*/
+"dashboard_place_tile_pair_one_more" = "セキュリティを有効にするには、デバイスの追加が必要です";
+"dashboard_place_tile_since_started_date" = "%1$@ から開始";
+"dashboard_place_tile_since_started_date_android" = "%@ から利用中";
+
+/*Title for the Places section of the main dashboard.*/
+"dashboard_places" = "プレイス";
+"dashboard_sensing_link_broken_in_multiple_zone" = "複数のゾーンでセンサーが応答していません";
+"dashboard_sensing_link_broken_in_one_zone" = "1つのゾーンでセンサーが応答していません";
+
+/*push notification*/
+"default_notification_channel_id" = "";
+"default_notification_channel_name" = "";
+
+/*Delete place: confirm delete place*/
+"delete_place_confirm_delete_place" = "このプレイスを削除してもよろしいですか？";
+
+/*Delete place: confirm leave place*/
+"delete_place_confirm_leave_place" = "このプレイスから退出してもよろしいですか？";
+
+/*Delete place: delete all related data*/
+"delete_place_delete_all_related_data" = "関連するすべてのデータを削除";
+
+/*Delete place: delete all related data description*/
+"delete_place_delete_all_related_data_description" = "このプレイスに関連するデータは、今後一切復元できなくなります。";
+
+/*Delete place: delete place*/
+"delete_place_delete_place_and_data" = "この操作により、プレイスと関連するすべてのデータが完全に削除されます。";
+
+/*Delete place: title*/
+"delete_place_delete_place_title" = "プレイスを削除";
+
+/*Delete place: invite again*/
+"delete_place_invite_again" = "このプレイスには、再度招待を受けて参加することができます。";
+
+/*Delete place: leave place title*/
+"delete_place_leave_place_title" = "プレイスを離れる";
+
+/*Delete place: lose access to all data*/
+"delete_place_lose_access_to_all_data" = "すべてのデータへのアクセスを失う";
+
+/*Delete place: lose access to all data description*/
+"delete_place_lose_access_to_all_data_description" = "このプレイスに関連付けられたデータを取得できなくなります。";
+
+/*Delete place: lose access to all devices*/
+"delete_place_lose_access_to_all_devices" = "すべてのデバイスへのアクセスを失う";
+
+/*Delete place: lose access to all devices description*/
+"delete_place_lose_access_to_all_devices_description" = "このプレイスにあるすべてのデバイスにアクセスできなくなります。";
+
+/*Delete place: remove all users*/
+"delete_place_remove_all_users" = "すべてのユーザーを削除";
+
+/*Delete place: remove all users description*/
+"delete_place_remove_all_users_description" = "このプレイスにアクセスできるすべてのユーザーはアクセス権を失います。";
+
+/*Delete place: reset all devices*/
+"delete_place_reset_all_devices" = "すべてのデバイスをリセット";
+
+/*Delete place: reset all devices description*/
+"delete_place_reset_all_devices_description" = "このプレイスでペアリングされたデバイスはリセットされます。";
+
+/*Delete place: this action is irreversible*/
+"delete_place_this_action_is_irreversible" = "この操作は元に戻せません。";
+
+/*Delete place: this will also*/
+"delete_place_this_will_also" = "これにより、次の操作も行われます";
+
+/*Accessories*/
+"device_category_accessories" = "アクセサリ";
+"device_category_activity_sensors" = "アクティビティセンサー";
+
+/*Sensing*/
+"device_category_sensing" = "センシング";
+
+/*door sensor*/
+"device_detail_door_sensor_low_battery" = "バッテリー残量が少ない";
+
+/*door sensor*/
+"device_detail_door_sensor_low_battery_warning" = "バッテリー残量が少なくなっています。早めの交換をおすすめします。詳しくはこちら。";
+
+/*door sensor*/
+"device_detail_door_sensor_low_battery_warning_learn_how" = "詳しくはこちら";
+
+/*Sensing*/
+"device_details_connected" = "接続";
+"device_details_load_data_failed" = "デバイスの詳細を読み込めませんでした: %@";
+
+/*Device name editing input field placeholder*/
+"device_edit_device_name_placeholder" = "デバイス名を入力";
+
+/*Device editing screen title.*/
+"device_edit_title" = "デバイスを編集";
+
+/*Aerial Motion V1*/
+"device_engines_aerial_motion_v1" = "Aerial Motion V1";
+
+/*Device engines: motion engine*/
+"device_engines_motion" = "モーションエンジン";
+
+/*Device engines: security engine*/
+"device_engines_security" = "セキュリティエンジン";
+
+/*Device engines: unknown*/
+"device_engines_unknown" = "不明";
+
+/*Device information screen items titles*/
+"device_info_bbsid" = "BSSID";
+
+/*Device information screen border router*/
+"device_info_border_router" = "ボーダールータ";
+
+/*Device information screen items titles*/
+"device_info_cloud_connection" = "クラウド接続";
+
+/*Device information screen state of a connection method*/
+"device_info_device_connected" = "接続";
+
+/*Device information screen state of a connection method*/
+"device_info_device_disconnected" = "切断";
+
+/*Device information screen items titles*/
+"device_info_device_model" = "デバイスモデル";
+
+/*Device information screen device model id*/
+"device_info_device_model_id" = "デバイスモデルID";
+
+/*Device information screen items titles*/
+"device_info_firmvare_vesrion" = "ファームウェアバージョン";
+
+/*Device information screen items titles*/
+"device_info_local_connection" = "モバイルによるローカル接続";
+
+/*Device information screen items titles*/
+"device_info_mac_address" = "MACアドレス";
+
+/*Device information screen non border router*/
+"device_info_non_border_router" = "-";
+
+/*Device information screen items titles*/
+"device_info_paired_at" = "ペアリング日";
+
+/*Device information screen PANID*/
+"device_info_panid" = "PANID";
+
+/*Device information screen role*/
+"device_info_role" = "役割";
+
+/*Device information screen items titles*/
+"device_info_rssi" = "RSSI";
+
+/*Device information screen technical information section title*/
+"device_info_technical_information" = "技術情報";
+
+/*Device information screen thread network section title*/
+"device_info_thread_network" = "Threadネットワーク";
+
+/*Device information screen title*/
+"device_info_title" = "デバイス情報";
+"device_info_widar_position" = "設置位置";
+"device_info_widar_position_mispositioned" = "不適切な設置位置";
+"device_info_widar_position_not_available" = "利用不可";
+"device_info_widar_position_optimal" = "最適";
+"device_info_widar_position_status" = "設置位置の状態";
+"device_info_widar_positioning_information" = "デバイスの設置位置を最適化する";
+"device_info_widar_sensing" = "センシング";
+
+/*Device information screen wi-fi network section title*/
+"device_info_wifi_network" = "Wi-Fiネットワーク";
+
+/*Device information screen items titles*/
+"device_info_zone" = "ゾーン";
+
+/*Device instructions: bullet point 1*/
+"device_instructions_bullet_point_1" = "各センシングゾーンは1フロアをカバーします";
+
+/*Device instructions: bullet point 2*/
+"device_instructions_bullet_point_2" = "各センシングゾーンには少なくとも2つのnamiデバイスが必要です";
+
+/*Device instructions: bullet point 3*/
+"device_instructions_bullet_point_3" = "同じゾーン内のデバイスは同じWi-Fiアクセスポイントを使用する必要があります";
+
+/*Device instructions: bullet point 4*/
+"device_instructions_bullet_point_4" = "カバーしたいエリアの中心にあるアクセスポイントを使用してください";
+
+/*Device instructions: confirm button*/
+"device_instructions_confirm_button" = "開始";
+
+/*Device instructions: description*/
+"device_instructions_description" = "namiのセンシングは、Wi-Fi信号を利用して、センシングゾーンと呼ばれるエリア内の動きを検知します";
+
+/*Device instructions: title*/
+"device_instructions_title" = "namiセンシングの仕組み";
+"device_is_disconnected_to_internet" = "デバイスがインターネットから切断されました。サポートをご確認ください。";
+
+/*Device overview: title for the Wi-Fi Connection tile.*/
+"device_overview_connection" = "接続";
+
+/*Device overview: device connected over the cloud (remotely).*/
+"device_overview_connection_cloud" = "クラウド";
+
+/*Device overview: device connected directly (over wi-fi).*/
+"device_overview_connection_direct" = "直接接続";
+
+/*Device overview: device connected lost (no direct or cloud connection).*/
+"device_overview_connection_lost" = "接続なし";
+"device_overview_deletion_delete_confirm" = "消去";
+
+/*Device overview: Explains that the switch is for a device relay and not to power-off the device itself.*/
+"device_overview_relay_explanation" = "プラグをオフにしてもモーションセンサーには影響しません。";
+
+/*Device overview: Relay state is "Off"*/
+"device_overview_relay_is_off" = "オフ";
+
+/*Device overview: Relay state is "On"*/
+"device_overview_relay_is_on" = "オン";
+
+/*Device overview: title for the Alert Status tile.*/
+"device_overview_status" = "ステータス";
+
+/*Device overview: description for Wi-Fi connection quality.*/
+"device_overview_wifi_disconnected" = "未接続";
+
+/*Device overview: description for Wi-Fi connection quality.*/
+"device_overview_wifi_poor" = "接続状態が不安定です";
+"device_placement_avoid_placing_device_near_metalic" = "金属製の面やその近くには設置しないでください";
+
+/*device placement: confirm button*/
+"device_placement_confirm_button" = "次";
+"device_placement_do_not_connect_to_power_yet" = "デバイスをまだ電源に接続しないでください。";
+"device_placement_do_not_install_or_connect_to_power_yet" = "まだデバイスを設置したり、電源に接続しないでください";
+"device_placement_do_not_mount_door_sensor_yet" = "デバイスはまだ取り付けないでください。デバイスの名前をつけると設置ガイドが表示されます。";
+"device_placement_do_not_mount_keypad_yet" = "デバイスはまだ取り付けないでください。デバイスの名前をつけると設置ガイドが表示されます。";
+"device_placement_do_not_mount_motion_sensor_yet" = "デバイスはまだ取り付けないでください。デバイスの名前をつけると設置ガイドが表示されます。";
+"device_placement_door_sensor_guide_content_1" = "玄関まわりの防犯対策におすすめです。";
+"device_placement_door_sensor_guide_content_2_imperial" = "このセンサーは、%@ にある他のアクティビティセンサーから30フィート以内に設置してください。";
+"device_placement_door_sensor_guide_content_2_metric" = "このセンサーは、%@ にある他のアクティビティセンサーから10メートル以内に設置してください。";
+"device_placement_first_bss_guide_1_imperial" = "デバイスを玄関とWi-Fiアクセスポイントから30フィート以内に設置します";
+"device_placement_first_bss_guide_1_metric" = "デバイスを玄関とWi-Fiアクセスポイントから10m以内に設置してください";
+"device_placement_first_bss_second_device_guide_2_imperial" = "デバイスをAlarm Podから10〜30フィートの距離に設置してください";
+"device_placement_first_bss_second_device_guide_2_metric" = "デバイスをAlarm Podから3〜10mの距離に設置してください";
+"device_placement_first_bss_third_device_guide_3_imperial" = "デバイスをAlarm Podから30フィート以内に保って設置してください";
+"device_placement_first_bss_third_device_guide_3_metric" = "デバイスをAlarm Podから10m以内に保って設置してください";
+
+/*device placement: first device setup title*/
+"device_placement_first_device_setup" = "最初のデバイス設定";
+
+/*device placement: first device setup step 1*/
+"device_placement_first_device_setup_step_1" = "カバーしたいエリアの中心に位置するWi-Fiアクセスポイントを選択してください。";
+
+/*device placement: first device setup step 2 imperial*/
+"device_placement_first_device_setup_step_2_imperial" = "最初のデバイスは、選択したアクセスポイントから最大30フィート以内に設置してください";
+
+/*device placement: first device setup step 2 metric*/
+"device_placement_first_device_setup_step_2_metric" = "最初のデバイスを、選択したアクセスポイントから最大10m離れたプレイスに設置してください。";
+"device_placement_first_hms_second_device_guide_2_imperial" = "デバイスを最初のSensePlugから10〜30フィートの距離に設置します";
+"device_placement_first_hms_second_device_guide_2_metric" = "デバイスを最初のSensePlugから3〜10m以内に設置します";
+"device_placement_first_hms_third_device_guide_3_imperial" = "いずれかのSensePlugから30フィート以内に設置してください";
+"device_placement_first_hms_third_device_guide_3_metric" = "いずれかのSensePlugから10メートル以内に設置してください";
+"device_placement_first_sense_plug_guide_1_imperial" = "Wi-Fiアクセスポイントから30フィート以内に設置してください。";
+"device_placement_first_sense_plug_guide_1_metric" = "Wi-Fiアクセスポイントから10メートル以内に設置してください。";
+"device_placement_first_sense_plug_guide_2" = "このデバイスはThreadボーダールーターとして追加されます。";
+"device_placement_first_wifi_sensor_guide_1_imperial" = "Wi-Fiアクセスポイントから30フィート以内に設置してください。";
+"device_placement_first_wifi_sensor_guide_1_metric" = "Wi-Fiアクセスポイントから10メートル以内に設置してください。";
+"device_placement_first_wifi_sensor_guide_2" = "設置したいエリアの中心にあるWi-Fiアクセスポイントを選んでください。";
+"device_placement_first_wifi_sensor_guide_3" = "%@ にある他のデバイスも、このデバイスが接続するWi-Fiアクセスポイントを使用します。";
+"device_placement_keypad_guide_content_1" = "操作しやすいように、デバイスはドアの近くに設置してください";
+"device_placement_motion_sensor_guide_content_1" = "";
+"device_placement_non_first_bss_has_br_guide_2_imperial" = "ドアセンサーを設置予定のドアから30フィート以内にデバイスを配置してください";
+"device_placement_non_first_bss_has_br_guide_2_metric" = "ドアセンサーを設置予定のドアから10メートル以内にデバイスを配置してください";
+"device_placement_non_first_bss_no_br_guide_1_imperial" = "Wi-Fiアクセスポイントとドアセンサーを設置予定のドアから、それぞれ30フィート以内にデバイスを配置してくださ";
+"device_placement_non_first_bss_no_br_guide_1_metric" = "Wi-Fiアクセスポイントとドアセンサーを設置予定のドアから、それぞれ10メートル以内にデバイスを配置してください";
+"device_placement_non_first_hss_third_device_no_device_guide_3_imperial" = "%@ 内のいずれかのSensePlugから30フィート以内に設置してください";
+"device_placement_non_first_hss_third_device_no_device_guide_3_metric" = "%@ 内のいずれかのSensePlugから10メートル以内に設置してください";
+"device_placement_non_first_sense_plug_guide_2_imperial" = "%@ にあるすべてのアクティビティセンサーから10〜30フィートの範囲に設置してください。";
+"device_placement_non_first_sense_plug_guide_2_metric" = "%@ にあるすべてのアクティビティセンサーから3〜10メートルの範囲に設置してください。";
+"device_placement_non_first_widar_has_br_guide_1_imperial" = "%@ 内のすべてのアクティビティセンサーから10〜30フィートの範囲に設置してください";
+"device_placement_non_first_widar_has_br_guide_1_metric" = "%@ 内のすべてのアクティビティセンサーから3〜10メートルの範囲に設置してください";
+"device_placement_non_first_widar_sensor_guide_2_imperial" = "%@ にあるすべてのアクティビティセンサーから10〜30フィートの範囲に設置してください";
+"device_placement_non_first_widar_sensor_guide_2_metric" = "%@ にあるすべてのアクティビティセンサーから3〜10メートルの範囲に設置してください";
+"device_placement_non_first_wifi_sensor_guide_1_imperial" = "Wi-Fiアクセスポイントから30フィート以内、かつ同じ階に設置してください。";
+"device_placement_non_first_wifi_sensor_guide_1_metric" = "Wi-Fiアクセスポイントから10メートル以内、かつ同じ階に設置してください。";
+"device_placement_non_first_wifi_sensor_guide_2_imperial" = "%@ にある別のデバイスから10～30フィートの範囲に設置してください。";
+"device_placement_non_first_wifi_sensor_guide_2_metric" = "%@ にある別のデバイスから3〜10メートルの範囲に設置してください。";
+
+/*Device Placement Notice screen message*/
+"device_placement_notice_notice" = "このデバイスを既存のデバイスと同じフロアに、10〜30フィートの距離内で設置してください。";
+
+/*Device Placement Notice screen message when the <place name> is known—multizones enambled*/
+"device_placement_notice_notice_known_zone" = "このデバイスを %@ 内の他のデバイスと同じフロアに、10 ～ 30 フィートの距離以内で配置してください。";
+"device_placement_place_device_on_same_floor" = "同じ階にデバイスを設置してください。";
+
+/*device placement: remaining devices setup title*/
+"device_placement_remaining_devices_setup" = "残りのデバイスの設置方法";
+
+/*device placement: remaining devices setup title*/
+"device_placement_remaining_devices_setup_step_1_imprerial" = "デバイス間の距離が10～30フィートであることを確認してください";
+
+/*device placement: remaining devices setup title*/
+"device_placement_remaining_devices_setup_step_1_metric" = "デバイス間の距離が3m～9mであることを確認してください";
+
+/*device placement: remaining devices setup title imperial*/
+"device_placement_remaining_devices_setup_step_2_imperial" = "デバイスがWi-Fiアクセスポイントから30フィート以内にあることを確認してください";
+
+/*device placement: remaining devices setup title metric*/
+"device_placement_remaining_devices_setup_step_2_metric" = "デバイスがWi-Fiアクセスポイントから10m以内にあることを確認してください";
+
+/*device placement: remaining devices setup title*/
+"device_placement_remaining_devices_setup_step_3" = "デバイスを家具や電子機器のすぐ裏に設置しないでください。";
+
+/*device placement: remaining devices setup title*/
+"device_placement_remaining_devices_setup_step_4" = "デバイスを別のフロアに設置しないでください。";
+"device_placement_secure_any_entry_or_room_door" = "出入り口や部屋のドアを確実に保護してください";
+"device_placement_sensor_dialog_description" = "アクティビティセンサーとは、Alarm PodとSensePlugのことを指します。";
+"device_placement_sensor_dialog_title" = "アクティビティセンサーとは何ですか?";
+"device_placement_thread_border_router_dialog_description" = "これは、Thread対応デバイスをインターネットにつなげて、通信を円滑にする橋渡し役のようなものです。";
+"device_placement_thread_border_router_dialog_title" = "Thread ボーダールーターとは何ですか?";
+"device_placement_where_to_place_device" = "デバイスの設置プレイスを選んでください";
+"device_settings_customize_device_description" = "デバイス名";
+"device_settings_customize_device_title" = "デバイス名を編集";
+"device_settings_device_info_title" = "デバイス情報";
+"device_settings_error_device_not_found" = "デバイスが見つかりません";
+"device_settings_remove_device" = "デバイスを削除";
+"device_settings_remove_device_name" = "%@ を削除";
+"device_settings_technical_information_subtitle_thread" = "Wi-Fi、Thread、ハードウェアの詳細";
+
+/*device settings*/
+"device_settings_technical_information_subtitle_thread_end" = "Thread情報、ハードウェアの詳細";
+"device_settings_technical_information_subtitle_wifi" = "Wi-Fi ネットワーク、ハードウェアの詳細";
+
+/*Device settions*/
+"device_settings_title" = "デバイス設定";
+"device_setup_accessories" = "アクセサリ";
+"device_setup_activity_sensors" = "アクティビティセンサー";
+"device_setup_alarm_pod" = "Alarm Pod";
+"device_setup_contact_sensor" = "ドアセンサー";
+"device_setup_keypad" = "キーパッド";
+"device_setup_motion_sensor" = "モーションセンサー";
+"device_setup_others" = "その他";
+"device_setup_security_pod" = "セキュリティポッド";
+"device_setup_sense_plug" = "SensePlug";
+"device_setup_sense_pod" = "SensePod";
+"device_setup_widar_sensor" = "WiDARセンサー";
+"device_setup_wifi_sensor" = "Wi-Fiセンサー";
+"device_type_selection_accessories_warning" = "アクセサリを追加する前に、まず Thread ボーダールーターをセットアップしてください。詳細はこちら";
+"device_type_selection_accessories_warning_learn_more" = "詳細はこちら";
+"device_widar_mispositioned_warning_message" = "センシング機能を復元するには、デバイスの設置位置を最適化してください";
+"devices_add_new_device" = "新しいデバイスを追加";
+"devices_add_new_room" = "新しい部屋を追加";
+"devices_add_new_zone" = "新しいゾーンを追加";
+
+/*door sensor*/
+"door_sensor_battery_level" = "バッテリー残量";
+
+/*door sensor*/
+"door_sensor_battery_percentage_android" = "%d%%";
+
+/*door sensor*/
+"door_sensor_closed" = "閉じています";
+
+/*door sensor*/
+"door_sensor_open" = "開いています";
+"edit_device_edit_device_name_hint" = "デバイス名";
+"edit_device_edit_device_title" = "デバイス名の編集";
+"edit_icon_header" = "プロフィールをカスタマイズしましょう！";
+
+/*Edit place: category selection title*/
+"edit_place_category" = "カテゴリ";
+"edit_place_delete_place_guide_description_2_android" = "このプレイスに関連するデータは今後一切復元できなくなります。";
+"edit_place_delete_place_guide_description_4_android" = "このプレイスでペアリングされたデバイスはリセットされます。";
+"edit_place_delete_place_guide_description_6_android" = "このプレイスにアクセス権を持つすべてのユーザーは、アクセスできなくなります。";
+"edit_place_delete_place_guide_description_android" = "また、次の内容も実行されます：";
+
+/*Edit place: delete button*/
+"edit_place_deletion_delete_button" = "プレイスを削除";
+
+/*Edit place: title*/
+"edit_place_edit_place" = "プレイスをカスタマイズ";
+
+/*Edit place: place settings menu description*/
+"edit_place_edit_place_description" = "名前、カテゴリ、色、アイコン";
+
+/*Edit place: hint to enter place name in the field*/
+"edit_place_enter_name" = "プレイス名を入力";
+
+/*Edit place: place icon selection title*/
+"edit_place_icon" = "プレイスのアイコン";
+"edit_place_leave_place_guide_description_4_android" = "このプレイスにあるすべてのデバイスにアクセスできなくなります。";
+"edit_place_leave_place_guide_title" = "このプレイスにあるすべてのデバイスとデータにアクセスできなくなります。";
+
+/*Edit place: sensitivity*/
+"edit_place_sensitivity" = "感度";
+"edit_place_zero_device_android" = "デバイスの管理";
+"edit_profile_load_failed" = "プロファイルの読み込みに失敗しました: %@";
+"edit_profile_save_failed" = "プロファイルの更新に失敗しました: %@";
+
+/*Edit room: category selection title*/
+"edit_room_category" = "タイプ";
+
+/*Edit room: delete button text*/
+"edit_room_delete_button" = "部屋を削除";
+"edit_room_delete_failed" = "部屋の削除に失敗しました: %@";
+"edit_room_delete_zone_failed" = "ゾーンの削除に失敗しました: %@";
+"edit_room_deletion_delete_room_alert_message" = "この部屋内のすべてのデータとデバイスが削除されます。";
+"edit_room_deletion_delete_zone_alert_message" = "このゾーン内のすべてのデータとデバイスが削除されます。";
+
+/*Edit room: title*/
+"edit_room_edit_room" = "部屋の編集";
+
+/*Edit room: hint to enter room name in the field*/
+"edit_room_enter_name" = "部屋名を入力";
+
+/*Edit room: room icon selection title*/
+"edit_room_icon" = "部屋のアイコン";
+"edit_room_load_failed" = "部屋の読み込みに失敗しました：%@";
+"edit_room_save_failed" = "部屋の保存に失敗しました：%@";
+
+/*Edit user profile: choose image color*/
+"edit_user_profile_choose_image_color" = "アイコンの色";
+
+/*Edit user profile: choose profile image*/
+"edit_user_profile_choose_profile_image" = "プロフィールアイコン";
+
+/*Edit user profile: empty error message*/
+"edit_user_profile_empty_error_message" = "プロフィール名は空欄にできません";
+
+/*Edit user profile: placeholder for profile name textfield*/
+"edit_user_profile_placeholder" = "プロフィール名";
+
+/*Edit user profile: profile name*/
+"edit_user_profile_profile_name" = "プロフィール名";
+
+/*Edit user profile: title*/
+"edit_user_profile_title" = "プロフィールの編集";
+
+/*Edit zone: delete alert description*/
+"edit_zone_delete_alert_description" = "このゾーン内のすべてのデータとデバイスが削除されます。";
+
+/*Edit zone: delete alert title*/
+"edit_zone_delete_alert_title" = "このゾーンを削除";
+
+/*Edit room: delete button text*/
+"edit_zone_delete_button" = "ゾーンを削除";
+
+/*Edit zone: title*/
+"edit_zone_edit_zone" = "ゾーンの編集";
+
+/*Edit room: hint to enter room name in the field*/
+"edit_zone_enter_name" = "ゾーン名を入力";
+"edit_zone_fail_to_create_zone" = "ゾーンの作成に失敗しました";
+"edit_zone_fail_to_delete_zone" = "ゾーンの削除に失敗しました";
+"edit_zone_fail_to_edit_zone" = "ゾーンの編集に失敗しました";
+"edit_zone_fail_to_get_zone_information" = "ゾーン情報を取得できませんでした";
+"edit_zone_title" = "ゾーン名を編集";
+"edit_zone_zone_name_already_in_use" = "このゾーン名は既に使用されています。別の名前を使用してください";
+
+/*Engine settinge: engine settings description*/
+"engine_settings_engine_settings_description" = "使用するエンジンを選択してください";
+
+/*Engine settinge: motion engine*/
+"engine_settings_motion_engine" = "モーションエンジン";
+
+/*Engine settinge: motion engine description*/
+"engine_settings_motion_engine_description" = "このエンジンは、迅速なオートメーションシナリオ向けに設計されています。セキュリティエンジンよりも感度が高く、応答も速いですが、感度の設定には対応していません。";
+
+/*Engine settinge: security engine*/
+"engine_settings_security_engine" = "セキュリティエンジン";
+
+/*Engine settinge: security engine description*/
+"engine_settings_security_engine_description" = "このエンジンは侵入検知用に設計されています。感度設定が可能で、不要な動き（ノイズ）を除外することができます。";
+
+/*Engine settinge: title*/
+"engine_settings_title" = "エンジン";
+"error_insufficient_permission_action_can_not_be_completed" = "権限が不足しているため、操作を完了できません";
+"error_no_internet_connection" = "インターネットに接続されていません";
+
+/*Errors*/
+"errors_authentication_login_required" = "リカバリーキーを使用して再度サインインしてください";
+"errors_authentication_title" = "認証エラー";
+"errors_authentication_token_expired" = "認証トークンの有効期限が切れています";
+"errors_join_thread_network_fail_message" = "以前にデバイスをセットアップしたのと同じモバイル端末を使っているか確認してください。モバイル端末にアクセスできない場合は、このゾーン内のすべてのデバイスをリセットしてください。";
+"errors_join_thread_network_fail_title" = "Threadネットワークに参加できませんでした";
+"errors_linking_error_response_parse_error" = "nami サーバーとの通信に失敗しました。";
+"errors_move_device_error_no_device_selected" = "移動するデバイスを1つ以上選択してください";
+"errors_move_device_error_title" = "デバイスの移動に失敗しました";
+"errors_network_error_conflict" = "このネットワークリクエストは、サーバー上の状態と競合しているため実行できません（コード %@）。";
+
+/*Error shown when connection to the cloud failed
+Connection error provided with [underlying error description] from the system.*/
+"errors_network_error_connection_error" = "サーバーへの接続に失敗しました。%@";
+"errors_network_error_forbidden" = "権限が不足しているため、操作を完了できません";
+"errors_network_error_invalid_parameters" = "ネットワークリクエストに無効なパラメータが含まれています（コード %@）。";
+"errors_network_error_not_found" = "サーバーで指定されたURLが見つかりませんでした（コード %@）。";
+"errors_network_error_server_error" = "サーバーでネットワークリクエストを処理できませんでした（コード %@）。";
+"errors_network_error_title" = "ネットワークエラー";
+"errors_network_error_unauthorized" = "このネットワークリクエストには認証が必要です（コード %@）。";
+"errors_network_error_unknown" = "不明なネットワークエラーが発生しました（コード %@）。";
+"errors_pairing_ble_disconnected_description" = "%@ を一度抜いてから、もう一度電源に接続してください。";
+"errors_pairing_connection_time_out_description" = "デバイスの電源が入っていて、モバイル端末の近くにあるかをご確認ください。";
+"errors_pairing_device_not_found_description" = "デバイスの電源を一度抜き、再び接続してください。";
+"errors_pairing_device_not_found_title" = "デバイスが見つかりません";
+"errors_pairing_error_device_cloud_challenge_error" = "デバイスがnamiクラウドからのメッセージを処理できませんでした。";
+"errors_pairing_error_device_secure_session_error" = "デバイスとのセキュアセッションの確立に失敗しました。";
+"errors_pairing_error_device_thread_join_error" = "デバイスがThread ネットワークへの参加に失敗しました。";
+"errors_pairing_error_device_thread_scan_error" = "近くにThreadネットワークが見つかりません。ボーダールーターにデバイスを近づけて再試行してください。";
+"errors_pairing_error_device_title" = "デバイスのペアリングエラー";
+"errors_pairing_error_device_unknown_unrecognized" = "デバイスから不明なエラーが送信されました。";
+"errors_pairing_error_device_wifi_join_error" = "デバイスが選択されたWi-Fiネットワークに接続できませんでした。";
+"errors_pairing_error_device_wifi_join_ip_error" = "デバイスがWi-Fiネットワーク接続時にIPアドレスを取得できませんでした。";
+"errors_pairing_error_device_wifi_join_password_error" = "選択したネットワークのパスワードが正しいか確認してください。";
+"errors_pairing_error_device_wifi_scan_error" = "デバイスのWi-Fiネットワークスキャン中にエラーが発生しました。";
+"errors_pairing_incorrect_wifi_password_description" = "選択したネットワークのパスワードが正しいか確認してください。";
+"errors_pairing_incorrect_wifi_password_title" = "Wi-Fiパスワードが間違っています";
+"errors_pairing_machine_deserialization_error" = "受信したペアリング メッセージの逆シリアル化中にエラーが発生しました。";
+"errors_pairing_machine_encryption_error" = "次のペアリング メッセージの暗号化中にエラーが発生しました。";
+"errors_pairing_machine_seance_error" = "デバイスとのセキュアセッションの確立中にエラーが発生しました。";
+"errors_pairing_machine_serialization_error" = "次のペアリング メッセージのシリアル化中にエラーが発生しました。";
+"errors_pairing_machine_title" = "ペアリング操作エラー";
+"errors_pairing_machine_unexpected_message" = "予期しないエラーが発生しました。";
+"errors_pairing_machine_unexpected_state" = "予期しないエラーが発生しました。";
+"errors_pairing_thread_setup_error_mixed_environment" = "ThreadデバイスとWi-Fiデバイスを同じゾーンに混在させることはできません。別のゾーンでこのデバイスを設定してください。";
+"errors_pairing_thread_setup_error_thread_network_not_found" = "Threadネットワークが見つかりません。他のThreadデバイスの近くに設置してください。";
+"errors_pairing_thread_setup_error_thread_operational_dataset_missing" = "以前にデバイスを設定したときと同じモバイル端末を使用していることを確認してください。すでに使用できない場合は、このゾーン内のすべてのデバイスをリセットしてください。";
+"errors_pairing_timed_out_connect_wifi" = "Wi-Fiの接続情報が正しく、デバイスがルーターの近くにあることを確認してください。";
+"errors_unexpected_occurred_please_try_again" = "予期しないエラーが発生しました。もう一度お試しください。";
+"external_signin_check_if_users_request" = "このサインインリクエストを行いましたか？";
+"external_signin_confirm_request" = "はい、サインインします";
+"external_signin_confirmed_title" = "サインインが確認されました";
+"external_signin_continue_oauth" = "で続行";
+"external_signin_from_location" = "接続元：%@";
+"external_signin_on_os" = "使用OS：%@";
+"external_signin_reject_request" = "いいえ、拒否します";
+"external_signin_request_code_code_screen_title" = "サインインリクエスト";
+"external_signin_request_code_grant_access" = "アクセスを許可";
+"external_signin_request_code_instructions" = "アカウントへの一時的なアクセスを許可するには、Webページに表示された6桁のコードを入力してください";
+"external_signin_request_code_pasteboard_access_explained" = "クリップボードからコードを自動で取得します。コード入力を補助する目的でのみ使用します。";
+"external_signin_requested_title" = "サインインリクエスト";
+"external_signin_signin_request_peek_description" = "サインインリクエスト：%1$@（%2$@%3$@%4$@）";
+"external_signin_success_message" = "設定は完了です。\nブラウザに戻ってください";
+"external_signin_with_browser" = "使用ブラウザ：%@";
+
+/*Title for the FAQ tab and screen.*/
+"faq_title" = "よくある質問";
+"fcm_message_title" = "nami Lookout24";
+
+/*lost access pop up / list removed place name pop up*/
+"general_and" = "および";
+
+/*at*/
+"general_at" = "で";
+"general_camera" = "カメラ";
+
+/*General: Cancel*/
+"general_cancel" = "キャンセル";
+"general_connection_lost" = "接続が失われました";
+"general_connection_lost_explanation" = "サーバーへの接続に問題が発生しています。しばらくしてからもう一度お試しください。";
+
+/*A button to delete the displayed object (e.g. a empty Zone)*/
+"general_delete" = "削除";
+
+/*General: Done*/
+"general_done" = "完了";
+
+/*A generic error title.*/
+"general_error" = "エラー";
+
+/*A generic error description*/
+"general_error_description" = "エラー報告を送信して、より良い体験づくりにご協力ください";
+"general_intrusion_triggered" = "侵入を検知";
+"general_loading" = "読み込み中...";
+
+/*A common text meaning there is more of… something available.*/
+"general_more" = "もっと見る";
+
+/*General: Move*/
+"general_move" = "移動";
+
+/*A common button meaning to go to the next screen in a series.*/
+"general_next" = "次";
+"general_no" = "いいえ";
+"general_notification" = "通知";
+"general_ok" = "OK";
+
+/*A button to save the new state (e.g. a Place after edit)*/
+"general_save" = "保存";
+"general_unavailable" = "利用できません";
+
+/*general*/
+"general_undefined" = "-";
+"general_yes" = "はい";
+
+/*Alarms in %@ places*/
+"hint_issue_alarmIssues" = "%@ か所のアラーム";
+
+/*System issues in %@ places*/
+"hint_issue_pluralSystemIssues" = "%@ 箇所で注意が必要";
+
+/*System issue in %@*/
+"hint_issue_singularSystemIssue" = "%@ で注意が必要";
+"homepage_empty_place_create_place" = "プレイスを作成する";
+"homepage_empty_place_welcome" = "ようこそ %@";
+"homepage_empty_place_welcome_description" = "今日からあなたのプレイスの安全を守りましょう";
+"installation_guide_complete_installation" = "設置完了";
+"installation_guide_install_contact_sensor" = "ドアセンサーを取り付ける";
+"installation_guide_items1" = "設置プレイスは清潔でホコリのない状態にしてください。";
+"installation_guide_items2" = "ドアの上部付近にデバイスを設置してください。";
+"installation_guide_items3_imperial" = "センサーとマグネットの距離は0.8インチ以内に保ち、目印の線を揃えてください。";
+"installation_guide_items3_metric" = "センサーとマグネットの距離を2cm以内に保ち、目印の線が揃うようにしてください。";
+"installation_guide_items4" = "粘着テープの裏紙をはがし、ドアにしっかりと貼りつけてください。";
+"installation_guide_keypad_item_2" = "キーパッドはテーブルに置くか、取り付けプレートを壁に貼り付けてください";
+"installation_guide_title" = "%@ を設置する";
+"internet_connection" = "接続状況";
+
+/*dashboard intrusion banner*/
+"intrusion_banner_intrusion_detected_at" = "%@ で侵入を検知しました";
+"intrusion_event_report_intrusion_history" = "侵入履歴";
+"intrusion_history_error_data_not_found" = "侵入検知データの取得に失敗しました。";
+"intrusion_history_human_motion" = "人の動き";
+"intrusion_history_no_motion" = "動きなし";
+"intrusion_history_timestamp" = "%@ 以降";
+"intrusion_history_title" = "侵入検知の履歴";
+"intrusion_live_disarm_security_system" = "セキュリティシステムを解除しますか?";
+"intrusion_live_disarm_security_system_description" = "すべてのアラームが無効になり、システムはスタンバイモードに切り替わります";
+"intrusion_live_report_by_door_sensor" = "%1$@ に %2$@ によって作動しました";
+"intrusion_live_report_door_closed" = "閉じた";
+"intrusion_live_report_door_opened" = "開いた";
+"intrusion_live_report_motion" = "動き";
+"intrusion_live_view_no_activity_since_intrusion_began" = "侵入検知以降、活動はありません";
+
+/*Invitation detail: Accept button*/
+"invitation_detail_accept_button" = "承認";
+
+/*Invitation detail: Agreement details*/
+"invitation_detail_agreement_details" = "このプレイスにあるすべてのデバイスと設定へのアクセス、人の管理、アクティビティやイベントの確認、および通知の受信が可能になります。";
+
+/*Invitation detail: Cancel button*/
+"invitation_detail_cancel_button" = "キャンセル";
+
+/*Invitation detail: Decline button*/
+"invitation_detail_decline_button" = "拒否";
+
+/*Invitation detail: Hello [name]*/
+"invitation_detail_hello" = "%1$@ さん、こんにちは";
+"invitation_detail_hello_android" = "%@ さん、こんにちは";
+
+/*Invitation detail: invite found*/
+"invitation_detail_invite_found" = "招待が見つかりました！";
+
+/*Invitation detail: invite not found*/
+"invitation_detail_invite_not_found" = "申し訳ありません。招待が見つかりませんでした。";
+
+/*Invitation detail: Accept question to join [place]*/
+"invitation_detail_question" = "%1$@ に招待されています";
+"invitation_detail_question_android" = "%@ に招待されています";
+
+/*Invitation detail: retrieving invite details message*/
+"invitation_detail_retrieving_invite_details" = "招待の詳細を取得中…";
+
+/*Invitation detail: Role*/
+"invitation_detail_role" = "役割：";
+"invitation_details_revoke_revoke_alert_message" = "招待を取り消してもよろしいですか？";
+
+/*Revoke button title*/
+"invite_details_ask_revoke_button" = "取り消し";
+
+/*Share button title*/
+"invite_details_ask_share_button" = "共有";
+
+/*Confirm revoke button in alert*/
+"invite_details_confirm_revoke_button" = "取り消し";
+
+/*Invite details expiration [time]*/
+"invite_details_invite_expiration_text" = "有効期限：%@";
+"invite_details_invite_expiration_text_android" = "有効期限：%@";
+
+/*Invite details expired*/
+"invite_details_invite_expired" = "有効期限切れ";
+
+/*Invite details expires in [time_left]*/
+"invite_details_invite_expires_in_text" = "招待の有効期限：あと %@";
+
+/*Invite details title with [invitee name]*/
+"invite_details_invite_title" = "%@ さんからの招待";
+"invite_details_invite_title_android" = "%@ さんからの招待";
+
+/*Revoke alert for [invitee name] message*/
+"invite_details_revoke_alert_message" = "%@ さんへの招待を取り消しますか？";
+
+/*Revoke alert title*/
+"invite_details_revoke_alert_title" = "招待の取り消し";
+"invite_details_revoke_invitation_title" = "“%@” への招待を取り消しますか？";
+"join_place_camera_permission_guide" = "QRコード招待をスキャンしてください！";
+"join_place_invalid_invite" = "この招待は無効です。";
+
+/*Join place: invalid QR code*/
+"join_place_invalid_qr_code" = "無効なQRコードです";
+
+/*Join place: invite found*/
+"join_place_invite_found" = "招待が見つかりました!";
+"join_place_role_guide" = "このプレイスにあるすべてのデバイスと設定にアクセスでき、人の管理、アクティビティの確認、通知の受信が可能です。";
+"join_place_role_guide_admin" = "デバイスの操作やユーザーの削除、イベントの確認、通知の受信が可能です。";
+"join_place_role_user_guide" = "セキュリティモードの変更、デバイスとイベントの確認、通知の受信が可能になります";
+
+/*Join place: scan again*/
+"join_place_scan_again" = "招待QRコードが無効か、期限切れです。確認のうえ再試行してください。";
+
+/*Join place: scan invite qr code to join a place*/
+"join_place_scan_invite_qr" = "招待QRコードをスキャンする";
+"keypad_setup_guide_description_2" = "電池カバーを外してください";
+"keypad_setup_guide_description_3" = "プラスチックの電池絶縁タブを引き抜いてください";
+"kit_explanation_first_kit_designed_to_help_secure_your_place" = "あなたのプレイスと玄関を安全に守るために設計されています";
+"kit_explanation_first_kit_place_devices_on_first_floor" = "セキュリティを最大化するために、デバイスは1階に設置してください";
+"kit_explanation_non_first_kit_bss_provides_additional_security" = "住まいやあらゆる出入り口に、さらなるセキュリティを提供します";
+"kit_explanation_non_first_kit_hms_monitor_additional_areas" = "住まい全体と玄関以外のプレイスにも監視範囲を広げられます";
+"kit_tracker_plural_device_left" = "残りのデバイスは1台です";
+"kit_tracker_plural_devices_added" = "1 台のデバイスが追加されました";
+
+/*Let's add device: button title for dismissing the screen.*/
+"lets_add_device_dismiss_screen" = "今はしない";
+"lost_access_popup_message_multiple_places" = "これらのプレイスは削除されたか、あなたのアクセス権が取り消されました。";
+"lost_access_popup_message_single_place" = "このプレイスは削除されたか、あなたのアクセス権が取り消されました。";
+"lost_access_popup_title" = "%@ にアクセスできなくなりました";
+"manage_devices_empty_place" = "このプレイスにはデバイスがありません。";
+"member_details_leave_place" = "このプレイスから退出";
+"member_details_remove_member" = "ユーザーを削除";
+"member_details_remove_people_message" = "%2$@ から%1$@ を削除してもよろしいですか?";
+
+/*Motion history: active time*/
+"motion_history_active_time" = "総動作時間";
+"motion_history_device_issue" = "データなし";
+
+/*Motion history: duration*/
+"motion_history_duration" = "継続時間";
+"motion_history_format_days_android" = "%d日前";
+"motion_history_format_hour" = "%d 時間";
+"motion_history_format_hours_android" = "%d 時間";
+"motion_history_format_minute" = "%d 分";
+"motion_history_format_second" = "%d 秒";
+"motion_history_intensity" = "強度";
+"motion_history_monitor_was_degraded_due_to_device_issue" = "範囲縮小：一部のデバイスの不具合により、動作検知は有効でしたが通常より検知範囲が狭くなっていました。";
+"motion_history_monitor_was_degraded_in_zones_with_device_issue" = "範囲縮小：複数のゾーンでのデバイス不具合により、動作検知は有効でしたが通常より検知範囲が狭くなっていました。";
+"motion_history_monitor_was_disabled_due_to_device_issue" = "無効：一部のデバイスに不具合があり、動作検知が機能しませんでした。";
+"motion_history_monitor_was_disabled_in_zones_with_device_issue" = "無効：不具合のあるゾーンでは、動作検知が機能しませんでした。";
+
+/*Motion history: motion*/
+"motion_history_motion" = "動き";
+"motion_history_motion_today" = "今日の動き";
+"motion_history_no_data" = "データなし";
+
+/*Motion history: not available*/
+"motion_history_not_available" = "該当なし";
+"motion_history_sensing_data_not_available" = "センシングデータは利用できません";
+
+/*Motion history tile: history*/
+"motion_history_tile_history" = "履歴";
+
+/*Motion history tile: today*/
+"motion_history_tile_today" = "今日";
+
+/*Motion history tile: total active time*/
+"motion_history_tile_total_active_time" = "総動作時間";
+
+/*Motion history: today*/
+"motion_history_today" = "今日";
+
+/*Motion now: connect to same wifi network*/
+"motion_now_connect_to_wifi" = "デバイスのWi-Fiネットワークに接続し、電源が入っていることを確認してください。";
+
+/*Motion now: connect to same wifi network as zone*/
+"motion_now_connect_to_wifi_as_zone" = "ゾーン内のデバイスのWi-Fiに接続し、電源が入っていることを確認してください。";
+"motion_now_connect_to_wifi_your_device_using" = "モバイル端末が接続しているWi-Fiに対応するデバイスに接続し、電源が入っていることを確認してください。";
+"motion_now_explanation_description_1" = "「現在の動き」グラフは、リアルタイムで検出された動きの強さをフィルターなしで表示します";
+"motion_now_explanation_description_2" = "感度設定に基づいて動きをフィルタした「履歴グラフ」とは異なる表示になる場合があります";
+"motion_now_explanation_got_it" = "OK";
+"motion_now_explanation_learn_more" = "詳細はこちら";
+"motion_now_explanation_sub_title" = "動きの状況をすばやく確認して、デバイスが正常に動作しているか確かめる方法";
+"motion_now_format_active_zones_android" = "稼働中のゾーン：%d";
+
+/*Motion now: go to wifi settings*/
+"motion_now_go_to_wifi_settings" = "Wi-Fi設定を開く";
+
+/*Motion now: how place graph works*/
+"motion_now_how_place_graph_works" = "プレイスグラフの仕組み";
+
+/*Motion now: explanation for how place graph works*/
+"motion_now_how_place_graph_works_description" = "プレイスグラフは、現在お使いのモバイル端末が接続しているネットワークに接続されたゾーンの動作データのみが表示されます。";
+
+/*Motion now: intensity*/
+"motion_now_intensity" = "強度";
+"motion_now_max" = "最大";
+"motion_now_min" = "最小";
+
+/*Motion now: motion detected in*/
+"motion_now_motion_detected_in" = "以下のプレイスで動きを検知：";
+"motion_now_no_sensing_data" = "センシングデータなし";
+
+/*Motion now: now*/
+"motion_now_now" = "現在";
+
+/*Motion now: 30s ago*/
+"motion_now_thirty_secs_ago" = "30秒前";
+
+/*Motion now tile: connect to same wifi network*/
+"motion_now_tile_connect_to_wifi" = "デバイスのWi-Fiネットワークに接続し、電源が入っていることを確認してください。";
+
+/*Motion now tile: more*/
+"motion_now_tile_more" = "もっとみる";
+
+/*Motion now tile: movement detected*/
+"motion_now_tile_movement_detected" = "動作を検知しました";
+
+/*Motion now tile: no movement detection*/
+"motion_now_tile_no_movement_detected" = "動作は検知されませんでした";
+
+/*Motion now tile: no sensing data*/
+"motion_now_tile_no_sensing_data" = "検知データがありません";
+
+/*Motion now tile: X active zones*/
+"motion_now_tile_number_of_active_zones" = "アクティブなゾーン：%1$@";
+
+/*Motion now tile: to view motion now*/
+"motion_now_tile_to_view_motion_now" = "現在の動作状況を表示するには";
+
+/*Motion now: title*/
+"motion_now_title" = "現在の動作状況";
+"motion_sensor_coverage_do_not_mount_device_yet" = "デバイスはまだ取り付けないでください。デバイスの名前をつけると設置ガイドが表示されます。";
+"motion_sensor_coverage_guide_title" = "";
+"motion_sensor_installation_guide_1" = "";
+"motion_sensor_installation_guide_2" = "";
+"motion_sensor_installation_guide_3" = "";
+"motion_sensor_installation_pre_guide_1_imperial" = "";
+"motion_sensor_installation_pre_guide_1_metric" = "";
+"motion_sensor_installation_pre_guide_2_imperial" = "";
+"motion_sensor_installation_pre_guide_2_metric" = "";
+"motion_sensor_installation_pre_guide_3" = "";
+"motion_sensor_pre_guide_description_1" = "";
+"motion_sensor_pre_guide_description_2" = "";
+"motion_sensor_pre_guide_description_3" = "";
+"motion_sensor_pre_guide_title_1" = "";
+"motion_sensor_pre_guide_title_2" = "";
+"motion_sensor_pre_guide_title_3" = "プラスチックの電池絶縁タブを引き抜いてください";
+"motion_sensor_pre_guide_title_4" = "";
+"msg_session_expired" = "セッションが期限切れです。もう一度お試しください。";
+"muliple_places_intrusion_in_many_places" = "%d か所に侵入";
+"muliple_places_intrusion_in_one_place" = "%@ への侵入";
+
+/*New invite generation screen: generate invite button text*/
+"new_invite_generate_invite_button" = "招待を作成";
+
+/*New invite generation screen: Invite description*/
+"new_invite_invite_admin_description" = "管理者は、デバイス・設定・ユーザーの管理ができ、プレイス内のイベントを閲覧・通知で受け取ることができます。";
+"new_invite_invite_description" = "管理者は、デバイス、設定、ユーザーの管理ができ、プレイスで発生したイベントの確認や通知の受信も行えます。";
+
+/*New invite generation screen: Navbar title*/
+"new_invite_invite_title" = "アクセスを共有";
+"new_invite_invite_user_description" = "ユーザーは、セキュリティモードの編集、デバイスやイベントの確認、通知の受信が可能です";
+
+/*New invite generation screen: Invitee name placeholder*/
+"new_invite_invitee_name_placeholder" = "招待する人の名前";
+
+/*New invite generation screen: Invitee name section title*/
+"new_invite_invitee_name_title" = "名前";
+"notification_go_to_settings" = "設定を開く";
+"notification_missing_permission" = "%@ の権限がありません";
+"notification_missing_permission_desc" = "%@ の操作には %@ の権限が必要です";
+"notification_permission_guide" = "プッシュ通知を受け取るために必要です";
+"pair_device_go_to_settings" = "設定を開く";
+"pair_device_missing_permission" = "%@ の権限がありません";
+"pair_device_missing_permission_desc" = "%@ の操作には %@ の権限が必要です";
+"pairing_ask_to_connect_connect_to_wifi" = "Wi-Fi ネットワークに接続してください";
+"pairing_ask_to_connect_first_thread_device_description_1" = "センシングゾーン内の最初のデバイスは、ボーダールーターとして設定されます";
+"pairing_ask_to_connect_first_thread_device_description_2" = "このボーダールーターをWi-Fiネットワークに接続してください";
+"pairing_ask_to_connect_first_thread_device_description_3" = "Threadネットワークを維持するために、このボーダールーターの電源は常に入れたままにしてください";
+"pairing_ask_to_connect_first_wifi_device_description_1" = "%@ にある他のすべてのデバイスは、このデバイスが接続しているWi-Fiアクセスポイントを使用します";
+"pairing_ask_to_connect_first_wifi_device_description_2" = "カバーしたいエリアの中央に位置するWi-Fiアクセスポイントを選んでください";
+"pairing_ask_to_connect_non_first_thread_device_description_1" = "このデバイスは、そのプレイスでの既存のThreadネットワークに接続されます";
+"pairing_ask_to_connect_non_first_thread_device_description_2" = "他のThreadデバイスの設定に使用したのと同じモバイル端末を使ってください";
+"pairing_ask_to_connect_non_first_thread_device_description_3" = "%@ にあるボーダールーターの電源が入っていることを確認してください";
+"pairing_ask_to_connect_non_first_wifi_device_description_1" = "このデバイスは、%@ 内の他のデバイスと同じWi-Fiアクセスポイントに接続されます";
+"pairing_ask_to_connect_remaining_thread_device" = "残りのThreadデバイス";
+"pairing_ask_to_connect_wifi_device_imperial_distance_description" = "このデバイスがアクセス ポイントから最大 30 フィート離れていることを確認してください";
+"pairing_ask_to_connect_wifi_device_metric_distance_description" = "このデバイスがアクセス ポイントから最大 10 m 離れていることを確認してください";
+"pairing_bluetooth_device_found_explained_ready_to_pair" = "デバイスがペアリング可能になると、LEDが濃い青で点滅します";
+"pairing_bluetooth_device_found_explained_ready_to_pair_contact_sensor" = "LEDが点滅し、デバイスがペアリングの準備ができていることを知らせます";
+"pairing_bluetooth_device_found_header_connect_to_power" = "デバイスを電源コンセントに接続してください";
+
+/*Pairing, Bluetooth device found: header 1 for the screen.*/
+"pairing_bluetooth_device_found_header1" = "デバイスがBluetoothで検出されました！";
+
+/*Pairing, Bluetooth device found: header 2 for the screen.*/
+"pairing_bluetooth_device_found_header2" = "しばらくお待ちください…";
+"pairing_bluetooth_device_found_name_already_in_use" = "このデバイス名は既に使用されています。別の名前を使用してください。";
+"pairing_bluetooth_device_found_name_device_explained" = "複数のデバイスを区別できるよう、わかりやすい名前をつけてください";
+"pairing_bluetooth_device_found_name_device_header" = "%@ が見つかりました!";
+"pairing_bluetooth_device_found_name_your_device" = "デバイスに名前を付ける";
+"pairing_bluetooth_device_found_next_button" = "次へ";
+"pairing_cancel" = "キャンセル";
+"pairing_confirm_cancel_pairing_description" = "ペアリングをキャンセルしてもよろしいですか？";
+"pairing_confirm_cancel_pairing_title" = "ペアリングのキャンセルを確認";
+"pairing_connect_success_device_has_been_setup_in_zone" = "%1$@ が %2$@ に設定されました";
+
+/*%1$@ has been set up in %2$@. Now let's optimize the device's position to enable sensing.*/
+"pairing_connect_success_device_has_been_setup_in_zone_optimize_position" = "%2$@ に %1$@ の設置が完了しました。次は、検知機能を有効にするために最適な位置に調整しましょう。";
+
+/*%1$@ has been set up in %2$@. Now let's optimize the device's position to enable sensing.*/
+"pairing_connect_success_device_has_been_setup_in_zone_optimize_position_ios" = "%1$@ は %2$@ にセットアップされました。次に、センシングが正しく機能するように、デバイスの位置を最適化しましょう。";
+
+/*%1$@ has been set up in %2$@. Now let's optimize the device's position to enable sensing.*/
+"pairing_connect_success_setup_another_device" = "別のデバイスを追加する";
+"pairing_connect_wifi_input_password" = "「%@」のパスワードを入力してください";
+"pairing_connect_wifi_no_wi_fi_networks_found" = "Wi-Fi ネットワークが見つかりません";
+"pairing_connect_wifi_set_up_as_border_router" = "このデバイスはThread ボーダー ルーターとしてセットアップされます";
+"pairing_connect_wifi_setting_up_this_device" = "デバイスをセットアップ中です";
+
+/*Device setup*/
+"pairing_device_setup_navigation_title" = "デバイスのセットアップ";
+"pairing_done" = "完了";
+"pairing_enable_bluetooth_in_settings_bluetooth_disabled" = "Bluetooth が無効になっています";
+
+/*Pairing, Enable Bluetooth in Settings: title for the button to open app settings.*/
+"pairing_enable_bluetooth_in_settings_button_settings" = "設定を開く";
+
+/*Pairing, Enable Bluetooth in Settings: header for the screen when Bluetooth access is disabled.*/
+"pairing_enable_bluetooth_in_settings_header" = "デバイスの接続とセットアップを行うには、「設定」でBluetoothの許可を有効にしてください";
+
+/*Pairing, Enter Wi-Fi password: title for “Ready to connect” button which sends credentials to device.*/
+"pairing_enter_wifi_password_button_ready_to_connect" = "Wi-Fiに接続する";
+"pairing_enter_wifi_password_enter_password" = "「%@」のパスワードを入力してください";
+"pairing_enter_wifi_password_enter_password_ios" = "「%@」のパスワードを入力してください";
+
+/*Pairing, Enter Wi-Fi password: header for the screen.*/
+"pairing_enter_wifi_password_header" = "「%@」のパスワードを入力してください。";
+"pairing_enter_wifi_password_password_entry_field_hint" = "このWi-Fi情報は、同じゾーン内の他のデバイスのセットアップにも使用されます";
+
+/*Pairing, Enter Wi-Fi password: placeholder for the password field.*/
+"pairing_enter_wifi_password_password_placeholder" = "パスワード";
+"pairing_error_all_border_router_offline" = "ご自宅内のThreadボーダールーターがすべてオフラインです";
+"pairing_error_all_border_router_offline_description" = "以下のデバイスのいずれかを電源に接続して、再度お試しください：%@";
+"pairing_error_all_border_router_offline_device_in_zone" = "%1$@の%2$@";
+"pairing_error_mobile_phone_is_not_connected_to_wifi" = "モバイル端末がWi-Fiネットワークに接続されていません";
+"pairing_error_mobile_phone_is_not_connected_to_wifi_description" = "再設定を行う前に、モバイル端末がご自宅のWi-Fiに接続されていることを確認してください";
+"pairing_error_no_thread_border_router_in_place" = "ご自宅にThreadボーダールーターがありません";
+"pairing_error_no_thread_border_router_in_place_description" = "すべてのデバイスを削除して再度設定してください。";
+
+/*Pairing, Error handling: title for action button to ignore the current error.*/
+"pairing_errors_action_ignore" = "無視して続行";
+
+/*Pairing, Error handling: title for action button to restart pairing anew.*/
+"pairing_errors_action_restart" = "セットアップを終了";
+"pairing_errors_action_restart_setup" = "セットアップを再開する";
+"pairing_errors_action_scan_device_again" = "もう一度デバイスをスキャンしてください";
+
+/*Pairing, Error handling: title for action button to try the bad step again.*/
+"pairing_errors_action_try_again" = "もう一度やり直してください";
+"pairing_errors_ble_disconnected_title" = "Bluetoothが切断されました";
+"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description1" = "%@にあるアクティビティセンサーのいずれかを、ドアセンサーの近くに移動してください";
+"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description2" = "移動後に、ドアセンサーの上部ボタンを一度押して、再度お試しください";
+"pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description1" = "以前にセットアップしたモバイル端末と同じものを使用しているか確認してください";
+"pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description2" = "モバイル端末にアクセスできない場合は、このゾーン（%@）のすべてのデバイスをリセットしてください";
+"pairing_errors_device_setup_error_device_mismatch_description" = "スキャンしたQRコードが、先ほど選択したデバイスと一致しません。デバイスを確認のうえ、もう一度お試しください。";
+"pairing_errors_error_occurred_title" = "エラーが発生しました";
+"pairing_errors_failed_to_join_wifi_title" = "Wi-Fiネットワークに接続できませんでした";
+"pairing_errors_need_help" = "サポートが必要ですか？";
+"pairing_errors_thread_setup_error_border_router_offline" = "Threadボーダールーターがオフラインです";
+"pairing_errors_thread_setup_error_border_router_offline_description_android" = "%1$@ の %2$@ を電源に接続してもう一度お試しください";
+"pairing_errors_thread_setup_error_device_mismatch_description" = "次の画面に表示されたデバイスの種類を確認し、正しいQRコードをスキャンしてください";
+"pairing_errors_thread_setup_error_device_mismatch_title" = "デバイスの種類が一致しません";
+"pairing_errors_thread_setup_error_missing_thread_credentials" = "Threadの認証情報がありません";
+"pairing_errors_thread_setup_error_no_thread_networks_found_description" = "デバイスを、このゾーン（%@）の他のThread対応デバイスに近づけてください";
+"pairing_errors_thread_setup_error_no_thread_networks_found_title" = "Threadネットワークが見つかりません";
+"pairing_errors_timeout_description" = "デバイスの電源が入っていて、モバイル端末の近くにあることを確認してください";
+"pairing_errors_timeout_title" = "接続がタイムアウトしました。";
+
+/*Something went wrong*/
+"pairing_errors_unexpected_description" = "問題が発生しました";
+
+/*An unexpected error*/
+"pairing_errors_unexpected_title" = "予期しないエラー";
+
+/*An unexpected error*/
+"pairing_exit" = "終了";
+"pairing_exit_device_setup_description" = "終了すると、すべての進行状況が失われます。";
+"pairing_exit_device_setup_title" = "デバイスのセットアップを終了する";
+"pairing_exit_setup" = "セットアップを終了";
+"pairing_finishing_setup_game_of_pong" = "簡単なゲームでもいかがですか？";
+
+/*Pairing, Finishing setup: header for the screen.*/
+"pairing_finishing_setup_header" = "デバイスを設定しています…";
+
+/*Pairing, List Wi-Fi networks: Access Point out of reach*/
+"pairing_list_wifi_networks_ap_out_of_reach" = "デバイスが WiFi ルーターから遠すぎます";
+"pairing_list_wifi_networks_available_networks" = "利用可能なWi-Fiネットワーク";
+
+/*Pairing, List Wi-Fi networks: button title to enter the Wi-Fi network name manually.*/
+"pairing_list_wifi_networks_button_other_network" = "その他…";
+"pairing_list_wifi_networks_connect_wifi_title" = "Wi-Fiネットワークに接続する";
+
+/*Pairing, List Wi-Fi networks: button text to delete the saved Wi-Fi password.*/
+"pairing_list_wifi_networks_forget" = "忘れる";
+
+/*Pairing, List Wi-Fi networks: title for alert asking to use a saved Wi-Fi password.*/
+"pairing_list_wifi_networks_found_saved_password" = "保存されたパスワードを見つけました";
+
+/*Pairing, List Wi-Fi networks: message when no networks have been found. The placeholder is to insert the name of the “Other network” button.*/
+"pairing_list_wifi_networks_no_networks_found" = "Wi-Fiネットワークが見つかりませんでした";
+"pairing_list_wifi_networks_proceed" = "続行";
+"pairing_list_wifi_networks_select_network" = "接続するネットワークを選択してください";
+
+/*Pairing, List Wi-Fi networks: text for alert asking to use a saved Wi-Fi password.*/
+"pairing_list_wifi_networks_use_saved_password" = "ネットワーク「%@」に保存されているパスワードを使用しますか？";
+"pairing_loading_device_connecting" = "%@ に接続中…";
+"pairing_no" = "いいえ";
+"pairing_other" = "その他…";
+"pairing_other_network_title" = "その他のネットワーク";
+"pairing_other_wifi_network_device_connectivity_hint" = "namiデバイスは2.4GHz帯のWi-Fiネットワークでのみ動作します";
+
+/*Pairing, Other Wi-Fi network: header above the text field for the custom Wi-Fi network name.*/
+"pairing_other_wifi_network_header" = "ネットワーク情報を入力してください";
+
+/*Pairing, Other Wi-Fi network: placeholder for the Wi-Fi network name textfield.*/
+"pairing_other_wifi_network_network_name_placeholder" = "ネットワーク名";
+"pairing_paired_successfully_button_add_device" = "デバイスを追加";
+
+/*Pairing, Paired successfully: button title for done.*/
+"pairing_paired_successfully_button_done" = "完了";
+"pairing_paired_successfully_button_not_now" = "今は追加しない";
+
+/*Pairing, Paired successfully: button title for pairing another device.*/
+"pairing_paired_successfully_button_pair_another" = "はい";
+
+/*Pairing, Paired successfully: button title for update another device.*/
+"pairing_paired_successfully_button_update_another" = "次へ";
+"pairing_paired_successfully_complete_setup_for_motion_sensing" = "モーション検知を有効にするためにセットアップを完了してください";
+"pairing_paired_successfully_complete_setup_for_motion_sensing_description" = "%@ にモーション検知を有効にするには、アクティビティセンサーが2つ以上必要です。";
+
+/*Pairing, Paired successfully: header 3 for the update wifi credentials.*/
+"pairing_paired_successfully_header3" = "プラグが正常に更新されました";
+"pairing_power_on_and_scanning_ask_user_to_wait" = "しばらくお待ちください…";
+"pairing_power_on_and_scanning_scanning" = "デバイスを検索中です";
+"pairing_scan_device_connecting_to_this_device" = "このデバイスに接続中です…";
+"pairing_scan_device_missing_bluetooth_location_permission_explanation" = "デバイスの接続と設定完了のために、設定でBluetoothと位置情報の許可を有効にしてください";
+"pairing_scan_device_missing_bluetooth_location_permissions_title" = "位置情報とBluetoothの許可がありません";
+"pairing_scan_device_missing_bluetooth_permission_title" = "Bluetooth 許可がありません";
+"pairing_scan_device_please_hold" = "しばらくお待ちください…";
+"pairing_scan_device_searching_for_device" = "デバイスを検索中です";
+"pairing_scan_device_the_led_light_is_not_pulsing" = "LEDライトが点滅していません";
+"pairing_scan_qr_code_error_description" = "有効なQRコードをスキャンしてください";
+"pairing_scan_qr_code_error_title" = "QRコードエラー";
+
+/*Expand camera view*/
+"pairing_scan_qr_expand_camera_view" = "カメラビューを拡大";
+"pairing_scan_qr_subtitle" = "デバイスの電源が入っていないことを確認してください";
+"pairing_scan_qr_title" = "デバイスのQRコードをスキャンしてください";
+"pairing_scan_qr_where_is_qr" = "QRコードはどこにありますか？";
+"pairing_scan_qrcode_missing_camera_permission_description" = "デバイスのQRコードをスキャンするには、設定でカメラの許可を有効にしてください";
+"pairing_scan_qrcode_missing_camera_permission_title" = "カメラの許可が必要です";
+"pairing_scanning_ble_faq" = "LEDライトが点滅していません";
+"pairing_scanning_ble_header_contact_sensor" = "上部のボタンを一度押してください。";
+"pairing_scanning_ble_header_keypad" = "'0'キーを押してください";
+"pairing_success" = "成功！";
+"paring_scan_device_bluetooth_is_off_description" = "デバイスの接続とセットアップを行うには、設定でBluetoothを有効にしてください";
+"paring_scan_device_bluetooth_is_off_title" = "Bluetoothがオフになっています";
+"paring_scan_device_bluetooth_restricted_description" = "デバイスと接続してセットアップを完了するには、設定でBluetoothの新しい接続を有効にしてください。";
+"paring_scan_device_bluetooth_restricted_title" = "Bluetoothの許可が必要です";
+"pkan_device_placement_title" = "デバイスの配置を計画する";
+
+/*Create place: header text when selecting the place category.*/
+"place_creation" = "新しいプレイスを作成";
+"place_creation_customize_color_selection" = "プレイスの色";
+"place_creation_customize_header" = "プレイスをカスタマイズする";
+"place_creation_error_no_category" = "プレイスカテゴリが選択されていません";
+"place_creation_fail_to_create_place" = "プレイスの作成に失敗しました";
+"place_creation_fail_to_get_place_information" = "プレイス情報を取得できませんでした";
+"place_creation_fail_to_update_place" = "プレイスの更新に失敗しました";
+"place_creation_floor_description" = "適切なデバイスの設置プレイスを提案するために使用されます";
+"place_creation_floor_floor_number" = "%d 階";
+"place_creation_floor_floorNumber_android" = "%@ 階";
+"place_creation_floor_header" = "何階建てですか？";
+"place_creation_header" = "このプレイスはどのような種類ですか？";
+"place_creation_name_create_place" = "プレイスを作成する";
+"place_creation_name_default_name" = "家";
+"place_creation_name_description" = "複数のプレイスを区別しやすくするためです";
+"place_creation_name_edit_hint" = "プレイス名";
+"place_creation_name_error" = "同じ名前のプレイスが既に存在します。別の名前の使用を検討してください。";
+"place_creation_name_header" = "プレイスに名前を付ける";
+"place_creation_pets_description" = "ペットの情報を登録することで、誤検知を減らすための設定がより正確になります。";
+"place_creation_pets_header" = "ペットの大きさを教えてください";
+"place_creation_size_description" = "複数階建てのプレイスの場合は、各階の平均面積を選択します。";
+"place_creation_size_header" = "各階の面積はどのくらいですか？";
+"place_creation_zone_default_name_multiple_floor" = "%@ 階";
+"place_creation_zone_default_name_single_floor" = "センシングゾーン１";
+"place_detail_format_disconnected_device_in_one_zone_android" = "1つのゾーンにオフラインのデバイスが %d 台あります。タップして確認してください。";
+"place_detail_number_of_zone" = "%d ゾーン";
+"place_detail_system_not_ready_to_secure" = "セキュリティシステムは準備ができていません";
+"place_detail_timezone" = "タイムゾーン";
+"place_details_change_place_mode_to_armed_contain_degraded_description" = "デバイスに問題のあるゾーンでは監視精度が低下し、侵入を検知できない可能性があります。";
+"place_details_change_place_mode_to_armed_contain_unhealthy_description" = "必要なデバイス数が揃っていないゾーンでは、侵入アラートは送信されません。";
+"place_details_change_place_mode_to_aware_contain_degraded_description" = "デバイスに問題のあるゾーンでは監視範囲が狭まり、通常の動作を検知できない可能性があります。";
+"place_details_change_place_mode_to_aware_contain_unhealthy_description" = "必要なデバイスが不足しているゾーンでは、動作に関する通知は届きません。";
+"place_details_customize" = "カスタマイズ";
+"place_details_dashboard" = "概要";
+"place_details_events" = "イベント";
+"place_details_format_disconnected_device_in_multiple_zone_android" = "複数のゾーンで%d台のデバイスがオフラインです。タップして確認してください";
+"place_details_get_help" = "ヘルプを表示";
+"place_details_graph" = "グラフ";
+"place_details_member_pending_expiry_time" = "招待の有効期限は %@ です。";
+"place_details_member_pending_expiry_time_days" = "%1$d日";
+"place_details_member_pending_expiry_time_days_with_hours" = "%1$d 日と %2$d 時間";
+"place_details_member_pending_expiry_time_hours" = "%d 時間";
+"place_details_member_pending_expiry_time_minutes" = "%d分";
+"place_details_members_active" = "アクティブ";
+"place_details_members_days" = "最終アクティブ %d 日前";
+"place_details_members_hours" = "最終アクティブ %d 時間前";
+"place_details_members_minutes" = "最終アクティブ時間 %d 分前";
+"place_details_members_months" = "最後にアクティブになったのは %d ヶ月前";
+"place_details_no_devices_paired" = "デバイスなし";
+"place_details_offline" = "オフライン";
+"place_details_people" = "人々";
+"place_details_place_mode" = "プレイスモード";
+"place_details_proceed_with_degraded_zone" = "センシング性能が低下しているゾーン（%d 件）で続行しますか？";
+"place_details_proceed_with_unhealthy_zone" = "センシング機能が無効なゾーン（%d 件）で続行しますか？";
+"place_details_security_mode" = "セキュリティモード";
+"place_details_security_mode_description" = "プレイスモードはすべてのゾーンにおける最高レベルのセキュリティ状態を表示します。すべてのゾーンのモードをまとめて操作できます";
+"place_details_sensing_link_broken_in_multiple_zone" = "複数のゾーンでセンサーが反応していません。タップして確認してください。";
+"place_details_sensing_link_broken_in_one_zone" = "1つのゾーンでセンサーが反応していません。タップして確認してください。";
+"place_details_sensors_are_not_responding" = "センサーが反応していません";
+"place_details_stay_mode_not_activated_all_zones" = "ステイモードはドアセンサーのあるゾーンでのみ有効になります";
+"place_details_stay_mode_not_activated_all_zones_description" = "ドアセンサーのない他のゾーンではスタンバイモードが有効になります。";
+"place_details_stay_mode_not_available" = "ステイモードは利用できません";
+"place_details_stay_mode_not_available_description" = "ステイモードを有効にするにはドアセンサーが必要です。別のモードを選択してください。";
+"place_details_system_not_ready_to_secure_description" = "セキュリティデバイスのいずれかが開いているか、改ざんされたか、オフラインです。このまま進むと、アラームまたはステイモードでも侵入アラートが作動しない可能性があります。";
+"place_details_yes_proceed" = "続行する";
+"place_details_zone_in_mode" = "%2$@ の %1$@";
+
+/*place_event*/
+"place_event_date_filter" = "日付で絞り込み";
+"place_event_today" = "今日";
+"place_event_yesterday" = "昨日";
+
+/*Shown while checking for the events history availability on initial screen load*/
+"place_events_downloading_history" = "イベント履歴を確認中です";
+
+/*place_events*/
+"place_events_empty_description" = "%@ に関するイベントはまだ記録されていません";
+
+/*Tells that the screen is to be populated with the events history once it's available for the [place]*/
+"place_events_empty_history_placeholder" = "%@ に関するイベントはここに表示されます";
+"place_events_empty_history_placeholder_android" = "%@ に関するイベントはここに表示されます";
+
+/*place_events*/
+"place_events_search_not_found_description" = "別の日付を選ぶか、フィルターを解除すると他のイベントが表示されます";
+
+/*Place infromation: average floor area*/
+"place_information_avg_floor_area" = "各階の平均面積";
+
+/*Place infromation: floors*/
+"place_information_floors" = "階数";
+
+/*Place infromation: name*/
+"place_information_name" = "名前";
+"place_information_pets" = "ペット";
+"place_information_search_time_zone" = "タイムゾーンを検索";
+
+/*Place infromation: title*/
+"place_information_title" = "プレイス情報";
+
+/*Place infromation: type*/
+"place_information_type" = "タイプ";
+
+/*Placeholder text when the description for Place Integration is missing. Expects [integration name].*/
+"place_integrations_description_placeholder" = "%@ は nami とリンクされている可能性があります";
+
+/*Placeholder text when the instructions on how to enable Place Integration is missing.*/
+"place_integrations_enabling_placeholder" = "有効にするにはプロバイダーの指示を確認してください";
+
+/*Tells if Place Integration is [enabled or disabled].*/
+"place_integrations_integration_is" = "連携状態：%@";
+
+/*Place Integrations screen title.*/
+"place_integrations_integrations" = "連携サービス";
+
+/*Place Integration is disabled.*/
+"place_integrations_is_disabled" = "無効";
+
+/*Place Integration is enabled.*/
+"place_integrations_is_enabled" = "有効";
+
+/*Text to present on a button disabling an integration.*/
+"place_integrations_want_disable" = "連携を無効にする";
+"place_mode_alert_dialog_stay_mode_not_all_zones_message" = "ドアセンサーのないゾーンではスタンバイモードが有効になります。";
+"place_mode_alert_dialog_stay_mode_not_all_zones_title" = "ステイモードはドアセンサーのあるゾーンでのみ有効になります";
+"place_mode_alert_dialog_stay_mode_warning_confirm" = "OK";
+"place_mode_alert_dialog_stay_mode_warning_message" = "ステイモードを有効にするにはドアセンサーが必要です。別のモードを選択してください。";
+"place_mode_alert_dialog_stay_mode_warning_title" = "ステイモードは利用できません";
+
+/*app_widget*/
+"place_mode_widget_alarm_intrusion_since" = "%@から侵入警報が発生中";
+
+/*app_widget*/
+"place_mode_widget_configure_select_place" = "表示するプレイスを選択してください";
+
+/*app_widget*/
+"place_mode_widget_configure_title" = "ウィジェット";
+
+/*app_widget*/
+"place_mode_widget_data_not_available" = "データが利用できません";
+
+/*app_widget*/
+"place_mode_widget_error_no_places" = "プレイスを作成するか、参加してください";
+
+/*app_widget*/
+"place_mode_widget_error_no_selected_place" = "プレイスが未設定です";
+
+/*app_widget*/
+"place_mode_widget_error_user_logged_out" = "プレイスの表示にはログインが必要です";
+
+/*app_widget*/
+"place_mode_widget_log_in" = "プレイスモードを見るにはログインしてください";
+
+/*app_widget*/
+"place_mode_widget_sensing_warning" = "タップしてデバイスの問題を確認";
+
+/*Place Overview grapth hints*/
+"place_overview_graph_now" = "現在の動作状況";
+"place_overview_graph_thirty_secs_ago" = "30秒前";
+"place_overview_intrusion_detection_end_time" = "%@前に終了";
+"place_overview_intrusion_detection_end_time_format_hour" = "%d時間";
+"place_overview_intrusion_detection_end_time_format_minute" = "%d分";
+"place_overview_intrusion_detection_start_time" = "%@前に開始";
+"place_overview_intrusion_detection_title" = "侵入検知";
+
+/*Place Overview: motion section title*/
+"place_overview_motion" = "動作検知";
+"place_overview_no_devices_has_been_added" = "まだデバイスが追加されていません";
+
+/*Place Overview: pair a kit to unlock motion sensing*/
+"place_overview_pair_kit_unlock_motion_sensing" = "デバイスを追加して、このプレイスの見守りを開始しましょう";
+"place_overview_pairing_request_add_device_button" = "デバイスを追加";
+"place_overview_pairing_request_setup_a_kit" = "システムをセットアップする";
+"place_overview_pairing_request_setup_a_kit_guide" = "このプレイスを守るには、デバイスの追加が必要です";
+
+/*Place Overview: setup kit button*/
+"place_overview_setup_kit_button" = "システムをセットアップする";
+
+/*Place Overview: zones section title*/
+"place_overview_zones" = "ゾーン";
+"place_pair_one_more_device_to_unlock_the_motion_sensing" = "Wi-Fi動作検知を有効にするには、アクティビティセンサーをもう1台追加してください";
+"place_people_invite_title" = "メンバーを招待";
+"place_pets" = "ペット";
+"place_pets_big_pets" = "大きなペット";
+"place_pets_big_pets_imperial" = "大型ペット（20ポンド以上）";
+"place_pets_big_pets_metric" = "大型ペット（10kg以上）";
+"place_pets_both_small_big_pets" = "小型・大型両方のペットがいる";
+"place_pets_none" = "ペットなし";
+"place_pets_small_pets" = "小型ペット";
+"place_pets_small_pets_imperial" = "小型ペット（20ポンド未満）";
+"place_pets_small_pets_metric" = "小型ペット（10kg未満）";
+
+/*Place properties: apartment*/
+"place_properties_apartment" = "アパート";
+
+/*Place properties: house*/
+"place_properties_house" = "家";
+"place_setting_editPlace_toolbar" = "プレイスのテーマを編集";
+"place_setting_header_add_devices" = "デバイスを追加";
+"place_setting_header_add_devices_description" = "セキュリティシステムを拡張する";
+"place_setting_header_general" = "全般";
+"place_setting_header_setup" = "セットアップ";
+"place_setting_header_setup_a_device_description" = "センシング用にカスタマイズ";
+"place_setting_header_setup_a_device_title" = "デバイスを個別に設定";
+"place_setting_header_setup_a_kit_description_disable_non_first_kit" = "最初のキットのみで利用可能です";
+"place_setting_header_setup_a_kit_description_disable_old_place" = "この機能を有効にするには新しいプレイスを作成してください";
+"place_setting_header_setup_a_kit_description_enable" = "namiデバイスを設定してホームモニタリングを有効にしましょう";
+"place_setting_header_setup_a_kit_title" = "システムをセットアップする";
+"place_setting_placeInformation" = "プレイスの情報";
+"place_setting_placeInformation_description" = "名前、アイコン、色、カテゴリ、レイアウト";
+"place_setting_placeInformation_edit_name" = "プレイスの名前を編集";
+"place_setting_placeInformation_floor" = "階層";
+"place_setting_placeInformation_name" = "名前";
+"place_setting_placeInformation_size" = "平均床面積";
+"place_setting_placeInformation_type" = "タイプ";
+"place_settings_clear_thread_credential" = "Threadの認証情報を消去";
+
+/*Place settings: delete place*/
+"place_settings_delete_place_button" = "プレイスを削除";
+"place_settings_devices_description_android" = "%d 台のデバイス";
+
+/*Edit place: title*/
+"place_settings_edit_place" = "プレイスをカスタマイズ";
+
+/*Edit place: place settings menu description*/
+"place_settings_edit_place_description" = "名前、カテゴリ、色、アイコン";
+
+/*Edit place: engine*/
+"place_settings_engine" = "エンジン";
+
+/*Place settings: sensitivity engine not supported*/
+"place_settings_engine_does_not_support_sensitivity" = "動作エンジンでは利用できません";
+"place_settings_last_admin_leave_dialog_description" = "あなたは %@ の最後の管理者です。このプレイスを退出するには、別のユーザーを管理者に指定してください。";
+"place_settings_last_admin_leave_dialog_title" = "退去前に新しい管理者を設定してください";
+
+/*Place settings: leave place*/
+"place_settings_leave_place_button" = "プレイスから退出";
+"place_settings_manage_devices" = "デバイスの管理";
+
+/*Edit place: motion*/
+"place_settings_motion" = "動作";
+
+/*Place settings: place settings*/
+"place_settings_place_settings" = "プレイスの設定";
+
+/*Place settings: General section*/
+"place_settings_section_general" = "一般";
+
+/*Place settings: Setup section*/
+"place_settings_section_setup" = "セットアップ";
+
+/*Edit place: security*/
+"place_settings_security" = "セキュリティ";
+
+/*Place settings: sensitivity*/
+"place_settings_sensitivity" = "感度";
+
+/*Place settings: sensitivity level*/
+"place_settings_sensitivity_level" = "レベル %@";
+
+/*Place settings: set up a kit*/
+"place_settings_setup_kit" = "システムをセットアップする";
+
+/*Place settings: title*/
+"place_settings_title" = "プレイスの設定";
+
+/*Place settings: update wifi network*/
+"place_settings_update_wifi_network" = "Wi-Fiネットワークを更新する";
+
+/*Place settings: update wifi network description*/
+"place_settings_update_wifi_network_description" = "ゾーンのWi-Fiネットワークを変更する";
+"place_settings_zero_device_description" = "デバイスがありません";
+"place_settings_zones_description_android" = "%d ゾーン内";
+
+/*Invite people button*/
+"place_users_invitation_invite_people" = "人を招待";
+
+/*Invite people button tile description on reaching the [max number] of users in place*/
+"place_users_invitation_users_limit_reached" = "現在、1つのプレイスに招待できるユーザー数は最大%@人までです。";
+"place_users_invitation_users_limit_reached_android" = "現在、1つのプレイスに招待できるユーザー数は最大%@人までです。";
+
+/*Place Users roles section title*/
+"place_users_role_role" = "役割";
+"place_widget_door_sensor_is_required_to_activate_stay_mode" = "ステイモードを有効にするにはドアセンサーが必要です。";
+"place_widget_stay_mode_activated_for_zones_without_door_sensor" = "ドアセンサーがないゾーンはスタンバイモードになります";
+
+/*Place Category*/
+"places_category_apartment" = "アパート";
+"places_category_business" = "ビジネス";
+"places_category_detached_house" = "戸建住宅";
+
+/*Place Category*/
+"places_category_eating" = "カフェ";
+
+/*Place Category*/
+"places_category_house" = "家";
+
+/*Place Category*/
+"places_category_shopping" = "買い物";
+"places_category_townhouse" = "タウンハウス";
+
+/*Place Category*/
+"places_category_unknown" = "不明";
+
+/*Place Category*/
+"places_category_work" = "仕事";
+"plan_device_placement_avoid_placement_near_electronic" = "家電製品や大きな金属製品の近くには設置しないでください";
+"plan_device_placement_guide_1_imperial" = "同じ階にある2つの電源ソケットを選び、それぞれ10～30フィート離れていることを確認してください";
+"plan_device_placement_guide_1_metric" = "同じ階にある2つの電源ソケットを選び、それぞれ3〜10メートル離れていることを確認してください";
+"plan_device_placement_guide_2_imperial" = "1つのソケットは、玄関ドアとWi-Fiアクセスポイントの両方から30フィート以内にある必要があります";
+"plan_device_placement_guide_2_metric" = "1つのソケットは、玄関ドアとWi-Fiアクセスポイントの両方から10メートル以内にある必要があります";
+"plan_device_placement_guide_3_imperial" = "1つのソケットは、Wi-Fiアクセスポイントとドアセンサーを設置するドアの両方から30フィート以内にある必要があります";
+"plan_device_placement_guide_3_metric" = "1つのソケットは、Wi-Fiアクセスポイントとドアセンサーを設置するドアの両方から10メートル以内にある必要があります";
+"plan_device_placement_guide_4_imperial" = "両方のソケットは、%@にある既存のアクティビティセンサーから10～30フィートの範囲にある必要があります";
+"plan_device_placement_guide_4_metric" = "両方のソケットは、%@にある既存のアクティビティセンサーから3〜10メートルの範囲にある必要があります";
+"plan_device_placement_guide_5_imperial" = "1つのソケットは、ドアセンサーを設置する予定のドアから30フィート以内にある必要があります";
+"plan_device_placement_guide_5_metric" = "1つのソケットは、ドアセンサーを設置する予定のドアから10メートル以内にある必要があります";
+"plan_device_placement_title" = "デバイスの設置を計画する";
+"profile_account" = "アカウント";
+
+/*Account deletion explanaition text.*/
+"profile_account_management_account_deletion_description" = "アカウントを削除することができます。実行すると、アカウントおよびすべての関連データが完全に削除されます。この操作は元に戻せません。";
+
+/*Account deletion confirmation button text.*/
+"profile_account_management_confirm_account_deletion" = "アカウントを削除";
+
+/*Account deletion alert description text.*/
+"profile_account_management_delete_account_alert_description" = "アカウントを削除しますか？アカウントと関連データは完全に削除され、元に戻せません。";
+
+/*Account deletion alert title.*/
+"profile_account_management_delete_account_alert_title" = "アカウントの削除";
+
+/*Delete account button text.*/
+"profile_account_management_delete_account_button" = "削除";
+
+/*Account management screen title.*/
+"profile_account_management_title" = "アカウント管理";
+"profile_app_version" = "アプリバージョン";
+
+/*User profile: a button to show authentication methods linked to account*/
+"profile_authentication" = "認証";
+
+/*User profile: title for the inactive button when the key has just been copied.*/
+"profile_copied" = "コピーしました！";
+"profile_copied_to_clipboard" = "クリップボードにコピーしました";
+
+/*User profile: title for the button to copy the recovery key.*/
+"profile_copy_recovery_key" = "復旧キーをコピーする";
+"profile_developer_mode_alert_description" = "開発者モードでのみ利用可能な機能にアクセスできなくなります。";
+"profile_developer_mode_alert_title" = "開発者モードを無効にしますか?";
+
+/*User profile: developer mode.*/
+"profile_developer_mode_deactivate_action" = "無効にする";
+
+/*User profile: developer mode.*/
+"profile_developer_mode_deactivate_alert_description" = "開発者モードでのみ使用できる機能にアクセスできなくなります";
+
+/*User profile: developer mode.*/
+"profile_developer_mode_deactivate_alert_title" = "開発者モードを無効にしますか?";
+
+/*User profile: developer mode.*/
+"profile_developer_mode_title" = "開発者モード";
+
+/*User profile: a button to show an input for signin request authorization.*/
+"profile_go_confirm_signin_request" = "サインインリクエストを承認する";
+
+/*User profile: help & feedback*/
+"profile_help_and_feedback" = "チャットでお問い合わせください";
+"profile_help_n_feedback" = "チャットでお問い合わせ";
+
+/*User profile: section title for legal*/
+"profile_legal" = "法律上の";
+
+/*User profiel: Link Account guide text*/
+"profile_link_account_guide_text" = "アカウントを連携すると、どちらのアカウントでもログインできるようになります。";
+
+/*User profile: linked 3rd party account*/
+"profile_linked_3rd_party_account" = "連携済みの外部アカウント";
+"profile_linked_third_party_accounts" = "連携中の外部アカウント";
+"profile_linked_third_party_accounts_not_link_yet" = "まだ外部アカウントと連携されていません。";
+"profile_linked_third_party_accounts_unlink" = "連携を解除";
+
+/*User profile: No linked accounts message*/
+"profile_no_linked_accounts_message" = "アカウントはまだ連携されていません。";
+
+/*User profile: privacy policy*/
+"profile_privacy_policy" = "プライバシーポリシー";
+
+/*User profile recovery key section title.*/
+"profile_recovery_info_title" = "復元情報";
+
+/*User profile: header for the recovery key section.*/
+"profile_recovery_key" = "復元キー";
+
+/*User profile: help text for the user to remember to copy their recovery key.*/
+"profile_recovery_key_hint" = "サインアウトしたり端末を紛失した場合、このキーがアカウント復元に必要です。";
+
+/*User profile: section title for account*/
+"profile_section_title_account" = "アカウント";
+
+/*User profile: section title for help*/
+"profile_section_title_help" = "ヘルプ";
+
+/*User profile: send a test push notification from the cloud.*/
+"profile_send_test_push" = "プッシュ通知を受け取る";
+"profile_settings" = "設定";
+
+/*User profile: title for the sign out button.*/
+"profile_sign_out" = "サインアウト";
+"profile_support_article" = "よくある質問";
+
+/*User profile: support articles*/
+"profile_support_articles" = "よくある質問";
+
+/*User profile: terms of services*/
+"profile_terms_of_services" = "利用規約";
+
+/*User profile: Unlink warning alert confirm text*/
+"profile_unlink_alert_confirm" = "はい";
+
+/*User profile: Unlink warning alert message*/
+"profile_unlink_alert_message" = "アカウントが失われます。本当に続行しますか？";
+"profile_unlink_alert_message_android" = "アカウントが失われます。本当に続行しますか？";
+
+/*User profile: Unlink warning alert title*/
+"profile_unlink_alert_title" = "アカウントの連携を解除";
+"profile_user" = "ユーザー";
+"profile_username" = "プロフィール名";
+
+/*User profile: replaces the name of the user of the app, shown instead of their user name.*/
+"profile_username_you" = "あなた";
+
+/*QR scanner: hint text for where to find the QR code.*/
+"qrscanner_where_qr" = "デバイス底面のQRコードをスキャンしてください。";
+
+/*Enter recovery key: confirm button for using the entered recovery key.*/
+"recovery_button_recover" = "次";
+"recovery_error" = "エラーが発生しました。復元キーが無効です。";
+
+/*Enter recovery key: placeholder for the text field when it's empty.*/
+"recovery_recovery_key_placeholder" = "復元キー";
+"recovery_text_guide" = "アカウントを復元するには、復元キーを入力してください。";
+"remove_device_change_thread_network" = "Threadネットワークを変更";
+"remove_device_change_thread_network_description" = "%@にある残りのデバイスは、自動的に別の利用可能なThreadネットワークに接続されます。動作検知は継続されます。";
+"remove_device_data_removed_warning_thread" = "このデバイスと関連データはプレイスから削除されます。Threadボーダールーターを削除すると以下の処理も行われます：";
+"remove_device_data_removed_warning_thread_in_zone" = "このデバイスは%@のThreadボーダールーターとしても機能しているため、このゾーン内のすべてのデバイスが切断される可能性があります";
+"remove_device_data_removed_warning_wifi" = "このデバイスと関連データはプレイスから削除されます。";
+"remove_device_disable_sensing_function" = "センシング機能を無効化";
+"remove_device_disable_sensing_function_description" = "%@ にあるデバイスでは、今後センシングデータを収集できなくなります。";
+
+/*Remove device: remove <device_name>?*/
+"remove_device_remove_device_name" = "%@ を削除しますか？";
+"remove_device_remove_this_device" = "このデバイスを削除する";
+"remove_device_remove_thread_network" = "Threadネットワークを削除";
+"remove_device_remove_thread_network_description" = "%@ にある残りのデバイスは、Threadネットワークから切断されます。";
+"remove_device_restore_sensing_in_zone" = "%@ でのセンシングを復旧するには";
+"remove_device_restore_sensing_in_zone_description" = "別のThreadデバイスをボーダールーターとして設定してください";
+"report_false_alarm_by_continuing_intrusion_will_be_disarmed" = "続行すると侵入検知が無効になります";
+"report_false_alarm_reporting_as_false_alarm_will_also_disarm_the_intrusion" = "誤報として報告すると、侵入警報も解除されます";
+"report_false_alarm_the_intrusion_was_triggered_by" = "侵入検知の原因：";
+
+/*Room name*/
+"room_name_placeholder" = "部屋名（例：リビング、寝室）";
+
+/*Room selection: title*/
+"room_selection_title" = "このデバイスはどこに設置しますか？";
+"rooms_category_bathroom" = "浴室";
+"rooms_category_bedroom" = "寝室";
+"rooms_category_dinning_area" = "食事エリア";
+"rooms_category_kitchen" = "キッチン";
+"rooms_category_living_room" = "リビング";
+"rooms_category_office" = "オフィス";
+"rooms_category_other" = "その他";
+"rooms_category_retail_space" = "小売スペース";
+"rooms_category_store_room" = "倉庫";
+"rooms_category_unknown" = "不明";
+"security_mode_add_more_zone_to_show_zone_settings" = "現在のプレイスにはゾーンが1つしかありません。ゾーンごとにセキュリティモードをカスタマイズするには、デバイスを追加してゾーンを増やしてください。";
+"security_mode_degraded_zone" = "範囲縮小：動作検知は有効ですが、通常よりも検知範囲が狭くなっています";
+"security_mode_disabled_zone" = "無効：動作検知が利用できません";
+"security_mode_discard" = "破棄";
+"security_mode_discard_changes" = "編集内容を保存せずに破棄しますか？";
+"security_mode_discard_changes_description" = "このまま進むと、保存されていない変更はすべて失われます。";
+"security_mode_explanation_bottom_sheet_got_it" = "OK";
+"security_mode_explanation_bottom_sheet_learn_more" = "詳しくみる";
+"security_mode_explanation_got_it" = "OK";
+"security_mode_explanation_learn_more" = "詳しくみる";
+"security_mode_explanation_status_armed_description" = "すべての動きに対してアラームが鳴り、侵入アラートが送信されます";
+"security_mode_explanation_status_standby_description" = "通知は送信されませんが、デバイスは動作を記録しています";
+"security_mode_explanation_status_stay_description" = "ドアセンサーが開いた場合のみ、アラームが鳴り、侵入アラートが送信されます";
+"security_mode_explanation_sub_title" = "住まいの保護方法をコントロールしましょう";
+"security_mode_explanation_title" = "セキュリティモード";
+"security_mode_status_armed_description" = "すべての動作に対してアラームが鳴り、侵入アラートが送信されます";
+"security_mode_status_aware_description" = "すべての動作の通知を受け取る";
+"security_mode_status_relaxed_description" = "すべての動作通知をオフにします";
+"security_mode_status_standby_description" = "通知は送信されませんが、デバイスは動作を記録しています";
+"security_mode_status_stay_description" = "ドアセンサーが開いた場合のみ、アラームが鳴り侵入通知が送られます";
+"security_mode_zone_mode" = "ゾーンモード";
+"security_mode_zone_mode_description" = "各ゾーンごとにモードを切り替えるには、下をタップしてください";
+
+/*Contact sensor commissioning feature*/
+"select_device_setup_description" = "セットアップするデバイスを選択してください";
+
+/*Select floor area: description*/
+"select_floor_area_description" = "複数階のプレイスでは、各階の平均面積を選択してください";
+
+/*Select floor area: header*/
+"select_floor_area_header" = "床面積はどれくらいですか？";
+
+/*Select floor area: option 1 imperial*/
+"select_floor_area_option1_imperial" = "1 - 500平方フィート";
+
+/*Select floor area: option 1 metric*/
+"select_floor_area_option1_metric" = "1 - 50平方メートル";
+
+/*Select floor area: option 2 imperial*/
+"select_floor_area_option2_imperial" = "500 - 1,000平方フィート";
+
+/*Select floor area: option 2 metric*/
+"select_floor_area_option2_metric" = "51 - 100平方メートル";
+
+/*Select floor area: option 3 imperial*/
+"select_floor_area_option3_imperial" = "1001 - 1,500平方フィート";
+
+/*Select floor area: option 3 metric*/
+"select_floor_area_option3_metric" = "101 - 150平方メートル";
+
+/*Select floor area: option 4 imperial*/
+"select_floor_area_option4_imperial" = "1,500平方フィート以上";
+
+/*Select floor area: option 4 metric*/
+"select_floor_area_option4_metric" = "150平方メートル以上";
+
+/*Select floor number: description*/
+"select_floor_number_description" = "デバイスの最適な設置プレイスを提案するために使用されます";
+
+/*Select floor number: header*/
+"select_floor_number_header" = "建物は何階建てですか？";
+
+/*Select kit: description*/
+"select_kit_description" = "セットアップするキットを選択してください";
+
+/*Select kit: security kit*/
+"select_kit_monitoring_kit" = "SensePlug 2 個、ドアセンサー 1 個";
+
+/*Select kit: security kit*/
+"select_kit_monitoring_kit_description" = "SensePlug 2 個、ドアセンサー 1 個";
+
+/*Select kit: security kit*/
+"select_kit_security_kit" = "セキュリティキット";
+
+/*Select kit: security kit*/
+"select_kit_security_kit_description" = "Alarm Pod 1 個、SensePlug 1 個、ドアセンサー 1 個";
+
+/*Select kit: title*/
+"select_kit_title" = "どの機器をセットアップしますか？";
+
+/*Create place: header text when selecting the icon in a place category.*/
+"select_place_icon_header" = "プレイスアイコンを選択";
+
+/*Create place: header text when selecting the theme for a new place.*/
+"select_place_theme_header" = "プレイスの色を選択";
+
+/*Create place: select the place type description*/
+"select_place_type_description" = "プレイスの種類を選択";
+
+/*Create place: header text when selecting the place category.*/
+"select_place_type_header" = "このプレイスはどんな種類ですか？";
+
+/*Create room: header text when selecting the room category.*/
+"select_room_category_header" = "このデバイスを設置する部屋の種類は？";
+
+/*Create room: header text when selecting the room icon.*/
+"select_room_icon_header" = "部屋アイコンを選択";
+
+/*Select user icon: Choose profile image*/
+"select_user_icon_choose_profile_image" = "プロフィールアイコン";
+
+/*Select user icon: Prompt message*/
+"select_user_icon_prompt_message" = "プロフィールをカスタマイズしましょう！";
+"select_zone_description" = "同じゾーンのデバイスは、同じ階に設置する必要があります";
+"select_zone_format_accessory_devices" = "アクセサリー：%d 台";
+"select_zone_format_sensing_devices" = "アクティビティセンサー：%d 台";
+"select_zone_format_thread_devices" = "Threadデバイス：%d台";
+"select_zone_format_wifidevices" = "Wi-Fiデバイス %d 台";
+"select_zone_title" = "ゾーンを選択または作成する";
+"sensing" = "センシング";
+"sensitivity_settings_description_unavailable" = "ここで設置における感度設定を変更できます。機能を有効にするにはnamiデバイスをペアリングしてください";
+"sensitivity_settings_engine_unavailable" = "ここで設置に使用するセンシングエンジンを切り替えられます。namiデバイスをペアリングしてください";
+"sensitivity_settings_level_android" = "感度レベル：%@";
+
+/*Sensitivity settings: max title*/
+"sensitivity_settings_max_title" = "最大感度";
+"sensitivity_settings_max_title_android" = "最大";
+
+/*Sensitivity settings: min title*/
+"sensitivity_settings_min_title" = "最小感度";
+"sensitivity_settings_min_title_android" = "最小";
+
+/*Sensitivity settings: sensitivity level description*/
+"sensitivity_settings_sensitivity_level_description" = "小さく短い動きを除外したい場合は、感度を下げてください。感度設定はグラフの表示や通知にも影響します。";
+
+/*Sensitivity settings: success message*/
+"sensitivity_settings_success" = "感度が正常に変更されました";
+
+/*Sensitivity settings: title
+static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
+//static let descriptionOneToThree = LocalizedKey("sensitivity_settings.one_to_three_description")
+//static let rangeFourToSix = LocalizedKey("sensitivity_settings.four_to_six")
+//static let descriptionFourToSix = LocalizedKey("sensitivity_settings.four_to_six_description")
+//static let rangeSevenToNine = LocalizedKey("sensitivity_settings.seven_to_nine")
+//static let descriptionSevenToNine = LocalizedKey("sensitivity_settings.seven_to_nine_description")
+//static let rangeTenToTwelve = LocalizedKey("sensitivity_settings.ten_to_twelve")
+//static let descriptionTenToTwelve = LocalizedKey("sensitivity_settings.ten_to_twelve_description*/
+"sensitivity_settings_title" = "感度設定";
+"setup_a_device_room_selection_sub_tittle" = "このデバイスの設置プレイスを選んでください。デバイスを管理しやすくなります。";
+"setup_a_device_room_selection_tittle" = "このデバイスはどこに設置しますか？";
+"setup_a_device_toolbar_title" = "デバイスのセットアップ";
+"setup_a_kit_feature_not_available_description" = "新しいプレイスを作成するか、「プレイス設定」から個別にデバイスを追加してください。";
+"setup_a_kit_feature_not_available_header" = "この機能は使用できません";
+"setup_a_kit_how_device_work_description" = "namiのセンシング機能は、Wi-Fi信号を使って特定エリア（センシングゾーン）内の動作を検知します。";
+"setup_a_kit_how_device_work_tittle" = "namiセンシングの仕組み";
+"setup_a_kit_how_device_works_explanation_content1" = "ご自宅や玄関のセキュリティをサポートするために設計されています";
+"setup_a_kit_how_device_works_explanation_content2" = "セキュリティを最大限に高めるには、1階にデバイスを設置しましょう";
+"setup_a_kit_how_device_works_explanation_content3" = "家全体や玄関のさらなる防犯に役立ちます";
+"setup_a_kit_how_device_works_explanation_content4" = "お部屋や玄関の様々なエリアを見守ります";
+"setup_a_kit_how_device_works_explanation_content5" = "お部屋と玄関のセキュリティを強化します";
+"setup_a_kit_how_device_works_guide_content1" = "各センシングゾーンは1つの階をカバーします";
+"setup_a_kit_how_device_works_guide_content2" = "各センシングゾーンにはnamiデバイスが2台以上必要です";
+"setup_a_kit_how_device_works_guide_content3" = "ゾーンごとに異なる設定を行えます";
+"setup_a_kit_how_device_works_guide_content4" = "同じゾーン内のデバイスは同一のWi-Fiアクセスポイントを使う必要があります";
+"setup_a_kit_how_device_works_guide_content5" = "カバーしたいエリアの中心にあるアクセスポイントを使用する";
+"setup_a_kit_how_device_works_start" = "セットアップを開始する";
+"setup_a_kit_how_to_place_device_add_device" = "%@ を追加";
+"setup_a_kit_how_to_place_device_add_first_sense_plug" = "最初のSensePlugを追加する";
+"setup_a_kit_how_to_place_device_add_second_sense_plug" = "2台目のSensePlugを追加";
+"setup_a_kit_how_to_place_device_guide_content1_first_paired_device" = "カバーしたいエリアの中心に位置するWi-Fiアクセスポイントを選択します";
+"setup_a_kit_how_to_place_device_guide_content2_first_paired_device_imperial" = "最初のデバイスは、選択したアクセスポイントから最大30フィート離れたプレイスに設置します。";
+"setup_a_kit_how_to_place_device_guide_content2_first_paired_device_metric" = "最初のデバイスを、選択したアクセスポイントから最大10m離れたプレイスに設置します。";
+"setup_a_kit_how_to_place_device_guide_content3_non_first_paired_device" = "デバイスを家具や電子機器のすぐ裏に設置しないでください。";
+"setup_a_kit_how_to_place_device_guide_first_device" = "最初のデバイスの設置方法";
+"setup_a_kit_how_to_place_device_guide_first_device_in_zone" = "このゾーンの最初のデバイス";
+"setup_a_kit_how_to_place_device_guide_non_first_device" = "残りのデバイスのセットアップ";
+"setup_a_kit_how_to_place_device_non_first_paired_device_guide_content1" = "デバイスは同じ階に設置してください";
+"setup_a_kit_how_to_place_device_non_first_paired_device_guide_content2_imperial" = "２台のデバイスの間は距離を少なくとも１０フィート空けください。";
+"setup_a_kit_how_to_place_device_non_first_paired_device_guide_content2_metric" = "２台のデバイスの間は少なくとも３メートル空けてください。";
+"setup_a_kit_how_to_place_device_non_first_widar_has_br_guide_content_3" = "金属製の表面やその付近には設置しないでください";
+"setup_a_kit_introduce_zone_content1" = "ゾーン機能を使えば、部屋ごとにデバイスをグループ化・管理できます";
+"setup_a_kit_introduce_zone_content2" = "ゾーンごとにセキュリティモードと動作データが分かれています";
+"setup_a_kit_introduce_zone_content3" = "3つのデバイスはすべて同じゾーンに追加されます";
+"setup_a_kit_introduce_zone_content4" = "両方のデバイスが同じゾーンに追加されます";
+"setup_a_kit_introduce_zone_content5" = "既存のゾーンに追加するか、新しいゾーンを作成します";
+"setup_a_kit_introduce_zone_title" = "ゾーン機能のご紹介";
+"setup_a_kit_kit_selection_tittle" = "どのキットをセットアップしますか？";
+"setup_a_kit_select_your_preferred_zone_title" = "希望するゾーンを選択してください";
+
+/*set up a kit*/
+"setup_a_kit_toolbar_tittle" = "システムのセットアップ";
+"setup_a_kit_where_to_setup_add_guide" = "キットを追加する";
+"setup_a_kit_where_to_setup_one_floor_title" = "センシングゾーンをセットアップする";
+"setup_a_kit_where_to_setup_placeSize_large_coverage_1_floor" = "このキットは最大 %@ をカバーします";
+"setup_a_kit_where_to_setup_placeSize_large_coverage_more_floors" = "各キットは、１フロアあたり最大 %@ までカバー可能です";
+"setup_a_kit_where_to_setup_placeSize_small_coverage_1_floor" = "このキットは１フロア全体をカバーします";
+"setup_a_kit_where_to_setup_sub_tittle_more_floor_monitoring" = "同じゾーンのデバイスは、同じ階に設置する必要があります";
+"setup_a_kit_where_to_setup_sub_tittle_more_floor_security" = "セキュリティ強化が必要なプレイスを優先的にカバーしてください";
+"setup_a_kit_where_to_setup_subtitle_monitor_one_floor_big_size" = "動作を検知したいプレイスを選んでください";
+"setup_a_kit_where_to_setup_subtitle_one_floor_small_size" = "同じゾーンのデバイスは、同じ階に設置する必要があります";
+"setup_a_kit_where_to_setup_subtitle_security_one_floor_big_size" = "動作を検知したいエリアを選んでください。侵入されやすい出入口付近などをカバーするのがおすすめです。";
+"setup_a_kit_where_to_setup_tittle" = "ゾーンを選択または作成する";
+"setup_kit_kit_tracker_all_devices_added" = "すべてのデバイスが追加されました";
+"setup_kit_security_mode_control_how_your_place_is_protected" = "住まいの保護方法をコントロールしましょう";
+"setup_kit_security_mode_select_security_mode_for_place" = "住まいに適したセキュリティモードを選択してください";
+"setup_kit_security_mode_what_is_security_mode" = "セキュリティ モードとは何ですか?";
+"setup_kit_security_mode_you_can_change_later" = "このセキュリティモードは後で変更できます";
+"setup_kit_test_system_complete_test" = "テストを完了";
+"setup_kit_test_system_door_sensor_description" = "ドアを開けると、右側のアイコンが開いたドアの表示に変わります。";
+"setup_kit_test_system_door_sensor_faq" = "アイコンは変化しない";
+"setup_kit_test_system_motion_sensing_description" = "アクティビティセンサーが監視している範囲を動き回り、動きを止めてください。下のグラフで変化を確認できます";
+"setup_kit_test_system_motion_sensing_faq" = "動きを検知しません";
+"setup_kit_test_system_preparing_device" = "デバイスを準備しています...";
+"setup_kit_test_system_siren" = "サイレン";
+"setup_kit_test_system_siren_description" = "「サイレンを鳴らす」をタップして、正常に動作するか確認してください";
+"setup_kit_test_system_siren_faq" = "サイレンが聞こえません";
+"setup_kit_test_system_skip_all" = "すべてスキップ";
+"setup_kit_test_system_sound_siren" = "サイレンを鳴らす";
+"setup_kit_test_system_stop_siren" = "サイレンを止める";
+"setup_kit_test_system_title" = "システムをテストする";
+
+/*Setup kit: title*/
+"setup_kit_title" = "システムのセットアップ";
+"setup_kit_your_system_is_ready_to_secure_your_place" = "あなたの住まいを守る準備ができました";
+"setup_kit_youre_all_set" = "準備完了です！";
+"setup_motion_sensing_first_bss_first_kit" = "Alarm PodとSensePlugが連携して、動作を検知するエリアを構成します。";
+"setup_motion_sensing_first_bss_non_first_kit_has_br" = "Alarm PodとSensePlugは、%@の検知エリアを拡張します";
+"setup_motion_sensing_first_bss_non_first_kit_no_br" = "Alarm PodとSensePlugが連携して、動作を検知するエリアを構成します。";
+"setup_motion_sensing_first_hms_first_kit" = "SensePlug2台が連携して、動作を検知するエリアを構成します。";
+"setup_motion_sensing_first_hms_non_first_kit_has_br" = "SensePlug2台が、%@の検知エリアを拡張します";
+"setup_motion_sensing_first_hms_non_first_kit_no_br" = "SensePlug2台が連携して、動作を検知するエリアを構成します。";
+"setup_motion_sensing_first_not" = "検知できません";
+"setup_motion_sensing_first_the_door_sensor_does_not_detect_motion" = "ドアセンサーでは動きを検知できません";
+"setup_motion_sensing_first_the_door_sensor_does_not_detect_motion_markdown" = "ドアセンサーは動きを**検出しません**。";
+"setup_motion_sensing_first_title" = "まずはモーションセンサーの設定をしましょう";
+"setup_motion_sensing_first_widar_first_kit" = "WiDARセンサーは、設置された部屋内で動きを検知します。";
+"setup_motion_sensing_first_widar_non_first_kit_has_br_1" = "WiDARセンサーは、%@にある既存デバイスと連携して、検知エリアを拡張します";
+"setup_motion_sensing_first_widar_non_first_kit_has_br_2" = "また、単体でも設置された部屋内の動きを検知できます";
+"setup_motion_sensing_first_widar_non_first_kit_no_br" = "WiDARセンサーは、設置された部屋内で動きを検知します。";
+
+/*Sign up: anonymous account text for other sign up options*/
+"sign_up_anonymous_account_text" = "プライバシーを守るために、匿名でサインインできます。\nただし、ログインのたびに新しい復元キーが生成されるため、ログアウト前に「プロフィール > 認証」から最新の復元キーをコピーし、安全なプレイスに保管してください。\nモバイル端末の変更やアプリの再インストール、予期せぬ不具合などでログアウトした場合、最新のキーがないとアカウントを復元できません。";
+"sign_up_anonymous_account_text1" = "プライバシーを守るため、匿名でサインインできます。";
+"sign_up_anonymous_account_text2" = "ただし注意点があります。ログアウト（端末の変更やアプリの不具合などを含む）をすると、セキュリティキーがない限りアカウントを復元できません。";
+"sign_up_anonymous_account_text3" = "このような事態を避けるために、「プロフィール」ページからセキュリティキーをコピーし、安全なプレイスに保管してください。";
+
+/*Sign up: button title for entering recovery key.*/
+"sign_up_button_recovery_key" = "復元キーを入力";
+
+/*Sign up: button title for signing up anonymously*/
+"sign_up_button_sign_up_anonymous" = "匿名で登録";
+
+/*Sign up: Continue with Apple*/
+"sign_up_continue_with_apple" = "Appleで続行";
+
+/*Sign up: Continue with Google*/
+"sign_up_continue_with_google" = "Googleで続行";
+
+/*Sign up: other sign up options title*/
+"sign_up_other_sign_up_options" = "その他のサインイン方法";
+
+/*Sign up: Privacy policy*/
+"sign_up_privacy_policy" = "プライバシーポリシー";
+
+/*Sign up: Terms of Service*/
+"sign_up_terms_of_service" = "利用規約";
+
+/*Sign up: Terms of Service and privacy policy text part 1*/
+"sign_up_tos_and_privacy_part_1" = "続行することで、以下に同意したものとみなされます：";
+
+/*Sign up: Terms of Service and privacy policy text part 2*/
+"sign_up_tos_and_privacy_part_2" = "利用規約";
+"sign_up_tos_and_privacy_part_2_android" = "利用規約";
+
+/*Sign up: Terms of Service and privacy policy text part 3*/
+"sign_up_tos_and_privacy_part_3" = "および以下を確認したことになります：";
+
+/*Sign up: Terms of Service and privacy policy text part 4*/
+"sign_up_tos_and_privacy_part_4" = "プライバシーポリシー";
+"sign_up_tos_and_privacy_part_4_android" = "プライバシーポリシー";
+
+/*Sign up: welcome text in the middle of the screen.*/
+"sign_up_welcome_text" = "namiへようこそ";
+
+/*Status decription: armed and alert.*/
+"status_alert" = "アラームモード";
+"status_armed" = "アラーム";
+
+/*Status hint in Alert Switcher: Armed.*/
+"status_armed_hint" = "侵入を検知してアラームを鳴らします";
+
+/*Status hint in Alert Switcher: Armed when disabled.*/
+"status_armed_hint_disabled" = "現在はご利用いただけません（今後のバージョンで対応予定）";
+
+/*Status description: sending notifications, no alarm.*/
+"status_aware" = "通知モード";
+
+/*Status hint in Alert Switcher: Aware.*/
+"status_aware_hint" = "通知のみ行われます（アラームは鳴りません）";
+
+/*Status shown in alert while mode is switching*/
+"status_in_switching_mode" = "%1$@ を %2$@ モードに切り替え中です。接続処理を行っています。";
+
+/*Status description: unarmed.*/
+"status_relaxed" = "非通知モード";
+
+/*Status hint in Alert Switcher: Relaxed.*/
+"status_relaxed_hint" = "センサーは動作していますが、通知は行われません";
+"status_standby" = "スタンバイ";
+"status_standby_hint" = "通知なし";
+"status_stay" = "ステイ";
+"status_stay_hint" = "ソフト通知";
+"status_stay_hint_disabled" = "";
+"system_setup_basic_security_system" = "アラームスターターパック";
+"system_setup_basic_security_system_description" = "Alarm Pod 1 個、SensePlug 1 個、ドアセンサー 1 個";
+"system_setup_home_monitoring_system" = "拡張パック";
+"system_setup_home_monitoring_system_description" = "SensePlug 2 個、ドアセンサー 1 個";
+"system_setup_others" = "その他";
+"system_setup_setup_single_device_dialog_button" = "OK";
+"system_setup_setup_single_device_dialog_description" = "個別にデバイスを設定すると、設置最適化のガイドは表示されません。迷った場合は、上記のシステムによる一括設定をおすすめします。";
+"system_setup_setup_single_device_dialog_title" = "重要なお知らせ";
+"system_setup_widar_door_sensor" = "WiDAR + ドアセンサーキット";
+"system_setup_widar_door_sensor_description" = "WiDARセンサー1個、ドアセンサー1個";
+"tabbar_title_automation" = "オートメーション";
+"tabbar_title_place" = "プレイス";
+"tabbar_title_settings" = "設定";
+"time_zone_no_results_found" = "一致する結果が見つかりませんでした";
+"time_zone_search_time_zone" = "タイムゾーンを検索";
+
+/*Update Wifi error: device already updated*/
+"update_wifi_device_already_updated" = "このデバイスはすでに更新されています。%1$@ にある別のデバイスのQRコードをスキャンしてください。";
+
+/*Update Wifi error: device does not belong to zone*/
+"update_wifi_device_not_in_zone" = "このデバイスは選択されたゾーンに属していません。%1$@ にあるデバイスのQRコードをスキャンしてください。";
+
+/*Update Wifi: confirm button*/
+"update_wifi_how_it_works_confirm_button" = "続行";
+
+/*Update Wifi: description*/
+"update_wifi_how_it_works_description" = "ゾーン内のデバイスが接続するWi-Fiネットワークを変更できます";
+
+/*Update Wifi: help button*/
+"update_wifi_how_it_works_help" = "ヘルプ";
+
+/*Update Wifi: instruction bullet point 1*/
+"update_wifi_how_it_works_instruction_bullet_point_1" = "別のWi-Fiネットワークを使用したい場合";
+
+/*Update Wifi: instruction bullet point 2*/
+"update_wifi_how_it_works_instruction_bullet_point_2" = "別のWi-Fiアクセスポイントを使用したい場合";
+
+/*Update Wifi: instruction bullet point 3*/
+"update_wifi_how_it_works_instruction_bullet_point_3" = "Wi-Fiのパスワードを変更した場合";
+
+/*Update Wifi: instruction bullet point 4*/
+"update_wifi_how_it_works_instruction_bullet_point_4" = "ルーターを変更した場合";
+
+/*Update Wifi: instruction part 1*/
+"update_wifi_how_it_works_instruction_part_1" = "現在の設定を保持したまま、ゾーン内のすべてのデバイスを新しいWi-Fiネットワークへ接続できます。Wi-Fiを更新するのは以下の場合です：";
+
+/*Update Wifi: instruction part 2*/
+"update_wifi_how_it_works_instruction_part_2" = "1台のデバイスを更新したら、そのゾーン内の他のすべてのデバイスも更新する必要があります。";
+
+/*Update Wifi: how it works*/
+"update_wifi_how_it_works_instruction_title" = "操作方法";
+
+/*Update Wifi: title*/
+"update_wifi_how_it_works_title" = "Wi-Fiネットワークを更新する";
+
+/*Update Wifi error: locate device button*/
+"update_wifi_locate_device_button" = "デバイスを探す";
+"update_wifi_network_commissioning_mode_customize_place" = "名前を編集";
+"update_wifi_network_device_qr_code_device_already_repaired_android" = "このデバイスはすでに更新されています。%@ にある別のデバイスのQRコードをスキャンしてください。";
+"update_wifi_network_device_qr_code_device_not_in_zone_android" = "このデバイスは選択したゾーンに属していません。%@ にあるデバイスのQRコードをスキャンしてください。";
+"update_wifi_network_how_it_works_guide_subtitle" = "ゾーン内のデバイスが接続されるWi-Fiネットワークを変更できます";
+"update_wifi_network_reset_device_guide_plug_type" = "プラグ用";
+"update_wifi_network_reset_device_guide_pod_type" = "センチネルポッド用";
+"update_wifi_network_reset_device_guide_pod2" = "ピンを使用してリセット ボタンを長押しします。LED が濃い青色に点滅します。";
+"update_wifi_network_update_successfully_header1" = "完了！ デバイスのWi-Fiが更新されました。";
+"update_wifi_network_zone_status_guide_completed_update" = "Wi-Fi情報を更新しました！";
+"update_wifi_network_zones_selection_guide" = "ゾーン内のデバイスは同じWi-Fiネットワークに接続する必要があります。現在の設定を維持したまま、すべてのデバイスを更新してください。";
+"update_wifi_not_nami_qr_code_no_zone" = "このQRコードはnamiデバイスのものではありません";
+
+/*Update Wifi error: QR code error*/
+"update_wifi_qr_code_error" = "QRコードエラー";
+
+/*Update Wifi error: QR does not match a nami device*/
+"update_wifi_qr_does_not_match" = "このQRコードは現在のゾーンと一致しません";
+
+/*Update Wifi: reset device - confirm button*/
+"update_wifi_reset_device_confirm_button" = "次";
+
+/*Update Wifi: reset device description*/
+"update_wifi_reset_device_description" = "以下の手順に従って、デバイスの更新を準備してください。";
+
+/*Update Wifi: reset device - how to reset*/
+"update_wifi_reset_device_how_to_reset" = "%1$@ をリセットする方法";
+
+/*Update Wifi: plug reset instructions 1*/
+"update_wifi_reset_device_plug_reset_instructions_1" = "電源ボタンを押し続けます";
+
+/*Update Wifi: plug reset instructions 2*/
+"update_wifi_reset_device_plug_reset_instructions_2" = "電源ボタンを押したまま、プラグを電源に接続します";
+
+/*Update Wifi: plug reset instructions 3*/
+"update_wifi_reset_device_plug_reset_instructions_3" = "カチッという音が鳴るまで5秒間押し続けてください";
+
+/*Update Wifi: plug reset instructions 4*/
+"update_wifi_reset_device_plug_reset_instructions_4" = "プラグを抜いて、もう一度差し込みます。LED が濃い青色で点滅します。";
+
+/*Update Wifi: pod reset instructions*/
+"update_wifi_reset_device_pod_reset_instructions_1" = "底面カバーを外します";
+
+/*Update Wifi: pod reset instructions*/
+"update_wifi_reset_device_pod_reset_instructions_2" = "ピンを使用してリセット ボタンを押します。LED が濃い青色に点滅します。";
+
+/*Update Wifi: pod reset instructions*/
+"update_wifi_reset_device_pod_reset_instructions_3" = "LED が水色に変わるまでリセットボタンを押し続けます。";
+
+/*Update Wifi: pod reset instructions*/
+"update_wifi_reset_device_pod_reset_instructions_4" = "ポッドを取り外し、再度差し込みます。LED が濃い青色で点滅します。";
+
+/*Update Wifi: reset device title*/
+"update_wifi_reset_device_title" = "デバイスを準備する";
+
+/*Update Wifi: select a zone to update - confirm button*/
+"update_wifi_select_zone_to_update_confirm_button" = "開始";
+
+/*Update Wifi: select a zone to update description*/
+"update_wifi_select_zone_to_update_description" = "ゾーン内のすべてのデバイスは同じWi-Fiネットワークに接続する必要があります。一台更新したら、他のデバイスも順次更新してください";
+
+/*Update Wifi: select a zone to update - non support for thread zone
+Update Wifi: select a zone to update - non support for thread zone*/
+"update_wifi_select_zone_to_update_non_thread_zone_support" = "この機能は現在、Threadデバイスを含むゾーンではご利用いただけません";
+
+/*Update Wifi: select a zone to update - non support for thread zone
+Update Wifi: select a zone to update - non support for thread zone
+Update Wifi: select a zone to update - number of devices*/
+"update_wifi_select_zone_to_update_number_of_devices" = "デバイス数：%@ 台";
+
+/*Update Wifi: select a zone to update - select a zone*/
+"update_wifi_select_zone_to_update_select_zone" = "更新するゾーンを選択してください";
+
+/*Update Wifi: select a zone to update title*/
+"update_wifi_select_zone_to_update_title" = "Wi-Fiネットワークを更新する";
+
+/*Update Wifi: title*/
+"update_wifi_title" = "Wi-Fiを更新するゾーンを選択";
+
+/*Update Wifi: zone device check - scan QR*/
+"update_wifi_zone_device_check_scan_qr" = "デバイスの底面にあるQRコードをスキャンしてください";
+
+/*Update Wifi: zone wifi update - confirm button*/
+"update_wifi_zone_wifi_update_confirm_button" = "次";
+
+/*Update Wifi: zone wifi update - congratulations*/
+"update_wifi_zone_wifi_update_congratulations" = "おめでとうございます";
+
+/*Update Wifi: zone wifi update - description*/
+"update_wifi_zone_wifi_update_description" = "このゾーンのデバイスのいずれかを探し、アップデートのために一度プラグを抜いてください";
+
+/*Update Wifi: zone wifi update - devices updated*/
+"update_wifi_zone_wifi_update_devices_updated" = "デバイスの更新が完了しました";
+
+/*Update Wifi: zone wifi update - finish button*/
+"update_wifi_zone_wifi_update_finish_button" = "完了";
+
+/*Update Wifi: zone wifi update - last device description*/
+"update_wifi_zone_wifi_update_last_device_description" = "ゾーン内の最後のデバイスを探し、アップデートのためにプラグを抜いてください";
+
+/*Update Wifi: zone wifi update - locate device*/
+"update_wifi_zone_wifi_update_locate_device" = "デバイスを探す";
+
+/*Update Wifi: zone wifi update - session completed*/
+"update_wifi_zone_wifi_update_session_completed" = "Wi-Fi接続情報を更新しました！";
+
+/*Update Wifi: zone wifi update - update another zone button*/
+"update_wifi_zone_wifi_update_update_another_zone_button" = "別のゾーンのWi-Fiを更新する";
+"upgrade_multi_zones_create_failed" = "ゾーンの作成に失敗しました: %@";
+"upgrade_multi_zones_load_zone_failed" = "ゾーンの読み込みに失敗しました: %@";
+"upgrade_multi_zones_update_failed" = "ゾーン名の更新に失敗しました: %@";
+
+/*Leave place button title*/
+"user_details_ask_leave_place_button" = "このプレイスから退出する";
+
+/*Remove a user from place button title*/
+"user_details_ask_remove_user_button" = "ユーザーを削除";
+
+/*Confirm leave in alert*/
+"user_details_confirm_leave_place_button" = "退出";
+
+/*Confirm remove in alert*/
+"user_details_confirm_remove_user_button" = "削除";
+
+/*Message of leave place alert including [place name]*/
+"user_details_leave_place_alert_message" = "プレイス「%@」から退出しますか？";
+
+/*Title of leave place alert.*/
+"user_details_leave_place_alert_title" = "プレイスから退出";
+
+/*Message of remove [place user] alert including from [place]*/
+"user_details_remove_user_alert_message" = "ユーザー %1$@ を %2$@ から削除しますか?";
+
+/*Title of remove user from place alert.*/
+"user_details_remove_user_alert_title" = "ユーザーを削除";
+
+/*Button to save changes applied to user (e.g. user role)*/
+"user_details_save_changes_button" = "変更を保存";
+"user_remove_user_description" = "この操作は元に戻せません。";
+"user_remove_user_title" = "“%@” を削除しますか？";
+"user_role_administrator" = "管理者";
+"user_role_user" = "ユーザー";
+"welcome_page_policy" = "続行することで、利用規約に同意し、プライバシーポリシーを確認したことになります。";
+"widar_cancel_popup_back_to_positioning_button" = "位置調整に戻る";
+"widar_cancel_popup_cancel_button" = "はい、キャンセルします";
+"widar_cancel_popup_message" = "位置調整を完了するまで、デバイスが正常に動作しない可能性があります";
+"widar_cancel_popup_title" = "デバイスの位置決めをキャンセルしますか?";
+"widar_error_device_not_found_message" = "デバイスのプラグを一度抜いて、もう一度接続してください";
+"widar_error_exit_button" = "終了";
+"widar_error_retry_button" = "再試行";
+"widar_error_title" = "デバイスに接続できません";
+"widar_error_wrong_step" = "手順が正しくありません";
+"widar_header_title" = "位置調節";
+"widar_info_button_text" = "次";
+"widar_info_info_avoid_moving_when_optimized" = "最適な位置が決まった後にデバイスを動かすと、検知が機能しなくなります";
+"widar_info_info_must_optimise_position" = "このデバイスは、検知が正常に機能するために最適な位置に設置する必要があります";
+"widar_info_title" = "デバイスの位置調節";
+"widar_position_cancel_button" = "キャンセル";
+"widar_position_finish_button" = "位置調整を完了する";
+"widar_position_guide_imperial" = "デバイスを同じ面の上で１〜２インチほど少しずつ動かして、一度止めてください。緑色に光るまでこれを繰り返します。";
+"widar_position_guide_metric" = "デバイスを同じ面の上で2～3cmずつ動かして一時停止し、緑色に点灯するまで繰り返してください。";
+"widar_position_imperial_guide" = "同じ表面上でデバイスを1〜2インチ動かして止める操作を繰り返し、緑色に光るまで続けてください";
+"widar_position_metric_guide" = "同じ表面上でデバイスを2〜3cm動かして止める操作を繰り返し、緑色に光るまで続けてください";
+"widar_position_status_checking" = "チェック中";
+"widar_position_status_getting_better" = "最適な位置に近づいています";
+"widar_position_status_label" = "状態：";
+"widar_position_status_mispositioned" = "位置が適切ではありません";
+"widar_position_status_optimized" = "最適な位置です";
+"widar_position_tertiary_button_text" = "位置調節を終了";
+"widar_position_tip" = "ヒント: デバイスを軽く押して位置を調整してください";
+"widar_position_title" = "デバイスの配置";
+"widar_recommendations_button_text" = "位置調整を開始";
+"widar_recommendations_info_attach_base" = "テーブルに平置きする場合は、ベースを取り付けてください";
+"widar_recommendations_info_keep_area_clear" = "デバイスの前方に障害物がないようにしてください";
+"widar_recommendations_info_wire_on_back" = "デバイスはケーブルを背面にして部屋の角に設置してください";
+"widar_recommendations_title" = "デバイスの設置方法";
+"widar_success_content_message" = "%@ のセンシングが有効になりました";
+"widar_success_done_button" = "完了";
+"widar_success_title" = "位置調節が完了しました";
+"zone_checks_motion_sensing_check_name" = "モーションセンシング";
+"zone_checks_motion_sensing_status_disconnected" = "データが取得できません";
+"zone_checks_motion_sensing_status_not_working" = "機能していません";
+"zone_checks_motion_sensing_status_working_motion_detected" = "動きが検出されました";
+"zone_checks_motion_sensing_status_working_motion_not_detected" = "動きは検出されませんでした";
+"zone_checks_zone_health_check_name" = "ゾーンの健全性";
+"zone_checks_zone_health_hint_assessing_zone_health" = "ゾーンの状態を確認中…";
+"zone_checks_zone_health_hint_check_needed" = "すべてのデバイスを確認してください";
+"zone_checks_zone_health_hint_works_well" = "正常に動作しています";
+"zone_checks_zone_health_status_degraded" = "一部に問題があります";
+"zone_checks_zone_health_status_healthy" = "正常";
+"zone_checks_zone_health_status_unhealthy" = "異常あり";
+"zone_checks_zone_health_status_unknown" = "不明";
+"zone_default_name" = "ゾーン1";
+"zone_guide_got_it" = "わかりました";
+"zone_guide_header" = "既存のゾーンにデバイスを追加すべき？新しいゾーンを作成すべき？";
+"zone_guide_subtitle_1" = "これにより、プレイス全体をより広くカバーできるようになります。";
+"zone_guide_subtitle_2" = "たとえば、自宅に人がいるときにガレージだけアラームモードにし、リビングは解除するような使い方に便利です。";
+"zone_guide_title_1" = "2つ目のキットをご利用の場合は、既存のゾーンの拡張をおすすめします。";
+"zone_guide_title_2" = "プレイス内のエリアごとにセキュリティモードを個別に設定したい場合は、新しいゾーンを作成してください。";
+"zone_guide_title_3" = "別の階をセキュリティ対象にしたい場合は、新しいゾーンを作成する必要があります。";
+
+/*Zone selection: add your kit to*/
+"zone_selection_add_your_kit_to" = "このキットを追加するプレイス";
+"zone_selection_i_dont_know_what_to_choose" = "どれを選べばよいかわかりません";
+"zone_selection_non_thread_border_router_zone_explain" = "このデバイスは、Threadボーダールーターがある既存のゾーンにしか参加できません";
+
+/*Zone selection: title*/
+"zone_selection_title" = "ゾーンを選択または作成する";
+"zone_selection_zone_device_limitation_explain" = "1つのゾーンに追加できるアクティビティセンサーは最大4つまでです。それを超える場合は追加できません。";
