@@ -23,8 +23,7 @@ public struct LottieAnimationWrapper {
   public func animationView(looping: StandardPairingUI.LottieLoopModeWrapper = .loop) -> some SwiftUICore.View
   
 }
-public typealias CircleButton = NamiPairingFramework.CircleButton
-public class WordingManager : Combine.ObservableObject {
+public class WordingManager : Foundation.ObservableObject {
   @Combine.Published @_projectedValueProperty($wordings) public var wordings: any StandardPairingUI.WordingProtocol {
     get
     @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
@@ -651,8 +650,11 @@ extension NamiPairingFramework.Pairing.Error {
   public var localizedDescription: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getFAQLink(wordings: any StandardPairingUI.WordingProtocol) -> Swift.String?
+  #endif
 }
-public class ThemeManager : Combine.ObservableObject {
+public class ThemeManager : Foundation.ObservableObject {
   @Combine.Published @_projectedValueProperty($selectedTheme) public var selectedTheme: any StandardPairingUI.ThemeProtocol {
     get
     @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
@@ -677,9 +679,6 @@ extension SwiftUICore.EnvironmentValues {
   }
 }
 extension SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var anyView: SwiftUICore.AnyView {
-    get
-  }
   @_Concurrency.MainActor @preconcurrency public func namiNavBar() -> some SwiftUICore.View
   
 }
@@ -730,22 +729,6 @@ extension NamiPairingFramework.Pairing.Error {
 }
 public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public init()
-  public typealias ViewForPowerOnAndScanning = StandardPairingUI.PowerOnAndScanningView
-  public typealias ViewForEnableCameraInSettings = StandardPairingUI.EnableCameraInSettingsView
-  public typealias ViewForBluetoothDeviceFound = StandardPairingUI.BluetoothDeviceFoundView
-  public typealias ViewForQRCodeScanner = StandardPairingUI.QRScannerView
-  public typealias ViewForListWiFiNetworks = StandardPairingUI.ListWiFiNetworksView
-  public typealias ViewForOtherWiFiNetwork = StandardPairingUI.OtherWiFiNetworkView
-  public typealias ViewForEnterWiFiPassword = StandardPairingUI.EnterWiFiPasswordView
-  public typealias ViewForFinishingSetup = StandardPairingUI.FinishingSetupView
-  public typealias ViewForPairingError = StandardPairingUI.PairingErrorScreenView
-  public typealias BackButtonView = NamiPairingFramework.NoView
-  public typealias ViewForPositioningErrorScreen = StandardPairingUI.ErrorScreenView
-  public typealias ViewForHowToPosition = StandardPairingUI.HowToPositionView
-  public typealias ViewForInitialPositioningScreen = StandardPairingUI.InitialScreenView
-  public typealias ViewForPositioningGuidance = StandardPairingUI.PositioningGuidanceView
-  public typealias ViewForPositioningComplete = StandardPairingUI.PositioningCompleteView
-  public var backButton: () -> NamiPairingFramework.NoView?
   public var powerOnAndScanning: (NamiPairingFramework.PowerOnAndScanning.ViewModel) -> StandardPairingUI.PowerOnAndScanningView
   public var enableCameraInSettings: (Swift.String) -> StandardPairingUI.EnableCameraInSettingsView
   public var bluetoothDeviceFound: (NamiPairingFramework.BluetoothDeviceFound.ViewModel) -> StandardPairingUI.BluetoothDeviceFoundView
@@ -755,11 +738,27 @@ public struct ViewsContainer : NamiPairingFramework.PairingStepsContainer {
   public var enterWiFiPassword: (NamiPairingFramework.EnterWiFiPassword.ViewModel) -> StandardPairingUI.EnterWiFiPasswordView
   public var finishingSetup: (Swift.String) -> StandardPairingUI.FinishingSetupView
   public var pairingError: (NamiPairingFramework.PairingErrorScreen.ViewModel) -> StandardPairingUI.PairingErrorScreenView
+  public var backButton: () -> NamiPairingFramework.CircleButton?
   public var howToPosition: (NamiPairingFramework.HowToPosition.ViewModel) -> StandardPairingUI.HowToPositionView
   public var initialPositioningScreen: (NamiPairingFramework.InitialScreen.ViewModel) -> StandardPairingUI.InitialScreenView
   public var positioningGuidance: (NamiPairingFramework.PositioningGuidance.ViewModel) -> StandardPairingUI.PositioningGuidanceView
   public var positioningComplete: (NamiPairingFramework.PositioningComplete.ViewModel) -> StandardPairingUI.PositioningCompleteView
   public var positionError: (NamiPairingFramework.ErrorScreen.ViewModel) -> StandardPairingUI.ErrorScreenView
+  public typealias BackButtonView = NamiPairingFramework.CircleButton
+  public typealias ViewForBluetoothDeviceFound = StandardPairingUI.BluetoothDeviceFoundView
+  public typealias ViewForEnableCameraInSettings = StandardPairingUI.EnableCameraInSettingsView
+  public typealias ViewForEnterWiFiPassword = StandardPairingUI.EnterWiFiPasswordView
+  public typealias ViewForFinishingSetup = StandardPairingUI.FinishingSetupView
+  public typealias ViewForHowToPosition = StandardPairingUI.HowToPositionView
+  public typealias ViewForInitialPositioningScreen = StandardPairingUI.InitialScreenView
+  public typealias ViewForListWiFiNetworks = StandardPairingUI.ListWiFiNetworksView
+  public typealias ViewForOtherWiFiNetwork = StandardPairingUI.OtherWiFiNetworkView
+  public typealias ViewForPairingError = StandardPairingUI.PairingErrorScreenView
+  public typealias ViewForPositioningComplete = StandardPairingUI.PositioningCompleteView
+  public typealias ViewForPositioningErrorScreen = StandardPairingUI.ErrorScreenView
+  public typealias ViewForPositioningGuidance = StandardPairingUI.PositioningGuidanceView
+  public typealias ViewForPowerOnAndScanning = StandardPairingUI.PowerOnAndScanningView
+  public typealias ViewForQRCodeScanner = StandardPairingUI.QRScannerView
 }
 @_Concurrency.MainActor @preconcurrency public struct QRScannerView : SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public init(viewModel: NamiPairingFramework.QRScanner.ViewModel)
