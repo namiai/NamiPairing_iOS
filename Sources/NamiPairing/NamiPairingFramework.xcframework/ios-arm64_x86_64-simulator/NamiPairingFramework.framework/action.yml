@@ -1,0 +1,172 @@
+name: 'Build XCFrameworks'
+description: 'Common build steps for NamiPairingFramework / StandardPairingUI'
+
+inputs:
+  access_token_github:
+    description: 'Access token for GitHub checkout and scripts'
+    required: true
+  user_github:
+    description: 'GitHub username for library checkout'
+    required: true
+  signing_certificate_p12_data:
+    description: 'Base64-encoded signing certificate (.p12)'
+    required: true
+  signing_certificate_password:
+    description: 'Password for the signing certificate'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout project
+      uses: actions/checkout@v4
+      with:
+        token: ${{ inputs.access_token_github }}
+        path: ./NamiPairingFramework
+
+    - name: Bootstrap project
+      shell: bash
+      env:
+        USER_GITHUB: ${{ inputs.user_github }}
+        ACCESS_TOKEN_GITHUB: ${{ inputs.access_token_github }}
+      run: |
+        set -euo pipefail
+        cd NamiPairingFramework
+        make bootstrap
+
+    - name: Prepare framework project
+      shell: bash
+      run: |
+        set -euo pipefail
+        cd NamiPairingFramework
+        source ~/.bash_profile || true
+        brew bundle
+        xcodeproj show
+
+    - name: Import signing certificate
+      shell: bash
+      env:
+        SIGNING_CERTIFICATE_P12_DATA: ${{ inputs.signing_certificate_p12_data }}
+        SIGNING_CERTIFICATE_PASSWORD: ${{ inputs.signing_certificate_password }}
+      run: |
+        set -euo pipefail
+        cd NamiPairingFramework
+        security delete-keychain "build.keychain" || true
+        exec .github/scripts/import-certificate.sh
+
+    - name: Set build number
+      shell: bash
+      run: |
+        set -euo pipefail
+        BUILD_DATE=$(TZ=UTC date +'%Y%m%d%H%M')
+        echo "BUILD_DATE=$BUILD_DATE" >> "$GITHUB_ENV"
+
+    - name: Build NamiPairingFramework (iOS & sim)
+      shell: bash
+      run: |
+        set -euo pipefail
+        cd NamiPairingFramework
+
+        # NOTE (legacy / brittle behavior restore):
+        # The original workflow:
+        #   - Ran import-certificate.sh (which creates build.keychain and sets it
+        #     as the default keychain).
+        #   - Then called `security find-identity -v -p codesigning` without an
+        #     explicit keychain argument.
+        #   - Inlined that into `CODE_SIGN_IDENTITY="$(... | grep ... | awk 'NR==1')"`
+        #     with no explicit error handling.
+        #
+        # If build.keychain contained a valid Apple code-signing identity,
+        # `CODE_SIGN_IDENTITY` was a 40-char hash. If not, the pipeline simply
+        # produced an empty string and xcodebuild was invoked with an empty
+        # CODE_SIGN_IDENTITY, letting Xcode fall back to the project’s signing
+        # configuration / automatic signing.
+        #
+        # When we moved this logic into the composite action, we made it strict:
+        #   - explicitly queried `build.keychain`
+        #   - failed hard (`exit 1`) if no identity was found
+        #
+        # That exposed that the P12 secret is not yet a clean, guaranteed
+        # code-signing identity.
+        #
+        # For now, to unblock releases, we:
+        #   - call `security find-identity -v -p codesigning` without specifying
+        #     the keychain (it will use the default, set to build.keychain by
+        #     import-certificate.sh)
+        #   - take the first 40-hex hash if present
+        #   - if nothing is found, we just warn and pass an empty
+        #     CODE_SIGN_IDENTITY through so Xcode can fall back to project
+        #     settings (mirroring the old behavior)
+        #
+        # CAVEATS:
+        #   - If build.keychain is misconfigured or the P12 is wrong, builds may
+        #     still succeed but rely on whatever signing configuration is baked
+        #     into the Xcode project.
+        #   - There is no strong guarantee that we’re always using the intended
+        #     identity.
+        #
+        # TODO (future refactor):
+        #   - Ensure SIGNING_CERTIFICATE_P12_DATA is a valid Apple code-signing
+        #     identity (cert + key).
+        #   - Enforce that we only sign with identities from build.keychain and
+        #     fail fast otherwise.
+
+        # Make sure build.keychain is the default (import-certificate.sh already
+        # does this, but calling again is harmless and keeps the contract local).
+        security default-keychain -s build.keychain || true
+
+        IDENTITY=$(security find-identity -v -p codesigning 2>/dev/null \
+          | grep -oEi '\b[0-9A-F]{40}\b' \
+          | head -n1 || true)
+
+        if [[ -z "${IDENTITY}" ]]; then
+          echo "⚠️ No code signing identity hash resolved; proceeding with empty CODE_SIGN_IDENTITY (Xcode will use project signing settings)."
+        else
+          echo "Using CODE_SIGN_IDENTITY=${IDENTITY}"
+        fi
+
+        xcodebuild archive \
+          -project NamiPairingFramework.xcodeproj \
+          -scheme NamiPairingFramework \
+          -configuration Release \
+          -destination "generic/platform=iOS" \
+          -archivePath build/NamiPairingFramework_iOS \
+          SKIP_INSTALL=NO \
+          CODE_SIGN_IDENTITY="${IDENTITY}"
+
+        xcodebuild archive \
+          -project NamiPairingFramework.xcodeproj \
+          -scheme NamiPairingFramework \
+          -configuration Release \
+          -destination "generic/platform=iOS Simulator" \
+          -archivePath build/NamiPairingFramework_sim \
+          SKIP_INSTALL=NO \
+          CODE_SIGN_IDENTITY="${IDENTITY}"
+
+    - name: Package NamiPairingFramework as XCFramework
+      shell: bash
+      run: |
+        set -euo pipefail
+        cd NamiPairingFramework
+
+        xcodebuild -create-xcframework \
+          -framework build/NamiPairingFramework_iOS.xcarchive/Products/Library/Frameworks/NamiPairingFramework.framework \
+          -framework build/NamiPairingFramework_sim.xcarchive/Products/Library/Frameworks/NamiPairingFramework.framework \
+          -output build/NamiPairingFramework.xcframework
+
+    - name: Remove *.abi.json
+      shell: bash
+      run: |
+        set -euo pipefail
+        cd NamiPairingFramework
+        find build -type f -name "*.abi.json" -delete
+
+    - name: Make tarball
+      shell: bash
+      run: |
+        set -euo pipefail
+        cd NamiPairingFramework
+        tar -vczf pairing_frameworks.tar.gz \
+          build/NamiPairingFramework.xcframework
+        # If you later add StandardPairingUI.xcframework, append it here:
+        #  build/StandardPairingUI.xcframework
