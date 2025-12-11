@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
-// swift-module-flags: -target arm64-apple-ios16.6 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name NamiPairingFramework
+// swift-module-flags: -target arm64-apple-ios16.6 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name NamiPairingFramework
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import Combine
 import Foundation
@@ -17,6 +17,20 @@ public enum NamiSDKEvent : @unchecked Swift.Sendable {
   case deviceDecommissioned(device: NamiPairingFramework.NamiDeviceID)
   case dismissView
   case warning(any Swift.Error)
+}
+public protocol SDKThreadOperationalDatasetProtocol : Swift.Decodable, Swift.Encodable {
+  var data: Foundation.Data { get }
+  func equalsNumericalPanID<ID>(_ panId: ID) -> Swift.Bool where ID : Swift.FixedWidthInteger
+}
+public protocol SDKThreadOperationalDatasetProviderProtocol {
+  associatedtype Dataset : NamiPairingFramework.SDKThreadOperationalDatasetProtocol
+  #if compiler(>=5.3) && $NonescapableTypes
+  func newRandomDataset(networkName: Swift.String?) -> Self.Dataset
+  #endif
+  func getDataset(for placeId: NamiPairingFramework.NamiPlaceID) -> Combine.AnyPublisher<Self.Dataset, any Swift.Error>
+  func removeDataset(for placeId: NamiPairingFramework.NamiPlaceID)
+  func storeDataset(_ dataset: Foundation.Data, for placeId: NamiPairingFramework.NamiPlaceID)
+  func storeDataset(_ dataset: Self.Dataset, for placeId: NamiPairingFramework.NamiPlaceID)
 }
 public enum SDKError : Swift.Error, Foundation.LocalizedError {
   case missingPlaceId
@@ -171,7 +185,7 @@ public struct NamiSdkConfig {
     get
   }
   convenience public init(sessionCode: Swift.String) throws
-  convenience public init(baseURL: Foundation.URL, session: any NamiPairingFramework.NamiPairingNetworkSession, tokenStore: any NamiPairingFramework.NamiPairingTokenStore)
+  convenience public init<P>(baseURL: Foundation.URL, session: any NamiPairingFramework.NamiPairingNetworkSession, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, threadDatasetProvider: P) where P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
   #if compiler(>=5.3) && $NonescapableTypes
   public func startPairing(roomId: Swift.String, deviceType: NamiPairingFramework.PairingNamiDeviceType = .unknown, pairingParameters: NamiPairingFramework.NamiPairingParameters? = nil) throws -> some SwiftUICore.View
   
