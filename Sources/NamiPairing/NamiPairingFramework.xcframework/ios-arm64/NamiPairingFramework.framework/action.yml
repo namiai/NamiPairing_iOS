@@ -1,22 +1,22 @@
-name: 'Build XCFrameworks'
-description: 'Common build steps for NamiPairingFramework / StandardPairingUI'
+name: "Build XCFrameworks"
+description: "Common build steps for NamiPairingFramework / StandardPairingUI"
 
 inputs:
   access_token_github:
-    description: 'Access token for GitHub checkout and scripts'
+    description: "Access token for GitHub checkout and scripts"
     required: true
   user_github:
-    description: 'GitHub username for library checkout'
+    description: "GitHub username for library checkout"
     required: true
   signing_certificate_p12_data:
-    description: 'Base64-encoded signing certificate (.p12)'
+    description: "Base64-encoded signing certificate (.p12)"
     required: true
   signing_certificate_password:
-    description: 'Password for the signing certificate'
+    description: "Password for the signing certificate"
     required: true
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - name: Checkout project
       uses: actions/checkout@v4
@@ -153,6 +153,13 @@ runs:
           -framework build/NamiPairingFramework_iOS.xcarchive/Products/Library/Frameworks/NamiPairingFramework.framework \
           -framework build/NamiPairingFramework_sim.xcarchive/Products/Library/Frameworks/NamiPairingFramework.framework \
           -output build/NamiPairingFramework.xcframework
+
+    - name: Bundle resources into XCFramework
+      shell: bash
+      run: |
+        set -euo pipefail
+        cd NamiPairingFramework
+        ./script/bundle_resources_into_xcframework.sh build/NamiPairingFramework.xcframework
 
     - name: Remove *.abi.json
       shell: bash

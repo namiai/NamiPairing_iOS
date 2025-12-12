@@ -11,19 +11,17 @@ let package = Package(
         .macOS(.v10_15),
     ],
     products: [
-        // Main library with core pairing logic.
+        // Single public product: NamiPairing
         .library(
             name: "NamiPairing",
-            targets: ["NamiPairingCore"]
-        ),
-        // Backwards-compatible product name for "no UI" usage.
-        .library(
-            name: "NamiPairing-NoUI",
             targets: ["NamiPairingCore"]
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/airbnb/lottie-spm.git", .upToNextMajor(from: "4.4.3"))
+        .package(
+            url: "https://github.com/airbnb/lottie-spm.git",
+            .upToNextMajor(from: "4.4.3")
+        )
     ],
     targets: [
         // Binary XCFramework with all core functionality.
