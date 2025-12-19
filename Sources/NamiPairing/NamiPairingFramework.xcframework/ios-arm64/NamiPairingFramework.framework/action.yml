@@ -24,6 +24,12 @@ runs:
         token: ${{ inputs.access_token_github }}
         path: ./NamiPairingFramework
 
+    - name: Show Swift version
+      shell: bash
+      run: |
+        set -euo pipefail
+        swift --version
+
     - name: Bootstrap project
       shell: bash
       env:
