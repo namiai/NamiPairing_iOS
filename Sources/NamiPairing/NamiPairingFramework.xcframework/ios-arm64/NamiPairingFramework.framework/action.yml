@@ -30,6 +30,15 @@ runs:
         set -euo pipefail
         swift --version
 
+    - name: Use Xcode toolchain
+      shell: bash
+      run: |
+        set -euo pipefail
+        XCODE_DIR="${XCODE_DIR:-/Applications/Xcode.app/Contents/Developer}"
+        export DEVELOPER_DIR="${XCODE_DIR}"
+        echo "DEVELOPER_DIR=${DEVELOPER_DIR}" >> "$GITHUB_ENV"
+        /usr/bin/xcrun swift --version
+
     - name: Bootstrap project
       shell: bash
       env:
