@@ -32,6 +32,15 @@ public protocol SDKThreadOperationalDatasetProviderProtocol {
   func storeDataset(_ dataset: Foundation.Data, for placeId: NamiPairingFramework.NamiPlaceID)
   func storeDataset(_ dataset: Self.Dataset, for placeId: NamiPairingFramework.NamiPlaceID)
 }
+public protocol SDKWiFiStorageProtocol : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  func save(password: Swift.String?, for networkSSID: Swift.String)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  func password(for networkSSID: Swift.String) -> Swift.String?
+  #endif
+  func removeAll()
+}
 public enum SDKError : Swift.Error, Foundation.LocalizedError {
   case missingPlaceId
   case sessionNotActivated
@@ -185,7 +194,10 @@ public struct NamiSdkConfig {
     get
   }
   convenience public init(sessionCode: Swift.String) throws
+  convenience public init(baseURL: Foundation.URL, session: any NamiPairingFramework.NamiPairingNetworkSession, tokenStore: any NamiPairingFramework.NamiPairingTokenStore)
+  convenience public init<W>(baseURL: Foundation.URL, session: any NamiPairingFramework.NamiPairingNetworkSession, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, wifiStorage: W) where W : NamiPairingFramework.SDKWiFiStorageProtocol
   convenience public init<P>(baseURL: Foundation.URL, session: any NamiPairingFramework.NamiPairingNetworkSession, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, threadDatasetProvider: P) where P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
+  convenience public init<W, P>(baseURL: Foundation.URL, session: any NamiPairingFramework.NamiPairingNetworkSession, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, wifiStorage: W, threadDatasetProvider: P) where W : NamiPairingFramework.SDKWiFiStorageProtocol, P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
   #if compiler(>=5.3) && $NonescapableTypes
   public func startPairing(roomId: Swift.String, deviceType: NamiPairingFramework.PairingNamiDeviceType = .unknown, pairingParameters: NamiPairingFramework.NamiPairingParameters? = nil) throws -> some SwiftUICore.View
   
