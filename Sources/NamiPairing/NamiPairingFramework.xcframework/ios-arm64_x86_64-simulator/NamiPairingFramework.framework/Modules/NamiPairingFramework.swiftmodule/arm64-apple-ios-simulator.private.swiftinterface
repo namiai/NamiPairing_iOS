@@ -194,10 +194,10 @@ public struct NamiSdkConfig {
     get
   }
   convenience public init(sessionCode: Swift.String) throws
-  convenience public init(baseURL: Foundation.URL, session: any NamiPairingFramework.NamiPairingNetworkSession, tokenStore: any NamiPairingFramework.NamiPairingTokenStore)
-  convenience public init<W>(baseURL: Foundation.URL, session: any NamiPairingFramework.NamiPairingNetworkSession, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, wifiStorage: W) where W : NamiPairingFramework.SDKWiFiStorageProtocol
-  convenience public init<P>(baseURL: Foundation.URL, session: any NamiPairingFramework.NamiPairingNetworkSession, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, threadDatasetProvider: P) where P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
-  convenience public init<W, P>(baseURL: Foundation.URL, session: any NamiPairingFramework.NamiPairingNetworkSession, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, wifiStorage: W, threadDatasetProvider: P) where W : NamiPairingFramework.SDKWiFiStorageProtocol, P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
+  convenience public init(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore)
+  convenience public init<W>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, wifiStorage: W) where W : NamiPairingFramework.SDKWiFiStorageProtocol
+  convenience public init<P>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, threadDatasetProvider: P) where P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
+  convenience public init<W, P>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, wifiStorage: W, threadDatasetProvider: P) where W : NamiPairingFramework.SDKWiFiStorageProtocol, P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
   #if compiler(>=5.3) && $NonescapableTypes
   public func startPairing(roomId: Swift.String, deviceType: NamiPairingFramework.PairingNamiDeviceType = .unknown, pairingParameters: NamiPairingFramework.NamiPairingParameters? = nil) throws -> some SwiftUICore.View
   
@@ -245,18 +245,6 @@ public protocol NamiThreadSecureStorage {
 }
 public struct PairingStepsHandle {
   public init(_ value: Any)
-}
-public protocol NamiPairingNetworkSession : AnyObject {
-  func publisher(for request: Foundation.URLRequest, accessToken: Swift.String, tokenExpiresAt: Foundation.Date) -> Combine.AnyPublisher<Foundation.Data, any Swift.Error>
-  func publisher(for request: Foundation.URLRequest, accessToken: Swift.String, tokenExpiresAt: Foundation.Date, retries: Swift.Int, backoffBase: Swift.Double) -> Combine.AnyPublisher<Foundation.Data, any Swift.Error>
-}
-public enum NamiPairingNetworkSessionError : Swift.Error {
-  case missingToken
-  public static func == (a: NamiPairingFramework.NamiPairingNetworkSessionError, b: NamiPairingFramework.NamiPairingNetworkSessionError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
 }
 public protocol NamiPairingTokenStore {
   func store<TokenType>(_ token: TokenType, at key: Swift.String) where TokenType : Swift.Decodable, TokenType : Swift.Encodable
@@ -307,7 +295,5 @@ extension NamiPairingFramework.NamiSdkConfig.MeasurementSystem : Swift.Equatable
 extension NamiPairingFramework.NamiSdkConfig.MeasurementSystem : Swift.Hashable {}
 extension NamiPairingFramework.NamiSdkConfig.Appearance : Swift.Equatable {}
 extension NamiPairingFramework.NamiSdkConfig.Appearance : Swift.Hashable {}
-extension NamiPairingFramework.NamiPairingNetworkSessionError : Swift.Equatable {}
-extension NamiPairingFramework.NamiPairingNetworkSessionError : Swift.Hashable {}
 extension NamiPairingFramework.StorageError : Swift.Equatable {}
 extension NamiPairingFramework.StorageError : Swift.Hashable {}
