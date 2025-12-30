@@ -5841,7 +5841,10 @@
             "declKind": "EnumElement",
             "usr": "s:20NamiPairingFramework24RemoteTemplateEntrypointO10createRoomyA2CmF",
             "mangledName": "$s20NamiPairingFramework24RemoteTemplateEntrypointO10createRoomyA2CmF",
-            "moduleName": "NamiPairingFramework"
+            "moduleName": "NamiPairingFramework",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Constructor",
@@ -10762,9 +10765,9 @@
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/Public\/PublicModels.swift",
       "kind": "StringLiteral",
-      "offset": 4344,
-      "length": 19,
-      "value": "\"\/create-room.json\""
+      "offset": 4528,
+      "length": 31,
+      "value": "\"\/create-room-select-zone.json\""
     },
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/NamiPairing.swift",
@@ -10790,28 +10793,28 @@
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/NamiPairing.swift",
       "kind": "StringLiteral",
-      "offset": 14857,
+      "offset": 14845,
       "length": 61,
       "value": "\"[Setup Guide] got events publisher completion \""
     },
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/NamiPairing.swift",
       "kind": "StringLiteral",
-      "offset": 14917,
+      "offset": 14905,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/NamiPairing.swift",
       "kind": "StringLiteral",
-      "offset": 15402,
+      "offset": 15382,
       "length": 34,
       "value": "\"[Setup Guide] got event \""
     },
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/NamiPairing.swift",
       "kind": "StringLiteral",
-      "offset": 15435,
+      "offset": 15415,
       "length": 2,
       "value": "\"\""
     },
