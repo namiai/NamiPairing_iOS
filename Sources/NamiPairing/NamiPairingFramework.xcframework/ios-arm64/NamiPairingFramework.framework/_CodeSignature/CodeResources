@@ -14,11 +14,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		/lytv9hUjMlh+yw6Kskc6HZFSKQ=
+		oQ4cYaCrxyYl6DdCYUQxKKz/v2U=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		KqMV20Xbe3lSIq2NAPH9elo0/Fs=
+		HK72TR2BvLq3FHo+avIVLjqoHyI=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		N7lmBJkmzBmytr7YhgvcrqMV2gU=
+		3gmc2QO4R59UFJ/gVx86P84hX2U=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -65,7 +65,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lfr2uSXSlpaZIxbJzqoAhz+1vTER3wzpdBgmg0HDtdM=
+			qY4/T5dvhiWsY7A1zfbU6emqtyjNYgvcZBO8JptDzzA=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -93,7 +93,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JTnbLWLo3Tw7oti9In5N9lvsIl9sZk++TxisAiWDqDE=
+			GKglfFl8r798c8u3XwyP05p6emQurYyWeqX0ExFzQoY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
