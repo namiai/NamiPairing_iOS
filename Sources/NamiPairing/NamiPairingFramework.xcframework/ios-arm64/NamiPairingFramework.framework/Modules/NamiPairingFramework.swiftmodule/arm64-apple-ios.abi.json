@@ -5690,6 +5690,160 @@
             "moduleName": "NamiPairingFramework"
           },
           {
+            "kind": "Var",
+            "name": "selectZone",
+            "printedName": "selectZone",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NamiPairingFramework.RemoteTemplateEntrypoint.Type) -> NamiPairingFramework.RemoteTemplateEntrypoint",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RemoteTemplateEntrypoint",
+                    "printedName": "NamiPairingFramework.RemoteTemplateEntrypoint",
+                    "usr": "s:20NamiPairingFramework24RemoteTemplateEntrypointO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NamiPairingFramework.RemoteTemplateEntrypoint.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RemoteTemplateEntrypoint",
+                        "printedName": "NamiPairingFramework.RemoteTemplateEntrypoint",
+                        "usr": "s:20NamiPairingFramework24RemoteTemplateEntrypointO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20NamiPairingFramework24RemoteTemplateEntrypointO10selectZoneyA2CmF",
+            "mangledName": "$s20NamiPairingFramework24RemoteTemplateEntrypointO10selectZoneyA2CmF",
+            "moduleName": "NamiPairingFramework",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "createZone",
+            "printedName": "createZone",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NamiPairingFramework.RemoteTemplateEntrypoint.Type) -> NamiPairingFramework.RemoteTemplateEntrypoint",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RemoteTemplateEntrypoint",
+                    "printedName": "NamiPairingFramework.RemoteTemplateEntrypoint",
+                    "usr": "s:20NamiPairingFramework24RemoteTemplateEntrypointO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NamiPairingFramework.RemoteTemplateEntrypoint.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RemoteTemplateEntrypoint",
+                        "printedName": "NamiPairingFramework.RemoteTemplateEntrypoint",
+                        "usr": "s:20NamiPairingFramework24RemoteTemplateEntrypointO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20NamiPairingFramework24RemoteTemplateEntrypointO10createZoneyA2CmF",
+            "mangledName": "$s20NamiPairingFramework24RemoteTemplateEntrypointO10createZoneyA2CmF",
+            "moduleName": "NamiPairingFramework"
+          },
+          {
+            "kind": "Var",
+            "name": "selectRoom",
+            "printedName": "selectRoom",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NamiPairingFramework.RemoteTemplateEntrypoint.Type) -> NamiPairingFramework.RemoteTemplateEntrypoint",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RemoteTemplateEntrypoint",
+                    "printedName": "NamiPairingFramework.RemoteTemplateEntrypoint",
+                    "usr": "s:20NamiPairingFramework24RemoteTemplateEntrypointO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NamiPairingFramework.RemoteTemplateEntrypoint.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RemoteTemplateEntrypoint",
+                        "printedName": "NamiPairingFramework.RemoteTemplateEntrypoint",
+                        "usr": "s:20NamiPairingFramework24RemoteTemplateEntrypointO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20NamiPairingFramework24RemoteTemplateEntrypointO10selectRoomyA2CmF",
+            "mangledName": "$s20NamiPairingFramework24RemoteTemplateEntrypointO10selectRoomyA2CmF",
+            "moduleName": "NamiPairingFramework",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "createRoom",
+            "printedName": "createRoom",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NamiPairingFramework.RemoteTemplateEntrypoint.Type) -> NamiPairingFramework.RemoteTemplateEntrypoint",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RemoteTemplateEntrypoint",
+                    "printedName": "NamiPairingFramework.RemoteTemplateEntrypoint",
+                    "usr": "s:20NamiPairingFramework24RemoteTemplateEntrypointO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NamiPairingFramework.RemoteTemplateEntrypoint.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RemoteTemplateEntrypoint",
+                        "printedName": "NamiPairingFramework.RemoteTemplateEntrypoint",
+                        "usr": "s:20NamiPairingFramework24RemoteTemplateEntrypointO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20NamiPairingFramework24RemoteTemplateEntrypointO10createRoomyA2CmF",
+            "mangledName": "$s20NamiPairingFramework24RemoteTemplateEntrypointO10createRoomyA2CmF",
+            "moduleName": "NamiPairingFramework"
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(rawValue:)",
@@ -10580,9 +10734,37 @@
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/Public\/PublicModels.swift",
       "kind": "StringLiteral",
-      "offset": 4107,
+      "offset": 4106,
       "length": 43,
       "value": "\"\/update_wifi_credentials_select_zone.json\""
+    },
+    {
+      "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/Public\/PublicModels.swift",
+      "kind": "StringLiteral",
+      "offset": 4195,
+      "length": 19,
+      "value": "\"\/select-zone.json\""
+    },
+    {
+      "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/Public\/PublicModels.swift",
+      "kind": "StringLiteral",
+      "offset": 4237,
+      "length": 19,
+      "value": "\"\/create-zone.json\""
+    },
+    {
+      "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/Public\/PublicModels.swift",
+      "kind": "StringLiteral",
+      "offset": 4302,
+      "length": 19,
+      "value": "\"\/select-room.json\""
+    },
+    {
+      "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/Public\/PublicModels.swift",
+      "kind": "StringLiteral",
+      "offset": 4344,
+      "length": 19,
+      "value": "\"\/create-room.json\""
     },
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/NamiPairing.swift",

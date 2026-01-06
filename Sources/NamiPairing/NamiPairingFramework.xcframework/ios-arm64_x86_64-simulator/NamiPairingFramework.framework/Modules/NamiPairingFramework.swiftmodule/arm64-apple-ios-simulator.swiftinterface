@@ -139,6 +139,10 @@ public enum RemoteTemplateEntrypoint : Swift.String, NamiPairingFramework.SDKRem
   case settingsEntryExitDelays
   case settingsSensitivity
   case updateWifiCredentials
+  case selectZone
+  case createZone
+  case selectRoom
+  case createRoom
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
   #endif
