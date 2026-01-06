@@ -11,25 +11,22 @@ let package = Package(
         .macOS(.v10_15),
     ],
     products: [
-        // Single public product: NamiPairing
         .library(
             name: "NamiPairing",
-            targets: ["NamiPairingCore"]
-        )
+            targets: ["NamiPairingCore", "StandardPairingUI"]),
+        .library(
+            name: "NamiPairing-NoUI",
+            targets: ["NamiPairingCore"]),
     ],
     dependencies: [
-        .package(
-            url: "https://github.com/airbnb/lottie-spm.git",
-            .upToNextMajor(from: "4.4.3")
-        )
+        .package(url: "https://github.com/airbnb/lottie-spm.git", .upToNextMajor(from: "4.4.3")),
     ],
     targets: [
-        // Binary XCFramework with all core functionality.
         .binaryTarget(
             name: "NamiPairingFramework",
-            path: "Sources/NamiPairing/NamiPairingFramework.xcframework"
-        ),
-        // Thin Swift wrapper target used by clients.
+            path: "Sources/NamiPairing/NamiPairingFramework.xcframework"),
+        .binaryTarget(
+            name: "StandardPairingUI", path: "Sources/NamiPairing/StandardPairingUI.xcframework"),
         .target(
             name: "NamiPairingCore",
             dependencies: [
@@ -37,6 +34,6 @@ let package = Package(
                 .product(name: "Lottie", package: "lottie-spm")
             ],
             path: "Sources/NamiPairing/NamiPairingCore"
-        )
+        ),
     ]
 )
