@@ -987,6 +987,158 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
+        "moduleName": "NamiPairingFramework"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SDKWiFiStorageProtocol",
+        "printedName": "SDKWiFiStorageProtocol",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "save",
+            "printedName": "save(password:for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20NamiPairingFramework22SDKWiFiStorageProtocolP4save8password3forySSSg_SStF",
+            "mangledName": "$s20NamiPairingFramework22SDKWiFiStorageProtocolP4save8password3forySSSg_SStF",
+            "moduleName": "NamiPairingFramework",
+            "genericSig": "<τ_0_0 where τ_0_0 : NamiPairingFramework.SDKWiFiStorageProtocol>",
+            "sugared_genericSig": "<Self where Self : NamiPairingFramework.SDKWiFiStorageProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "password",
+            "printedName": "password(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20NamiPairingFramework22SDKWiFiStorageProtocolP8password3forSSSgSS_tF",
+            "mangledName": "$s20NamiPairingFramework22SDKWiFiStorageProtocolP8password3forSSSgSS_tF",
+            "moduleName": "NamiPairingFramework",
+            "genericSig": "<τ_0_0 where τ_0_0 : NamiPairingFramework.SDKWiFiStorageProtocol>",
+            "sugared_genericSig": "<Self where Self : NamiPairingFramework.SDKWiFiStorageProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeAll",
+            "printedName": "removeAll()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20NamiPairingFramework22SDKWiFiStorageProtocolP9removeAllyyF",
+            "mangledName": "$s20NamiPairingFramework22SDKWiFiStorageProtocolP9removeAllyyF",
+            "moduleName": "NamiPairingFramework",
+            "genericSig": "<τ_0_0 where τ_0_0 : NamiPairingFramework.SDKWiFiStorageProtocol>",
+            "sugared_genericSig": "<Self where Self : NamiPairingFramework.SDKWiFiStorageProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:20NamiPairingFramework22SDKWiFiStorageProtocolP",
+        "mangledName": "$s20NamiPairingFramework22SDKWiFiStorageProtocolP",
+        "moduleName": "NamiPairingFramework",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
         "moduleName": "NamiPairingFramework",
         "declAttributes": [
           "RawDocComment"
@@ -6084,6 +6236,23 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
+        "moduleName": "NamiPairingFramework"
+      },
+      {
+        "kind": "Import",
+        "name": "Tomonari",
+        "printedName": "Tomonari",
+        "declKind": "Import",
+        "moduleName": "NamiPairingFramework",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
         "moduleName": "NamiPairingFramework",
         "declAttributes": [
           "RawDocComment"
@@ -6217,6 +6386,16 @@
         "kind": "Import",
         "name": "NamiSharedUIElements",
         "printedName": "NamiSharedUIElements",
+        "declKind": "Import",
+        "moduleName": "NamiPairingFramework",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SecureStorage",
+        "printedName": "SecureStorage",
         "declKind": "Import",
         "moduleName": "NamiPairingFramework",
         "declAttributes": [
@@ -6735,7 +6914,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(baseURL:countryCode:measurementSystem:clientId:language:appearance:enableLogging:)",
+            "printedName": "init(baseURL:countryCode:measurementSystem:clientId:language:appearance:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6778,18 +6957,11 @@
                 "name": "Appearance",
                 "printedName": "NamiPairingFramework.NamiSdkConfig.Appearance",
                 "usr": "s:20NamiPairingFramework0A9SdkConfigV10AppearanceO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:20NamiPairingFramework0A9SdkConfigV7baseURL11countryCode17measurementSystem8clientId8language10appearance13enableLoggingAC10Foundation0G0V_SSAC011MeasurementK0OS2SAC10AppearanceOSbtcfc",
-            "mangledName": "$s20NamiPairingFramework0A9SdkConfigV7baseURL11countryCode17measurementSystem8clientId8language10appearance13enableLoggingAC10Foundation0G0V_SSAC011MeasurementK0OS2SAC10AppearanceOSbtcfc",
+            "usr": "s:20NamiPairingFramework0A9SdkConfigV7baseURL11countryCode17measurementSystem8clientId8language10appearanceAC10Foundation0G0V_SSAC011MeasurementK0OS2SAC10AppearanceOtcfc",
+            "mangledName": "$s20NamiPairingFramework0A9SdkConfigV7baseURL11countryCode17measurementSystem8clientId8language10appearanceAC10Foundation0G0V_SSAC011MeasurementK0OS2SAC10AppearanceOtcfc",
             "moduleName": "NamiPairingFramework",
             "declAttributes": [
               "AccessControl"
@@ -7390,91 +7562,6 @@
                 "accessorKind": "_modify"
               }
             ]
-          },
-          {
-            "kind": "Var",
-            "name": "enableLogging",
-            "printedName": "enableLogging",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:20NamiPairingFramework0A9SdkConfigV13enableLoggingSbvp",
-            "mangledName": "$s20NamiPairingFramework0A9SdkConfigV13enableLoggingSbvp",
-            "moduleName": "NamiPairingFramework",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:20NamiPairingFramework0A9SdkConfigV13enableLoggingSbvg",
-                "mangledName": "$s20NamiPairingFramework0A9SdkConfigV13enableLoggingSbvg",
-                "moduleName": "NamiPairingFramework",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:20NamiPairingFramework0A9SdkConfigV13enableLoggingSbvs",
-                "mangledName": "$s20NamiPairingFramework0A9SdkConfigV13enableLoggingSbvs",
-                "moduleName": "NamiPairingFramework",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:20NamiPairingFramework0A9SdkConfigV13enableLoggingSbvM",
-                "mangledName": "$s20NamiPairingFramework0A9SdkConfigV13enableLoggingSbvM",
-                "moduleName": "NamiPairingFramework",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
           }
         ],
         "declKind": "Struct",
@@ -7607,7 +7694,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(baseURL:session:tokenStore:threadDatasetProvider:)",
+            "printedName": "init(baseURL:tokenStore:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -7623,9 +7710,37 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "NamiPairingNetworkSession",
-                "printedName": "any NamiPairingFramework.NamiPairingNetworkSession",
-                "usr": "s:20NamiPairingFramework0aB14NetworkSessionP"
+                "name": "NamiPairingTokenStore",
+                "printedName": "any NamiPairingFramework.NamiPairingTokenStore",
+                "usr": "s:20NamiPairingFramework0aB10TokenStoreP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20NamiPairingFramework0aB0C7baseURL10tokenStoreAC10Foundation0E0V_AA0ab5TokenG0_ptcfc",
+            "mangledName": "$s20NamiPairingFramework0aB0C7baseURL10tokenStoreAC10Foundation0E0V_AA0ab5TokenG0_ptcfc",
+            "moduleName": "NamiPairingFramework",
+            "declAttributes": [
+              "Convenience",
+              "AccessControl"
+            ],
+            "init_kind": "Convenience"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(baseURL:tokenStore:wifiStorage:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NamiPairing",
+                "printedName": "NamiPairingFramework.NamiPairing",
+                "usr": "s:20NamiPairingFramework0aB0C"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
               },
               {
                 "kind": "TypeNominal",
@@ -7640,8 +7755,49 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:20NamiPairingFramework0aB0C7baseURL7session10tokenStore21threadDatasetProviderAC10Foundation0E0V_AA0aB14NetworkSession_pAA0ab5TokenH0_pxtcAA020SDKThreadOperationaljK8ProtocolRzlufc",
-            "mangledName": "$s20NamiPairingFramework0aB0C7baseURL7session10tokenStore21threadDatasetProviderAC10Foundation0E0V_AA0aB14NetworkSession_pAA0ab5TokenH0_pxtcAA020SDKThreadOperationaljK8ProtocolRzlufc",
+            "usr": "s:20NamiPairingFramework0aB0C7baseURL10tokenStore11wifiStorageAC10Foundation0E0V_AA0ab5TokenG0_pxtcAA07SDKWiFiI8ProtocolRzlufc",
+            "mangledName": "$s20NamiPairingFramework0aB0C7baseURL10tokenStore11wifiStorageAC10Foundation0E0V_AA0ab5TokenG0_pxtcAA07SDKWiFiI8ProtocolRzlufc",
+            "moduleName": "NamiPairingFramework",
+            "genericSig": "<τ_0_0 where τ_0_0 : NamiPairingFramework.SDKWiFiStorageProtocol>",
+            "sugared_genericSig": "<W where W : NamiPairingFramework.SDKWiFiStorageProtocol>",
+            "declAttributes": [
+              "Convenience",
+              "AccessControl"
+            ],
+            "init_kind": "Convenience"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(baseURL:tokenStore:threadDatasetProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NamiPairing",
+                "printedName": "NamiPairingFramework.NamiPairing",
+                "usr": "s:20NamiPairingFramework0aB0C"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NamiPairingTokenStore",
+                "printedName": "any NamiPairingFramework.NamiPairingTokenStore",
+                "usr": "s:20NamiPairingFramework0aB10TokenStoreP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20NamiPairingFramework0aB0C7baseURL10tokenStore21threadDatasetProviderAC10Foundation0E0V_AA0ab5TokenG0_pxtcAA020SDKThreadOperationaliJ8ProtocolRzlufc",
+            "mangledName": "$s20NamiPairingFramework0aB0C7baseURL10tokenStore21threadDatasetProviderAC10Foundation0E0V_AA0ab5TokenG0_pxtcAA020SDKThreadOperationaliJ8ProtocolRzlufc",
             "moduleName": "NamiPairingFramework",
             "genericSig": "<τ_0_0 where τ_0_0 : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol>",
             "sugared_genericSig": "<P where P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol>",
@@ -7649,6 +7805,52 @@
               "Convenience",
               "AccessControl",
               "RawDocComment"
+            ],
+            "init_kind": "Convenience"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(baseURL:tokenStore:wifiStorage:threadDatasetProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NamiPairing",
+                "printedName": "NamiPairingFramework.NamiPairing",
+                "usr": "s:20NamiPairingFramework0aB0C"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NamiPairingTokenStore",
+                "printedName": "any NamiPairingFramework.NamiPairingTokenStore",
+                "usr": "s:20NamiPairingFramework0aB10TokenStoreP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_1"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20NamiPairingFramework0aB0C7baseURL10tokenStore11wifiStorage21threadDatasetProviderAC10Foundation0E0V_AA0ab5TokenG0_pxq_tcAA07SDKWiFiI8ProtocolRzAA020SDKThreadOperationalklQ0R_r0_lufc",
+            "mangledName": "$s20NamiPairingFramework0aB0C7baseURL10tokenStore11wifiStorage21threadDatasetProviderAC10Foundation0E0V_AA0ab5TokenG0_pxq_tcAA07SDKWiFiI8ProtocolRzAA020SDKThreadOperationalklQ0R_r0_lufc",
+            "moduleName": "NamiPairingFramework",
+            "genericSig": "<τ_0_0, τ_0_1 where τ_0_0 : NamiPairingFramework.SDKWiFiStorageProtocol, τ_0_1 : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol>",
+            "sugared_genericSig": "<W, P where W : NamiPairingFramework.SDKWiFiStorageProtocol, P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol>",
+            "declAttributes": [
+              "Convenience",
+              "AccessControl"
             ],
             "init_kind": "Convenience"
           },
@@ -8877,380 +9079,6 @@
             "printedName": "Escapable",
             "usr": "s:s9EscapableP",
             "mangledName": "$ss9EscapableP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "NamiPairingFramework"
-      },
-      {
-        "kind": "Import",
-        "name": "Combine",
-        "printedName": "Combine",
-        "declKind": "Import",
-        "moduleName": "NamiPairingFramework"
-      },
-      {
-        "kind": "Import",
-        "name": "WebAPI",
-        "printedName": "WebAPI",
-        "declKind": "Import",
-        "moduleName": "NamiPairingFramework",
-        "declAttributes": [
-          "AccessControl"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "NamiPairingNetworkSession",
-        "printedName": "NamiPairingNetworkSession",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "publisher",
-            "printedName": "publisher(for:accessToken:tokenExpiresAt:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "AnyPublisher",
-                "printedName": "Combine.AnyPublisher<Foundation.Data, any Swift.Error>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Data",
-                    "printedName": "Foundation.Data",
-                    "usr": "s:10Foundation4DataV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Error",
-                    "printedName": "any Swift.Error",
-                    "usr": "s:s5ErrorP"
-                  }
-                ],
-                "usr": "s:7Combine12AnyPublisherV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "URLRequest",
-                "printedName": "Foundation.URLRequest",
-                "usr": "s:10Foundation10URLRequestV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Date",
-                "printedName": "Foundation.Date",
-                "usr": "s:10Foundation4DateV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:20NamiPairingFramework0aB14NetworkSessionP9publisher3for11accessToken14tokenExpiresAt7Combine12AnyPublisherVy10Foundation4DataVs5Error_pGAK10URLRequestV_SSAK4DateVtF",
-            "mangledName": "$s20NamiPairingFramework0aB14NetworkSessionP9publisher3for11accessToken14tokenExpiresAt7Combine12AnyPublisherVy10Foundation4DataVs5Error_pGAK10URLRequestV_SSAK4DateVtF",
-            "moduleName": "NamiPairingFramework",
-            "genericSig": "<τ_0_0 where τ_0_0 : NamiPairingFramework.NamiPairingNetworkSession>",
-            "sugared_genericSig": "<Self where Self : NamiPairingFramework.NamiPairingNetworkSession>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "publisher",
-            "printedName": "publisher(for:accessToken:tokenExpiresAt:retries:backoffBase:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "AnyPublisher",
-                "printedName": "Combine.AnyPublisher<Foundation.Data, any Swift.Error>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Data",
-                    "printedName": "Foundation.Data",
-                    "usr": "s:10Foundation4DataV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Error",
-                    "printedName": "any Swift.Error",
-                    "usr": "s:s5ErrorP"
-                  }
-                ],
-                "usr": "s:7Combine12AnyPublisherV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "URLRequest",
-                "printedName": "Foundation.URLRequest",
-                "usr": "s:10Foundation10URLRequestV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Date",
-                "printedName": "Foundation.Date",
-                "usr": "s:10Foundation4DateV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:20NamiPairingFramework0aB14NetworkSessionP9publisher3for11accessToken14tokenExpiresAt7retries11backoffBase7Combine12AnyPublisherVy10Foundation4DataVs5Error_pGAM10URLRequestV_SSAM4DateVSiSdtF",
-            "mangledName": "$s20NamiPairingFramework0aB14NetworkSessionP9publisher3for11accessToken14tokenExpiresAt7retries11backoffBase7Combine12AnyPublisherVy10Foundation4DataVs5Error_pGAM10URLRequestV_SSAM4DateVSiSdtF",
-            "moduleName": "NamiPairingFramework",
-            "genericSig": "<τ_0_0 where τ_0_0 : NamiPairingFramework.NamiPairingNetworkSession>",
-            "sugared_genericSig": "<Self where Self : NamiPairingFramework.NamiPairingNetworkSession>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Protocol",
-        "usr": "s:20NamiPairingFramework0aB14NetworkSessionP",
-        "mangledName": "$s20NamiPairingFramework0aB14NetworkSessionP",
-        "moduleName": "NamiPairingFramework",
-        "genericSig": "<τ_0_0 : AnyObject>",
-        "sugared_genericSig": "<Self : AnyObject>",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "NamiPairingNetworkSessionError",
-        "printedName": "NamiPairingNetworkSessionError",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "missingToken",
-            "printedName": "missingToken",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(NamiPairingFramework.NamiPairingNetworkSessionError.Type) -> NamiPairingFramework.NamiPairingNetworkSessionError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NamiPairingNetworkSessionError",
-                    "printedName": "NamiPairingFramework.NamiPairingNetworkSessionError",
-                    "usr": "s:20NamiPairingFramework0aB19NetworkSessionErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "NamiPairingFramework.NamiPairingNetworkSessionError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NamiPairingNetworkSessionError",
-                        "printedName": "NamiPairingFramework.NamiPairingNetworkSessionError",
-                        "usr": "s:20NamiPairingFramework0aB19NetworkSessionErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:20NamiPairingFramework0aB19NetworkSessionErrorO12missingTokenyA2CmF",
-            "mangledName": "$s20NamiPairingFramework0aB19NetworkSessionErrorO12missingTokenyA2CmF",
-            "moduleName": "NamiPairingFramework"
-          },
-          {
-            "kind": "Function",
-            "name": "==",
-            "printedName": "==(_:_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "NamiPairingNetworkSessionError",
-                "printedName": "NamiPairingFramework.NamiPairingNetworkSessionError",
-                "usr": "s:20NamiPairingFramework0aB19NetworkSessionErrorO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "NamiPairingNetworkSessionError",
-                "printedName": "NamiPairingFramework.NamiPairingNetworkSessionError",
-                "usr": "s:20NamiPairingFramework0aB19NetworkSessionErrorO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:20NamiPairingFramework0aB19NetworkSessionErrorO2eeoiySbAC_ACtFZ",
-            "mangledName": "$s20NamiPairingFramework0aB19NetworkSessionErrorO2eeoiySbAC_ACtFZ",
-            "moduleName": "NamiPairingFramework",
-            "static": true,
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Var",
-            "name": "hashValue",
-            "printedName": "hashValue",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:20NamiPairingFramework0aB19NetworkSessionErrorO9hashValueSivp",
-            "mangledName": "$s20NamiPairingFramework0aB19NetworkSessionErrorO9hashValueSivp",
-            "moduleName": "NamiPairingFramework",
-            "implicit": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:20NamiPairingFramework0aB19NetworkSessionErrorO9hashValueSivg",
-                "mangledName": "$s20NamiPairingFramework0aB19NetworkSessionErrorO9hashValueSivg",
-                "moduleName": "NamiPairingFramework",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "hash",
-            "printedName": "hash(into:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Hasher",
-                "printedName": "Swift.Hasher",
-                "paramValueOwnership": "InOut",
-                "usr": "s:s6HasherV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:20NamiPairingFramework0aB19NetworkSessionErrorO4hash4intoys6HasherVz_tF",
-            "mangledName": "$s20NamiPairingFramework0aB19NetworkSessionErrorO4hash4intoys6HasherVz_tF",
-            "moduleName": "NamiPairingFramework",
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Enum",
-        "usr": "s:20NamiPairingFramework0aB19NetworkSessionErrorO",
-        "mangledName": "$s20NamiPairingFramework0aB19NetworkSessionErrorO",
-        "moduleName": "NamiPairingFramework",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Error",
-            "printedName": "Error",
-            "usr": "s:s5ErrorP",
-            "mangledName": "$ss5ErrorP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "SendableMetatype",
-            "printedName": "SendableMetatype",
-            "usr": "s:s16SendableMetatypeP",
-            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -10769,49 +10597,42 @@
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/NamiPairing.swift",
       "kind": "StringLiteral",
-      "offset": 642,
+      "offset": 672,
       "length": 27,
       "value": "\"https:\/\/mimizan.nami.surf\""
     },
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/NamiPairing.swift",
       "kind": "StringLiteral",
-      "offset": 717,
+      "offset": 747,
       "length": 65,
       "value": "\"https:\/\/mobile-screens.nami.surf\/divkit\/precompiled_layouts_dev\""
     },
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/NamiPairing.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1200,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/NamiPairing.swift",
       "kind": "StringLiteral",
-      "offset": 14857,
+      "offset": 16786,
       "length": 61,
       "value": "\"[Setup Guide] got events publisher completion \""
     },
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/NamiPairing.swift",
       "kind": "StringLiteral",
-      "offset": 14917,
+      "offset": 16846,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/NamiPairing.swift",
       "kind": "StringLiteral",
-      "offset": 15402,
+      "offset": 17323,
       "length": 34,
       "value": "\"[Setup Guide] got event \""
     },
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/NamiPairing.swift",
       "kind": "StringLiteral",
-      "offset": 15435,
+      "offset": 17356,
       "length": 2,
       "value": "\"\""
     },
@@ -10874,7 +10695,7 @@
     {
       "filePath": "\/Users\/hoang\/nami\/NamiPairingFramework\/NamiPairingFramework\/Services\/WiFiStorage\/InMemoryWiFiStorage.swift",
       "kind": "Dictionary",
-      "offset": 490,
+      "offset": 519,
       "length": 3,
       "value": "[]"
     }

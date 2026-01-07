@@ -712,7 +712,7 @@
 
 /*door sensor*/
 "door_sensor_open" = "";
-"edit_device_edit_device_name_hint" = "";
+"edit_device_edit_device_name_hint" = "Nombre del dispositivo";
 "edit_device_edit_device_title" = "";
 "edit_icon_header" = "";
 
@@ -874,7 +874,7 @@ Connection error provided with [underlying error description] from the system.*/
 "errors_pairing_thread_setup_error_thread_network_not_found" = "";
 "errors_pairing_thread_setup_error_thread_operational_dataset_missing" = "Asegúrese de estar usando el mismo teléfono celular que usó para configurar los dispositivos.\nSi perdió el acceso al teléfono celular, restablezca todos los dispositivos del Área.";
 "errors_pairing_timed_out_connect_wifi" = "Asegúrese de que las credenciales de Wi-Fi sean correctas y que el dispositivo esté suficientemente cerca del enrutador.";
-"errors_unexpected_occurred_please_try_again" = "Ocurrió un error inesperado. Inténtelo de nuevo.";
+"errors_unexpected_occurred_please_try_again" = "Se produjo un error inesperado. Inténtelo de nuevo.";
 "external_signin_check_if_users_request" = "";
 "external_signin_confirm_request" = "";
 "external_signin_confirmed_title" = "";
@@ -1281,7 +1281,7 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_enter_wifi_password_enter_password_ios" = "Ingrese la contraseña de “%@”";
 
 /*Pairing, Enter Wi-Fi password: header for the screen.*/
-"pairing_enter_wifi_password_header" = "Introduzca la contraseña de “%@.";
+"pairing_enter_wifi_password_header" = "Ingrese la contraseña de “%@.";
 "pairing_enter_wifi_password_password_entry_field_hint" = "Estas credenciales de Wi-Fi se usarán para configurar otros dispositivos en el Área.";
 
 /*Pairing, Enter Wi-Fi password: placeholder for the password field.*/
@@ -1305,8 +1305,8 @@ Connection error provided with [underlying error description] from the system.*/
 /*Pairing, Error handling: title for action button to try the bad step again.*/
 "pairing_errors_action_try_again" = "Volver a intentarlo";
 "pairing_errors_ble_disconnected_title" = "El Bluetooth está desconectado";
-"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description1" = "Acerque uno de los sensores de actividad de %@ al Sensor de puerta.";
-"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description2" = "Luego, presione el botón superior del Sensor de puerta una vez y vuelva a intentarlo.";
+"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description1" = "Acerque uno de los sensores de actividad de %@ al sensor de puerta.";
+"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description2" = "Luego, presione el botón superior del sensor de puerta una vez y vuelva a intentarlo.";
 "pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description1" = "Asegúrese de estar usando el mismo teléfono celular que usó para configurar los dispositivos.";
 "pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description2" = "Si perdió el acceso al teléfono celular, restablezca todos los dispositivos del Área: %@.";
 "pairing_errors_device_setup_error_device_mismatch_description" = "El código QR que escaneó no coincide con el dispositivo que eligió antes. Verifique y vuelva a intentarlo.";
@@ -1317,7 +1317,7 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_errors_thread_setup_error_border_router_offline_description_android" = "";
 "pairing_errors_thread_setup_error_device_mismatch_description" = "Verifique y escanee el código QR correspondiente al tipo de dispositivo que se muestra en la siguiente pantalla.";
 "pairing_errors_thread_setup_error_device_mismatch_title" = "Los dispositivos no coinciden";
-"pairing_errors_thread_setup_error_missing_thread_credentials" = "Faltan credenciales Thread";
+"pairing_errors_thread_setup_error_missing_thread_credentials" = "Faltan credenciales de Thread";
 "pairing_errors_thread_setup_error_no_thread_networks_found_description" = "Acerque el dispositivo a los demás dispositivos Thread del Área: %@";
 "pairing_errors_thread_setup_error_no_thread_networks_found_title" = "No se encontró ninguna red Thread";
 "pairing_errors_timeout_description" = "Verifique que el dispositivo esté encendido y cerca del teléfono celular.";
@@ -1331,8 +1331,12 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*An unexpected error*/
 "pairing_exit" = "Salir";
-"pairing_exit_device_setup_description" = "";
-"pairing_exit_device_setup_title" = "";
+
+/*Fuzzy*/
+"pairing_exit_device_setup_description" = "Perderá todo el progreso si sale.";
+
+/*Fuzzy*/
+"pairing_exit_device_setup_title" = "Salga de la configuración del dispositivo";
 "pairing_exit_setup" = "Salir de la configuración";
 "pairing_finishing_setup_game_of_pong" = "¿Quiere jugar una partida rápida?";
 
@@ -1654,6 +1658,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: sensitivity engine not supported*/
 "place_settings_engine_does_not_support_sensitivity" = "";
+"place_settings_entry_exit_delay" = "";
 "place_settings_last_admin_leave_dialog_description" = "";
 "place_settings_last_admin_leave_dialog_title" = "";
 
@@ -1663,6 +1668,9 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Edit place: motion*/
 "place_settings_motion" = "";
+"place_settings_no_devices_found_dialog_description" = "";
+"place_settings_no_devices_found_dialog_title" = "";
+"place_settings_pins" = "";
 
 /*Place settings: place settings*/
 "place_settings_place_settings" = "";

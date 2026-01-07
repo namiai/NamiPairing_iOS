@@ -712,7 +712,7 @@
 
 /*door sensor*/
 "door_sensor_open" = "";
-"edit_device_edit_device_name_hint" = "";
+"edit_device_edit_device_name_hint" = "Nazwa urządzenia";
 "edit_device_edit_device_title" = "";
 "edit_icon_header" = "";
 
@@ -1331,8 +1331,8 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*An unexpected error*/
 "pairing_exit" = "Wyjdź";
-"pairing_exit_device_setup_description" = "";
-"pairing_exit_device_setup_title" = "";
+"pairing_exit_device_setup_description" = "Jeżeli wyjdziesz, utracisz cały postęp.";
+"pairing_exit_device_setup_title" = "Wyjdź z konfiguracji urządzenia";
 "pairing_exit_setup" = "Wyjdź z trybu konfiguracji";
 "pairing_finishing_setup_game_of_pong" = "Masz ochotę na partyjkę?";
 
@@ -1654,6 +1654,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: sensitivity engine not supported*/
 "place_settings_engine_does_not_support_sensitivity" = "";
+"place_settings_entry_exit_delay" = "";
 "place_settings_last_admin_leave_dialog_description" = "";
 "place_settings_last_admin_leave_dialog_title" = "";
 
@@ -1663,6 +1664,9 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Edit place: motion*/
 "place_settings_motion" = "";
+"place_settings_no_devices_found_dialog_description" = "";
+"place_settings_no_devices_found_dialog_title" = "";
+"place_settings_pins" = "";
 
 /*Place settings: place settings*/
 "place_settings_place_settings" = "";

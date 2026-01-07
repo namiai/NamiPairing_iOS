@@ -24,6 +24,21 @@ runs:
         token: ${{ inputs.access_token_github }}
         path: ./NamiPairingFramework
 
+    - name: Show Swift version
+      shell: bash
+      run: |
+        set -euo pipefail
+        swift --version
+
+    - name: Use Xcode toolchain
+      shell: bash
+      run: |
+        set -euo pipefail
+        XCODE_DIR="${XCODE_DIR:-/Applications/Xcode.app/Contents/Developer}"
+        export DEVELOPER_DIR="${XCODE_DIR}"
+        echo "DEVELOPER_DIR=${DEVELOPER_DIR}" >> "$GITHUB_ENV"
+        /usr/bin/xcrun swift --version
+
     - name: Bootstrap project
       shell: bash
       env:
@@ -40,7 +55,7 @@ runs:
         set -euo pipefail
         cd NamiPairingFramework
         source ~/.bash_profile || true
-        brew bundle
+        brew bundle check --no-upgrade || brew bundle install --no-upgrade
         xcodeproj show
 
     - name: Import signing certificate
@@ -132,7 +147,8 @@ runs:
           -destination "generic/platform=iOS" \
           -archivePath build/NamiPairingFramework_iOS \
           SKIP_INSTALL=NO \
-          CODE_SIGN_IDENTITY="${IDENTITY}"
+          CODE_SIGN_IDENTITY="${IDENTITY}" \
+        | xcbeautify
 
         xcodebuild archive \
           -project NamiPairingFramework.xcodeproj \
@@ -141,7 +157,8 @@ runs:
           -destination "generic/platform=iOS Simulator" \
           -archivePath build/NamiPairingFramework_sim \
           SKIP_INSTALL=NO \
-          CODE_SIGN_IDENTITY="${IDENTITY}"
+          CODE_SIGN_IDENTITY="${IDENTITY}" \
+        | xcbeautify
 
     - name: Package NamiPairingFramework as XCFramework
       shell: bash
@@ -152,7 +169,8 @@ runs:
         xcodebuild -create-xcframework \
           -framework build/NamiPairingFramework_iOS.xcarchive/Products/Library/Frameworks/NamiPairingFramework.framework \
           -framework build/NamiPairingFramework_sim.xcarchive/Products/Library/Frameworks/NamiPairingFramework.framework \
-          -output build/NamiPairingFramework.xcframework
+          -output build/NamiPairingFramework.xcframework \
+        | xcbeautify
 
     - name: Bundle resources into XCFramework
       shell: bash

@@ -1286,7 +1286,7 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_enter_wifi_password_enter_password_ios" = "Voer wachtwoord in voor \"%@\"";
 
 /*Pairing, Enter Wi-Fi password: header for the screen.*/
-"pairing_enter_wifi_password_header" = "Je kunt verbinden middels het wachtwoord van je netwerk “%@.” Geen zorgen, het wachtwoord zal alleen op je telefoon worden opgeslagen en niet bij ons.";
+"pairing_enter_wifi_password_header" = "";
 "pairing_enter_wifi_password_password_entry_field_hint" = "De Wi-Fi gegevens zullen worden gebruikt om andere apparaten in deze zone in te stellen";
 
 /*Pairing, Enter Wi-Fi password: placeholder for the password field.*/
@@ -1653,6 +1653,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: sensitivity engine not supported*/
 "place_settings_engine_does_not_support_sensitivity" = "Niet beschikbaar voor bewegingsoptie";
+"place_settings_entry_exit_delay" = "";
 "place_settings_last_admin_leave_dialog_description" = "Je bent de laatste Beheerder in %@. Om te vertrekken, wijs eerst een andere gebruiker aan als Beheerder om deze plek te beheren.";
 "place_settings_last_admin_leave_dialog_title" = "Wijs een nieuwe Beheerder toe voordat u vertrekt";
 
@@ -1662,6 +1663,9 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Edit place: motion*/
 "place_settings_motion" = "Beweging";
+"place_settings_no_devices_found_dialog_description" = "";
+"place_settings_no_devices_found_dialog_title" = "";
+"place_settings_pins" = "";
 
 /*Place settings: place settings*/
 "place_settings_place_settings" = "Locatie instellingen";

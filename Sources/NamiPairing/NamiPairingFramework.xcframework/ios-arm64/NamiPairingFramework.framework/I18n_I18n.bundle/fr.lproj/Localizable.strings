@@ -668,7 +668,7 @@
 "device_placement_thread_border_router_dialog_description" = "";
 "device_placement_thread_border_router_dialog_title" = "";
 "device_placement_where_to_place_device" = "";
-"device_settings_customize_device_description" = "";
+"device_settings_customize_device_description" = "Nom de l'appareil";
 "device_settings_customize_device_title" = "";
 "device_settings_device_info_title" = "";
 "device_settings_error_device_not_found" = "";
@@ -685,8 +685,8 @@
 "device_setup_accessories" = "";
 "device_setup_activity_sensors" = "";
 "device_setup_alarm_pod" = "Alarm Pod";
-"device_setup_contact_sensor" = "Détecteur d’ouverture";
-"device_setup_keypad" = "Clavier";
+"device_setup_contact_sensor" = "Détecteur de porte";
+"device_setup_keypad" = "Clavier numérique";
 "device_setup_motion_sensor" = "Détecteur de mouvements";
 "device_setup_others" = "Autres";
 "device_setup_security_pod" = "Security Pod";
@@ -712,7 +712,7 @@
 
 /*door sensor*/
 "door_sensor_open" = "";
-"edit_device_edit_device_name_hint" = "";
+"edit_device_edit_device_name_hint" = "Nom de l’appareil";
 "edit_device_edit_device_title" = "";
 "edit_icon_header" = "";
 
@@ -931,7 +931,7 @@ Connection error provided with [underlying error description] from the system.*/
 "general_next" = "Suivant";
 "general_no" = "";
 "general_notification" = "";
-"general_ok" = "D'accord";
+"general_ok" = "D’accord";
 
 /*A button to save the new state (e.g. a Place after edit)*/
 "general_save" = "";
@@ -1150,7 +1150,7 @@ Connection error provided with [underlying error description] from the system.*/
 "motion_now_now" = "Maintenant";
 
 /*Motion now: 30s ago*/
-"motion_now_thirty_secs_ago" = "Il y a 30s";
+"motion_now_thirty_secs_ago" = "Il y a 30 secondes";
 
 /*Motion now tile: connect to same wifi network*/
 "motion_now_tile_connect_to_wifi" = "";
@@ -1232,8 +1232,8 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_ask_to_connect_remaining_thread_device" = "";
 "pairing_ask_to_connect_wifi_device_imperial_distance_description" = "Assurez-vous que cet appareil se trouve à moins de 30 pieds du point d’accès";
 "pairing_ask_to_connect_wifi_device_metric_distance_description" = "Assurez-vous que cet appareil se trouve à moins de 10 m du point d’accès";
-"pairing_bluetooth_device_found_explained_ready_to_pair" = "La LED clignotera en bleu foncé pour vous indiquer que l’appareil est prêt à être appairé";
-"pairing_bluetooth_device_found_explained_ready_to_pair_contact_sensor" = "La LED clignotera pour vous indiquer que l’appareil est prêt à être appairé";
+"pairing_bluetooth_device_found_explained_ready_to_pair" = "La LED clignotera en bleu foncé pour vous indiquer que l’appareil est prêt à être apparié";
+"pairing_bluetooth_device_found_explained_ready_to_pair_contact_sensor" = "La LED clignotera pour vous indiquer que l’appareil est prêt à être apparié";
 "pairing_bluetooth_device_found_header_connect_to_power" = "Branchez l’appareil sur une prise de courant";
 
 /*Pairing, Bluetooth device found: header 1 for the screen.*/
@@ -1242,9 +1242,9 @@ Connection error provided with [underlying error description] from the system.*/
 /*Pairing, Bluetooth device found: header 2 for the screen.*/
 "pairing_bluetooth_device_found_header2" = "Merci de patienter...";
 "pairing_bluetooth_device_found_name_already_in_use" = "Ce nom d’appareil existe déjà. Veuillez en choisir un autre.";
-"pairing_bluetooth_device_found_name_device_explained" = "Soyez précis afin de pouvoir identifier les différents appareils dans votre emplacement.";
+"pairing_bluetooth_device_found_name_device_explained" = "Soyez précis afin de pouvoir identifier les différents appareils à votre emplacement";
 "pairing_bluetooth_device_found_name_device_header" = "%@ trouvé!";
-"pairing_bluetooth_device_found_name_your_device" = "Nommer votre appareil";
+"pairing_bluetooth_device_found_name_your_device" = "Nommez votre appareil";
 "pairing_bluetooth_device_found_next_button" = "Suivant";
 "pairing_cancel" = "Annuler";
 "pairing_confirm_cancel_pairing_description" = "Confirmez-vous vouloir annuler le processus d’appairage ?";
@@ -1265,9 +1265,9 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_connect_wifi_setting_up_this_device" = "Configuration de cet appareil";
 
 /*Device setup*/
-"pairing_device_setup_navigation_title" = "Configuration de l’appareil";
+"pairing_device_setup_navigation_title" = "Configuration d’appareil";
 "pairing_done" = "";
-"pairing_enable_bluetooth_in_settings_bluetooth_disabled" = "Autorisation Bluetooth requise";
+"pairing_enable_bluetooth_in_settings_bluetooth_disabled" = "Autorisation requise pour le bluetooth";
 
 /*Pairing, Enable Bluetooth in Settings: title for the button to open app settings.*/
 "pairing_enable_bluetooth_in_settings_button_settings" = "Ouvrir les paramètres";
@@ -1277,8 +1277,8 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Pairing, Enter Wi-Fi password: title for “Ready to connect” button which sends credentials to device.*/
 "pairing_enter_wifi_password_button_ready_to_connect" = "Connecter au Wi-Fi";
-"pairing_enter_wifi_password_enter_password" = "Saisissez le mot de passe pour \"%@\"";
-"pairing_enter_wifi_password_enter_password_ios" = "Saisissez le mot de passe pour \"%@\"";
+"pairing_enter_wifi_password_enter_password" = "Saisissez le mot de passe pour «%@»";
+"pairing_enter_wifi_password_enter_password_ios" = "Saisissez le mot de passe pour «%@»";
 
 /*Pairing, Enter Wi-Fi password: header for the screen.*/
 "pairing_enter_wifi_password_header" = "Saisissez le mot de passe pour “%@.";
@@ -1291,7 +1291,7 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_error_all_border_router_offline_device_in_zone" = "%2$@ de %1$@";
 "pairing_error_mobile_phone_is_not_connected_to_wifi" = "Votre téléphone n’est pas connecté au Wi-Fi";
 "pairing_error_mobile_phone_is_not_connected_to_wifi_description" = "Vérifiez que votre téléphone est connecté au Wi-Fi de votre emplacement avant de relancer la configuration.";
-"pairing_error_no_thread_border_router_in_place" = "Aucun routeur de bordure Thread dans votre emplacement";
+"pairing_error_no_thread_border_router_in_place" = "Aucun routeur de bordure Thread à votre emplacement";
 "pairing_error_no_thread_border_router_in_place_description" = "Veuillez supprimer tous vos appareils et les configurer à nouveau.";
 
 /*Pairing, Error handling: title for action button to ignore the current error.*/
@@ -1305,8 +1305,8 @@ Connection error provided with [underlying error description] from the system.*/
 /*Pairing, Error handling: title for action button to try the bad step again.*/
 "pairing_errors_action_try_again" = "Réessayer";
 "pairing_errors_ble_disconnected_title" = "Bluetooth déconnecté";
-"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description1" = "Déplacez l’un de vos capteurs d’activité dans %@ plus près du détecteur d’ouverture.";
-"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description2" = "Une fois terminé, appuyez une fois sur le bouton du haut du détecteur d’ouverture puis réessayez.";
+"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description1" = "Déplacez l’un de vos détecteurs d’activité dans %@ plus près du détecteur de porte.";
+"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description2" = "Une fois terminé, appuyez une fois sur le bouton en haut du détecteur de porte puis réessayez.";
 "pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description1" = "Vérifiez que vous utilisez le même téléphone que celui ayant servi à configurer les appareils précédemment.";
 "pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description2" = "Si vous n’avez plus accès à ce téléphone, réinitialisez tous les appareils dans cette zone: %@.";
 "pairing_errors_device_setup_error_device_mismatch_description" = "Le code QR scanné ne correspond pas à l’appareil choisi. Vérifiez et réessayez.";
@@ -1332,12 +1332,12 @@ Connection error provided with [underlying error description] from the system.*/
 /*An unexpected error*/
 "pairing_exit" = "Quitter";
 "pairing_exit_device_setup_description" = "Vous perdrez toute progression si vous quittez.";
-"pairing_exit_device_setup_title" = "Quitter la configuration de l'appareil";
+"pairing_exit_device_setup_title" = "Quitter la configuration de l’appareil";
 "pairing_exit_setup" = "Quitter la configuration";
-"pairing_finishing_setup_game_of_pong" = "Envie de jouer en attendant?";
+"pairing_finishing_setup_game_of_pong" = "Envie de jouer en attendant ?";
 
 /*Pairing, Finishing setup: header for the screen.*/
-"pairing_finishing_setup_header" = "Votre appareil est en train d'être configuré...";
+"pairing_finishing_setup_header" = "Votre appareil est en train d’être configuré...";
 
 /*Pairing, List Wi-Fi networks: Access Point out of reach*/
 "pairing_list_wifi_networks_ap_out_of_reach" = "";
@@ -1359,12 +1359,12 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_list_wifi_networks_select_network" = "Sélectionnez un réseau pour vous connecter";
 
 /*Pairing, List Wi-Fi networks: text for alert asking to use a saved Wi-Fi password.*/
-"pairing_list_wifi_networks_use_saved_password" = "Voulez-vous utiliser le mot de passe enregistré pour le réseau “%@”?";
+"pairing_list_wifi_networks_use_saved_password" = "Voulez-vous utiliser le mot de passe enregistré pour le réseau «%@» ?";
 "pairing_loading_device_connecting" = "Connexion à %@…";
 "pairing_no" = "Non";
 "pairing_other" = "Autre...";
 "pairing_other_network_title" = "Autre réseau";
-"pairing_other_wifi_network_device_connectivity_hint" = "Nos appareils sont compatibles uniquement avec les réseaux Wi-Fi en 2.4GHz";
+"pairing_other_wifi_network_device_connectivity_hint" = "Nos appareils sont compatibles uniquement avec les réseaux Wi-Fi à 2,4 GHz";
 
 /*Pairing, Other Wi-Fi network: header above the text field for the custom Wi-Fi network name.*/
 "pairing_other_wifi_network_header" = "Saisissez les informations du réseau";
@@ -1395,20 +1395,20 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_scan_device_missing_bluetooth_permission_title" = "Autorisation Bluetooth manquante";
 "pairing_scan_device_please_hold" = "Merci de patienter...";
 "pairing_scan_device_searching_for_device" = "Recherche de l’appareil";
-"pairing_scan_device_the_led_light_is_not_pulsing" = "Le voyant LED ne clignote pas";
+"pairing_scan_device_the_led_light_is_not_pulsing" = "La LED de mon appareil ne clignote pas";
 "pairing_scan_qr_code_error_description" = "Veuillez scanner un code QR valide.";
 "pairing_scan_qr_code_error_title" = "Code QR invalide";
 
 /*Expand camera view*/
-"pairing_scan_qr_expand_camera_view" = "Agrandir la caméra";
+"pairing_scan_qr_expand_camera_view" = "Agrandir la vue de la caméra";
 "pairing_scan_qr_subtitle" = "Vérifiez que votre appareil n’est pas branché";
-"pairing_scan_qr_title" = "Scanner le code QR de l’appareil";
+"pairing_scan_qr_title" = "Scannez le code QR de l’appareil";
 "pairing_scan_qr_where_is_qr" = "Où est le code QR ?";
 "pairing_scan_qrcode_missing_camera_permission_description" = "Pour scanner le code QR de l’appareil, activez l’accès à la caméra dans les paramètres.";
-"pairing_scan_qrcode_missing_camera_permission_title" = "Autorisation Caméra requise";
-"pairing_scanning_ble_faq" = "Le voyant LED ne clignote pas";
-"pairing_scanning_ble_header_contact_sensor" = "Appuyez une fois sur le bouton du haut";
-"pairing_scanning_ble_header_keypad" = "Appuyez une fois sur la touche '0'";
+"pairing_scan_qrcode_missing_camera_permission_title" = "Autorisation requise pour la caméra";
+"pairing_scanning_ble_faq" = "La LED de mon appareil ne clignote pas";
+"pairing_scanning_ble_header_contact_sensor" = "Appuyez une fois sur le bouton en haut";
+"pairing_scanning_ble_header_keypad" = "Appuyez une fois sur la touche «0»";
 "pairing_success" = "";
 "paring_scan_device_bluetooth_is_off_description" = "Pour connecter les appareils et terminer la configuration, activez l’autorisation Bluetooth dans les paramètres.";
 "paring_scan_device_bluetooth_is_off_title" = "Activez le Bluetooth";
@@ -1648,6 +1648,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: sensitivity engine not supported*/
 "place_settings_engine_does_not_support_sensitivity" = "";
+"place_settings_entry_exit_delay" = "";
 "place_settings_last_admin_leave_dialog_description" = "";
 "place_settings_last_admin_leave_dialog_title" = "";
 
@@ -1657,6 +1658,9 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Edit place: motion*/
 "place_settings_motion" = "";
+"place_settings_no_devices_found_dialog_description" = "";
+"place_settings_no_devices_found_dialog_title" = "";
+"place_settings_pins" = "";
 
 /*Place settings: place settings*/
 "place_settings_place_settings" = "";
@@ -1985,7 +1989,7 @@ Connection error provided with [underlying error description] from the system.*/
 "select_place_type_header" = "";
 
 /*Create room: header text when selecting the room category.*/
-"select_room_category_header" = "";
+"select_room_category_header" = "Dans quel type de pièce cet appareil sera-t-il installé ?";
 
 /*Create room: header text when selecting the room icon.*/
 "select_room_icon_header" = "";
@@ -2032,7 +2036,7 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 "sensitivity_settings_title" = "";
 "setup_a_device_room_selection_sub_tittle" = "";
 "setup_a_device_room_selection_tittle" = "";
-"setup_a_device_toolbar_title" = "Configuration de l’appareil";
+"setup_a_device_toolbar_title" = "Configuration d’appareil";
 "setup_a_kit_feature_not_available_description" = "";
 "setup_a_kit_feature_not_available_header" = "";
 "setup_a_kit_how_device_work_description" = "";

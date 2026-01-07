@@ -32,6 +32,15 @@ public protocol SDKThreadOperationalDatasetProviderProtocol {
   func storeDataset(_ dataset: Foundation.Data, for placeId: NamiPairingFramework.NamiPlaceID)
   func storeDataset(_ dataset: Self.Dataset, for placeId: NamiPairingFramework.NamiPlaceID)
 }
+public protocol SDKWiFiStorageProtocol : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  func save(password: Swift.String?, for networkSSID: Swift.String)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  func password(for networkSSID: Swift.String) -> Swift.String?
+  #endif
+  func removeAll()
+}
 public enum SDKError : Swift.Error, Foundation.LocalizedError {
   case missingPlaceId
   case sessionNotActivated
@@ -175,7 +184,7 @@ public struct NamiSdkConfig {
       get
     }
   }
-  public init(baseURL: Foundation.URL, countryCode: Swift.String, measurementSystem: NamiPairingFramework.NamiSdkConfig.MeasurementSystem, clientId: Swift.String, language: Swift.String, appearance: NamiPairingFramework.NamiSdkConfig.Appearance, enableLogging: Swift.Bool = false)
+  public init(baseURL: Foundation.URL, countryCode: Swift.String, measurementSystem: NamiPairingFramework.NamiSdkConfig.MeasurementSystem, clientId: Swift.String, language: Swift.String, appearance: NamiPairingFramework.NamiSdkConfig.Appearance)
   public var baseURL: Foundation.URL
   public var countryCode: Swift.String
   public var measurementSystem: NamiPairingFramework.NamiSdkConfig.MeasurementSystem
@@ -183,14 +192,16 @@ public struct NamiSdkConfig {
   public var language: Swift.String
   public var appearance: NamiPairingFramework.NamiSdkConfig.Appearance
   public var topologyRoomsSupported: Swift.Bool
-  public var enableLogging: Swift.Bool
 }
 @_hasMissingDesignatedInitializers public class NamiPairing {
   public var sdkEventsPublisher: Combine.AnyPublisher<NamiPairingFramework.NamiSDKEvent, any Swift.Error> {
     get
   }
   convenience public init(sessionCode: Swift.String) throws
-  convenience public init<P>(baseURL: Foundation.URL, session: any NamiPairingFramework.NamiPairingNetworkSession, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, threadDatasetProvider: P) where P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
+  convenience public init(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore)
+  convenience public init<W>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, wifiStorage: W) where W : NamiPairingFramework.SDKWiFiStorageProtocol
+  convenience public init<P>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, threadDatasetProvider: P) where P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
+  convenience public init<W, P>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, wifiStorage: W, threadDatasetProvider: P) where W : NamiPairingFramework.SDKWiFiStorageProtocol, P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
   #if compiler(>=5.3) && $NonescapableTypes
   public func startPairing(roomId: Swift.String, deviceType: NamiPairingFramework.PairingNamiDeviceType = .unknown, pairingParameters: NamiPairingFramework.NamiPairingParameters? = nil) throws -> some SwiftUICore.View
   
@@ -238,18 +249,6 @@ public protocol NamiThreadSecureStorage {
 }
 public struct PairingStepsHandle {
   public init(_ value: Any)
-}
-public protocol NamiPairingNetworkSession : AnyObject {
-  func publisher(for request: Foundation.URLRequest, accessToken: Swift.String, tokenExpiresAt: Foundation.Date) -> Combine.AnyPublisher<Foundation.Data, any Swift.Error>
-  func publisher(for request: Foundation.URLRequest, accessToken: Swift.String, tokenExpiresAt: Foundation.Date, retries: Swift.Int, backoffBase: Swift.Double) -> Combine.AnyPublisher<Foundation.Data, any Swift.Error>
-}
-public enum NamiPairingNetworkSessionError : Swift.Error {
-  case missingToken
-  public static func == (a: NamiPairingFramework.NamiPairingNetworkSessionError, b: NamiPairingFramework.NamiPairingNetworkSessionError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
 }
 public protocol NamiPairingTokenStore {
   func store<TokenType>(_ token: TokenType, at key: Swift.String) where TokenType : Swift.Decodable, TokenType : Swift.Encodable
@@ -300,7 +299,5 @@ extension NamiPairingFramework.NamiSdkConfig.MeasurementSystem : Swift.Equatable
 extension NamiPairingFramework.NamiSdkConfig.MeasurementSystem : Swift.Hashable {}
 extension NamiPairingFramework.NamiSdkConfig.Appearance : Swift.Equatable {}
 extension NamiPairingFramework.NamiSdkConfig.Appearance : Swift.Hashable {}
-extension NamiPairingFramework.NamiPairingNetworkSessionError : Swift.Equatable {}
-extension NamiPairingFramework.NamiPairingNetworkSessionError : Swift.Hashable {}
 extension NamiPairingFramework.StorageError : Swift.Equatable {}
 extension NamiPairingFramework.StorageError : Swift.Hashable {}
