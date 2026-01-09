@@ -1,0 +1,2510 @@
+"account_linking_authorize_sign_in_request" = "Authorize sign-in request";
+"account_linking_did_you_make_this_request" = "Did you make this request?";
+"account_linking_please_signin" = "Please sign in before linking the accounts";
+"account_linking_sign_in_confirmed_body_message" = "You’re all set.\n";
+"account_linking_sign_in_error" = "Sign in error";
+"account_linking_sign_in_request_ip_time_browser" = "Sign in requested at %1s %2s via %3s.";
+"account_linking_sign_in_request_place_ip_time_browser_android" = "Sign in requested from %1s at %2s %3s via %4s.";
+"activity_event_ongoing" = "Ongoing";
+"activity_motion" = "Motion";
+"activity_motion_detected_in" = "Motion detected in:";
+"activity_no_motion" = "No motion";
+"activity_no_presence" = "No presence";
+"activity_presence" = "Presence";
+"activity_presence_detected_in" = "Presence detected in:";
+"activity_title" = "Activity";
+"activity_total_motion_time" = "Total motion time";
+"alarm_detected_at_android" = "%@ detected at %@";
+
+/*Disarm intrusion alarm*/
+"alarm_disarm" = "Disarm";
+
+/*False alarm. The [alarm type] was triggered by.*/
+"alarm_false_alarm_cause_list_title" = "The %@ was triggered by";
+
+/*False alarm cause.*/
+"alarm_false_alarm_cause_myself" = "Humans";
+
+/*False alarm cause.*/
+"alarm_false_alarm_cause_other" = "Other";
+
+/*False alarm cause.*/
+"alarm_false_alarm_cause_small_moving_objects" = "Pets / Vacuum robots / Fans";
+
+/*False alarm.*/
+"alarm_false_alarm_report_button_title" = "Report";
+
+/*False alarm. Reporting as false alarm would also disarm the [alert type].*/
+"alarm_false_alarm_report_hint" = "Reporting as false alarm would also disarm the %@.";
+
+/*False alarm.*/
+"alarm_false_alarm_select_cause_title" = "Select cause of false alarm";
+
+/*Sensetivity explanation screen on false alarm report.*/
+"alarm_false_alarm_sensitivity_explanatio_adjust_sensitivity_button" = "Adjust sensitivity";
+
+/*Sensetivity explanation screen on false alarm report.*/
+"alarm_false_alarm_sensitivity_explanatio_arm_selected_zones" = "If your place has multiple Areas, consider only enabling armed mode in the Areas covering the main entrance.";
+
+/*Sensetivity explanation screen on false alarm report.*/
+"alarm_false_alarm_sensitivity_explanatio_possible_reasons" = "Intrusions may be triggered by big pets, vacuum robots or other non-human movements";
+
+/*Sensetivity explanation screen on false alarm report.*/
+"alarm_false_alarm_sensitivity_explanatio_sensitivity_level_hint" = "Consider adjusting the sensitivity level of your place to filter out small and brief motion.";
+
+/*Sensetivity explanation screen on false alarm report.*/
+"alarm_false_alarm_sensitivity_explanation_reduce_false_alarms_title" = "How to reduce false alarms";
+
+/*False alarm.*/
+"alarm_false_alarm_title" = "Report false alarm";
+
+/*Ongoing intrusion message states at [where] since [date] [time]*/
+"alarm_intrusion_description" = "At %1$@ since %2$@";
+
+/*Ongoing intrusion message states at [where] since [date] [time]*/
+"alarm_intrusion_description_android" = "At %@ since %@";
+
+/*Ongoing intrusion message title*/
+"alarm_intrusion_title" = "Intrusion in progress";
+
+/*All the activities in place are stopped more then 15 minutes ago at [time].*/
+"alarm_live_alarm_activities_stopped" = "Intrusion activity stopped at %@";
+
+/*Live alarm. "No activity since [alarm type] started."*/
+"alarm_live_alarm_noActivity" = "No activity since %@ started";
+
+/*Live alarm. Activity ongoing for [period of time].*/
+"alarm_live_alarm_ongoing_activity" = "Activity ongoing for %@";
+
+/*Live alarm. Security monitoring*/
+"alarm_live_alarm_security_monitoring" = "Live report";
+
+/*Live alarm. Started at [time] in [zone].*/
+"alarm_live_alarm_started_at_in_zone" = "Triggered at %1$@ by motion detected in %2$@";
+
+/*Live alarm. Activity stopped [period of time] ago.*/
+"alarm_live_alarm_stopped_activity" = "Activity stopped %@ ago";
+
+/*Alarm reason Intrusion*/
+"alarm_reason_intrusion" = "Intrusion";
+
+/*Alert report: alarm disarmed*/
+"alarm_report_alarm_disarmed" = "Alarm disarmed";
+
+/*Alert report: alarm_triggered*/
+"alarm_report_alarm_triggered" = "Alarm triggered";
+
+/*To use in the intrusion report event tile "<Device name> closed"*/
+/*Fuzzy*/
+"alarm_report_device_closed" = "%@ closed";
+
+/*To use in the intrusion report event tile: "<Device name> opened"*/
+"alarm_report_device_opened" = "%@ opened";
+
+/*Alert report: duration*/
+"alarm_report_duration" = "Total duration";
+
+/*Alert report: start_time to end_time*/
+"alarm_report_event_start_end_time" = "%1$@ to %2$@";
+
+/*Report false alarm.*/
+"alarm_report_false" = "Report false alarm";
+"alarm_report_motion_started_in" = "Motion started in %@";
+
+/*Alert report: security log*/
+"alarm_report_security_log" = "Security log";
+
+/*Alert report: started at time*/
+"alarm_report_started_at" = "Started at %@";
+
+/*Alert report: 'subject' history*/
+"alarm_report_subject_history" = "%@ history";
+
+/*Alert report: title*/
+"alarm_report_title" = "Event report";
+
+/*Alert report: total active time x min*/
+"alarm_report_total_active_time" = "Total active time: %@";
+
+/*Alert report: zones affected*/
+"alarm_report_zones_affected" = "Affected Areas";
+"app_name" = "nami Lookout24";
+
+/*app_widget*/
+"app_widget_description_medium" = "Quick access to your place's security mode";
+
+/*app_widget*/
+"app_widget_description_small" = "View your place's security mode";
+
+/*app_widget*/
+"app_widget_error_no_internet_connection" = "No internet connection";
+
+/*app_widget*/
+"app_widget_label_medium" = "Place Mode control";
+
+/*app_widget*/
+"app_widget_label_small" = "Place Mode display";
+
+/*app_widget*/
+"appwidget_default_placeName" = "Santa Monica";
+
+/*app_widget*/
+"appwidget_error_text" = "Something went wrong!";
+"are_you_want_to_cancel_pairing_process" = "Are you sure you want to cancel the pairing process?";
+"automation_at" = "At";
+"automation_back" = "Back";
+"automation_change_mode_to" = "Change mode to";
+"automation_conflict_automation_description" = "You have conflicts with existing automation(s) as highlighted in red below:";
+"automation_conflict_automation_title" = "Automation cannot be saved";
+"automation_create_automation" = "Create automation";
+"automation_delete_automation" = "Delete automation?";
+"automation_delete_automation_description" = "This action cannot be undone.";
+"automation_edit_automation" = "Edit automation";
+"automation_every_day" = "Everyday";
+"automation_every_weekday" = "Every weekday";
+"automation_every_weekend" = "Every weekend";
+"automation_for" = "For";
+"automation_format_time_zone" = "Date and time are based on %@";
+"automation_is_your_place_located_in_this_time_zone" = "Is %@ located in this time zone?";
+"automation_modes" = "Modes";
+"automation_msg_empty_automation" = "Set a schedule to activate modes automatically";
+"automation_new_automation" = "New automation";
+"automation_no_automation_available_yet" = "No automations available yet";
+"automation_no_permission_to_make_change_dialog_description" = "Contact an Administrator for assistance.";
+"automation_no_permission_to_make_change_dialog_got_it" = "Got it";
+"automation_no_permission_to_make_change_dialog_title" = "You do not have permission to make changes";
+"automation_no_zones_available" = "No Areas available";
+"automation_no_zones_selected" = "No Areas selected";
+"automation_repeat_on" = "Repeat on";
+"automation_select_time" = "Select time";
+"automation_select_timezone" = "";
+"automation_select_zone" = "Select time zone";
+"automation_tooltip_stay_mode_only_available" = "Arm (Stay) mode is only available for Areas with a Door Sensor.";
+"automation_tooltip_stay_mode_unselected_zones" = "Unselect Area(s) without a Door Sensor and save your automation again: %@";
+"automations_action_cannot_undone" = "This action cannot be undone.";
+"automations_at" = "At";
+"automations_automation_cannot_be_saved" = "Automation cannot be saved";
+"automations_create_automation" = "Create automation";
+"automations_date_and_time_based_on" = "Date and time are based on";
+"automations_delete_automation" = "Delete automation?";
+"automations_edit_automation" = "Edit automation";
+"automations_every_weekday" = "Every weekday";
+"automations_every_weekend" = "Every weekend";
+"automations_everyday" = "Everyday";
+"automations_for" = "For";
+"automations_modes" = "Modes";
+"automations_new_automation" = "New automation";
+"automations_no_zones_available" = "No Areas available";
+"automations_no_zones_selected" = "No Areas selected";
+"automations_repeat_on" = "Repeat on";
+
+/*Automations: Empty state set a schedule to activate modes automatically*/
+"automations_set_a_schedule_to_activate_modes_automatically" = "Set a schedule to activate modes automatically";
+"automations_you_have_conflict" = "You have conflicts with existing automation(s) as highlighted in red below:";
+
+/*Change username: Empty error message*/
+"change_username_empty_error_message" = "Please enter a nickname";
+
+/*Change username: Placeholder*/
+"change_username_placeholder" = "Profile name";
+
+/*Change username: Prompt message*/
+"change_username_prompt_message" = "Create a profile name";
+
+/*Choose room: button title to confirm room selection.*/
+"choose_room_confirm" = "Okay";
+
+/*Choose room: button title to go to room creation.*/
+"choose_room_create_room" = "Create room";
+
+/*Choose room: header above the list of rooms, before pairing.*/
+"choose_room_header" = "Where will this device be placed?";
+"choose_room_load_data_failed" = "Failed to load rooms list";
+"choose_room_select_or_create_header" = "Where will this device be placed?";
+
+/*Choose zone: button title to go to zone creation*/
+"choose_zone_create_zone" = "Create Area";
+
+/*Choose zone: header above the list of zones*/
+"choose_zone_header" = "Please select Area";
+
+/*0 devices*/
+"choose_zone_no_devices" = "0 devices";
+
+/*[Count] Thread devices.*/
+"choose_zone_thread_devices_count" = "%@ Thread devices";
+
+/*[Count] Wi-Fi devices.*/
+"choose_zone_wifi_devices_count" = "%@ Wi-Fi devices";
+"commissioning_mode_checkup_zone_contact_isntaller" = "Contact your installer to finish the setup.";
+"commissioning_mode_companion_landing_cancel" = "Cancel";
+"commissioning_mode_companion_landing_contact_support" = "please contact support";
+"commissioning_mode_companion_landing_go_to_place_button" = "Go to place";
+"commissioning_mode_companion_landing_loading_info" = "Loading place information";
+"commissioning_mode_companion_landing_place_found" = "Place has been found";
+"commissioning_mode_confirm_place_confirm_button" = "Confirm";
+"commissioning_mode_confirm_place_name_place_hint" = "Name the place as you like, we advise using a distinctive name like a CRM serial number";
+"commissioning_mode_confirm_place_name_place_placeholder" = "Place name";
+"commissioning_mode_loading_screen_loading_content" = "Loading remote data";
+"commissioning_mode_place_details_add_devices_hint" = "Add at least two devices to complete setup";
+"commissioning_mode_place_details_add_zone" = "Add Area";
+"commissioning_mode_place_details_contact_isntaller" = "Contact your installer to set up your place.";
+"commissioning_mode_place_details_created_at" = "Place created";
+"commissioning_mode_place_details_created_at_android" = "Place creation";
+"commissioning_mode_place_details_exit_button" = "Exit";
+"commissioning_mode_place_details_updated_at" = "Place edited";
+"commissioning_mode_place_details_updated_at_android" = "Latest update";
+"commissioning_mode_place_details_zones_section_title" = "Areas";
+"commissioning_mode_setup_mode_settings_exit_setup" = "Exit setup";
+"commissioning_mode_setup_mode_settings_place_settings" = "Place settings";
+"commissioning_mode_setup_mode_settings_settings" = "Settings";
+"companion_edit_place_name_hint" = "Place name";
+"companion_exit_setup" = "Exit";
+"companion_exit_setup_android" = "Exit setup";
+"companion_home_contact_your_installer_to_set_up_your_place" = "Contact your installer to set up your place.";
+"companion_zone_motion_sensing_connect_local_wifi" = "Connect to local Wi-Fi to see motion status";
+"companion_zone_motion_sensing_movement_detected" = "Movement detected";
+"companion_zone_motion_sensing_no_movement_detected" = "No movement detected";
+"companion_zones" = "Areas";
+"confirm_cancel_pairing" = "Confirm cancel pairing";
+
+/*Create place: when confirming the place name, the title of the Confirm button.*/
+"confirm_place_name_button_confirm" = "Confirm";
+
+/*Create place: header text when confirming the name for a newly-created place.*/
+"confirm_place_name_header" = "Confirm place name";
+
+/*Create place: subheader shortly describing the criteria for choosing a place name.*/
+"confirm_place_name_subhead" = "How would you like to name the place? Be as creative as you like.";
+
+/*Create room: when confirming the room name, the title of the Confirm button.*/
+"confirm_room_name_button_confirm" = "Create room";
+
+/*Create room: header text when confirming the name for a newly-created room.*/
+"confirm_room_name_header" = "Enter room name";
+
+/*Create room: subheader shortly describing the criteria for choosing a room name.*/
+"confirm_room_name_subhead" = "To help identify different rooms";
+"connectivity_indicator_device_connected" = "Connected";
+"connectivity_indicator_device_disconnected" = "Disconnected";
+"connectivity_indicator_device_rssi" = "RSSI %d";
+"contact_sensor_setup_before_you_continue" = "Before you continue";
+"contact_sensor_setup_guide_description1" = "Ensure that your device is near the desired installation area";
+"contact_sensor_setup_guide_description2" = "Pull out the plastic battery tab";
+
+/*Create First Place: button to dismiss*/
+"create_first_place_cancel" = "Maybe later";
+
+/*Create First Place: button to start place creation*/
+"create_first_place_create_place" = "Create a place";
+
+/*Create First Place: button to start place creation*/
+"create_first_place_create_place_slide_text" = "Create your own places and invite users";
+
+/*Create First Place: button to join place*/
+"create_first_place_join_place" = "Join a place";
+
+/*Create First Place: button to join place*/
+"create_first_place_join_place_slide_text" = "Join other places and communities";
+
+/*Create First Place: welcome and ask to create place*/
+"create_first_place_lets_start" = "Let’s start by creating your first place.";
+
+/*Create First Place: welcome*/
+"create_first_place_welcome_text" = "Welcome to nami!";
+
+/*Create place: section title*/
+"create_place_section_title" = "Create a place";
+
+/*Create zone: when confirming the zone name, the title of the Confirm button.*/
+"create_zone_button_confirm" = "Create Area";
+"create_zone_description" = "To help identify a group of rooms or different floors in your place";
+"create_zone_enter_name_hint" = "Area name";
+"create_zone_first_floor" = "First floor";
+
+/*Create zone: header text when confirming the name for a newly-created zone.*/
+"create_zone_header" = "Create Area";
+"create_zone_name_the_zone_description" = "To help identify a group of rooms or different floors in your place";
+
+/*Create zone: placeholder text for zone name textfield*/
+"create_zone_placeholder" = "Sensing Area";
+
+/*Create zone: placeholder text for zone name textfield for multiple floor place*/
+"create_zone_second_floor_placeholder" = "Second floor";
+"create_zone_title" = "Name the Area";
+
+/*Button text for adding a new place on the main dashboard (when there are no places).*/
+"dashboard_add_new_place" = "Add place";
+"dashboard_format_disconnected_device_in_multiple_zone_android" = "%d offline devices in multiple Areas";
+
+/*plurals*/
+"dashboard_format_disconnected_device_in_one_zone_android" = "%d offline device(s) in one Area";
+"dashboard_format_issue_in_a_place" = "Attention required in %@";
+"dashboard_format_issue_in_multiple_place" = "Attention required in %d places";
+"dashboard_place_tile_current_status" = "Current status";
+"dashboard_place_tile_intrusion_detected" = "Intrusion detected";
+"dashboard_place_tile_movement_detected" = "Movement detected";
+"dashboard_place_tile_no_movement_detected" = "No movement detected";
+"dashboard_place_tile_no_sensing_data" = "No sensing data";
+"dashboard_place_tile_not_available" = "Not available";
+
+/*pair more device in place detail for old place without property info*/
+"dashboard_place_tile_pair_more" = "Add another activity sensor to enable Wi-Fi motion sensing";
+
+/*pair more device in place detail for old place without property info*/
+"dashboard_place_tile_pair_one_more" = "Add devices to start securing your place";
+"dashboard_place_tile_since_started_date" = "Since %1$@";
+"dashboard_place_tile_since_started_date_android" = "Since %@";
+
+/*Title for the Places section of the main dashboard.*/
+"dashboard_places" = "Places";
+"dashboard_sensing_link_broken_in_multiple_zone" = "Sensing devices are not responding in multiple Areas";
+"dashboard_sensing_link_broken_in_one_zone" = "Sensors are not responding in one Area";
+
+/*push notification*/
+"default_notification_channel_id" = "general";
+"default_notification_channel_name" = "general";
+
+/*Delete place: confirm delete place*/
+"delete_place_confirm_delete_place" = "Confirm delete place";
+
+/*Delete place: confirm leave place*/
+"delete_place_confirm_leave_place" = "Confirm leave place";
+
+/*Delete place: delete all related data*/
+"delete_place_delete_all_related_data" = "Delete all related data";
+
+/*Delete place: delete all related data description*/
+"delete_place_delete_all_related_data_description" = "You will not longer be able to retrieve any data associated with this place.";
+
+/*Delete place: delete place*/
+"delete_place_delete_place_and_data" = "This action will permanently delete your place and all related data.";
+
+/*Delete place: title*/
+"delete_place_delete_place_title" = "Delete place";
+
+/*Delete place: invite again*/
+"delete_place_invite_again" = "You can be invited again to join the place.";
+
+/*Delete place: leave place title*/
+"delete_place_leave_place_title" = "Leave place";
+
+/*Delete place: lose access to all data*/
+"delete_place_lose_access_to_all_data" = "Lose access to all data";
+
+/*Delete place: lose access to all data description*/
+"delete_place_lose_access_to_all_data_description" = "You will not longer be able to retrieve any data associated with this place.";
+
+/*Delete place: lose access to all devices*/
+"delete_place_lose_access_to_all_devices" = "Lose access to all devices";
+
+/*Delete place: lose access to all devices description*/
+"delete_place_lose_access_to_all_devices_description" = "You will not longer be able to access all devices in this place.";
+
+/*Delete place: remove all users*/
+"delete_place_remove_all_users" = "Remove all users";
+
+/*Delete place: remove all users description*/
+"delete_place_remove_all_users_description" = "Any users who have access to this place will lose their access.";
+
+/*Delete place: reset all devices*/
+"delete_place_reset_all_devices" = "Reset all devices";
+
+/*Delete place: reset all devices description*/
+"delete_place_reset_all_devices_description" = "Devices paired in this place will be reset.";
+
+/*Delete place: this action is irreversible*/
+"delete_place_this_action_is_irreversible" = "This action is irreversible.";
+
+/*Delete place: this will also*/
+"delete_place_this_will_also" = "This will also:";
+
+/*Accessories*/
+"device_category_accessories" = "Accessories";
+"device_category_activity_sensors" = "Activity sensors";
+
+/*Sensing*/
+"device_category_sensing" = "Sensing";
+
+/*door sensor*/
+"device_detail_door_sensor_low_battery" = "Low battery";
+
+/*door sensor*/
+"device_detail_door_sensor_low_battery_warning" = "Low battery. Replace the battery soon. Learn how";
+
+/*door sensor*/
+"device_detail_door_sensor_low_battery_warning_learn_how" = "Learn how";
+
+/*Sensing*/
+"device_details_connected" = "Connected";
+"device_details_load_data_failed" = "Failed to load device details: %@";
+
+/*Device name editing input field placeholder*/
+"device_edit_device_name_placeholder" = "Enter device name";
+
+/*Device editing screen title.*/
+"device_edit_title" = "Edit device";
+
+/*Aerial Motion V1*/
+"device_engines_aerial_motion_v1" = "Aerial Motion V1";
+
+/*Device engines: motion engine*/
+"device_engines_motion" = "Motion engine";
+
+/*Device engines: security engine*/
+"device_engines_security" = "Security engine";
+
+/*Device engines: unknown*/
+"device_engines_unknown" = "Unknown";
+
+/*Device information screen items titles*/
+"device_info_bbsid" = "BSSID";
+
+/*Device information screen border router*/
+"device_info_border_router" = "Border router";
+
+/*Device information screen items titles*/
+"device_info_cloud_connection" = "Cloud connection";
+
+/*Device information screen state of a connection method*/
+"device_info_device_connected" = "Connected";
+
+/*Device information screen state of a connection method*/
+"device_info_device_disconnected" = "Disconnected";
+
+/*Device information screen items titles*/
+"device_info_device_model" = "Device model";
+
+/*Device information screen device model id*/
+"device_info_device_model_id" = "Device model ID";
+
+/*Device information screen items titles*/
+"device_info_firmvare_vesrion" = "Firmware version";
+
+/*Device information screen items titles*/
+"device_info_local_connection" = "Local connection with mobile";
+
+/*Device information screen items titles*/
+"device_info_mac_address" = "MAC address";
+
+/*Device information screen non border router*/
+"device_info_non_border_router" = "-";
+
+/*Device information screen items titles*/
+"device_info_paired_at" = "Pairing date";
+
+/*Device information screen PANID*/
+"device_info_panid" = "PANID";
+
+/*Device information screen role*/
+"device_info_role" = "Role";
+
+/*Device information screen items titles*/
+"device_info_rssi" = "RSSI";
+
+/*Device information screen technical information section title*/
+"device_info_technical_information" = "Technical information";
+
+/*Device information screen thread network section title*/
+"device_info_thread_network" = "Thread network";
+
+/*Device information screen title*/
+"device_info_title" = "Device information";
+"device_info_widar_position" = "Position";
+"device_info_widar_position_mispositioned" = "Mispositioned";
+"device_info_widar_position_not_available" = "Not available";
+"device_info_widar_position_optimal" = "Optimal";
+"device_info_widar_position_status" = "Position status";
+"device_info_widar_positioning_information" = "Optimize device position";
+"device_info_widar_sensing" = "Sensing";
+
+/*Device information screen wi-fi network section title*/
+"device_info_wifi_network" = "Wi-Fi network";
+
+/*Device information screen items titles*/
+"device_info_zone" = "Area";
+
+/*Device instructions: bullet point 1*/
+"device_instructions_bullet_point_1" = "Each sensing Area covers one floor";
+
+/*Device instructions: bullet point 2*/
+"device_instructions_bullet_point_2" = "Each sensing Area requires at least two nami devices";
+
+/*Device instructions: bullet point 3*/
+"device_instructions_bullet_point_3" = "Devices in an Area must use the same Wi-Fi access point";
+
+/*Device instructions: bullet point 4*/
+"device_instructions_bullet_point_4" = "Use the access point that is most central in the area you want to cover";
+
+/*Device instructions: confirm button*/
+"device_instructions_confirm_button" = "Start";
+
+/*Device instructions: description*/
+"device_instructions_description" = "nami sensing uses Wi-Fi signals to detect motion in an area, known as a sensing Area.";
+
+/*Device instructions: title*/
+"device_instructions_title" = "How nami sensing works";
+"device_is_disconnected_to_internet" = "Device disconnected from internet. Get help";
+
+/*Device overview: title for the Wi-Fi Connection tile.*/
+"device_overview_connection" = "Connection";
+
+/*Device overview: device connected over the cloud (remotely).*/
+"device_overview_connection_cloud" = "Cloud";
+
+/*Device overview: device connected directly (over wi-fi).*/
+"device_overview_connection_direct" = "Direct";
+
+/*Device overview: device connected lost (no direct or cloud connection).*/
+"device_overview_connection_lost" = "Lost";
+"device_overview_deletion_delete_confirm" = "Delete";
+
+/*Device overview: Explains that the switch is for a device relay and not to power-off the device itself.*/
+"device_overview_relay_explanation" = "Turning off the plug does not affect motion sensing.";
+
+/*Device overview: Relay state is "Off"*/
+"device_overview_relay_is_off" = "Off";
+
+/*Device overview: Relay state is "On"*/
+"device_overview_relay_is_on" = "On";
+
+/*Device overview: title for the Alert Status tile.*/
+"device_overview_status" = "Status";
+
+/*Device overview: description for Wi-Fi connection quality.*/
+"device_overview_wifi_disconnected" = "Disconnected";
+
+/*Device overview: description for Wi-Fi connection quality.*/
+"device_overview_wifi_poor" = "Poor";
+"device_placement_avoid_placing_device_near_metalic" = "Avoid placing device on or near metallic surfaces";
+
+/*device placement: confirm button*/
+"device_placement_confirm_button" = "Next";
+"device_placement_do_not_connect_to_power_yet" = "Do not connect device to power yet.";
+"device_placement_do_not_install_or_connect_to_power_yet" = "Do not install or connect devices to power yet.";
+"device_placement_do_not_mount_door_sensor_yet" = "Do not mount the device yet. The installation guide will follow after naming the device.";
+"device_placement_do_not_mount_keypad_yet" = "Do not mount the device yet. The installation guide will follow after naming the device.";
+"device_placement_do_not_mount_motion_sensor_yet" = "Do not mount the device yet. The installation guide will follow after naming the device.";
+"device_placement_door_sensor_guide_content_1" = "Recommended for front door security";
+"device_placement_door_sensor_guide_content_2_imperial" = "Place device within 30ft of another activity sensor in %@";
+"device_placement_door_sensor_guide_content_2_metric" = "Place device within 10m of another activity sensor in %@";
+"device_placement_first_bss_guide_1_imperial" = "Place device within 30ft of your front door and Wi-Fi access point";
+"device_placement_first_bss_guide_1_metric" = "Place device within 10m of your front door and Wi-Fi access point";
+"device_placement_first_bss_second_device_guide_2_imperial" = "Place device between 10-30ft of the Alarm Pod";
+"device_placement_first_bss_second_device_guide_2_metric" = "Place device between 3-10m of the Alarm Pod";
+"device_placement_first_bss_third_device_guide_3_imperial" = "Keep device within 30ft of the Alarm Pod";
+"device_placement_first_bss_third_device_guide_3_metric" = "Keep device within 10m of the Alarm Pod";
+
+/*device placement: first device setup title*/
+"device_placement_first_device_setup" = "First device setup";
+
+/*device placement: first device setup step 1*/
+"device_placement_first_device_setup_step_1" = "Choose the Wi-Fi access point most central in the area you want to cover";
+
+/*device placement: first device setup step 2 imperial*/
+"device_placement_first_device_setup_step_2_imperial" = "Place the first device at most 30 ft away from your selected access point";
+
+/*device placement: first device setup step 2 metric*/
+"device_placement_first_device_setup_step_2_metric" = "Place the first device at most 10 m away from your selected access point";
+"device_placement_first_hms_second_device_guide_2_imperial" = "Place device between 10-30ft of the first SensePlug";
+"device_placement_first_hms_second_device_guide_2_metric" = "Place device between 3-10m of the first SensePlug";
+"device_placement_first_hms_third_device_guide_3_imperial" = "Keep device within 30ft of any SensePlug";
+"device_placement_first_hms_third_device_guide_3_metric" = "Keep device within 10m of any SensePlug ";
+"device_placement_first_sense_plug_guide_1_imperial" = "Place device within 30ft of your Wi-Fi access point";
+"device_placement_first_sense_plug_guide_1_metric" = "Place device within 10m of your Wi-Fi access point";
+"device_placement_first_sense_plug_guide_2" = "This device will be added as a Thread border router";
+"device_placement_first_wifi_sensor_guide_1_imperial" = "Place device within 30ft of your Wi-Fi access point";
+"device_placement_first_wifi_sensor_guide_1_metric" = "Place device within 10m of your Wi-Fi access point";
+"device_placement_first_wifi_sensor_guide_2" = "Choose the Wi-Fi access point most centrally located within the area you want to cover";
+"device_placement_first_wifi_sensor_guide_3" = "All other devices in %@ will use the Wi-Fi access point that this device connects to";
+"device_placement_keypad_guide_content_1" = "Place device near the door for easy access";
+"device_placement_motion_sensor_guide_content_1" = "Place device in a corner or by a wall to monitor motion within a room";
+"device_placement_non_first_bss_has_br_guide_2_imperial" = "Place device within 30ft of the selected door for the Door Sensor";
+"device_placement_non_first_bss_has_br_guide_2_metric" = "Place device within 10m of the selected door for the Door Sensor";
+"device_placement_non_first_bss_no_br_guide_1_imperial" = "Place device within 30ft of both your Wi-Fi access point and the selected door for the Door Sensor";
+"device_placement_non_first_bss_no_br_guide_1_metric" = "Place device within 10m of both your Wi-Fi access point and the selected door for the Door Sensor";
+"device_placement_non_first_hss_third_device_no_device_guide_3_imperial" = "Keep device within 30ft of any SensePlug in %@";
+"device_placement_non_first_hss_third_device_no_device_guide_3_metric" = "Keep device within 10m of any SensePlug in %@";
+"device_placement_non_first_sense_plug_guide_2_imperial" = "Place device between 10-30ft from all activity sensors in %@";
+"device_placement_non_first_sense_plug_guide_2_metric" = "Place device between 3-10m from all activity sensors in %@";
+"device_placement_non_first_widar_has_br_guide_1_imperial" = "Place device between 10-30ft of all activity sensors in %@";
+"device_placement_non_first_widar_has_br_guide_1_metric" = "Place device between 3-10m of all activity sensors in %@";
+"device_placement_non_first_widar_sensor_guide_2_imperial" = "Place device between 10-30ft of all activity sensors in %@";
+"device_placement_non_first_widar_sensor_guide_2_metric" = "Place device between 3-10m of all activity sensors in %@";
+"device_placement_non_first_wifi_sensor_guide_1_imperial" = "Place device on the same floor within 30 ft of your Wi-Fi access point";
+"device_placement_non_first_wifi_sensor_guide_1_metric" = "Place device on the same floor within 10 m of your Wi-Fi access point";
+"device_placement_non_first_wifi_sensor_guide_2_imperial" = "Place device between 10-30ft from another device in %@";
+"device_placement_non_first_wifi_sensor_guide_2_metric" = "Place device between 3-10m from another device in %@";
+
+/*Device Placement Notice screen message*/
+"device_placement_notice_notice" = "Place this device on the same floor as the existing device, within a distance of 10 to 30 feet.";
+
+/*Device Placement Notice screen message when the <place name> is known—multizones enambled*/
+"device_placement_notice_notice_known_zone" = "Place this device on the same floor as the other device in %@, within a distance of 10 to 30 feet.";
+"device_placement_place_device_on_same_floor" = "Place device on the same floor";
+
+/*device placement: remaining devices setup title*/
+"device_placement_remaining_devices_setup" = "How to place remaining device";
+
+/*device placement: remaining devices setup title*/
+"device_placement_remaining_devices_setup_step_1_imprerial" = "Ensure distance between devices is 10 ft - 30 ft";
+
+/*device placement: remaining devices setup title*/
+"device_placement_remaining_devices_setup_step_1_metric" = "Ensure distance between devices is 3 m - 9 m";
+
+/*device placement: remaining devices setup title imperial*/
+"device_placement_remaining_devices_setup_step_2_imperial" = "Ensure device is at most 30 ft from your Wi-Fi access point";
+
+/*device placement: remaining devices setup title metric*/
+"device_placement_remaining_devices_setup_step_2_metric" = "Ensure device is at most 10 m from your Wi-Fi access point";
+
+/*device placement: remaining devices setup title*/
+"device_placement_remaining_devices_setup_step_3" = "Avoid placing device directly behind furniture or electronics";
+
+/*device placement: remaining devices setup title*/
+"device_placement_remaining_devices_setup_step_4" = "Do not place devices on different floors";
+"device_placement_secure_any_entry_or_room_door" = "Secure any entry or room door";
+"device_placement_sensor_dialog_description" = "Activity sensors refer to the Alarm Pod and SensePlug.";
+"device_placement_sensor_dialog_title" = "What are activity sensors?";
+"device_placement_thread_border_router_dialog_description" = "Think of it as the bridge that connects your other Thread devices to the internet, helping them to communicate smoothly.";
+"device_placement_thread_border_router_dialog_title" = "What is a Thread border router?";
+"device_placement_where_to_place_device" = "Where to place device";
+"device_settings_customize_device_description" = "Device name";
+"device_settings_customize_device_title" = "Edit device name";
+"device_settings_device_info_title" = "Device information";
+"device_settings_error_device_not_found" = "Device is not found";
+"device_settings_remove_device" = "Remove device";
+"device_settings_remove_device_name" = "Remove %@";
+"device_settings_technical_information_subtitle_thread" = "Wi-Fi, Thread, Hardware details";
+
+/*device settings*/
+"device_settings_technical_information_subtitle_thread_end" = "Thread, Hardware details";
+"device_settings_technical_information_subtitle_wifi" = "Wi-Fi network, Hardware details";
+
+/*Device settions*/
+"device_settings_title" = "Device Settings";
+"device_setup_accessories" = "Accessories";
+"device_setup_activity_sensors" = "Activity sensors";
+"device_setup_alarm_pod" = "Alarm Pod";
+"device_setup_contact_sensor" = "Door Sensor";
+"device_setup_keypad" = "Keypad";
+"device_setup_motion_sensor" = "Motion Sensor";
+"device_setup_others" = "Others";
+"device_setup_security_pod" = "Security Pod";
+"device_setup_sense_plug" = "SensePlug";
+"device_setup_sense_pod" = "SensePod";
+"device_setup_widar_sensor" = "WiDAR Sensor";
+"device_setup_wifi_sensor" = "Wi-Fi Sensor";
+"device_type_selection_accessories_warning" = "Set up a Thread border router first before adding accessories. Learn more";
+"device_type_selection_accessories_warning_learn_more" = "Learn more";
+"device_widar_mispositioned_warning_message" = "Optimize device position to restore sensing";
+"devices_add_new_device" = "Add new device";
+"devices_add_new_room" = "Add new room";
+"devices_add_new_zone" = "Add new Area";
+
+/*door sensor*/
+"door_sensor_battery_level" = "Battery level";
+
+/*door sensor*/
+"door_sensor_battery_percentage_android" = "%d%%";
+
+/*door sensor*/
+"door_sensor_closed" = "Closed";
+
+/*door sensor*/
+"door_sensor_open" = "Open";
+"edit_device_edit_device_name_hint" = "Device name";
+"edit_device_edit_device_title" = "Edit device name";
+"edit_icon_header" = "Let’s custom your profile!";
+
+/*Edit place: category selection title*/
+"edit_place_category" = "Category";
+"edit_place_delete_place_guide_description_2_android" = "You will not longer be able to retrieve any data associated with this place.\n";
+"edit_place_delete_place_guide_description_4_android" = "Devices paired in this place will be reset.\n";
+"edit_place_delete_place_guide_description_6_android" = "Any users who have access to this place will lose their access.\n";
+"edit_place_delete_place_guide_description_android" = "This will also:\n";
+
+/*Edit place: delete button*/
+"edit_place_deletion_delete_button" = "Delete place";
+
+/*Edit place: title*/
+"edit_place_edit_place" = "Customize place";
+
+/*Edit place: place settings menu description*/
+"edit_place_edit_place_description" = "Name, category, color, icon";
+
+/*Edit place: hint to enter place name in the field*/
+"edit_place_enter_name" = "Enter place name";
+
+/*Edit place: place icon selection title*/
+"edit_place_icon" = "Place icon";
+"edit_place_leave_place_guide_description_4_android" = "You will not longer be able to access all devices in this place.\n";
+"edit_place_leave_place_guide_title" = "You will lose access to all the devices and data in this place.";
+
+/*Edit place: sensitivity*/
+"edit_place_sensitivity" = "Sensitivity";
+"edit_place_zero_device_android" = "Manage device";
+"edit_profile_load_failed" = "Load profile failed: %@";
+"edit_profile_save_failed" = "Update profile failed: %@";
+
+/*Edit room: category selection title*/
+"edit_room_category" = "Type";
+
+/*Edit room: delete button text*/
+"edit_room_delete_button" = "Delete this room";
+"edit_room_delete_failed" = "Failed to delete room: %@";
+"edit_room_delete_zone_failed" = "Failed to delete Area: %@";
+"edit_room_deletion_delete_room_alert_message" = "All data and devices in this room will be removed.";
+"edit_room_deletion_delete_zone_alert_message" = "All data and devices in this Area will be removed.";
+
+/*Edit room: title*/
+"edit_room_edit_room" = "Edit room";
+
+/*Edit room: hint to enter room name in the field*/
+"edit_room_enter_name" = "Enter room name";
+
+/*Edit room: room icon selection title*/
+"edit_room_icon" = "Room icon";
+"edit_room_load_failed" = "Failed to load room: %@";
+"edit_room_save_failed" = "Failed to save room: %@";
+
+/*Edit user profile: choose image color*/
+"edit_user_profile_choose_image_color" = "Icon colour";
+
+/*Edit user profile: choose profile image*/
+"edit_user_profile_choose_profile_image" = "Profile icon";
+
+/*Edit user profile: empty error message*/
+"edit_user_profile_empty_error_message" = "Profile name must not be blank";
+
+/*Edit user profile: placeholder for profile name textfield*/
+"edit_user_profile_placeholder" = "Profile name";
+
+/*Edit user profile: profile name*/
+"edit_user_profile_profile_name" = "Profile name";
+
+/*Edit user profile: title*/
+"edit_user_profile_title" = "Edit profile";
+
+/*Edit zone: delete alert description*/
+"edit_zone_delete_alert_description" = "All data and devices in this Area will be removed.";
+
+/*Edit zone: delete alert title*/
+"edit_zone_delete_alert_title" = "Delete this Area";
+
+/*Edit room: delete button text*/
+"edit_zone_delete_button" = "Delete Area";
+
+/*Edit zone: title*/
+"edit_zone_edit_zone" = "Edit Area";
+
+/*Edit room: hint to enter room name in the field*/
+"edit_zone_enter_name" = "Enter Area name";
+"edit_zone_fail_to_create_zone" = "Fail to create Area";
+"edit_zone_fail_to_delete_zone" = "Fail to delete Area";
+"edit_zone_fail_to_edit_zone" = "Fail to edit Area";
+"edit_zone_fail_to_get_zone_information" = "Fail to get Area information";
+"edit_zone_title" = "Edit Area name";
+"edit_zone_zone_name_already_in_use" = "This Area name is already in use. Please use a different name";
+
+/*Engine settinge: engine settings description*/
+"engine_settings_engine_settings_description" = "Select the engine you would like to use.";
+
+/*Engine settinge: motion engine*/
+"engine_settings_motion_engine" = "Motion engine";
+
+/*Engine settinge: motion engine description*/
+"engine_settings_motion_engine_description" = "This engine is meant for quick automation scenario. It is much more sensitive and faster than the security engine, and does not support a sensitivity setting.";
+
+/*Engine settinge: security engine*/
+"engine_settings_security_engine" = "Security engine";
+
+/*Engine settinge: security engine description*/
+"engine_settings_security_engine_description" = "This engine is meant for intrusion detection. It supports a sensitivity setting, meant to filter out parasite source of motion happening in the place.";
+
+/*Engine settinge: title*/
+"engine_settings_title" = "Engine";
+
+/*Fuzzy*/
+"error_insufficient_permission_action_can_not_be_completed" = "Action cannot be completed due to insufficient permissions.";
+"error_no_internet_connection" = "No internet connection";
+
+/*Errors*/
+"errors_authentication_login_required" = "Please sign-in again using your recovery key";
+"errors_authentication_title" = "Authentication error";
+"errors_authentication_token_expired" = "Token has expired.";
+"errors_join_thread_network_fail_message" = "Check that you are using the same mobile phone used to set up devices previously.\nIf you no longer have access to the mobile phone, reset all devices in this Area.";
+"errors_join_thread_network_fail_title" = "Failed to join Thread network";
+"errors_linking_error_response_parse_error" = "Failed to communicate with nami server.";
+"errors_move_device_error_no_device_selected" = "Please select one or more devices to move";
+"errors_move_device_error_title" = "Moving devices failed";
+"errors_network_error_conflict" = "The network request could not be fulfilled as it conflicts with the state on the server (Code %@).";
+
+/*Error shown when connection to the cloud failed
+Connection error provided with [underlying error description] from the system.*/
+/*Fuzzy*/
+"errors_network_error_connection_error" = "Connection to the server failed. %@";
+"errors_network_error_forbidden" = "Action cannot be completed due to insufficient permissions.";
+"errors_network_error_invalid_parameters" = "The network request contains invalid parameters (Code %@).";
+"errors_network_error_not_found" = "The server could not find the requested URL (Code %@).";
+"errors_network_error_server_error" = "The server could not process the network request (Code %@).";
+"errors_network_error_title" = "Network error";
+"errors_network_error_unauthorized" = "The network request is unauthorized (Code %@).";
+"errors_network_error_unknown" = "Unknown network error (Code %@).";
+"errors_pairing_ble_disconnected_description" = "Unplug %@ and connect it to power again.";
+"errors_pairing_connection_time_out_description" = "Check that the device is powered on and near your mobile phone.";
+"errors_pairing_device_not_found_description" = "Unplug the device and connect the device to power again.";
+"errors_pairing_device_not_found_title" = "Device not found";
+"errors_pairing_error_device_cloud_challenge_error" = "The device could not process a message from the nami cloud.";
+"errors_pairing_error_device_secure_session_error" = "Error establishing a secure session with the device.";
+"errors_pairing_error_device_thread_join_error" = "Device failed to join Thread network.";
+"errors_pairing_error_device_thread_scan_error" = "Can't find Thread networks in vicinity, move the device closer to the border router and try again.";
+"errors_pairing_error_device_title" = "Pairing device error";
+"errors_pairing_error_device_unknown_unrecognized" = "The device sent an unknown error.";
+"errors_pairing_error_device_wifi_join_error" = "The device could not join the selected Wi-Fi network.";
+"errors_pairing_error_device_wifi_join_ip_error" = "The device did not get an IP address when joining the selected Wi-Fi network.";
+"errors_pairing_error_device_wifi_join_password_error" = "Check that the password you entered for the selected network is correct.";
+"errors_pairing_error_device_wifi_scan_error" = "The device had an error while scanning for Wi-Fi networks.";
+"errors_pairing_incorrect_wifi_password_description" = "Check that the password you entered for the selected network is correct.";
+"errors_pairing_incorrect_wifi_password_title" = "Incorrect Wi-Fi password";
+"errors_pairing_machine_deserialization_error" = "Error deserializing the received pairing message.";
+"errors_pairing_machine_encryption_error" = "Error encrypting the next pairing message.";
+"errors_pairing_machine_seance_error" = "Error establishing a secure session with the device.";
+"errors_pairing_machine_serialization_error" = "Error serializing the next pairing message.";
+"errors_pairing_machine_title" = "Pairing operation error";
+"errors_pairing_machine_unexpected_message" = "An unexpected error occurred";
+"errors_pairing_machine_unexpected_state" = "An unexpected error occurred";
+"errors_pairing_thread_setup_error_mixed_environment" = "Mixing Thread and Wi-Fi devices in a single Area is not allowed. Please set up this device in a different Area.";
+"errors_pairing_thread_setup_error_thread_network_not_found" = "No Thread network found. Please place your device closer to other Thread devices.";
+"errors_pairing_thread_setup_error_thread_operational_dataset_missing" = "Check that you are using the same mobile phone used to set up devices previously.\nIf you no longer have access to the mobile phone, reset all devices in this Area.";
+"errors_pairing_timed_out_connect_wifi" = "Ensure the Wi-Fi credentials are correct and the device is placed close enough to the router.";
+"errors_unexpected_occurred_please_try_again" = "An unexpected error occurred. Please try again.";
+"external_signin_check_if_users_request" = "Did you made this request?";
+"external_signin_confirm_request" = "Yes, sign in";
+"external_signin_confirmed_title" = "Sign in confirmed";
+"external_signin_continue_oauth" = "Continue with";
+"external_signin_from_location" = "from %@";
+"external_signin_on_os" = "on %@";
+"external_signin_reject_request" = "No, dismiss";
+"external_signin_request_code_code_screen_title" = "Sign in request";
+"external_signin_request_code_grant_access" = "Grant access";
+"external_signin_request_code_instructions" = "Enter the 6-character code displayed on the web page to grant temporary access to your account";
+"external_signin_request_code_pasteboard_access_explained" = "We will try to fetch the code from the clipboard. We will only use clipboard data to assist filling the code.";
+"external_signin_requested_title" = "Sign in request";
+"external_signin_signin_request_peek_description" = "Sign in requested%1$@ at %2$@%3$@%4$@.";
+"external_signin_success_message" = "You’re all set.\nPlease return to the browser";
+"external_signin_with_browser" = "via %@";
+
+/*Title for the FAQ tab and screen.*/
+"faq_title" = "FAQ";
+"fcm_message_title" = "nami Lookout24";
+
+/*lost access pop up / list removed place name pop up*/
+"general_and" = "and";
+
+/*at*/
+"general_at" = "at";
+"general_camera" = "Camera";
+
+/*General: Cancel*/
+"general_cancel" = "Cancel";
+"general_connection_lost" = "Connection lost";
+"general_connection_lost_explanation" = "We are having trouble connecting to our servers. Please try again later.";
+
+/*A button to delete the displayed object (e.g. a empty Zone)*/
+"general_delete" = "Delete";
+
+/*General: Done*/
+"general_done" = "Done";
+
+/*A generic error title.*/
+"general_error" = "Error";
+
+/*A generic error description*/
+"general_error_description" = "Help us improve your experience by sending an error report";
+"general_intrusion_triggered" = "Intrusion detected";
+"general_loading" = "Loading...";
+
+/*A common text meaning there is more of… something available.*/
+"general_more" = "More";
+
+/*General: Move*/
+"general_move" = "Move";
+
+/*A common button meaning to go to the next screen in a series.*/
+"general_next" = "Next";
+"general_no" = "No";
+"general_notification" = "Notification";
+"general_ok" = "Okay";
+
+/*A button to save the new state (e.g. a Place after edit)*/
+"general_save" = "Save";
+"general_unavailable" = "Unavailable";
+
+/*general*/
+"general_undefined" = "-";
+"general_yes" = "Yes";
+
+/*Alarms in %@ places*/
+"hint_issue_alarmIssues" = "Alarms in %@ places";
+
+/*System issues in %@ places*/
+"hint_issue_pluralSystemIssues" = "Attention required in %@ places";
+
+/*System issue in %@*/
+"hint_issue_singularSystemIssue" = "Attention required in %@";
+"homepage_empty_place_create_place" = "Create a place";
+"homepage_empty_place_welcome" = "Welcome %@";
+"homepage_empty_place_welcome_description" = "Let's secure your place today";
+"installation_guide_complete_installation" = "Complete installation";
+"installation_guide_install_contact_sensor" = "Install Door Sensor";
+"installation_guide_items1" = "Ensure installation area is clean and dust-free";
+"installation_guide_items2" = "Place device near the top of the door";
+"installation_guide_items3_imperial" = "Keep sensor and magnet no more than 0.8 in apart with their indicator lines aligned";
+"installation_guide_items3_metric" = "Keep sensor and magnet no more than 2 cm apart with their indicator lines aligned";
+"installation_guide_items4" = "Peel off the adhesive backing and firmly stick device on the door";
+"installation_guide_keypad_item_2" = "Place the keypad on a table or stick the mounting plate to the wall";
+"installation_guide_title" = "Install %@";
+"internet_connection" = "Connection status";
+
+/*dashboard intrusion banner*/
+"intrusion_banner_intrusion_detected_at" = "Intrusion detected at %@";
+"intrusion_event_report_intrusion_history" = "Intrusion history";
+"intrusion_history_error_data_not_found" = "Failed to get intrusion detection data!";
+"intrusion_history_human_motion" = "Human motion";
+"intrusion_history_no_motion" = "No motion";
+"intrusion_history_timestamp" = "Since %@";
+"intrusion_history_title" = "Intrusion detection history";
+"intrusion_live_disarm_security_system" = "Disarm security system?";
+"intrusion_live_disarm_security_system_description" = "This action will deactivate all alarms and change the system to Disarm mode.";
+"intrusion_live_report_by_door_sensor" = "Triggered at %1$@ by %2$@";
+"intrusion_live_report_door_closed" = "Closed";
+
+/*Fuzzy*/
+"intrusion_live_report_door_opened" = "Opened";
+"intrusion_live_report_motion" = "Motion";
+
+/*Fuzzy*/
+"intrusion_live_view_no_activity_since_intrusion_began" = "No activity since intrusion began";
+
+/*Invitation detail: Accept button*/
+"invitation_detail_accept_button" = "Accept";
+
+/*Invitation detail: Agreement details*/
+"invitation_detail_agreement_details" = "You will be able to access all devices and settings, manage people, see activity and events happening in the place, and receive notification about them.";
+
+/*Invitation detail: Cancel button*/
+"invitation_detail_cancel_button" = "Cancel";
+
+/*Invitation detail: Decline button*/
+"invitation_detail_decline_button" = "Decline";
+
+/*Invitation detail: Hello [name]*/
+"invitation_detail_hello" = "Hello %1$@,";
+"invitation_detail_hello_android" = "Hello %@,";
+
+/*Invitation detail: invite found*/
+"invitation_detail_invite_found" = "Invite found!";
+
+/*Invitation detail: invite not found*/
+"invitation_detail_invite_not_found" = "We are sorry, we could not find the invitation.";
+
+/*Invitation detail: Accept question to join [place]*/
+"invitation_detail_question" = "You've been invited to join %1$@";
+"invitation_detail_question_android" = "You've been invited to join %@";
+
+/*Invitation detail: retrieving invite details message*/
+"invitation_detail_retrieving_invite_details" = "Retrieving invite details...";
+
+/*Invitation detail: Role*/
+"invitation_detail_role" = "Role:";
+"invitation_details_revoke_revoke_alert_message" = "Are you sure you want to revoke the invite?";
+
+/*Revoke button title*/
+"invite_details_ask_revoke_button" = "Revoke";
+
+/*Share button title*/
+"invite_details_ask_share_button" = "Share";
+
+/*Confirm revoke button in alert*/
+"invite_details_confirm_revoke_button" = "Revoke";
+
+/*Invite details expiration [time]*/
+"invite_details_invite_expiration_text" = "Expires on %@";
+"invite_details_invite_expiration_text_android" = "Expires on %@";
+
+/*Invite details expired*/
+"invite_details_invite_expired" = "Expired";
+
+/*Invite details expires in [time_left]*/
+"invite_details_invite_expires_in_text" = "Invite expires in %@";
+
+/*Invite details title with [invitee name]*/
+"invite_details_invite_title" = "%@'s invite";
+"invite_details_invite_title_android" = "%@'s invite";
+
+/*Revoke alert for [invitee name] message*/
+"invite_details_revoke_alert_message" = "Revoke invite for %@?";
+
+/*Revoke alert title*/
+"invite_details_revoke_alert_title" = "Revoke invite";
+"invite_details_revoke_invitation_title" = "Revoke invite for “%@”?";
+"join_place_camera_permission_guide" = "scan QR code invitation!";
+"join_place_invalid_invite" = "The invite is invalid.";
+
+/*Join place: invalid QR code*/
+"join_place_invalid_qr_code" = "Invalid QR code";
+
+/*Join place: invite found*/
+"join_place_invite_found" = "Invite found!";
+"join_place_role_guide" = "You will be able to access all devices and settings, manage people, see activity and events happening in the place, and receive notification about them.";
+"join_place_role_guide_admin" = "control devices, remove people, see what happens, and receive notification about them.";
+"join_place_role_user_guide" = "You will be able to edit security modes, view devices and events happening in the place, and receive notifications about them.";
+
+/*Join place: scan again*/
+"join_place_scan_again" = "The invitation QR code is either invalid or expired. Please verify and try again.";
+
+/*Join place: scan invite qr code to join a place*/
+"join_place_scan_invite_qr" = "Scan QR code invitation";
+"keypad_setup_guide_description_2" = "Remove the battery cover";
+"keypad_setup_guide_description_3" = "Pull out the plastic battery tab";
+"kit_explanation_first_kit_designed_to_help_secure_your_place" = "Designed to help you secure your place and front door";
+"kit_explanation_first_kit_place_devices_on_first_floor" = "Place devices on first floor to optimize security";
+"kit_explanation_non_first_kit_bss_provides_additional_security" = "Provides additional security for your place and any entry door";
+"kit_explanation_non_first_kit_hms_monitor_additional_areas" = "Monitor additional areas of your place and any entry door";
+"kit_tracker_plural_device_left" = "1 device left";
+"kit_tracker_plural_devices_added" = "1 device added";
+
+/*Let's add device: button title for dismissing the screen.*/
+"lets_add_device_dismiss_screen" = "Maybe later";
+"lost_access_popup_message_multiple_places" = "Either these places were deleted or you were removed from them.";
+"lost_access_popup_message_single_place" = "Either this place was deleted or you were removed from it.";
+"lost_access_popup_title" = "You no longer have access to %@";
+"manage_devices_empty_place" = "Your place is empty.";
+"member_details_leave_place" = "Leave place";
+"member_details_remove_member" = "Remove user";
+"member_details_remove_people_message" = "Are you sure you want to remove %1$@ from %2$@?";
+
+/*Motion history: active time*/
+"motion_history_active_time" = "Total motion time";
+"motion_history_device_issue" = "No data";
+
+/*Motion history: duration*/
+"motion_history_duration" = "Duration";
+"motion_history_format_days_android" = "%d day";
+"motion_history_format_hour" = "%d hr";
+"motion_history_format_hours_android" = "%d hr";
+"motion_history_format_minute" = "%d min";
+"motion_history_format_second" = "%d second";
+"motion_history_intensity" = "Intensity";
+"motion_history_monitor_was_degraded_due_to_device_issue" = "Reduced coverage: Motion sensing was active, but the area covered was smaller than usual.";
+"motion_history_monitor_was_degraded_in_zones_with_device_issue" = "Reduced coverage: Motion sensing was active, but the area covered was smaller than usual.";
+"motion_history_monitor_was_disabled_due_to_device_issue" = "No coverage: Motion sensing was not available.";
+"motion_history_monitor_was_disabled_in_zones_with_device_issue" = "No coverage: Motion sensing was not available.";
+
+/*Motion history: motion*/
+"motion_history_motion" = "Motion";
+"motion_history_motion_today" = "Motion today";
+"motion_history_no_data" = "No data";
+
+/*Motion history: not available*/
+"motion_history_not_available" = "N/A";
+"motion_history_sensing_data_not_available" = "Sensing data not available";
+
+/*Motion history tile: history*/
+"motion_history_tile_history" = "History";
+
+/*Motion history tile: today*/
+"motion_history_tile_today" = "Today";
+
+/*Motion history tile: total active time*/
+"motion_history_tile_total_active_time" = "Total motion time";
+
+/*Motion history: today*/
+"motion_history_today" = "Today";
+
+/*Motion now: connect to same wifi network*/
+"motion_now_connect_to_wifi" = "Connect to the Wi-Fi network of your devices and ensure they are powered on";
+
+/*Motion now: connect to same wifi network as zone*/
+"motion_now_connect_to_wifi_as_zone" = "Connect to the Wi-Fi network of your devices and ensure they are powered on";
+"motion_now_connect_to_wifi_your_device_using" = "Connect to the Wi-Fi network of your devices and ensure they are powered on";
+"motion_now_explanation_description_1" = "The motion now graph displays the intensity of real-time motion detected, without any filtering.";
+"motion_now_explanation_description_2" = "You may notice differences when comparing it to the motion history graph, which shows motion activity filtered based on your sensitivity settings.";
+"motion_now_explanation_got_it" = "Got it";
+"motion_now_explanation_learn_more" = "Learn more";
+"motion_now_explanation_sub_title" = "Quick way to check motion activity and ensure your devices are working properly";
+"motion_now_format_active_zones_android" = "%d Area active";
+
+/*Motion now: go to wifi settings*/
+"motion_now_go_to_wifi_settings" = "Go to Wi-Fi Settings";
+
+/*Motion now: how place graph works*/
+"motion_now_how_place_graph_works" = "How place graph works";
+
+/*Motion now: explanation for how place graph works*/
+"motion_now_how_place_graph_works_description" = "The place graph displays motion data only from Areas connected to the network that your mobile device is currently using.";
+
+/*Motion now: intensity*/
+"motion_now_intensity" = "Intensity";
+"motion_now_max" = "Max";
+"motion_now_min" = "Min";
+
+/*Motion now: motion detected in*/
+"motion_now_motion_detected_in" = "Motion detected in:";
+"motion_now_no_sensing_data" = "No sensing data";
+
+/*Motion now: now*/
+"motion_now_now" = "Now";
+
+/*Motion now: 30s ago*/
+"motion_now_thirty_secs_ago" = "30s ago";
+
+/*Motion now tile: connect to same wifi network*/
+"motion_now_tile_connect_to_wifi" = "Connect to the Wi-Fi network of your devices and ensure they are powered on";
+
+/*Motion now tile: more*/
+"motion_now_tile_more" = "More";
+
+/*Motion now tile: movement detected*/
+"motion_now_tile_movement_detected" = "Movement detected";
+
+/*Motion now tile: no movement detection*/
+"motion_now_tile_no_movement_detected" = "No movement detected";
+
+/*Motion now tile: no sensing data*/
+"motion_now_tile_no_sensing_data" = "No sensing data";
+
+/*Motion now tile: X active zones*/
+"motion_now_tile_number_of_active_zones" = "%1$@ active Areas";
+
+/*Motion now tile: to view motion now*/
+"motion_now_tile_to_view_motion_now" = "To view motion now";
+
+/*Motion now: title*/
+"motion_now_title" = "Motion now";
+"motion_sensor_coverage_do_not_mount_device_yet" = "Do not mount the device yet. The installation guide will follow after naming the device.";
+"motion_sensor_coverage_guide_title" = "Maximise your coverage area";
+"motion_sensor_installation_guide_1" = "Screw on or peel off the adhesive backing to firmly secure the base on the wall";
+"motion_sensor_installation_guide_2" = "Point sensor towards the desired detection area";
+"motion_sensor_installation_guide_3" = "Avoid pointing sensor towards heat sources or moving objects to prevent false triggers";
+
+/*Fuzzy*/
+"motion_sensor_installation_pre_guide_1_imperial" = "Place device at least 5ft above the floor";
+"motion_sensor_installation_pre_guide_1_metric" = "Place device at least 1.5m above the floor";
+"motion_sensor_installation_pre_guide_2_imperial" = "Motion detection is limited to 20ft away and within a 110° field of view";
+"motion_sensor_installation_pre_guide_2_metric" = "Motion detection is limited to 6m away and within a 110° field of view";
+"motion_sensor_installation_pre_guide_3" = "Avoid large furniture or walls blocking the sensor’s field of view";
+"motion_sensor_pre_guide_description_1" = "Use a coin or tool to screw back the battery cover until you hear a 'click'";
+"motion_sensor_pre_guide_description_2" = "Rotate to close the sensor";
+"motion_sensor_pre_guide_description_3" = "Bring the sensor near your desired installation area";
+"motion_sensor_pre_guide_title_1" = "Rotate to open the sensor";
+"motion_sensor_pre_guide_title_2" = "Use a coin or another tool to unscrew the battery cover";
+"motion_sensor_pre_guide_title_3" = "Pull out the plastic battery tab";
+"motion_sensor_pre_guide_title_4" = "Reassemble the sensor";
+"msg_session_expired" = "Session is expired, please try again!";
+"muliple_places_intrusion_in_many_places" = "Intrusion in %d places";
+"muliple_places_intrusion_in_one_place" = "Intrusion in %@";
+
+/*New invite generation screen: generate invite button text*/
+"new_invite_generate_invite_button" = "Generate invite";
+
+/*New invite generation screen: Invite description*/
+/*Fuzzy*/
+"new_invite_invite_admin_description" = "Administrators can manage devices, settings and people. They can also view and receive notifications about events in the place.";
+"new_invite_invite_description" = "Administrators can manage devices, settings and people. They can also view and receive notifications about events in the place.";
+
+/*New invite generation screen: Navbar title*/
+"new_invite_invite_title" = "Share access";
+"new_invite_invite_user_description" = "Users can edit security modes, view devices and events happening in the place, and receive notifications about them.";
+
+/*New invite generation screen: Invitee name placeholder*/
+"new_invite_invitee_name_placeholder" = "Invitee name";
+
+/*New invite generation screen: Invitee name section title*/
+"new_invite_invitee_name_title" = "Name";
+"notification_go_to_settings" = "Go to Settings";
+"notification_missing_permission" = "Missing %@ Permission";
+"notification_missing_permission_desc" = "%@ permission is required to %@";
+"notification_permission_guide" = "receive push notifications!";
+"pair_device_go_to_settings" = "Go to Settings";
+"pair_device_missing_permission" = "Missing %@ Permission";
+"pair_device_missing_permission_desc" = "%@ permission is required to %@";
+"pairing_ask_to_connect_connect_to_wifi" = "Connect to a Wi-Fi network";
+"pairing_ask_to_connect_first_thread_device_description_1" = "The first device of a sensing Area is set up as a border router";
+"pairing_ask_to_connect_first_thread_device_description_2" = "Connect this border router to a Wi-Fi network";
+"pairing_ask_to_connect_first_thread_device_description_3" = "To keep your Thread network running, leave this border router connected to power at all times";
+"pairing_ask_to_connect_first_wifi_device_description_1" = "All other devices in %@ will use the Wi-Fi access point that this device connects to";
+"pairing_ask_to_connect_first_wifi_device_description_2" = "Choose the Wi-Fi access point most central in the area you want to cover";
+"pairing_ask_to_connect_non_first_thread_device_description_1" = "This device will join the existing Thread network in the place";
+
+/*Fuzzy*/
+"pairing_ask_to_connect_non_first_thread_device_description_2" = "Use the same mobile phone previously used to set up other Thread devices";
+"pairing_ask_to_connect_non_first_thread_device_description_3" = "Ensure that the border router in %@ is connected to power";
+"pairing_ask_to_connect_non_first_wifi_device_description_1" = "This device will connect to the same Wi-Fi access point used by other devices in %@";
+"pairing_ask_to_connect_remaining_thread_device" = "Remaining Thread devices";
+
+/*Fuzzy*/
+"pairing_ask_to_connect_wifi_device_imperial_distance_description" = "Ensure this device is at most 30 ft away from the access point";
+
+/*Fuzzy*/
+"pairing_ask_to_connect_wifi_device_metric_distance_description" = "Ensure this device is at most 10 m away from the access point";
+"pairing_bluetooth_device_found_explained_ready_to_pair" = "The LED will pulse dark blue to let you know that the device is ready to pair";
+"pairing_bluetooth_device_found_explained_ready_to_pair_contact_sensor" = "The LED will pulse to let you know that the device is ready to pair";
+"pairing_bluetooth_device_found_header_connect_to_power" = "Connect device to power outlet";
+
+/*Pairing, Bluetooth device found: header 1 for the screen.*/
+"pairing_bluetooth_device_found_header1" = "Your device is found on Bluetooth. Nice!";
+
+/*Pairing, Bluetooth device found: header 2 for the screen.*/
+"pairing_bluetooth_device_found_header2" = "Please wait...";
+"pairing_bluetooth_device_found_name_already_in_use" = "This device name is already in use. Please use a different name.";
+"pairing_bluetooth_device_found_name_device_explained" = "Be specific so you can identify different devices in your place";
+"pairing_bluetooth_device_found_name_device_header" = "%@ found!";
+"pairing_bluetooth_device_found_name_your_device" = "Name your device";
+"pairing_bluetooth_device_found_next_button" = "Next";
+"pairing_cancel" = "Cancel";
+"pairing_confirm_cancel_pairing_description" = "Are you sure you want to cancel the pairing process?";
+"pairing_confirm_cancel_pairing_title" = "Confirm cancel pairing";
+"pairing_connect_success_device_has_been_setup_in_zone" = "%1$@ has been set up in %2$@";
+
+/*%1$@ has been set up in %2$@. Now let's optimize the device's position to enable sensing.*/
+"pairing_connect_success_device_has_been_setup_in_zone_optimize_position" = "%1$@ has been set up in %2$@. Now let's optimize the device's position to enable sensing.";
+
+/*%1$@ has been set up in %2$@. Now let's optimize the device's position to enable sensing.*/
+/*Fuzzy*/
+"pairing_connect_success_device_has_been_setup_in_zone_optimize_position_ios" = "%1$@ has been set up in %2$@. Now let's optimize the device's position to enable sensing.";
+
+/*%1$@ has been set up in %2$@. Now let's optimize the device's position to enable sensing.*/
+"pairing_connect_success_setup_another_device" = "Add another device";
+"pairing_connect_wifi_input_password" = "Input the password for \"%@\"";
+"pairing_connect_wifi_no_wi_fi_networks_found" = "No Wi-Fi network found";
+"pairing_connect_wifi_set_up_as_border_router" = "This device will be set up as a Thread border router";
+"pairing_connect_wifi_setting_up_this_device" = "Setting up this device";
+
+/*Device setup*/
+"pairing_device_setup_navigation_title" = "Device setup";
+"pairing_done" = "Done";
+"pairing_enable_bluetooth_in_settings_bluetooth_disabled" = "Bluetooth permission required";
+
+/*Pairing, Enable Bluetooth in Settings: title for the button to open app settings.*/
+"pairing_enable_bluetooth_in_settings_button_settings" = "Open Settings";
+
+/*Pairing, Enable Bluetooth in Settings: header for the screen when Bluetooth access is disabled.*/
+"pairing_enable_bluetooth_in_settings_header" = "To connect devices and complete setup, enable Bluetooth permission in Settings.";
+
+/*Pairing, Enter Wi-Fi password: title for “Ready to connect” button which sends credentials to device.*/
+"pairing_enter_wifi_password_button_ready_to_connect" = "Connect to Wi-Fi";
+"pairing_enter_wifi_password_enter_password" = "Enter password for \"%@\"";
+"pairing_enter_wifi_password_enter_password_ios" = "Enter password for \"%@\"";
+
+/*Pairing, Enter Wi-Fi password: header for the screen.*/
+"pairing_enter_wifi_password_header" = "Input the password for “%@.";
+"pairing_enter_wifi_password_password_entry_field_hint" = "These Wi-Fi network credentials will be used to set up other devices in the Area.";
+
+/*Pairing, Enter Wi-Fi password: placeholder for the password field.*/
+"pairing_enter_wifi_password_password_placeholder" = "Password";
+"pairing_error_all_border_router_offline" = "All Thread border router(s) in your place are offline";
+"pairing_error_all_border_router_offline_description" = "Connect one of these device(s) to power and try again: %@.";
+"pairing_error_all_border_router_offline_device_in_zone" = "%1$@'s %2$@";
+"pairing_error_mobile_phone_is_not_connected_to_wifi" = "Your mobile phone is not connected to the Wi-Fi network";
+"pairing_error_mobile_phone_is_not_connected_to_wifi_description" = "Ensure your mobile phone is connected to your place’s Wi-Fi network before trying to set up again.";
+"pairing_error_no_thread_border_router_in_place" = "No Thread border router in your place";
+"pairing_error_no_thread_border_router_in_place_description" = "Please delete all your devices and set them up again.";
+
+/*Pairing, Error handling: title for action button to ignore the current error.*/
+"pairing_errors_action_ignore" = "Ignore and continue";
+
+/*Pairing, Error handling: title for action button to restart pairing anew.*/
+"pairing_errors_action_restart" = "Exit setup";
+"pairing_errors_action_restart_setup" = "Restart setup";
+"pairing_errors_action_scan_device_again" = "Scan device again";
+
+/*Pairing, Error handling: title for action button to try the bad step again.*/
+"pairing_errors_action_try_again" = "Try again";
+"pairing_errors_ble_disconnected_title" = "Bluetooth is disconnected";
+"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description1" = "Move one of your activity sensors in %@ closer to the Door Sensor.";
+"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description2" = "Once done, press the top button on the Door Sensor once and try again.";
+"pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description1" = "Check that you are using the same mobile phone used to set up devices previously.";
+"pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description2" = "If you no longer have access to the mobile phone, reset all devices in this Area: %@.";
+"pairing_errors_device_setup_error_device_mismatch_description" = "The QR code scanned does not match the device selection made earlier. Please verify and try again.";
+"pairing_errors_error_occurred_title" = "An error has occurred";
+"pairing_errors_failed_to_join_wifi_title" = "Failed to join Wi-Fi network";
+"pairing_errors_need_help" = "Need help";
+"pairing_errors_thread_setup_error_border_router_offline" = "Thread border router offline";
+"pairing_errors_thread_setup_error_border_router_offline_description_android" = "Connect %1$@'s %2$@ to power and try again";
+"pairing_errors_thread_setup_error_device_mismatch_description" = "Please verify and scan the QR code for the device type shown on the next screen.";
+"pairing_errors_thread_setup_error_device_mismatch_title" = "Device mismatch";
+"pairing_errors_thread_setup_error_missing_thread_credentials" = "Missing Thread credentials";
+"pairing_errors_thread_setup_error_no_thread_networks_found_description" = "Place your device closer to other Thread devices in this Area: %@";
+"pairing_errors_thread_setup_error_no_thread_networks_found_title" = "No Thread network found";
+"pairing_errors_timeout_description" = "Check that the device is powered on and near your mobile phone.";
+"pairing_errors_timeout_title" = "Connection timed out";
+
+/*Something went wrong*/
+"pairing_errors_unexpected_description" = "Something went wrong ";
+
+/*An unexpected error*/
+"pairing_errors_unexpected_title" = "An unexpected error";
+
+/*An unexpected error*/
+"pairing_exit" = "Exit";
+
+/*Fuzzy*/
+"pairing_exit_device_setup_description" = "You will lose all progress if you exit.";
+
+/*Fuzzy*/
+"pairing_exit_device_setup_title" = "Exit device setup";
+"pairing_exit_setup" = "Exit setup";
+"pairing_finishing_setup_game_of_pong" = "Fancy a quick game?";
+
+/*Pairing, Finishing setup: header for the screen.*/
+"pairing_finishing_setup_header" = "Setting up your device…";
+
+/*Pairing, List Wi-Fi networks: Access Point out of reach*/
+"pairing_list_wifi_networks_ap_out_of_reach" = "Device is too far from Wi-Fi router";
+"pairing_list_wifi_networks_available_networks" = "Available Wi-Fi networks";
+
+/*Pairing, List Wi-Fi networks: button title to enter the Wi-Fi network name manually.*/
+"pairing_list_wifi_networks_button_other_network" = "Other…";
+"pairing_list_wifi_networks_connect_wifi_title" = "Connect to a Wi-Fi network";
+
+/*Pairing, List Wi-Fi networks: button text to delete the saved Wi-Fi password.*/
+"pairing_list_wifi_networks_forget" = "Forget";
+
+/*Pairing, List Wi-Fi networks: title for alert asking to use a saved Wi-Fi password.*/
+"pairing_list_wifi_networks_found_saved_password" = "Found saved password";
+
+/*Pairing, List Wi-Fi networks: message when no networks have been found. The placeholder is to insert the name of the “Other network” button.*/
+"pairing_list_wifi_networks_no_networks_found" = "No Wi-Fi network found";
+"pairing_list_wifi_networks_proceed" = "Proceed";
+"pairing_list_wifi_networks_select_network" = "Select a network to connect";
+
+/*Pairing, List Wi-Fi networks: text for alert asking to use a saved Wi-Fi password.*/
+"pairing_list_wifi_networks_use_saved_password" = "Would you like to use the saved password for the network “%@”?";
+"pairing_loading_device_connecting" = "Connecting to %@…";
+"pairing_no" = "No";
+"pairing_other" = "Other...";
+"pairing_other_network_title" = "Other network";
+"pairing_other_wifi_network_device_connectivity_hint" = "Our devices only work with 2.4GHz Wi-Fi networks";
+
+/*Pairing, Other Wi-Fi network: header above the text field for the custom Wi-Fi network name.*/
+"pairing_other_wifi_network_header" = "Enter network credentials";
+
+/*Pairing, Other Wi-Fi network: placeholder for the Wi-Fi network name textfield.*/
+"pairing_other_wifi_network_network_name_placeholder" = "Network name";
+"pairing_paired_successfully_button_add_device" = "Add device";
+
+/*Pairing, Paired successfully: button title for done.*/
+"pairing_paired_successfully_button_done" = "Done";
+"pairing_paired_successfully_button_not_now" = "Not now";
+
+/*Pairing, Paired successfully: button title for pairing another device.*/
+"pairing_paired_successfully_button_pair_another" = "Yes";
+
+/*Pairing, Paired successfully: button title for update another device.*/
+"pairing_paired_successfully_button_update_another" = "Next";
+"pairing_paired_successfully_complete_setup_for_motion_sensing" = "Complete your setup for motion sensing";
+"pairing_paired_successfully_complete_setup_for_motion_sensing_description" = "You need at least 2 activity sensors to enable motion sensing in %@.";
+
+/*Pairing, Paired successfully: header 3 for the update wifi credentials.*/
+"pairing_paired_successfully_header3" = "Your plug is successfully updated";
+"pairing_power_on_and_scanning_ask_user_to_wait" = "Please wait...";
+"pairing_power_on_and_scanning_scanning" = "Searching for device";
+"pairing_scan_device_connecting_to_this_device" = "Connecting to this device...";
+"pairing_scan_device_missing_bluetooth_location_permission_explanation" = "To connect devices and complete setup, enable Bluetooth and Location permissions in Settings.";
+"pairing_scan_device_missing_bluetooth_location_permissions_title" = "Missing Location and Bluetooth Permissions";
+"pairing_scan_device_missing_bluetooth_permission_title" = "Missing Bluetooth Permission";
+"pairing_scan_device_please_hold" = "Please wait...";
+"pairing_scan_device_searching_for_device" = "Searching for device";
+"pairing_scan_device_the_led_light_is_not_pulsing" = "The LED light is not pulsing";
+"pairing_scan_qr_code_error_description" = "Please scan a valid QR code.";
+"pairing_scan_qr_code_error_title" = "QR code error";
+
+/*Expand camera view*/
+"pairing_scan_qr_expand_camera_view" = "Expand camera view";
+
+/*Fuzzy*/
+"pairing_scan_qr_subtitle" = "Ensure your device is not connected to power";
+
+/*Fuzzy*/
+"pairing_scan_qr_title" = "Scan QR code on device";
+"pairing_scan_qr_where_is_qr" = "Where is the QR code?";
+"pairing_scan_qrcode_missing_camera_permission_description" = "To scan the device QR code, please enable Camera permission in your device settings.";
+"pairing_scan_qrcode_missing_camera_permission_title" = "Camera permission required";
+"pairing_scanning_ble_faq" = "The LED light is not pulsing";
+"pairing_scanning_ble_header_contact_sensor" = "Press the top button once";
+"pairing_scanning_ble_header_keypad" = "Press the ‘0’ key once";
+"pairing_success" = "Success!";
+"paring_scan_device_bluetooth_is_off_description" = "To connect devices and complete setup, enable Bluetooth permission in Settings.";
+
+/*Fuzzy*/
+"paring_scan_device_bluetooth_is_off_title" = "Turn on Bluetooth";
+"paring_scan_device_bluetooth_restricted_description" = "To connect devices and complete setup, enable Bluetooth for new connections in Settings.";
+"paring_scan_device_bluetooth_restricted_title" = "Allow Bluetooth for new connections";
+"pkan_device_placement_title" = "Plan device placement";
+
+/*Create place: header text when selecting the place category.*/
+"place_creation" = "Create a place";
+"place_creation_customize_color_selection" = "Place color";
+"place_creation_customize_header" = "Customize your place";
+"place_creation_error_no_category" = "No place category";
+"place_creation_fail_to_create_place" = "Fail to create place";
+"place_creation_fail_to_get_place_information" = "Fail to get place information";
+"place_creation_fail_to_update_place" = "Fail to update place";
+"place_creation_floor_description" = "This helps us recommend better device placement to secure your place.";
+"place_creation_floor_floor_number" = "%d floor";
+"place_creation_floor_floorNumber_android" = "%@ floor";
+"place_creation_floor_header" = "How many floors do you have?";
+"place_creation_header" = "What kind of place is this?";
+"place_creation_name_create_place" = "Create place";
+"place_creation_name_default_name" = "Home";
+"place_creation_name_description" = "To help identify different places";
+"place_creation_name_edit_hint" = "Place name";
+"place_creation_name_error" = "You have an existing place with the same name. Consider using a different name.";
+"place_creation_name_header" = "Give your place a name";
+"place_creation_pets_description" = "This helps us improve motion detection settings to reduce false alarms.";
+"place_creation_pets_header" = "What size pets do you have?";
+"place_creation_size_description" = "For multi-storey places, select the average area of each floor.";
+"place_creation_size_header" = "What is your floor area?";
+"place_creation_zone_default_name_multiple_floor" = "%@ floor";
+"place_creation_zone_default_name_single_floor" = "Sensing Area 1";
+"place_detail_format_disconnected_device_in_one_zone_android" = "%d offline device(s) in one Area. Tap to view devices.";
+"place_detail_number_of_zone" = "%d Area";
+"place_detail_system_not_ready_to_secure" = "System is not ready to secure";
+"place_detail_timezone" = "Time zone";
+"place_details_change_place_mode_to_armed_contain_degraded_description" = "Monitoring coverage is reduced and intrusion may not be detected for Areas with device issues.";
+"place_details_change_place_mode_to_armed_contain_unhealthy_description" = "You will not receive intrusion alerts for Areas without enough working devices.";
+"place_details_change_place_mode_to_aware_contain_degraded_description" = "Monitoring coverage is reduced and activity may not be detected for Areas with device issues.";
+"place_details_change_place_mode_to_aware_contain_unhealthy_description" = "You will not receive notifications for Areas without enough working devices.";
+"place_details_customize" = "Customize";
+
+/*Fuzzy*/
+"place_details_dashboard" = "Dashboard";
+"place_details_events" = "Events";
+"place_details_format_disconnected_device_in_multiple_zone_android" = "%d offline devices in multiple Areas. Tap to view devices.";
+"place_details_get_help" = "Get help";
+"place_details_graph" = "Graph";
+"place_details_member_pending_expiry_time" = "Invite expires in %@";
+"place_details_member_pending_expiry_time_days" = "%1$d days";
+"place_details_member_pending_expiry_time_days_with_hours" = "%1$d days and %2$d hours";
+"place_details_member_pending_expiry_time_hours" = "%d hours";
+"place_details_member_pending_expiry_time_minutes" = "%d minutes";
+"place_details_members_active" = "Active";
+"place_details_members_days" = "Last active %d days ago";
+"place_details_members_hours" = "Last active %d hours ago";
+"place_details_members_minutes" = "Last active %d minutes ago";
+"place_details_members_months" = "Last active %d months ago";
+"place_details_no_devices_paired" = "No devices";
+"place_details_offline" = "Offline";
+"place_details_people" = "People";
+"place_details_place_mode" = "Place mode";
+"place_details_proceed_with_degraded_zone" = "Proceed with %d degraded sensing Area?";
+"place_details_proceed_with_unhealthy_zone" = "Proceed with %d disabled sensing Area?";
+"place_details_security_mode" = "Security mode";
+"place_details_security_mode_description" = "Place mode shows the highest level of security across all Areas. Tap below to control the mode for all Areas.";
+"place_details_sensing_link_broken_in_multiple_zone" = "Sensors are not responding in multiple Areas. Tap to check on your Areas.";
+"place_details_sensing_link_broken_in_one_zone" = "Sensors are not responding in one Area. Tap to check on your Areas.";
+"place_details_sensors_are_not_responding" = "Sensor are not responding";
+
+/*Fuzzy*/
+"place_details_stay_mode_not_activated_all_zones" = "Arm (Stay) mode will only be activated for Areas with a Door Sensor";
+
+/*Fuzzy*/
+"place_details_stay_mode_not_activated_all_zones_description" = "Disarm mode will be activated for the other Areas without a Door Sensor.";
+"place_details_stay_mode_not_available" = "Arm (Stay) mode is not available";
+"place_details_stay_mode_not_available_description" = "A Door Sensor is required to activate the Arm (Stay) mode. Please select another mode.";
+"place_details_system_not_ready_to_secure_description" = "There are security device(s) either open, tampered, or offline. If you proceed, they may not trigger an intrusion alert despite being in Arm (Away) or Arm (Stay) mode.";
+"place_details_yes_proceed" = "Proceed anyway";
+"place_details_zone_in_mode" = "%1$@ in %2$@";
+
+/*place_event*/
+"place_event_date_filter" = "Date filter";
+"place_event_today" = "Today";
+"place_event_yesterday" = "Yesterday";
+
+/*Shown while checking for the events history availability on initial screen load*/
+"place_events_downloading_history" = "Checking events history";
+
+/*place_events*/
+"place_events_empty_description" = "No events recorded yet for %@";
+
+/*Tells that the screen is to be populated with the events history once it's available for the [place]*/
+"place_events_empty_history_placeholder" = "This is where events related to %@ would be archived";
+"place_events_empty_history_placeholder_android" = "This is where events related to %@ would be archived";
+
+/*place_events*/
+"place_events_search_not_found_description" = "Select a different date or clear the filter to view other events.";
+
+/*Place infromation: average floor area*/
+"place_information_avg_floor_area" = "Average floor area";
+
+/*Place infromation: floors*/
+"place_information_floors" = "Floors";
+
+/*Place infromation: name*/
+"place_information_name" = "Name";
+"place_information_pets" = "Pets";
+"place_information_search_time_zone" = "Search time zone";
+
+/*Place infromation: title*/
+"place_information_title" = "Place information";
+
+/*Place infromation: type*/
+"place_information_type" = "Type";
+
+/*Placeholder text when the description for Place Integration is missing. Expects [integration name].*/
+"place_integrations_description_placeholder" = "%@ might be linked with nami";
+
+/*Placeholder text when the instructions on how to enable Place Integration is missing.*/
+"place_integrations_enabling_placeholder" = "Check the provider instructions to enable";
+
+/*Tells if Place Integration is [enabled or disabled].*/
+"place_integrations_integration_is" = "Integration is %@";
+
+/*Place Integrations screen title.*/
+"place_integrations_integrations" = "Integrations";
+
+/*Place Integration is disabled.*/
+"place_integrations_is_disabled" = "disabled";
+
+/*Place Integration is enabled.*/
+"place_integrations_is_enabled" = "enabled";
+
+/*Text to present on a button disabling an integration.*/
+"place_integrations_want_disable" = "Disable integration";
+"place_mode_alert_dialog_stay_mode_not_all_zones_message" = "Disarm mode will be activated for the other Areas without a Door Sensor.";
+"place_mode_alert_dialog_stay_mode_not_all_zones_title" = "Arm (Stay) mode will only be activated for Areas with a Door Sensor";
+"place_mode_alert_dialog_stay_mode_warning_confirm" = "Got it";
+"place_mode_alert_dialog_stay_mode_warning_message" = "A Door Sensor is required to activate the Arm (Stay) mode. Please select another mode.";
+"place_mode_alert_dialog_stay_mode_warning_title" = "Arm (Stay) mode is not available";
+
+/*app_widget*/
+"place_mode_widget_alarm_intrusion_since" = "Since %@";
+
+/*app_widget*/
+"place_mode_widget_configure_select_place" = "Select a place";
+
+/*app_widget*/
+"place_mode_widget_configure_title" = "Widget";
+
+/*app_widget*/
+"place_mode_widget_data_not_available" = "No data available";
+
+/*app_widget*/
+"place_mode_widget_error_no_places" = "Create or join a place";
+
+/*app_widget*/
+"place_mode_widget_error_no_selected_place" = "Configure place";
+
+/*app_widget*/
+"place_mode_widget_error_user_logged_out" = "Log in to view your place";
+
+/*app_widget*/
+"place_mode_widget_log_in" = "Log in to view place mode";
+
+/*app_widget*/
+"place_mode_widget_sensing_warning" = "Tap to check on device issues";
+
+/*Place Overview grapth hints*/
+"place_overview_graph_now" = "Motion now";
+"place_overview_graph_thirty_secs_ago" = "30s ago";
+"place_overview_intrusion_detection_end_time" = "ended %@ ago";
+"place_overview_intrusion_detection_end_time_format_hour" = "%dh";
+"place_overview_intrusion_detection_end_time_format_minute" = "%dm";
+"place_overview_intrusion_detection_start_time" = "started %@ ago";
+"place_overview_intrusion_detection_title" = "Intrusion detection";
+
+/*Place Overview: motion section title*/
+"place_overview_motion" = "Motion";
+"place_overview_no_devices_has_been_added" = "No devices have been added yet";
+
+/*Place Overview: pair a kit to unlock motion sensing*/
+"place_overview_pair_kit_unlock_motion_sensing" = "Add devices to start securing your place";
+"place_overview_pairing_request_add_device_button" = "Add device";
+"place_overview_pairing_request_setup_a_kit" = "Set up my system";
+"place_overview_pairing_request_setup_a_kit_guide" = "Add devices to start securing your place";
+
+/*Place Overview: setup kit button*/
+"place_overview_setup_kit_button" = "Set up my system";
+
+/*Place Overview: zones section title*/
+"place_overview_zones" = "Areas";
+"place_pair_one_more_device_to_unlock_the_motion_sensing" = "Add another activity sensor to enable Wi-Fi motion sensing";
+"place_people_invite_title" = "Invite people";
+"place_pets" = "Pets";
+"place_pets_big_pets" = "Big pets";
+"place_pets_big_pets_imperial" = "Big pets > 20 lb";
+"place_pets_big_pets_metric" = "Big pets > 10 kg";
+"place_pets_both_small_big_pets" = "Both small and big pets";
+"place_pets_none" = "None";
+"place_pets_small_pets" = "Small pets";
+"place_pets_small_pets_imperial" = "Small pets < 20 lb";
+"place_pets_small_pets_metric" = "Small pets < 10 kg";
+
+/*Place properties: apartment*/
+"place_properties_apartment" = "Apartment";
+
+/*Place properties: house*/
+"place_properties_house" = "House";
+"place_setting_editPlace_toolbar" = "Edit place theme";
+"place_setting_header_add_devices" = "Add devices";
+"place_setting_header_add_devices_description" = "Expand your security system";
+"place_setting_header_general" = "General";
+"place_setting_header_setup" = "Setup";
+"place_setting_header_setup_a_device_description" = "Customize for sensing";
+"place_setting_header_setup_a_device_title" = "Set up a single device";
+"place_setting_header_setup_a_kit_description_disable_non_first_kit" = "Only available for first kit";
+"place_setting_header_setup_a_kit_description_disable_old_place" = "Create a new place to unlock this feature";
+"place_setting_header_setup_a_kit_description_enable" = "Set up nami devices to activate home monitoring";
+"place_setting_header_setup_a_kit_title" = "Set up my system";
+"place_setting_placeInformation" = "Place information";
+"place_setting_placeInformation_description" = "Name, icon, color, category, layout";
+"place_setting_placeInformation_edit_name" = "Edit place name";
+"place_setting_placeInformation_floor" = "Floor";
+"place_setting_placeInformation_name" = "Name";
+"place_setting_placeInformation_size" = "Average floor area";
+"place_setting_placeInformation_type" = "Type";
+"place_settings_clear_thread_credential" = "Clear thread credential";
+
+/*Place settings: delete place*/
+"place_settings_delete_place_button" = "Delete place";
+"place_settings_devices_description_android" = "%d device";
+
+/*Edit place: title*/
+"place_settings_edit_place" = "Customize place";
+
+/*Edit place: place settings menu description*/
+"place_settings_edit_place_description" = "Name, category, color, icon";
+
+/*Edit place: engine*/
+"place_settings_engine" = "Engine";
+
+/*Place settings: sensitivity engine not supported*/
+"place_settings_engine_does_not_support_sensitivity" = "Unavailable for motion engine";
+"place_settings_entry_exit_delay" = "Entry & exit delays";
+"place_settings_last_admin_leave_dialog_description" = "You're the last Administrator in %@. To leave, please assign another User as the Administrator to manage this place.";
+"place_settings_last_admin_leave_dialog_title" = "Assign a new Administrator before leaving";
+
+/*Place settings: leave place*/
+"place_settings_leave_place_button" = "Leave place";
+"place_settings_manage_devices" = "Manage devices";
+
+/*Edit place: motion*/
+"place_settings_motion" = "Motion";
+"place_settings_no_devices_found_dialog_description" = "This feature will be available after a device is added.";
+"place_settings_no_devices_found_dialog_title" = "No devices found";
+"place_settings_pins" = "PINs";
+
+/*Place settings: place settings*/
+"place_settings_place_settings" = "Place settings";
+
+/*Place settings: General section*/
+"place_settings_section_general" = "General";
+
+/*Place settings: Setup section*/
+"place_settings_section_setup" = "Setup";
+
+/*Edit place: security*/
+"place_settings_security" = "Security";
+
+/*Place settings: sensitivity*/
+"place_settings_sensitivity" = "Sensitivity";
+
+/*Place settings: sensitivity level*/
+"place_settings_sensitivity_level" = "Level %@";
+
+/*Place settings: set up a kit*/
+"place_settings_setup_kit" = "Set up my system";
+
+/*Place settings: title*/
+"place_settings_title" = "Place settings";
+
+/*Place settings: update wifi network*/
+"place_settings_update_wifi_network" = "Update Wi-Fi network";
+
+/*Place settings: update wifi network description*/
+"place_settings_update_wifi_network_description" = "Change Wi-Fi network of an Area";
+"place_settings_zero_device_description" = "0 device";
+"place_settings_zones_description_android" = "in %d Area";
+
+/*Invite people button*/
+"place_users_invitation_invite_people" = "Invite people";
+
+/*Invite people button tile description on reaching the [max number] of users in place*/
+"place_users_invitation_users_limit_reached" = "For now, the number of users per place is limited to %@.";
+"place_users_invitation_users_limit_reached_android" = "For now, the number of users per place is limited to %@.";
+
+/*Place Users roles section title*/
+"place_users_role_role" = "Role";
+"place_widget_door_sensor_is_required_to_activate_stay_mode" = "A Door Sensor is required to activate the Arm (Stay) mode.";
+"place_widget_stay_mode_activated_for_zones_without_door_sensor" = "Areas without Door Sensor in Disarm mode";
+
+/*Place Category*/
+"places_category_apartment" = "Apartment";
+"places_category_business" = "Business";
+"places_category_detached_house" = "Detached House";
+
+/*Place Category*/
+"places_category_eating" = "Café";
+
+/*Place Category*/
+"places_category_house" = "House";
+
+/*Place Category*/
+"places_category_shopping" = "Shopping";
+"places_category_townhouse" = "Townhouse";
+
+/*Place Category*/
+"places_category_unknown" = "Unknown";
+
+/*Place Category*/
+"places_category_work" = "Work";
+"plan_device_placement_avoid_placement_near_electronic" = "Avoid placement near electronic appliances or large metal objects";
+"plan_device_placement_guide_1_imperial" = "Identify 2 power sockets on the same floor 10-30ft apart";
+"plan_device_placement_guide_1_metric" = "Identify 2 power sockets on the same floor 3-10m apart ";
+"plan_device_placement_guide_2_imperial" = "One socket to be within 30ft of both your front door and Wi-Fi access point";
+"plan_device_placement_guide_2_metric" = "One socket to be within 10m of both your front door and Wi-Fi access point";
+"plan_device_placement_guide_3_imperial" = "One socket to be within 30 ft of both your Wi-Fi access point and the selected door for the Door Sensor";
+"plan_device_placement_guide_3_metric" = "One socket to be within 10m of both your Wi-Fi access point and the selected door for the Door Sensor";
+"plan_device_placement_guide_4_imperial" = "Both sockets to be 10-30ft from existing activity sensors in %@";
+"plan_device_placement_guide_4_metric" = "Both sockets to be 3-10m from existing activity sensors in %@";
+"plan_device_placement_guide_5_imperial" = "One socket to be within 30ft of the selected door for the Door Sensor";
+"plan_device_placement_guide_5_metric" = "One socket to be within 10m of the selected door for the Door Sensor";
+"plan_device_placement_title" = "Plan device placement";
+"profile_account" = "Account";
+
+/*Account deletion explanaition text.*/
+"profile_account_management_account_deletion_description" = "You may delete your account. If you proceed, your account and all associated data will be permanently deleted. This action is irreversible.";
+
+/*Account deletion confirmation button text.*/
+"profile_account_management_confirm_account_deletion" = "Delete account";
+
+/*Account deletion alert description text.*/
+"profile_account_management_delete_account_alert_description" = "Do you want to delete account? Your account and all the linked data would be deleted permanently. This action is irreversible!";
+
+/*Account deletion alert title.*/
+"profile_account_management_delete_account_alert_title" = "Delete account";
+
+/*Delete account button text.*/
+"profile_account_management_delete_account_button" = "Delete";
+
+/*Account management screen title.*/
+"profile_account_management_title" = "Account management";
+"profile_app_version" = "App version";
+
+/*User profile: a button to show authentication methods linked to account*/
+"profile_authentication" = "Authentication";
+
+/*User profile: title for the inactive button when the key has just been copied.*/
+"profile_copied" = "Copied!";
+"profile_copied_to_clipboard" = "Copied to clipboard";
+
+/*User profile: title for the button to copy the recovery key.*/
+"profile_copy_recovery_key" = "Copy recovery key";
+"profile_developer_mode_alert_description" = "You will lose access to features that are only available under developer mode.";
+"profile_developer_mode_alert_title" = "Deactivate developer mode?";
+
+/*User profile: developer mode.*/
+"profile_developer_mode_deactivate_action" = "Deactivate";
+
+/*User profile: developer mode.*/
+"profile_developer_mode_deactivate_alert_description" = "You will lose access to features that are only available under developer mode.";
+
+/*User profile: developer mode.*/
+"profile_developer_mode_deactivate_alert_title" = "Deactivate developer mode?";
+
+/*User profile: developer mode.*/
+"profile_developer_mode_title" = "Developer mode";
+
+/*User profile: a button to show an input for signin request authorization.*/
+"profile_go_confirm_signin_request" = "Authorize sign-in request";
+
+/*User profile: help & feedback*/
+"profile_help_and_feedback" = "Chat with us";
+"profile_help_n_feedback" = "Chat with us";
+
+/*User profile: section title for legal*/
+"profile_legal" = "Legal";
+
+/*User profiel: Link Account guide text*/
+"profile_link_account_guide_text" = "By connecting your accounts, you will have the option to log in with either of the accounts going forward.";
+
+/*User profile: linked 3rd party account*/
+"profile_linked_3rd_party_account" = "Linked 3rd party account";
+"profile_linked_third_party_accounts" = "Linked third-party account";
+"profile_linked_third_party_accounts_not_link_yet" = "You haven’t linked your account yet.";
+"profile_linked_third_party_accounts_unlink" = "Unlink";
+
+/*User profile: No linked accounts message*/
+"profile_no_linked_accounts_message" = "You haven't linked your account yet.";
+
+/*User profile: privacy policy*/
+"profile_privacy_policy" = "Privacy policy";
+
+/*User profile recovery key section title.*/
+"profile_recovery_info_title" = "Recovery info";
+
+/*User profile: header for the recovery key section.*/
+"profile_recovery_key" = "Recovery key";
+
+/*User profile: help text for the user to remember to copy their recovery key.*/
+"profile_recovery_key_hint" = "You will need this key to restore your account if you sign out or lose your phone";
+
+/*User profile: section title for account*/
+"profile_section_title_account" = "Account";
+
+/*User profile: section title for help*/
+"profile_section_title_help" = "Help";
+
+/*User profile: send a test push notification from the cloud.*/
+"profile_send_test_push" = "Get a push notification";
+"profile_settings" = "Settings";
+
+/*User profile: title for the sign out button.*/
+"profile_sign_out" = "Sign out";
+"profile_support_article" = "FAQ";
+
+/*User profile: support articles*/
+"profile_support_articles" = "FAQ";
+
+/*User profile: terms of services*/
+"profile_terms_of_services" = "Terms of service";
+
+/*User profile: Unlink warning alert confirm text*/
+"profile_unlink_alert_confirm" = "Yes";
+
+/*User profile: Unlink warning alert message*/
+"profile_unlink_alert_message" = "You will loose your account, do you want to proceed";
+"profile_unlink_alert_message_android" = "You will lose your account, do you want to proceed";
+
+/*User profile: Unlink warning alert title*/
+"profile_unlink_alert_title" = "Unlink account";
+"profile_user" = "User";
+"profile_username" = "Profile name";
+
+/*User profile: replaces the name of the user of the app, shown instead of their user name.*/
+"profile_username_you" = "You";
+
+/*QR scanner: hint text for where to find the QR code.*/
+"qrscanner_where_qr" = "Scan the QR code on the bottom of your device.";
+
+/*Enter recovery key: confirm button for using the entered recovery key.*/
+"recovery_button_recover" = "Next";
+"recovery_error" = "Error occurred! The recovery key is not valid";
+
+/*Enter recovery key: placeholder for the text field when it's empty.*/
+"recovery_recovery_key_placeholder" = "Recovery key";
+"recovery_text_guide" = "Enter your recovery key to retrieve your account";
+"remove_device_change_thread_network" = "Change Thread network";
+"remove_device_change_thread_network_description" = "The remaining devices in %@ will automatically connect to other available Thread network. Sensing will remain functioning.";
+"remove_device_data_removed_warning_thread" = "This device and its associated data will be removed from your place. Removing this Thread border router will also:";
+"remove_device_data_removed_warning_thread_in_zone" = "Since this device also functions as the Thread border router for %@, all devices in this Area may be disconnected.";
+"remove_device_data_removed_warning_wifi" = "This device and its associated data will be removed from your place.";
+"remove_device_disable_sensing_function" = "Disable sensing function";
+"remove_device_disable_sensing_function_description" = "The devices in %@ can no longer collect sensing data.";
+
+/*Remove device: remove <device_name>?*/
+"remove_device_remove_device_name" = "Remove %@?";
+"remove_device_remove_this_device" = "Remove this device";
+"remove_device_remove_thread_network" = "Remove Thread network";
+"remove_device_remove_thread_network_description" = "The remaining devices in %@ will be disconnected from the Thread network.";
+"remove_device_restore_sensing_in_zone" = "To restore sensing in %@";
+"remove_device_restore_sensing_in_zone_description" = "Set up another Thread device as the border router";
+"report_false_alarm_by_continuing_intrusion_will_be_disarmed" = "By continuing, the intrusion will be disarmed.";
+"report_false_alarm_reporting_as_false_alarm_will_also_disarm_the_intrusion" = "Reporting as false alarm will also disarm the intrusion.";
+"report_false_alarm_the_intrusion_was_triggered_by" = "The intrusion was triggered by";
+
+/*Room name*/
+"room_name_placeholder" = "";
+
+/*Room selection: title*/
+"room_selection_title" = "Where will this device be placed?";
+"rooms_category_bathroom" = "Bathroom";
+"rooms_category_bedroom" = "Bedroom";
+"rooms_category_dinning_area" = "Dining area";
+"rooms_category_kitchen" = "Kitchen";
+"rooms_category_living_room" = "Living room";
+"rooms_category_office" = "Office";
+"rooms_category_other" = "Other";
+"rooms_category_retail_space" = "Retail space";
+"rooms_category_store_room" = "Storeroom";
+"rooms_category_unknown" = "Unknown";
+"security_mode_add_more_zone_to_show_zone_settings" = "Your place has only 1 Area. To customize security modes per Area, you can add more Areas with devices.";
+"security_mode_degraded_zone" = "Reduced coverage: motion sensing is active, but the area covered is smaller than usual.";
+"security_mode_disabled_zone" = "No coverage: motion sensing is not available.";
+"security_mode_discard" = "Discard";
+"security_mode_discard_changes" = "Discard unsaved changes?";
+"security_mode_discard_changes_description" = "If you proceed, you will lose all unsaved changes.";
+"security_mode_explanation_bottom_sheet_got_it" = "Got it";
+"security_mode_explanation_bottom_sheet_learn_more" = "Learn more";
+"security_mode_explanation_got_it" = "Got it";
+"security_mode_explanation_learn_more" = "Learn more";
+"security_mode_explanation_status_armed_description" = "Alarm will sound and intrusion alerts will be sent for all activities";
+"security_mode_explanation_status_standby_description" = "No alerts will be sent but devices are recording activity";
+"security_mode_explanation_status_stay_description" = "Alarm will sound and intrusion alerts will be sent only if a Door Sensor is opened";
+"security_mode_explanation_sub_title" = "Control how your place is protected";
+"security_mode_explanation_title" = "Security modes";
+"security_mode_status_armed_description" = "Alarm will sound and intrusion alerts will be sent for all activities";
+"security_mode_status_aware_description" = "Receive notifications for all motion";
+"security_mode_status_relaxed_description" = "No notifications for all motion";
+"security_mode_status_standby_description" = "No alerts will be sent but devices are recording activity";
+"security_mode_status_stay_description" = "Alarm will sound and intrusion alerts will be sent only if a Door Sensor is opened";
+"security_mode_zone_mode" = "Area mode";
+"security_mode_zone_mode_description" = "Tap below to control individual Area modes.";
+
+/*Contact sensor commissioning feature*/
+"select_device_setup_description" = "Select a device to set up";
+
+/*Select floor area: description*/
+"select_floor_area_description" = "For multi-storey places, select the average area of each floor.";
+
+/*Select floor area: header*/
+"select_floor_area_header" = "What is your floor area?";
+
+/*Select floor area: option 1 imperial*/
+"select_floor_area_option1_imperial" = "1 - 500 sq. ft";
+
+/*Select floor area: option 1 metric*/
+"select_floor_area_option1_metric" = "1 - 50 sq. m";
+
+/*Select floor area: option 2 imperial*/
+"select_floor_area_option2_imperial" = "500 - 1,000 sq. ft";
+
+/*Select floor area: option 2 metric*/
+"select_floor_area_option2_metric" = "51 - 100 sq. m";
+
+/*Select floor area: option 3 imperial*/
+"select_floor_area_option3_imperial" = "1001 - 1,500 sq. ft";
+
+/*Select floor area: option 3 metric*/
+"select_floor_area_option3_metric" = "101 - 150 sq. m";
+
+/*Select floor area: option 4 imperial*/
+"select_floor_area_option4_imperial" = "More than 1,500 sq. ft";
+
+/*Select floor area: option 4 metric*/
+"select_floor_area_option4_metric" = "More than 150 sq. m";
+
+/*Select floor number: description*/
+"select_floor_number_description" = "This helps us recommend better device placement to secure your place.";
+
+/*Select floor number: header*/
+"select_floor_number_header" = "How many floors do you have?";
+
+/*Select kit: description*/
+"select_kit_description" = "Select a kit to set up";
+
+/*Select kit: security kit*/
+"select_kit_monitoring_kit" = "2 SensePlugs, 1 Door Sensor";
+
+/*Select kit: security kit*/
+"select_kit_monitoring_kit_description" = "2 SensePlugs, 1 Door Sensor";
+
+/*Select kit: security kit*/
+"select_kit_security_kit" = "Security kit";
+
+/*Select kit: security kit*/
+"select_kit_security_kit_description" = "1 Alarm Pod, 1 SensePlug, 1 Door Sensor";
+
+/*Select kit: title*/
+"select_kit_title" = "What are you setting up?";
+
+/*Create place: header text when selecting the icon in a place category.*/
+"select_place_icon_header" = "Select place icon";
+
+/*Create place: header text when selecting the theme for a new place.*/
+"select_place_theme_header" = "Select color for place";
+
+/*Create place: select the place type description*/
+"select_place_type_description" = "Select the place type";
+
+/*Create place: header text when selecting the place category.*/
+"select_place_type_header" = "What kind of place is this?";
+
+/*Create room: header text when selecting the room category.*/
+"select_room_category_header" = "What type of room will this device be placed in?";
+
+/*Create room: header text when selecting the room icon.*/
+"select_room_icon_header" = "Select room icon";
+
+/*Select user icon: Choose profile image*/
+"select_user_icon_choose_profile_image" = "Profile icon";
+
+/*Select user icon: Prompt message*/
+"select_user_icon_prompt_message" = "Let's customize your profile!";
+"select_zone_description" = "Devices in the same Area must be placed on the same floor";
+"select_zone_format_accessory_devices" = "%d accessory";
+"select_zone_format_sensing_devices" = "%d activity sensor";
+"select_zone_format_thread_devices" = "%d Thread device";
+"select_zone_format_wifidevices" = "%d Wi-Fi device";
+"select_zone_title" = "Select or create an Area";
+"sensing" = "Sensing";
+"sensitivity_settings_description_unavailable" = "This is where you will be able to change the sensitivity setting for your installation. Please pair nami devices to unlock this feature.";
+"sensitivity_settings_engine_unavailable" = "This is were you will be able to change the sensing engine used in your installation. Please pair nami devices to unlock this feature.";
+"sensitivity_settings_level_android" = "Level %@";
+
+/*Sensitivity settings: max title*/
+"sensitivity_settings_max_title" = "Max sensitivity";
+"sensitivity_settings_max_title_android" = "Maximum";
+
+/*Sensitivity settings: min title*/
+"sensitivity_settings_min_title" = "Min sensitivity";
+"sensitivity_settings_min_title_android" = "Minimum";
+
+/*Sensitivity settings: sensitivity level description*/
+"sensitivity_settings_sensitivity_level_description" = "Decrease the sensitivity level to filter out small and brief motions. This setting impacts graphs and notifications.";
+
+/*Sensitivity settings: success message*/
+"sensitivity_settings_success" = "Sensitivity sucessfully changed";
+
+/*Sensitivity settings: title
+static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
+//static let descriptionOneToThree = LocalizedKey("sensitivity_settings.one_to_three_description")
+//static let rangeFourToSix = LocalizedKey("sensitivity_settings.four_to_six")
+//static let descriptionFourToSix = LocalizedKey("sensitivity_settings.four_to_six_description")
+//static let rangeSevenToNine = LocalizedKey("sensitivity_settings.seven_to_nine")
+//static let descriptionSevenToNine = LocalizedKey("sensitivity_settings.seven_to_nine_description")
+//static let rangeTenToTwelve = LocalizedKey("sensitivity_settings.ten_to_twelve")
+//static let descriptionTenToTwelve = LocalizedKey("sensitivity_settings.ten_to_twelve_description*/
+"sensitivity_settings_title" = "Sensitivity";
+"setup_a_device_room_selection_sub_tittle" = "Choose a location for your device. This will help you organize your devices.";
+"setup_a_device_room_selection_tittle" = "Where will this device be placed?";
+"setup_a_device_toolbar_title" = "Device setup";
+"setup_a_kit_feature_not_available_description" = "Please create a new place or pair devices individually from the place settings.";
+"setup_a_kit_feature_not_available_header" = "Feature not available";
+"setup_a_kit_how_device_work_description" = "nami sensing uses Wi-Fi signals to detect motion in an area, known as a sensing Area.";
+"setup_a_kit_how_device_work_tittle" = "How nami sensing works";
+"setup_a_kit_how_device_works_explanation_content1" = "Designed to help you secure your place and front door";
+"setup_a_kit_how_device_works_explanation_content2" = "Place devices on first floor to optimize security";
+"setup_a_kit_how_device_works_explanation_content3" = "Provides additional security for your place and any entry door";
+"setup_a_kit_how_device_works_explanation_content4" = "Monitor additional areas of your place and any entry door";
+"setup_a_kit_how_device_works_explanation_content5" = "Provides additional security for a room and any entry door.";
+"setup_a_kit_how_device_works_guide_content1" = "Each sensing Area covers one floor";
+
+/*Fuzzy*/
+"setup_a_kit_how_device_works_guide_content2" = "Each sensing Area requires at least two nami devices";
+
+/*Fuzzy*/
+"setup_a_kit_how_device_works_guide_content3" = "Each sensing Area can have its own distinct settings";
+"setup_a_kit_how_device_works_guide_content4" = "Devices in an Area must use the same Wi-Fi access point";
+
+/*Fuzzy*/
+"setup_a_kit_how_device_works_guide_content5" = "Use the access point that is most central in the area you want to cover";
+"setup_a_kit_how_device_works_start" = "Start setting up";
+"setup_a_kit_how_to_place_device_add_device" = "Add %@";
+"setup_a_kit_how_to_place_device_add_first_sense_plug" = "Add first SensePlug";
+"setup_a_kit_how_to_place_device_add_second_sense_plug" = "Add second SensePlug";
+"setup_a_kit_how_to_place_device_guide_content1_first_paired_device" = "Choose the Wi-Fi access point most central in the area you want to cover";
+"setup_a_kit_how_to_place_device_guide_content2_first_paired_device_imperial" = "Place the first device at most 30 ft away from your selected access point";
+"setup_a_kit_how_to_place_device_guide_content2_first_paired_device_metric" = "Place the first device at most 10 m away from your selected access point";
+"setup_a_kit_how_to_place_device_guide_content3_non_first_paired_device" = "Avoid placing device directly behind furniture or electronics";
+"setup_a_kit_how_to_place_device_guide_first_device" = "How to place first device";
+"setup_a_kit_how_to_place_device_guide_first_device_in_zone" = "First device in this Area";
+"setup_a_kit_how_to_place_device_guide_non_first_device" = "Remaining devices setup";
+"setup_a_kit_how_to_place_device_non_first_paired_device_guide_content1" = "Place devices on the same floor";
+"setup_a_kit_how_to_place_device_non_first_paired_device_guide_content2_imperial" = "Ensure at least 10 ft between two devices";
+"setup_a_kit_how_to_place_device_non_first_paired_device_guide_content2_metric" = "Ensure at least 3m between two devices";
+"setup_a_kit_how_to_place_device_non_first_widar_has_br_guide_content_3" = "Avoid placing device on or near metallic surfaces";
+"setup_a_kit_introduce_zone_content1" = "Areas help you group and control devices placed in different rooms";
+"setup_a_kit_introduce_zone_content2" = "Each Area has its own security mode and motion data";
+"setup_a_kit_introduce_zone_content3" = "All 3 devices will be added to the same Area";
+"setup_a_kit_introduce_zone_content4" = "Both devices will be added to the same Area";
+"setup_a_kit_introduce_zone_content5" = "Add them into an existing Area or create a new Area";
+"setup_a_kit_introduce_zone_title" = "Introduction to Areas";
+"setup_a_kit_kit_selection_tittle" = "What are you setting up?";
+"setup_a_kit_select_your_preferred_zone_title" = "Select your preferred Area";
+
+/*set up a kit*/
+"setup_a_kit_toolbar_tittle" = "System setup";
+"setup_a_kit_where_to_setup_add_guide" = "Add your kit to";
+"setup_a_kit_where_to_setup_one_floor_title" = "Set up sensing Area";
+"setup_a_kit_where_to_setup_placeSize_large_coverage_1_floor" = "This kit covers up to %@";
+"setup_a_kit_where_to_setup_placeSize_large_coverage_more_floors" = "Each kit covers up to %@ per floor";
+"setup_a_kit_where_to_setup_placeSize_small_coverage_1_floor" = "This kit covers an entire floor";
+"setup_a_kit_where_to_setup_sub_tittle_more_floor_monitoring" = "Devices in the same Area must be placed on the same floor";
+"setup_a_kit_where_to_setup_sub_tittle_more_floor_security" = "Consider intrusion-prone areas you want to secure";
+"setup_a_kit_where_to_setup_subtitle_monitor_one_floor_big_size" = "Choose a part of your place you want to detect movement in.";
+
+/*Fuzzy*/
+"setup_a_kit_where_to_setup_subtitle_one_floor_small_size" = "Devices in the same Area must be placed on the same floor";
+
+/*Fuzzy*/
+"setup_a_kit_where_to_setup_subtitle_security_one_floor_big_size" = "Choose a part of your place you want to detect movement in. Consider covering areas where intruders are most likely to enter.";
+"setup_a_kit_where_to_setup_tittle" = "Select or create an Area";
+"setup_kit_kit_tracker_all_devices_added" = "All devices added";
+"setup_kit_security_mode_control_how_your_place_is_protected" = "Control how your place is protected";
+"setup_kit_security_mode_select_security_mode_for_place" = "Select a security mode for your place";
+"setup_kit_security_mode_what_is_security_mode" = "What are security modes?";
+"setup_kit_security_mode_you_can_change_later" = "You can change this security mode later";
+"setup_kit_test_system_complete_test" = "Complete test";
+"setup_kit_test_system_door_sensor_description" = "Open the door and the icon on the right should change to an open door.";
+"setup_kit_test_system_door_sensor_faq" = "The icon is not changing";
+"setup_kit_test_system_motion_sensing_description" = "Move around the area monitored by the activity sensors, then stop moving. Check the graph below for the change.";
+"setup_kit_test_system_motion_sensing_faq" = "Motion sensing is not working";
+"setup_kit_test_system_preparing_device" = "Preparing device...";
+"setup_kit_test_system_siren" = "Siren";
+"setup_kit_test_system_siren_description" = "Tap on ‘Sound siren’ to check that the siren is working.";
+"setup_kit_test_system_siren_faq" = "I don’t hear the siren";
+"setup_kit_test_system_skip_all" = "Skip all";
+"setup_kit_test_system_sound_siren" = "Sound siren";
+"setup_kit_test_system_stop_siren" = "Stop siren";
+"setup_kit_test_system_title" = "Test system";
+
+/*Setup kit: title*/
+"setup_kit_title" = "System setup";
+"setup_kit_your_system_is_ready_to_secure_your_place" = "Your system is ready to secure your place";
+"setup_kit_youre_all_set" = "You’re all set!";
+"setup_motion_sensing_first_bss_first_kit" = "The Alarm Pod and SensePlug form a sensing area that detects motion";
+"setup_motion_sensing_first_bss_non_first_kit_has_br" = "The Alarm Pod and SensePlug will expand the sensing area for %@";
+"setup_motion_sensing_first_bss_non_first_kit_no_br" = "The Alarm Pod and SensePlug form a sensing area that detects motion";
+"setup_motion_sensing_first_hms_first_kit" = "The 2 SensePlugs form a sensing area that detects motion";
+"setup_motion_sensing_first_hms_non_first_kit_has_br" = "The 2 SensePlugs will expand the sensing area for %@";
+"setup_motion_sensing_first_hms_non_first_kit_no_br" = "The 2 SensePlugs form a sensing area that detects motion";
+"setup_motion_sensing_first_not" = "not";
+"setup_motion_sensing_first_the_door_sensor_does_not_detect_motion" = "The Door Sensor does not detect motion.";
+"setup_motion_sensing_first_the_door_sensor_does_not_detect_motion_markdown" = "The Door Sensor does **not** detect motion.";
+"setup_motion_sensing_first_title" = "Set up motion sensing first";
+"setup_motion_sensing_first_widar_first_kit" = "The WiDAR Sensor detects motion in the room where it is placed";
+"setup_motion_sensing_first_widar_non_first_kit_has_br_1" = "The WiDAR Sensor works with other existing devices in %@ to expand the sensing area";
+"setup_motion_sensing_first_widar_non_first_kit_has_br_2" = "It can also independently detect motion in the room where it is placed";
+"setup_motion_sensing_first_widar_non_first_kit_no_br" = "The WiDAR Sensor detects motion in the room where it is placed";
+
+/*Sign up: anonymous account text for other sign up options*/
+"sign_up_anonymous_account_text" = "You can sign in anonymously to protect your privacy.\n\n\nAfter every login, a new recovery key is generated. To ensure continuous access to your account, copy your new recovery key under ‘Profile > Authentication’ before logging out, and store it safely for future use.\n\n\nIf you log out —whether by switching phones, reinstalling the app, or due to an unexpected issue — you’ll need the latest key to recover your account.";
+"sign_up_anonymous_account_text1" = "You can sign in anonymously to protect your privacy.";
+"sign_up_anonymous_account_text2" = "However it has downsides, if you logout (occasionally, by changing the phone, or just because of the bug in the app) we will not be able to retrieve your account unless you use the security key.";
+"sign_up_anonymous_account_text3" = "To prevent this, please go to the Profile page -> Copy security key and save it in the safe place";
+
+/*Sign up: button title for entering recovery key.*/
+"sign_up_button_recovery_key" = "Enter recovery key";
+
+/*Sign up: button title for signing up anonymously*/
+"sign_up_button_sign_up_anonymous" = "Sign up anonymously";
+
+/*Sign up: Continue with Apple*/
+"sign_up_continue_with_apple" = "Continue with Apple";
+
+/*Sign up: Continue with Google*/
+"sign_up_continue_with_google" = "Continue with Google";
+
+/*Sign up: other sign up options title*/
+"sign_up_other_sign_up_options" = "Other sign in options";
+
+/*Sign up: Privacy policy*/
+"sign_up_privacy_policy" = "Privacy policy";
+
+/*Sign up: Terms of Service*/
+"sign_up_terms_of_service" = "Terms of service";
+
+/*Sign up: Terms of Service and privacy policy text part 1*/
+"sign_up_tos_and_privacy_part_1" = "By continuing, you agree to our";
+
+/*Sign up: Terms of Service and privacy policy text part 2*/
+"sign_up_tos_and_privacy_part_2" = "Terms of service";
+"sign_up_tos_and_privacy_part_2_android" = "Terms of service";
+
+/*Sign up: Terms of Service and privacy policy text part 3*/
+"sign_up_tos_and_privacy_part_3" = "and acknowledge that you have read our";
+
+/*Sign up: Terms of Service and privacy policy text part 4*/
+"sign_up_tos_and_privacy_part_4" = "Privacy policy";
+"sign_up_tos_and_privacy_part_4_android" = "Privacy policy";
+
+/*Sign up: welcome text in the middle of the screen.*/
+"sign_up_welcome_text" = "welcome to nami";
+
+/*Status decription: armed and alert.*/
+"status_alert" = "Arm (Away)";
+"status_armed" = "Arm (Away)";
+
+/*Status hint in Alert Switcher: Armed.*/
+"status_armed_hint" = "Signal intrusions and trigger alarms";
+
+/*Status hint in Alert Switcher: Armed when disabled.*/
+"status_armed_hint_disabled" = "Unavailable—coming in a later version";
+
+/*Status description: sending notifications, no alarm.*/
+"status_aware" = "Aware";
+
+/*Status hint in Alert Switcher: Aware.*/
+"status_aware_hint" = "Soft notifications";
+
+/*Status shown in alert while mode is switching*/
+"status_in_switching_mode" = "You have set %1$@ to %2$@ mode. Connection is in progress.";
+
+/*Status description: unarmed.*/
+"status_relaxed" = "Relaxed";
+
+/*Status hint in Alert Switcher: Relaxed.*/
+"status_relaxed_hint" = "Sensors activated";
+"status_standby" = "Disarm";
+"status_standby_hint" = "No notifications";
+"status_stay" = "Arm (Stay)";
+"status_stay_hint" = "Soft notifications";
+"status_stay_hint_disabled" = "";
+"system_setup_basic_security_system" = "Alarm Starter Pack";
+"system_setup_basic_security_system_description" = "1 Alarm Pod, 1 SensePlug, 1 Door Sensor";
+"system_setup_home_monitoring_system" = "Extension Pack";
+"system_setup_home_monitoring_system_description" = "2 SensePlugs, 1 Door Sensor";
+"system_setup_others" = "Others";
+"system_setup_setup_single_device_dialog_button" = "Got it";
+"system_setup_setup_single_device_dialog_description" = "You will not be guided with optimized device placement when setting up devices individually. If unsure, we recommend selecting the options above to set up by the system instead for a smoother experience.";
+"system_setup_setup_single_device_dialog_title" = "Important note";
+"system_setup_widar_door_sensor" = "WiDAR + Door Sensor kit";
+"system_setup_widar_door_sensor_description" = "1 WiDAR Sensor, 1 Door Sensor";
+"tabbar_title_automation" = "Automation";
+"tabbar_title_place" = "Place";
+"tabbar_title_settings" = "Settings";
+"time_zone_no_results_found" = "No results found";
+"time_zone_search_time_zone" = "Search time zone";
+
+/*Update Wifi error: device already updated*/
+"update_wifi_device_already_updated" = "This device has been updated already. Please scan the QR code of a device in %1$@";
+
+/*Update Wifi error: device does not belong to zone*/
+"update_wifi_device_not_in_zone" = "This device does not belong to the selected Area. Please scan the QR code of a device in %1$@";
+
+/*Update Wifi: confirm button*/
+"update_wifi_how_it_works_confirm_button" = "Continue";
+
+/*Update Wifi: description*/
+"update_wifi_how_it_works_description" = "Make changes to the Wi-Fi network that an Area of devices are connected to";
+
+/*Update Wifi: help button*/
+"update_wifi_how_it_works_help" = "Help";
+
+/*Update Wifi: instruction bullet point 1*/
+"update_wifi_how_it_works_instruction_bullet_point_1" = "You wish to use another Wi-Fi network";
+
+/*Update Wifi: instruction bullet point 2*/
+"update_wifi_how_it_works_instruction_bullet_point_2" = "You wish to use another Wi-Fi access point";
+
+/*Update Wifi: instruction bullet point 3*/
+"update_wifi_how_it_works_instruction_bullet_point_3" = "You change Wi-Fi network passwords";
+
+/*Update Wifi: instruction bullet point 4*/
+"update_wifi_how_it_works_instruction_bullet_point_4" = "You switch routers.";
+
+/*Update Wifi: instruction part 1*/
+"update_wifi_how_it_works_instruction_part_1" = "Connect all devices in an Area to a new or existing Wi-Fi network without losing current settings. Update Wi-Fi when:";
+
+/*Update Wifi: instruction part 2*/
+"update_wifi_how_it_works_instruction_part_2" = "Once you update a device, you must update all other devices in that Area.";
+
+/*Update Wifi: how it works*/
+"update_wifi_how_it_works_instruction_title" = "How it works";
+
+/*Update Wifi: title*/
+"update_wifi_how_it_works_title" = "Update Wi-Fi network";
+
+/*Update Wifi error: locate device button*/
+"update_wifi_locate_device_button" = "Locate device";
+"update_wifi_network_commissioning_mode_customize_place" = "Edit name";
+"update_wifi_network_device_qr_code_device_already_repaired_android" = "This device has been updated already. Please scan the QR code of a device in %@";
+"update_wifi_network_device_qr_code_device_not_in_zone_android" = "This device does not belong to the selected Area. Please scan the QR code of a device in %@";
+"update_wifi_network_how_it_works_guide_subtitle" = "Make changes to the Wi-Fi network that an Area of devices is connected";
+"update_wifi_network_reset_device_guide_plug_type" = "For plug";
+"update_wifi_network_reset_device_guide_pod_type" = "For sentinel pod";
+"update_wifi_network_reset_device_guide_pod2" = "Use a pin to press and hold the reset button. The LED will flash dark blue.";
+"update_wifi_network_update_successfully_header1" = "Perfect! Your device is now updated.";
+"update_wifi_network_zone_status_guide_completed_update" = "Wi-Fi credential updated!";
+"update_wifi_network_zones_selection_guide" = "Devices in an Area must be connected to the same Wi-Fi network. Update all devices in an Area keep existing settings.";
+"update_wifi_not_nami_qr_code_no_zone" = "This QR code does not match a nami device.";
+
+/*Update Wifi error: QR code error*/
+"update_wifi_qr_code_error" = "QR code error";
+
+/*Update Wifi error: QR does not match a nami device*/
+"update_wifi_qr_does_not_match" = "This QR code does not match a nami device.";
+
+/*Update Wifi: reset device - confirm button*/
+"update_wifi_reset_device_confirm_button" = "Next";
+
+/*Update Wifi: reset device description*/
+"update_wifi_reset_device_description" = "Follow the instructions below to prepare your device for update.";
+
+/*Update Wifi: reset device - how to reset*/
+"update_wifi_reset_device_how_to_reset" = "How to reset %1$@";
+
+/*Update Wifi: plug reset instructions 1*/
+"update_wifi_reset_device_plug_reset_instructions_1" = "Press and hold the power button.";
+
+/*Update Wifi: plug reset instructions 2*/
+"update_wifi_reset_device_plug_reset_instructions_2" = "Keep the power button pressed while connecting the plug to power.";
+
+/*Update Wifi: plug reset instructions 3*/
+"update_wifi_reset_device_plug_reset_instructions_3" = "Hold for 5 seconds until you hear a click sound.";
+
+/*Update Wifi: plug reset instructions 4*/
+"update_wifi_reset_device_plug_reset_instructions_4" = "Unplug your plug and plug it in again. The LED will pulse dark blue.";
+
+/*Update Wifi: pod reset instructions*/
+"update_wifi_reset_device_pod_reset_instructions_1" = "Remove the bottom cover.";
+
+/*Update Wifi: pod reset instructions*/
+"update_wifi_reset_device_pod_reset_instructions_2" = "Use a pin to press the reset button. The LED will flash dark blue.";
+
+/*Update Wifi: pod reset instructions*/
+"update_wifi_reset_device_pod_reset_instructions_3" = "Keep the reset button pressed until the LED turns light blue.";
+
+/*Update Wifi: pod reset instructions*/
+"update_wifi_reset_device_pod_reset_instructions_4" = "Unplug your pod and plug it in again. The LED will pulse dark blue.";
+
+/*Update Wifi: reset device title*/
+"update_wifi_reset_device_title" = "Prepare device";
+
+/*Update Wifi: select a zone to update - confirm button*/
+"update_wifi_select_zone_to_update_confirm_button" = "Start";
+
+/*Update Wifi: select a zone to update description*/
+"update_wifi_select_zone_to_update_description" = "All devices in an Area must use the same Wi-Fi network. Once you update a device, you must update all other devices in that Area.";
+
+/*Update Wifi: select a zone to update - non support for thread zone
+Update Wifi: select a zone to update - non support for thread zone*/
+"update_wifi_select_zone_to_update_non_thread_zone_support" = "This feature is currently unavailable for Areas with Thread devices.";
+
+/*Update Wifi: select a zone to update - non support for thread zone
+Update Wifi: select a zone to update - non support for thread zone
+Update Wifi: select a zone to update - number of devices*/
+"update_wifi_select_zone_to_update_number_of_devices" = "%@ devices";
+
+/*Update Wifi: select a zone to update - select a zone*/
+"update_wifi_select_zone_to_update_select_zone" = "Select an Area to update";
+
+/*Update Wifi: select a zone to update title*/
+"update_wifi_select_zone_to_update_title" = "Update Wi-Fi network";
+
+/*Update Wifi: title*/
+"update_wifi_title" = "Update Wi-Fi network";
+
+/*Update Wifi: zone device check - scan QR*/
+"update_wifi_zone_device_check_scan_qr" = "Scan the QR code on the bottom of your device.";
+
+/*Update Wifi: zone wifi update - confirm button*/
+"update_wifi_zone_wifi_update_confirm_button" = "Next";
+
+/*Update Wifi: zone wifi update - congratulations*/
+"update_wifi_zone_wifi_update_congratulations" = "Congratulations";
+
+/*Update Wifi: zone wifi update - description*/
+"update_wifi_zone_wifi_update_description" = "Look for one of the devices in this Area and unplug it for updating";
+
+/*Update Wifi: zone wifi update - devices updated*/
+"update_wifi_zone_wifi_update_devices_updated" = "devices updated";
+
+/*Update Wifi: zone wifi update - finish button*/
+"update_wifi_zone_wifi_update_finish_button" = "Finish";
+
+/*Update Wifi: zone wifi update - last device description*/
+"update_wifi_zone_wifi_update_last_device_description" = "Look for the last device in this Area and unplug it for updating";
+
+/*Update Wifi: zone wifi update - locate device*/
+"update_wifi_zone_wifi_update_locate_device" = "Locate device";
+
+/*Update Wifi: zone wifi update - session completed*/
+"update_wifi_zone_wifi_update_session_completed" = "Wi-Fi credentials updated!";
+
+/*Update Wifi: zone wifi update - update another zone button*/
+"update_wifi_zone_wifi_update_update_another_zone_button" = "Update another Area";
+"upgrade_multi_zones_create_failed" = "Failed to create Area: %@";
+"upgrade_multi_zones_load_zone_failed" = "Failed to load Area: %@";
+"upgrade_multi_zones_update_failed" = "Failed to update Area name: %@";
+
+/*Leave place button title*/
+"user_details_ask_leave_place_button" = "Leave place";
+
+/*Remove a user from place button title*/
+"user_details_ask_remove_user_button" = "Remove user";
+
+/*Confirm leave in alert*/
+"user_details_confirm_leave_place_button" = "Leave";
+
+/*Confirm remove in alert*/
+"user_details_confirm_remove_user_button" = "Remove";
+
+/*Message of leave place alert including [place name]*/
+"user_details_leave_place_alert_message" = "Want to leave place %@?";
+
+/*Title of leave place alert.*/
+"user_details_leave_place_alert_title" = "Leave place";
+
+/*Message of remove [place user] alert including from [place]*/
+"user_details_remove_user_alert_message" = "Want to remove user %1$@ from %2$@?";
+
+/*Title of remove user from place alert.*/
+"user_details_remove_user_alert_title" = "Remove user";
+
+/*Button to save changes applied to user (e.g. user role)*/
+"user_details_save_changes_button" = "Save";
+"user_remove_user_description" = "This action cannot be undone.";
+"user_remove_user_title" = "Remove “%@”?";
+"user_role_administrator" = "Administrator";
+"user_role_user" = "User";
+"welcome_page_policy" = "By continuing, you agree to our Terms of Service\nand acknowledge that you have read our Privacy Policy.";
+"widar_cancel_popup_back_to_positioning_button" = "Back to positioning";
+"widar_cancel_popup_cancel_button" = "Yes, cancel";
+"widar_cancel_popup_message" = "Device may not work until positioning is completed.";
+"widar_cancel_popup_title" = "Cancel device positioning?";
+"widar_error_device_not_found_message" = "Please unplug the device and reconnect the device to power again.";
+"widar_error_exit_button" = "Exit";
+"widar_error_retry_button" = "Try again";
+"widar_error_title" = "Unable to connect to device";
+"widar_error_wrong_step" = "Wrong step";
+"widar_header_title" = "Positioning";
+"widar_info_button_text" = "Next";
+"widar_info_info_avoid_moving_when_optimized" = "Once optimal position is found, moving the device will cause sensing to stop working.";
+"widar_info_info_must_optimise_position" = "This device must be placed in an optimal position for sensing to work.";
+"widar_info_title" = "Device positioning";
+"widar_position_cancel_button" = "Cancel";
+"widar_position_finish_button" = "Complete positioning";
+"widar_position_guide_imperial" = "Move device 1–2 inches across the same surface and pause. Repeat until device glows green.";
+"widar_position_guide_metric" = "Move device 2–3 cm across the same surface and pause. Repeat until device glows green.";
+"widar_position_imperial_guide" = "Move device 1 – 2 inches across the same surface and pause. Repeat until device glows green.";
+"widar_position_metric_guide" = "Move device 2 - 3 cm across the same surface and pause. Repeat until device glows green.";
+"widar_position_status_checking" = "Checking";
+"widar_position_status_getting_better" = "Getting better";
+"widar_position_status_label" = "Status:";
+"widar_position_status_mispositioned" = "Mispositioned";
+"widar_position_status_optimized" = "Optimized";
+"widar_position_tertiary_button_text" = "Exit positioning";
+"widar_position_tip" = "Tip: Gently nudge device around this area";
+"widar_position_title" = "Position device";
+"widar_recommendations_button_text" = "Start positioning";
+"widar_recommendations_info_attach_base" = "Attach the base if device will be placed flat on a table";
+"widar_recommendations_info_keep_area_clear" = "Keep the area in front of the device clear";
+"widar_recommendations_info_wire_on_back" = "Place device in a corner of the room with the wire at the back";
+"widar_recommendations_title" = "How to position your device";
+"widar_success_content_message" = "Sensing is enabled for %@";
+"widar_success_done_button" = "Done";
+"widar_success_title" = "Positioning complete";
+"zone_checks_motion_sensing_check_name" = "Motion sensing";
+"zone_checks_motion_sensing_status_disconnected" = "Data not available";
+"zone_checks_motion_sensing_status_not_working" = "Not working";
+"zone_checks_motion_sensing_status_working_motion_detected" = "Movement detected";
+"zone_checks_motion_sensing_status_working_motion_not_detected" = "No movement detected";
+"zone_checks_zone_health_check_name" = "Area health";
+"zone_checks_zone_health_hint_assessing_zone_health" = "Assessing Area health...";
+"zone_checks_zone_health_hint_check_needed" = "Check all devices";
+"zone_checks_zone_health_hint_works_well" = "Works well";
+"zone_checks_zone_health_status_degraded" = "Degraded";
+"zone_checks_zone_health_status_healthy" = "Healthy";
+"zone_checks_zone_health_status_unhealthy" = "Unhealthy";
+"zone_checks_zone_health_status_unknown" = "Unknown";
+"zone_default_name" = "Area 1";
+"zone_guide_got_it" = "Got it";
+"zone_guide_header" = "Should I add my devices to an existing Area or create a new Area?";
+"zone_guide_subtitle_1" = "This allows you to create a better coverage for the entire place.";
+"zone_guide_subtitle_2" = "This is commonly used to arm the garage and not the living area when occupants are home.";
+"zone_guide_title_1" = "If this is your second kit, we recommend to expand your existing Area.";
+"zone_guide_title_2" = "If you want to customize the security mode for different areas in your place, create a new Area instead.";
+"zone_guide_title_3" = "If you want to secure another floor, you must create a new Area instead.";
+
+/*Zone selection: add your kit to*/
+"zone_selection_add_your_kit_to" = "Add your kit to";
+"zone_selection_i_dont_know_what_to_choose" = "I don’t know what to choose";
+"zone_selection_non_thread_border_router_zone_explain" = "Your device can only join existing Areas with a Thread border router.";
+
+/*Zone selection: title*/
+"zone_selection_title" = "Select or create an Area";
+"zone_selection_zone_device_limitation_explain" = "Your device(s) can only join existing Areas if adding them will not exceed the limit of 4 activity sensors per Area";
