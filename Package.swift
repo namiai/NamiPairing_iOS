@@ -25,7 +25,8 @@ let package = Package(
             name: "NamiPairingFramework",
             path: "Sources/NamiPairing/NamiPairingFramework.xcframework"),
         .binaryTarget(
-            name: "StandardPairingUI", path: "Sources/NamiPairing/StandardPairingUI.xcframework"),
+            name: "StandardPairingUI",
+            path: "Sources/NamiPairing/StandardPairingUI.xcframework"),
         .target(
             name: "NamiPairingCore",
             dependencies: [

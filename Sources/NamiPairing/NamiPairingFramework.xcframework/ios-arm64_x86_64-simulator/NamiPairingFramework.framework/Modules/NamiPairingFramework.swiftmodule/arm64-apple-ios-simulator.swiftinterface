@@ -5436,7 +5436,7 @@ public enum ValueRepresentation : Swift.Equatable {
 public enum SDUIPresenterError : Swift.Error {
   case alreadyPresented([NamiPairingFramework.PresentedScreen])
 }
-final public class NamiSDUIPresenter : Foundation.ObservableObject {
+final public class NamiSDUIPresenter : Combine.ObservableObject {
   @usableFromInline
   internal static func defaultOnLoadError(_ error: any Swift.Error)
   @usableFromInline
