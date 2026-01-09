@@ -168,7 +168,9 @@ runs:
 
         xcodebuild -create-xcframework \
           -framework build/NamiPairingFramework_iOS.xcarchive/Products/Library/Frameworks/NamiPairingFramework.framework \
+          -debug-symbols build/NamiPairingFramework_iOS.xcarchive/dSYMs/NamiPairingFramework.framework.dSYM \
           -framework build/NamiPairingFramework_sim.xcarchive/Products/Library/Frameworks/NamiPairingFramework.framework \
+          -debug-symbols build/NamiPairingFramework_sim.xcarchive/dSYMs/NamiPairingFramework.framework.dSYM \
           -output build/NamiPairingFramework.xcframework \
         | xcbeautify
 

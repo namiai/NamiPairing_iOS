@@ -6,3 +6,8 @@ DerivedData/
 .swiftpm/configuration/registries.json
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 .netrc
+
+# Debug symbols (dSYM files) - should not be distributed in Swift Package
+# These are typically very large and should be uploaded to App Store Connect separately
+**/dSYMs/
+*.dSYM/
