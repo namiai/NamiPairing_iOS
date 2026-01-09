@@ -166,13 +166,22 @@ runs:
         set -euo pipefail
         cd NamiPairingFramework
 
+        # Note: dSYMs are NOT included in the distributed XCFramework to avoid
+        # exceeding GitHub's 100MB file size limit. dSYMs are generated during
+        # the archive step and can be uploaded separately to a symbol server
+        # or App Store Connect when deploying apps that use this SDK.
         xcodebuild -create-xcframework \
           -framework build/NamiPairingFramework_iOS.xcarchive/Products/Library/Frameworks/NamiPairingFramework.framework \
-          -debug-symbols build/NamiPairingFramework_iOS.xcarchive/dSYMs/NamiPairingFramework.framework.dSYM \
           -framework build/NamiPairingFramework_sim.xcarchive/Products/Library/Frameworks/NamiPairingFramework.framework \
-          -debug-symbols build/NamiPairingFramework_sim.xcarchive/dSYMs/NamiPairingFramework.framework.dSYM \
           -output build/NamiPairingFramework.xcframework \
         | xcbeautify
+
+    - name: Remove dSYM references from XCFramework Info.plist
+      shell: bash
+      run: |
+        set -euo pipefail
+        cd NamiPairingFramework
+        ./script/remove_dsym_references.sh build/NamiPairingFramework.xcframework
 
     - name: Bundle resources into XCFramework
       shell: bash
