@@ -3404,11 +3404,15 @@ public enum I18n {
   public static let placeSettingsEditPlaceDescription: Swift.String
   public static let placeSettingsEngine: Swift.String
   public static let placeSettingsEngineDoesNotSupportSensitivity: Swift.String
+  public static let placeSettingsEntryExitDelay: Swift.String
   public static func placeSettingsLastAdminLeaveDialogDescription(_ p1: Any) -> Swift.String
   public static let placeSettingsLastAdminLeaveDialogTitle: Swift.String
   public static let placeSettingsLeavePlaceButton: Swift.String
   public static func placeSettingsManageDevices(_ p1: Swift.Int) -> Swift.String
   public static let placeSettingsMotion: Swift.String
+  public static let placeSettingsNoDevicesFoundDialogDescription: Swift.String
+  public static let placeSettingsNoDevicesFoundDialogTitle: Swift.String
+  public static let placeSettingsPins: Swift.String
   public static let placeSettingsPlaceSettings: Swift.String
   public static let placeSettingsSectionGeneral: Swift.String
   public static let placeSettingsSectionSetup: Swift.String
@@ -5432,7 +5436,7 @@ public enum ValueRepresentation : Swift.Equatable {
 public enum SDUIPresenterError : Swift.Error {
   case alreadyPresented([NamiPairingFramework.PresentedScreen])
 }
-final public class NamiSDUIPresenter : Foundation.ObservableObject {
+final public class NamiSDUIPresenter : Combine.ObservableObject {
   @usableFromInline
   internal static func defaultOnLoadError(_ error: any Swift.Error)
   @usableFromInline
@@ -5883,6 +5887,19 @@ public struct RemoteTemplateEntrypointHelper {
   public init(config: any NamiPairingFramework.RemoteTemplateUIConfigProtocol)
 }
 extension NamiPairingFramework.NamiDeviceType : @unchecked @retroactive Swift.Sendable {
+}
+public enum JSONValue : Swift.Codable, Swift.Equatable {
+  case string(Swift.String)
+  case bool(Swift.Bool)
+  case int(Swift.Int)
+  case double(Swift.Double)
+  case url(Foundation.URL)
+  case array([NamiPairingFramework.JSONValue])
+  case object([Swift.String : NamiPairingFramework.JSONValue])
+  case null
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (a: NamiPairingFramework.JSONValue, b: NamiPairingFramework.JSONValue) -> Swift.Bool
 }
 public typealias ZoneBSSID = Foundation.Data
 @_hasMissingDesignatedInitializers public class SetupGuideInputs : Swift.Encodable, @unchecked Swift.Sendable {
