@@ -32,6 +32,30 @@ public protocol SDKThreadOperationalDatasetProviderProtocol {
   func storeDataset(_ dataset: Foundation.Data, for placeId: NamiPairingFramework.NamiPlaceID)
   func storeDataset(_ dataset: Self.Dataset, for placeId: NamiPairingFramework.NamiPlaceID)
 }
+public struct NamiDeviceMotionState : Swift.Codable, Swift.Equatable, Swift.Identifiable {
+  public init(detection: Swift.Bool, health: NamiPairingFramework.NamiDeviceMotionHealth, startedAt: Foundation.Date, uid: Swift.UInt64, uuid: Foundation.UUID)
+  public var id: Swift.UInt64 {
+    get
+  }
+  public var detection: Swift.Bool
+  public var health: NamiPairingFramework.NamiDeviceMotionHealth
+  public var startedAt: Foundation.Date
+  public var uuid: Foundation.UUID
+  public static func == (a: NamiPairingFramework.NamiDeviceMotionState, b: NamiPairingFramework.NamiDeviceMotionState) -> Swift.Bool
+  public typealias ID = Swift.UInt64
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum NamiDeviceMotionHealth : Swift.String, Swift.Codable, Swift.Equatable {
+  case healthy
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public protocol SDKWiFiStorageProtocol : Swift.Sendable {
   #if compiler(>=5.3) && $NonescapableTypes
   func save(password: Swift.String?, for networkSSID: Swift.String)
@@ -289,6 +313,8 @@ public enum StorageError : Swift.Error {
     get
   }
 }
+extension NamiPairingFramework.NamiDeviceMotionHealth : Swift.Hashable {}
+extension NamiPairingFramework.NamiDeviceMotionHealth : Swift.RawRepresentable {}
 extension NamiPairingFramework.RemoteTemplateEntrypoint : Swift.Equatable {}
 extension NamiPairingFramework.RemoteTemplateEntrypoint : Swift.Hashable {}
 extension NamiPairingFramework.NamiSdkConfig.MeasurementSystem : Swift.Equatable {}
