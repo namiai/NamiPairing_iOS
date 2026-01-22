@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		Wwk+0KGVFjciSRc5pD6meWWDVdM=
+		9XG+WZekcYoXm5Qg5NVAvt4Cfg0=
 		</data>
 		<key>Headers/NamiPairingFramework-Swift.h</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		u8HimBZ6klQ7oGQIeQIeay6FI90=
+		1XYRF5rAkgFp4WE/eSckIGTQVyw=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		U5rhnRnMOklNW1FfkZTONz07Kqg=
+		sD0tmAZoJQHdsW90XI0QkyxDZy8=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		U5rhnRnMOklNW1FfkZTONz07Kqg=
+		sD0tmAZoJQHdsW90XI0QkyxDZy8=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -518,7 +518,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			x0zV7hwy9rhZQH0KVD054PsagXRSTbXyl4gogMArwVE=
+			T3f366cp4GRLmSHEnL4gfJKAZOBEm2GF49JsSwsBqhg=
 			</data>
 		</dict>
 		<key>Headers/NamiPairingFramework-Swift.h</key>
@@ -539,7 +539,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M9wZC8mnwCGyTl1NPBtjfKzJ40j0en/0LctRiLHhBns=
+			oraHXt9X7zbAGedVvQE5/iJpC+MKM5wG0SIZFZxFMUE=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -574,7 +574,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M9wZC8mnwCGyTl1NPBtjfKzJ40j0en/0LctRiLHhBns=
+			oraHXt9X7zbAGedVvQE5/iJpC+MKM5wG0SIZFZxFMUE=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
