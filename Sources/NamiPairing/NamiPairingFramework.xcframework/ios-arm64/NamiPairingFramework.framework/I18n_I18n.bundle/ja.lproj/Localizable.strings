@@ -617,7 +617,7 @@
 "device_placement_first_wifi_sensor_guide_2" = "設置したいエリアの中心にあるWi-Fiアクセスポイントを選んでください。";
 "device_placement_first_wifi_sensor_guide_3" = "%@ にある他のデバイスも、このデバイスが接続するWi-Fiアクセスポイントを使用します。";
 "device_placement_keypad_guide_content_1" = "操作しやすいように、デバイスはドアの近くに設置してください";
-"device_placement_motion_sensor_guide_content_1" = "";
+"device_placement_motion_sensor_guide_content_1" = "デバイスは室内の動きを監視するように隅または壁際に設置してください";
 "device_placement_non_first_bss_has_br_guide_2_imperial" = "ドアセンサーを設置予定のドアから30フィート以内にデバイスを配置してください";
 "device_placement_non_first_bss_has_br_guide_2_metric" = "ドアセンサーを設置予定のドアから10メートル以内にデバイスを配置してください";
 "device_placement_non_first_bss_no_br_guide_1_imperial" = "Wi-Fiアクセスポイントとドアセンサーを設置予定のドアから、それぞれ30フィート以内にデバイスを配置してくださ";
@@ -689,11 +689,11 @@
 "device_setup_keypad" = "キーパッド";
 "device_setup_motion_sensor" = "モーションセンサー";
 "device_setup_others" = "その他";
-"device_setup_security_pod" = "セキュリティポッド";
+"device_setup_security_pod" = "Security Pod";
 "device_setup_sense_plug" = "SensePlug";
 "device_setup_sense_pod" = "SensePod";
 "device_setup_widar_sensor" = "WiDARセンサー";
-"device_setup_wifi_sensor" = "Wi-Fiセンサー";
+"device_setup_wifi_sensor" = "Wi-Fi Sensor";
 "device_type_selection_accessories_warning" = "アクセサリを追加する前に、まず Thread ボーダールーターをセットアップしてください。詳細はこちら";
 "device_type_selection_accessories_warning_learn_more" = "詳細はこちら";
 "device_widar_mispositioned_warning_message" = "センシング機能を復元するには、デバイスの設置位置を最適化してください";
@@ -760,7 +760,7 @@
 "edit_room_edit_room" = "部屋の編集";
 
 /*Edit room: hint to enter room name in the field*/
-"edit_room_enter_name" = "部屋名を入力";
+"edit_room_enter_name" = "部屋の名前を入力";
 
 /*Edit room: room icon selection title*/
 "edit_room_icon" = "部屋のアイコン";
@@ -830,7 +830,7 @@
 "errors_authentication_login_required" = "リカバリーキーを使用して再度サインインしてください";
 "errors_authentication_title" = "認証エラー";
 "errors_authentication_token_expired" = "認証トークンの有効期限が切れています";
-"errors_join_thread_network_fail_message" = "以前にデバイスをセットアップしたのと同じモバイル端末を使っているか確認してください。モバイル端末にアクセスできない場合は、このゾーン内のすべてのデバイスをリセットしてください。";
+"errors_join_thread_network_fail_message" = "以前にデバイスをセットアップしたのと同じモバイル端末を使っているか確認してください。モバイル端末にもうアクセスできない場合は、このゾーン内のすべてのデバイスをリセットしてください。";
 "errors_join_thread_network_fail_title" = "Threadネットワークに参加できませんでした";
 "errors_linking_error_response_parse_error" = "nami サーバーとの通信に失敗しました。";
 "errors_move_device_error_no_device_selected" = "移動するデバイスを1つ以上選択してください";
@@ -847,8 +847,8 @@ Connection error provided with [underlying error description] from the system.*/
 "errors_network_error_title" = "ネットワークエラー";
 "errors_network_error_unauthorized" = "このネットワークリクエストには認証が必要です（コード %@）。";
 "errors_network_error_unknown" = "不明なネットワークエラーが発生しました（コード %@）。";
-"errors_pairing_ble_disconnected_description" = "%@ を一度抜いてから、もう一度電源に接続してください。";
-"errors_pairing_connection_time_out_description" = "デバイスの電源が入っていて、モバイル端末の近くにあるかをご確認ください。";
+"errors_pairing_ble_disconnected_description" = "%@ の電源を一度抜いてから、もう一度接続してください。";
+"errors_pairing_connection_time_out_description" = "デバイスの電源が入っていて、モバイル端末の近くにあることを確認します。";
 "errors_pairing_device_not_found_description" = "デバイスの電源を一度抜き、再び接続してください。";
 "errors_pairing_device_not_found_title" = "デバイスが見つかりません";
 "errors_pairing_error_device_cloud_challenge_error" = "デバイスがnamiクラウドからのメッセージを処理できませんでした。";
@@ -869,11 +869,11 @@ Connection error provided with [underlying error description] from the system.*/
 "errors_pairing_machine_serialization_error" = "次のペアリング メッセージのシリアル化中にエラーが発生しました。";
 "errors_pairing_machine_title" = "ペアリング操作エラー";
 "errors_pairing_machine_unexpected_message" = "予期しないエラーが発生しました。";
-"errors_pairing_machine_unexpected_state" = "予期しないエラーが発生しました。";
+"errors_pairing_machine_unexpected_state" = "予期しないエラーが発生しました";
 "errors_pairing_thread_setup_error_mixed_environment" = "ThreadデバイスとWi-Fiデバイスを同じゾーンに混在させることはできません。別のゾーンでこのデバイスを設定してください。";
 "errors_pairing_thread_setup_error_thread_network_not_found" = "Threadネットワークが見つかりません。他のThreadデバイスの近くに設置してください。";
 "errors_pairing_thread_setup_error_thread_operational_dataset_missing" = "以前にデバイスを設定したときと同じモバイル端末を使用していることを確認してください。すでに使用できない場合は、このゾーン内のすべてのデバイスをリセットしてください。";
-"errors_pairing_timed_out_connect_wifi" = "Wi-Fiの接続情報が正しく、デバイスがルーターの近くにあることを確認してください。";
+"errors_pairing_timed_out_connect_wifi" = "Wi-Fiの認証情報が正しく、デバイスがルーターに十分近い場所に設置されていることを確認してください。";
 "errors_unexpected_occurred_please_try_again" = "予期しないエラーが発生しました。もう一度お試しください。";
 "external_signin_check_if_users_request" = "このサインインリクエストを行いましたか？";
 "external_signin_confirm_request" = "はい、サインインします";
@@ -1176,22 +1176,22 @@ Connection error provided with [underlying error description] from the system.*/
 /*Motion now: title*/
 "motion_now_title" = "現在の動作状況";
 "motion_sensor_coverage_do_not_mount_device_yet" = "デバイスはまだ取り付けないでください。デバイスの名前をつけると設置ガイドが表示されます。";
-"motion_sensor_coverage_guide_title" = "";
-"motion_sensor_installation_guide_1" = "";
-"motion_sensor_installation_guide_2" = "";
-"motion_sensor_installation_guide_3" = "";
-"motion_sensor_installation_pre_guide_1_imperial" = "";
-"motion_sensor_installation_pre_guide_1_metric" = "";
-"motion_sensor_installation_pre_guide_2_imperial" = "";
-"motion_sensor_installation_pre_guide_2_metric" = "";
-"motion_sensor_installation_pre_guide_3" = "";
-"motion_sensor_pre_guide_description_1" = "";
-"motion_sensor_pre_guide_description_2" = "";
-"motion_sensor_pre_guide_description_3" = "";
-"motion_sensor_pre_guide_title_1" = "";
-"motion_sensor_pre_guide_title_2" = "";
+"motion_sensor_coverage_guide_title" = "ゾーンのカバー範囲を最大限に広げる";
+"motion_sensor_installation_guide_1" = "ネジで固定するか粘着テープの裏紙をはがし、ベースを壁にしっかりと固定してください";
+"motion_sensor_installation_guide_2" = "センサーは目的の検知ゾーンに向けてください";
+"motion_sensor_installation_guide_3" = "誤検知を防ぐため、センサーを熱源や動く物体に向けないでください";
+"motion_sensor_installation_pre_guide_1_imperial" = "デバイスは床から少なくとも5フィートの高さに設置してください";
+"motion_sensor_installation_pre_guide_1_metric" = "デバイスは床から少なくとも1.5メートルの高さに設置してください";
+"motion_sensor_installation_pre_guide_2_imperial" = "動きの検知は距離20フィート以内、かつ視野110°の範囲に制限されます";
+"motion_sensor_installation_pre_guide_2_metric" = "動きの検知は距離6メートル以内、かつ視野110°の範囲に制限されます";
+"motion_sensor_installation_pre_guide_3" = "大きな家具や壁がセンサーの視野を遮らないようにしてください";
+"motion_sensor_pre_guide_description_1" = "コインや工具を使用して、カチッという音がするまでバッテリーカバーを回して締めます";
+"motion_sensor_pre_guide_description_2" = "回転させてセンサーを閉じます";
+"motion_sensor_pre_guide_description_3" = "センサーを設置する場所の近くに置きます";
+"motion_sensor_pre_guide_title_1" = "回転させてセンサーを開きます";
+"motion_sensor_pre_guide_title_2" = "コインや他の工具を使用してバッテリーカバーを外します";
 "motion_sensor_pre_guide_title_3" = "プラスチックの電池絶縁タブを引き抜いてください";
-"motion_sensor_pre_guide_title_4" = "";
+"motion_sensor_pre_guide_title_4" = "センサーを元に戻す";
 "msg_session_expired" = "セッションが期限切れです。もう一度お試しください。";
 "muliple_places_intrusion_in_many_places" = "%d か所に侵入";
 "muliple_places_intrusion_in_one_place" = "%@ への侵入";
@@ -1219,7 +1219,7 @@ Connection error provided with [underlying error description] from the system.*/
 "pair_device_go_to_settings" = "設定を開く";
 "pair_device_missing_permission" = "%@ の権限がありません";
 "pair_device_missing_permission_desc" = "%@ の操作には %@ の権限が必要です";
-"pairing_ask_to_connect_connect_to_wifi" = "Wi-Fi ネットワークに接続してください";
+"pairing_ask_to_connect_connect_to_wifi" = "Wi-Fiネットワークに接続する";
 "pairing_ask_to_connect_first_thread_device_description_1" = "センシングゾーン内の最初のデバイスは、ボーダールーターとして設定されます";
 "pairing_ask_to_connect_first_thread_device_description_2" = "このボーダールーターをWi-Fiネットワークに接続してください";
 "pairing_ask_to_connect_first_thread_device_description_3" = "Threadネットワークを維持するために、このボーダールーターの電源は常に入れたままにしてください";
@@ -1232,7 +1232,7 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_ask_to_connect_remaining_thread_device" = "残りのThreadデバイス";
 "pairing_ask_to_connect_wifi_device_imperial_distance_description" = "このデバイスがアクセス ポイントから最大 30 フィート離れていることを確認してください";
 "pairing_ask_to_connect_wifi_device_metric_distance_description" = "このデバイスがアクセス ポイントから最大 10 m 離れていることを確認してください";
-"pairing_bluetooth_device_found_explained_ready_to_pair" = "デバイスがペアリング可能になると、LEDが濃い青で点滅します";
+"pairing_bluetooth_device_found_explained_ready_to_pair" = "デバイスがペアリングモードになると、LEDが濃い青で点滅します";
 "pairing_bluetooth_device_found_explained_ready_to_pair_contact_sensor" = "LEDが点滅し、デバイスがペアリングの準備ができていることを知らせます";
 "pairing_bluetooth_device_found_header_connect_to_power" = "デバイスを電源コンセントに接続してください";
 
@@ -1240,15 +1240,15 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_bluetooth_device_found_header1" = "デバイスがBluetoothで検出されました！";
 
 /*Pairing, Bluetooth device found: header 2 for the screen.*/
-"pairing_bluetooth_device_found_header2" = "しばらくお待ちください…";
-"pairing_bluetooth_device_found_name_already_in_use" = "このデバイス名は既に使用されています。別の名前を使用してください。";
+"pairing_bluetooth_device_found_header2" = "しばらくお待ちください...";
+"pairing_bluetooth_device_found_name_already_in_use" = "このデバイス名はすでに使用されています。別の名前を使用してください。";
 "pairing_bluetooth_device_found_name_device_explained" = "複数のデバイスを区別できるよう、わかりやすい名前をつけてください";
 "pairing_bluetooth_device_found_name_device_header" = "%@ が見つかりました!";
-"pairing_bluetooth_device_found_name_your_device" = "デバイスに名前を付ける";
-"pairing_bluetooth_device_found_next_button" = "次へ";
+"pairing_bluetooth_device_found_name_your_device" = "デバイスに名前をつける";
+"pairing_bluetooth_device_found_next_button" = "次";
 "pairing_cancel" = "キャンセル";
-"pairing_confirm_cancel_pairing_description" = "ペアリングをキャンセルしてもよろしいですか？";
-"pairing_confirm_cancel_pairing_title" = "ペアリングのキャンセルを確認";
+"pairing_confirm_cancel_pairing_description" = "本当にペアリング処理をキャンセルしますか？";
+"pairing_confirm_cancel_pairing_title" = "ペアリングのキャンセルを確認する";
 "pairing_connect_success_device_has_been_setup_in_zone" = "%1$@ が %2$@ に設定されました";
 
 /*%1$@ has been set up in %2$@. Now let's optimize the device's position to enable sensing.*/
@@ -1260,20 +1260,20 @@ Connection error provided with [underlying error description] from the system.*/
 /*%1$@ has been set up in %2$@. Now let's optimize the device's position to enable sensing.*/
 "pairing_connect_success_setup_another_device" = "別のデバイスを追加する";
 "pairing_connect_wifi_input_password" = "「%@」のパスワードを入力してください";
-"pairing_connect_wifi_no_wi_fi_networks_found" = "Wi-Fi ネットワークが見つかりません";
+"pairing_connect_wifi_no_wi_fi_networks_found" = "Wi-Fiネットワークが見つかりませんでした";
 "pairing_connect_wifi_set_up_as_border_router" = "このデバイスはThread ボーダー ルーターとしてセットアップされます";
 "pairing_connect_wifi_setting_up_this_device" = "デバイスをセットアップ中です";
 
 /*Device setup*/
 "pairing_device_setup_navigation_title" = "デバイスのセットアップ";
 "pairing_done" = "完了";
-"pairing_enable_bluetooth_in_settings_bluetooth_disabled" = "Bluetooth が無効になっています";
+"pairing_enable_bluetooth_in_settings_bluetooth_disabled" = "Bluetoothが無効になっています";
 
 /*Pairing, Enable Bluetooth in Settings: title for the button to open app settings.*/
 "pairing_enable_bluetooth_in_settings_button_settings" = "設定を開く";
 
 /*Pairing, Enable Bluetooth in Settings: header for the screen when Bluetooth access is disabled.*/
-"pairing_enable_bluetooth_in_settings_header" = "デバイスの接続とセットアップを行うには、「設定」でBluetoothの許可を有効にしてください";
+"pairing_enable_bluetooth_in_settings_header" = "デバイスの接続とセットアップを行うには、「設定」でBluetoothの許可を有効にしてください。";
 
 /*Pairing, Enter Wi-Fi password: title for “Ready to connect” button which sends credentials to device.*/
 "pairing_enter_wifi_password_button_ready_to_connect" = "Wi-Fiに接続する";
@@ -1282,46 +1282,46 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Pairing, Enter Wi-Fi password: header for the screen.*/
 "pairing_enter_wifi_password_header" = "「%@」のパスワードを入力してください。";
-"pairing_enter_wifi_password_password_entry_field_hint" = "このWi-Fi情報は、同じゾーン内の他のデバイスのセットアップにも使用されます";
+"pairing_enter_wifi_password_password_entry_field_hint" = "このWi-Fi情報は、同じゾーン内の他のデバイスのセットアップにも使用されます。";
 
 /*Pairing, Enter Wi-Fi password: placeholder for the password field.*/
 "pairing_enter_wifi_password_password_placeholder" = "パスワード";
-"pairing_error_all_border_router_offline" = "ご自宅内のThreadボーダールーターがすべてオフラインです";
-"pairing_error_all_border_router_offline_description" = "以下のデバイスのいずれかを電源に接続して、再度お試しください：%@";
+"pairing_error_all_border_router_offline" = "Threadボーダールーターがすべてオフラインです";
+"pairing_error_all_border_router_offline_description" = "次のいずれかのデバイスを電源に接続してもう一度お試しください：%@。";
 "pairing_error_all_border_router_offline_device_in_zone" = "%1$@の%2$@";
 "pairing_error_mobile_phone_is_not_connected_to_wifi" = "モバイル端末がWi-Fiネットワークに接続されていません";
-"pairing_error_mobile_phone_is_not_connected_to_wifi_description" = "再設定を行う前に、モバイル端末がご自宅のWi-Fiに接続されていることを確認してください";
-"pairing_error_no_thread_border_router_in_place" = "ご自宅にThreadボーダールーターがありません";
-"pairing_error_no_thread_border_router_in_place_description" = "すべてのデバイスを削除して再度設定してください。";
+"pairing_error_mobile_phone_is_not_connected_to_wifi_description" = "再設定を行う前に、モバイル端末がWi-Fiに接続されていることを確認してください。";
+"pairing_error_no_thread_border_router_in_place" = "Threadボーダールーターがありません";
+"pairing_error_no_thread_border_router_in_place_description" = "すべてのデバイスを削除してもう一度設定してください。";
 
 /*Pairing, Error handling: title for action button to ignore the current error.*/
 "pairing_errors_action_ignore" = "無視して続行";
 
 /*Pairing, Error handling: title for action button to restart pairing anew.*/
-"pairing_errors_action_restart" = "セットアップを終了";
+"pairing_errors_action_restart" = "セットアップを終了する";
 "pairing_errors_action_restart_setup" = "セットアップを再開する";
 "pairing_errors_action_scan_device_again" = "もう一度デバイスをスキャンしてください";
 
 /*Pairing, Error handling: title for action button to try the bad step again.*/
 "pairing_errors_action_try_again" = "もう一度やり直してください";
 "pairing_errors_ble_disconnected_title" = "Bluetoothが切断されました";
-"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description1" = "%@にあるアクティビティセンサーのいずれかを、ドアセンサーの近くに移動してください";
-"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description2" = "移動後に、ドアセンサーの上部ボタンを一度押して、再度お試しください";
-"pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description1" = "以前にセットアップしたモバイル端末と同じものを使用しているか確認してください";
-"pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description2" = "モバイル端末にアクセスできない場合は、このゾーン（%@）のすべてのデバイスをリセットしてください";
+"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description1" = "%@にあるアクティビティセンサーのいずれかを、ドアセンサーの近くに移動してください。";
+"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description2" = "移動後に、ドアセンサーの上部ボタンを一度押して、再度お試しください。";
+"pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description1" = "以前にデバイスをセットアップしたのと同じモバイル端末を使っているか確認してください。";
+"pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description2" = "モバイル端末にもうアクセスできない場合は、このゾーン（%@）のすべてのデバイスをリセットしてください。";
 "pairing_errors_device_setup_error_device_mismatch_description" = "スキャンしたQRコードが、先ほど選択したデバイスと一致しません。デバイスを確認のうえ、もう一度お試しください。";
 "pairing_errors_error_occurred_title" = "エラーが発生しました";
-"pairing_errors_failed_to_join_wifi_title" = "Wi-Fiネットワークに接続できませんでした";
+"pairing_errors_failed_to_join_wifi_title" = "Wi-Fiネットワークに参加できませんでした";
 "pairing_errors_need_help" = "サポートが必要ですか？";
 "pairing_errors_thread_setup_error_border_router_offline" = "Threadボーダールーターがオフラインです";
 "pairing_errors_thread_setup_error_border_router_offline_description_android" = "%1$@ の %2$@ を電源に接続してもう一度お試しください";
-"pairing_errors_thread_setup_error_device_mismatch_description" = "次の画面に表示されたデバイスの種類を確認し、正しいQRコードをスキャンしてください";
+"pairing_errors_thread_setup_error_device_mismatch_description" = "次の画面に表示されるデバイスの種類を確認し、QRコードをスキャンしてください。";
 "pairing_errors_thread_setup_error_device_mismatch_title" = "デバイスの種類が一致しません";
 "pairing_errors_thread_setup_error_missing_thread_credentials" = "Threadの認証情報がありません";
-"pairing_errors_thread_setup_error_no_thread_networks_found_description" = "デバイスを、このゾーン（%@）の他のThread対応デバイスに近づけてください";
+"pairing_errors_thread_setup_error_no_thread_networks_found_description" = "デバイスを、このゾーン（%@）内の他のThread対応デバイスに近づけてください";
 "pairing_errors_thread_setup_error_no_thread_networks_found_title" = "Threadネットワークが見つかりません";
-"pairing_errors_timeout_description" = "デバイスの電源が入っていて、モバイル端末の近くにあることを確認してください";
-"pairing_errors_timeout_title" = "接続がタイムアウトしました。";
+"pairing_errors_timeout_description" = "デバイスの電源が入っていて、モバイル端末の近くにあることを確認してください。";
+"pairing_errors_timeout_title" = "接続がタイムアウトしました";
 
 /*Something went wrong*/
 "pairing_errors_unexpected_description" = "問題が発生しました";
@@ -1331,20 +1331,22 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*An unexpected error*/
 "pairing_exit" = "終了";
-"pairing_exit_device_setup_description" = "終了すると、すべての進行状況が失われます。";
+
+/*Fuzzy*/
+"pairing_exit_device_setup_description" = "終了するとすべての進行状況が失われます。";
 "pairing_exit_device_setup_title" = "デバイスのセットアップを終了する";
-"pairing_exit_setup" = "セットアップを終了";
+"pairing_exit_setup" = "セットアップを終了する";
 "pairing_finishing_setup_game_of_pong" = "簡単なゲームでもいかがですか？";
 
 /*Pairing, Finishing setup: header for the screen.*/
-"pairing_finishing_setup_header" = "デバイスを設定しています…";
+"pairing_finishing_setup_header" = "デバイスを設定しています...";
 
 /*Pairing, List Wi-Fi networks: Access Point out of reach*/
 "pairing_list_wifi_networks_ap_out_of_reach" = "デバイスが WiFi ルーターから遠すぎます";
 "pairing_list_wifi_networks_available_networks" = "利用可能なWi-Fiネットワーク";
 
 /*Pairing, List Wi-Fi networks: button title to enter the Wi-Fi network name manually.*/
-"pairing_list_wifi_networks_button_other_network" = "その他…";
+"pairing_list_wifi_networks_button_other_network" = "その他...";
 "pairing_list_wifi_networks_connect_wifi_title" = "Wi-Fiネットワークに接続する";
 
 /*Pairing, List Wi-Fi networks: button text to delete the saved Wi-Fi password.*/
@@ -1355,19 +1357,19 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Pairing, List Wi-Fi networks: message when no networks have been found. The placeholder is to insert the name of the “Other network” button.*/
 "pairing_list_wifi_networks_no_networks_found" = "Wi-Fiネットワークが見つかりませんでした";
-"pairing_list_wifi_networks_proceed" = "続行";
+"pairing_list_wifi_networks_proceed" = "続ける";
 "pairing_list_wifi_networks_select_network" = "接続するネットワークを選択してください";
 
 /*Pairing, List Wi-Fi networks: text for alert asking to use a saved Wi-Fi password.*/
 "pairing_list_wifi_networks_use_saved_password" = "ネットワーク「%@」に保存されているパスワードを使用しますか？";
-"pairing_loading_device_connecting" = "%@ に接続中…";
+"pairing_loading_device_connecting" = "%@に接続中...";
 "pairing_no" = "いいえ";
-"pairing_other" = "その他…";
-"pairing_other_network_title" = "その他のネットワーク";
+"pairing_other" = "その他...";
+"pairing_other_network_title" = "他のネットワーク";
 "pairing_other_wifi_network_device_connectivity_hint" = "namiデバイスは2.4GHz帯のWi-Fiネットワークでのみ動作します";
 
 /*Pairing, Other Wi-Fi network: header above the text field for the custom Wi-Fi network name.*/
-"pairing_other_wifi_network_header" = "ネットワーク情報を入力してください";
+"pairing_other_wifi_network_header" = "ネットワーク認証情報を入力してください";
 
 /*Pairing, Other Wi-Fi network: placeholder for the Wi-Fi network name textfield.*/
 "pairing_other_wifi_network_network_name_placeholder" = "ネットワーク名";
@@ -1387,16 +1389,16 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Pairing, Paired successfully: header 3 for the update wifi credentials.*/
 "pairing_paired_successfully_header3" = "プラグが正常に更新されました";
-"pairing_power_on_and_scanning_ask_user_to_wait" = "しばらくお待ちください…";
+"pairing_power_on_and_scanning_ask_user_to_wait" = "しばらくお待ちください...";
 "pairing_power_on_and_scanning_scanning" = "デバイスを検索中です";
 "pairing_scan_device_connecting_to_this_device" = "このデバイスに接続中です…";
-"pairing_scan_device_missing_bluetooth_location_permission_explanation" = "デバイスの接続と設定完了のために、設定でBluetoothと位置情報の許可を有効にしてください";
+"pairing_scan_device_missing_bluetooth_location_permission_explanation" = "デバイスの接続と設定完了のために、設定でBluetoothと位置情報の許可を有効にしてください。";
 "pairing_scan_device_missing_bluetooth_location_permissions_title" = "位置情報とBluetoothの許可がありません";
-"pairing_scan_device_missing_bluetooth_permission_title" = "Bluetooth 許可がありません";
-"pairing_scan_device_please_hold" = "しばらくお待ちください…";
+"pairing_scan_device_missing_bluetooth_permission_title" = "Bluetoothの許可がありません";
+"pairing_scan_device_please_hold" = "しばらくお待ちください...";
 "pairing_scan_device_searching_for_device" = "デバイスを検索中です";
 "pairing_scan_device_the_led_light_is_not_pulsing" = "LEDライトが点滅していません";
-"pairing_scan_qr_code_error_description" = "有効なQRコードをスキャンしてください";
+"pairing_scan_qr_code_error_description" = "有効なQRコードをスキャンしてください。";
 "pairing_scan_qr_code_error_title" = "QRコードエラー";
 
 /*Expand camera view*/
@@ -1404,14 +1406,14 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_scan_qr_subtitle" = "デバイスの電源が入っていないことを確認してください";
 "pairing_scan_qr_title" = "デバイスのQRコードをスキャンしてください";
 "pairing_scan_qr_where_is_qr" = "QRコードはどこにありますか？";
-"pairing_scan_qrcode_missing_camera_permission_description" = "デバイスのQRコードをスキャンするには、設定でカメラの許可を有効にしてください";
+"pairing_scan_qrcode_missing_camera_permission_description" = "デバイスのQRコードをスキャンするには、設定でカメラの許可を有効にしてください。";
 "pairing_scan_qrcode_missing_camera_permission_title" = "カメラの許可が必要です";
 "pairing_scanning_ble_faq" = "LEDライトが点滅していません";
-"pairing_scanning_ble_header_contact_sensor" = "上部のボタンを一度押してください。";
-"pairing_scanning_ble_header_keypad" = "'0'キーを押してください";
+"pairing_scanning_ble_header_contact_sensor" = "上部のボタンを一度押してください";
+"pairing_scanning_ble_header_keypad" = "「0」キーを押してください";
 "pairing_success" = "成功！";
-"paring_scan_device_bluetooth_is_off_description" = "デバイスの接続とセットアップを行うには、設定でBluetoothを有効にしてください";
-"paring_scan_device_bluetooth_is_off_title" = "Bluetoothがオフになっています";
+"paring_scan_device_bluetooth_is_off_description" = "デバイスの接続とセットアップを行うには、設定でBluetoothの許可を有効にしてください。";
+"paring_scan_device_bluetooth_is_off_title" = "Bluetoothをオンにしてください";
 "paring_scan_device_bluetooth_restricted_description" = "デバイスと接続してセットアップを完了するには、設定でBluetoothの新しい接続を有効にしてください。";
 "paring_scan_device_bluetooth_restricted_title" = "Bluetoothの許可が必要です";
 "pkan_device_placement_title" = "デバイスの配置を計画する";
@@ -1648,6 +1650,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: sensitivity engine not supported*/
 "place_settings_engine_does_not_support_sensitivity" = "動作エンジンでは利用できません";
+"place_settings_entry_exit_delay" = "";
 "place_settings_last_admin_leave_dialog_description" = "あなたは %@ の最後の管理者です。このプレイスを退出するには、別のユーザーを管理者に指定してください。";
 "place_settings_last_admin_leave_dialog_title" = "退去前に新しい管理者を設定してください";
 
@@ -1657,6 +1660,9 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Edit place: motion*/
 "place_settings_motion" = "動作";
+"place_settings_no_devices_found_dialog_description" = "";
+"place_settings_no_devices_found_dialog_title" = "";
+"place_settings_pins" = "";
 
 /*Place settings: place settings*/
 "place_settings_place_settings" = "プレイスの設定";
@@ -1683,7 +1689,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_settings_title" = "プレイスの設定";
 
 /*Place settings: update wifi network*/
-"place_settings_update_wifi_network" = "Wi-Fiネットワークを更新する";
+"place_settings_update_wifi_network" = "Wi-Fiネットワークをアップデートする";
 
 /*Place settings: update wifi network description*/
 "place_settings_update_wifi_network_description" = "ゾーンのWi-Fiネットワークを変更する";
@@ -1970,7 +1976,7 @@ Connection error provided with [underlying error description] from the system.*/
 "select_kit_security_kit_description" = "Alarm Pod 1 個、SensePlug 1 個、ドアセンサー 1 個";
 
 /*Select kit: title*/
-"select_kit_title" = "どの機器をセットアップしますか？";
+"select_kit_title" = "どのキットをセットアップしますか？";
 
 /*Create place: header text when selecting the icon in a place category.*/
 "select_place_icon_header" = "プレイスアイコンを選択";
@@ -2248,7 +2254,7 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 "update_wifi_how_it_works_instruction_title" = "操作方法";
 
 /*Update Wifi: title*/
-"update_wifi_how_it_works_title" = "Wi-Fiネットワークを更新する";
+"update_wifi_how_it_works_title" = "Wi-Fiネットワークをアップデートする";
 
 /*Update Wifi error: locate device button*/
 "update_wifi_locate_device_button" = "デバイスを探す";
@@ -2325,10 +2331,10 @@ Update Wifi: select a zone to update - number of devices*/
 "update_wifi_select_zone_to_update_select_zone" = "更新するゾーンを選択してください";
 
 /*Update Wifi: select a zone to update title*/
-"update_wifi_select_zone_to_update_title" = "Wi-Fiネットワークを更新する";
+"update_wifi_select_zone_to_update_title" = "Wi-Fiネットワークをアップデートする";
 
 /*Update Wifi: title*/
-"update_wifi_title" = "Wi-Fiを更新するゾーンを選択";
+"update_wifi_title" = "Wi-Fiネットワークをアップデートする";
 
 /*Update Wifi: zone device check - scan QR*/
 "update_wifi_zone_device_check_scan_qr" = "デバイスの底面にあるQRコードをスキャンしてください";
