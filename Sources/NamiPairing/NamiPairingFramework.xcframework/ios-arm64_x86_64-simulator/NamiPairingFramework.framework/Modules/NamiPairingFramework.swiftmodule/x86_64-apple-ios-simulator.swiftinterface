@@ -5922,49 +5922,14 @@ public enum SetupGuideEvent : NamiPairingFramework.RemoteTemplatesUIControllerEv
   case gotUrl(Foundation.URL)
   case variableUpdated(Swift.String, Swift.AnyHashable)
   case viewDismissed
-  case pairingRequested(NamiPairingFramework.PlaceID, NamiPairingFramework.PlaceZoneID, NamiPairingFramework.RoomID, NamiPairingFramework.NamiDeviceType, Swift.String, NamiPairingFramework.OnPairingFinishedCallback)
-  case updateWiFiCredsRequested(NamiPairingFramework.PlaceID, NamiPairingFramework.PlaceZoneID, NamiPairingFramework.RoomID, NamiPairingFramework.NamiDeviceType, NamiPairingFramework.CountryCode, NamiPairingFramework.ZoneBSSID?, Swift.String?, NamiPairingFramework.OnPairingFinishedCallback)
+  case pairingRequested(placeId: NamiPairingFramework.PlaceID, zoneId: NamiPairingFramework.PlaceZoneID, roomId: NamiPairingFramework.RoomID, deviceType: NamiPairingFramework.NamiDeviceType, countryCode: Swift.String, onPairing: NamiPairingFramework.OnPairingFinishedCallback)
+  case updateWiFiCredsRequested(placeId: NamiPairingFramework.PlaceID, zoneId: NamiPairingFramework.PlaceZoneID, roomId: NamiPairingFramework.RoomID, deviceType: NamiPairingFramework.NamiDeviceType, countryCode: Swift.String, bssid: NamiPairingFramework.ZoneBSSID?, deviceName: Swift.String?, onPairing: NamiPairingFramework.OnPairingFinishedCallback)
   case warning(NamiPairingFramework.SetupGuideError)
 }
 public enum PairingResultStatus {
   case succeeded(deviceId: NamiPairingFramework.DeviceID, bssid: [Swift.UInt8]?)
   case cancelled(NamiPairingFramework.DeviceID?)
 }
-public protocol StringIdentifiableCode {
-  static func canonicalize(_ s: Swift.String) -> Swift.String
-  static func isValid(_ s: Swift.String) -> Swift.Bool
-}
-public struct Code<Spec> : Swift.RawRepresentable, Swift.Hashable, Swift.Sendable, Swift.Codable, Swift.CustomStringConvertible, Swift.LosslessStringConvertible where Spec : NamiPairingFramework.StringIdentifiableCode {
-  public let rawValue: Swift.String
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init?(rawValue: Swift.String)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init?(_ description: Swift.String)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init?(_ value: Swift.String?)
-  #endif
-  public var description: Swift.String {
-    get
-  }
-  public var isValid: Swift.Bool {
-    get
-  }
-  public typealias RawValue = Swift.String
-}
-public func == <S>(lhs: NamiPairingFramework.Code<S>, rhs: Swift.String) -> Swift.Bool where S : NamiPairingFramework.StringIdentifiableCode
-public func == <S>(lhs: Swift.String, rhs: NamiPairingFramework.Code<S>) -> Swift.Bool where S : NamiPairingFramework.StringIdentifiableCode
-public enum CountryStringIdentifiableCode : NamiPairingFramework.StringIdentifiableCode {
-  public static func canonicalize(_ s: Swift.String) -> Swift.String
-  public static func isValid(_ s: Swift.String) -> Swift.Bool
-}
-public typealias CountryCode = NamiPairingFramework.Code<NamiPairingFramework.CountryStringIdentifiableCode>
-public enum LanguageStringIdentifiableCode : NamiPairingFramework.StringIdentifiableCode {
-  public static func canonicalize(_ s: Swift.String) -> Swift.String
-  public static func isValid(_ s: Swift.String) -> Swift.Bool
-}
-public typealias LanguageCode = NamiPairingFramework.Code<NamiPairingFramework.LanguageStringIdentifiableCode>
 public struct RemoteTemplateUI_Place : Swift.Codable, Swift.Equatable {
   #if compiler(>=5.3) && $NonescapableTypes
   public init(id: NamiPairingFramework.PlaceID, urn: Swift.String, name: Swift.String, timeZone: Swift.String? = nil, createdAt: Foundation.Date, updatedAt: Foundation.Date, alertMode: Swift.String, entryDelay: NamiPairingFramework.EntryDelay, exitDelay: NamiPairingFramework.ExitDelay, placeSensitivity: Swift.Int = 0)
