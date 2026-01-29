@@ -281,6 +281,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreFoundation;
+@import Foundation;
+@import ObjectiveC;
+@import UIKit;
 #endif
 
 #endif
@@ -302,6 +306,47 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+
+@class UITouch;
+@class UIEvent;
+@class NSCoder;
+SWIFT_CLASS("_TtC20NamiPairingFramework17CodeScannerUIView")
+@interface CodeScannerUIView : UIView
+- (void)layoutSubviews;
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+SWIFT_CLASS("_TtCV20NamiPairingFramework13TextFieldView11Coordinator")
+@interface Coordinator : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UITextField;
+@interface Coordinator (SWIFT_EXTENSION(NamiPairingFramework)) <UITextFieldDelegate>
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)_;
+- (void)textFieldDidEndEditing:(UITextField * _Nonnull)_;
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+@end
+
+SWIFT_CLASS("_TtC20NamiPairingFramework9SCMessage")
+@interface SCMessage : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+SWIFT_CLASS("_TtC20NamiPairingFramework15SCResourceModel")
+@interface SCResourceModel : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UIGestureRecognizer;
+@interface UINavigationController (SWIFT_EXTENSION(NamiPairingFramework)) <UIGestureRecognizerDelegate>
+- (void)viewDidLoad;
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+@end
 
 #endif
 #if __has_attribute(external_source_symbol)
