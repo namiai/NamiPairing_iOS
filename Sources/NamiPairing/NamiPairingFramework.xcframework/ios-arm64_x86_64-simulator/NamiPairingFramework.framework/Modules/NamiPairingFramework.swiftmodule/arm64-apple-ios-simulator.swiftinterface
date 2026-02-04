@@ -218,6 +218,9 @@ public struct NamiSdkConfig {
     get
   }
   convenience public init(sessionCode: Swift.String) throws
+  convenience public init<W>(sessionCode: Swift.String, wifiStorage: W) throws where W : NamiPairingFramework.SDKWiFiStorageProtocol
+  convenience public init<P>(sessionCode: Swift.String, threadDatasetProvider: P) throws where P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
+  convenience public init<W, P>(sessionCode: Swift.String, wifiStorage: W, threadDatasetProvider: P) throws where W : NamiPairingFramework.SDKWiFiStorageProtocol, P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
   convenience public init(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore)
   convenience public init<W>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, wifiStorage: W) where W : NamiPairingFramework.SDKWiFiStorageProtocol
   convenience public init<P>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, threadDatasetProvider: P) where P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
