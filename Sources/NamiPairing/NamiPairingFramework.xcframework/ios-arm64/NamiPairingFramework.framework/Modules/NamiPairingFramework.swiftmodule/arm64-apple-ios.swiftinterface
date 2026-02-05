@@ -233,6 +233,10 @@ public struct NamiSdkConfig {
   @_Concurrency.MainActor public func presentEntryPoint(_ entrypoint: any NamiPairingFramework.SDKRemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.NamiPlaceID? = nil, config: NamiPairingFramework.NamiSdkConfig) throws -> some SwiftUICore.View
   
   #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public func presentTestEntrypoint(_ entrypoint: any NamiPairingFramework.SDKRemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.NamiPlaceID? = nil, config: NamiPairingFramework.NamiSdkConfig) throws -> some SwiftUICore.View
+  
+  #endif
   @objc deinit
 }
 final public class NamiPlaceID : @unchecked Swift.Sendable, Swift.Equatable {

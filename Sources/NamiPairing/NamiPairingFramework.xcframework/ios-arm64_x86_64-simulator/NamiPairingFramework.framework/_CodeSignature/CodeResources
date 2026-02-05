@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		3nsXCFjeN+VvPiO1jJzAUDBHevg=
+		ibojjBG358dndfRJg+mbFHkfOog=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		hWuYTo42J34un9AD2QmM9RL4SsE=
+		UVMu5eivrKb/AVTMCD/eWArIqps=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		2gImp6TPF+minQ3tZOEJ1UvFiUI=
+		mnAMa4zlalq14x7Vh0XdG04lfl0=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Ohdp42y28XvUzvKDPkv0lBP0Emc=
+		DCH9H357iY1TTvwjVIAy2pDhC4s=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		2gImp6TPF+minQ3tZOEJ1UvFiUI=
+		mnAMa4zlalq14x7Vh0XdG04lfl0=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		/ub8HnVVG00csI34GYirGKcaoN4=
+		4WJ69LeBn0m1WKJZDz8t1kfYi/I=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		hWuYTo42J34un9AD2QmM9RL4SsE=
+		UVMu5eivrKb/AVTMCD/eWArIqps=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		rPWvE75oNtkwKJzJDL1xyjFPL+A=
+		h4y22WSBH7IFlAZvxC2lQ4rpsts=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		tDWMTouBfYK0RiGuyQ3bOBLeDL4=
+		ElRLqgLF2kFIWdjoS7ge+doLU/M=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		rPWvE75oNtkwKJzJDL1xyjFPL+A=
+		h4y22WSBH7IFlAZvxC2lQ4rpsts=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		BOUD41mU/WgyuKK44Zl7uNnMpgc=
+		s45ZZ8y/dvU4BL8flQwhQ9MeuEg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -85,70 +85,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kuSnwJRspKD/AXhiFx3L0l+YGmcnVWp6oYdNzrVQ8lg=
+			uji+rTqeJQbbakm+RJhhxIQJ8tv7Xt1FkKa4bS2+drU=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oBZzlolQYHkjs8tyv8rpSze6ZxfgbsYS0ntk6k7l9lI=
+			024cfFveAmjaZ3LNGE8MEeVV5XljmSgEZqaPxWRtc6w=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7SFsHf2i5wOvpy8GuqThaV3JQtL1GlLaadBOcFfogDs=
+			jhGvjIvOfhLt1wpbvbAW6RKJ+dgqyuap4/eCs2j37D8=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oBZzlolQYHkjs8tyv8rpSze6ZxfgbsYS0ntk6k7l9lI=
+			024cfFveAmjaZ3LNGE8MEeVV5XljmSgEZqaPxWRtc6w=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l945CQzZXklm707O4x2VyGrvUnCU82zb580HDHf3WtU=
+			uaxCBbWPV8a21OUggvf7Gwqptspr7ONekmIiemOmkrE=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kuSnwJRspKD/AXhiFx3L0l+YGmcnVWp6oYdNzrVQ8lg=
+			uji+rTqeJQbbakm+RJhhxIQJ8tv7Xt1FkKa4bS2+drU=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gR+QyZmzTSk1MiI0qE3O53JO05f5MwAOArOH1e0J6wM=
+			7xn1QiqxQT39YX3GPMLyBSBjJKErRJh7ZoKJ6m6ocnc=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RbCbCnbXHQWgMEUUw/AJh+oXTr7cvBmUQ5UFSIEkljM=
+			qEMZpqcjXR18j71T5r/dSTHBkNCQCpDIWT+xepxLOSw=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gR+QyZmzTSk1MiI0qE3O53JO05f5MwAOArOH1e0J6wM=
+			7xn1QiqxQT39YX3GPMLyBSBjJKErRJh7ZoKJ6m6ocnc=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JfNESLSZ6K1QYHbF9NT51WPZXBS9DsK7R54TxDalkWY=
+			2uf9fFNtY82+hLoZejGbmQT4bNf0dVUobD2JQvTW8fM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -23,7 +23,7 @@
 		<string>iPhoneSimulator</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>202602041048</string>
+	<string>202602050327</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
