@@ -18,15 +18,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		c9pFRLevmk0zBuS5ot5wKbYEAro=
+		xw5g+75EbRRaoAFVbwQxz/pqYM4=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		9KYmo3PU+q8Lna04HIqxh5CeJiU=
+		6OaSEnVmgA3l5oj3jRnHjTJY3xs=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		ALbMG8DX4mPThkA7Ppg3Ipe9D1A=
+		jB/1b2o6IojWaEHd+kidjP89i2g=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -34,19 +34,19 @@
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ALbMG8DX4mPThkA7Ppg3Ipe9D1A=
+		jB/1b2o6IojWaEHd+kidjP89i2g=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		blwaYUXq82bqa3PDjU96Yxi/kDg=
+		hIz5dvwZXQ1rmWYF9rl6NOLtcUQ=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		9KYmo3PU+q8Lna04HIqxh5CeJiU=
+		6OaSEnVmgA3l5oj3jRnHjTJY3xs=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		PATA9+KAeopBqdF3Bq9tXjRJhKY=
+		0qj+EwZ9pnAurkQapOYjaXuZwjo=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		PATA9+KAeopBqdF3Bq9tXjRJhKY=
+		0qj+EwZ9pnAurkQapOYjaXuZwjo=
 		</data>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		z5k6mDvnMlgDWW0jMI8LT3W97I4=
+		pGkvXSAKLGBuulRV+bxvhRy0wes=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -126,7 +126,7 @@
 		</data>
 		<key>Pulse White_Motion Sensor.json</key>
 		<data>
-		MzPEdN/v/S0ZLbDH1Z7finfQdrY=
+		sTVyW8VUZ5m+9auV/S17teQMb94=
 		</data>
 		<key>alarmPod_qr_all.webp</key>
 		<data>
@@ -539,14 +539,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mRi70vXxmFMVIJD3juf3a+yM2G4zqzlxph8QK2GHrTw=
+			pvT2A8OmDcircCZW2Q/envxiviQsnMA0waq/bUO/vX0=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4p1Q5Mw9hbbs0Z8DWROE4+dvHZnHJOoYS6OQDrWa8ks=
+			XpupmWkmJp2V+1IPLncCl2XImDf6O1U6FgHsJQJZqFk=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -560,28 +560,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4p1Q5Mw9hbbs0Z8DWROE4+dvHZnHJOoYS6OQDrWa8ks=
+			XpupmWkmJp2V+1IPLncCl2XImDf6O1U6FgHsJQJZqFk=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L2U6bQYlWkfI6Cqc0ZG8GFc5Kg8tIGIF/dJykUOK2ko=
+			h9kRijHiam58P5INnvSJy08HOs/luiiQMKpyDu+2dms=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mRi70vXxmFMVIJD3juf3a+yM2G4zqzlxph8QK2GHrTw=
+			pvT2A8OmDcircCZW2Q/envxiviQsnMA0waq/bUO/vX0=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EwuVAIG96qP8yo3rW1ZB7RL27bH5CO5K5dzEi/2P61M=
+			Nzl80Yv5VW1VOm/hHszJ8CATAwS17kYZhW3Vzfvx9fc=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -595,14 +595,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EwuVAIG96qP8yo3rW1ZB7RL27bH5CO5K5dzEi/2P61M=
+			Nzl80Yv5VW1VOm/hHszJ8CATAwS17kYZhW3Vzfvx9fc=
 			</data>
 		</dict>
 		<key>Modules/NamiPairingFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			28lWWgZGMvisOCTkwt0R9ccZqe7PhnRzw9M69oG58UU=
+			en0cytrs7Bh4komfQXE6m5/xELUsJtPCVbSdxdeAWCU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -721,7 +721,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kRk+JPZCrMVVTq0dR/tO35FnZBBKib4sSCxe8Yd589k=
+			0100etjJRJtFmOky86+GzXl+hEILNu6PmQJcRLKM6XU=
 			</data>
 		</dict>
 		<key>alarmPod_qr_all.webp</key>
