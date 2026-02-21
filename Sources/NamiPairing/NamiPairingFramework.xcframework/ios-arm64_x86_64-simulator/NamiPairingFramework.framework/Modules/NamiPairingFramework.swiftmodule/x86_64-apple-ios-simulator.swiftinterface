@@ -4492,7 +4492,7 @@ final public class Tomonari<Container> where Container : NamiPairingFramework.Pa
   }
   public enum DevicePairingState {
     case deviceCommisionedAtCloud(NamiPairingFramework.PairingDevice, in: NamiPairingFramework.PlaceID)
-    case deviceOperable(NamiPairingFramework.DeviceID, NamiPairingFramework.NamiDeviceType?, ssid: Swift.String?, bssid: [Swift.UInt8]?, positionAdjustmentNeeded: Swift.Bool?)
+    case deviceOperable(NamiPairingFramework.DeviceID, NamiPairingFramework.NamiDeviceType?, ssid: Swift.String?, bssid: [Swift.UInt8]?)
     case deviceDecommissioned(NamiPairingFramework.DeviceID)
     case pairingCancelled(NamiPairingFramework.Pairing.PairingCancellationdReason)
   }
@@ -4519,6 +4519,14 @@ extension SwiftUICore.EnvironmentValues {
     get
     set
   }
+}
+extension SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public func `if`<Content>(_ condition: Swift.Bool, content: (Self) -> Content) -> some SwiftUICore.View where Content : SwiftUICore.View
+  
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public func `if`<V, Content>(_ value: V?, content: (Self, V) -> Content) -> some SwiftUICore.View where Content : SwiftUICore.View
+  
+  #endif
 }
 public enum PairingMachineState : Swift.Equatable, Swift.CustomDebugStringConvertible, Swift.Identifiable {
   case initial
