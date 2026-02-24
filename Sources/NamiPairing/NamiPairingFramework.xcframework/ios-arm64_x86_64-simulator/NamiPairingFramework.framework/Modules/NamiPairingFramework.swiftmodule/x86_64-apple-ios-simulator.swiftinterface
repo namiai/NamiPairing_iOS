@@ -4520,14 +4520,6 @@ extension SwiftUICore.EnvironmentValues {
     set
   }
 }
-extension SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public func `if`<Content>(_ condition: Swift.Bool, content: (Self) -> Content) -> some SwiftUICore.View where Content : SwiftUICore.View
-  
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public func `if`<V, Content>(_ value: V?, content: (Self, V) -> Content) -> some SwiftUICore.View where Content : SwiftUICore.View
-  
-  #endif
-}
 public enum PairingMachineState : Swift.Equatable, Swift.CustomDebugStringConvertible, Swift.Identifiable {
   case initial
   case gotAdvertisement(NamiPairingFramework.PublicPairingAdvertisement)
