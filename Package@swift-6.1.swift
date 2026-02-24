@@ -21,10 +21,10 @@ let package = Package(
         .package(url: "https://github.com/airbnb/lottie-spm.git", .upToNextMajor(from: "4.4.3")),
     ],
     targets: [
-        .binaryTarget(name: "NamiPairingFramework", url: "https://github.com/namiai/NamiPairing_iOS/releases/download/4.8.2/NamiPairingFramework.xcframework.zip",
-            checksum: "fddd7b5789c38f9b3a5ab87d72ece62f162c8f9feec80e526f76bb8c01fac59b"),
-        .binaryTarget(name: "StandardPairingUI", url: "https://github.com/namiai/NamiPairing_iOS/releases/download/4.8.2/StandardPairingUI.xcframework.zip",
-            checksum: "53432c907c3068e19ac7845fd745c4bfc79c54a574f2fb2bc4c5aa5c4ea17381"),
+        .binaryTarget(name: "NamiPairingFramework", url: "https://github.com/namiai/NamiPairing_iOS/releases/download/4.8.3/NamiPairingFramework.xcframework.zip",
+            checksum: "910c9f2105353a931c5ba1e8f941d6150aad83c9326f768ad3d22a74288c3082"),
+        .binaryTarget(name: "StandardPairingUI", url: "https://github.com/namiai/NamiPairing_iOS/releases/download/4.8.3/StandardPairingUI.xcframework.zip",
+            checksum: "c87c1977046a32353d7ed0b68a08c309a7ed4b97bbdacf9fcb2c43389ddd8d57"),
         .target(
           name: "NamiPairingCore",
           dependencies: [
