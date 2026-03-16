@@ -220,12 +220,12 @@ public struct NamiSdkConfig {
   }
   convenience public init(sessionCode: Swift.String) throws
   convenience public init<W>(sessionCode: Swift.String, wifiStorage: W) throws where W : NamiPairingFramework.SDKWiFiStorageProtocol
-  convenience public init<P>(sessionCode: Swift.String, threadDatasetProvider: P) throws where P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
-  convenience public init<W, P>(sessionCode: Swift.String, wifiStorage: W, threadDatasetProvider: P) throws where W : NamiPairingFramework.SDKWiFiStorageProtocol, P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
+  convenience public init<S>(sessionCode: Swift.String, threadSecureStorage: S.Type) throws where S : NamiPairingFramework.NamiThreadSecureStorage
+  convenience public init<W, S>(sessionCode: Swift.String, wifiStorage: W, threadSecureStorage: S.Type) throws where W : NamiPairingFramework.SDKWiFiStorageProtocol, S : NamiPairingFramework.NamiThreadSecureStorage
   convenience public init(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore)
   convenience public init<W>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, wifiStorage: W) where W : NamiPairingFramework.SDKWiFiStorageProtocol
-  convenience public init<P>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, threadDatasetProvider: P) where P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
-  convenience public init<W, P>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, wifiStorage: W, threadDatasetProvider: P) where W : NamiPairingFramework.SDKWiFiStorageProtocol, P : NamiPairingFramework.SDKThreadOperationalDatasetProviderProtocol
+  convenience public init<S>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, threadSecureStorage: S.Type) where S : NamiPairingFramework.NamiThreadSecureStorage
+  convenience public init<W, S>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, wifiStorage: W, threadSecureStorage: S.Type) where W : NamiPairingFramework.SDKWiFiStorageProtocol, S : NamiPairingFramework.NamiThreadSecureStorage
   #if compiler(>=5.3) && $NonescapableTypes
   public func startPairing(roomId: Swift.String, deviceType: NamiPairingFramework.PairingNamiDeviceType = .unknown, pairingParameters: NamiPairingFramework.NamiPairingParameters? = nil) throws -> some SwiftUICore.View
   
