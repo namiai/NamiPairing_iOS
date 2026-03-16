@@ -433,6 +433,7 @@
 
 /*door sensor*/
 "device_detail_door_sensor_low_battery_warning_learn_how" = "";
+"device_detail_low_rechargeable_battery_warning" = "";
 
 /*Sensing*/
 "device_details_connected" = "";
@@ -686,8 +687,8 @@
 "device_setup_activity_sensors" = "";
 "device_setup_alarm_pod" = "Alarm Pod";
 "device_setup_contact_sensor" = "Türsensor";
-"device_setup_keypad" = "Tastenfeld";
-"device_setup_motion_sensor" = "Motion Sensor";
+"device_setup_keypad" = "Tastatur";
+"device_setup_motion_sensor" = "PIR-Bewegungssensor";
 "device_setup_others" = "Andere";
 "device_setup_security_pod" = "Security Pod";
 "device_setup_sense_plug" = "SensePlug";
@@ -874,7 +875,7 @@ Connection error provided with [underlying error description] from the system.*/
 "errors_pairing_thread_setup_error_thread_network_not_found" = "";
 "errors_pairing_thread_setup_error_thread_operational_dataset_missing" = "Bitte verwenden Sie dasselbe Mobiltelefon, mit dem Sie bereits zuvor Geräte eingerichtet haben. Wenn dieses Mobiltelefon nicht mehr griffbereit ist, setzen Sie bitte alle Geräte in diesem Bereich zurück.";
 "errors_pairing_timed_out_connect_wifi" = "Prüfen Sie die Wi-Fi-Anmeldeinformationen und platzieren Sie das Gerät möglichst nah am Router.";
-"errors_unexpected_occurred_please_try_again" = "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es noch einmal.";
+"errors_unexpected_occurred_please_try_again" = "Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es noch einmal.";
 "external_signin_check_if_users_request" = "";
 "external_signin_confirm_request" = "";
 "external_signin_confirmed_title" = "";
@@ -974,9 +975,11 @@ Connection error provided with [underlying error description] from the system.*/
 "intrusion_live_disarm_security_system" = "";
 "intrusion_live_disarm_security_system_description" = "";
 "intrusion_live_report_by_door_sensor" = "";
+"intrusion_live_report_by_unknown" = "";
 "intrusion_live_report_door_closed" = "";
 "intrusion_live_report_door_opened" = "";
 "intrusion_live_report_motion" = "";
+"intrusion_live_report_motion_in_room" = "Bewegung in %@";
 "intrusion_live_view_no_activity_since_intrusion_began" = "";
 
 /*Invitation detail: Accept button*/
@@ -1150,7 +1153,7 @@ Connection error provided with [underlying error description] from the system.*/
 "motion_now_now" = "Jetzt";
 
 /*Motion now: 30s ago*/
-"motion_now_thirty_secs_ago" = "Vor 30 s";
+"motion_now_thirty_secs_ago" = "Vor 30 Sek";
 
 /*Motion now tile: connect to same wifi network*/
 "motion_now_tile_connect_to_wifi" = "";
@@ -1240,8 +1243,8 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_bluetooth_device_found_header1" = "";
 
 /*Pairing, Bluetooth device found: header 2 for the screen.*/
-"pairing_bluetooth_device_found_header2" = "Einen Moment …";
-"pairing_bluetooth_device_found_name_already_in_use" = "Dieser Name ist bereits vergeben. Wählen Sie einen anderen Namen.";
+"pairing_bluetooth_device_found_header2" = "Bitte warten …";
+"pairing_bluetooth_device_found_name_already_in_use" = "Dieser Gerätename ist bereits vergeben. Wählen Sie einen anderen Namen.";
 "pairing_bluetooth_device_found_name_device_explained" = "Der Name sollte eindeutig sein, damit Sie Ihre Geräte voneinander unterscheiden können.";
 "pairing_bluetooth_device_found_name_device_header" = "";
 "pairing_bluetooth_device_found_name_your_device" = "Gerätenamen eingeben";
@@ -1277,8 +1280,8 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Pairing, Enter Wi-Fi password: title for “Ready to connect” button which sends credentials to device.*/
 "pairing_enter_wifi_password_button_ready_to_connect" = "Mit Wi-Fi verbinden";
-"pairing_enter_wifi_password_enter_password" = "Das Kennwort für „%@“ eingeben";
-"pairing_enter_wifi_password_enter_password_ios" = "Das Kennwort für „%@“ eingeben";
+"pairing_enter_wifi_password_enter_password" = "Geben Sie das Kennwort für „%@“ ein";
+"pairing_enter_wifi_password_enter_password_ios" = "Geben Sie das Kennwort für „%@“ ein";
 
 /*Pairing, Enter Wi-Fi password: header for the screen.*/
 "pairing_enter_wifi_password_header" = "Geben Sie das Kennwort für „%@“ ein.";
@@ -1288,7 +1291,7 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_enter_wifi_password_password_placeholder" = "Kennwort";
 "pairing_error_all_border_router_offline" = "Alle Thread Border Router vor Ort sind offline";
 "pairing_error_all_border_router_offline_description" = "Verbinden Sie eines dieser Geräte mit einer Stromquelle und versuchen Sie es erneut: %@.";
-"pairing_error_all_border_router_offline_device_in_zone" = "%1$@s %2$@";
+"pairing_error_all_border_router_offline_device_in_zone" = "%2$@ des %1$@s";
 "pairing_error_mobile_phone_is_not_connected_to_wifi" = "Ihr Mobiltelefon ist nicht mit dem Wi-Fi-Netzwerk verbunden.";
 "pairing_error_mobile_phone_is_not_connected_to_wifi_description" = "Verbinden Sie Ihr Mobiltelefon mit dem lokalen Wi-Fi-Netzwerk, bevor Sie den Einrichtungsversuch wiederholen.";
 "pairing_error_no_thread_border_router_in_place" = "Kein Thread Border Router vor Ort gefunden";
@@ -1305,17 +1308,17 @@ Connection error provided with [underlying error description] from the system.*/
 /*Pairing, Error handling: title for action button to try the bad step again.*/
 "pairing_errors_action_try_again" = "Erneut versuchen";
 "pairing_errors_ble_disconnected_title" = "Bluetooth ist getrennt";
-"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description1" = "Verschieben Sie einen der Aktivitätssensoren in %@ näher an den Türsensor.";
+"pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description1" = "Bringen Sie einen Ihrer Aktivitätssensoren in %@ näher an den Türsensor heran.";
 "pairing_errors_contact_sensor_setup_error_no_thread_networks_found_description2" = "Wenn Sie fertig sind, drücken Sie einmal die obere Taste am Türsensor und versuchen Sie es erneut.";
 "pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description1" = "Bitte verwenden Sie dasselbe Mobiltelefon, mit dem Sie bereits zuvor Geräte eingerichtet haben.";
 "pairing_errors_contact_sensor_setup_error_unable_join_thread_networks_description2" = "Wenn dieses Mobiltelefon nicht mehr griffbereit ist, setzen Sie bitte alle Geräte in diesem Bereich zurück: %@.";
 "pairing_errors_device_setup_error_device_mismatch_description" = "Der gescannte QR-Code passt nicht zum zuvor ausgewählten Gerät. Bitte überprüfen Sie den Code/die Geräteauswahl und versuchen Sie es erneut.";
-"pairing_errors_error_occurred_title" = "Ein Fehler ist aufgetreten";
+"pairing_errors_error_occurred_title" = "Es ist ein Fehler aufgetreten";
 "pairing_errors_failed_to_join_wifi_title" = "Anmeldung in Wi-Fi-Netzwerk fehlgeschlagen";
 "pairing_errors_need_help" = "Hilfe benötigt";
 "pairing_errors_thread_setup_error_border_router_offline" = "";
 "pairing_errors_thread_setup_error_border_router_offline_description_android" = "";
-"pairing_errors_thread_setup_error_device_mismatch_description" = "Bitte scannen Sie den passenden QR-Code für den Gerätetyp, der auf der nächsten Seite gezeigt wird.";
+"pairing_errors_thread_setup_error_device_mismatch_description" = "Bitte überprüfen und scannen Sie den QR-Code für den auf dem nächsten Bildschirm angezeigten Gerätetyp.";
 "pairing_errors_thread_setup_error_device_mismatch_title" = "Falsches Gerät";
 "pairing_errors_thread_setup_error_missing_thread_credentials" = "Thread-Anmeldeinformationen fehlen";
 "pairing_errors_thread_setup_error_no_thread_networks_found_description" = "Platzieren Sie das Gerät näher an anderen Thread-Geräten in diesem Bereich: %@";
@@ -1364,7 +1367,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Pairing, List Wi-Fi networks: text for alert asking to use a saved Wi-Fi password.*/
 "pairing_list_wifi_networks_use_saved_password" = "Möchten Sie das gespeicherte Kennwort für das Netzwerk „%@“ verwenden?";
-"pairing_loading_device_connecting" = "Verbindung zu %@ herstellen …";
+"pairing_loading_device_connecting" = "Verbindung zu %@ wird hergestellt …";
 "pairing_no" = "Nein";
 "pairing_other" = "Weitere …";
 "pairing_other_network_title" = "Anderes Netzwerk";
@@ -1391,13 +1394,13 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Pairing, Paired successfully: header 3 for the update wifi credentials.*/
 "pairing_paired_successfully_header3" = "";
-"pairing_power_on_and_scanning_ask_user_to_wait" = "Einen Moment …";
+"pairing_power_on_and_scanning_ask_user_to_wait" = "Bitte warten …";
 "pairing_power_on_and_scanning_scanning" = "Gerät wird gesucht";
 "pairing_scan_device_connecting_to_this_device" = "";
 "pairing_scan_device_missing_bluetooth_location_permission_explanation" = "Aktivieren Sie den Bluetooth- und den Standort-Zugriff in den Einstellungen, um Geräte zu verbinden und die Einrichtung abzuschließen.";
 "pairing_scan_device_missing_bluetooth_location_permissions_title" = "";
 "pairing_scan_device_missing_bluetooth_permission_title" = "Keine Zugriffserlaubnis für Bluetooth";
-"pairing_scan_device_please_hold" = "Einen Moment …";
+"pairing_scan_device_please_hold" = "Bitte warten …";
 "pairing_scan_device_searching_for_device" = "Gerät wird gesucht";
 "pairing_scan_device_the_led_light_is_not_pulsing" = "Die LED blinkt nicht";
 "pairing_scan_qr_code_error_description" = "Bitte scannen Sie einen gültigen QR-Code.";
@@ -1416,7 +1419,7 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_scan_qrcode_missing_camera_permission_title" = "Kamerazugriff erforderlich";
 "pairing_scanning_ble_faq" = "Die LED blinkt nicht";
 "pairing_scanning_ble_header_contact_sensor" = "Obere Taste einmal drücken";
-"pairing_scanning_ble_header_keypad" = "Die Taste ‘0’ einmal drücken";
+"pairing_scanning_ble_header_keypad" = "Drücken Sie die Taste „0“ einmal";
 "pairing_success" = "";
 "paring_scan_device_bluetooth_is_off_description" = "Aktivieren Sie den Bluetooth-Zugriff in den Einstellungen, um Geräte zu verbinden und die Einrichtung abzuschließen.";
 
@@ -1626,6 +1629,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_editPlace_toolbar" = "";
 "place_setting_header_add_devices" = "";
 "place_setting_header_add_devices_description" = "";
+"place_setting_header_devices" = "";
 "place_setting_header_general" = "";
 "place_setting_header_setup" = "";
 "place_setting_header_setup_a_device_description" = "";
@@ -1634,6 +1638,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_header_setup_a_kit_description_disable_old_place" = "";
 "place_setting_header_setup_a_kit_description_enable" = "";
 "place_setting_header_setup_a_kit_title" = "";
+"place_setting_header_systems" = "";
 "place_setting_placeInformation" = "";
 "place_setting_placeInformation_description" = "";
 "place_setting_placeInformation_edit_name" = "";
@@ -1692,6 +1697,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: set up a kit*/
 "place_settings_setup_kit" = "";
+"place_settings_system_test" = "";
 
 /*Place settings: title*/
 "place_settings_title" = "";

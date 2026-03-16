@@ -433,6 +433,7 @@
 
 /*door sensor*/
 "device_detail_door_sensor_low_battery_warning_learn_how" = "詳しくはこちら";
+"device_detail_low_rechargeable_battery_warning" = "";
 
 /*Sensing*/
 "device_details_connected" = "接続";
@@ -687,7 +688,7 @@
 "device_setup_alarm_pod" = "Alarm Pod";
 "device_setup_contact_sensor" = "ドアセンサー";
 "device_setup_keypad" = "キーパッド";
-"device_setup_motion_sensor" = "モーションセンサー";
+"device_setup_motion_sensor" = "PIRモーションセンサー";
 "device_setup_others" = "その他";
 "device_setup_security_pod" = "Security Pod";
 "device_setup_sense_plug" = "SensePlug";
@@ -974,9 +975,11 @@ Connection error provided with [underlying error description] from the system.*/
 "intrusion_live_disarm_security_system" = "セキュリティシステムを解除しますか?";
 "intrusion_live_disarm_security_system_description" = "すべてのアラームが無効になり、システムはスタンバイモードに切り替わります";
 "intrusion_live_report_by_door_sensor" = "%1$@ に %2$@ によって作動しました";
+"intrusion_live_report_by_unknown" = "";
 "intrusion_live_report_door_closed" = "閉じた";
 "intrusion_live_report_door_opened" = "開いた";
 "intrusion_live_report_motion" = "動き";
+"intrusion_live_report_motion_in_room" = "%@の動き";
 "intrusion_live_view_no_activity_since_intrusion_began" = "侵入検知以降、活動はありません";
 
 /*Invitation detail: Accept button*/
@@ -1618,6 +1621,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_editPlace_toolbar" = "プレイスのテーマを編集";
 "place_setting_header_add_devices" = "デバイスを追加";
 "place_setting_header_add_devices_description" = "セキュリティシステムを拡張する";
+"place_setting_header_devices" = "";
 "place_setting_header_general" = "全般";
 "place_setting_header_setup" = "セットアップ";
 "place_setting_header_setup_a_device_description" = "センシング用にカスタマイズ";
@@ -1626,6 +1630,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_header_setup_a_kit_description_disable_old_place" = "この機能を有効にするには新しいプレイスを作成してください";
 "place_setting_header_setup_a_kit_description_enable" = "namiデバイスを設定してホームモニタリングを有効にしましょう";
 "place_setting_header_setup_a_kit_title" = "システムをセットアップする";
+"place_setting_header_systems" = "";
 "place_setting_placeInformation" = "プレイスの情報";
 "place_setting_placeInformation_description" = "名前、アイコン、色、カテゴリ、レイアウト";
 "place_setting_placeInformation_edit_name" = "プレイスの名前を編集";
@@ -1684,6 +1689,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: set up a kit*/
 "place_settings_setup_kit" = "システムをセットアップする";
+"place_settings_system_test" = "";
 
 /*Place settings: title*/
 "place_settings_title" = "プレイスの設定";

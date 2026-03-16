@@ -92,7 +92,7 @@
 "alarm_report_alarm_disarmed" = "Alarm disarmed";
 
 /*Alert report: alarm_triggered*/
-"alarm_report_alarm_triggered" = "Alarm triggered";
+"alarm_report_alarm_triggered" = "Intrusion detected";
 
 /*To use in the intrusion report event tile "<Device name> closed"*/
 /*Fuzzy*/
@@ -434,6 +434,7 @@
 
 /*door sensor*/
 "device_detail_door_sensor_low_battery_warning_learn_how" = "Learn how";
+"device_detail_low_rechargeable_battery_warning" = "Low battery. Please connect your device to power.";
 
 /*Sensing*/
 "device_details_connected" = "Connected";
@@ -664,7 +665,7 @@
 /*device placement: remaining devices setup title*/
 "device_placement_remaining_devices_setup_step_4" = "Do not place devices on different floors";
 "device_placement_secure_any_entry_or_room_door" = "Secure any entry or room door";
-"device_placement_sensor_dialog_description" = "Activity sensors refer to the Alarm Pod and SensePlug.";
+"device_placement_sensor_dialog_description" = "Activity sensors refer to the Alarm Pod, SensePlug and SensePod.";
 "device_placement_sensor_dialog_title" = "What are activity sensors?";
 "device_placement_thread_border_router_dialog_description" = "Think of it as the bridge that connects your other Thread devices to the internet, helping them to communicate smoothly.";
 "device_placement_thread_border_router_dialog_title" = "What is a Thread border router?";
@@ -688,7 +689,7 @@
 "device_setup_alarm_pod" = "Alarm Pod";
 "device_setup_contact_sensor" = "Door Sensor";
 "device_setup_keypad" = "Keypad";
-"device_setup_motion_sensor" = "Motion Sensor";
+"device_setup_motion_sensor" = "PIR Motion Sensor";
 "device_setup_others" = "Others";
 "device_setup_security_pod" = "Security Pod";
 "device_setup_sense_plug" = "SensePlug";
@@ -978,13 +979,13 @@ Connection error provided with [underlying error description] from the system.*/
 "intrusion_live_disarm_security_system" = "Disarm security system?";
 "intrusion_live_disarm_security_system_description" = "This action will deactivate all alarms and change the system to Disarm mode.";
 "intrusion_live_report_by_door_sensor" = "Triggered at %1$@ by %2$@";
+"intrusion_live_report_by_unknown" = "Triggered at %@";
 "intrusion_live_report_door_closed" = "Closed";
 
 /*Fuzzy*/
 "intrusion_live_report_door_opened" = "Opened";
 "intrusion_live_report_motion" = "Motion";
-
-/*Fuzzy*/
+"intrusion_live_report_motion_in_room" = "Motion in %@";
 "intrusion_live_view_no_activity_since_intrusion_began" = "No activity since intrusion began";
 
 /*Invitation detail: Accept button*/
@@ -1650,6 +1651,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_editPlace_toolbar" = "Edit place theme";
 "place_setting_header_add_devices" = "Add devices";
 "place_setting_header_add_devices_description" = "Expand your security system";
+"place_setting_header_devices" = "Devices";
 "place_setting_header_general" = "General";
 "place_setting_header_setup" = "Setup";
 "place_setting_header_setup_a_device_description" = "Customize for sensing";
@@ -1658,6 +1660,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_header_setup_a_kit_description_disable_old_place" = "Create a new place to unlock this feature";
 "place_setting_header_setup_a_kit_description_enable" = "Set up nami devices to activate home monitoring";
 "place_setting_header_setup_a_kit_title" = "Set up my system";
+"place_setting_header_systems" = "System";
 "place_setting_placeInformation" = "Place information";
 "place_setting_placeInformation_description" = "Name, icon, color, category, layout";
 "place_setting_placeInformation_edit_name" = "Edit place name";
@@ -1716,6 +1719,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: set up a kit*/
 "place_settings_setup_kit" = "Set up my system";
+"place_settings_system_test" = "System test";
 
 /*Place settings: title*/
 "place_settings_title" = "Place settings";
@@ -1911,7 +1915,7 @@ Connection error provided with [underlying error description] from the system.*/
 "remove_device_remove_thread_network_description" = "The remaining devices in %@ will be disconnected from the Thread network.";
 "remove_device_restore_sensing_in_zone" = "To restore sensing in %@";
 "remove_device_restore_sensing_in_zone_description" = "Set up another Thread device as the border router";
-"report_false_alarm_by_continuing_intrusion_will_be_disarmed" = "By continuing, the intrusion will be disarmed.";
+"report_false_alarm_by_continuing_intrusion_will_be_disarmed" = "By continuing, the system will be disarmed.";
 "report_false_alarm_reporting_as_false_alarm_will_also_disarm_the_intrusion" = "Reporting as false alarm will also disarm the intrusion.";
 "report_false_alarm_the_intrusion_was_triggered_by" = "The intrusion was triggered by";
 

@@ -433,6 +433,7 @@
 
 /*door sensor*/
 "device_detail_door_sensor_low_battery_warning_learn_how" = "";
+"device_detail_low_rechargeable_battery_warning" = "";
 
 /*Sensing*/
 "device_details_connected" = "";
@@ -687,7 +688,7 @@
 "device_setup_alarm_pod" = "Alarm Pod";
 "device_setup_contact_sensor" = "Sensor de puerta";
 "device_setup_keypad" = "Teclado";
-"device_setup_motion_sensor" = "Sensor de movimiento";
+"device_setup_motion_sensor" = "Sensor de movimiento PIR";
 "device_setup_others" = "Otras";
 "device_setup_security_pod" = "Security Pod";
 "device_setup_sense_plug" = "SensePlug";
@@ -974,9 +975,11 @@ Connection error provided with [underlying error description] from the system.*/
 "intrusion_live_disarm_security_system" = "";
 "intrusion_live_disarm_security_system_description" = "";
 "intrusion_live_report_by_door_sensor" = "";
+"intrusion_live_report_by_unknown" = "";
 "intrusion_live_report_door_closed" = "";
 "intrusion_live_report_door_opened" = "";
 "intrusion_live_report_motion" = "";
+"intrusion_live_report_motion_in_room" = "Movimiento en %@";
 "intrusion_live_view_no_activity_since_intrusion_began" = "";
 
 /*Invitation detail: Accept button*/
@@ -1244,7 +1247,7 @@ Connection error provided with [underlying error description] from the system.*/
 "pairing_bluetooth_device_found_name_already_in_use" = "Este nombre de dispositivo ya está en uso. Use otro nombre.";
 "pairing_bluetooth_device_found_name_device_explained" = "La información específica le permitirá identificar distintos dispositivos en su domicilio";
 "pairing_bluetooth_device_found_name_device_header" = "";
-"pairing_bluetooth_device_found_name_your_device" = "Asígnele un nombre al dispositivo";
+"pairing_bluetooth_device_found_name_your_device" = "Asigne un nombre al dispositivo";
 "pairing_bluetooth_device_found_next_button" = "Siguiente";
 "pairing_cancel" = "Cancelar";
 "pairing_confirm_cancel_pairing_description" = "¿Confirma que desea cancelar el proceso de emparejamiento?";
@@ -1626,6 +1629,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_editPlace_toolbar" = "";
 "place_setting_header_add_devices" = "";
 "place_setting_header_add_devices_description" = "";
+"place_setting_header_devices" = "";
 "place_setting_header_general" = "";
 "place_setting_header_setup" = "";
 "place_setting_header_setup_a_device_description" = "";
@@ -1634,6 +1638,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_header_setup_a_kit_description_disable_old_place" = "";
 "place_setting_header_setup_a_kit_description_enable" = "";
 "place_setting_header_setup_a_kit_title" = "";
+"place_setting_header_systems" = "";
 "place_setting_placeInformation" = "";
 "place_setting_placeInformation_description" = "";
 "place_setting_placeInformation_edit_name" = "";
@@ -1692,6 +1697,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: set up a kit*/
 "place_settings_setup_kit" = "";
+"place_settings_system_test" = "";
 
 /*Place settings: title*/
 "place_settings_title" = "";

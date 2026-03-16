@@ -433,6 +433,7 @@
 
 /*door sensor*/
 "device_detail_door_sensor_low_battery_warning_learn_how" = "Leer hoe";
+"device_detail_low_rechargeable_battery_warning" = "";
 
 /*Sensing*/
 "device_details_connected" = "Verbonden";
@@ -976,9 +977,11 @@ Connection error provided with [underlying error description] from the system.*/
 "intrusion_live_disarm_security_system" = "Beveiligingssysteem uitschakelen?";
 "intrusion_live_disarm_security_system_description" = "Met deze actie worden alle alarmen uitgeschakeld en schakelt het systeem over naar de uitschakelmodus.";
 "intrusion_live_report_by_door_sensor" = "Geactiveerd op %1$@ door %2$@";
+"intrusion_live_report_by_unknown" = "";
 "intrusion_live_report_door_closed" = "Gesloten";
 "intrusion_live_report_door_opened" = "Geopend";
 "intrusion_live_report_motion" = "Beweging";
+"intrusion_live_report_motion_in_room" = "Beweging in %@";
 
 /*Fuzzy*/
 "intrusion_live_view_no_activity_since_intrusion_began" = "No activity since intrusion began";
@@ -1621,6 +1624,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_editPlace_toolbar" = "Locatie thema aanpassen";
 "place_setting_header_add_devices" = "Apparaten toevoegen";
 "place_setting_header_add_devices_description" = "Breid uw beveiligingssysteem uit";
+"place_setting_header_devices" = "";
 "place_setting_header_general" = "Algemeen";
 "place_setting_header_setup" = "Instellen";
 "place_setting_header_setup_a_device_description" = "Aanpassen voor detectie";
@@ -1629,6 +1633,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_header_setup_a_kit_description_disable_old_place" = "Maak een nieuwe locatie om dit te ontgrendelen";
 "place_setting_header_setup_a_kit_description_enable" = "Koppelen apparaten voor detectie";
 "place_setting_header_setup_a_kit_title" = "Kit instellen";
+"place_setting_header_systems" = "";
 "place_setting_placeInformation" = "Locatie informatie";
 "place_setting_placeInformation_description" = "Naam, icoon, kleur, categorie en layout";
 "place_setting_placeInformation_edit_name" = "Naam van locatie aanpassen";
@@ -1687,6 +1692,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: set up a kit*/
 "place_settings_setup_kit" = "Kit instellen";
+"place_settings_system_test" = "";
 
 /*Place settings: title*/
 "place_settings_title" = "Locatie settings";
