@@ -234,6 +234,9 @@ public struct NamiSdkConfig {
   @_Concurrency.MainActor public func presentEntryPoint(_ entrypoint: any NamiPairingFramework.SDKRemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.NamiPlaceID? = nil, config: NamiPairingFramework.NamiSdkConfig) throws -> some SwiftUICore.View
   
   #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func subscribeToZoneMotion(zoneURNs: [Swift.String]) -> _Concurrency.AsyncThrowingStream<NamiPairingFramework.NamiZoneMotionData, any Swift.Error>?
+  #endif
   @objc deinit
 }
 final public class NamiPlaceID : @unchecked Swift.Sendable, Swift.Equatable {
@@ -280,6 +283,11 @@ public protocol NamiPairingTokenStore {
   func retrieve<TokenType>(_ type: TokenType.Type, from key: Swift.String) -> TokenType? where TokenType : Swift.Decodable, TokenType : Swift.Encodable
   #endif
   func delete(at key: Swift.String)
+}
+public struct NamiZoneMotionData : Swift.Sendable {
+  public let timestamp: Swift.Int
+  public let stats: Swift.Int
+  public let detection: Swift.Bool
 }
 public protocol NamiWiFiCredentialsStore : Swift.Sendable {
   #if compiler(>=5.3) && $NonescapableTypes
