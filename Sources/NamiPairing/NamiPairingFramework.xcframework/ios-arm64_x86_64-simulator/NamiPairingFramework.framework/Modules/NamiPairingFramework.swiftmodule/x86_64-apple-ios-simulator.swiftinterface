@@ -235,7 +235,7 @@ public struct NamiSdkConfig {
   
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  public func subscribeToZoneMotion(zoneURNs: [Swift.String]) -> _Concurrency.AsyncThrowingStream<NamiPairingFramework.NamiZoneMotionData, any Swift.Error>?
+  public func subscribeToZoneMotion(zoneURNs: [Swift.String]) -> Combine.AnyPublisher<NamiPairingFramework.NamiZoneMotionData, any Swift.Error>?
   #endif
   @objc deinit
 }
@@ -285,6 +285,7 @@ public protocol NamiPairingTokenStore {
   func delete(at key: Swift.String)
 }
 public struct NamiZoneMotionData : Swift.Sendable {
+  public let zoneURN: Swift.String?
   public let timestamp: Swift.Int
   public let stats: Swift.Int
   public let detection: Swift.Bool
