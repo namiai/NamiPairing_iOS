@@ -850,8 +850,8 @@ Connection error provided with [underlying error description] from the system.*/
 "errors_network_error_unknown" = "";
 "errors_pairing_ble_disconnected_description" = "Odłącz %@ i podłącz ponownie do zasilania.";
 "errors_pairing_connection_time_out_description" = "Upewnij się, że urządzenie jest włączone i znajduje się w pobliżu telefonu.";
-"errors_pairing_device_not_found_description" = "";
-"errors_pairing_device_not_found_title" = "";
+"errors_pairing_device_not_found_description" = "Odłącz urządzenie i podłącz je ponownie do źródła zasilania.";
+"errors_pairing_device_not_found_title" = "Nie znaleziono urządzenia";
 "errors_pairing_error_device_cloud_challenge_error" = "";
 "errors_pairing_error_device_secure_session_error" = "";
 "errors_pairing_error_device_thread_join_error" = "";
@@ -2233,7 +2233,7 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 
 /*Update Wifi error: device does not belong to zone*/
 "update_wifi_device_not_in_zone" = "";
-"update_wifi_device_select_another_device" = "";
+"update_wifi_device_select_another_device" = "Wybierz inne urządzenie";
 
 /*Update Wifi: confirm button*/
 "update_wifi_how_it_works_confirm_button" = "";
@@ -2278,8 +2278,8 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 "update_wifi_network_reset_device_guide_pod_type" = "";
 "update_wifi_network_reset_device_guide_pod2" = "";
 "update_wifi_network_update_successfully_header1" = "";
-"update_wifi_network_wrong_device_scanned_error_description" = "";
-"update_wifi_network_wrong_device_scanned_error_title" = "";
+"update_wifi_network_wrong_device_scanned_error_description" = "Zweryfikuj i zeskanuj kod QR urządzenia wybranego wcześniej.";
+"update_wifi_network_wrong_device_scanned_error_title" = "Zeskanowano niewłaściwe urządzenie";
 "update_wifi_network_zone_status_guide_completed_update" = "";
 "update_wifi_network_zones_selection_guide" = "";
 "update_wifi_not_nami_qr_code_no_zone" = "";

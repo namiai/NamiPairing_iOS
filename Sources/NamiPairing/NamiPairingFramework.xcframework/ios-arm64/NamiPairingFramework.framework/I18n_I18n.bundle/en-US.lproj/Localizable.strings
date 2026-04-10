@@ -1302,7 +1302,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Pairing, Enter Wi-Fi password: header for the screen.*/
 "pairing_enter_wifi_password_header" = "Input the password for “%@.";
-"pairing_enter_wifi_password_password_entry_field_hint" = "These Wi-Fi network credentials will be used to set up other devices in the Area.";
+"pairing_enter_wifi_password_password_entry_field_hint" = "These Wi-Fi network credentials will be used to set up other devices in the Area.";
 
 /*Pairing, Enter Wi-Fi password: placeholder for the password field.*/
 "pairing_enter_wifi_password_password_placeholder" = "Password";
