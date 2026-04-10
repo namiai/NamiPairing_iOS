@@ -11,7 +11,6 @@ let package = Package(
         .macOS(.v10_15),
     ],
     products: [
-        // Single public product: NamiPairing
         .library(
             name: "NamiPairing",
             targets: ["NamiPairingCore"]
@@ -24,13 +23,11 @@ let package = Package(
         )
     ],
     targets: [
-        // Binary XCFramework with all core functionality.
         .binaryTarget(
             name: "NamiPairingFramework",
-            url: "https://github.com/namiai/NamiPairing_iOS/releases/download/5.0.0/NamiPairingFramework.xcframework.zip",
-            checksum: "2deb15f1e4698554daeb1b1a5a8386a543c637f65390d52c8c68ced65c76b287"
+            url: "https://github.com/namiai/NamiPairing_iOS/releases/download/5.1.0/NamiPairingFramework.xcframework.zip",
+            checksum: "a974606561c68d85ccdac88990e6247f46364cd9fc41121504d7885a20beb8bb"
         ),
-        // Thin Swift wrapper target used by clients.
         .target(
             name: "NamiPairingCore",
             dependencies: [
