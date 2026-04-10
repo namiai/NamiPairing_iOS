@@ -433,7 +433,7 @@
 
 /*door sensor*/
 "device_detail_door_sensor_low_battery_warning_learn_how" = "詳しくはこちら";
-"device_detail_low_rechargeable_battery_warning" = "";
+"device_detail_low_rechargeable_battery_warning" = "バッテリー残量が少ないです。電源に接続してください。";
 
 /*Sensing*/
 "device_details_connected" = "接続";
@@ -975,7 +975,7 @@ Connection error provided with [underlying error description] from the system.*/
 "intrusion_live_disarm_security_system" = "セキュリティシステムを解除しますか?";
 "intrusion_live_disarm_security_system_description" = "すべてのアラームが無効になり、システムはスタンバイモードに切り替わります";
 "intrusion_live_report_by_door_sensor" = "%1$@ に %2$@ によって作動しました";
-"intrusion_live_report_by_unknown" = "";
+"intrusion_live_report_by_unknown" = "%@ に作動しました";
 "intrusion_live_report_door_closed" = "閉じた";
 "intrusion_live_report_door_opened" = "開いた";
 "intrusion_live_report_motion" = "動き";
@@ -1130,6 +1130,7 @@ Connection error provided with [underlying error description] from the system.*/
 "motion_now_explanation_learn_more" = "詳細はこちら";
 "motion_now_explanation_sub_title" = "動きの状況をすばやく確認して、デバイスが正常に動作しているか確かめる方法";
 "motion_now_format_active_zones_android" = "稼働中のゾーン：%d";
+"motion_now_getting_your_motion_graph_ready" = "データを読み込んでいます…";
 
 /*Motion now: go to wifi settings*/
 "motion_now_go_to_wifi_settings" = "Wi-Fi設定を開く";
@@ -1621,7 +1622,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_editPlace_toolbar" = "プレイスのテーマを編集";
 "place_setting_header_add_devices" = "デバイスを追加";
 "place_setting_header_add_devices_description" = "セキュリティシステムを拡張する";
-"place_setting_header_devices" = "";
+"place_setting_header_devices" = "デバイス";
 "place_setting_header_general" = "全般";
 "place_setting_header_setup" = "セットアップ";
 "place_setting_header_setup_a_device_description" = "センシング用にカスタマイズ";
@@ -1630,7 +1631,7 @@ Connection error provided with [underlying error description] from the system.*/
 "place_setting_header_setup_a_kit_description_disable_old_place" = "この機能を有効にするには新しいプレイスを作成してください";
 "place_setting_header_setup_a_kit_description_enable" = "namiデバイスを設定してホームモニタリングを有効にしましょう";
 "place_setting_header_setup_a_kit_title" = "システムをセットアップする";
-"place_setting_header_systems" = "";
+"place_setting_header_systems" = "システム";
 "place_setting_placeInformation" = "プレイスの情報";
 "place_setting_placeInformation_description" = "名前、アイコン、色、カテゴリ、レイアウト";
 "place_setting_placeInformation_edit_name" = "プレイスの名前を編集";
@@ -1655,7 +1656,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: sensitivity engine not supported*/
 "place_settings_engine_does_not_support_sensitivity" = "動作エンジンでは利用できません";
-"place_settings_entry_exit_delay" = "";
+"place_settings_entry_exit_delay" = "入退室のディレイ";
 "place_settings_last_admin_leave_dialog_description" = "あなたは %@ の最後の管理者です。このプレイスを退出するには、別のユーザーを管理者に指定してください。";
 "place_settings_last_admin_leave_dialog_title" = "退去前に新しい管理者を設定してください";
 
@@ -1665,9 +1666,9 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Edit place: motion*/
 "place_settings_motion" = "動作";
-"place_settings_no_devices_found_dialog_description" = "";
-"place_settings_no_devices_found_dialog_title" = "";
-"place_settings_pins" = "";
+"place_settings_no_devices_found_dialog_description" = "この機能はデバイスが追加された後で利用できるようになります。";
+"place_settings_no_devices_found_dialog_title" = "デバイスが見つかりません";
+"place_settings_pins" = "PIN";
 
 /*Place settings: place settings*/
 "place_settings_place_settings" = "プレイスの設定";
@@ -1689,7 +1690,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Place settings: set up a kit*/
 "place_settings_setup_kit" = "システムをセットアップする";
-"place_settings_system_test" = "";
+"place_settings_system_test" = "システムをテストする";
 
 /*Place settings: title*/
 "place_settings_title" = "プレイスの設定";
@@ -2228,6 +2229,7 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 
 /*Update Wifi error: device does not belong to zone*/
 "update_wifi_device_not_in_zone" = "このデバイスは選択されたゾーンに属していません。%1$@ にあるデバイスのQRコードをスキャンしてください。";
+"update_wifi_device_select_another_device" = "別のデバイスを選択する";
 
 /*Update Wifi: confirm button*/
 "update_wifi_how_it_works_confirm_button" = "続行";
@@ -2272,6 +2274,8 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 "update_wifi_network_reset_device_guide_pod_type" = "センチネルポッド用";
 "update_wifi_network_reset_device_guide_pod2" = "ピンを使用してリセット ボタンを長押しします。LED が濃い青色に点滅します。";
 "update_wifi_network_update_successfully_header1" = "完了！ デバイスのWi-Fiが更新されました。";
+"update_wifi_network_wrong_device_scanned_error_description" = "先ほど選択したデバイスを確認し、そのQRコードをスキャンしてください。";
+"update_wifi_network_wrong_device_scanned_error_title" = "誤ったデバイスがスキャンされました";
 "update_wifi_network_zone_status_guide_completed_update" = "Wi-Fi情報を更新しました！";
 "update_wifi_network_zones_selection_guide" = "ゾーン内のデバイスは同じWi-Fiネットワークに接続する必要があります。現在の設定を維持したまま、すべてのデバイスを更新してください。";
 "update_wifi_not_nami_qr_code_no_zone" = "このQRコードはnamiデバイスのものではありません";

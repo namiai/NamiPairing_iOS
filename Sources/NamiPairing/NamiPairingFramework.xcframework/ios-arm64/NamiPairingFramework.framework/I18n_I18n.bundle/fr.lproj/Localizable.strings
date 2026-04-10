@@ -1130,6 +1130,7 @@ Connection error provided with [underlying error description] from the system.*/
 "motion_now_explanation_learn_more" = "";
 "motion_now_explanation_sub_title" = "";
 "motion_now_format_active_zones_android" = "";
+"motion_now_getting_your_motion_graph_ready" = "";
 
 /*Motion now: go to wifi settings*/
 "motion_now_go_to_wifi_settings" = "";
@@ -2226,6 +2227,7 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 
 /*Update Wifi error: device does not belong to zone*/
 "update_wifi_device_not_in_zone" = "";
+"update_wifi_device_select_another_device" = "Sélectionnez un autre appareil";
 
 /*Update Wifi: confirm button*/
 "update_wifi_how_it_works_confirm_button" = "";
@@ -2270,6 +2272,8 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 "update_wifi_network_reset_device_guide_pod_type" = "";
 "update_wifi_network_reset_device_guide_pod2" = "";
 "update_wifi_network_update_successfully_header1" = "";
+"update_wifi_network_wrong_device_scanned_error_description" = "Veuillez vérifier et scanner le code QR de l’appareil sélectionné précédemment.";
+"update_wifi_network_wrong_device_scanned_error_title" = "Mauvais appareil scanné";
 "update_wifi_network_zone_status_guide_completed_update" = "";
 "update_wifi_network_zones_selection_guide" = "";
 "update_wifi_not_nami_qr_code_no_zone" = "";

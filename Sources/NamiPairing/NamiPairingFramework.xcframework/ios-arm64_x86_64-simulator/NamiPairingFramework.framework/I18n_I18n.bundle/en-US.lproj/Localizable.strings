@@ -1136,6 +1136,7 @@ Connection error provided with [underlying error description] from the system.*/
 "motion_now_explanation_learn_more" = "Learn more";
 "motion_now_explanation_sub_title" = "Quick way to check motion activity and ensure your devices are working properly";
 "motion_now_format_active_zones_android" = "%d Area active";
+"motion_now_getting_your_motion_graph_ready" = "We're loading your data...";
 
 /*Motion now: go to wifi settings*/
 "motion_now_go_to_wifi_settings" = "Go to Wi-Fi Settings";
@@ -1301,7 +1302,7 @@ Connection error provided with [underlying error description] from the system.*/
 
 /*Pairing, Enter Wi-Fi password: header for the screen.*/
 "pairing_enter_wifi_password_header" = "Input the password for “%@.";
-"pairing_enter_wifi_password_password_entry_field_hint" = "These Wi-Fi network credentials will be used to set up other devices in the Area.";
+"pairing_enter_wifi_password_password_entry_field_hint" = "These Wi-Fi network credentials will be used to set up other devices in the Area.";
 
 /*Pairing, Enter Wi-Fi password: placeholder for the password field.*/
 "pairing_enter_wifi_password_password_placeholder" = "Password";
@@ -2268,6 +2269,7 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 
 /*Update Wifi error: device does not belong to zone*/
 "update_wifi_device_not_in_zone" = "This device does not belong to the selected Area. Please scan the QR code of a device in %1$@";
+"update_wifi_device_select_another_device" = "Select another device";
 
 /*Update Wifi: confirm button*/
 "update_wifi_how_it_works_confirm_button" = "Continue";
@@ -2312,6 +2314,8 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 "update_wifi_network_reset_device_guide_pod_type" = "For sentinel pod";
 "update_wifi_network_reset_device_guide_pod2" = "Use a pin to press and hold the reset button. The LED will flash dark blue.";
 "update_wifi_network_update_successfully_header1" = "Perfect! Your device is now updated.";
+"update_wifi_network_wrong_device_scanned_error_description" = "Please verify and scan the QR code of the device selected earlier.";
+"update_wifi_network_wrong_device_scanned_error_title" = "Wrong device scanned";
 "update_wifi_network_zone_status_guide_completed_update" = "Wi-Fi credential updated!";
 "update_wifi_network_zones_selection_guide" = "Devices in an Area must be connected to the same Wi-Fi network. Update all devices in an Area keep existing settings.";
 "update_wifi_not_nami_qr_code_no_zone" = "This QR code does not match a nami device.";

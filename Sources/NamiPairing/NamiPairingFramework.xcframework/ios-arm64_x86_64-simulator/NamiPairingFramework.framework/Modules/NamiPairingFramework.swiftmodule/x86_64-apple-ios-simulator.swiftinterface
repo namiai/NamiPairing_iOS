@@ -77,6 +77,7 @@ public enum SDKError : Swift.Error, Foundation.LocalizedError {
   case storageError(NamiPairingFramework.StorageError)
   case incorrectTemplatesBaseUrl
   case invalidPairingStepsContainer
+  case webSocketUnavailable
   #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
     get
@@ -234,6 +235,7 @@ public struct NamiSdkConfig {
   @_Concurrency.MainActor public func presentEntryPoint(_ entrypoint: any NamiPairingFramework.SDKRemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.NamiPlaceID? = nil, config: NamiPairingFramework.NamiSdkConfig) throws -> some SwiftUICore.View
   
   #endif
+  public func subscribeToZoneMotion(zoneURNs: [Swift.String]) throws -> Combine.AnyPublisher<NamiPairingFramework.NamiZoneMotionData, any Swift.Error>
   @objc deinit
 }
 final public class NamiPlaceID : @unchecked Swift.Sendable, Swift.Equatable {
@@ -280,6 +282,12 @@ public protocol NamiPairingTokenStore {
   func retrieve<TokenType>(_ type: TokenType.Type, from key: Swift.String) -> TokenType? where TokenType : Swift.Decodable, TokenType : Swift.Encodable
   #endif
   func delete(at key: Swift.String)
+}
+public struct NamiZoneMotionData : Swift.Sendable {
+  public let zoneURN: Swift.String?
+  public let timestamp: Swift.Int
+  public let stats: Swift.Int
+  public let detection: Swift.Bool
 }
 public protocol NamiWiFiCredentialsStore : Swift.Sendable {
   #if compiler(>=5.3) && $NonescapableTypes

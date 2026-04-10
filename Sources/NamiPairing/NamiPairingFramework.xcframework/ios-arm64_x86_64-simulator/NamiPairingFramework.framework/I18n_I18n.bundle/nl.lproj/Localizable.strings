@@ -1134,6 +1134,7 @@ Connection error provided with [underlying error description] from the system.*/
 "motion_now_explanation_learn_more" = "Meer informatie";
 "motion_now_explanation_sub_title" = "Snelle manier om bewegingsactiviteit te controleren en ervoor te zorgen dat uw apparaten goed werken";
 "motion_now_format_active_zones_android" = "%d zone actief";
+"motion_now_getting_your_motion_graph_ready" = "";
 
 /*Motion now: go to wifi settings*/
 "motion_now_go_to_wifi_settings" = "Ga naar Wi-Fi instellingen";
@@ -2237,6 +2238,7 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 
 /*Update Wifi error: device does not belong to zone*/
 "update_wifi_device_not_in_zone" = "Dit apparaat behoort niet tot de geselecteerde zone. Scan de QR -code van een apparaat in %1$@";
+"update_wifi_device_select_another_device" = "";
 
 /*Update Wifi: confirm button*/
 "update_wifi_how_it_works_confirm_button" = "Doorgaan";
@@ -2281,6 +2283,8 @@ static let rangeOneToThree = LocalizedKey("sensitivity_settings.one_to_three")
 "update_wifi_network_reset_device_guide_pod_type" = "Voor Sentinel Pod";
 "update_wifi_network_reset_device_guide_pod2" = "Gebruik een pinnetje om de resetknop ingedrukt te houden. De LED zal donkerblauw flitsen.";
 "update_wifi_network_update_successfully_header1" = "Perfect! Je apparaat is nu bijgewerkt.";
+"update_wifi_network_wrong_device_scanned_error_description" = "";
+"update_wifi_network_wrong_device_scanned_error_title" = "";
 "update_wifi_network_zone_status_guide_completed_update" = "Wi-Fi gegevens bijgewerkt!";
 "update_wifi_network_zones_selection_guide" = "Apparaten binnen een zone moeten met hetzelfde Wi-Fi netwerk verbonden zijn. Werk alle apparaten bij behoud huidige instelling";
 "update_wifi_not_nami_qr_code_no_zone" = "Deze QR-code komt niet overeen met een nami-apparaat.";
