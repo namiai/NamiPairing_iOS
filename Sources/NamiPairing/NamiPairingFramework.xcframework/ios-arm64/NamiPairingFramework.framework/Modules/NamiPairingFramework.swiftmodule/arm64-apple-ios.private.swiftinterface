@@ -184,6 +184,10 @@ public enum RemoteTemplateEntrypoint : Swift.String, NamiPairingFramework.SDKRem
 }
 public protocol SDKRemoteTemplateEntrypointProtocol : Swift.RawRepresentable where Self.RawValue == Swift.String {
 }
+extension NamiPairingFramework.SDKRemoteTemplateEntrypointProtocol {
+  public func with(entityID: Swift.String) -> some NamiPairingFramework.SDKRemoteTemplateEntrypointProtocol
+  
+}
 public struct PairingHelper {
 }
 public struct NamiSdkConfig {
