@@ -29,7 +29,8 @@
 "alarm_false_alarm_cause_other" = "Other";
 
 /*False alarm cause.*/
-"alarm_false_alarm_cause_small_moving_objects" = "Pets / Vacuum robots / Fans";
+/*Fuzzy*/
+"alarm_false_alarm_cause_small_moving_objects" = "Pets / Robot Vacuums";
 
 /*False alarm.*/
 "alarm_false_alarm_report_button_title" = "Report";
@@ -47,7 +48,8 @@
 "alarm_false_alarm_sensitivity_explanatio_arm_selected_zones" = "If your place has multiple Areas, consider only enabling armed mode in the Areas covering the main entrance.";
 
 /*Sensetivity explanation screen on false alarm report.*/
-"alarm_false_alarm_sensitivity_explanatio_possible_reasons" = "Intrusions may be triggered by big pets, vacuum robots or other non-human movements";
+/*Fuzzy*/
+"alarm_false_alarm_sensitivity_explanatio_possible_reasons" = "Intrusions may be triggered by big pets, robot vacuums or other non-human movements";
 
 /*Sensetivity explanation screen on false alarm report.*/
 "alarm_false_alarm_sensitivity_explanatio_sensitivity_level_hint" = "Consider adjusting the sensitivity level of your place to filter out small and brief motion.";
