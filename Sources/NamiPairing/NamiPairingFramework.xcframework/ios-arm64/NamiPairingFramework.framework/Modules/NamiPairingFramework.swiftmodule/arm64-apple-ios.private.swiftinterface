@@ -239,7 +239,7 @@ public struct NamiSdkConfig {
   @_Concurrency.MainActor public func presentEntryPoint(_ entrypoint: any NamiPairingFramework.SDKRemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.NamiPlaceID? = nil, config: NamiPairingFramework.NamiSdkConfig) throws -> some SwiftUICore.View
   
   #endif
-  public func subscribeToZoneMotion(zoneURNs: [Swift.String]) throws -> Combine.AnyPublisher<NamiPairingFramework.NamiZoneMotionData, any Swift.Error>
+  public func subscribeToZoneMotion(zoneURNs: [Swift.String], maxOverall: Swift.Bool = false) throws -> Combine.AnyPublisher<NamiPairingFramework.NamiZoneMotionData, any Swift.Error>
   @objc deinit
 }
 final public class NamiPlaceID : @unchecked Swift.Sendable, Swift.Equatable {
