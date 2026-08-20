@@ -76,7 +76,6 @@ public enum SDKError : Swift.Error, Foundation.LocalizedError {
   case authenticationError(any Swift.Error)
   case storageError(NamiPairingFramework.StorageError)
   case incorrectTemplatesBaseUrl
-  case invalidPairingStepsContainer
   case webSocketUnavailable
   #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
@@ -232,10 +231,6 @@ public struct NamiSdkConfig {
   convenience public init<S>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, threadSecureStorage: S.Type) where S : NamiPairingFramework.NamiThreadSecureStorage
   convenience public init<W, S>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, wifiStorage: W, threadSecureStorage: S.Type) where W : NamiPairingFramework.SDKWiFiStorageProtocol, S : NamiPairingFramework.NamiThreadSecureStorage
   #if compiler(>=5.3) && $NonescapableTypes
-  public func startPairing(roomId: Swift.String, deviceType: NamiPairingFramework.PairingNamiDeviceType = .unknown, pairingParameters: NamiPairingFramework.NamiPairingParameters? = nil) throws -> some SwiftUICore.View
-  
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor public func presentEntryPoint(_ entrypoint: any NamiPairingFramework.SDKRemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.NamiPlaceID? = nil, config: NamiPairingFramework.NamiSdkConfig) throws -> some SwiftUICore.View
   
   #endif
@@ -276,9 +271,6 @@ public protocol NamiThreadSecureStorage {
   static func retrieve(at key: Swift.String, server: Swift.String) -> Swift.Result<Foundation.Data, Self.SecureStorageError>
   #endif
   static func delete(at key: Swift.String, server: Swift.String)
-}
-public struct PairingStepsHandle {
-  public init(_ value: Any)
 }
 public protocol NamiPairingTokenStore {
   func store<TokenType>(_ token: TokenType, at key: Swift.String) where TokenType : Swift.Decodable, TokenType : Swift.Encodable

@@ -1,5 +1,5 @@
 name: "Build XCFrameworks"
-description: "Common build steps for NamiPairingFramework / StandardPairingUI"
+description: "Common build steps for NamiPairingFramework"
 
 inputs:
   access_token_github:
@@ -193,5 +193,3 @@ runs:
         cd NamiPairingFramework
         tar -vczf pairing_frameworks.tar.gz \
           build/NamiPairingFramework.xcframework
-        # If you later add StandardPairingUI.xcframework, append it here:
-        #  build/StandardPairingUI.xcframework
