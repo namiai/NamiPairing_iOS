@@ -25,8 +25,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "NamiPairingFramework",
-            url: "https://github.com/namiai/NamiPairing_iOS/releases/download/5.3.2/NamiPairingFramework.xcframework.zip",
-            checksum: "4efa17ee40725dd2cf995b5a390fb6d7f3cd0f4184946721f93060713f2502fa"
+            url: "https://github.com/namiai/NamiPairing_iOS/releases/download/5.4.3/NamiPairingFramework.xcframework.zip",
+            checksum: "d48576b7ea1e139d8fbde3393d62c00d2b4b9ab551b903770dd754ceb296cb4d"
         ),
         .target(
             name: "NamiPairingCore",
