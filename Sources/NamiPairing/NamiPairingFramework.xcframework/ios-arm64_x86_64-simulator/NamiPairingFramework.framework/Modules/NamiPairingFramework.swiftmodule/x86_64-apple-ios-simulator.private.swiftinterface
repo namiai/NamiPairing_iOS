@@ -76,7 +76,6 @@ public enum SDKError : Swift.Error, Foundation.LocalizedError {
   case authenticationError(any Swift.Error)
   case storageError(NamiPairingFramework.StorageError)
   case incorrectTemplatesBaseUrl
-  case invalidPairingStepsContainer
   case webSocketUnavailable
   #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
@@ -184,6 +183,10 @@ public enum RemoteTemplateEntrypoint : Swift.String, NamiPairingFramework.SDKRem
 }
 public protocol SDKRemoteTemplateEntrypointProtocol : Swift.RawRepresentable where Self.RawValue == Swift.String {
 }
+extension NamiPairingFramework.SDKRemoteTemplateEntrypointProtocol {
+  public func with(entityID: Swift.String) -> some NamiPairingFramework.SDKRemoteTemplateEntrypointProtocol
+  
+}
 public struct PairingHelper {
 }
 public struct NamiSdkConfig {
@@ -206,7 +209,7 @@ public struct NamiSdkConfig {
       get
     }
   }
-  public init(baseURL: Foundation.URL, countryCode: Swift.String, measurementSystem: NamiPairingFramework.NamiSdkConfig.MeasurementSystem, clientId: Swift.String, language: Swift.String, appearance: NamiPairingFramework.NamiSdkConfig.Appearance, topologyRoomsSupported: Swift.Bool = false)
+  public init(baseURL: Foundation.URL, countryCode: Swift.String, measurementSystem: NamiPairingFramework.NamiSdkConfig.MeasurementSystem, clientId: Swift.String, language: Swift.String, appearance: NamiPairingFramework.NamiSdkConfig.Appearance, topologyRoomsSupported: Swift.Bool = false, disableBSSIDPinning: Swift.Bool = false)
   public var baseURL: Foundation.URL
   public var countryCode: Swift.String
   public var measurementSystem: NamiPairingFramework.NamiSdkConfig.MeasurementSystem
@@ -214,6 +217,7 @@ public struct NamiSdkConfig {
   public var language: Swift.String
   public var appearance: NamiPairingFramework.NamiSdkConfig.Appearance
   public var topologyRoomsSupported: Swift.Bool
+  public var disableBSSIDPinning: Swift.Bool
 }
 @_hasMissingDesignatedInitializers public class NamiPairing {
   public var sdkEventsPublisher: Combine.AnyPublisher<NamiPairingFramework.NamiSDKEvent, any Swift.Error> {
@@ -228,14 +232,10 @@ public struct NamiSdkConfig {
   convenience public init<S>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, threadSecureStorage: S.Type) where S : NamiPairingFramework.NamiThreadSecureStorage
   convenience public init<W, S>(baseURL: Foundation.URL, tokenStore: any NamiPairingFramework.NamiPairingTokenStore, wifiStorage: W, threadSecureStorage: S.Type) where W : NamiPairingFramework.SDKWiFiStorageProtocol, S : NamiPairingFramework.NamiThreadSecureStorage
   #if compiler(>=5.3) && $NonescapableTypes
-  public func startPairing(roomId: Swift.String, deviceType: NamiPairingFramework.PairingNamiDeviceType = .unknown, pairingParameters: NamiPairingFramework.NamiPairingParameters? = nil) throws -> some SwiftUICore.View
-  
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor public func presentEntryPoint(_ entrypoint: any NamiPairingFramework.SDKRemoteTemplateEntrypointProtocol, placeId: NamiPairingFramework.NamiPlaceID? = nil, config: NamiPairingFramework.NamiSdkConfig) throws -> some SwiftUICore.View
   
   #endif
-  public func subscribeToZoneMotion(zoneURNs: [Swift.String]) throws -> Combine.AnyPublisher<NamiPairingFramework.NamiZoneMotionData, any Swift.Error>
+  public func subscribeToZoneMotion(zoneURNs: [Swift.String], maxOverall: Swift.Bool = false) throws -> Combine.AnyPublisher<NamiPairingFramework.NamiZoneMotionData, any Swift.Error>
   @objc deinit
 }
 final public class NamiPlaceID : @unchecked Swift.Sendable, Swift.Equatable {
@@ -272,9 +272,6 @@ public protocol NamiThreadSecureStorage {
   static func retrieve(at key: Swift.String, server: Swift.String) -> Swift.Result<Foundation.Data, Self.SecureStorageError>
   #endif
   static func delete(at key: Swift.String, server: Swift.String)
-}
-public struct PairingStepsHandle {
-  public init(_ value: Any)
 }
 public protocol NamiPairingTokenStore {
   func store<TokenType>(_ token: TokenType, at key: Swift.String) where TokenType : Swift.Decodable, TokenType : Swift.Encodable
