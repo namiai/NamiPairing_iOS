@@ -9,7 +9,8 @@
 #               mirror); the mirror is also the local backup,
 #            2. snapshot the source's settings, releases, collaborators, teams,
 #            3. build the thin history: one commit per tag in commit-date order,
-#               every *.xcframework removed, Package*.swift pointing at
+#               every *.xcframework removed, those a manifest declares zipped
+#               as assets, Package*.swift pointing at
 #               https://github.com/<source>/releases/download/<tag>/<name>.xcframework.zip
 #               with its sha256 checksum; author, message and dates of the
 #               original tag commit are preserved, other branches are dropped.
@@ -20,7 +21,8 @@
 #            5. create one release per tag with its zip; a release that already
 #               exists on the source keeps its title and notes,
 #            6. copy collaborators and teams,
-#            7. verify tags, releases and one checksum end to end.
+#            7. verify tags, releases, every asset's checksum, and that the
+#               newest asset downloads.
 #   swap     8. rename <source> to <source>_legacy, then <source>_next to <source>,
 #            9. verify the final name serves the thin tags and the newest asset
 #               downloads.
@@ -50,6 +52,16 @@
 # shasum, perl, curl.
 
 set -euo pipefail
+# An unexpected failure under -e must name its line instead of exiting
+# without a word (a 2026-11-11 run did exactly that). -E makes the ERR trap
+# fire inside functions; the BASH_SUBSHELL guard keeps it quiet inside
+# $(...) whose failure the caller handles with ||. The EXIT trap is the
+# backstop for the shapes ERR misses (a failure inside a pipeline-fed
+# while body); die() marks its own exits so they are not reported twice.
+set -E
+DIED=0
+trap 'if [ "$BASH_SUBSHELL" = 0 ]; then printf "\033[1;31m[err]\033[0m migrate.sh: command failed at line %s\n" "$LINENO" >&2; fi' ERR
+trap 'rc=$?; if [ "$rc" != 0 ] && [ "$DIED" = 0 ] && [ "$BASH_SUBSHELL" = 0 ]; then printf "\033[1;31m[err]\033[0m migrate.sh: aborted with status %s near line %s\n" "$rc" "$LINENO" >&2; fi' EXIT
 
 SOURCE_REPO="${SOURCE_REPO:-namiai/NamiPairing_iOS}"
 OWNER="${SOURCE_REPO%%/*}"
@@ -77,7 +89,7 @@ NEXT_MARKER="$WORKDIR/next-repo.id"
 
 log()  { printf '\033[1;34m==>\033[0m %s\n' "$*"; }
 warn() { printf '\033[1;33m[warn]\033[0m %s\n' "$*" >&2; }
-die()  { printf '\033[1;31m[err]\033[0m %s\n' "$*" >&2; exit 1; }
+die()  { printf '\033[1;31m[err]\033[0m %s\n' "$*" >&2; DIED=1; exit 1; }
 
 # Every GitHub write goes through run() so DRY_RUN=1 shows the plan instead.
 run() {
@@ -217,6 +229,14 @@ stage_tag_tree() {
   if find "$THIN" -type d -name '*.xcframework' | grep -q .; then
     find "$THIN" -type d -name '*.xcframework' | sort | while read -r xcf; do
       base=$(basename "$xcf")
+      # Only a framework some manifest declares becomes an asset. Source tag
+      # 1.6 committed DeviceConnections.xcframework one release before its
+      # binary target existed; consumers never received it.
+      if ! grep -q "path:[[:space:]]*\"[^\"]*${base}\"" "$THIN"/Package*.swift 2>/dev/null; then
+        warn "tag $tag: $base is not referenced by any manifest; dropped, not published"
+        rm -rf "$xcf"
+        continue
+      fi
       zip="$ASSETS/$tag/${base}.zip"
       # --keepParent: SwiftPM wants the .xcframework directory at the top of
       # the archive. No --sequesterRsrc: extended attributes stay out of the
@@ -256,6 +276,22 @@ stage_tag_tree() {
   find "$ASSETS/$tag" -name '*.zip' | grep -q . || die "tag $tag: no zip staged"
 }
 
+# A zip an earlier run staged for a framework no manifest references (see
+# stage_tag_tree) must not reach the release.
+prune_unreferenced_zips() {  # $1 tag
+  local zip name sums
+  sums="$ASSETS/$1/.checksums"
+  for zip in "$ASSETS/$1"/*.xcframework.zip; do
+    [ -f "$zip" ] || continue
+    name=$(basename "$zip")
+    [ -z "$(manifest_checksum "$1" "$name" || true)" ] || continue
+    warn "tag $1: staged $name is not referenced by its manifest; removed"
+    rm -f "$zip"
+    grep -v "^${name%.xcframework.zip} " "$sums" > "$sums.tmp" || true
+    mv "$sums.tmp" "$sums"
+  done
+}
+
 build_thin() {
   local when commit tag existing mapped reused parent thin_commit newest_built src_commit
   mkdir -p "$ASSETS"
@@ -283,6 +319,7 @@ build_thin() {
         || die "tag $tag was built from ${mapped:0:8} but now points at ${commit:0:8}; a moved tag cannot be synced"
       [ -d "$ASSETS/$tag" ] \
         || die "tag $tag is built but $ASSETS/$tag is missing; delete $THIN and $ASSETS to rebuild"
+      prune_unreferenced_zips "$tag"
       parent="$existing"
       continue
     fi
@@ -393,7 +430,7 @@ release_title() { jq -r --arg t "$1" '.[] | select(.tag_name == $t) | .name // e
 release_notes() { jq -r --arg t "$1" '.[] | select(.tag_name == $t) | .body // empty' "$SNAP/releases.json" | head -c 65000; }
 
 create_releases() {
-  local when commit tag state expected title notes_file ok new fixed
+  local when commit tag state expected title notes_file ok new fixed remote staged zip
   ok=0; new=0; fixed=0
   shopt -s nullglob
   while read -r when commit tag; do
@@ -422,6 +459,18 @@ create_releases() {
       log "Release $tag: exists with state '$state', uploading assets (want $expected)"
       fixed=$((fixed + 1))
       run gh release upload "$tag" "${zips[@]}" --repo "$NEXT_REPO" --clobber
+      # An asset the release carries but this run does not stage has no
+      # manifest entry and would fail verification; remove it.
+      for remote in $(gh api "repos/$NEXT_REPO/releases/tags/$tag" --jq '.assets[].name'); do
+        staged=0
+        for zip in "${zips[@]}"; do
+          if [ "$(basename "$zip")" = "$remote" ]; then staged=1; fi
+        done
+        if [ "$staged" = "0" ]; then
+          log "  removing unreferenced asset $remote"
+          run gh release delete-asset "$tag" "$remote" --repo "$NEXT_REPO" --yes
+        fi
+      done
       run gh release edit "$tag" --repo "$NEXT_REPO" --draft=false
     fi
   done < "$TAGS_FILE"
@@ -498,9 +547,11 @@ verify_next_repo() {
     while read -r asset digest; do
       [ -n "$asset" ] || continue
       if [ "$digest" = "null" ] || [ "$tag" = "$(highest_tag)" ]; then
-        digest="sha256:$(download_and_hash "$repo" "$tag" "$asset")"
+        digest="sha256:$(download_and_hash "$repo" "$tag" "$asset")" \
+          || die "release $tag: $asset did not download from $repo"
       fi
-      expected=$(manifest_checksum "$tag" "$asset")
+      # Empty when the release carries an asset no manifest declares.
+      expected=$(manifest_checksum "$tag" "$asset" || true)
       if [ "$digest" != "sha256:$expected" ]; then
         mismatched=$((mismatched + 1))
         warn "release $tag: $asset is $digest, its manifest records ${expected:-nothing}"

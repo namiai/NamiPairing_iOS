@@ -47,9 +47,11 @@ renames: [ROLLBACK.md](ROLLBACK.md).
 2. Snapshots the source's settings, releases, collaborators and teams.
 3. Builds the thin history: one commit per tag in commit-date order, same
    author, message and dates as the original tag commit, every `.xcframework`
-   zipped (`ditto -c -k --keepParent`) and replaced in `Package*.swift` by
+   removed; each one a manifest declares is zipped (`ditto -c -k --keepParent`)
+   and replaced in `Package*.swift` by
    `url: https://github.com/<source>/releases/download/<tag>/<name>.xcframework.zip`
-   plus its SHA-256. All other branches are dropped. The build is
+   plus its SHA-256 (a committed framework no manifest declares, as in tag
+   1.6, is dropped with a warning). All other branches are dropped. The build is
    incremental: tags already built are kept untouched and new tags are
    appended, so tags already pushed to `_next` never move. A tag that is
    already asset-backed (released by the new CI) keeps its manifests and has
@@ -64,8 +66,9 @@ renames: [ROLLBACK.md](ROLLBACK.md).
    the repository is public anyway. An outside collaborator, if one is ever
    added, receives an invitation they must accept.
 7. Verifies: tags on `_next` equal the thin repository's, every release is
-   published with an asset, and the highest version's asset checksum matches
-   its manifest.
+   published, every asset's SHA-256 (GitHub's digest) is the checksum its
+   manifest records, and the highest version's asset downloads with that
+   checksum. An unexpected failure anywhere prints the script line it died on.
 
 `PHASE=swap` (under a minute):
 
